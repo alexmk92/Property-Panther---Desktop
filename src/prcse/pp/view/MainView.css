@@ -1,0 +1,31 @@
+/* Navigation bar styles */
+#nav_container
+{
+    -fx-background-image: url("img/nav_texture.gif");
+    -fx-border-color: 1px solid #1f1f1f;
+}
+
+#nav_button
+{
+    -fx-opacity: 0.4;
+    -fx-alignment: center-left;
+    -fx-padding: 0px 0px 0px 20px;
+}
+
+#nav_button.dark
+{ -fx-background-color: #1f1f1f; }
+
+#nav_button.light
+{ -fx-opacity: 0; }
+
+#nav_active_accent
+{
+    -fx-fill: #71cee5;
+}
+
+.button_text
+{
+    -fx-font-size: 20px;
+    -fx-text-fill: #ffffff;
+    -fx-opacity: 1 !important;
+}
