@@ -72,6 +72,11 @@
     -fx-background-image: url("img/edit_white.png");
     -fx-background-repeat: no-repeat;
 }
+#nav_icon_6
+{
+    -fx-background-image: url("img/settings_white.png");
+    -fx-background-repeat: no-repeat;
+}
 
 .button_mini
 {

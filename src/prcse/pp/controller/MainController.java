@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.control.Button;
+import org.omg.CORBA.Environment;
 
 public class MainController implements Initializable {
 
@@ -42,6 +43,14 @@ public class MainController implements Initializable {
             }
         });
 
+
+        // Utility controls
+        closeBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+
+            }
+        });
 
     }
 }
