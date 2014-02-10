@@ -14,7 +14,7 @@
 
 #nav_button
 {
-    -fx-opacity: 0.4;
+    -fx-opacity: 0.5;
     -fx-alignment: center-left;
     -fx-padding: 0px 0px 0px 20px;
     -fx-border-radius: 0px;
@@ -25,6 +25,16 @@
 
 #nav_button.light
 { -fx-opacity: 0; }
+
+#nav_button.dark:hover {
+    -fx-background-color: #777;
+    -fx-opacity: 0.1;
+    -fx-cursor: cursor;
+}
+#nav_button.light:hover {
+    -fx-background-color: #999;
+    -fx-opacity: 0.1;
+}
 
 #nav_active_accent
 {
