@@ -43,7 +43,7 @@ public class MainController implements Initializable {
             }
         });
 
-
+         /*
         // Utility controls
         closeBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -51,6 +51,7 @@ public class MainController implements Initializable {
 
             }
         });
+        */
 
     }
 }

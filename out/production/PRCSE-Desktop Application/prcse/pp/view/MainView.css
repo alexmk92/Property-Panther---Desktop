@@ -10,7 +10,6 @@
 #nav_container
 {
     -fx-background-image: url("img/nav_texture.gif");
-    -fx-border-color: 1px solid #1f1f1f;
 }
 
 #nav_button
@@ -47,6 +46,8 @@
     -fx-text-fill: #ffffff;
     -fx-opacity: 1 !important;
 }
+
+/* Navigation Icons */
 #nav_icon_1
 {
     -fx-background-image: url("img/settings_white.png");
@@ -54,7 +55,7 @@
 }
 #nav_icon_2
 {
-    -fx-background-image: url("img/graph_vert_blue.png");
+    -fx-background-image: url("img/graph_vert_white.png");
     -fx-background-repeat: no-repeat;
 }
 #nav_icon_3
@@ -77,6 +78,9 @@
     -fx-background-image: url("img/settings_white.png");
     -fx-background-repeat: no-repeat;
 }
+
+/* Navigation Hover Styles */
+
 
 .button_mini
 {

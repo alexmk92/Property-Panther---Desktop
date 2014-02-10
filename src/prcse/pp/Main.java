@@ -19,6 +19,9 @@ public class Main extends Application {
         //remove window decoration
         primaryStage.initStyle(StageStyle.UNDECORATED);
 
+        // Add stylesheet to the form
+        root.getStylesheets().add(this.getClass().getResource("view/MainView.css").toExternalForm());
+
         // Set the view
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
