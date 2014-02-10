@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import prcse.pp.controller.MainController;
+import javafx.scene.text.*;
+
 
 public class Main extends Application {
 
@@ -21,6 +23,7 @@ public class Main extends Application {
 
         // Add stylesheet to the form
         root.getStylesheets().add(this.getClass().getResource("view/MainView.css").toExternalForm());
+        Font.loadFont(this.getClass().getResource("view/fonts/OpenSans-Regular.ttf").toExternalForm(), 12);
 
         // Set the view
         primaryStage.setScene(new Scene(root));

@@ -29,13 +29,22 @@
 #nav_button.dark:hover {
     -fx-background-color: #777;
     -fx-opacity: 0.1;
+    -fx-cursor: hand;
 }
 #nav_button.light:hover {
     -fx-background-color: #999;
     -fx-opacity: 0.1;
+    -fx-cursor: hand;
 }
+.hidden { visibility: hidden; }
+.show   { visibility: visible; }
 
+#nav_active_accent:hover,
 #nav_active_accent
+{
+    -fx-fill: #fff;
+}
+#nav_active_accent.active
 {
     -fx-fill: #71cee5;
 }
@@ -54,6 +63,7 @@
     -fx-font-size: 20px;
     -fx-text-fill: #ffffff;
     -fx-opacity: 1 !important;
+    -fx-font-family: 'Open Sans';
 }
 
 /* Navigation Icons */
@@ -111,13 +121,16 @@
 }
 .button_mini:hover{
     -fx-background-image: url("img/minim_blue.png");
+    -fx-cursor: hand;
 }
 .button_maxi:hover{
     -fx-background-image: url("img/maxim_blue.png");
+    -fx-cursor: hand;
 }
 .button_close:hover
 {
     -fx-background-image: url("img/close_blue.png");
+    -fx-cursor: hand;
 }
 
 
