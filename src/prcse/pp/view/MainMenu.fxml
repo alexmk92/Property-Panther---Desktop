@@ -9,7 +9,7 @@
 
 <AnchorPane id="main__body" maxHeight="720" maxWidth="1200" minHeight="720" minWidth="1200" prefHeight="720.0" prefWidth="1200.0" stylesheets="@MainView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prcse.pp.controller.MainController">
     <children><AnchorPane prefHeight="720.0" prefWidth="249.0">
-        <children><Label id="username_label" layoutX="27.0" layoutY="325.0" styleClass="button_text" text="Inbox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="username_label" layoutX="27.0" layoutY="255.0" styleClass="button_text" text="Dashboard" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Rectangle id="nav_active_accent" fill="DODGERBLUE" height="70.0" layoutY="235.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Button id="nav_button" contentDisplay="CENTER" layoutX="-5.0" layoutY="235.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" styleClass="light" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="username_label" layoutX="27.0" layoutY="185.0" styleClass="button_text" text="Alex Sims" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><ImageView id="nav_branding" fitHeight="85.0" fitWidth="200.0" layoutX="23.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+        <children><Label id="username_label" layoutX="27.0" layoutY="325.0" styleClass="button_text" text="Inbox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="username_label" layoutX="27.0" layoutY="255.0" styleClass="button_text" text="Dashboard" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Rectangle id="nav_active_accent" fill="DODGERBLUE" height="70.0" layoutY="235.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="username_label" layoutX="27.0" layoutY="185.0" styleClass="button_text" text="Alex Sims" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><ImageView id="nav_branding" fitHeight="85.0" fitWidth="200.0" layoutX="23.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
             <image>
                 <Image url="@img/logo.png" />
             </image>
@@ -22,33 +22,48 @@
                 </ImageView>
 <AnchorPane fx:id="nav1" layoutY="165.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <children>
-                <Button id="nav_button" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" styleClass="dark" /><Rectangle id="nav_active_accent" fx:id="accent1" fill="WHITE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="active" width="3.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
-                <Label id="username_label" layoutX="27.0" layoutY="20.0" styleClass="button_text" text="Dashboard" /><Pane id="nav_icon_1" layoutX="205.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" />
+                <Button id="nav_button" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" styleClass="dark" text="Dashboard" textFill="WHITE">
+<font>
+<Font size="20.0" />
+</font></Button><Rectangle id="nav_active_accent" fx:id="accent1" fill="WHITE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="active" width="2.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_1" layoutX="205.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" styleClass="active" />
 </children>
 </AnchorPane>
 <AnchorPane fx:id="nav2" layoutX="-1.0" layoutY="235.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <children>
-                <Button id="nav_button" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" styleClass="light" /><Rectangle id="nav_active_accent" fx:id="accent2" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="3.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_2" layoutX="206.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
-                <Label id="username_label" layoutX="28.0" layoutY="20.0" styleClass="button_text" text="Users" />
+                <Button id="nav_button" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" styleClass="light" text="Users" textFill="WHITE">
+<font>
+<Font size="20.0" />
+</font></Button><Rectangle id="nav_active_accent" fx:id="accent2" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="3.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_2" layoutX="206.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
 </children>
 </AnchorPane>
 <AnchorPane fx:id="nav3" layoutY="305.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <children>
-                <Button id="nav_button" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" styleClass="dark" />
-                <Rectangle id="nav_active_accent" fx:id="accent3" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="3.0" /><Pane id="nav_icon_3" layoutX="205.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
-                <Label id="username_label" layoutX="27.0" layoutY="20.0" styleClass="button_text" text="Properties" />
+                <Button id="nav_button" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" styleClass="dark" text="Properties" textFill="WHITE">
+<font>
+<Font size="20.0" />
+</font></Button>
+                <Rectangle id="nav_active_accent" fx:id="accent3" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="2.0" /><Pane id="nav_icon_3" layoutX="205.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
 </children>
 </AnchorPane>
 <AnchorPane fx:id="nav4" layoutY="375.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-<children><Button id="nav_button" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" styleClass="light" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Rectangle id="nav_active_accent" fx:id="accent4" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="3.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_4" layoutX="205.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="username_label" layoutX="27.0" layoutY="20.0" styleClass="button_text" text="Payments" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+<children><Button id="nav_button" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" styleClass="light" text="Payments" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="20.0" />
+</font></Button><Rectangle id="nav_active_accent" fx:id="accent4" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="2.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_4" layoutX="205.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
 </children>
 </AnchorPane>
 <AnchorPane fx:id="nav5" layoutY="445.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-<children><Button id="nav_button" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" styleClass="dark" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Rectangle id="nav_active_accent" fx:id="accent5" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="3.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="username_label" layoutX="27.0" layoutY="20.0" styleClass="button_text" text="Messages" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_5" layoutX="205.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+<children><Button id="nav_button" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" styleClass="dark" text="Messages" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="20.0" />
+</font></Button><Rectangle id="nav_active_accent" fx:id="accent5" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="2.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_5" layoutX="205.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
 </children>
 </AnchorPane>
 <AnchorPane fx:id="nav6" layoutY="515.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-<children><Label id="username_label" layoutX="29.0" layoutY="20.0" styleClass="button_text" text="Settings" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Button id="nav_button" contentDisplay="CENTER" mnemonicParsing="false" onMouseDragOver="#show_accent" prefHeight="70.0" prefWidth="250.0" styleClass="light" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Rectangle id="nav_active_accent" fx:id="accent6" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="3.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_6" layoutX="205.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+<children><Button id="nav_button" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" styleClass="light" text="Settings" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="20.0" />
+</font></Button><Rectangle id="nav_active_accent" fx:id="accent6" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="2.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_6" layoutX="205.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
 </children>
 </AnchorPane>
 <AnchorPane layoutY="691.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">

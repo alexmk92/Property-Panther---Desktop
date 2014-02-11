@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.application.Platform;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.control.Button;
 import javafx.scene.shape.Rectangle;
@@ -14,6 +15,7 @@ import javafx.scene.Group;
 
 public class MainController implements Initializable {
 
+    // Refernce FXML Variables
     @FXML // fx:id="Draggable"
     private BorderPane draggable;
     @FXML // fx:id="closeBtn"
@@ -22,6 +24,18 @@ public class MainController implements Initializable {
     private Button maximBtn;
     @FXML // fx:id="minimBtn"
     private Button minimBtn;
+    @FXML // fx:id="nav1"
+    private AnchorPane nav1;
+    @FXML // fx:id="nav2"
+    private AnchorPane nav2;
+    @FXML // fx:id="nav3"
+    private AnchorPane nav3;
+    @FXML // fx:id="nav4"
+    private AnchorPane nav4;
+    @FXML // fx:id="nav5"
+    private AnchorPane nav5;
+    @FXML // fx:id="nav6"
+    private AnchorPane nav6;
     @FXML // fx:id="accent1"
     private Rectangle accent1;
     @FXML // fx:id="accent2"
@@ -58,6 +72,67 @@ public class MainController implements Initializable {
             }
         });
 
+        nav2.setOnMouseEntered(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent mouseEvent) {
+            accent2.setStyle("visibility: visible");
+        }
+    });
+        nav2.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent2.setStyle("visibility: hidden");
+            }
+        });
+        nav3.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent3.setStyle("visibility: visible");
+            }
+        });
+        nav3.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent3.setStyle("visibility: hidden");
+            }
+        });
+        nav4.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent4.setStyle("visibility: visible");
+            }
+        });
+        nav4.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent4.setStyle("visibility: hidden");
+            }
+        });
+        nav5.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent5.setStyle("visibility: visible");
+            }
+        });
+        nav5.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent5.setStyle("visibility: hidden");
+            }
+        });
+        nav6.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent6.setStyle("visibility: visible");
+            }
+        });
+        nav6.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent6.setStyle("visibility: hidden");
+            }
+        });
+
         // Utility controls
         closeBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -67,15 +142,5 @@ public class MainController implements Initializable {
         });
 
 
-    }
-
-    // Active state on button control
-    public void show_accent(){
-        accent2.setStyle("visibility: visible");
-    }
-
-    public void hide_accent(){
-
-        accent2.setStyle("visibility: hidden");
     }
 }
