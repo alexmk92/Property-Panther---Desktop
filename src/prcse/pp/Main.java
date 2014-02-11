@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import prcse.pp.controller.MainController;
@@ -14,6 +15,7 @@ public class Main extends Application {
 
     @Override
     public void start(final Stage primaryStage) throws Exception{
+
         Parent root = FXMLLoader.load(getClass().getResource("view/MainMenu.fxml"));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("view/MainMenu.fxml"));
         loader.setController(new MainController());
@@ -23,7 +25,6 @@ public class Main extends Application {
 
         // Add stylesheet to the form
         root.getStylesheets().add(this.getClass().getResource("view/MainView.css").toExternalForm());
-        Font.loadFont(this.getClass().getResource("view/fonts/OpenSans-Regular.ttf").toExternalForm(), 12);
 
         // Set the view
         primaryStage.setScene(new Scene(root));

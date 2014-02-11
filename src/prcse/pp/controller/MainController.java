@@ -6,12 +6,16 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.application.Platform;
+import javafx.scene.control.Label;
+import javafx.scene.effect.Effect;
+import javafx.scene.effect.Glow;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.control.Button;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.Group;
+import javafx.scene.text.Font;
 
 public class MainController implements Initializable {
 
@@ -48,6 +52,8 @@ public class MainController implements Initializable {
     private Rectangle accent5;
     @FXML // fx:id="accent6"
     private Rectangle accent6;
+    @FXML // fx:id="title"
+    private Label title;
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
@@ -56,6 +62,10 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resources)
     {
+        // Set the display graphic for title
+        Effect glow = new Glow(0.3);
+        title.setEffect(glow);
+
         // Set the draggable component
         draggable.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override

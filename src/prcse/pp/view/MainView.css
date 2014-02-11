@@ -5,11 +5,10 @@
         linear-gradient(to top right, #260a31 0%, #0c4661 100%)
     ;
 }
-
 /* Navigation bar styles */
 #nav_container
 {
-    -fx-background-image: url("img/nav_texture.gif");
+    -fx-background-image: url("img/navbg.png");
 }
 
 #nav_button
@@ -21,13 +20,13 @@
     -fx-background-radius: 0px;
 }
 #nav_button.dark
-{ -fx-background-color: #1f1f1f; }
+{ -fx-background-color: #1d1f20; }
 
 #nav_button.light
-{ -fx-background-color: #383e41; }
+{ -fx-background-color: transparent; }
 
 #nav_button.dark:hover {
-    -fx-background-color: #2d2d2d;
+    -fx-background-color: #2f3335;
     -fx-opacity: 0.8;
     -fx-cursor: hand;
 }
@@ -50,46 +49,39 @@
 }
 #app_version
 {
-    -fx-background-color: #1f1f1f;
-    -fx-opacity: 0.4;
+    -fx-background-color: #1d1f20;
+    -fx-opacity: 0.8;
 }
 #version_label
 {
     -fx-font-size:  12px;
-}
-
-.button_text
-{
-    -fx-font-size: 20px;
-    -fx-text-fill: #ffffff;
-    -fx-opacity: 1 !important;
-    -fx-font-family: 'Open Sans';
+    -fx-text-fill:  #bbb;
 }
 
 /* Navigation Icons */
 #nav_icon_1
 {
-    -fx-background-image: url("img/settings_white.png");
+    -fx-background-image: url("img/dashboard_white.png");
     -fx-background-repeat: no-repeat;
 }
 #nav_icon_2
 {
-    -fx-background-image: url("img/graph_vert_white.png");
+    -fx-background-image: url("img/user_white.png");
     -fx-background-repeat: no-repeat;
 }
 #nav_icon_3
 {
-    -fx-background-image: url("img/email_white.png");
+    -fx-background-image: url("img/properties_white.png");
     -fx-background-repeat: no-repeat;
 }
 #nav_icon_4
 {
-    -fx-background-image: url("img/graph_horiz_white.png");
+    -fx-background-image: url("img/payments_white.png");
     -fx-background-repeat: no-repeat;
 }
 #nav_icon_5
 {
-    -fx-background-image: url("img/edit_white.png");
+    -fx-background-image: url("img/email_white.png");
     -fx-background-repeat: no-repeat;
 }
 #nav_icon_6
@@ -100,7 +92,7 @@
 
 #nav_icon_1.active
 {
-    -fx-background-image: url("img/settings_blue.png");
+    -fx-background-image: url("img/dashboard_blue.png");
     -fx-background-repeat: no-repeat;
 }
 #nav_icon_2.active
@@ -163,5 +155,13 @@
     -fx-background-image: url("img/close_blue.png");
     -fx-cursor: hand;
 }
+
+.title
+{
+    -fx-text-fill: #72cee5;
+    -fx-font-size: 40px;
+    -fx-font-family: "Open Sans Light";
+}
+
 
 
