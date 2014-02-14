@@ -217,6 +217,14 @@
     -fx-font-family: "Open Sans Light";
 }
 
+#slide_out
+{
+    /*-fx-background-image: url("img/navbg.png"); */
+    -fx-background-color: #1e1e2d;
+    -fx-opacity: 0.9;
+    -fx-border-color: #4c5c70;
+}
+
 #textbox_square
 { -fx-background-radius: 0px; }
 

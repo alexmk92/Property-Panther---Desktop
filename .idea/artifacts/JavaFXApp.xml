@@ -3,14 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/JavaFXApp</output-path>
     <properties id="javafx-properties">
       <options>
-        <option name="appClass" value="prcse.pp.controller.ScreensFramework" />
-        <option name="description" value="" />
-        <option name="height" value="700" />
-        <option name="htmlParamFile" value="" />
-        <option name="paramFile" value="" />
-        <option name="title" value="Property Panther" />
-        <option name="vendor" value="PRCSE" />
-        <option name="width" value="1200" />
+        <option name="appClass" value="sample.Main" />
       </options>
     </properties>
     <root id="root">

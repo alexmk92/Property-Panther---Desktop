@@ -7,7 +7,6 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-
 <AnchorPane id="main__body" maxHeight="720.0" maxWidth="1200.0" minHeight="720.0" minWidth="1200.0" prefHeight="720.0" prefWidth="1250.0" stylesheets="@MainView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prcse.pp.controller.DashboardController">
     <children><AnchorPane prefHeight="720.0" prefWidth="249.0">
         <children><Label id="username_label" layoutX="27.0" layoutY="325.0" styleClass="button_text" text="Inbox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="username_label" layoutX="27.0" layoutY="255.0" styleClass="button_text" text="Dashboard" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Rectangle id="nav_active_accent" fill="DODGERBLUE" height="70.0" layoutY="235.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="username_label" layoutX="27.0" layoutY="185.0" styleClass="button_text" text="Alex Sims" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><ImageView id="nav_branding" fitHeight="85.0" fitWidth="200.0" layoutX="23.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
@@ -51,7 +50,7 @@
 </children>
 </AnchorPane>
 <AnchorPane fx:id="nav4" layoutY="375.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-<children><Button id="nav_button" onAction="#goToPayments" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" styleClass="light" text="Payments" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children><Button id="nav_button" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToPayments" prefHeight="70.0" prefWidth="250.0" styleClass="light" text="Payments" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <font>
 <Font size="20.0" />
 </font></Button><Rectangle id="nav_active_accent" fx:id="accent4" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="2.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_4" layoutX="200.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="36.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
@@ -105,5 +104,13 @@
 </Rectangle><Rectangle fill="#4c5c70" height="1.0" layoutX="252.0" layoutY="90.0" stroke="TRANSPARENT" strokeType="INSIDE" width="949.0" /><Rectangle fill="#00000090" height="1.0" layoutX="252.0" layoutY="89.0" stroke="TRANSPARENT" strokeType="INSIDE" width="948.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="lbl_title" fx:id="title" layoutX="275.0" layoutY="20.0" styleClass="title" text="Your Dashboard" textFill="#72cee5">
 <font>
 <Font name="Open Sans Light" size="40.0" />
-</font></Label>
+</font></Label><Pane id="slide_out" layoutX="252.0" layoutY="237.0" prefHeight="68.0" prefWidth="329.0">
+<children><TextField id="textbox_square" layoutX="14.0" layoutY="12.0" prefHeight="45.0" prefWidth="270.0" promptText="Enter a users name...">
+<font>
+<Font size="16.0" />
+</font></TextField><ImageView fitHeight="18.0" fitWidth="18.0" layoutX="296.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@img/spinner.GIF" />
+</image></ImageView>
+</children></Pane>
     </children></AnchorPane>
