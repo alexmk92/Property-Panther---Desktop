@@ -46,11 +46,14 @@
     <file path="$PROJECT_DIR$/src/screensframework/controller/ScreensController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392202858895" ignored="false" />
     <file path="/ScreensFramework.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392248218347" ignored="false" />
     <file path="/Dashboard.fxml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392248257166" ignored="false" />
-    <file path="/DashboardController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392486480975" ignored="false" />
+    <file path="/DashboardController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392492172203" ignored="false" />
     <file path="/Payments.fxml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392330075671" ignored="false" />
     <file path="/PaymentsController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392484679577" ignored="false" />
     <file path="/XCell.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392303734069" ignored="false" />
     <file path="/ScreensController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392329526073" ignored="false" />
+    <file path="/AnimationController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392487528585" ignored="false" />
+    <file path="/Animation.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392487560365" ignored="false" />
+    <file path="/UserController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392492069677" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +127,7 @@
       <file leaf-file-name="MainView.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/MainView.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="254" column="39" selection-start="5259" selection-end="5259" vertical-scroll-proportion="-75.32">
+            <state line="254" column="39" selection-start="5259" selection-end="5259" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -133,108 +136,50 @@
       <file leaf-file-name="Dashboard.fxml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/Dashboard.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="117" column="64" selection-start="11716" selection-end="11716" vertical-scroll-proportion="0.0">
+            <state line="125" column="64" selection-start="12740" selection-end="12740" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DashboardController.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DashboardController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/DashboardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="4" selection-start="2927" selection-end="3099" vertical-scroll-proportion="-12.32">
+            <state line="416" column="40" selection-start="16258" selection-end="16258" vertical-scroll-proportion="0.40939596">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6535#6728#0" expanded="true" />
-                <element signature="e#6717#6718#0" expanded="true" />
-                <element signature="e#6766#6962#0" expanded="true" />
-                <element signature="e#6951#6952#0" expanded="true" />
-                <element signature="e#6996#7187#0" expanded="true" />
-                <element signature="e#7176#7177#0" expanded="true" />
-                <element signature="e#7220#7410#0" expanded="true" />
-                <element signature="e#7399#7400#0" expanded="true" />
-                <element signature="e#7449#7700#0" expanded="true" />
-                <element signature="e#7689#7690#0" expanded="true" />
-                <element signature="e#7738#7935#0" expanded="true" />
-                <element signature="e#7924#7925#0" expanded="true" />
-                <element signature="e#7969#8160#0" expanded="true" />
-                <element signature="e#8149#8150#0" expanded="true" />
-                <element signature="e#8193#8383#0" expanded="true" />
-                <element signature="e#8372#8373#0" expanded="true" />
-                <element signature="e#8422#8672#0" expanded="true" />
-                <element signature="e#8661#8662#0" expanded="true" />
-                <element signature="e#8710#8906#0" expanded="true" />
-                <element signature="e#8895#8896#0" expanded="true" />
-                <element signature="e#8940#9131#0" expanded="true" />
-                <element signature="e#9120#9121#0" expanded="true" />
-                <element signature="e#9164#9354#0" expanded="true" />
-                <element signature="e#9343#9344#0" expanded="true" />
-                <element signature="e#9393#9644#0" expanded="true" />
-                <element signature="e#9633#9634#0" expanded="true" />
-                <element signature="e#9682#9879#0" expanded="true" />
-                <element signature="e#9868#9869#0" expanded="true" />
-                <element signature="e#9913#10104#0" expanded="true" />
-                <element signature="e#10093#10094#0" expanded="true" />
-                <element signature="e#10137#10327#0" expanded="true" />
-                <element signature="e#10316#10317#0" expanded="true" />
-                <element signature="e#10366#10616#0" expanded="true" />
-                <element signature="e#10605#10606#0" expanded="true" />
-                <element signature="e#10654#10850#0" expanded="true" />
-                <element signature="e#10839#10840#0" expanded="true" />
-                <element signature="e#10884#11075#0" expanded="true" />
-                <element signature="e#11064#11065#0" expanded="true" />
-                <element signature="e#11108#11298#0" expanded="true" />
-                <element signature="e#11287#11288#0" expanded="true" />
-                <element signature="e#11337#11588#0" expanded="true" />
-                <element signature="e#11577#11578#0" expanded="true" />
-                <element signature="e#11626#11823#0" expanded="true" />
-                <element signature="e#11812#11813#0" expanded="true" />
-                <element signature="e#12045#12353#0" expanded="true" />
-                <element signature="e#12342#12343#0" expanded="true" />
-                <element signature="e#12397#12705#0" expanded="true" />
-                <element signature="e#12694#12695#0" expanded="true" />
-                <element signature="e#12750#13124#0" expanded="true" />
-                <element signature="e#13113#13114#0" expanded="true" />
-                <element signature="e#13168#13545#0" expanded="true" />
-                <element signature="e#13534#13535#0" expanded="true" />
-                <element signature="e#13589#13899#0" expanded="true" />
-                <element signature="e#13888#13889#0" expanded="true" />
-                <element signature="e#13941#14251#0" expanded="true" />
-                <element signature="e#14240#14241#0" expanded="true" />
-                <element signature="e#14295#14667#0" expanded="true" />
-                <element signature="e#14656#14657#0" expanded="true" />
-                <element signature="e#14710#15085#0" expanded="true" />
-                <element signature="e#15074#15075#0" expanded="true" />
-                <element signature="e#15298#15465#0" expanded="true" />
-                <element signature="e#15454#15455#0" expanded="true" />
-                <element signature="e#15689#16411#0" expanded="true" />
-                <element signature="e#16400#16401#0" expanded="true" />
-                <element signature="e#16561#17189#0" expanded="true" />
-                <element signature="e#17178#17179#0" expanded="true" />
-                <marker date="1392486480734" expanded="true" signature="7141:7160" placeholder="{...}" />
-                <marker date="1392486480734" expanded="true" signature="7365:7383" placeholder="{...}" />
-                <marker date="1392486480734" expanded="true" signature="7594:7613" placeholder="{...}" />
-                <marker date="1392486480734" expanded="true" signature="8114:8133" placeholder="{...}" />
-                <marker date="1392486480734" expanded="true" signature="8338:8356" placeholder="{...}" />
-                <marker date="1392486480734" expanded="true" signature="8567:8586" placeholder="{...}" />
-                <marker date="1392486480734" expanded="true" signature="9085:9104" placeholder="{...}" />
-                <marker date="1392486480734" expanded="true" signature="9309:9327" placeholder="{...}" />
-                <marker date="1392486480734" expanded="true" signature="9538:9557" placeholder="{...}" />
-                <marker date="1392486480734" expanded="true" signature="10058:10077" placeholder="{...}" />
-                <marker date="1392486480734" expanded="true" signature="10282:10300" placeholder="{...}" />
-                <marker date="1392486480734" expanded="true" signature="10511:10530" placeholder="{...}" />
-                <marker date="1392486480734" expanded="true" signature="11029:11048" placeholder="{...}" />
-                <marker date="1392486480734" expanded="true" signature="11253:11271" placeholder="{...}" />
-                <marker date="1392486480734" expanded="true" signature="11482:11501" placeholder="{...}" />
+                <element signature="e#15668#15835#0" expanded="true" />
+                <element signature="e#15824#15825#0" expanded="true" />
+                <element signature="e#16049#17095#0" expanded="true" />
+                <element signature="e#17084#17085#0" expanded="true" />
+                <element signature="e#17426#18054#0" expanded="true" />
+                <element signature="e#18043#18044#0" expanded="true" />
+                <element signature="e#18098#18344#0" expanded="true" />
+                <element signature="e#18333#18334#0" expanded="true" />
+                <marker date="1392492240268" expanded="true" signature="7511:7530" placeholder="{...}" />
+                <marker date="1392492240268" expanded="true" signature="7735:7753" placeholder="{...}" />
+                <marker date="1392492240268" expanded="true" signature="7964:7983" placeholder="{...}" />
+                <marker date="1392492240268" expanded="true" signature="8484:8503" placeholder="{...}" />
+                <marker date="1392492240268" expanded="true" signature="8708:8726" placeholder="{...}" />
+                <marker date="1392492240268" expanded="true" signature="8937:8956" placeholder="{...}" />
+                <marker date="1392492240268" expanded="true" signature="9455:9474" placeholder="{...}" />
+                <marker date="1392492240268" expanded="true" signature="9679:9697" placeholder="{...}" />
+                <marker date="1392492240268" expanded="true" signature="9908:9927" placeholder="{...}" />
+                <marker date="1392492240268" expanded="true" signature="10428:10447" placeholder="{...}" />
+                <marker date="1392492240268" expanded="true" signature="10652:10670" placeholder="{...}" />
+                <marker date="1392492240268" expanded="true" signature="10881:10900" placeholder="{...}" />
+                <marker date="1392492240268" expanded="true" signature="11399:11418" placeholder="{...}" />
+                <marker date="1392492240268" expanded="true" signature="11623:11641" placeholder="{...}" />
+                <marker date="1392492240268" expanded="true" signature="11852:11871" placeholder="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PaymentsController.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PaymentsController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/PaymentsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="146" column="63" selection-start="5215" selection-end="5215" vertical-scroll-proportion="-1.6048632">
+            <state line="265" column="57" selection-start="9517" selection-end="9517" vertical-scroll-proportion="0.0">
               <folding>
                 <marker date="1392486762685" expanded="true" signature="6666:6685" placeholder="{...}" />
                 <marker date="1392486762685" expanded="true" signature="6890:6908" placeholder="{...}" />
@@ -270,9 +215,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/prcse/pp/controller/Main.java" />
-        <option value="$PROJECT_DIR$/src/screensframework/ScreensFramework.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/ScreensFramework.java" />
         <option value="$PROJECT_DIR$/src/propertypanther/controller/ScreensFramework.java" />
         <option value="$PROJECT_DIR$/src/screensframework/controller/ScreensFramework.java" />
         <option value="$PROJECT_DIR$/src/screensframework/view/Dashboard.fxml" />
@@ -283,9 +225,12 @@
         <option value="$PROJECT_DIR$/src/prcse/pp/controller/ScreensController.java" />
         <option value="$PROJECT_DIR$/src/prcse/pp/view/Payments.fxml" />
         <option value="$PROJECT_DIR$/src/prcse/pp/view/Dashboard.fxml" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/controller/DashboardController.java" />
         <option value="$PROJECT_DIR$/src/prcse/pp/view/MainView.css" />
         <option value="$PROJECT_DIR$/src/prcse/pp/controller/PaymentsController.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/controller/AnimationController.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/model/Animation.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/controller/DashboardController.java" />
       </list>
     </option>
   </component>
@@ -381,6 +326,10 @@
               <option name="myItemId" value="pp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -406,21 +355,21 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
     <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="GenerateAntBuildDialog.generateSingleFile" value="true" />
-    <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="recentsLimit" value="5" />
+    <property name="GenerateAntBuildDialog.generateSingleFile" value="true" />
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="prcse-desktop" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -436,8 +385,8 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -527,19 +476,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -566,6 +502,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -659,7 +608,6 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997773" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -668,7 +616,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32519424" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32408434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24972253" sideWeight="0.73333335" order="1" side_tool="false" content_ui="tabs" />
@@ -682,6 +630,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -751,18 +700,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/MainView.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PRCSE-Desktop Application.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="27" selection-start="413" selection-end="413" vertical-scroll-proportion="0.28481013" />
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/fxml/FXMLLoader.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="13" selection-start="154" selection-end="154" vertical-scroll-proportion="0.17713365" />
@@ -792,7 +729,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/Dashboard.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="64" selection-start="11716" selection-end="11716" vertical-scroll-proportion="0.0">
+        <state line="125" column="64" selection-start="12740" selection-end="12740" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -806,23 +743,17 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0/src.zip!/java/lang/StringBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="406" column="0" selection-start="10817" selection-end="10817" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="406" column="0" selection-start="10817" selection-end="10817" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/scene/control/TextField.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/scene/control/TextInputControl.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="34" selection-start="2834" selection-end="2834" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="59" column="34" selection-start="2834" selection-end="2834" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/Payments.fxml">
@@ -834,104 +765,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/MainView.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="254" column="39" selection-start="5259" selection-end="5259" vertical-scroll-proportion="-75.32">
+        <state line="254" column="39" selection-start="5259" selection-end="5259" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/DashboardController.java">
+    <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/XCell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="4" selection-start="2927" selection-end="3099" vertical-scroll-proportion="-12.32">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6535#6728#0" expanded="true" />
-            <element signature="e#6717#6718#0" expanded="true" />
-            <element signature="e#6766#6962#0" expanded="true" />
-            <element signature="e#6951#6952#0" expanded="true" />
-            <element signature="e#6996#7187#0" expanded="true" />
-            <element signature="e#7176#7177#0" expanded="true" />
-            <element signature="e#7220#7410#0" expanded="true" />
-            <element signature="e#7399#7400#0" expanded="true" />
-            <element signature="e#7449#7700#0" expanded="true" />
-            <element signature="e#7689#7690#0" expanded="true" />
-            <element signature="e#7738#7935#0" expanded="true" />
-            <element signature="e#7924#7925#0" expanded="true" />
-            <element signature="e#7969#8160#0" expanded="true" />
-            <element signature="e#8149#8150#0" expanded="true" />
-            <element signature="e#8193#8383#0" expanded="true" />
-            <element signature="e#8372#8373#0" expanded="true" />
-            <element signature="e#8422#8672#0" expanded="true" />
-            <element signature="e#8661#8662#0" expanded="true" />
-            <element signature="e#8710#8906#0" expanded="true" />
-            <element signature="e#8895#8896#0" expanded="true" />
-            <element signature="e#8940#9131#0" expanded="true" />
-            <element signature="e#9120#9121#0" expanded="true" />
-            <element signature="e#9164#9354#0" expanded="true" />
-            <element signature="e#9343#9344#0" expanded="true" />
-            <element signature="e#9393#9644#0" expanded="true" />
-            <element signature="e#9633#9634#0" expanded="true" />
-            <element signature="e#9682#9879#0" expanded="true" />
-            <element signature="e#9868#9869#0" expanded="true" />
-            <element signature="e#9913#10104#0" expanded="true" />
-            <element signature="e#10093#10094#0" expanded="true" />
-            <element signature="e#10137#10327#0" expanded="true" />
-            <element signature="e#10316#10317#0" expanded="true" />
-            <element signature="e#10366#10616#0" expanded="true" />
-            <element signature="e#10605#10606#0" expanded="true" />
-            <element signature="e#10654#10850#0" expanded="true" />
-            <element signature="e#10839#10840#0" expanded="true" />
-            <element signature="e#10884#11075#0" expanded="true" />
-            <element signature="e#11064#11065#0" expanded="true" />
-            <element signature="e#11108#11298#0" expanded="true" />
-            <element signature="e#11287#11288#0" expanded="true" />
-            <element signature="e#11337#11588#0" expanded="true" />
-            <element signature="e#11577#11578#0" expanded="true" />
-            <element signature="e#11626#11823#0" expanded="true" />
-            <element signature="e#11812#11813#0" expanded="true" />
-            <element signature="e#12045#12353#0" expanded="true" />
-            <element signature="e#12342#12343#0" expanded="true" />
-            <element signature="e#12397#12705#0" expanded="true" />
-            <element signature="e#12694#12695#0" expanded="true" />
-            <element signature="e#12750#13124#0" expanded="true" />
-            <element signature="e#13113#13114#0" expanded="true" />
-            <element signature="e#13168#13545#0" expanded="true" />
-            <element signature="e#13534#13535#0" expanded="true" />
-            <element signature="e#13589#13899#0" expanded="true" />
-            <element signature="e#13888#13889#0" expanded="true" />
-            <element signature="e#13941#14251#0" expanded="true" />
-            <element signature="e#14240#14241#0" expanded="true" />
-            <element signature="e#14295#14667#0" expanded="true" />
-            <element signature="e#14656#14657#0" expanded="true" />
-            <element signature="e#14710#15085#0" expanded="true" />
-            <element signature="e#15074#15075#0" expanded="true" />
-            <element signature="e#15298#15465#0" expanded="true" />
-            <element signature="e#15454#15455#0" expanded="true" />
-            <element signature="e#15689#16411#0" expanded="true" />
-            <element signature="e#16400#16401#0" expanded="true" />
-            <element signature="e#16561#17189#0" expanded="true" />
-            <element signature="e#17178#17179#0" expanded="true" />
-            <marker date="1392486480734" expanded="true" signature="7141:7160" placeholder="{...}" />
-            <marker date="1392486480734" expanded="true" signature="7365:7383" placeholder="{...}" />
-            <marker date="1392486480734" expanded="true" signature="7594:7613" placeholder="{...}" />
-            <marker date="1392486480734" expanded="true" signature="8114:8133" placeholder="{...}" />
-            <marker date="1392486480734" expanded="true" signature="8338:8356" placeholder="{...}" />
-            <marker date="1392486480734" expanded="true" signature="8567:8586" placeholder="{...}" />
-            <marker date="1392486480734" expanded="true" signature="9085:9104" placeholder="{...}" />
-            <marker date="1392486480734" expanded="true" signature="9309:9327" placeholder="{...}" />
-            <marker date="1392486480734" expanded="true" signature="9538:9557" placeholder="{...}" />
-            <marker date="1392486480734" expanded="true" signature="10058:10077" placeholder="{...}" />
-            <marker date="1392486480734" expanded="true" signature="10282:10300" placeholder="{...}" />
-            <marker date="1392486480734" expanded="true" signature="10511:10530" placeholder="{...}" />
-            <marker date="1392486480734" expanded="true" signature="11029:11048" placeholder="{...}" />
-            <marker date="1392486480734" expanded="true" signature="11253:11271" placeholder="{...}" />
-            <marker date="1392486480734" expanded="true" signature="11482:11501" placeholder="{...}" />
-          </folding>
+        <state line="26" column="34" selection-start="752" selection-end="752" vertical-scroll-proportion="-0.10182371">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/PaymentsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="63" selection-start="5215" selection-end="5215" vertical-scroll-proportion="-1.6048632">
+        <state line="265" column="57" selection-start="9517" selection-end="9517" vertical-scroll-proportion="0.0">
           <folding>
             <marker date="1392486762685" expanded="true" signature="6666:6685" placeholder="{...}" />
             <marker date="1392486762685" expanded="true" signature="6890:6908" placeholder="{...}" />
@@ -943,6 +791,38 @@
             <marker date="1392486762685" expanded="true" signature="8234:8252" placeholder="{...}" />
             <marker date="1392486762685" expanded="true" signature="8458:8477" placeholder="{...}" />
             <marker date="1392486762685" expanded="true" signature="8682:8700" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/DashboardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="416" column="40" selection-start="16258" selection-end="16258" vertical-scroll-proportion="0.40939596">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#15668#15835#0" expanded="true" />
+            <element signature="e#15824#15825#0" expanded="true" />
+            <element signature="e#16049#17095#0" expanded="true" />
+            <element signature="e#17084#17085#0" expanded="true" />
+            <element signature="e#17426#18054#0" expanded="true" />
+            <element signature="e#18043#18044#0" expanded="true" />
+            <element signature="e#18098#18344#0" expanded="true" />
+            <element signature="e#18333#18334#0" expanded="true" />
+            <marker date="1392492240268" expanded="true" signature="7511:7530" placeholder="{...}" />
+            <marker date="1392492240268" expanded="true" signature="7735:7753" placeholder="{...}" />
+            <marker date="1392492240268" expanded="true" signature="7964:7983" placeholder="{...}" />
+            <marker date="1392492240268" expanded="true" signature="8484:8503" placeholder="{...}" />
+            <marker date="1392492240268" expanded="true" signature="8708:8726" placeholder="{...}" />
+            <marker date="1392492240268" expanded="true" signature="8937:8956" placeholder="{...}" />
+            <marker date="1392492240268" expanded="true" signature="9455:9474" placeholder="{...}" />
+            <marker date="1392492240268" expanded="true" signature="9679:9697" placeholder="{...}" />
+            <marker date="1392492240268" expanded="true" signature="9908:9927" placeholder="{...}" />
+            <marker date="1392492240268" expanded="true" signature="10428:10447" placeholder="{...}" />
+            <marker date="1392492240268" expanded="true" signature="10652:10670" placeholder="{...}" />
+            <marker date="1392492240268" expanded="true" signature="10881:10900" placeholder="{...}" />
+            <marker date="1392492240268" expanded="true" signature="11399:11418" placeholder="{...}" />
+            <marker date="1392492240268" expanded="true" signature="11623:11641" placeholder="{...}" />
+            <marker date="1392492240268" expanded="true" signature="11852:11871" placeholder="{...}" />
           </folding>
         </state>
       </provider>

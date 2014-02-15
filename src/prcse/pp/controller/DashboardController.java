@@ -42,7 +42,12 @@ package prcse.pp.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -63,6 +68,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
+import javafx.util.Duration;
 
 /**
  * FXML Controller class
@@ -146,6 +152,12 @@ public class DashboardController implements Initializable, ControlledScreen {
     private ImageView spinner_green;
     @FXML // fx:id="txtUser_Username"
     private TextField txtUsers_Username;
+    @FXML // fx:id="searchBar"
+    private Pane searchBar;
+    @FXML // fx:id="searchButtons"
+    private Pane searchButtons;
+    @FXML // fx:id="searchWrap"
+    private Pane searchWrap;
 
 
     // Set variables to allow for draggable window.
@@ -396,25 +408,33 @@ public class DashboardController implements Initializable, ControlledScreen {
         });
 
         /******************************************************
-         *              MODEL MANIPULATION METHODS
+         *                ANIMATION CONTROLS
          ******************************************************/
-        btnUserSearch.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        searchWrap.setOnMouseExited(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                String username = txtUsers_Username.getText();
-                if(username != null && ! username.trim().isEmpty())
-                {
-                    btnUserSearch.getStyleClass().add("searching");
-                    spinner_green.getStyleClass().add("show");
-                    System.out.println("Searching for " + username);
-                } else {
-                    btnUserSearch.getStyleClass().remove("searching");
-                    spinner_green.getStyleClass().add("hidden");
-                    System.out.println("Error, var unset");
-                }
+                final Timeline slideOut = new Timeline();
+                slideOut.setCycleCount(1);
+                slideOut.setAutoReverse(false);
+                final KeyValue kv1 = new KeyValue(searchBar.translateXProperty(), 0);
+                final KeyFrame kf1 = new KeyFrame(Duration.millis(500), kv1);
+                final KeyValue kv2 = new KeyValue(searchButtons.translateXProperty(), 0);
+                final KeyFrame kf2 = new KeyFrame(Duration.millis(500), kv2);
+                final KeyValue kv3 = new KeyValue(searchButtons.translateYProperty(), 0);
+                final KeyFrame kf3 = new KeyFrame(Duration.millis(300), kv3);
+                slideOut.getKeyFrames().addAll(kf1, kf2, kf3);
+                slideOut.getKeyFrames().add(kf1);
+                slideOut.play();
+
+                spinner_green.setVisible(false);
+                btnUserSearch.getStyleClass().remove("searching");
             }
         });
 
+
+        /******************************************************
+         *              MODEL MANIPULATION METHODS
+         ******************************************************/
         // Reset the textbox to "Enter a users name..." if the box is empty on focus out.
         txtUsers_Username.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
@@ -432,7 +452,31 @@ public class DashboardController implements Initializable, ControlledScreen {
             }
         });
 
+        btnUserSearch.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                btnUserSearch.getStyleClass().add("searching");
+                spinner_green.setVisible(true);
+            }
+        });
 
+
+    }
+
+    // Slide out the user panel
+    public void searchUsers()
+    {
+        final Timeline slideOut = new Timeline();
+        slideOut.setCycleCount(1);
+        slideOut.setAutoReverse(false);
+        final KeyValue kv1 = new KeyValue(searchBar.translateXProperty(), 339);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(300), kv1);
+        final KeyValue kv2 = new KeyValue(searchButtons.translateXProperty(), 339);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(300), kv2);
+        final KeyValue kv3 = new KeyValue(searchButtons.translateYProperty(), 67);
+        final KeyFrame kf3 = new KeyFrame(Duration.millis(700), kv3);
+        slideOut.getKeyFrames().addAll(kf1, kf2, kf3);
+        slideOut.play();
     }
 
     /******************************************************
