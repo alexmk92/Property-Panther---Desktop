@@ -44,18 +44,25 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Pane;
 
 /**
  * FXML Controller class
@@ -64,7 +71,19 @@ import javafx.scene.shape.Rectangle;
  */
 public class DashboardController implements Initializable, ControlledScreen {
 
-    // Refernce FXML Variables
+    /******************************************************
+     *       FXML VARIABLES - RELATIVE TO DASHBOARD.XML
+     ******************************************************/
+    @FXML // fx:id="btnUserSearch"
+    private Button btnUserSearch;
+    @FXML // fx:id="btn_create_user"
+    private Button btn_create_user;
+    @FXML // fx:id="img_create_user"
+    private ImageView img_create_user;
+    @FXML // fx:id="img_view_users"
+    private ImageView img_view_users;
+    @FXML // fx:id="btn_view_user"
+    private Button btn_view_user;
     @FXML // fx:id="Draggable"
     private BorderPane draggable;
     @FXML // fx:id="closeBtn"
@@ -97,13 +116,43 @@ public class DashboardController implements Initializable, ControlledScreen {
     private Rectangle accent5;
     @FXML // fx:id="accent6"
     private Rectangle accent6;
+    @FXML //fx:id="nav_icon1"
+    private Pane nav_icon1;
+    @FXML //fx:id="nav_bg1"
+    private Button nav_bg1;
+    @FXML //fx:id="nav_icon2"
+    private Pane nav_icon2;
+    @FXML //fx:id="nav_bg2"
+    private Button nav_bg2;
+    @FXML //fx:id="nav_icon3"
+    private Pane nav_icon3;
+    @FXML //fx:id="nav_bg3"
+    private Button nav_bg3;
+    @FXML //fx:id="nav_icon4"
+    private Pane nav_icon4;
+    @FXML //fx:id="nav_bg4"
+    private Button nav_bg4;
+    @FXML //fx:id="nav_icon5"
+    private Pane nav_icon5;
+    @FXML //fx:id="nav_bg5"
+    private Button nav_bg5;
+    @FXML //fx:id="nav_icon6"
+    private Pane nav_icon6;
+    @FXML //fx:id="nav_bg6"
+    private Button nav_bg6;
     @FXML // fx:id="title"
     private Label title;
+    @FXML // fx:id="spinner_green"
+    private ImageView spinner_green;
+    @FXML // fx:id="txtUser_Username"
+    private TextField txtUsers_Username;
+
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
     private double yOffset = 0;
     ScreensController myController;
+
     /**
      * Initializes the controller class.
      */
@@ -130,6 +179,21 @@ public class DashboardController implements Initializable, ControlledScreen {
             }
         });
 
+        /******************************************************
+         *                NAVIGATION CONTROLS
+         ******************************************************/
+        nav_icon1.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nav_bg1.getStyleClass().add("dark_hover");
+            }
+        });
+        nav_icon1.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nav_bg1.getStyleClass().remove("dark_hover");
+            }
+        });
         nav2.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -140,6 +204,19 @@ public class DashboardController implements Initializable, ControlledScreen {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 accent2.setStyle("visibility: hidden");
+            }
+        });
+        nav_icon2.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent2.setStyle("visibility: visible");
+                nav_bg2.getStyleClass().add("light_hover");
+            }
+        });
+        nav_icon2.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nav_bg2.getStyleClass().remove("light_hover");
             }
         });
         nav3.setOnMouseEntered(new EventHandler<MouseEvent>() {
@@ -154,6 +231,19 @@ public class DashboardController implements Initializable, ControlledScreen {
                 accent3.setStyle("visibility: hidden");
             }
         });
+        nav_icon3.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent3.setStyle("visibility: visible");
+                nav_bg3.getStyleClass().add("dark_hover");
+            }
+        });
+        nav_icon3.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nav_bg3.getStyleClass().remove("dark_hover");
+            }
+        });
         nav4.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -164,6 +254,19 @@ public class DashboardController implements Initializable, ControlledScreen {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 accent4.setStyle("visibility: hidden");
+            }
+        });
+        nav_icon4.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent4.setStyle("visibility: visible");
+                nav_bg4.getStyleClass().add("light_hover");
+            }
+        });
+        nav_icon4.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nav_bg4.getStyleClass().remove("light_hover");
             }
         });
         nav5.setOnMouseEntered(new EventHandler<MouseEvent>() {
@@ -178,6 +281,19 @@ public class DashboardController implements Initializable, ControlledScreen {
                 accent5.setStyle("visibility: hidden");
             }
         });
+        nav_icon5.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent5.setStyle("visibility: visible");
+                nav_bg5.getStyleClass().add("dark_hover");
+            }
+        });
+        nav_icon5.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nav_bg5.getStyleClass().remove("dark_hover");
+            }
+        });
         nav6.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -190,8 +306,88 @@ public class DashboardController implements Initializable, ControlledScreen {
                 accent6.setStyle("visibility: hidden");
             }
         });
+        nav_icon6.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent6.setStyle("visibility: visible");
+                nav_bg6.getStyleClass().add("light_hover");
+            }
+        });
+        nav_icon6.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nav_bg6.getStyleClass().remove("light_hover");
+            }
+        });
 
-        // Utility controls
+        /******************************************************
+         *                 USER SLIDEOUT PANEL
+         ******************************************************/
+        btn_create_user.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                Image add_user_black = new Image(getClass().getResourceAsStream("../view/img/add_user_black.png"));
+                img_create_user.setImage(add_user_black);
+            }
+        });
+        btn_create_user.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                Image add_user_white = new Image(getClass().getResourceAsStream("../view/img/add_user_white.png"));
+                img_create_user.setImage(add_user_white);
+            }
+        });
+        img_create_user.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                btn_create_user.getStyleClass().add("searching");
+                Image add_user_black = new Image(getClass().getResourceAsStream("../view/img/add_user_black.png"));
+                img_create_user.setImage(add_user_black);
+            }
+        });
+        img_create_user.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                btn_create_user.getStyleClass().remove("searching");
+                Image add_user_white = new Image(getClass().getResourceAsStream("../view/img/add_user_white.png"));
+                img_create_user.setImage(add_user_white);
+            }
+        });
+
+        btn_view_user.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                Image view_user_black = new Image(getClass().getResourceAsStream("../view/img/all_users_black.png"));
+                img_view_users.setImage(view_user_black);
+            }
+        });
+        btn_view_user.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                Image view_user_white = new Image(getClass().getResourceAsStream("../view/img/all_users_white.png"));
+                img_view_users.setImage(view_user_white);
+            }
+        });
+        img_view_users.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                btn_view_user.getStyleClass().add("searching");
+                Image add_user_black = new Image(getClass().getResourceAsStream("../view/img/all_users_black.png"));
+                img_view_users.setImage(add_user_black);
+            }
+        });
+        img_view_users.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                btn_view_user.getStyleClass().remove("searching");
+                Image add_user_white = new Image(getClass().getResourceAsStream("../view/img/all_users_white.png"));
+                img_view_users.setImage(add_user_white);
+            }
+        });
+
+        /******************************************************
+         *                  UTILITY CONTROLS
+         ******************************************************/
         closeBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -199,14 +395,53 @@ public class DashboardController implements Initializable, ControlledScreen {
             }
         });
 
+        /******************************************************
+         *              MODEL MANIPULATION METHODS
+         ******************************************************/
+        btnUserSearch.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                String username = txtUsers_Username.getText();
+                if(username != null && ! username.trim().isEmpty())
+                {
+                    btnUserSearch.getStyleClass().add("searching");
+                    spinner_green.getStyleClass().add("show");
+                    System.out.println("Searching for " + username);
+                } else {
+                    btnUserSearch.getStyleClass().remove("searching");
+                    spinner_green.getStyleClass().add("hidden");
+                    System.out.println("Error, var unset");
+                }
+            }
+        });
+
+        // Reset the textbox to "Enter a users name..." if the box is empty on focus out.
+        txtUsers_Username.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue) {
+                if (newPropertyValue) {
+                    System.out.println("Textfield on focus");
+                } else {
+                    System.out.println("Textfield out focus");
+                    String username = txtUsers_Username.getText();
+                    if(username.trim().isEmpty())
+                    {
+                        txtUsers_Username.setText("");
+                    }
+                }
+            }
+        });
+
 
     }
-    
+
+    /******************************************************
+     *              LOAD NEW SCREEN METHODS
+     ******************************************************/
     public void setScreenParent(ScreensController screenParent){
         myController = screenParent;
     }
 
-    // Navigation Control
     @FXML
     private void goToDashboard(ActionEvent event){
         myController.setScreen(ScreensFramework.screen1ID);

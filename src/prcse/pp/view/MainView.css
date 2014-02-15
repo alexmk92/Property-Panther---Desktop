@@ -37,6 +37,16 @@
     -fx-opacity: 0.85;
     -fx-cursor: hand;
 }
+.light_hover
+{
+    -fx-background-color: #484f52 !important;
+    -fx-opacity: 0.85 !important;
+}
+.dark_hover
+{
+    -fx-background-color: #2f3335 !important;
+    -fx-opacity: 0.85 !important;
+}
 #nav_button.active
 {
     -fx-text-fill: #76e4fc;
@@ -187,6 +197,37 @@
     -fx-background-color: #0C4C68;
     -fx-cursor: hand;
 }
+
+#btn_search
+{
+    -fx-alignment: center;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+    -fx-font-family: "Open Sans";
+    -fx-font-size: 14px;
+    -fx-text-fill: #fff;
+    -fx-background-color: #0c4661;
+    -fx-border-width: 1px;
+    -fx-border-color: #0C4C68;
+    -fx-background-image: url("img/searchbtn_white.png");
+    -fx-background-repeat: no-repeat;
+}
+#btn_search:hover
+{
+    -fx-background-image: url("img/searchbtn_dark.png");
+    -fx-cursor: hand;
+    -fx-background-color: #0C4C68;
+    -fx-border-width: 1px;
+    -fx-border-color: #0c4661;
+}
+#btn_search:focused {
+     -fx-pref-height: 45px !important;
+}
+#btn_search.searching
+{
+    -fx-border-color: #b1ec30 !important;
+    -fx-background-color: #9fd82e !important;
+}
 .searching
 {
     -fx-border-color: #b1ec30 !important;
@@ -221,7 +262,6 @@
 {
     /*-fx-background-image: url("img/navbg.png"); */
     -fx-background-color: #1e1e2d;
-    -fx-opacity: 0.9;
     -fx-border-color: #4c5c70;
 }
 
@@ -233,6 +273,37 @@
     -fx-background-color: #1e1e2d;
     -fx-border-width: 1px;
     -fx-border-color: #1c2131;
+}
+#btn_user
+{
+    -fx-alignment: center-left;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+    -fx-font-family: "Open Sans";
+    -fx-font-size: 14px;
+    -fx-text-fill: #fff;
+    -fx-background-color: #0c4661;
+    -fx-border-width: 1px;
+    -fx-pref-width: 168px;
+    -fx-pref-height: 30px;
+    -fx-border-color: #0C4C68;
+}
+#btn_user:hover
+{
+    -fx-cursor: hand;
+    -fx-border-color: #b1ec30 !important;
+    -fx-background-color: #9fd82e !important;
+    -fx-text-fill: #000;
+}
+
+#btn_user:focused
+{
+    -fx-pref-height: 31px !important;
+}
+
+.img, .img:hover
+{
+    -fx-cursor: hand !important;
 }
 
 .info_blue
@@ -303,6 +374,7 @@
     -fx-background-radius: 0em;
 }
 
+
 /* The main scrollbar **thumb** CSS class which we drag every time (movable) */
 .mylistview .scroll-bar:horizontal .thumb,
 .mylistview .scroll-bar:vertical .thumb {
@@ -310,6 +382,11 @@
     -fx-background-insets: 0, 0, 0;
     -fx-background-radius: 10em;
     -fx-padding: 0px;
+}
+
+.text-field
+{
+    -fx-focus-color: #1e1e2d !important;
 }
 
 /* The main scrollbar **thumb** CSS class on event of "hover" and "pressed" */

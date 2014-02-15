@@ -46,16 +46,14 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -72,7 +70,26 @@ import prcse.pp.model.XCell;
  * @author Angie
  */
 public class PaymentsController implements Initializable, ControlledScreen {
-    // Refernce FXML Variables
+
+    /******************************************************
+     *       FXML VARIABLES - RELATIVE TO DASHBOARD.XML
+     ******************************************************/
+    @FXML // fx:id="lstPayments"
+    private ListView lstPayments;
+    @FXML // fx:id="btnSearchPayments"
+    private Button btnSearchPayments;
+    @FXML // fx:id="spinner"
+    private ImageView spinner;
+    @FXML // fx:id="btnUserSearch"
+    private Button btnUserSearch;
+    @FXML // fx:id="btn_create_user"
+    private Button btn_create_user;
+    @FXML // fx:id="img_create_user"
+    private ImageView img_create_user;
+    @FXML // fx:id="img_view_users"
+    private ImageView img_view_users;
+    @FXML // fx:id="btn_view_user"
+    private Button btn_view_user;
     @FXML // fx:id="Draggable"
     private BorderPane draggable;
     @FXML // fx:id="closeBtn"
@@ -105,14 +122,36 @@ public class PaymentsController implements Initializable, ControlledScreen {
     private Rectangle accent5;
     @FXML // fx:id="accent6"
     private Rectangle accent6;
+    @FXML //fx:id="nav_icon1"
+    private Pane nav_icon1;
+    @FXML //fx:id="nav_bg1"
+    private Button nav_bg1;
+    @FXML //fx:id="nav_icon2"
+    private Pane nav_icon2;
+    @FXML //fx:id="nav_bg2"
+    private Button nav_bg2;
+    @FXML //fx:id="nav_icon3"
+    private Pane nav_icon3;
+    @FXML //fx:id="nav_bg3"
+    private Button nav_bg3;
+    @FXML //fx:id="nav_icon4"
+    private Pane nav_icon4;
+    @FXML //fx:id="nav_bg4"
+    private Button nav_bg4;
+    @FXML //fx:id="nav_icon5"
+    private Pane nav_icon5;
+    @FXML //fx:id="nav_bg5"
+    private Button nav_bg5;
+    @FXML //fx:id="nav_icon6"
+    private Pane nav_icon6;
+    @FXML //fx:id="nav_bg6"
+    private Button nav_bg6;
     @FXML // fx:id="title"
     private Label title;
-    @FXML // fx:id="lstPayments"
-    private ListView lstPayments;
-    @FXML // fx:id="btnSearchPayments"
-    private Button btnSearchPayments;
-    @FXML // fx:id="spinner"
-    private ImageView spinner;
+    @FXML // fx:id="spinner_green"
+    private ImageView spinner_green;
+    @FXML // fx:id="txtUser_Username"
+    private TextField txtUsers_Username;
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
@@ -210,7 +249,7 @@ public class PaymentsController implements Initializable, ControlledScreen {
         btnSearchPayments.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                String user_details = null;
+                String user_details = txtUsers_Username.getText();
 
                 if(user_details != null)
                 {

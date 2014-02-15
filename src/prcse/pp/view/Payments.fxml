@@ -149,5 +149,34 @@
 </children>
 </Pane><ListView fixedCellSize="0.0" layoutX="276.0" layoutY="381.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="591.0" styleClass="mylistview" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="pay_base" layoutX="276.0" layoutY="626.0" prefHeight="70.0" prefWidth="591.0">
 <children><Label fx:id="lblOlder" layoutX="395.0" layoutY="22.0" styleClass="info_blue" text="Click to view older payments" />
-</children></Pane>
+</children></Pane><Pane id="slide_out" layoutX="252.0" layoutY="303.0" prefHeight="35.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children>
+<Button id="btn_user" alignment="TOP_CENTER" layoutX="2.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0" text="Create User" />
+<Button id="btn_user" layoutX="170.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" text="View All Users" />
+<ImageView fitHeight="15.0" fitWidth="50.0" layoutX="135.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+<image>
+<Image url="@img/add_user_white.png" />
+</image>
+</ImageView>
+<ImageView fitHeight="17.0" fitWidth="50.0" layoutX="303.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+<image>
+<Image url="@img/all_users_white.png" />
+</image>
+</ImageView>
+</children>
+</Pane><Pane id="slide_out" layoutX="252.0" layoutY="236.0" prefHeight="68.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children>
+<TextField id="textbox_square" layoutX="14.0" layoutY="10.0" prefHeight="45.0" prefWidth="270.0" promptText="Enter a users name...">
+<font>
+<Font name="Open Sans Light" size="16.0" />
+</font>
+</TextField>
+<Button id="btn_search" layoutX="285.0" layoutY="10.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" />
+<ImageView fitHeight="21.0" fitWidth="21.0" layoutX="297.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" styleClass="hidden">
+<image>
+<Image url="@img/spinner_green.gif" />
+</image>
+</ImageView>
+</children>
+</Pane>
     </children></AnchorPane>
