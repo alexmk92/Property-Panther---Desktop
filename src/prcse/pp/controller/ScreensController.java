@@ -36,7 +36,7 @@
  * and therefore, elected the GPL Version 2 license, then the option applies
  * only if the new code is made subject to such option by the copyright
  * holder.
- */ 
+ */
 
 package prcse.pp.controller;
 
@@ -47,11 +47,9 @@ import javafx.animation.Timeline;
 import javafx.beans.property.DoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
@@ -60,10 +58,10 @@ import javafx.util.Duration;
  * @author Angie
  */
 public class ScreensController  extends StackPane {
-
     //Holds the screens to be displayed
+
     private HashMap<String, Node> screens = new HashMap<>();
-    
+
     public ScreensController() {
         super();
     }
@@ -104,18 +102,18 @@ public class ScreensController  extends StackPane {
 
             if (!getChildren().isEmpty()) {    //if there is more than one screen
                 Timeline fade = new Timeline(
-                        new KeyFrame(Duration.ZERO, new KeyValue(opacity, 0.95)),
+                        new KeyFrame(Duration.ZERO, new KeyValue(opacity, 1)),
                         new KeyFrame(new Duration(50), new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(ActionEvent t) {
-                        getChildren().remove(0);                    //remove the displayed screen
-                        getChildren().add(0, screens.get(name));     //add the screen
-                        Timeline fadeIn = new Timeline(
-                                new KeyFrame(Duration.ZERO, new KeyValue(opacity, 0.95)),
-                                new KeyFrame(new Duration(350), new KeyValue(opacity, 1.0)));
-                        fadeIn.play();
-                    }
-                }, new KeyValue(opacity, 0.95)));
+                            @Override
+                            public void handle(ActionEvent t) {
+                                getChildren().remove(0);                    //remove the displayed screen
+                                getChildren().add(0, screens.get(name));     //add the screen
+                                Timeline fadeIn = new Timeline(
+                                        new KeyFrame(Duration.ZERO, new KeyValue(opacity, 0.9)),
+                                        new KeyFrame(new Duration(750), new KeyValue(opacity, 1.0)));
+                                fadeIn.play();
+                            }
+                        }, new KeyValue(opacity, 1)));
                 fade.play();
 
             } else {

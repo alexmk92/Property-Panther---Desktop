@@ -1,46 +1,11 @@
-/*
- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
- *
- * Copyright (c) 2013 Oracle and/or its affiliates. All rights reserved.
- *
- * The contents of this file are subject to the terms of either the GNU
- * General Public License Version 2 only ("GPL") or the Common Development
- * and Distribution License("CDDL") (collectively, the "License"). You
- * may not use this file except in compliance with the License. You can
- * obtain a copy of the License at
- * https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html
- * or packager/legal/LICENSE.txt.  See the License for the specific
- * language governing permissions and limitations under the License.
- *
- * When distributing the software, include this License Header Notice in each
- * file and include the License file at packager/legal/LICENSE.txt.
- *
- * GPL Classpath Exception:
- * Oracle designates this particular file as subject to the "Classpath"
- * exception as provided by Oracle in the GPL Version 2 section of the License
- * file that accompanied this code.
- *
- * Modifications:
- * If applicable, add the following below the License Header, with the fields
- * enclosed by brackets [] replaced by your own identifying information:
- * "Portions Copyright [year] [name of copyright owner]"
- *
- * Contributor(s):
- * If you wish your version of this file to be governed by only the CDDL or
- * only the GPL Version 2, indicate your decision by adding "[Contributor]
- * elects to include this software in this distribution under the [CDDL or GPL
- * Version 2] license."  If you don't indicate a single choice of license, a
- * recipient has the option to distribute your version of this file under
- * either the CDDL, the GPL Version 2 or to extend the choice of license to
- * its licensees as provided above.  However, if you add GPL Version 2 code
- * and therefore, elected the GPL Version 2 license, then the option applies
- * only if the new code is made subject to such option by the copyright
- * holder.
- */ 
-
 package prcse.pp.controller;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -54,20 +19,19 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.util.Callback;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
-import prcse.pp.model.XCell;
+import javafx.util.Duration;
+import prcse.pp.model.PaymentCell;
 
 
 /**
  * FXML Controller class
  *
- * @author Angie
+ * @author PRCSE
  */
 public class PaymentsController implements Initializable, ControlledScreen {
 
@@ -152,6 +116,22 @@ public class PaymentsController implements Initializable, ControlledScreen {
     private ImageView spinner_green;
     @FXML // fx:id="txtUser_Username"
     private TextField txtUsers_Username;
+    @FXML // fx:id="searchBar"
+    private Pane searchBar;
+    @FXML // fx:id="searchButtons"
+    private Pane searchButtons;
+    @FXML // fx:id="searchWrap"
+    private Pane searchWrap;
+    @FXML // fx:id="txtEmail"
+    private TextField txtEmail;
+    @FXML // fx:id="txtName"
+    private TextField txtName;
+    @FXML // fx:id="widget_right"
+    private Pane widget_right;
+    @FXML // fx:id="widget_top_left"
+    private Pane widget_top_left;
+    @FXML // fx:id="widget_bottom_left"
+    private Pane widget_bottom_left;
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
@@ -245,14 +225,42 @@ public class PaymentsController implements Initializable, ControlledScreen {
             }
         });
 
-        // Search payment button handler
+        /******************************************************
+         *              MODEL MANIPULATION METHODS
+         ******************************************************/
+        // Reset the textbox to "Enter a users name..." if the box is empty on focus out.
+        txtUsers_Username.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue) {
+                resetText(txtUsers_Username, newPropertyValue);
+            }
+        });
+        txtName.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue) {
+                resetText(txtName, newPropertyValue);
+            }
+        });
+        txtEmail.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue) {
+                resetText(txtEmail, newPropertyValue);
+            }
+        });
+
+        btnUserSearch.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                btnUserSearch.getStyleClass().add("searching");
+                spinner_green.setVisible(true);
+            }
+        });
         btnSearchPayments.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 String user_details = txtUsers_Username.getText();
 
-                if(user_details != null)
-                {
+                if (user_details != null) {
                     btnSearchPayments.getStyleClass().add("searching");
                     btnSearchPayments.setText("Searching...");
                     spinner.getStyleClass().remove("hidden");
@@ -271,7 +279,7 @@ public class PaymentsController implements Initializable, ControlledScreen {
         lstPayments.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
             @Override
             public ListCell<String> call(ListView<String> param) {
-                return new XCell();
+                return new PaymentCell();
             }
         });
 
@@ -283,7 +291,89 @@ public class PaymentsController implements Initializable, ControlledScreen {
             }
         });
 
+        searchWrap.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                hideUsers();
+            }
+        });
 
+    }
+
+    /******************************************************
+     *                ANIMATION CONTROLS
+     ******************************************************/
+    public void showUsers()
+    {
+        final Timeline slideOut = new Timeline();
+        slideOut.setCycleCount(1);
+        slideOut.setAutoReverse(false);
+        final KeyValue kv1 = new KeyValue(searchBar.translateXProperty(), 339);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(300), kv1);
+        final KeyValue kv2 = new KeyValue(searchButtons.translateXProperty(), 339);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(300), kv2);
+        final KeyValue kv3 = new KeyValue(searchButtons.translateYProperty(), 67);
+        final KeyFrame kf3 = new KeyFrame(Duration.millis(700), kv3);
+        final KeyValue kv4 = new KeyValue(widget_top_left.opacityProperty(), 0.5);
+        final KeyFrame kf4 = new KeyFrame(Duration.millis(200), kv4);
+        final KeyValue kv5 = new KeyValue(widget_bottom_left.opacityProperty(), 0.5);
+        final KeyFrame kf5 = new KeyFrame(Duration.millis(200), kv5);
+        final KeyValue kv6 = new KeyValue(widget_right.opacityProperty(), 0.5);
+        final KeyFrame kf6 = new KeyFrame(Duration.millis(200), kv6);
+        slideOut.getKeyFrames().addAll(kf1, kf2, kf3, kf4, kf5, kf6);
+        slideOut.play();
+
+        txtUsers_Username.requestFocus();
+    }
+
+    public void hideUsers()
+    {
+        final Timeline slideBack = new Timeline();
+        slideBack.setCycleCount(1);
+        slideBack.setAutoReverse(false);
+        final KeyValue kv1 = new KeyValue(searchBar.translateXProperty(), 0);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(300), kv1);
+        final KeyValue kv2 = new KeyValue(searchButtons.translateXProperty(), 0);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(300), kv2);
+        final KeyValue kv3 = new KeyValue(searchButtons.translateYProperty(), 0);
+        final KeyFrame kf3 = new KeyFrame(Duration.millis(700), kv3);
+        final KeyValue kv4 = new KeyValue(widget_top_left.opacityProperty(), 1);
+        final KeyFrame kf4 = new KeyFrame(Duration.millis(200), kv4);
+        final KeyValue kv5 = new KeyValue(widget_bottom_left.opacityProperty(), 1);
+        final KeyFrame kf5 = new KeyFrame(Duration.millis(200), kv5);
+        final KeyValue kv6 = new KeyValue(widget_right.opacityProperty(), 1);
+        final KeyFrame kf6 = new KeyFrame(Duration.millis(200), kv6);
+        slideBack.getKeyFrames().addAll(kf1, kf2, kf3, kf4, kf5, kf6);
+        slideBack.play();
+
+        txtUsers_Username.setText("");
+        spinner_green.setVisible(false);
+        btnUserSearch.getStyleClass().remove("searching");
+    }
+
+    public void slideTitleIn()
+    {
+        final Timeline slideDown = new Timeline();
+        slideDown.setCycleCount(1);
+        slideDown.setAutoReverse(false);
+        final KeyValue kv1 = new KeyValue(title.translateYProperty(), 120);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(500), kv1);
+        slideDown.getKeyFrames().add(kf1);
+        slideDown.play();
+    }
+
+    public void resetText(TextField txt, Boolean newPropertyValue)
+    {
+        if (newPropertyValue) {
+            System.out.println("Textfield on focus");
+        } else {
+            System.out.println("Textfield out focus");
+            String username = txt.getText();
+            if(username.trim().isEmpty())
+            {
+                txt.setText("");
+            }
+        }
     }
 
     // Set the parent of the new screen
@@ -294,26 +384,32 @@ public class PaymentsController implements Initializable, ControlledScreen {
     // Navigation Control
     @FXML
     private void goToDashboard(ActionEvent event){
+        hideUsers();
         myController.setScreen(ScreensFramework.screen1ID);
     }
     @FXML
     private void goToUsers(ActionEvent event){
+        hideUsers();
         myController.setScreen(ScreensFramework.screen2ID);
     }
     @FXML
     private void goToProperties(ActionEvent event){
-        myController.setScreen(ScreensFramework.screen3ID);
+        hideUsers();
+        myController.setScreen("../view/Properties.fxml");
     }
     @FXML
     private void goToPayments(ActionEvent event){
+        hideUsers();
        myController.setScreen(ScreensFramework.screen4ID);
     }
     @FXML
     private void goToMessages(ActionEvent event){
+        hideUsers();
        myController.setScreen(ScreensFramework.screen5ID);
     }
     @FXML
     private void goToSettings(ActionEvent event){
+        hideUsers();
         myController.setScreen(ScreensFramework.screen6ID);
     }
 }

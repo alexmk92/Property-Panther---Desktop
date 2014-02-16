@@ -9,9 +9,9 @@
 
 <AnchorPane id="main__body" maxHeight="720.0" maxWidth="1200.0" minHeight="720.0" minWidth="1200.0" prefHeight="720.0" prefWidth="1250.0" stylesheets="@MainView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prcse.pp.controller.DashboardController">
     <children>
-<Pane fx:id="searchWrap" layoutX="-87.0" layoutY="236.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="680.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="searchWrap" layoutX="-87.0" layoutY="236.0" maxWidth="680.0" minWidth="680.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <children><Pane id="slide_out" fx:id="searchButtons" prefHeight="35.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-<children><Button id="btn_user" fx:id="btn_create_user" alignment="TOP_CENTER" layoutX="2.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0" text="Create User" /><Button id="btn_user" fx:id="btn_view_user" layoutX="170.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" text="View All Users" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><ImageView fx:id="img_create_user" fitHeight="15.0" fitWidth="50.0" layoutX="135.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+<children><Button id="btn_user" fx:id="btn_create_user" alignment="TOP_CENTER" layoutX="2.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToAddUser" prefHeight="25.0" prefWidth="169.0" text="Create User" /><Button id="btn_user" fx:id="btn_view_user" layoutX="170.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToAllUsers" prefHeight="25.0" text="View All Users" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><ImageView fx:id="img_create_user" fitHeight="15.0" fitWidth="50.0" layoutX="135.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
 <image>
 <Image url="@img/add_user_white.png" />
 </image></ImageView><ImageView fx:id="img_view_users" fitHeight="17.0" fitWidth="50.0" layoutX="303.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="img" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
@@ -23,11 +23,11 @@
 <children><TextField id="textbox_square" fx:id="txtUsers_Username" layoutX="14.0" layoutY="10.0" prefHeight="45.0" prefWidth="270.0" promptText="Enter a users name...">
 <font>
 <Font name="Open Sans Light" size="16.0" />
-</font></TextField><Button id="btn_search" fx:id="btnUserSearch" layoutX="285.0" layoutY="10.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" /><ImageView fx:id="spinner_green" fitHeight="21.0" fitWidth="21.0" layoutX="297.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" styleClass="hidden">
+</font></TextField><Button id="btn_search" fx:id="btnUserSearch" layoutX="285.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToUsers" prefHeight="44.0" prefWidth="44.0" /><ImageView fx:id="spinner_green" fitHeight="21.0" fitWidth="21.0" layoutX="297.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" styleClass="hidden">
 <image>
 <Image url="@img/spinner_green.gif" />
 </image></ImageView>
-</children></Pane><Pane layoutX="13.0" prefHeight="70.0" prefWidth="334.0" />
+</children></Pane>
 </children>
 </Pane><AnchorPane prefHeight="720.0" prefWidth="249.0">
         <children><Label id="username_label" layoutX="27.0" layoutY="325.0" styleClass="button_text" text="Inbox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="username_label" layoutX="27.0" layoutY="255.0" styleClass="button_text" text="Dashboard" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Rectangle id="nav_active_accent" fill="DODGERBLUE" height="70.0" layoutY="235.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="username_label" layoutX="27.0" layoutY="185.0" styleClass="button_text" text="Alex Sims" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><ImageView id="nav_branding" fitHeight="85.0" fitWidth="200.0" layoutX="23.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
@@ -59,15 +59,15 @@
 </AnchorPane>
 <AnchorPane fx:id="nav2" layoutX="-1.0" layoutY="235.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <children>
-                <Button id="nav_button" fx:id="nav_bg2" contentDisplay="CENTER" mnemonicParsing="false" onAction="#searchUsers" prefHeight="70.0" prefWidth="251.0" styleClass="light" text="Users" textFill="WHITE">
+                <Button id="nav_button" fx:id="nav_bg2" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showUsers" prefHeight="70.0" prefWidth="251.0" styleClass="light" text="Users" textFill="WHITE">
 <font>
 <Font size="20.0" />
-</font></Button><Rectangle id="nav_active_accent" fx:id="accent2" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="3.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_2" fx:id="nav_icon2" layoutX="200.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#searchUsers" prefHeight="36.0" prefWidth="36.0" styleClass="img" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+</font></Button><Rectangle id="nav_active_accent" fx:id="accent2" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="3.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_2" fx:id="nav_icon2" layoutX="200.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#showUsers" prefHeight="36.0" prefWidth="36.0" styleClass="img" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
 </children>
 </AnchorPane>
 <AnchorPane fx:id="nav3" layoutY="305.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <children>
-                <Button id="nav_button" fx:id="nav_bg3" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" styleClass="dark" text="Properties" textFill="WHITE">
+                <Button id="nav_button" fx:id="nav_bg3" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToProperties" prefHeight="70.0" prefWidth="250.0" styleClass="dark" text="Properties" textFill="WHITE">
 <font>
 <Font size="20.0" />
 </font></Button>
@@ -126,7 +126,7 @@
 <String fx:value="divider" />
 <String fx:value="vertical" />
 </styleClass>
-</Rectangle><Rectangle fill="#4c5c70" height="1.0" layoutX="252.0" layoutY="90.0" stroke="TRANSPARENT" strokeType="INSIDE" width="949.0" /><Rectangle fill="#00000090" height="1.0" layoutX="252.0" layoutY="89.0" stroke="TRANSPARENT" strokeType="INSIDE" width="948.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="lbl_title" fx:id="title" layoutX="275.0" layoutY="20.0" styleClass="title" text="Your Dashboard" textFill="#72cee5">
+</Rectangle><Rectangle fill="#4c5c70" height="1.0" layoutX="252.0" layoutY="90.0" stroke="TRANSPARENT" strokeType="INSIDE" width="949.0" /><Rectangle fill="#00000090" height="1.0" layoutX="252.0" layoutY="89.0" stroke="TRANSPARENT" strokeType="INSIDE" width="948.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="lbl_title" fx:id="title" layoutX="274.0" layoutY="19.0" styleClass="title" text="Your Dashboard" textFill="#72cee5">
 <font>
 <Font name="Open Sans Light" size="40.0" />
 </font></Label>

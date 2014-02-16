@@ -36,14 +36,12 @@
  * and therefore, elected the GPL Version 2 license, then the option applies
  * only if the new code is made subject to such option by the copyright
  * holder.
- */ 
+ */
 
 package prcse.pp.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -61,7 +59,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -407,30 +404,12 @@ public class DashboardController implements Initializable, ControlledScreen {
             }
         });
 
-        /******************************************************
-         *                ANIMATION CONTROLS
-         ******************************************************/
         searchWrap.setOnMouseExited(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                final Timeline slideOut = new Timeline();
-                slideOut.setCycleCount(1);
-                slideOut.setAutoReverse(false);
-                final KeyValue kv1 = new KeyValue(searchBar.translateXProperty(), 0);
-                final KeyFrame kf1 = new KeyFrame(Duration.millis(500), kv1);
-                final KeyValue kv2 = new KeyValue(searchButtons.translateXProperty(), 0);
-                final KeyFrame kf2 = new KeyFrame(Duration.millis(500), kv2);
-                final KeyValue kv3 = new KeyValue(searchButtons.translateYProperty(), 0);
-                final KeyFrame kf3 = new KeyFrame(Duration.millis(300), kv3);
-                slideOut.getKeyFrames().addAll(kf1, kf2, kf3);
-                slideOut.getKeyFrames().add(kf1);
-                slideOut.play();
-
-                spinner_green.setVisible(false);
-                btnUserSearch.getStyleClass().remove("searching");
+                hideUsers();
             }
         });
-
 
         /******************************************************
          *              MODEL MANIPULATION METHODS
@@ -459,12 +438,12 @@ public class DashboardController implements Initializable, ControlledScreen {
                 spinner_green.setVisible(true);
             }
         });
-
-
     }
 
-    // Slide out the user panel
-    public void searchUsers()
+    /******************************************************
+     *                ANIMATION CONTROLS
+     ******************************************************/
+    public void showUsers()
     {
         final Timeline slideOut = new Timeline();
         slideOut.setCycleCount(1);
@@ -477,6 +456,38 @@ public class DashboardController implements Initializable, ControlledScreen {
         final KeyFrame kf3 = new KeyFrame(Duration.millis(700), kv3);
         slideOut.getKeyFrames().addAll(kf1, kf2, kf3);
         slideOut.play();
+
+    }
+
+    public void hideUsers()
+    {
+        final Timeline slideBack = new Timeline();
+        slideBack.setCycleCount(1);
+        slideBack.setAutoReverse(false);
+        final KeyValue kv1 = new KeyValue(searchBar.translateXProperty(), 0);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(500), kv1);
+        final KeyValue kv2 = new KeyValue(searchButtons.translateXProperty(), 0);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(500), kv2);
+        final KeyValue kv3 = new KeyValue(searchButtons.translateYProperty(), 0);
+        final KeyFrame kf3 = new KeyFrame(Duration.millis(300), kv3);
+        slideBack.getKeyFrames().addAll(kf1, kf2, kf3);
+        slideBack.play();
+
+        txtUsers_Username.setText("");
+        spinner_green.setVisible(false);
+        btnUserSearch.getStyleClass().remove("searching");
+    }
+
+    public void slideTitleIn()
+    {
+            final Timeline slideDown = new Timeline();
+            slideDown.setCycleCount(1);
+            slideDown.setAutoReverse(false);
+            final KeyValue kv1 = new KeyValue(title.translateYProperty(), 120);
+            final KeyFrame kf1 = new KeyFrame(Duration.millis(800), kv1);
+            slideDown.getKeyFrames().add(kf1);
+            slideDown.play();
+
     }
 
     /******************************************************
@@ -488,26 +499,42 @@ public class DashboardController implements Initializable, ControlledScreen {
 
     @FXML
     private void goToDashboard(ActionEvent event){
+        hideUsers();
         myController.setScreen(ScreensFramework.screen1ID);
-    }
+}
     @FXML
     private void goToUsers(ActionEvent event){
+
         myController.setScreen(ScreensFramework.screen2ID);
     }
     @FXML
     private void goToProperties(ActionEvent event){
+        hideUsers();
         myController.setScreen(ScreensFramework.screen3ID);
     }
     @FXML
     private void goToPayments(ActionEvent event){
+        hideUsers();
         myController.setScreen(ScreensFramework.screen4ID);
     }
     @FXML
     private void goToMessages(ActionEvent event){
+        hideUsers();
         myController.setScreen(ScreensFramework.screen5ID);
     }
     @FXML
     private void goToSettings(ActionEvent event){
+        hideUsers();
         myController.setScreen(ScreensFramework.screen6ID);
+    }
+    @FXML
+    private void goToAddUser(ActionEvent event){
+        hideUsers();
+        myController.setScreen(ScreensFramework.screen7ID);
+    }
+    @FXML
+    private void goToAllUsers(ActionEvent event){
+        hideUsers();
+        myController.setScreen(ScreensFramework.screen8ID);
     }
 }

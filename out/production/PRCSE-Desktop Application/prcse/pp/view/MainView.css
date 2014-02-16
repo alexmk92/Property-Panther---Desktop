@@ -115,12 +115,12 @@
 }
 #nav_icon_2.active
 {
-    -fx-background-image: url("img/graph_vert_blue.png");
+    -fx-background-image: url("img/user_blue.png");
     -fx-background-repeat: no-repeat;
 }
 #nav_icon_3.active
 {
-    -fx-background-image: url("img/email_blue.png");
+    -fx-background-image: url("img/properties_blue.png");
     -fx-background-repeat: no-repeat;
 }
 #nav_icon_4.active
@@ -255,7 +255,27 @@
 {
     -fx-text-fill: #fefefe;
     -fx-font-size: 16px;
+    -fx-font-family: "Open Sans" !important;
+}
+.profile
+{
+    -fx-text-fill: #71cee5 !important;
+    -fx-font-size: 24px !important;
+}
+.caption
+{
+   -fx-font-size: 14px !important;
+    -fx-font-family: "Open Sans Light" !important;
+}
+.caption_small
+{
+    -fx-font-size: 16px;
     -fx-font-family: "Open Sans Light";
+}
+.caption_large
+{
+    -fx-font-size: 20px !important;
+    -fx-font-family: "Open Sans Light" !important;
 }
 
 #slide_out
@@ -264,10 +284,18 @@
     -fx-background-color: #1e1e2d;
     -fx-border-color: #4c5c70;
 }
-
 #textbox_square
 { -fx-background-radius: 0px; }
 
+.searchWidgetText
+{
+    -fx-font-size: 15px;
+    -fx-pref-height: 35px;
+    -fx-pref-width: 235px !important;
+}
+.submit{
+    -fx-pref-width: 85px !important;
+}
 #pay_base
 {
     -fx-background-color: #1e1e2d;
@@ -318,43 +346,64 @@
     -fx-cursor: hand;
 }
 
-/* List View Styles */
-.list-cell:filled:selected:focused, .list-cell:filled:selected {
-    -fx-background-color: #232335;
-    -fx-text-fill: #71cee5 !important;
-    -fx-border-width: 0;
-}
-
-.list-cell {
-    -fx-background-color: #1e1e2d;
-    -fx-pref-height: 61px;
-    -fx-opacity: 0.9;
-    -fx-border-insets: 0;
+.window
+{
+    -fx-background-color: rgba(0, 0, 0, 0.35) !important;
+    -fx-border-color: rgba(255, 255, 255, 0.1);
+    -fx-border-radius: 1px;
     -fx-border-width: 1px;
-    -fx-border-color: #191922 transparent #262634 transparent;
-    -fx-text-alignment: center;
+    }
+.btn_actions
+{
+    -fx-opacity: 1;
+    -fx-alignment: center;
+    -fx-border-radius: 0px;
+    -fx-background-radius: 0px;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-pref-width: 125px;
+    -fx-pref-height: 30px;
+    -fx-text-fill: #fff;
+}
+.btn_actions:hover
+{
+    -fx-cursor: hand;
+    -fx-border-color: #b1ec30 !important;
+    -fx-background-color: #9fd82e !important;
+    -fx-text-fill: #000;
+}
+.search_labels {
     -fx-font-size: 16px;
-
+    -fx-font-family: "Open Sans Light";
+}
+.btn_actions.blue {
+    -fx-background-color: #0f435c;
+}
+.btn_actions.blueWide {
+    -fx-background-color: #0f435c;
+    -fx-pref-width: 155px;
+}
+.btn_actions.blueThin {
+    -fx-background-color: #0f435c;
+    -fx-pref-width: 90px;
+    -fx-translate-x: 35;
 }
 
 .list-cell:filled:hover {
-    -fx-background-color: #232335;
+    -fx-background-color: rgba(0,0,0,0.35);
     -fx-text-fill: #71cee5 !important;
     -fx-cursor: hand;
 }
 
-
-/** CSS **/
 .mylistview{
-    -fx-background-color: #2c3143;
+    -fx-background-color: rgba(0,0,0,0.25);
     -fx-border-radius: 0;
 }
 
 /* The main scrollbar CSS class of ListView */
 .mylistview .scroll-bar:horizontal ,
 .mylistview .scroll-bar:vertical{
-    -fx-background-color:#1e1e2d;
-    -fx-opacity: 0;
+    -fx-background-color: rgba(0,0,0,0.5);
     -fx-pref-width: 4px;
     -fx-pref-height: 0px;
 }
@@ -378,7 +427,7 @@
 /* The main scrollbar **thumb** CSS class which we drag every time (movable) */
 .mylistview .scroll-bar:horizontal .thumb,
 .mylistview .scroll-bar:vertical .thumb {
-    -fx-background-color: #92d6dd;
+    -fx-background-color: rgba(120,203,224,0.35);
     -fx-background-insets: 0, 0, 0;
     -fx-background-radius: 10em;
     -fx-padding: 0px;
@@ -392,6 +441,19 @@
 /* The main scrollbar **thumb** CSS class on event of "hover" and "pressed" */
 .mylistview .scroll-bar .thumb:hover,
 .mylistview .scroll-bar .thumb:pressed{
-    -fx-opacity: 0.8;
+    -fx-background-color: rgba(120,203,224,0.4);
+}
+
+/* List View Styles */
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: rgba(0,0,0,0.35);
+    -fx-text-fill: #fff !important;
+    -fx-border-width: 0;
+}
+
+.list-cell {
+    -fx-background-color: rgba(0,0,0,0.25);
+    -fx-pref-height: 61px;
+    -fx-font-size: 16px;
 }
 

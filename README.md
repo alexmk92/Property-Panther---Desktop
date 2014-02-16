@@ -1,1 +1,0 @@
-# Property Panther - Admin Application

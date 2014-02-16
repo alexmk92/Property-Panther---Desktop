@@ -55,16 +55,20 @@ public class ScreensFramework extends Application {
 
     public static String screen1ID = "Dashboard";
     public static String screen1File = "../view/Dashboard.fxml";
-    public static String screen2ID = "users";
-    public static String screen2File = "../view/users.fxml";
-    public static String screen3ID = "properties";
-    public static String screen3File = "../view/properties.fxml";
-    public static String screen4ID = "payments";
-    public static String screen4File = "../view/payments.fxml";
-    public static String screen5ID = "messages";
-    public static String screen5File = "../view/messages.fxml";
-    public static String screen6ID = "settings";
-    public static String screen6File = "../view/settings.fxml";
+    public static String screen2ID = "Users";
+    public static String screen2File = "../view/Users.fxml";
+    public static String screen3ID = "Properties";
+    public static String screen3File = "../view/Properties.fxml";
+    public static String screen4ID = "Payments";
+    public static String screen4File = "../view/Payments.fxml";
+    public static String screen5ID = "Messages";
+    public static String screen5File = "../view/Messages.fxml";
+    public static String screen6ID = "Settings";
+    public static String screen6File = "../view/Settings.fxml";
+    public static String screen7ID = "Add User";
+    public static String screen7File = "../view/AddUser.fxml";
+    public static String screen8ID = "View User";
+    public static String screen8File = "../view/UserDetails.fxml";
 
 
     @Override
@@ -77,6 +81,8 @@ public class ScreensFramework extends Application {
         mainContainer.loadScreen(ScreensFramework.screen4ID, ScreensFramework.screen4File);
         mainContainer.loadScreen(ScreensFramework.screen5ID, ScreensFramework.screen5File);
         mainContainer.loadScreen(ScreensFramework.screen6ID, ScreensFramework.screen6File);
+        mainContainer.loadScreen(ScreensFramework.screen7ID, ScreensFramework.screen7File);
+        mainContainer.loadScreen(ScreensFramework.screen8ID, ScreensFramework.screen8File);
 
         mainContainer.setScreen(ScreensFramework.screen1ID);
 
