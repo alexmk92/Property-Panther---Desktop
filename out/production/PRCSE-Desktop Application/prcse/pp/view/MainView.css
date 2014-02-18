@@ -53,8 +53,8 @@
     -fx-font-family: "fonts/OpenSans-Regular.ttf";
     -fx-font-size: 20px;
 }
-.hidden { visibility: hidden; }
-.show   { visibility: visible; }
+.hidden { visibility: hidden !important; }
+.show   { visibility: visible !important; }
 
 #nav_active_accent:hover,
 #nav_active_accent

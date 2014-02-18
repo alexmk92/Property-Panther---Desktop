@@ -10,15 +10,18 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TitledPane;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
@@ -183,16 +186,16 @@ public class PropertyController implements Initializable, ControlledScreen {
                 accent4.setStyle("visibility: hidden");
             }
         });
-        nav3.setOnMouseEntered(new EventHandler<MouseEvent>() {
+        nav2.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent3.setStyle("visibility: visible");
+                accent2.setStyle("visibility: visible");
             }
         });
-        nav3.setOnMouseExited(new EventHandler<MouseEvent>() {
+        nav2.setOnMouseExited(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent3.setStyle("visibility: hidden");
+                accent2.setStyle("visibility: hidden");
             }
         });
         nav5.setOnMouseEntered(new EventHandler<MouseEvent>() {
@@ -267,9 +270,18 @@ public class PropertyController implements Initializable, ControlledScreen {
             }
         });
 
+        searchWrap.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nav_bg2.getStyleClass().add("light_hover");
+                accent2.setStyle("visibility: visible");
+            }
+        });
         searchWrap.setOnMouseExited(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
+                nav_bg2.getStyleClass().remove("light_hover");
+                accent2.setStyle("visibility: hidden");
                 hideUsers();
             }
         });

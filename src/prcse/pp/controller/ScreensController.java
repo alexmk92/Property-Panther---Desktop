@@ -109,7 +109,7 @@ public class ScreensController  extends StackPane {
                                 getChildren().remove(0);                    //remove the displayed screen
                                 getChildren().add(0, screens.get(name));     //add the screen
                                 Timeline fadeIn = new Timeline(
-                                        new KeyFrame(Duration.ZERO, new KeyValue(opacity, 0.9)),
+                                        new KeyFrame(Duration.ZERO, new KeyValue(opacity, 1.0)),
                                         new KeyFrame(new Duration(750), new KeyValue(opacity, 1.0)));
                                 fadeIn.play();
                             }
@@ -120,7 +120,7 @@ public class ScreensController  extends StackPane {
                 setOpacity(0.9);
                 getChildren().add(screens.get(name));       //no one else been displayed, then just show
                 Timeline fadeIn = new Timeline(
-                        new KeyFrame(Duration.ZERO, new KeyValue(opacity, 0.95)),
+                        new KeyFrame(Duration.ZERO, new KeyValue(opacity, 1.0)),
                         new KeyFrame(new Duration(500), new KeyValue(opacity, 1.0)));
                 fadeIn.play();
             }

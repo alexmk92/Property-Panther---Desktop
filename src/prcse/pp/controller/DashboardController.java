@@ -404,9 +404,18 @@ public class DashboardController implements Initializable, ControlledScreen {
             }
         });
 
+        searchWrap.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nav_bg2.getStyleClass().add("light_hover");
+                accent2.setStyle("visibility: visible");
+            }
+        });
         searchWrap.setOnMouseExited(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
+                nav_bg2.getStyleClass().remove("light_hover");
+                accent2.setStyle("visibility: hidden");
                 hideUsers();
             }
         });

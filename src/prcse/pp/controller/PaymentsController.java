@@ -7,6 +7,7 @@ import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Service;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -132,6 +133,8 @@ public class PaymentsController implements Initializable, ControlledScreen {
     private Pane widget_top_left;
     @FXML // fx:id="widget_bottom_left"
     private Pane widget_bottom_left;
+    @FXML // fx:id="body"
+    private AnchorPane body;
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
@@ -144,6 +147,20 @@ public class PaymentsController implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle resources)
     {
+        // Set opacity of widgets
+        widget_right.setOpacity(0.3);
+        widget_top_left.setOpacity(0.3);
+        widget_bottom_left.setOpacity(0.3);
+
+        // Load the scene in on mouseover
+        body.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                animateIn();
+                resetStyles();
+            }
+        });
+
         // Set the display graphic for title
         Effect glow = new Glow(0.3);
         title.setEffect(glow);
@@ -164,16 +181,19 @@ public class PaymentsController implements Initializable, ControlledScreen {
             }
         });
 
-        nav1.setOnMouseEntered(new EventHandler<MouseEvent>() {
+/******************************************************
+ *                NAVIGATION CONTROLS
+ ******************************************************/
+        nav_icon1.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent1.setStyle("visibility: visible");
+                nav_bg1.getStyleClass().add("dark_hover");
             }
         });
-        nav1.setOnMouseExited(new EventHandler<MouseEvent>() {
+        nav_icon1.setOnMouseExited(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent1.setStyle("visibility: hidden");
+                nav_bg1.getStyleClass().remove("dark_hover");
             }
         });
         nav2.setOnMouseEntered(new EventHandler<MouseEvent>() {
@@ -188,6 +208,19 @@ public class PaymentsController implements Initializable, ControlledScreen {
                 accent2.setStyle("visibility: hidden");
             }
         });
+        nav_icon2.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent2.setStyle("visibility: visible");
+                nav_bg2.getStyleClass().add("light_hover");
+            }
+        });
+        nav_icon2.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nav_bg2.getStyleClass().remove("light_hover");
+            }
+        });
         nav3.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -198,6 +231,32 @@ public class PaymentsController implements Initializable, ControlledScreen {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 accent3.setStyle("visibility: hidden");
+            }
+        });
+        nav_icon3.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent3.setStyle("visibility: visible");
+                nav_bg3.getStyleClass().add("dark_hover");
+            }
+        });
+        nav_icon3.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nav_bg3.getStyleClass().remove("dark_hover");
+            }
+        });
+        nav_icon4.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent4.setStyle("visibility: visible");
+                nav_bg4.getStyleClass().add("light_hover");
+            }
+        });
+        nav_icon4.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nav_bg4.getStyleClass().remove("light_hover");
             }
         });
         nav5.setOnMouseEntered(new EventHandler<MouseEvent>() {
@@ -212,6 +271,19 @@ public class PaymentsController implements Initializable, ControlledScreen {
                 accent5.setStyle("visibility: hidden");
             }
         });
+        nav_icon5.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent5.setStyle("visibility: visible");
+                nav_bg5.getStyleClass().add("dark_hover");
+            }
+        });
+        nav_icon5.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nav_bg5.getStyleClass().remove("dark_hover");
+            }
+        });
         nav6.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -222,6 +294,19 @@ public class PaymentsController implements Initializable, ControlledScreen {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 accent6.setStyle("visibility: hidden");
+            }
+        });
+        nav_icon6.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                accent6.setStyle("visibility: visible");
+                nav_bg6.getStyleClass().add("light_hover");
+            }
+        });
+        nav_icon6.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nav_bg6.getStyleClass().remove("light_hover");
             }
         });
 
@@ -291,9 +376,18 @@ public class PaymentsController implements Initializable, ControlledScreen {
             }
         });
 
+        searchWrap.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nav2.getStyleClass().add("light_hover");
+                accent2.setStyle("visibility: visible");
+            }
+        });
         searchWrap.setOnMouseExited(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
+                nav2.getStyleClass().remove("light_hover");
+                accent2.setStyle("visibility: hidden");
                 hideUsers();
             }
         });
@@ -351,6 +445,52 @@ public class PaymentsController implements Initializable, ControlledScreen {
         btnUserSearch.getStyleClass().remove("searching");
     }
 
+    public void animateIn()
+    {
+        final Timeline load_scene = new Timeline();
+        load_scene.setCycleCount(1);
+        load_scene.setAutoReverse(false);
+        final KeyValue kv0 = new KeyValue(title.layoutYProperty(), 20);
+        final KeyFrame kf0 = new KeyFrame(Duration.millis(250), kv0);
+        final KeyValue kv1 = new KeyValue(widget_right.opacityProperty(), 1);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(500), kv1);
+        final KeyValue kv2 = new KeyValue(widget_top_left.opacityProperty(), 1);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(500), kv2);
+        final KeyValue kv3 = new KeyValue(widget_bottom_left.opacityProperty(), 1);
+        final KeyFrame kf3 = new KeyFrame(Duration.millis(500), kv3);
+        final KeyValue kv4 = new KeyValue(widget_right.translateYProperty(), -625);
+        final KeyFrame kf4 = new KeyFrame(Duration.millis(350), kv4);
+        final KeyValue kv5 = new KeyValue(widget_bottom_left.translateXProperty(), 888);
+        final KeyFrame kf5 = new KeyFrame(Duration.millis(350), kv5);
+        final KeyValue kv6 = new KeyValue(widget_top_left.translateXProperty(), -937);
+        final KeyFrame kf6 = new KeyFrame(Duration.millis(350), kv6);
+        load_scene.getKeyFrames().addAll(kf0, kf1, kf2, kf3, kf4, kf5, kf6);
+        load_scene.play();
+    }
+
+    public void animateOut()
+    {
+        final Timeline load_scene = new Timeline();
+        load_scene.setCycleCount(1);
+        load_scene.setAutoReverse(false);
+        final KeyValue kv0 = new KeyValue(title.layoutYProperty(), -100);
+        final KeyFrame kf0 = new KeyFrame(Duration.millis(200), kv0);
+        final KeyValue kv1 = new KeyValue(widget_right.opacityProperty(), 0.3);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(500), kv1);
+        final KeyValue kv2 = new KeyValue(widget_top_left.opacityProperty(), 0.3);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(500), kv2);
+        final KeyValue kv3 = new KeyValue(widget_bottom_left.opacityProperty(), 0.3);
+        final KeyFrame kf3 = new KeyFrame(Duration.millis(500), kv3);
+        final KeyValue kv4 = new KeyValue(widget_right.translateYProperty(), 0);
+        final KeyFrame kf4 = new KeyFrame(Duration.millis(350), kv4);
+        final KeyValue kv5 = new KeyValue(widget_bottom_left.translateXProperty(), 0);
+        final KeyFrame kf5 = new KeyFrame(Duration.millis(350), kv5);
+        final KeyValue kv6 = new KeyValue(widget_top_left.translateXProperty(), 0);
+        final KeyFrame kf6 = new KeyFrame(Duration.millis(350), kv6);
+        load_scene.getKeyFrames().addAll(kf0, kf1, kf2, kf3, kf4, kf5, kf6);
+        load_scene.play();
+    }
+
     public void slideTitleIn()
     {
         final Timeline slideDown = new Timeline();
@@ -376,6 +516,104 @@ public class PaymentsController implements Initializable, ControlledScreen {
         }
     }
 
+    /**
+     * Animates the scene out on a new Thread to allow the animation to play through without being
+     * interrupted by the main thread, styles are applied to show the new active button
+     */
+    private void nextForm(final String ID)
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    clearStyles();
+                    switch(ID) {
+                        case "Dashboard":
+                            nav_bg1.getStyleClass().addAll("active");
+                            nav_icon1.getStyleClass().add("active");
+                            accent1.getStyleClass().addAll("active", "show");
+                        break;
+                        case "Users":
+                            nav_bg2.getStyleClass().addAll("active");
+                            nav_icon2.getStyleClass().add("active");
+                            accent2.getStyleClass().addAll("active", "show");
+                        break;
+                        case "Properties":
+                            nav_bg3.getStyleClass().addAll("active");
+                            nav_icon3.getStyleClass().add("active");
+                            accent3.getStyleClass().addAll("active", "show");
+                        break;
+                        case "Payments":
+                            nav_bg4.getStyleClass().addAll("active");
+                            nav_icon4.getStyleClass().add("active");
+                            accent4.getStyleClass().addAll("active", "show");
+                        break;
+                        case "Messages":
+                            nav_bg5.getStyleClass().addAll("active");
+                            nav_icon5.getStyleClass().add("active");
+                            accent5.getStyleClass().addAll("active", "show");
+                        break;
+                        case "Settings":
+                            nav_bg6.getStyleClass().addAll("active");
+                            nav_icon6.getStyleClass().add("active");
+                            accent6.getStyleClass().addAll("active", "show");
+                        break;
+                    }
+
+                    // Animate the scene
+                    animateOut();
+                    Thread.sleep(300);
+                } catch(Exception e )
+                {
+                    System.out.println("There was an error handling the animation...");
+                }
+                // Go to our view.
+                myController.setScreen(ID);
+            }
+        }).start();
+    }
+
+    /**
+     * Clears the styles on the current button
+     */
+    private void clearStyles()
+    {
+        // Active state for this window
+        nav_icon4.getStyleClass().remove("active");
+        nav_bg4.getStyleClass().remove("active");
+        accent4.getStyleClass().remove("show");
+    }
+
+    /**
+     * Reset the navigation styles to make this current window the active one, if we don't call this method
+     * then the next time we load this window form the HashMap, the wrong active state shall be applied
+     */
+    private void resetStyles()
+    {
+        // Active state for this window
+        nav_icon4.getStyleClass().add("active");
+        nav_bg4.getStyleClass().add("active");
+        accent4.getStyleClass().addAll("active", "show");
+
+        // Default styles for every other nav element
+        nav_icon1.getStyleClass().remove("active");
+        accent1.getStyleClass().removeAll("active", "show");
+        nav_bg1.getStyleClass().remove("active");
+        nav_icon2.getStyleClass().remove("active");
+        accent2.getStyleClass().removeAll("active", "show");
+        nav_bg2.getStyleClass().remove("active");
+        nav_icon3.getStyleClass().remove("active");
+        accent3.getStyleClass().removeAll("active", "show");
+        nav_bg3.getStyleClass().remove("active");
+        nav_icon5.getStyleClass().remove("active");
+        accent5.getStyleClass().removeAll("active", "show");
+        nav_bg5.getStyleClass().remove("active");
+        nav_icon6.getStyleClass().remove("active");
+        accent6.getStyleClass().removeAll("active", "show");
+        nav_bg6.getStyleClass().remove("active");
+
+    }
+
     // Set the parent of the new screen
     public void setScreenParent(ScreensController screenParent){
         myController = screenParent;
@@ -384,33 +622,44 @@ public class PaymentsController implements Initializable, ControlledScreen {
     // Navigation Control
     @FXML
     private void goToDashboard(ActionEvent event){
+        // If the user panel is open then hide it
         hideUsers();
-        myController.setScreen(ScreensFramework.screen1ID);
+        nextForm(ScreensFramework.screen1ID);
     }
     @FXML
     private void goToUsers(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen2ID);
+        nextForm(ScreensFramework.screen2ID);
     }
     @FXML
     private void goToProperties(ActionEvent event){
         hideUsers();
-        myController.setScreen("../view/Properties.fxml");
+        nextForm(ScreensFramework.screen3ID);
     }
     @FXML
     private void goToPayments(ActionEvent event){
         hideUsers();
-       myController.setScreen(ScreensFramework.screen4ID);
+        nextForm(ScreensFramework.screen4ID);
     }
     @FXML
     private void goToMessages(ActionEvent event){
         hideUsers();
-       myController.setScreen(ScreensFramework.screen5ID);
+        nextForm(ScreensFramework.screen5ID);
     }
     @FXML
     private void goToSettings(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen6ID);
+        nextForm(ScreensFramework.screen6ID);
+    }
+    @FXML
+    private void goToAddUser(ActionEvent event){
+        hideUsers();
+        nextForm(ScreensFramework.screen7ID);
+    }
+    @FXML
+    private void goToAllUsers(ActionEvent event){
+        hideUsers();
+        nextForm(ScreensFramework.screen8ID);
     }
 }
 
