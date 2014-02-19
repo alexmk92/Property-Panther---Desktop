@@ -46,12 +46,13 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import prcse.pp.db.Database;
 
 /**
  *
  * @author Angie
  */
-public class ScreensFramework extends Application {
+public class ScreensFramework extends Application  {
 
     public static String screen1ID = "Dashboard";
     public static String screen1File = "../view/Dashboard.fxml";
@@ -69,10 +70,16 @@ public class ScreensFramework extends Application {
     public static String screen7File = "../view/AddUser.fxml";
     public static String screen8ID = "View User";
     public static String screen8File = "../view/UserDetails.fxml";
+    public static Boolean connected = false;
+    public static Database db;
 
 
     @Override
     public void start(Stage primaryStage) {
+
+
+        // Make a connection to the database (SINGLETON)
+        connectToDb();
 
         ScreensController mainContainer = new ScreensController();
         mainContainer.loadScreen(ScreensFramework.screen1ID, ScreensFramework.screen1File);
@@ -96,6 +103,32 @@ public class ScreensFramework extends Application {
         Scene scene = new Scene(root, 1200,720);
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        System.out.println("UI Loaded");
+        System.out.println(db.getDb_host());
+
+        db.buildUsers();
+
+    }
+
+    /**
+     * Connect to the database and set the global variable "connected" to false
+     * to prevent further instantiations.
+     */
+    public void connectToDb()
+    {
+        if(this.connected == false) {
+            try {
+                ScreensFramework.db = new Database(null, null, null);
+                System.out.println("Connected to database");
+                this.connected = true;
+            } catch (Exception e) {
+                // If there was an error set the connection to false.
+                this.connected = false;
+            }
+        } else {
+            System.out.println("Connection already open.");
+        }
     }
 
     /**
