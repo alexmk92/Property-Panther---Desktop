@@ -1,4 +1,4 @@
-package prcse.pp.model;
+package prcse.pp.view;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;

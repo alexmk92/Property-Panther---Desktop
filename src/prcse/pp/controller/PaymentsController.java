@@ -7,7 +7,6 @@ import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
-import javafx.concurrent.Service;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -26,7 +25,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.util.Duration;
-import prcse.pp.model.PaymentCell;
+import prcse.pp.view.PaymentCell;
 
 
 /**
@@ -533,7 +532,7 @@ public class PaymentsController implements Initializable, ControlledScreen {
                             nav_icon1.getStyleClass().add("active");
                             accent1.getStyleClass().addAll("active", "show");
                         break;
-                        case "Users":
+                        case "User":
                             nav_bg2.getStyleClass().addAll("active");
                             nav_icon2.getStyleClass().add("active");
                             accent2.getStyleClass().addAll("active", "show");

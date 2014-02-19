@@ -1,5 +1,7 @@
 package prcse.pp.db;
 
+import prcse.pp.model.User;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -34,7 +36,6 @@ public class Database {
             this.db_host = host;
             this.db_user = user;
             this.db_pass = password;
-
         }
     }
 
@@ -42,13 +43,13 @@ public class Database {
      * Perform a select query
      * @return
      */
-    public ArrayList buildUsers(){
+    public void buildUsers(){
         ArrayList<ResultSet> results = new ArrayList<>();
         String query = "";
         try {
             Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
             Statement  st  = con.createStatement();
-            ResultSet  res = st.executeQuery();
+            ResultSet  res = st.executeQuery(query);
 
             while(res.next()) {
                 results.add(res);
@@ -59,8 +60,35 @@ public class Database {
         } catch (SQLException e) {
             System.out.println("Error handling query: " + e.getMessage());
         }
+    }
 
 
+    // Demo some system out stuff here for tomorrow
+    public void connectionDemo(){
+
+        ArrayList<User> userList = new ArrayList<>();
+
+        try {
+            Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
+            Statement  st  = con.createStatement();
+            ResultSet  res = st.executeQuery("SELECT * FROM users");
+
+            while(res.next()) {
+                User u = new User();
+                u.setForename(res.getString("user_forename"));
+                u.setSurname(res.getString("user_surname"));
+                userList.add(u);
+            }
+
+            System.out.println(userList.size());
+            System.out.println(userList.get(0).getName());
+            System.out.println(userList.get(1).getName());
+            System.out.println(userList.get(2).getName());
+            System.out.println(userList.get(3).getName());
+            System.out.println(userList.get(4).getName());
+        } catch (SQLException e) {
+            System.out.println("Error handling query: " + e.getMessage());
+        }
     }
 
 

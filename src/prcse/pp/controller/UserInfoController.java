@@ -23,8 +23,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Callback;
 import javafx.util.Duration;
-import prcse.pp.model.NoteCell;
-import prcse.pp.model.PaymentCell;
+import prcse.pp.view.NoteCell;
 
 import java.net.URL;
 import java.util.ResourceBundle;

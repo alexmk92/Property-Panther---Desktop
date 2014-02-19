@@ -1,4 +1,4 @@
-package prcse.pp.model;
+package prcse.pp.view;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

@@ -56,8 +56,8 @@ public class ScreensFramework extends Application  {
 
     public static String screen1ID = "Dashboard";
     public static String screen1File = "../view/Dashboard.fxml";
-    public static String screen2ID = "Users";
-    public static String screen2File = "../view/Users.fxml";
+    public static String screen2ID = "User";
+    public static String screen2File = "../view/User.fxml";
     public static String screen3ID = "Properties";
     public static String screen3File = "../view/Properties.fxml";
     public static String screen4ID = "Payments";
@@ -107,7 +107,8 @@ public class ScreensFramework extends Application  {
         System.out.println("UI Loaded");
         System.out.println(db.getDb_host());
 
-        db.buildUsers();
+        db.connectionDemo();
+        //db.buildUsers();
 
     }
 
