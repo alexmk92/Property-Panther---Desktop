@@ -115,12 +115,18 @@ public class AddUserController implements Initializable, ControlledScreen {
     private Pane searchButtons;
     @FXML // fx:id="searchWrap"
     private Pane searchWrap;
-    @FXML // fx:id="widget_right"
-    private Pane widget_right;
     @FXML // fx:id="widget_top_left"
     private Pane widget_top_left;
+    @FXML // fx:id="widget_middle"
+    private Pane widget_middle;
     @FXML // fx:id="widget_bottom_left"
     private Pane widget_bottom_left;
+    @FXML // fx:id="widget_top_right"
+    private Pane widget_top_right;
+    @FXML // fx:id="widget_bottom_right"
+    private Pane widget_bottom_right;
+    @FXML // fx:id="body"
+    private AnchorPane body;
     @FXML // fx:id="txtEmail"
     private TextField txtEmail;
 
@@ -136,6 +142,22 @@ public class AddUserController implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle resources)
     {
+        // Set opacity of widgets
+        widget_middle.setOpacity(0.3);
+        widget_top_left.setOpacity(0.3);
+        widget_top_right.setOpacity(0.3);
+        widget_bottom_left.setOpacity(0.3);
+        widget_bottom_right.setOpacity(0.3);
+
+        // Animate the scene in
+        body.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                animateIn();
+                resetStyles();
+            }
+        });
+
         // Set the display graphic for title
         Effect glow = new Glow(0.3);
         title.setEffect(glow);
@@ -284,10 +306,22 @@ public class AddUserController implements Initializable, ControlledScreen {
         final KeyFrame kf2 = new KeyFrame(Duration.millis(300), kv2);
         final KeyValue kv3 = new KeyValue(searchButtons.translateYProperty(), 67);
         final KeyFrame kf3 = new KeyFrame(Duration.millis(700), kv3);
-        slideOut.getKeyFrames().addAll(kf1, kf2, kf3);
+
+        final KeyValue kv4 = new KeyValue(widget_top_right.opacityProperty(), 0.3);
+        final KeyFrame kf4 = new KeyFrame(Duration.millis(500), kv4);
+        final KeyValue kv5 = new KeyValue(widget_top_left.opacityProperty(), 0.3);
+        final KeyFrame kf5 = new KeyFrame(Duration.millis(500), kv5);
+        final KeyValue kv6 = new KeyValue(widget_bottom_left.opacityProperty(), 0.3);
+        final KeyFrame kf6 = new KeyFrame(Duration.millis(500), kv6);
+        final KeyValue kv7 = new KeyValue(widget_middle.opacityProperty(), 0.3);
+        final KeyFrame kf7 = new KeyFrame(Duration.millis(500), kv7);
+        final KeyValue kv8 = new KeyValue(widget_bottom_right.opacityProperty(), 0.3);
+        final KeyFrame kf8 = new KeyFrame(Duration.millis(500), kv8);
+
+        slideOut.getKeyFrames().addAll(kf1, kf2, kf3, kf4, kf5, kf6, kf7, kf8);
         slideOut.play();
 
-        txtUsers_Username.requestFocus();
+        //txtUsers_Username.requestFocus();
     }
 
     public void hideUsers()
@@ -295,13 +329,28 @@ public class AddUserController implements Initializable, ControlledScreen {
         final Timeline slideBack = new Timeline();
         slideBack.setCycleCount(1);
         slideBack.setAutoReverse(false);
+
+        // Animate slider back in
         final KeyValue kv1 = new KeyValue(searchBar.translateXProperty(), 0);
-        final KeyFrame kf1 = new KeyFrame(Duration.millis(500), kv1);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(300), kv1);
         final KeyValue kv2 = new KeyValue(searchButtons.translateXProperty(), 0);
-        final KeyFrame kf2 = new KeyFrame(Duration.millis(500), kv2);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(300), kv2);
         final KeyValue kv3 = new KeyValue(searchButtons.translateYProperty(), 0);
-        final KeyFrame kf3 = new KeyFrame(Duration.millis(300), kv3);
-        slideBack.getKeyFrames().addAll(kf1, kf2, kf3);
+        final KeyFrame kf3 = new KeyFrame(Duration.millis(700), kv3);
+
+        // Fade widgets back in
+        final KeyValue kv4 = new KeyValue(widget_top_right.opacityProperty(), 1);
+        final KeyFrame kf4 = new KeyFrame(Duration.millis(500), kv4);
+        final KeyValue kv5 = new KeyValue(widget_top_left.opacityProperty(), 1);
+        final KeyFrame kf5 = new KeyFrame(Duration.millis(500), kv5);
+        final KeyValue kv6 = new KeyValue(widget_bottom_left.opacityProperty(), 1);
+        final KeyFrame kf6 = new KeyFrame(Duration.millis(500), kv6);
+        final KeyValue kv7 = new KeyValue(widget_middle.opacityProperty(), 1);
+        final KeyFrame kf7 = new KeyFrame(Duration.millis(500), kv7);
+        final KeyValue kv8 = new KeyValue(widget_bottom_right.opacityProperty(), 1);
+        final KeyFrame kf8 = new KeyFrame(Duration.millis(500), kv8);
+
+        slideBack.getKeyFrames().addAll(kf1, kf2, kf3, kf4, kf5, kf6, kf7, kf8);
         slideBack.play();
 
         txtUsers_Username.setText("");
@@ -334,6 +383,174 @@ public class AddUserController implements Initializable, ControlledScreen {
         }
     }
 
+    public void animateIn()
+    {
+        final Timeline load_scene = new Timeline();
+        load_scene.setCycleCount(1);
+        load_scene.setAutoReverse(false);
+        final KeyValue kv0 = new KeyValue(title.layoutYProperty(), 20);
+        final KeyFrame kf0 = new KeyFrame(Duration.millis(250), kv0);
+        final KeyValue kv1 = new KeyValue(widget_top_right.opacityProperty(), 1);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(500), kv1);
+        final KeyValue kv2 = new KeyValue(widget_top_left.opacityProperty(), 1);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(500), kv2);
+        final KeyValue kv3 = new KeyValue(widget_bottom_left.opacityProperty(), 1);
+        final KeyFrame kf3 = new KeyFrame(Duration.millis(500), kv3);
+        final KeyValue kv4 = new KeyValue(widget_middle.opacityProperty(), 1);
+        final KeyFrame kf4 = new KeyFrame(Duration.millis(500), kv4);
+        final KeyValue kv5 = new KeyValue(widget_bottom_right.opacityProperty(), 1);
+        final KeyFrame kf5 = new KeyFrame(Duration.millis(500), kv5);
+
+        // Animate the position in
+        final KeyValue kv6 = new KeyValue(widget_top_right.translateXProperty(), -316);
+        final KeyFrame kf6 = new KeyFrame(Duration.millis(400), kv6);
+        final KeyValue kv7 = new KeyValue(widget_top_left.translateXProperty(), 880);
+        final KeyFrame kf7 = new KeyFrame(Duration.millis(500), kv7);
+        final KeyValue kv8 = new KeyValue(widget_bottom_left.translateXProperty(), 880);
+        final KeyFrame kf8 = new KeyFrame(Duration.millis(500), kv8);
+        final KeyValue kv9 = new KeyValue(widget_middle.translateXProperty(), -940);
+        final KeyFrame kf9 = new KeyFrame(Duration.millis(250), kv9);
+        final KeyValue kv10 = new KeyValue(widget_bottom_right.translateYProperty(), -480);
+        final KeyFrame kf10 = new KeyFrame(Duration.millis(500), kv10);
+
+        // Build the animation
+        load_scene.getKeyFrames().addAll(kf0, kf1, kf2, kf3, kf4, kf5, kf6, kf7, kf8, kf9, kf10);
+        load_scene.play();
+    }
+
+    public void animateOut()
+    {
+        final Timeline load_scene = new Timeline();
+        load_scene.setCycleCount(1);
+        load_scene.setAutoReverse(false);
+        final KeyValue kv0 = new KeyValue(title.layoutYProperty(), -100);
+        final KeyFrame kf0 = new KeyFrame(Duration.millis(250), kv0);
+        final KeyValue kv1 = new KeyValue(widget_top_right.opacityProperty(), 0.3);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(500), kv1);
+        final KeyValue kv2 = new KeyValue(widget_top_left.opacityProperty(), 0.3);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(500), kv2);
+        final KeyValue kv3 = new KeyValue(widget_bottom_left.opacityProperty(), 0.3);
+        final KeyFrame kf3 = new KeyFrame(Duration.millis(500), kv3);
+        final KeyValue kv4 = new KeyValue(widget_middle.opacityProperty(), 0.3);
+        final KeyFrame kf4 = new KeyFrame(Duration.millis(500), kv4);
+        final KeyValue kv5 = new KeyValue(widget_bottom_right.opacityProperty(), 0.3);
+        final KeyFrame kf5 = new KeyFrame(Duration.millis(500), kv5);
+
+        // Animate the position in
+        final KeyValue kv6 = new KeyValue(widget_top_right.translateXProperty(), 0);
+        final KeyFrame kf6 = new KeyFrame(Duration.millis(400), kv6);
+        final KeyValue kv7 = new KeyValue(widget_top_left.translateXProperty(), 0);
+        final KeyFrame kf7 = new KeyFrame(Duration.millis(500), kv7);
+        final KeyValue kv8 = new KeyValue(widget_bottom_left.translateXProperty(), 0);
+        final KeyFrame kf8 = new KeyFrame(Duration.millis(500), kv8);
+        final KeyValue kv9 = new KeyValue(widget_middle.translateXProperty(), 0);
+        final KeyFrame kf9 = new KeyFrame(Duration.millis(200), kv9);
+        final KeyValue kv10 = new KeyValue(widget_bottom_right.translateYProperty(), 0);
+        final KeyFrame kf10 = new KeyFrame(Duration.millis(500), kv10);
+
+        // Build the animation
+        load_scene.getKeyFrames().addAll(kf0, kf1, kf2, kf3, kf4, kf5, kf6, kf7, kf8, kf9, kf10);
+        load_scene.play();
+    }
+
+    /**
+     * Animates the scene out on a new Thread to allow the animation to play through without being
+     * interrupted by the main thread, styles are applied to show the new active button
+     */
+    private void nextForm(final String ID)
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    clearStyles();
+                    switch(ID) {
+                        case "Dashboard":
+                            nav_bg1.getStyleClass().addAll("active");
+                            nav_icon1.getStyleClass().add("active");
+                            accent1.getStyleClass().addAll("active", "show");
+                            break;
+                        case "User":
+                            nav_bg2.getStyleClass().addAll("active");
+                            nav_icon2.getStyleClass().add("active");
+                            accent2.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Properties":
+                            nav_bg3.getStyleClass().addAll("active");
+                            nav_icon3.getStyleClass().add("active");
+                            accent3.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Payments":
+                            nav_bg4.getStyleClass().addAll("active");
+                            nav_icon4.getStyleClass().add("active");
+                            accent4.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Messages":
+                            nav_bg5.getStyleClass().addAll("active");
+                            nav_icon5.getStyleClass().add("active");
+                            accent5.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Settings":
+                            nav_bg6.getStyleClass().addAll("active");
+                            nav_icon6.getStyleClass().add("active");
+                            accent6.getStyleClass().addAll("active", "show");
+                            break;
+                    }
+
+                    // Animate the scene
+                    animateOut();
+                    Thread.sleep(300);
+                } catch(Exception e )
+                {
+                    System.out.println("There was an error handling the animation...");
+                }
+                // Go to our view.
+                myController.setScreen(ID);
+            }
+        }).start();
+    }
+
+    /**
+     * Clears the styles on the current button
+     */
+    private void clearStyles()
+    {
+        // Active state for this window
+        nav_icon2.getStyleClass().remove("active");
+        nav_bg2.getStyleClass().remove("active");
+        accent2.getStyleClass().remove("show");
+    }
+
+    /**
+     * Reset the navigation styles to make this current window the active one, if we don't call this method
+     * then the next time we load this window form the HashMap, the wrong active state shall be applied
+     */
+    private void resetStyles()
+    {
+        // Active state for this window
+        nav_icon2.getStyleClass().add("active");
+        nav_bg2.getStyleClass().add("active");
+        accent2.getStyleClass().addAll("active", "show");
+
+        // Default styles for every other nav element
+        nav_icon1.getStyleClass().remove("active");
+        accent1.getStyleClass().removeAll("active", "show");
+        nav_bg1.getStyleClass().remove("active");
+        nav_icon4.getStyleClass().remove("active");
+        accent4.getStyleClass().removeAll("active", "show");
+        nav_bg4.getStyleClass().remove("active");
+        nav_icon3.getStyleClass().remove("active");
+        accent3.getStyleClass().removeAll("active", "show");
+        nav_bg3.getStyleClass().remove("active");
+        nav_icon5.getStyleClass().remove("active");
+        accent5.getStyleClass().removeAll("active", "show");
+        nav_bg5.getStyleClass().remove("active");
+        nav_icon6.getStyleClass().remove("active");
+        accent6.getStyleClass().removeAll("active", "show");
+        nav_bg6.getStyleClass().remove("active");
+
+    }
+
     // Set the parent of the new screen
     public void setScreenParent(ScreensController screenParent){
         myController = screenParent;
@@ -342,43 +559,44 @@ public class AddUserController implements Initializable, ControlledScreen {
     // Navigation Control
     @FXML
     private void goToDashboard(ActionEvent event){
-        hideUsers();
-        myController.setScreen(ScreensFramework.screen1ID);
+        // If the user panel is open then hide it
+        //hideUsers();
+        nextForm(ScreensFramework.screen1ID);
     }
     @FXML
     private void goToUsers(ActionEvent event){
-
-        myController.setScreen(ScreensFramework.screen2ID);
+        hideUsers();
+        nextForm(ScreensFramework.screen2ID);
     }
     @FXML
     private void goToProperties(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen3ID);
+        nextForm(ScreensFramework.screen3ID);
     }
     @FXML
     private void goToPayments(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen4ID);
+        nextForm(ScreensFramework.screen4ID);
     }
     @FXML
     private void goToMessages(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen5ID);
+        nextForm(ScreensFramework.screen5ID);
     }
     @FXML
     private void goToSettings(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen6ID);
+        nextForm(ScreensFramework.screen6ID);
     }
     @FXML
     private void goToAddUser(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen7ID);
+        nextForm(ScreensFramework.screen7ID);
     }
     @FXML
     private void goToAllUsers(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen8ID);
+        nextForm(ScreensFramework.screen8ID);
     }
 }
 

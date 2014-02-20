@@ -7,17 +7,10 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="main__body" maxHeight="720" maxWidth="1200" minHeight="720" minWidth="1200" prefHeight="720.0" prefWidth="1200.0" stylesheets="@MainView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prcse.pp.controller.AddUserController">
-    <children>
-            <Pane layoutX="277.0" layoutY="108.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="596.0" styleClass="header" BorderPane.alignment="CENTER">
-                <children>
-                    <Label layoutX="14.0" layoutY="9.0" styleClass="header_title" text="User Information" textFill="WHITE">
-                        <font>
-                            <Font name="Arial" size="16.0" />
-                        </font>
-                    </Label><BorderPane layoutX="-2.0" layoutY="6.0" prefHeight="40.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
-                </children>
-            </Pane><Pane layoutX="278.0" layoutY="333.0" prefHeight="116.0" prefWidth="595.0" styleClass="window" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="main__body" fx:id="body" maxHeight="720" maxWidth="1200" minHeight="720" minWidth="1200" prefHeight="720.0" prefWidth="1200.0" stylesheets="@MainView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prcse.pp.controller.AddUserController">
+    <children><BorderPane layoutX="-2.0" layoutY="6.0" prefHeight="40.0" prefWidth="1098.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+<Pane fx:id="widget_middle" layoutX="1210.0" layoutY="295.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children><Pane layoutX="1.0" layoutY="40.0" prefHeight="116.0" prefWidth="595.0" styleClass="window" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
         <children>
             <Label layoutX="28.0" layoutY="25.0" styleClass="caption_small" text="E-mail address *" textFill="WHITE">
                 <font>
@@ -46,7 +39,7 @@
 <Font name="Open Sans" size="14.0" />
 </font></TextField>
         </children>
-    </Pane><Pane layoutX="277.0" layoutY="293.0" prefHeight="40.0" prefWidth="596.0" styleClass="header" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    </Pane><Pane prefHeight="40.0" prefWidth="596.0" styleClass="header" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
         <children>
             <Label layoutX="14.0" layoutY="9.0" styleClass="header_title" text="Contact Information" textFill="WHITE">
                 <font>
@@ -54,7 +47,21 @@
                 </font>
             </Label>
         </children>
-    </Pane><Pane layoutX="278.0" layoutY="148.0" prefHeight="127.0" prefWidth="595.0" styleClass="window" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    </Pane>
+</children>
+</Pane>
+        <Pane fx:id="widget_top_left" layoutX="278.0" layoutY="108.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+<Pane fx:id="widget_top_left" layoutX="-609.0" layoutY="108.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="596.0" styleClass="header" BorderPane.alignment="CENTER">
+                <children>
+                    <Label layoutX="14.0" layoutY="9.0" styleClass="header_title" text="User Information" textFill="WHITE">
+                        <font>
+                            <Font name="Arial" size="16.0" />
+                        </font>
+                    </Label>
+                </children>
+            </Pane><Pane layoutX="1.0" layoutY="40.0" prefHeight="127.0" prefWidth="595.0" styleClass="window" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
         <children>
             <Label layoutX="20.0" layoutY="22.0" styleClass="caption_small" text="Title *" textFill="WHITE">
                 <font>
@@ -87,7 +94,8 @@
 </Label>
         </children>
     </Pane>
-        <Pane fx:id="widget_top_left" layoutX="278.0" layoutY="108.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+</children>
+</Pane>
         <Pane fx:id="searchWrap" layoutX="-87.0" layoutY="236.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
             <children><Pane id="slide_out" fx:id="searchButtons" prefHeight="35.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
                 <children>
@@ -122,7 +130,76 @@
             </children>
         </Pane>
         <Pane fx:id="widget_right" layoutX="893.0" layoutY="108.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
-        <Pane fx:id="widget_bottom_left" layoutX="278.0" layoutY="341.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><AnchorPane prefHeight="720.0" prefWidth="249.0">
+        <Pane fx:id="widget_bottom_left" layoutX="278.0" layoutY="341.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+<Pane fx:id="widget_bottom_left" layoutX="-608.0" layoutY="468.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children><Pane layoutY="40.0" prefHeight="186.0" prefWidth="595.0" styleClass="window" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children>
+<Label layoutX="27.0" layoutY="89.0" styleClass="caption_small" text="Address Line 2" textFill="WHITE">
+<font>
+<Font name="Arial" size="16.0" />
+</font>
+</Label>
+<Label layoutX="28.0" layoutY="18.0" styleClass="caption_small" text="Address Line 1 *" textFill="WHITE">
+<font>
+<Font name="Arial" size="16.0" />
+</font>
+</Label>
+<TextField id="textbox_square" fx:id="txtAddr2" layoutX="27.0" layoutY="116.0" prefHeight="35.0" prefWidth="260.0">
+<styleClass>
+<String fx:value="text-input" />
+<String fx:value="text-field" />
+<String fx:value="txt-create" />
+</styleClass>
+<font>
+<Font name="Open Sans" size="14.0" />
+</font></TextField><TextField id="textbox_square" fx:id="txtPostcode" layoutX="308.0" layoutY="116.0" prefHeight="35.0" prefWidth="150.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font name="Open Sans" size="14.0" />
+</font>
+<styleClass>
+<String fx:value="text-input" />
+<String fx:value="text-field" />
+<String fx:value="txt-create" />
+</styleClass>
+</TextField><Label layoutX="308.0" layoutY="89.0" styleClass="caption_small" text="Postcode *" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font name="Arial" size="16.0" />
+</font>
+</Label>
+<TextField id="textbox_square" fx:id="txtAddr1" layoutX="27.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="260.0">
+<styleClass>
+<String fx:value="text-input" />
+<String fx:value="text-field" />
+<String fx:value="txt-create" />
+</styleClass>
+<font>
+<Font name="Open Sans" size="14.0" />
+</font></TextField><Label layoutX="308.0" layoutY="18.0" styleClass="caption_small" text="County *" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font name="Arial" size="16.0" />
+</font>
+</Label><TextField id="textbox_square" fx:id="txtCounty" layoutX="308.0" layoutY="45.0" prefHeight="35.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font name="Open Sans" size="14.0" />
+</font>
+<styleClass>
+<String fx:value="text-input" />
+<String fx:value="text-field" />
+<String fx:value="txt-create" />
+</styleClass>
+</TextField>
+</children>
+</Pane><Pane prefHeight="40.0" prefWidth="595.0" styleClass="header" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+        <children>
+            <Label layoutX="14.0" layoutY="9.0" styleClass="header_title" text="Notes" textFill="WHITE">
+                <font>
+                    <Font name="Arial" size="16.0" />
+                </font>
+            </Label>
+        </children>
+    </Pane>
+</children>
+</Pane><AnchorPane prefHeight="720.0" prefWidth="249.0">
         <children><Label id="username_label" layoutX="27.0" layoutY="325.0" styleClass="button_text" text="Inbox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="username_label" layoutX="27.0" layoutY="255.0" styleClass="button_text" text="Dashboard" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Rectangle id="nav_active_accent" fill="DODGERBLUE" height="70.0" layoutY="235.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="username_label" layoutX="27.0" layoutY="185.0" styleClass="button_text" text="Alex Sims" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><ImageView id="nav_branding" fitHeight="85.0" fitWidth="200.0" layoutX="23.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
             <image>
                 <Image url="@img/logo.png" />
@@ -215,18 +292,12 @@
             <String fx:value="divider" />
             <String fx:value="vertical" />
         </styleClass>
-    </Rectangle><Rectangle fill="#4c5c70" height="1.0" layoutX="252.0" layoutY="90.0" stroke="TRANSPARENT" strokeType="INSIDE" width="949.0" /><Rectangle fill="#00000090" height="1.0" layoutX="252.0" layoutY="89.0" stroke="TRANSPARENT" strokeType="INSIDE" width="948.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="lbl_title" fx:id="title" layoutX="278.0" layoutY="20.0" styleClass="title" text="Create users" textFill="#72cee5">
+    </Rectangle><Rectangle fill="#4c5c70" height="1.0" layoutX="252.0" layoutY="90.0" stroke="TRANSPARENT" strokeType="INSIDE" width="949.0" /><Rectangle fill="#00000090" height="1.0" layoutX="252.0" layoutY="89.0" stroke="TRANSPARENT" strokeType="INSIDE" width="948.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="lbl_title" fx:id="title" layoutX="278.0" layoutY="-57.0" styleClass="title" text="Create user" textFill="#72cee5">
         <font>
             <Font name="Open Sans Light" size="40.0" />
-        </font></Label><Pane layoutX="277.0" layoutY="467.0" prefHeight="40.0" prefWidth="595.0" styleClass="header" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-        <children>
-            <Label layoutX="14.0" layoutY="9.0" styleClass="header_title" text="Notes" textFill="WHITE">
-                <font>
-                    <Font name="Arial" size="16.0" />
-                </font>
-            </Label>
-        </children>
-    </Pane><Pane layoutX="894.0" layoutY="242.0" prefHeight="40.0" prefWidth="281.0" styleClass="header" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+        </font></Label>
+<Pane fx:id="widget_bottom_right" layoutX="894.0" layoutY="731.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children><Pane prefHeight="40.0" prefWidth="281.0" styleClass="header" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
         <children>
             <Label layoutX="14.0" layoutY="9.0" styleClass="header_title" text="Search Users" textFill="WHITE">
                 <font>
@@ -234,7 +305,7 @@
                 </font>
             </Label>
         </children>
-    </Pane><Pane layoutX="894.0" layoutY="282.0" prefHeight="320.0" prefWidth="281.0" styleClass="window" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    </Pane><Pane layoutY="40.0" prefHeight="320.0" prefWidth="281.0" styleClass="window" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
         <children>
             <Label layoutX="23.0" layoutY="20.0" styleClass="search_labels" text="Search by name" textFill="WHITE">
                 <font>
@@ -284,7 +355,11 @@
                 </styleClass>
             </Button>
         </children>
-    </Pane><Pane layoutX="894.0" layoutY="148.0" prefHeight="80.0" prefWidth="281.0" styleClass="window" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    </Pane>
+</children>
+</Pane>
+<Pane fx:id="widget_top_right" layoutX="1210.0" layoutY="108.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children><Pane layoutY="40.0" prefHeight="80.0" prefWidth="281.0" styleClass="window" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
         <children>
             <Button fx:id="btnCreate" layoutX="12.0" layoutY="27.0" mnemonicParsing="false" prefWidth="160.0" text="I'm done, create!">
                 <styleClass>
@@ -301,9 +376,8 @@
                 </styleClass>
             </Button>
         </children>
-    </Pane><Pane layoutX="893.0" layoutY="108.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-        <children>
-            <Pane layoutX="1.0" prefHeight="40.0" prefWidth="281.0" styleClass="header">
+    </Pane>
+            <Pane prefHeight="40.0" prefWidth="281.0" styleClass="header">
                 <children>
                     <Label layoutX="14.0" layoutY="9.0" styleClass="header_title" text="Actions" textFill="WHITE">
                         <font>
@@ -312,63 +386,6 @@
                     </Label>
                 </children>
             </Pane>
-        </children>
-    </Pane><Pane layoutX="277.0" layoutY="507.0" prefHeight="186.0" prefWidth="595.0" styleClass="window" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-<children>
-<Label layoutX="27.0" layoutY="89.0" styleClass="caption_small" text="Address Line 2" textFill="WHITE">
-<font>
-<Font name="Arial" size="16.0" />
-</font>
-</Label>
-<Label layoutX="28.0" layoutY="18.0" styleClass="caption_small" text="Address Line 1 *" textFill="WHITE">
-<font>
-<Font name="Arial" size="16.0" />
-</font>
-</Label>
-<TextField id="textbox_square" fx:id="txtAddr2" layoutX="27.0" layoutY="116.0" prefHeight="35.0" prefWidth="260.0">
-<styleClass>
-<String fx:value="text-input" />
-<String fx:value="text-field" />
-<String fx:value="txt-create" />
-</styleClass>
-<font>
-<Font name="Open Sans" size="14.0" />
-</font></TextField><TextField id="textbox_square" fx:id="txtPostcode" layoutX="308.0" layoutY="116.0" prefHeight="35.0" prefWidth="150.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-<font>
-<Font name="Open Sans" size="14.0" />
-</font>
-<styleClass>
-<String fx:value="text-input" />
-<String fx:value="text-field" />
-<String fx:value="txt-create" />
-</styleClass>
-</TextField><Label layoutX="308.0" layoutY="89.0" styleClass="caption_small" text="Postcode *" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-<font>
-<Font name="Arial" size="16.0" />
-</font>
-</Label>
-<TextField id="textbox_square" fx:id="txtAddr1" layoutX="27.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="260.0">
-<styleClass>
-<String fx:value="text-input" />
-<String fx:value="text-field" />
-<String fx:value="txt-create" />
-</styleClass>
-<font>
-<Font name="Open Sans" size="14.0" />
-</font></TextField><Label layoutX="308.0" layoutY="18.0" styleClass="caption_small" text="County *" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-<font>
-<Font name="Arial" size="16.0" />
-</font>
-</Label><TextField id="textbox_square" fx:id="txtCounty" layoutX="308.0" layoutY="45.0" prefHeight="35.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-<font>
-<Font name="Open Sans" size="14.0" />
-</font>
-<styleClass>
-<String fx:value="text-input" />
-<String fx:value="text-field" />
-<String fx:value="txt-create" />
-</styleClass>
-</TextField>
 </children>
 </Pane>
     </children></AnchorPane>

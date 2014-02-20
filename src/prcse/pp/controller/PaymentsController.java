@@ -416,7 +416,7 @@ public class PaymentsController implements Initializable, ControlledScreen {
         slideOut.getKeyFrames().addAll(kf1, kf2, kf3, kf4, kf5, kf6);
         slideOut.play();
 
-        txtUsers_Username.requestFocus();
+        //txtUsers_Username.requestFocus();
     }
 
     public void hideUsers()
@@ -488,17 +488,6 @@ public class PaymentsController implements Initializable, ControlledScreen {
         final KeyFrame kf6 = new KeyFrame(Duration.millis(350), kv6);
         load_scene.getKeyFrames().addAll(kf0, kf1, kf2, kf3, kf4, kf5, kf6);
         load_scene.play();
-    }
-
-    public void slideTitleIn()
-    {
-        final Timeline slideDown = new Timeline();
-        slideDown.setCycleCount(1);
-        slideDown.setAutoReverse(false);
-        final KeyValue kv1 = new KeyValue(title.translateYProperty(), 120);
-        final KeyFrame kf1 = new KeyFrame(Duration.millis(500), kv1);
-        slideDown.getKeyFrames().add(kf1);
-        slideDown.play();
     }
 
     public void resetText(TextField txt, Boolean newPropertyValue)
