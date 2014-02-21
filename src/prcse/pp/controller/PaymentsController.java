@@ -546,6 +546,16 @@ public class PaymentsController implements Initializable, ControlledScreen {
                             nav_icon6.getStyleClass().add("active");
                             accent6.getStyleClass().addAll("active", "show");
                         break;
+                        case "Add User":
+                            nav_bg2.getStyleClass().addAll("active");
+                            nav_icon2.getStyleClass().add("active");
+                            accent2.getStyleClass().addAll("active", "show");
+                        break;
+                        case "View User":
+                            nav_bg2.getStyleClass().addAll("active");
+                            nav_icon2.getStyleClass().add("active");
+                            accent2.getStyleClass().addAll("active", "show");
+                        break;
                     }
 
                     // Animate the scene
@@ -612,6 +622,7 @@ public class PaymentsController implements Initializable, ControlledScreen {
     private void goToDashboard(ActionEvent event){
         // If the user panel is open then hide it
         hideUsers();
+        UserInfoController u;
         nextForm(ScreensFramework.screen1ID);
     }
     @FXML
@@ -647,7 +658,7 @@ public class PaymentsController implements Initializable, ControlledScreen {
     @FXML
     private void goToAllUsers(ActionEvent event){
         hideUsers();
-        nextForm(ScreensFramework.screen8ID);
+        nextForm(ScreensFramework.screen2ID);
     }
 }
 
