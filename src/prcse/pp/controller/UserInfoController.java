@@ -505,7 +505,7 @@ public class UserInfoController implements Initializable, ControlledScreen {
                             nav_icon1.getStyleClass().add("active");
                             accent1.getStyleClass().addAll("active", "show");
                             break;
-                        case "User":
+                        case "Tenant":
                             nav_bg2.getStyleClass().addAll("active");
                             nav_icon2.getStyleClass().add("active");
                             accent2.getStyleClass().addAll("active", "show");

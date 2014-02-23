@@ -11,67 +11,157 @@ import java.util.ArrayList;
  */
 public class Property implements ISubject{
 
-    private String addressLine1;
-    private String addressLine2;
-    private String postcode;
-    private String city;
-    private String teleNumber;
-    private Integer noOfRooms;
+    /**
+     * Variables which describe a property
+     */
+    private String         addressLine1;
+    private String         addressLine2;
+    private String         postcode;
+    private String         city;
+    private String         teleNumber;
+    private Integer        noOfRooms;
     private PropertyStatus propStatus;
 
-    // arraylist of payments
-    private ArrayList<Payment> paymentList;
+    // arraylist of payments associated with this property
+    private ArrayList<Payment> payments;
+
     // arraylist of rooms associated with this property
     private ArrayList<Room> rooms;
+
+    /**
+     * New arraylist of Observers whom Observer properties
+     */
     private transient ArrayList<IObserver> observerList;
 
-
-    public Property(){
-
-        this.addressLine1 = "";
-        this.addressLine2 = "";
-        this.postcode = "";
-        this.city = "";
-        this.teleNumber = "";
-        this.noOfRooms = 0;
-        this.propStatus = PropertyStatus.VACANT;
-        this.observerList = new ArrayList<>();
-    }
-
-    // constructor to accept one address line as second is optional.
-    public Property(String address1, String postcode, String city, String teleNum, int noRooms, PropertyStatus status){
-
-        this.addressLine1 = address1;
-        this.addressLine2 = "";
-        this.postcode = postcode;
-        this.city = city;
-        this.teleNumber = teleNum;
-        this.noOfRooms = noRooms;
-        this.propStatus = PropertyStatus.VACANT;
-    }
-
-    // constructor to accept both address lines.
-    public Property(String address1, String address2, String postcode, String city, String teleNum, int noRooms, PropertyStatus status){
-
+    /**
+     * Constructor to create a new Property
+     * @param address1 address line 1
+     * @paran address2 address line 2 (can be null)
+     * @param postcode the properties postcode
+     * @param city  the properties city
+     * @param teleNum the properties landline number (if applicable)
+     * @param noRooms the number of rooms in that property
+     */
+    public Property(String address1, String address2, String postcode, String city, String teleNum,
+                    int noRooms, PropertyStatus status)
+    {
         this.addressLine1 = address1;
         this.addressLine2 = address2;
         this.postcode = postcode;
         this.city = city;
         this.teleNumber = teleNum;
         this.noOfRooms = noRooms;
-        this.propStatus = PropertyStatus.VACANT;
+        this.propStatus = status;
+
+        // Initialise a new payment list
+        this.payments = new ArrayList<Payment>();
+
+        // Initialise a new array list of rooms
+        this.rooms = new ArrayList<Room>();
     }
 
-    // change the status of a property to 'FULL'
+    /**
+     * Make a Payment against this property.
+     * @param amount the Payment amount
+     * @param t the Tenant making the payment
+     * @return True if the payment was made, else return false.
+     */
+    public Boolean makePayment(double amount, Tenant t)
+    {
+        // Assume this method would fail
+        Boolean result = false;
+
+        // Create a new payment object
+        Payment thisPayment = new Payment(amount, t);
+
+        // Check the variables are set and perform adding the payment to the property
+        if(amount >= 0 && null != t)
+        {
+            // Add payment to property payments array list
+            this.payments.add(thisPayment);
+
+            // Add payment to the users payment array list record
+            t.payments.add(thisPayment);
+        }
+
+        // True or False
+        return result;
+    }
+
+    /**
+     * Returns this Property object
+     * @return this - this Property object
+     */
+    public Property getProperty()
+    {
+        return this;
+    }
+
+    /**
+     * Changes the status of the property to FULL
+     */
     public void occupied() {
         this.propStatus = PropertyStatus.FULL;
         this.notifyObservers();
     }
 
-    // reset property status to vacant.
-    public void vacant() {
-        this.propStatus = PropertyStatus.VACANT;
-        this.notifyObservers();
+    /**
+     * Sets the status of the Property to VACANT if all
+     * the rooms are VACANT
+     * @return True if all rooms are vacant, else return false.
+     */
+    public Boolean vacant() {
+
+        Boolean allVacant   = false;    // Are all rooms vacant
+        int     successFlag = 0;        // How many rooms are vacant?
+
+        // Check to see whether the room at index i is VACANT
+        for(int i = 0; i < rooms.size(); i++)
+        {
+            Room currRoom = rooms.get(i);
+
+            // If room i is vacant, increment successFlag by 1
+            if(currRoom.getStatus() == RoomStatus.VACANT)
+                successFlag++;
+        }
+
+        // If all rooms are VACANT, update the Property Status
+        if(successFlag == rooms.size())
+        {
+            this.propStatus = PropertyStatus.VACANT;
+            this.notifyObservers();
+        }
+
+        return allVacant;
+    }
+
+    /**
+     * Gets the specified Room from the Properties Room ArrayList with
+     * a given Room ID
+     * @param thisRoom the Room requested
+     * @return the Room object requested, else return null
+     */
+    public Room getRoom(Room thisRoom)
+    {
+        // Create a nulled Room object
+        Room requestedRoom = null;
+
+        // Check whether the request room object is valid
+        if(null != thisRoom)
+        {
+            // Loop through the rooms array
+            for(int i = 0; i < rooms.size(); i++)
+            {
+                // If the room objects match then set the requestedRoom to the room object
+                if(thisRoom == rooms.get(i))
+                {
+                    requestedRoom = thisRoom;
+                }
+            }
+        }
+
+        // Return the requested Room object
+        return requestedRoom;
     }
 
     /**
@@ -132,6 +222,7 @@ public class Property implements ISubject{
     public void setPropStatus(PropertyStatus propStatus) {
         this.propStatus = propStatus;
     }
+
 
     @Override
     public Boolean registerObserver(IObserver o) {

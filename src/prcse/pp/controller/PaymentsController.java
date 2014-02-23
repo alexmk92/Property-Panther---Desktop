@@ -521,7 +521,7 @@ public class PaymentsController implements Initializable, ControlledScreen {
                             nav_icon1.getStyleClass().add("active");
                             accent1.getStyleClass().addAll("active", "show");
                         break;
-                        case "User":
+                        case "Tenant":
                             nav_bg2.getStyleClass().addAll("active");
                             nav_icon2.getStyleClass().add("active");
                             accent2.getStyleClass().addAll("active", "show");
@@ -546,12 +546,12 @@ public class PaymentsController implements Initializable, ControlledScreen {
                             nav_icon6.getStyleClass().add("active");
                             accent6.getStyleClass().addAll("active", "show");
                         break;
-                        case "Add User":
+                        case "Add Tenant":
                             nav_bg2.getStyleClass().addAll("active");
                             nav_icon2.getStyleClass().add("active");
                             accent2.getStyleClass().addAll("active", "show");
                         break;
-                        case "View User":
+                        case "View Tenant":
                             nav_bg2.getStyleClass().addAll("active");
                             nav_icon2.getStyleClass().add("active");
                             accent2.getStyleClass().addAll("active", "show");

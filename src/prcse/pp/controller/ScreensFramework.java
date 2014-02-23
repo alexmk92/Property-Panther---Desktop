@@ -56,7 +56,7 @@ public class ScreensFramework extends Application  {
 
     public static String screen1ID = "Dashboard";
     public static String screen1File = "../view/Dashboard.fxml";
-    public static String screen2ID = "User";
+    public static String screen2ID = "Tenant";
     public static String screen2File = "../view/AllUsers.fxml";
     public static String screen3ID = "Properties";
     public static String screen3File = "../view/Properties.fxml";
@@ -66,9 +66,9 @@ public class ScreensFramework extends Application  {
     public static String screen5File = "../view/Messages.fxml";
     public static String screen6ID = "Settings";
     public static String screen6File = "../view/Settings.fxml";
-    public static String screen7ID = "Add User";
+    public static String screen7ID = "Add Tenant";
     public static String screen7File = "../view/AddUser.fxml";
-    public static String screen8ID = "View User";
+    public static String screen8ID = "View Tenant";
     public static String screen8File = "../view/UserDetails.fxml";
     public static Boolean connected = false;
     public static Database db;

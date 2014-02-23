@@ -1,6 +1,8 @@
 package prcse.pp.db;
 
-import prcse.pp.model.User;
+import prcse.pp.model.Property;
+import prcse.pp.model.Room;
+import prcse.pp.model.Tenant;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -39,34 +41,12 @@ public class Database {
         }
     }
 
-    /**
-     * Perform a select query
-     * @return
-     */
-    public void buildUsers(){
-        ArrayList<ResultSet> results = new ArrayList<>();
-        String query = "";
-        try {
-            Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
-            Statement  st  = con.createStatement();
-            ResultSet  res = st.executeQuery(query);
-
-            while(res.next()) {
-                results.add(res);
-            }
-            res.close();
-            con.close();
-            System.out.println(res.getRow());
-        } catch (SQLException e) {
-            System.out.println("Error handling query: " + e.getMessage());
-        }
-    }
 
 
     // Demo some system out stuff here for tomorrow
     public void connectionDemo(){
 
-        ArrayList<User> userList = new ArrayList<>();
+        ArrayList<Tenant> tenantList = new ArrayList<>();
 
         try {
             Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
@@ -74,18 +54,21 @@ public class Database {
             ResultSet  res = st.executeQuery("SELECT * FROM users");
 
             while(res.next()) {
-                User u = new User();
-                u.setForename(res.getString("user_forename"));
-                u.setSurname(res.getString("user_surname"));
-                userList.add(u);
+                Property p = null;
+                Room     r = new Room();
+                Tenant u = new Tenant(res.getString("user_title"), res.getString("user_forename"), res.getString("user_surname"),
+                        res.getString("user_email"), res.getString("user_phone"), res.getString("addr_line_1"), res.getString("addr_line_2"),
+                        res.getString("addr_postcode"), res.getString("addr_city"), p.getProperty(), r.getRoom());
+
+                tenantList.add(u);
             }
 
-            System.out.println(userList.size());
-            System.out.println(userList.get(0).getName());
-            System.out.println(userList.get(1).getName());
-            System.out.println(userList.get(2).getName());
-            System.out.println(userList.get(3).getName());
-            System.out.println(userList.get(4).getName());
+            System.out.println(tenantList.size());
+            System.out.println(tenantList.get(0).getName());
+            System.out.println(tenantList.get(1).getName());
+            System.out.println(tenantList.get(2).getName());
+            System.out.println(tenantList.get(3).getName());
+            System.out.println(tenantList.get(4).getName());
         } catch (SQLException e) {
             System.out.println("Error handling query: " + e.getMessage());
         }
