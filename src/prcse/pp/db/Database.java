@@ -17,9 +17,9 @@ import java.util.ArrayList;
  */
 public class Database {
 
-    private String     db_host;
-    private String     db_user;
-    private String     db_pass;
+    private String db_host;
+    private String db_user;
+    private String db_pass;
 
     /**
      * Create the connection

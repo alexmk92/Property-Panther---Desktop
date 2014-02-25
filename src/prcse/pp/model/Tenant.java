@@ -58,10 +58,28 @@ public class Tenant extends Person implements Serializable {
         this.notes    = new ArrayList();
 
         // calculates the total payment due from the Tenant
-        this.payment_due = (this.room.getPrice() * this.room.getContractLength());
+        this.payment_due = this.room.getPrice() * this.room.getContractLength();
 
         // sets status to occupied if the user has a room.
         this.room.occupied(this);
+    }
+
+    /**
+     * Empty constructor for a tenant
+     */
+    public Tenant()
+    {
+        super();
+
+        this.permission  = UserPermission.USER;
+        this.property    = null;
+        this.room        = null;
+        this.payment_due = 0.00;
+
+        // creates a new message and payments array list
+        this.messages = new ArrayList<Message>();
+        this.payments = new ArrayList<Payment>();
+        this.notes    = new ArrayList();
     }
 
     /**
@@ -79,11 +97,6 @@ public class Tenant extends Person implements Serializable {
 
         return result;
     }
-
-    /**
-     *  getProperty
-     */
-
 
     /**
      * Returns the room which the tenant occupies
@@ -110,6 +123,58 @@ public class Tenant extends Person implements Serializable {
         }
 
         return roomAdded;
+    }
+
+    /**
+     * Sets the tenants Property
+     * @param newProperty the property the tenant occupies
+     * @return True if the room was changed else false
+     */
+    public Boolean setProperty(Property newProperty)
+    {
+        Boolean propertySet = false;
+
+        // Set the new property
+        if(null != newProperty)
+        {
+            this.property = newProperty;
+            propertySet = true;
+        }
+
+        return propertySet;
+    }
+
+    /**
+     *  Returns the users property
+     */
+    public Property getProperty()
+    {
+        return this.property;
+    }
+
+    /**
+     * Sets the payment due for a user
+     */
+    public Boolean setPaymentDue()
+    {
+        Boolean paymentSet = false;
+
+        if(paymentSet == false)
+        {
+            paymentSet = true;
+            this.payment_due = this.room.getPrice() * this.room.getContractLength();
+        }
+
+        return paymentSet;
+    }
+
+    /**
+     * Gets the payment due for a user
+     * @return the amount of payment a user has due on their contract
+     */
+    public double getPaymentDue()
+    {
+        return this.payment_due;
     }
 
 }

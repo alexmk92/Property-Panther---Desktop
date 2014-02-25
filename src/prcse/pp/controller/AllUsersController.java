@@ -13,6 +13,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
@@ -20,12 +21,20 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Callback;
 import javafx.util.Duration;
+import prcse.pp.model.Person;
+import prcse.pp.model.Tenant;
+import prcse.pp.model.UserList;
 import prcse.pp.view.NoteCell;
+import prcse.pp.view.PaymentCell;
+import prcse.pp.view.UserCell;
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 
 
@@ -123,8 +132,8 @@ public class AllUsersController implements Initializable, ControlledScreen {
     private TextField txtEmail;
     @FXML // fx:id="txtProperty"
     private TextField txtProperty;
-    @FXML // fx:id="lstNotes"
-    private ListView lstNotes;
+    @FXML // fx:id="lstUsers"
+    private ListView lstUsers;
     @FXML // fx:id="widget_top_left"
     private Pane widget_top_left;
     @FXML // fx:id="widget_top_right"
@@ -136,9 +145,14 @@ public class AllUsersController implements Initializable, ControlledScreen {
 
 
     // Set variables to allow for draggable window.
+    private Tenant thisTenant;
+    private UserList userList = ScreensFramework.users;
     private double xOffset = 0;
     private double yOffset = 0;
     ScreensController myController;
+
+
+
 
     /**
      * Initializes the controller class.
@@ -159,6 +173,9 @@ public class AllUsersController implements Initializable, ControlledScreen {
                 resetStyles();
             }
         });
+
+        // Load UI elements
+        displayUsers();
 
         // Set the display graphic for title
         Effect glow = new Glow(0.3);
@@ -279,17 +296,6 @@ public class AllUsersController implements Initializable, ControlledScreen {
             }
         });
 
-        ObservableList<String> values = FXCollections.observableArrayList("This is a note", "I am another note", "Note 5", "Note 6", "Away from home");
-        lstNotes.setItems(values);
-        lstNotes.setFixedCellSize(50);
-        lstNotes.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
-            @Override
-            public ListCell<String> call(ListView<String> param) {
-                return new NoteCell("Alex", "Sims");
-            }
-        });
-
-
         // Utility controls
         closeBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -315,6 +321,43 @@ public class AllUsersController implements Initializable, ControlledScreen {
         });
 
     }
+
+    /******************************************************
+     *                  UI ELEMENT LOAD
+     ******************************************************/
+    public void displayUsers()
+    {
+        // Array list of users to be added to the ListView
+        ObservableList users = FXCollections.observableArrayList();
+
+        // Loop through each user in the system and create a ListView item
+        for(int i = 0; i < userList.size(); i++)
+        {
+            thisTenant = userList.getUserAt(i);
+
+            // Check whether an address line 2 is specified
+            if(thisTenant.getAddr_line_2() == "NULL" || thisTenant.getAddr_line_2() == null)
+                users.add(thisTenant.getName() + "\n" + thisTenant.getAddr_line_1());
+            else
+                users.add(thisTenant.getName() + "\n" + thisTenant.getAddr_line_1() + " " + thisTenant.getAddr_line_2());
+        }
+
+        // Use a Cell Factory to format the output.
+        lstUsers.setFixedCellSize(80);
+        lstUsers.setCellFactory(new Callback<ListView, ListCell>() {
+            @Override
+            public ListCell call(ListView listView) {
+                UserCell c = new UserCell();
+                c.getStyleClass().add("border-bottom");
+                return c;
+            }
+        });
+
+        // Populate the listview
+        lstUsers.setItems(users);
+    }
+
+
 
     /******************************************************
      *                ANIMATION CONTROLS
@@ -347,6 +390,7 @@ public class AllUsersController implements Initializable, ControlledScreen {
         //txtUsers_Username.requestFocus();
     }
 
+    // Hide the slide out user widget
     public void hideUsers()
     {
         final Timeline slideBack = new Timeline();
@@ -408,7 +452,7 @@ public class AllUsersController implements Initializable, ControlledScreen {
         final KeyFrame kf4 = new KeyFrame(Duration.millis(400), kv4);
         final KeyValue kv5 = new KeyValue(widget_top_left.translateXProperty(), 880);
         final KeyFrame kf5 = new KeyFrame(Duration.millis(500), kv5);
-        final KeyValue kv6 = new KeyValue(widget_bottom_right.translateYProperty(), -443);
+        final KeyValue kv6 = new KeyValue(widget_bottom_right.translateYProperty(), -483);
         final KeyFrame kf6 = new KeyFrame(Duration.millis(500), kv6);
 
         // Build the animation

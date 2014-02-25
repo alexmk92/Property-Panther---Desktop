@@ -93,7 +93,7 @@ public class Person implements Serializable, ISubject {
         String result = "UNKNOWN";
 
         if(null != this.forename && null != this.surname){
-            result = this.surname + ", " + this.forename;
+            result = this.forename + " " + this.surname;
         }
         return result;
     }

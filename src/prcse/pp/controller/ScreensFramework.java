@@ -47,6 +47,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import prcse.pp.db.Database;
+import prcse.pp.model.Tenant;
+import prcse.pp.model.UserList;
 
 /**
  *
@@ -72,6 +74,7 @@ public class ScreensFramework extends Application  {
     public static String screen8File = "../view/UserDetails.fxml";
     public static Boolean connected = false;
     public static Database db;
+    public static UserList users = new UserList();
 
 
     @Override
@@ -79,7 +82,8 @@ public class ScreensFramework extends Application  {
 
 
         // Make a connection to the database (SINGLETON)
-        connectToDb();
+        //connectToDb();
+        buildUsers();
 
         ScreensController mainContainer = new ScreensController();
         mainContainer.loadScreen(ScreensFramework.screen1ID, ScreensFramework.screen1File);
@@ -104,12 +108,48 @@ public class ScreensFramework extends Application  {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        System.out.println("UI Loaded");
-        System.out.println(db.getDb_host());
+       //System.out.println("UI Loaded");
+        //System.out.println(db.getDb_host());
 
-        db.connectionDemo();
+        //db.connectionDemo();
         //db.buildUsers();
 
+    }
+
+    public void buildUsers()
+    {
+        Tenant a = new Tenant();
+        Tenant b = new Tenant();
+        Tenant c = new Tenant();
+        Tenant d = new Tenant();
+        Tenant e = new Tenant();
+
+        a.setForename("Jamie");
+        a.setSurname("Shepherd");
+        a.setAddr_line_1("6 Morland Drive");
+
+        b.setForename("Alex");
+        b.setSurname("Sims");
+        b.setAddr_line_1("Flat 5,");
+        b.setAddr_line_2("8 Laira Place");
+
+        c.setForename("Thomas");
+        c.setSurname("Knowles");
+        c.setAddr_line_1("26 Newland Area");
+
+        d.setForename("Jason");
+        d.setSurname("Dee");
+        d.setAddr_line_1("32 Apricot Road");
+
+        e.setForename("Adam");
+        e.setSurname("Stevenson");
+        e.setAddr_line_1("12 Peters Way");
+
+        users.addUser(a);
+        users.addUser(b);
+        users.addUser(c);
+        users.addUser(d);
+        users.addUser(e);
     }
 
     /**

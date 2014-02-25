@@ -63,7 +63,7 @@
 }
 #nav_active_accent.active
 {
-    -fx-fill: #71cee5;
+    -fx-fill: #66d8f0;
 }
 #app_version
 {
@@ -130,7 +130,7 @@
 }
 #nav_icon_5.active
 {
-    -fx-background-image: url("img/edit_blue.png");
+    -fx-background-image: url("img/email_blue.png");
     -fx-background-repeat: no-repeat;
 }
 #nav_icon_6.active
@@ -259,7 +259,7 @@
 }
 .profile
 {
-    -fx-text-fill: #71cee5 !important;
+    -fx-text-fill: #66d8f0 !important;
     -fx-font-size: 24px !important;
 }
 .caption
@@ -336,7 +336,7 @@
 
 .info_blue
 {
-    -fx-text-fill: #71cee5;
+    -fx-text-fill: #66d8f0;
     -fx-font-size: 14px;
     -fx-font-family: "Open Sans Light";
 }
@@ -391,8 +391,7 @@
 
 .list-cell:filled:hover {
     -fx-background-color: rgba(0,0,0,0.35);
-    -fx-text-fill: #71cee5 !important;
-    -fx-cursor: hand;
+    -fx-text-fill: #66d8f0 !important;
 }
 
 .mylistview{
@@ -438,6 +437,7 @@
     -fx-focus-color: #1e1e2d !important;
 }
 
+
 /* The main scrollbar **thumb** CSS class on event of "hover" and "pressed" */
 .mylistview .scroll-bar .thumb:hover,
 .mylistview .scroll-bar .thumb:pressed{
@@ -457,3 +457,32 @@
     -fx-font-size: 16px;
 }
 
+.center-vert {
+    -fx-translate-y: 20px !important;
+}
+
+.btn_narrow {
+    -fx-pref-width: 110px !important;
+}
+
+.pull_left {
+    -fx-translate-x: -10px !important;
+}
+
+.margin_right {
+    -fx-translate-x: -15px !important;
+}
+
+.address_text
+{
+    -fx-text-fill: #fefefe !important;
+    -fx-font-family: 'Open Sans Light' !important;
+    -fx-font-size: 15px !important;
+    -fx-translate-y: 7.5px !important;
+}
+
+.border-bottom
+{
+    -fx-border-width: 1px;
+    -fx-border-color: transparent transparent #3c525f transparent;
+}
