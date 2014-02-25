@@ -341,7 +341,7 @@ public class UserInfoController implements Initializable, ControlledScreen {
     }
 
     /******************************************************
-     *                      METHODS
+     *                      METHOD
      ******************************************************/
     public Tenant getTenant()
     {
