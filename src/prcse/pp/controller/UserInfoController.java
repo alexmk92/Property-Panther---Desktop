@@ -23,6 +23,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Callback;
 import javafx.util.Duration;
+import prcse.pp.model.Tenant;
 import prcse.pp.view.NoteCell;
 
 import java.net.URL;
@@ -139,11 +140,27 @@ public class UserInfoController implements Initializable, ControlledScreen {
     private Pane widget_bottom_right;
     @FXML // fx:id="body"
     private AnchorPane body;
+    @FXML // fx:id="lblUsername"
+    private Label lblUsername;
+    @FXML // fx:id="lblUserAddress"
+    private Label lblUserAddress;
+    @FXML // fx:id="lblEmail"
+    private Label lblEmail;
+    @FXML // fx:id="lblPhone"
+    private Label lblPhone;
+    @FXML // fx:id="lblAddr1"
+    private Label lblAddr1;
+    @FXML // fx:id="lblLocation"
+    private Label lblLocation;
+    @FXML // fx:id="lblPostcode"
+    private Label lblPostcode;
 
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
     private double yOffset = 0;
+    private Boolean objectsSet = false;   // Allows the tenant to only be set once per screen session
+    protected Tenant thisTenant;
     ScreensController myController;
 
     /**
@@ -152,6 +169,7 @@ public class UserInfoController implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle resources)
     {
+
         // Set opacity of widgets
         widget_middle_left.setOpacity(0.3);
         widget_middle_right.setOpacity(0.3);
@@ -164,8 +182,15 @@ public class UserInfoController implements Initializable, ControlledScreen {
         body.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
+                if(objectsSet == false) {
+                    thisTenant = getTenant();
+                    System.out.println(thisTenant.getName());
+                    renderView();
+                }
                 animateIn();
                 resetStyles();
+                objectsSet = true;
+
             }
         });
 
@@ -288,16 +313,6 @@ public class UserInfoController implements Initializable, ControlledScreen {
             }
         });
 
-        ObservableList<String> values = FXCollections.observableArrayList("This is a note", "I am another note", "Note 5", "Note 6", "Away from home");
-        lstNotes.setItems(values);
-        lstNotes.setFixedCellSize(50);
-        lstNotes.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
-            @Override
-            public ListCell<String> call(ListView<String> param) {
-                return new NoteCell("Alex", "Sims");
-            }
-        });
-
 
         // Utility controls
         closeBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -324,6 +339,44 @@ public class UserInfoController implements Initializable, ControlledScreen {
         });
 
     }
+
+    /******************************************************
+     *                      METHODS
+     ******************************************************/
+    public Tenant getTenant()
+    {
+        return ScreensFramework.searchObj.getTenant();
+    }
+
+    /**
+     * Renders all objects and sets their data appropriate to the Tenant object
+     * that has been passed.
+     */
+    public void renderView()
+    {
+        lblUsername.setText(thisTenant.getName());
+        if(thisTenant.getAddr_line_2() == "NULL" || thisTenant.getAddr_line_2() == null) {
+            lblUserAddress.setText(thisTenant.getAddr_line_1());
+            lblAddr1.setText(thisTenant.getAddr_line_1() + "\n" + thisTenant.getCity() + "\n" + thisTenant.getPostcode());
+        } else {
+            lblUserAddress.setText(thisTenant.getAddr_line_1() + " " + thisTenant.getAddr_line_2());
+            lblAddr1.setText(thisTenant.getAddr_line_1() + ", " + thisTenant.getAddr_line_2() + "\n" + thisTenant.getCity() + "\n" + thisTenant.getPostcode());
+        }
+        lblEmail.setText(thisTenant.getEmail());
+        lblPhone.setText("+" + thisTenant.getPhone());
+
+        // Populates the note section
+        ObservableList<String> values = FXCollections.observableArrayList("This is a note", "I am another note", "Note 5", "Note 6", "Away from home");
+        lstNotes.setItems(values);
+        lstNotes.setFixedCellSize(50);
+        lstNotes.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
+            @Override
+            public ListCell<String> call(ListView<String> param) {
+                return new NoteCell("Fix", "This, use UserCell as comparison");
+            }
+        });
+    }
+
 
     /******************************************************
      *                ANIMATION CONTROLS
@@ -543,6 +596,10 @@ public class UserInfoController implements Initializable, ControlledScreen {
                 myController.setScreen(ID);
             }
         }).start();
+
+        // Reset the objectsSet flag, this will allow an object to be loaded when a user
+        // requests this form from the HashMap again.
+        objectsSet = false;
     }
 
     /**

@@ -75,6 +75,7 @@ public class ScreensFramework extends Application  {
     public static Boolean connected = false;
     public static Database db;
     public static UserList users = new UserList();
+    public static Searcher searchObj = new Searcher();
 
 
     @Override

@@ -52,14 +52,6 @@
 <font>
 <Font name="Arial" size="14.0" />
 </font>
-</Label><Label fx:id="lblLocation" layoutX="14.0" layoutY="36.0" styleClass="caption_small" text="Milton Keynes, Bucks" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-<font>
-<Font name="Arial" size="14.0" />
-</font>
-</Label><Label fx:id="lblPostcode" layoutX="14.0" layoutY="66.0" styleClass="caption_small" text="MK80PB" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-<font>
-<Font name="Arial" size="14.0" />
-</font>
 </Label>
 </children></Pane>
 </children>
@@ -81,7 +73,7 @@
 <Image url="@img/user_default.png" />
 </image>
 </ImageView>
-<Label layoutX="128.0" layoutY="24.0" text="Alex Sims" textFill="WHITE">
+<Label fx:id="lblUsername" layoutX="128.0" layoutY="24.0" text="Alex Sims" textFill="WHITE">
 <font>
 <Font name="Arial" size="16.0" />
 </font>
@@ -90,7 +82,7 @@
 <String fx:value="profile" />
 </styleClass>
 </Label>
-<Label layoutX="126.0" layoutY="55.0" text="Flat 5, 8 Laira Place" textFill="WHITE">
+<Label fx:id="lblUserAddress" layoutX="126.0" layoutY="55.0" text="Flat 5, 8 Laira Place" textFill="WHITE">
 <font>
 <Font name="Arial" size="16.0" />
 </font>
@@ -253,18 +245,18 @@
 </Label>
 </children>
 </Pane><Pane layoutY="40.0" prefHeight="116.0" prefWidth="281.0" styleClass="window" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-        <children><Button layoutX="12.0" layoutY="27.0" mnemonicParsing="false" text="Create User">
+        <children><Button fx:id="btnCreateUser" layoutX="12.0" layoutY="27.0" mnemonicParsing="false" text="Create User">
             <styleClass>
                 <String fx:value="button" />
                 <String fx:value="btn_actions" />
                 <String fx:value="blue" />
-            </styleClass></Button><Button layoutX="144.0" layoutY="27.0" mnemonicParsing="false" text="View All Users" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+            </styleClass></Button><Button fx:id="btnViewUsers" layoutX="144.0" layoutY="27.0" mnemonicParsing="false" text="View All Users" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
             <styleClass>
                 <String fx:value="button" />
                 <String fx:value="btn_actions" />
                 <String fx:value="blue" />
             </styleClass>
-        </Button><Button layoutX="12.0" layoutY="65.0" mnemonicParsing="false" text="Make Note" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+        </Button><Button fx:id="btnMakeNote" layoutX="12.0" layoutY="65.0" mnemonicParsing="false" text="Make Note" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <styleClass>
 <String fx:value="button" />
 <String fx:value="btn_actions" />
@@ -306,7 +298,7 @@
             <font>
                 <Font name="Open Sans Light" size="16.0" />
             </font>
-        </Label><Button layoutX="23.0" layoutY="266.0" mnemonicParsing="false" prefWidth="88.0" text="Search" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+        </Label><Button fx:id="btnSearchUsers" layoutX="23.0" layoutY="266.0" mnemonicParsing="false" prefWidth="88.0" text="Search" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
             <styleClass>
                 <String fx:value="button" />
                 <String fx:value="btn_actions" />

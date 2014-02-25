@@ -145,7 +145,7 @@ public class AllUsersController implements Initializable, ControlledScreen {
 
 
     // Set variables to allow for draggable window.
-    private Tenant thisTenant;
+    private Tenant thisTenant = ScreensFramework.searchObj.getTenant();
     private UserList userList = ScreensFramework.users;
     private double xOffset = 0;
     private double yOffset = 0;

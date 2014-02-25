@@ -66,6 +66,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
+import prcse.pp.model.Tenant;
 
 /**
  * FXML Controller class
@@ -543,6 +544,13 @@ public class DashboardController implements Initializable, ControlledScreen {
     }
     @FXML
     private void goToAllUsers(ActionEvent event){
+        Searcher s = ScreensFramework.searchObj;
+        Tenant t = new Tenant();
+
+        t.setForename("Alexander John");
+        t.setSurname("Sims");
+        s.setTenant(t);
+
         hideUsers();
         myController.setScreen(ScreensFramework.screen8ID);
     }
