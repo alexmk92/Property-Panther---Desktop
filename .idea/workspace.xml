@@ -176,6 +176,7 @@
     <sortChildren value="false" />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -212,7 +213,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -226,20 +226,7 @@
         <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/AllUsersController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="147" column="31" selection-start="4526" selection-end="4526" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1393365356000" expanded="true" signature="6269:6288" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="6493:6511" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="6717:6736" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="6941:6959" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="7165:7184" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="7389:7407" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="7613:7632" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="7837:7855" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="8061:8080" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="8285:8303" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="10630:10649" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="10923:10941" placeholder="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -248,20 +235,7 @@
         <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/UserInfoController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="351" column="89" selection-start="12065" selection-end="12065" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1393365356000" expanded="true" signature="6984:7003" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="7208:7226" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="7432:7451" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="7656:7674" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="7880:7899" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="8104:8122" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="8328:8347" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="8552:8570" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="8776:8795" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="9000:9018" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="11346:11365" placeholder="{...}" />
-                <marker date="1393365356000" expanded="true" signature="11639:11657" placeholder="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -270,29 +244,7 @@
         <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/DashboardController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="371" column="43" selection-start="13972" selection-end="13972" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#15586#15904#0" expanded="true" />
-                <element signature="e#15893#15894#0" expanded="true" />
-                <element signature="e#15948#16194#0" expanded="true" />
-                <element signature="e#16183#16184#0" expanded="true" />
-                <marker date="1393419284000" expanded="true" signature="5645:5664" placeholder="{...}" />
-                <marker date="1393419284000" expanded="true" signature="5869:5887" placeholder="{...}" />
-                <marker date="1393419284000" expanded="true" signature="6098:6117" placeholder="{...}" />
-                <marker date="1393419284000" expanded="true" signature="6618:6637" placeholder="{...}" />
-                <marker date="1393419284000" expanded="true" signature="6842:6860" placeholder="{...}" />
-                <marker date="1393419284000" expanded="true" signature="7071:7090" placeholder="{...}" />
-                <marker date="1393419284000" expanded="true" signature="7589:7608" placeholder="{...}" />
-                <marker date="1393419284000" expanded="true" signature="7813:7831" placeholder="{...}" />
-                <marker date="1393419284000" expanded="true" signature="8042:8061" placeholder="{...}" />
-                <marker date="1393419284000" expanded="true" signature="8562:8581" placeholder="{...}" />
-                <marker date="1393419284000" expanded="true" signature="8786:8804" placeholder="{...}" />
-                <marker date="1393419284000" expanded="true" signature="9015:9034" placeholder="{...}" />
-                <marker date="1393419284000" expanded="true" signature="9533:9552" placeholder="{...}" />
-                <marker date="1393419284000" expanded="true" signature="9757:9775" placeholder="{...}" />
-                <marker date="1393419284000" expanded="true" signature="9986:10005" placeholder="{...}" />
-                <marker date="1393419284000" expanded="true" signature="14215:14234" placeholder="{...}" />
-                <marker date="1393419284000" expanded="true" signature="14508:14526" placeholder="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -327,7 +279,7 @@
       <file leaf-file-name="ScreensFramework.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/ScreensFramework.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="180" column="5" selection-start="6824" selection-end="6824" vertical-scroll-proportion="0.76021796">
+            <state line="180" column="5" selection-start="6824" selection-end="6824" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -364,10 +316,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="4" />
-    <option name="y" value="22" />
-    <option name="width" value="1277" />
-    <option name="height" value="725" />
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -508,14 +460,14 @@
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="OverrideImplement.combined" value="false" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="GenerateAntBuildDialog.generateSingleFile" value="true" />
-    <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="true" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="prcse-desktop" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -531,8 +483,8 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -611,6 +563,32 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="true" type="#org.osmorc.OsgiConfigurationType" factoryName="OSGi Bundles" vmParameters="" programParameters="" includeAllBundlesInClassPath="false" workingDir="" useAlternativeJre="false" alternativeJrePath="" frameworkStartLevel="1" defaultStartLevel="5" generateWorkingDir="false">
+      <framework instance="" />
+      <additinalProperties startConsole="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GeronimoConfiguration" factoryName="Local">
+      <deployment />
+      <server-settings>
+        <option name="USERNAME" value="system" />
+        <option name="PASSWORD" value="manager" />
+      </server-settings>
+      <predefined_log_file id="Geronimo" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JBossConfiguration" factoryName="Remote">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="transportHostId" />
+        </data>
+      </server-settings>
+      <predefined_log_file id="JBoss" enabled="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -633,25 +611,15 @@
       </MavenSettings>
       <method />
     </configuration>
-    <configuration default="true" type="JBossConfiguration" factoryName="Remote">
+    <configuration default="true" type="#com.intellij.j2ee.web.jsr45.JSR45ConfigurationFactory" factoryName="Remote">
+      <option name="PORT" value="80" />
       <option name="LOCAL" value="false" />
-      <deployment />
       <server-settings>
-        <data>
-          <option name="transportHostId" />
-        </data>
+        <option name="JSP_PACKAGE" value="org.apache.jsp" />
+        <option name="VM_OPTS" value="" />
+        <option name="USE_WEBSPHERE51_LINEMAPPING_MODEL" value="false" />
+        <option name="LOCAL_PORT" value="80" />
       </server-settings>
-      <predefined_log_file id="JBoss" enabled="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="GeronimoConfiguration" factoryName="Local">
-      <deployment />
-      <server-settings>
-        <option name="USERNAME" value="system" />
-        <option name="PASSWORD" value="manager" />
-      </server-settings>
-      <predefined_log_file id="Geronimo" enabled="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
     <configuration default="true" type="TomeeConfiguration" factoryName="Local">
@@ -665,15 +633,25 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.jsr45.JSR45ConfigurationFactory" factoryName="Remote">
-      <option name="PORT" value="80" />
+    <configuration default="true" type="GriffonRunConfigurationType" factoryName="Griffon">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="true" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TomeeConfiguration" factoryName="Remote">
       <option name="LOCAL" value="false" />
+      <deployment />
       <server-settings>
-        <option name="JSP_PACKAGE" value="org.apache.jsp" />
-        <option name="VM_OPTS" value="" />
-        <option name="USE_WEBSPHERE51_LINEMAPPING_MODEL" value="false" />
-        <option name="LOCAL_PORT" value="80" />
+        <data>
+          <option name="transportHostId" />
+        </data>
       </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -687,6 +665,45 @@
     <configuration default="true" type="GoogleAppEngineDevServer" factoryName="Local">
       <server-settings />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JBossConfiguration" factoryName="Local">
+      <deployment />
+      <server-settings>
+        <option name="SERVER" value="" />
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="USERNAME" value="" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="JBoss" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.jsr45.JSR45ConfigurationFactory" factoryName="Local">
+      <option name="PORT" value="80" />
+      <server-settings>
+        <option name="JSP_PACKAGE" value="org.apache.jsp" />
+        <option name="VM_OPTS" value="" />
+        <option name="USE_WEBSPHERE51_LINEMAPPING_MODEL" value="false" />
+        <option name="LOCAL_PORT" value="80" />
+      </server-settings>
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="XSLT" factoryName="XSLT">
+      <option name="myOutputFile" />
+      <option name="myOpenOutputFile" value="false" />
+      <option name="myOpenInBrowser" value="false" />
+      <option name="mySmartErrorHandling" value="true" />
+      <option name="myRunnerPort" value="34873" />
+      <option name="myVmArguments" />
+      <option name="myWorkingDirectory" />
+      <option name="myModule" />
+      <option name="myJdk" />
+      <parameters />
+      <OutputType value="CONSOLE" save-to-file="false" />
+      <FileType name="XML" />
+      <JdkChoice value="FROM_MODULE" />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -767,7 +784,77 @@
     <configuration default="true" type="CfmlUnitRunConfigurationType" factoryName="MXUnit" method="" path="" scope="Component" webpath="">
       <method />
     </configuration>
+    <configuration default="true" type="WebSphereRunConfigurationType" factoryName="Local">
+      <option name="PORT" value="9080" />
+      <deployment />
+      <server-settings>
+        <option name="PROFILE_PATH" value="" />
+        <option name="SOAP_PORT" value="8880" />
+        <option name="CELL_NAME" value="DefaultNode" />
+        <option name="NODE_NAME" value="DefaultNode" />
+        <option name="SERVER_NAME" value="server1" />
+        <option name="SECURED" value="false" />
+        <option name="CLIENT_TRUST_FILE_PATH" value="" />
+        <option name="CLIENT_TRUST_PASSWORD" value="WebAS" />
+        <option name="CLIENT_KEY_FILE_PATH" value="" />
+        <option name="CLIENT_KEY_PASSWORD" value="WebAS" />
+        <option name="USERNAME" value="" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="WebSphere" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
     <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" web_path="">
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="GLUE" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JettyConfiguration" factoryName="Local">
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="configFiles">
+            <list>
+              <JettyConfigFile>
+                <option name="active" value="true" />
+                <option name="path" value="etc\jetty-jmx.xml" />
+              </JettyConfigFile>
+            </list>
+          </option>
+        </data>
+      </server-settings>
+      <predefined_log_file id="Jetty" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="WebSphereRunConfigurationType" factoryName="Remote">
@@ -789,6 +876,63 @@
         <option name="PASSWORD" value="" />
       </server-settings>
       <predefined_log_file id="WebSphere" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="transportHostId" />
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="true" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
@@ -830,6 +974,17 @@
       <predefined_log_file id="WEBLOGIC_SERVER_LOG_FILE" enabled="true" />
       <method />
     </configuration>
+    <configuration default="true" type="CBConfiguration" factoryName="Local">
+      <deployment />
+      <server-settings>
+        <option name="HTTP_PORT_X" value="8080" />
+        <option name="JNDI_PORT" value="1099" />
+        <option name="USERNAME" value="" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
     <configuration default="true" type="GlassfishConfiguration" factoryName="Remote">
       <option name="LOCAL" value="false" />
       <deployment />
@@ -867,6 +1022,24 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote" singleton="true">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JettyConfiguration" factoryName="Remote">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="transportHostId" />
+        </data>
+      </server-settings>
+      <predefined_log_file id="Jetty" enabled="true" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -931,6 +1104,13 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
+    <configuration default="true" type="ResinConfigurationType" factoryName="Local">
+      <option name="PORT" value="80" />
+      <deployment />
+      <server-settings />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
     <configuration default="true" type="#com.intellij.j2meplugin.run.J2MEConfigurationType" factoryName="J2ME">
       <module name="" />
       <USER_OPTIONS />
@@ -962,16 +1142,6 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
-    <configuration default="true" type="CBConfiguration" factoryName="Remote">
-      <option name="PORT" value="80" />
-      <option name="LOCAL" value="false" />
-      <deployment />
-      <server-settings>
-        <option name="USERNAME" value="" />
-        <option name="PASSWORD" value="" />
-      </server-settings>
-      <method />
-    </configuration>
     <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Class">
       <option name="BCName" value="" />
       <option name="launcherParameters">
@@ -985,244 +1155,19 @@
       <option name="trusted" value="true" />
       <method />
     </configuration>
+    <configuration default="true" type="CBConfiguration" factoryName="Remote">
+      <option name="PORT" value="80" />
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <option name="USERNAME" value="" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <method />
+    </configuration>
     <configuration default="true" type="RemoteFlashRunConfigurationType" factoryName="Flash Remote Debug">
       <option name="BCName" value="" />
       <option name="moduleName" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="ResinConfigurationType" factoryName="Remote">
-      <option name="PORT" value="80" />
-      <option name="LOCAL" value="false" />
-      <deployment />
-      <server-settings />
-      <method />
-    </configuration>
-    <configuration default="true" type="#org.osmorc.OsgiConfigurationType" factoryName="OSGi Bundles" vmParameters="" programParameters="" includeAllBundlesInClassPath="false" workingDir="" useAlternativeJre="false" alternativeJrePath="" frameworkStartLevel="1" defaultStartLevel="5" generateWorkingDir="false">
-      <framework instance="" />
-      <additinalProperties startConsole="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="TomeeConfiguration" factoryName="Remote">
-      <option name="LOCAL" value="false" />
-      <deployment />
-      <server-settings>
-        <data>
-          <option name="transportHostId" />
-        </data>
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="GriffonRunConfigurationType" factoryName="Griffon">
-      <module name="" />
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="depsClasspath" value="true" />
-      <setting name="passParentEnv" value="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JBossConfiguration" factoryName="Local">
-      <deployment />
-      <server-settings>
-        <option name="SERVER" value="" />
-        <option name="BINDING_SET_NAME" value="" />
-        <option name="USERNAME" value="" />
-        <option name="PASSWORD" value="" />
-      </server-settings>
-      <predefined_log_file id="JBoss" enabled="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <method />
-    </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.jsr45.JSR45ConfigurationFactory" factoryName="Local">
-      <option name="PORT" value="80" />
-      <server-settings>
-        <option name="JSP_PACKAGE" value="org.apache.jsp" />
-        <option name="VM_OPTS" value="" />
-        <option name="USE_WEBSPHERE51_LINEMAPPING_MODEL" value="false" />
-        <option name="LOCAL_PORT" value="80" />
-      </server-settings>
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <method />
-    </configuration>
-    <configuration default="true" type="XSLT" factoryName="XSLT">
-      <option name="myOutputFile" />
-      <option name="myOpenOutputFile" value="false" />
-      <option name="myOpenInBrowser" value="false" />
-      <option name="mySmartErrorHandling" value="true" />
-      <option name="myRunnerPort" value="34873" />
-      <option name="myVmArguments" />
-      <option name="myWorkingDirectory" />
-      <option name="myModule" />
-      <option name="myJdk" />
-      <parameters />
-      <OutputType value="CONSOLE" save-to-file="false" />
-      <FileType name="XML" />
-      <JdkChoice value="FROM_MODULE" />
-      <method />
-    </configuration>
-    <configuration default="true" type="WebSphereRunConfigurationType" factoryName="Local">
-      <option name="PORT" value="9080" />
-      <deployment />
-      <server-settings>
-        <option name="PROFILE_PATH" value="" />
-        <option name="SOAP_PORT" value="8880" />
-        <option name="CELL_NAME" value="DefaultNode" />
-        <option name="NODE_NAME" value="DefaultNode" />
-        <option name="SERVER_NAME" value="server1" />
-        <option name="SECURED" value="false" />
-        <option name="CLIENT_TRUST_FILE_PATH" value="" />
-        <option name="CLIENT_TRUST_PASSWORD" value="WebAS" />
-        <option name="CLIENT_KEY_FILE_PATH" value="" />
-        <option name="CLIENT_KEY_PASSWORD" value="WebAS" />
-        <option name="USERNAME" value="" />
-        <option name="PASSWORD" value="" />
-      </server-settings>
-      <predefined_log_file id="WebSphere" enabled="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <method />
-    </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="GLUE" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JettyConfiguration" factoryName="Local">
-      <deployment />
-      <server-settings>
-        <data>
-          <option name="configFiles">
-            <list>
-              <JettyConfigFile>
-                <option name="active" value="true" />
-                <option name="path" value="etc\jetty-jmx.xml" />
-              </JettyConfigFile>
-            </list>
-          </option>
-        </data>
-      </server-settings>
-      <predefined_log_file id="Jetty" enabled="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote">
-      <option name="LOCAL" value="false" />
-      <deployment />
-      <server-settings>
-        <data>
-          <option name="transportHostId" />
-        </data>
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
-      <option name="VM_PARAMETERS" value="" />
-      <option name="USER_CFG_CLASS" />
-      <option name="CONTEXT_PROVIDER" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="DEPLOY" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
-      <module name="" />
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="depsClasspath" value="true" />
-      <setting name="passParentEnv" value="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <setting name="launchBrowser" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="CBConfiguration" factoryName="Local">
-      <deployment />
-      <server-settings>
-        <option name="HTTP_PORT_X" value="8080" />
-        <option name="JNDI_PORT" value="1099" />
-        <option name="USERNAME" value="" />
-        <option name="PASSWORD" value="" />
-      </server-settings>
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote" singleton="true">
-      <JSRemoteDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSRemoteDebuggerConfigurationSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="JettyConfiguration" factoryName="Remote">
-      <option name="LOCAL" value="false" />
-      <deployment />
-      <server-settings>
-        <data>
-          <option name="transportHostId" />
-        </data>
-      </server-settings>
-      <predefined_log_file id="Jetty" enabled="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="ResinConfigurationType" factoryName="Local">
-      <option name="PORT" value="80" />
-      <deployment />
-      <server-settings />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
     <configuration default="true" type="GWT.ConfigurationType" factoryName="GWT Configuration">
@@ -1237,6 +1182,13 @@
         <option name="MBeanPort" value="9875" />
         <option name="MBeanUserName" value="admin" />
       </server-settings>
+      <method />
+    </configuration>
+    <configuration default="true" type="ResinConfigurationType" factoryName="Remote">
+      <option name="PORT" value="80" />
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings />
       <method />
     </configuration>
     <list size="2">
@@ -1288,35 +1240,35 @@
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="22" width="1277" height="725" extended-state="6" />
-    <editor active="true" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.67591566" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23801787" sideWeight="0.6909091" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.67591566" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3970346" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32289952" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24972253" sideWeight="0.73333335" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.16257995" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20146222" sideWeight="0.6909091" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3090909" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.67107946" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32289952" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1424,42 +1376,13 @@
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/AllUsersController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="147" column="31" selection-start="4526" selection-end="4526" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1393365356000" expanded="true" signature="6269:6288" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="6493:6511" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="6717:6736" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="6941:6959" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="7165:7184" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="7389:7407" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="7613:7632" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="7837:7855" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="8061:8080" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="8285:8303" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="10630:10649" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="10923:10941" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/Searcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="28" selection-start="345" selection-end="345" vertical-scroll-proportion="0.19642857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/jre/lib/ext/jfxrt.jar!/javafx/animation/Animation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/jre/lib/ext/jfxrt.jar!/javafx/fxml/FXMLLoader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="315" column="20" selection-start="17021" selection-end="17021" vertical-scroll-proportion="0.33126935">
-          <folding />
-        </state>
+        <state line="16" column="28" selection-start="345" selection-end="345" vertical-scroll-proportion="0.19642857" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Person.java">
@@ -1479,28 +1402,13 @@
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/UserInfoController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="351" column="89" selection-start="12065" selection-end="12065" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1393365356000" expanded="true" signature="6984:7003" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="7208:7226" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="7432:7451" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="7656:7674" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="7880:7899" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="8104:8122" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="8328:8347" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="8552:8570" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="8776:8795" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="9000:9018" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="11346:11365" placeholder="{...}" />
-            <marker date="1393365356000" expanded="true" signature="11639:11657" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Payment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="49" selection-start="644" selection-end="644" vertical-scroll-proportion="-2.4107144">
-          <folding />
-        </state>
+        <state line="30" column="49" selection-start="644" selection-end="644" vertical-scroll-proportion="-2.4107144" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/Dashboard.fxml">
@@ -1513,35 +1421,13 @@
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/DashboardController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="371" column="43" selection-start="13972" selection-end="13972" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#15586#15904#0" expanded="true" />
-            <element signature="e#15893#15894#0" expanded="true" />
-            <element signature="e#15948#16194#0" expanded="true" />
-            <element signature="e#16183#16184#0" expanded="true" />
-            <marker date="1393419284000" expanded="true" signature="5645:5664" placeholder="{...}" />
-            <marker date="1393419284000" expanded="true" signature="5869:5887" placeholder="{...}" />
-            <marker date="1393419284000" expanded="true" signature="6098:6117" placeholder="{...}" />
-            <marker date="1393419284000" expanded="true" signature="6618:6637" placeholder="{...}" />
-            <marker date="1393419284000" expanded="true" signature="6842:6860" placeholder="{...}" />
-            <marker date="1393419284000" expanded="true" signature="7071:7090" placeholder="{...}" />
-            <marker date="1393419284000" expanded="true" signature="7589:7608" placeholder="{...}" />
-            <marker date="1393419284000" expanded="true" signature="7813:7831" placeholder="{...}" />
-            <marker date="1393419284000" expanded="true" signature="8042:8061" placeholder="{...}" />
-            <marker date="1393419284000" expanded="true" signature="8562:8581" placeholder="{...}" />
-            <marker date="1393419284000" expanded="true" signature="8786:8804" placeholder="{...}" />
-            <marker date="1393419284000" expanded="true" signature="9015:9034" placeholder="{...}" />
-            <marker date="1393419284000" expanded="true" signature="9533:9552" placeholder="{...}" />
-            <marker date="1393419284000" expanded="true" signature="9757:9775" placeholder="{...}" />
-            <marker date="1393419284000" expanded="true" signature="9986:10005" placeholder="{...}" />
-            <marker date="1393419284000" expanded="true" signature="14215:14234" placeholder="{...}" />
-            <marker date="1393419284000" expanded="true" signature="14508:14526" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/ScreensFramework.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="5" selection-start="6824" selection-end="6824" vertical-scroll-proportion="0.76021796">
+        <state line="180" column="5" selection-start="6824" selection-end="6824" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
