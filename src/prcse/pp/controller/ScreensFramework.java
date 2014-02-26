@@ -124,6 +124,7 @@ public class ScreensFramework extends Application  {
         Tenant c = new Tenant();
         Tenant d = new Tenant();
         Tenant e = new Tenant();
+        Tenant f = new Tenant();
 
         a.setForename("Jamie");
         a.setSurname("Shepherd");
@@ -146,11 +147,16 @@ public class ScreensFramework extends Application  {
         e.setSurname("Stevenson");
         e.setAddr_line_1("12 Peters Way");
 
+        f.setForename("Alex");
+        f.setSurname("Peters");
+        f.setAddr_line_1("16 Tomato Street");
+
         users.addUser(a);
         users.addUser(b);
         users.addUser(c);
         users.addUser(d);
         users.addUser(e);
+        users.addUser(f);
     }
 
     /**
