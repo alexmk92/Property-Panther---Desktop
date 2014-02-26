@@ -41,6 +41,7 @@
 package prcse.pp.controller;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.animation.KeyFrame;
@@ -67,6 +68,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import prcse.pp.model.Tenant;
+import prcse.pp.model.UserList;
 
 /**
  * FXML Controller class
@@ -161,6 +163,7 @@ public class DashboardController implements Initializable, ControlledScreen {
     // Set variables to allow for draggable window.
     private double xOffset = 0;
     private double yOffset = 0;
+    private UserList users = ScreensFramework.users;
     ScreensController myController;
 
     /**
@@ -467,6 +470,8 @@ public class DashboardController implements Initializable, ControlledScreen {
         slideOut.getKeyFrames().addAll(kf1, kf2, kf3);
         slideOut.play();
 
+        txtUsers_Username.requestFocus();
+
     }
 
     public void hideUsers()
@@ -513,9 +518,47 @@ public class DashboardController implements Initializable, ControlledScreen {
         myController.setScreen(ScreensFramework.screen1ID);
 }
     @FXML
-    private void goToUsers(ActionEvent event){
+    private void goToUsers(ActionEvent event)
+    {
+        if(txtUsers_Username.getText().length() > 0 && txtUsers_Username.getText() != null)
+        {
+            String[] name = txtUsers_Username.getText().split(" ");
+            String forename = null;
+            String surname  = null;
 
-        myController.setScreen(ScreensFramework.screen2ID);
+            try
+            {
+                forename = name[0];
+                System.out.println(forename);
+
+                surname  = name[1];
+                System.out.println(surname);
+
+            } catch (Exception e)
+            {
+                System.out.println("Error:" + e.getMessage());
+            }
+
+            ArrayList<Tenant> results = users.getTenant(forename, surname);
+
+            if(results.size() > 1)
+            {
+                hideUsers();
+                myController.setScreen(ScreensFramework.screen2ID);
+            } else if(results.size() == 1) {
+                Searcher s = ScreensFramework.searchObj;
+                Tenant t = results.get(0);
+
+                s.setTenant(t);
+
+                hideUsers();
+                myController.setScreen(ScreensFramework.screen8ID);
+            } else {
+                hideUsers();
+                myController.setScreen(ScreensFramework.screen2ID);
+            }
+        }
+
     }
     @FXML
     private void goToProperties(ActionEvent event){

@@ -99,8 +99,8 @@
         <Pane fx:id="searchWrap" layoutX="-87.0" layoutY="236.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
             <children><Pane id="slide_out" fx:id="searchButtons" prefHeight="35.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
                 <children>
-                    <Button id="btn_user" fx:id="btn_create_user" alignment="TOP_CENTER" layoutX="2.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToAddUser" prefHeight="25.0" prefWidth="169.0" text="Create User" />
-                    <Button id="btn_user" fx:id="btn_view_user" layoutX="170.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToAllUsers" prefHeight="25.0" text="View All Users" />
+                    <Button id="btn_user" fx:id="btn_create_user" alignment="TOP_CENTER" layoutX="2.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0" text="Create User" />
+                    <Button id="btn_user" fx:id="btn_view_user" layoutX="170.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToUsers" prefHeight="25.0" text="View All Users" />
                     <ImageView fx:id="img_create_user" fitHeight="15.0" fitWidth="50.0" layoutX="135.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
                         <image>
                             <Image url="@img/add_user_white.png" />
@@ -119,7 +119,7 @@
                             <Font name="Open Sans Light" size="16.0" />
                         </font>
                     </TextField>
-                    <Button id="btn_search" fx:id="btnUserSearch" layoutX="285.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToAllUsers" prefHeight="44.0" prefWidth="44.0" />
+                    <Button id="btn_search" fx:id="btnUserSearch" layoutX="285.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToUsers" prefHeight="44.0" prefWidth="44.0" />
                     <ImageView fx:id="spinner_green" fitHeight="21.0" fitWidth="21.0" layoutX="297.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" styleClass="hidden">
                         <image>
                             <Image url="@img/spinner_green.gif" />
@@ -221,14 +221,10 @@
                 </AnchorPane>
                 <AnchorPane fx:id="nav2" layoutX="-1.0" layoutY="235.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
                     <children>
-                        <Button id="nav_button" fx:id="nav_bg2" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showUsers" prefHeight="70.0" prefWidth="251.0" text="Users" textFill="WHITE">
+                        <Button id="nav_button" fx:id="nav_bg2" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showUsers" prefHeight="70.0" prefWidth="251.0" styleClass="light" text="Users" textFill="WHITE">
                             <font>
                                 <Font size="20.0" />
-                            </font>
-                            <styleClass>
-                                <String fx:value="light" />
-                                <String fx:value="active" />
-                            </styleClass></Button><Rectangle id="nav_active_accent" fx:id="accent2" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="active" width="3.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_2" fx:id="nav_icon2" layoutX="200.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="36.0" styleClass="active" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+                            </font></Button><Rectangle id="nav_active_accent" fx:id="accent2" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="3.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_2" fx:id="nav_icon2" layoutX="200.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="36.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
                     </children>
                 </AnchorPane>
                 <AnchorPane fx:id="nav3" layoutY="305.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">

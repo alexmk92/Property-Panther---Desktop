@@ -81,6 +81,30 @@ public class UserList implements ISubject, IObserver, Serializable {
     }
 
     /**
+     * Returns a list of tenants who have the same forename
+     */
+    public ArrayList getTenant(String forename, String surname)
+    {
+        ArrayList<Tenant> tenantResults = new ArrayList<>();
+
+        String fullname = forename + " " + surname;
+
+        if(null != forename)
+        {
+            for(int i = 0; i < tenantList.size(); i++)
+            {
+                String thisName = tenantList.get(i).getForename();
+                if(forename.toLowerCase().equals(thisName.toLowerCase()))
+                {
+                    tenantResults.add(tenantList.get(i));
+                }
+            }
+        }
+
+        return tenantResults;
+    }
+
+    /**
      * Accessor to retrieve the size of the Tenant list
      * @return - int being the number of Users currently on the user list
      */
