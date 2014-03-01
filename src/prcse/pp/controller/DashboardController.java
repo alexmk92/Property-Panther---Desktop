@@ -120,12 +120,15 @@ public class DashboardController implements Initializable, ControlledScreen {
     private Pane searchButtons;
     @FXML // fx:id="searchWrap"
     private Pane searchWrap;
+    @FXML // fx:id="body"
+    private AnchorPane body;
 
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
     private double yOffset = 0;
     private UserList users = ScreensFramework.users;
+    private boolean usersHidden = true;
     ScreensController myController;
 
     /**
@@ -382,9 +385,26 @@ public class DashboardController implements Initializable, ControlledScreen {
             public void handle(MouseEvent mouseEvent) {
                 nav_bg2.getStyleClass().remove("light_hover");
                 accent2.setStyle("visibility: hidden");
-                hideUsers();
             }
         });
+        body.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                if(usersHidden == false)
+                    hideUsers();
+            }
+        });
+        nav_bg2.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                if(usersHidden == false)
+                    hideUsers();
+                else
+                    showUsers();
+            }
+        });
+
+
 
         /******************************************************
          *              MODEL MANIPULATION METHODS
@@ -406,6 +426,9 @@ public class DashboardController implements Initializable, ControlledScreen {
             }
         });
 
+        /**
+         * Performs a User search when the Enter key is pressed
+         */
         txtUsers_Username.setOnKeyPressed(new EventHandler<javafx.scene.input.KeyEvent>() {
             @Override
             public void handle(javafx.scene.input.KeyEvent ke) {
@@ -443,6 +466,7 @@ public class DashboardController implements Initializable, ControlledScreen {
         slideOut.play();
 
         txtUsers_Username.requestFocus();
+        usersHidden = false;
 
     }
 
@@ -463,6 +487,7 @@ public class DashboardController implements Initializable, ControlledScreen {
         txtUsers_Username.setText("");
         spinner_green.setVisible(false);
         btnUserSearch.getStyleClass().remove("searching");
+        usersHidden = true;
     }
 
     public void slideTitleIn()
@@ -476,10 +501,6 @@ public class DashboardController implements Initializable, ControlledScreen {
             slideDown.play();
     }
 
-
-
-
-
     /******************************************************
      *              LOAD NEW SCREEN METHODS
      ******************************************************/
@@ -491,16 +512,28 @@ public class DashboardController implements Initializable, ControlledScreen {
     private void goToDashboard(ActionEvent event){
         hideUsers();
         myController.setScreen(ScreensFramework.screen1ID);
-}
+    }
+
+    /**
+     * Performs a search on the user objects and sets the correct
+     * results in the AllUsers view.
+     * If only one result is found on the search, the user is taken to
+     * the UserInfo view where they can view details on that user
+     * @param event
+     */
     @FXML
     private void goToUsers(ActionEvent event)
     {
+        // Check that the textbox has been set
         if(txtUsers_Username.getText().length() > 0 && txtUsers_Username.getText() != null)
         {
+            // Local variables
+            Searcher s = ScreensFramework.searchObj;
             String[] name = txtUsers_Username.getText().split(" ");
             String forename = null;
             String surname  = null;
 
+            // Build a forename and surname string to search for the user
             try
             {
                 forename = name[0];
@@ -514,27 +547,29 @@ public class DashboardController implements Initializable, ControlledScreen {
                 System.out.println("Error:" + e.getMessage());
             }
 
-            ArrayList<Tenant> results = users.getTenant(forename, surname);
+            // Populate a new UserList item collection of results
+            UserList results = users.getTenant(forename, surname);
 
+
+            // Is there more than one user
             if(results.size() > 1)
             {
                 hideUsers();
                 myController.setScreen(ScreensFramework.screen2ID);
-            } else if(results.size() == 1) {
-                Searcher s = ScreensFramework.searchObj;
-                Tenant t = results.get(0);
-
+            }
+            // Is there only one user with that name?
+            else if(results.size() == 1) {
+                Tenant t = results.getUserAt(0);
                 s.setTenant(t);
-
                 hideUsers();
                 myController.setScreen(ScreensFramework.screen8ID);
-            } else {
-                hideUsers();
-                myController.setScreen(ScreensFramework.screen2ID);
             }
+        } else {
+            hideUsers();
+            myController.setScreen(ScreensFramework.screen2ID);
         }
-
     }
+
     @FXML
     private void goToProperties(ActionEvent event){
         hideUsers();
@@ -562,14 +597,7 @@ public class DashboardController implements Initializable, ControlledScreen {
     }
     @FXML
     private void goToAllUsers(ActionEvent event){
-        Searcher s = ScreensFramework.searchObj;
-        Tenant t = new Tenant();
-
-        t.setForename("Alexander John");
-        t.setSurname("Sims");
-        s.setTenant(t);
-
         hideUsers();
-        myController.setScreen(ScreensFramework.screen8ID);
+        myController.setScreen(ScreensFramework.screen2ID);
     }
 }

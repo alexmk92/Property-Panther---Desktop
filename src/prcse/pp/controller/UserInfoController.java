@@ -190,7 +190,6 @@ public class UserInfoController implements Initializable, ControlledScreen {
                 animateIn();
                 resetStyles();
                 objectsSet = true;
-
             }
         });
 

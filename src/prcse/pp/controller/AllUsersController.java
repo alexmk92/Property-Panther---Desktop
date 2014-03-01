@@ -147,6 +147,8 @@ public class AllUsersController implements Initializable, ControlledScreen {
     // Set variables to allow for draggable window.
     private Tenant thisTenant = ScreensFramework.searchObj.getTenant();
     private UserList userList = ScreensFramework.users;
+    private UserList userResult = new UserList();
+    private Boolean objectsSet = false;
     private double xOffset = 0;
     private double yOffset = 0;
     ScreensController myController;
@@ -171,11 +173,16 @@ public class AllUsersController implements Initializable, ControlledScreen {
             public void handle(MouseEvent mouseEvent) {
                 animateIn();
                 resetStyles();
+
+                if(objectsSet == false)
+                {
+                    userResult = ScreensFramework.searchObj.getSearchedUsers();
+                    displayUsers();
+                }
+
+                objectsSet = true;
             }
         });
-
-        // Load UI elements
-        displayUsers();
 
         // Set the display graphic for title
         Effect glow = new Glow(0.3);
@@ -325,21 +332,41 @@ public class AllUsersController implements Initializable, ControlledScreen {
     /******************************************************
      *                  UI ELEMENT LOAD
      ******************************************************/
+    public UserList getResults()
+    {
+        return ScreensFramework.searchObj.getSearchedUsers();
+    }
+
     public void displayUsers()
     {
         // Array list of users to be added to the ListView
         ObservableList users = FXCollections.observableArrayList();
 
-        // Loop through each user in the system and create a ListView item
-        for(int i = 0; i < userList.size(); i++)
+        if(userResult.size() > 0)
         {
-            thisTenant = userList.getUserAt(i);
+            System.out.println("hi");
+            // Loop through each user in the system and create a ListView item
+            for(int i = 0; i < userResult.size(); i++)
+            {
+                thisTenant = userResult.getUserAt(i);
 
-            // Check whether an address line 2 is specified
-            if(thisTenant.getAddr_line_2() == "NULL" || thisTenant.getAddr_line_2() == null)
-                users.add(thisTenant.getName() + "\n" + thisTenant.getAddr_line_1());
-            else
-                users.add(thisTenant.getName() + "\n" + thisTenant.getAddr_line_1() + " " + thisTenant.getAddr_line_2());
+                // Check whether an address line 2 is specified
+                if(thisTenant.getAddr_line_2() == "NULL" || thisTenant.getAddr_line_2() == null)
+                    users.add(thisTenant.getName() + "\n" + thisTenant.getAddr_line_1());
+                else
+                    users.add(thisTenant.getName() + "\n" + thisTenant.getAddr_line_1() + " " + thisTenant.getAddr_line_2());
+            }
+        } else {
+            for(int i = 0; i < userList.size(); i++)
+            {
+                thisTenant = userList.getUserAt(i);
+
+                // Check whether an address line 2 is specified
+                if(thisTenant.getAddr_line_2() == "NULL" || thisTenant.getAddr_line_2() == null)
+                    users.add(thisTenant.getName() + "\n" + thisTenant.getAddr_line_1());
+                else
+                    users.add(thisTenant.getName() + "\n" + thisTenant.getAddr_line_1() + " " + thisTenant.getAddr_line_2());
+            }
         }
 
         // Use a Cell Factory to format the output.
@@ -542,6 +569,8 @@ public class AllUsersController implements Initializable, ControlledScreen {
                 myController.setScreen(ID);
             }
         }).start();
+
+        objectsSet = false;
     }
 
     /**

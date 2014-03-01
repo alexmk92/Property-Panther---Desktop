@@ -7,11 +7,11 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="main__body" maxHeight="720.0" maxWidth="1200.0" minHeight="720.0" minWidth="1200.0" prefHeight="720.0" prefWidth="1250.0" stylesheets="@MainView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prcse.pp.controller.DashboardController">
+<AnchorPane id="main__body" fx:id="body" maxHeight="720.0" maxWidth="1200.0" minHeight="720.0" minWidth="1200.0" prefHeight="720.0" prefWidth="1250.0" stylesheets="@MainView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prcse.pp.controller.DashboardController">
     <children>
 <Pane fx:id="searchWrap" layoutX="-87.0" layoutY="236.0" maxWidth="680.0" minWidth="680.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <children><Pane id="slide_out" fx:id="searchButtons" prefHeight="35.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-<children><Button id="btn_user" fx:id="btn_create_user" alignment="TOP_CENTER" layoutX="2.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToAddUser" prefHeight="25.0" prefWidth="169.0" text="Create User" /><Button id="btn_user" fx:id="btn_view_user" layoutX="170.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToUsers" prefHeight="25.0" text="View All Users" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><ImageView fx:id="img_create_user" fitHeight="15.0" fitWidth="50.0" layoutX="135.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+<children><Button id="btn_user" fx:id="btn_create_user" alignment="TOP_CENTER" layoutX="2.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToAddUser" prefHeight="25.0" prefWidth="169.0" text="Create User" /><Button id="btn_user" fx:id="btn_view_user" layoutX="170.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToAllUsers" prefHeight="25.0" text="View All Users" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><ImageView fx:id="img_create_user" fitHeight="15.0" fitWidth="50.0" layoutX="135.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
 <image>
 <Image url="@img/add_user_white.png" />
 </image></ImageView><ImageView fx:id="img_view_users" fitHeight="17.0" fitWidth="50.0" layoutX="303.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="img" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
@@ -59,7 +59,7 @@
 </AnchorPane>
 <AnchorPane fx:id="nav2" layoutX="-1.0" layoutY="235.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <children>
-                <Button id="nav_button" fx:id="nav_bg2" contentDisplay="CENTER" mnemonicParsing="false" onAction="#showUsers" prefHeight="70.0" prefWidth="251.0" styleClass="light" text="Users" textFill="WHITE">
+                <Button id="nav_button" fx:id="nav_bg2" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="251.0" styleClass="light" text="Users" textFill="WHITE">
 <font>
 <Font size="20.0" />
 </font></Button><Rectangle id="nav_active_accent" fx:id="accent2" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="3.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_2" fx:id="nav_icon2" layoutX="200.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#showUsers" prefHeight="36.0" prefWidth="36.0" styleClass="img" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
