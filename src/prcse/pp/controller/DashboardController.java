@@ -573,6 +573,9 @@ public class DashboardController implements Initializable, ControlledScreen {
                 s.setTenant(t);
                 hideUsers();
                 myController.setScreen(ScreensFramework.screen8ID);
+            } else {
+                hideUsers();
+                myController.setScreen(ScreensFramework.screen2ID);
             }
         } else {
             hideUsers();
