@@ -451,17 +451,21 @@ public class DashboardController implements Initializable, ControlledScreen {
     /******************************************************
      *                ANIMATION CONTROLS
      ******************************************************/
+
+    /**
+     * Reveals the user panel and toggles the hidden flag to false
+     */
     public void showUsers()
     {
         final Timeline slideOut = new Timeline();
         slideOut.setCycleCount(1);
         slideOut.setAutoReverse(false);
         final KeyValue kv1 = new KeyValue(searchBar.translateXProperty(), 339);
-        final KeyFrame kf1 = new KeyFrame(Duration.millis(300), kv1);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(250), kv1);
         final KeyValue kv2 = new KeyValue(searchButtons.translateXProperty(), 339);
-        final KeyFrame kf2 = new KeyFrame(Duration.millis(300), kv2);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(250), kv2);
         final KeyValue kv3 = new KeyValue(searchButtons.translateYProperty(), 67);
-        final KeyFrame kf3 = new KeyFrame(Duration.millis(700), kv3);
+        final KeyFrame kf3 = new KeyFrame(Duration.millis(350), kv3);
         slideOut.getKeyFrames().addAll(kf1, kf2, kf3);
         slideOut.play();
 
@@ -470,17 +474,20 @@ public class DashboardController implements Initializable, ControlledScreen {
 
     }
 
+    /**
+     * Slides the user panel back inward and toggles the hidden flag to true
+     */
     public void hideUsers()
     {
         final Timeline slideBack = new Timeline();
         slideBack.setCycleCount(1);
         slideBack.setAutoReverse(false);
         final KeyValue kv1 = new KeyValue(searchBar.translateXProperty(), 0);
-        final KeyFrame kf1 = new KeyFrame(Duration.millis(500), kv1);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(350), kv1);
         final KeyValue kv2 = new KeyValue(searchButtons.translateXProperty(), 0);
-        final KeyFrame kf2 = new KeyFrame(Duration.millis(500), kv2);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(250), kv2);
         final KeyValue kv3 = new KeyValue(searchButtons.translateYProperty(), 0);
-        final KeyFrame kf3 = new KeyFrame(Duration.millis(300), kv3);
+        final KeyFrame kf3 = new KeyFrame(Duration.millis(250), kv3);
         slideBack.getKeyFrames().addAll(kf1, kf2, kf3);
         slideBack.play();
 
@@ -490,6 +497,9 @@ public class DashboardController implements Initializable, ControlledScreen {
         usersHidden = true;
     }
 
+    /**
+     * Slides the title inward
+     */
     public void slideTitleIn()
     {
             final Timeline slideDown = new Timeline();
