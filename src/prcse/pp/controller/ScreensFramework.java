@@ -81,10 +81,8 @@ public class ScreensFramework extends Application  {
     @Override
     public void start(Stage primaryStage) {
 
-
         // Make a connection to the database (SINGLETON)
-        //connectToDb();
-        buildUsers();
+        connectToDb();
 
         ScreensController mainContainer = new ScreensController();
         mainContainer.loadScreen(ScreensFramework.screen1ID, ScreensFramework.screen1File);
@@ -109,54 +107,22 @@ public class ScreensFramework extends Application  {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-       //System.out.println("UI Loaded");
-        //System.out.println(db.getDb_host());
+       System.out.println("UI Loaded");
+       System.out.println(db.getDb_host());
 
-        //db.connectionDemo();
-        //db.buildUsers();
+       // check if we are connected to the data
+       if(connected == true) {
+            if(this.db.buildObjects()) {
+                System.out.println("Successfully built database objects");
+            } else {
+                System.out.println("Error when building objects, please restart the program.");
+                System.exit(0);
+            }
+       }
+       else {
+           System.out.println("A connection to the database was not established");
+       }
 
-    }
-
-    public void buildUsers()
-    {
-        Tenant a = new Tenant();
-        Tenant b = new Tenant();
-        Tenant c = new Tenant();
-        Tenant d = new Tenant();
-        Tenant e = new Tenant();
-        Tenant f = new Tenant();
-
-        a.setForename("Jamie");
-        a.setSurname("Shepherd");
-        a.setAddr_line_1("6 Morland Drive");
-
-        b.setForename("Alex");
-        b.setSurname("Sims");
-        b.setAddr_line_1("Flat 5,");
-        b.setAddr_line_2("8 Laira Place");
-
-        c.setForename("Thomas");
-        c.setSurname("Knowles");
-        c.setAddr_line_1("26 Newland Area");
-
-        d.setForename("Jason");
-        d.setSurname("Dee");
-        d.setAddr_line_1("32 Apricot Road");
-
-        e.setForename("Adam");
-        e.setSurname("Stevenson");
-        e.setAddr_line_1("12 Peters Way");
-
-        f.setForename("Alex");
-        f.setSurname("Peters");
-        f.setAddr_line_1("16 Tomato Street");
-
-        users.addUser(a);
-        users.addUser(b);
-        users.addUser(c);
-        users.addUser(d);
-        users.addUser(e);
-        users.addUser(f);
     }
 
     /**

@@ -15,6 +15,7 @@ public class Tenant extends Person implements Serializable {
     /**
      * Variables which describe a tenant,
      */
+    private   int            user_id;
     protected UserPermission permission;
     private   Property       property;
     private   Room           room;
@@ -43,12 +44,12 @@ public class Tenant extends Person implements Serializable {
      * @param property the property the user is renting
      * @param room the room they are renting in that property (if applicable)
      */
-    public Tenant(String title, String forename, String surname, String email, String number,
+    public Tenant(int userId, String title, String forename, String surname, String email, String number,
                 String addr_1, String addr_2, String postcode, String city, Property property, Room room)
     {
         super(title, forename, surname, email, number, addr_1, addr_2, postcode, city);
 
-        this.permission  = UserPermission.USER;
+        this.user_id     = userId;
         this.property    = property;
         this.room        = room;
 
@@ -62,6 +63,9 @@ public class Tenant extends Person implements Serializable {
 
         // sets status to occupied if the user has a room.
         this.room.occupied(this);
+
+        // sets the permission to USER
+        this.permission  = UserPermission.USER;
     }
 
     /**
@@ -71,6 +75,7 @@ public class Tenant extends Person implements Serializable {
     {
         super();
 
+        this.user_id     = 0;
         this.permission  = UserPermission.USER;
         this.property    = null;
         this.room        = null;

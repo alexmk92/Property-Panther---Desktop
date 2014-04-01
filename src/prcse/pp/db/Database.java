@@ -1,8 +1,6 @@
 package prcse.pp.db;
 
-import prcse.pp.model.Property;
-import prcse.pp.model.Room;
-import prcse.pp.model.Tenant;
+import prcse.pp.model.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -39,16 +37,109 @@ public class Database {
             this.db_user = user;
             this.db_pass = password;
         }
+
+    }
+
+    /**
+     * Builds all objects in the database in precedence
+     * @return true if the objects were built, else return false
+     */
+    public Boolean buildObjects()
+    {
+        Boolean objectsBuilt = false;
+        int buildCount = 0;
+
+        if(objectsBuilt == false)
+        {
+            if(buildProperties()) { buildCount++; }
+            if(buildRooms()) { buildCount++; }
+            //buildRequests();
+            //buildTracking();
+            //buildPayments();
+            //buildNotes();
+            //buildMessages();
+            //buildUsers();
+
+            // Have all of the objects been built?
+            if(buildCount >= 2) {
+                objectsBuilt = true;
+            } else {
+                objectsBuilt = false;
+            }
+        }
+
+        return objectsBuilt;
+    }
+
+    /**
+     * Queries the database and builds all property objects
+     * @return true if all property objects have been made, else return false
+     */
+    public Boolean buildProperties(){
+        Boolean propertiesBuilt = false;
+        try {
+            PropertyList propertyList = new PropertyList();
+            Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
+            Statement  st  = con.createStatement();
+            ResultSet  res = st.executeQuery("SELECT * FROM properties");
+
+            while(res.next()) {
+                Property p = new Property(res.getInt("property_id"), res.getString("prop_track_code"), res.getString("addr_line_1"),
+                        res.getString("addr_line_2"), res.getString("addr_postcode"), res.getString("addr_district"), res.getString("city_name"),
+                        res.getString("prop_details"), res.getInt("prop_num_rooms"));
+
+                propertyList.addProperty(p);
+            }
+
+            propertiesBuilt = true;
+            System.out.println(propertyList.size());
+        } catch (SQLException e) {
+            System.out.println("Error handling query: " + e.getMessage());
+            propertiesBuilt = false;
+        }
+
+        return propertiesBuilt;
+    }
+
+    /**
+     * Queries the database and builds all room objects
+     * @return true if all room objects have been made, else return false
+     */
+    public Boolean buildRooms(){
+        Boolean roomsBuilt = false;
+        try {
+            RoomList roomList = new RoomList();
+            Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
+            Statement  st  = con.createStatement();
+            ResultSet  res = st.executeQuery("SELECT * FROM rooms");
+
+
+            while(res.next()) {
+                Room r = new Room(res.getInt("room_id"), res.getInt("property_id"), res.getString("room_price"),
+                                  res.getString("room_details"));
+
+                roomList.addRoom(r);
+            }
+
+            roomsBuilt = true;
+            System.out.println(roomList.size());
+
+        } catch (SQLException e) {
+            System.out.println("Error handling query: " + e.getMessage());
+            roomsBuilt = false;
+        }
+
+        return roomsBuilt;
     }
 
 
 
-    // Demo some system out stuff here for tomorrow
-    public void connectionDemo(){
-
-        ArrayList<Tenant> tenantList = new ArrayList<>();
-
+    /**
+     * Build all user objects for the system
+     */
+    public void buildUsers(){
         try {
+            UserList tenantList = new UserList();
             Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
             Statement  st  = con.createStatement();
             ResultSet  res = st.executeQuery("SELECT * FROM users");
@@ -56,19 +147,17 @@ public class Database {
             while(res.next()) {
                 Property p = null;
                 Room     r = new Room();
-                Tenant u = new Tenant(res.getString("user_title"), res.getString("user_forename"), res.getString("user_surname"),
-                        res.getString("user_email"), res.getString("user_phone"), res.getString("addr_line_1"), res.getString("addr_line_2"),
-                        res.getString("addr_postcode"), res.getString("addr_city"), p.getProperty(), r.getRoom());
+                Tenant u = new Tenant();
 
-                tenantList.add(u);
+                tenantList.addUser(u);
             }
 
             System.out.println(tenantList.size());
-            System.out.println(tenantList.get(0).getName());
-            System.out.println(tenantList.get(1).getName());
-            System.out.println(tenantList.get(2).getName());
-            System.out.println(tenantList.get(3).getName());
-            System.out.println(tenantList.get(4).getName());
+            System.out.println(tenantList.getUserAt(0).getName());
+            System.out.println(tenantList.getUserAt(1).getName());
+            System.out.println(tenantList.getUserAt(2).getName());
+            System.out.println(tenantList.getUserAt(3).getName());
+            System.out.println(tenantList.getUserAt(4).getName());
         } catch (SQLException e) {
             System.out.println("Error handling query: " + e.getMessage());
         }

@@ -2,6 +2,8 @@ package prcse.pp.model;
 
 import prcse.pp.model.observer.IObserver;
 import prcse.pp.model.observer.ISubject;
+import prcse.pp.db.Database;
+import prcse.pp.controller.ScreensFramework;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -15,11 +17,13 @@ public class Room implements ISubject, Serializable {
     /**
      * Variables that describe a room
      */
-    private int        price;
-    private String     details;
-    private RoomStatus status;
-    private Tenant     tenant;
+    private int        roomId;
+    private int        propertyId;
+    private String     price;
     private int        contractLength;
+    private String     details;
+    private Tenant     tenant;
+    private RoomStatus status;
 
     // Creates an ArrayList of Observers
     private ArrayList<IObserver> observers = null;
@@ -28,24 +32,9 @@ public class Room implements ISubject, Serializable {
      * Empty constructor to support unset rooms
      */
     public Room(){
-        this.price          = 0;
+        this.price          = "0";
         this.details        = "";
         this.contractLength = 0;
-    }
-
-    /**
-     * Assigns a price and any details to a room as well as setting its default
-     * status as VACANT,  by default it will not have a tenant but will have a default
-     * contract length of 12 months
-     * @param price the price of the room
-     * @param details any details associated with the property
-     */
-    public Room(int price, String details){
-        this.tenant         = null;
-        this.price          = price;
-        this.details        = details;
-        this.status         = RoomStatus.VACANT;
-        this.contractLength = 12;
     }
 
     /**
@@ -53,15 +42,15 @@ public class Room implements ISubject, Serializable {
      * status as VACANT,  by default it will not have a tenant
      * @param price the price per month of the room
      * @param details any details associated with the room
-     * @param tenant the tenant renting the room
-     * @param length the duration of the contract
      */
-    public Room(int price, String details, Tenant tenant, int length){
-        this.tenant         = tenant;
+    public Room(int roomId, int propertyId, String price, String details){
+        this.roomId         = roomId;
+        this.propertyId     = propertyId;
+        this.tenant         = null;
         this.price          = price;
         this.details        = details;
-        this.contractLength = length;
-        this.status         = RoomStatus.OCCUPIED;
+        this.contractLength = 12;
+        this.status         = getStatus();
     }
 
     /**
@@ -120,7 +109,8 @@ public class Room implements ISubject, Serializable {
      */
     public int getPrice()
     {
-        return this.price;
+        int thisPrice = Integer.parseInt(this.price);
+        return thisPrice;
     }
 
     /**
@@ -129,7 +119,19 @@ public class Room implements ISubject, Serializable {
      */
     public RoomStatus getStatus()
     {
-        return this.status;
+        Tenant thisTenant = this.tenant;
+        RoomStatus status;
+
+        if(thisTenant != null)
+        {
+            this.occupied(thisTenant);
+            status = RoomStatus.OCCUPIED;
+        } else {
+            this.vacant();
+            status = RoomStatus.VACANT;
+        }
+
+        return status;
     }
 
     /**

@@ -14,13 +14,13 @@ import java.util.regex.Pattern;
  */
 public class UserList {
 
-    private ArrayList<Tenant> tenantList = new ArrayList();
+    private ArrayList<Tenant> tenantList;
 
     /**
      * Default (empty) constructor, creates a new empty list of users
      */
     public UserList(){
-        this.tenantList = new ArrayList<>();
+        this.tenantList = new ArrayList<Tenant>();
     }
 
 

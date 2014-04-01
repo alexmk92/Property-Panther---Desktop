@@ -2,6 +2,10 @@ package prcse.pp.model;
 
 import prcse.pp.model.observer.IObserver;
 import prcse.pp.model.observer.ISubject;
+import prcse.pp.model.RoomStatus;
+import prcse.pp.model.PropertyStatus;
+import prcse.pp.model.Room;
+
 
 import java.util.ArrayList;
 
@@ -14,19 +18,22 @@ public class Property implements ISubject{
     /**
      * Variables which describe a property
      */
+    private int            propId;
+    private String         trackingCode;
     private String         addressLine1;
     private String         addressLine2;
     private String         postcode;
+    private String         district;
     private String         city;
-    private String         teleNumber;
-    private Integer        noOfRooms;
+    private String         details;
+    private int            noOfRooms;
     private PropertyStatus propStatus;
 
     // arraylist of payments associated with this property
     private ArrayList<Payment> payments;
 
     // arraylist of rooms associated with this property
-    private ArrayList<Room> rooms;
+    private RoomList rooms;
 
     /**
      * New arraylist of Observers whom Observer properties
@@ -42,22 +49,24 @@ public class Property implements ISubject{
      * @param teleNum the properties landline number (if applicable)
      * @param noRooms the number of rooms in that property
      */
-    public Property(String address1, String address2, String postcode, String city, String teleNum,
-                    int noRooms, PropertyStatus status)
+    public Property(int propertyId, String trackCode, String address1, String address2, String postcode,
+                    String district, String city, String details, int noRooms)
     {
+        this.propId       = propertyId;
+        this.trackingCode = trackCode;
         this.addressLine1 = address1;
         this.addressLine2 = address2;
         this.postcode = postcode;
         this.city = city;
-        this.teleNumber = teleNum;
+        this.details = details;
         this.noOfRooms = noRooms;
-        this.propStatus = status;
+        this.propStatus = getStatus();
 
         // Initialise a new payment list
         this.payments = new ArrayList<Payment>();
 
         // Initialise a new array list of rooms
-        this.rooms = new ArrayList<Room>();
+        this.rooms = new RoomList();
     }
 
     /**
@@ -118,7 +127,7 @@ public class Property implements ISubject{
         // Check to see whether the room at index i is VACANT
         for(int i = 0; i < rooms.size(); i++)
         {
-            Room currRoom = rooms.get(i);
+            Room currRoom = rooms.getRoomAt(i);
 
             // If room i is vacant, increment successFlag by 1
             if(currRoom.getStatus() == RoomStatus.VACANT)
@@ -153,7 +162,7 @@ public class Property implements ISubject{
             for(int i = 0; i < rooms.size(); i++)
             {
                 // If the room objects match then set the requestedRoom to the room object
-                if(thisRoom == rooms.get(i))
+                if(thisRoom == rooms.getRoomAt(i))
                 {
                     requestedRoom = thisRoom;
                 }
@@ -199,12 +208,12 @@ public class Property implements ISubject{
         this.city = city;
     }
 
-    public String getTeleNumber() {
-        return teleNumber;
+    public String getDetails() {
+        return details;
     }
 
-    public void setTeleNumber(String teleNumber) {
-        this.teleNumber = teleNumber;
+    public void setDetails(String details) {
+        this.details = details;
     }
 
     public Integer getNoOfRooms() {
@@ -215,12 +224,33 @@ public class Property implements ISubject{
         this.noOfRooms = noOfRooms;
     }
 
-    public PropertyStatus getPropStatus() {
+    public PropertyStatus getStatus() {
+
+        int vacantRooms = 0;
+
+        if(rooms != null)
+        {
+            for(int i = 0; i < rooms.size(); i++)
+            {
+                Room r = rooms.getRoomAt(i);
+
+                if(r.getStatus() == RoomStatus.VACANT);
+                    vacantRooms++;
+            }
+
+            if(vacantRooms >= rooms.size())
+                propStatus = PropertyStatus.FULL;
+            else
+                propStatus = PropertyStatus.VACANT;
+        }
         return propStatus;
     }
 
     public void setPropStatus(PropertyStatus propStatus) {
         this.propStatus = propStatus;
+    }
+    public String  getFullAddress() {
+        return addressLine1 + " " + addressLine2 + " " + city + " " + details + " " + postcode + ".";
     }
 
 
