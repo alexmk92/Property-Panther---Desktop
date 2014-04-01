@@ -175,19 +175,20 @@ public class DashboardController implements Initializable, ControlledScreen {
         nav2.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent2.setStyle("visibility: visible");
+                accent2.setStyle("visibility: visible !important");
             }
         });
         nav2.setOnMouseExited(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent2.setStyle("visibility: hidden");
+                if(usersHidden == true)
+                    accent2.setStyle("visibility: hidden !important");
             }
         });
         nav_icon2.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent2.setStyle("visibility: visible");
+                accent2.setStyle("visibility: visible !important");
                 nav_bg2.getStyleClass().add("light_hover");
             }
         });
@@ -200,19 +201,19 @@ public class DashboardController implements Initializable, ControlledScreen {
         nav3.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent3.setStyle("visibility: visible");
+                accent3.setStyle("visibility: visible !important");
             }
         });
         nav3.setOnMouseExited(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent3.setStyle("visibility: hidden");
+                accent3.setStyle("visibility: hidden !important");
             }
         });
         nav_icon3.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent3.setStyle("visibility: visible");
+                accent3.setStyle("visibility: visible !important");
                 nav_bg3.getStyleClass().add("dark_hover");
             }
         });
@@ -225,19 +226,19 @@ public class DashboardController implements Initializable, ControlledScreen {
         nav4.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent4.setStyle("visibility: visible");
+                accent4.setStyle("visibility: visible !important");
             }
         });
         nav4.setOnMouseExited(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent4.setStyle("visibility: hidden");
+                accent4.setStyle("visibility: hidden !important");
             }
         });
         nav_icon4.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent4.setStyle("visibility: visible");
+                accent4.setStyle("visibility: visible !important");
                 nav_bg4.getStyleClass().add("light_hover");
             }
         });
@@ -250,19 +251,19 @@ public class DashboardController implements Initializable, ControlledScreen {
         nav5.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent5.setStyle("visibility: visible");
+                accent5.setStyle("visibility: visible !important");
             }
         });
         nav5.setOnMouseExited(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent5.setStyle("visibility: hidden");
+                accent5.setStyle("visibility: hidden !important");
             }
         });
         nav_icon5.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent5.setStyle("visibility: visible");
+                accent5.setStyle("visibility: visible !important");
                 nav_bg5.getStyleClass().add("dark_hover");
             }
         });
@@ -275,7 +276,7 @@ public class DashboardController implements Initializable, ControlledScreen {
         nav6.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent6.setStyle("visibility: visible");
+                accent6.setStyle("visibility: visible !important");
             }
         });
         nav6.setOnMouseExited(new EventHandler<MouseEvent>() {
@@ -287,7 +288,7 @@ public class DashboardController implements Initializable, ControlledScreen {
         nav_icon6.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                accent6.setStyle("visibility: visible");
+                accent6.setStyle("visibility: visible !important");
                 nav_bg6.getStyleClass().add("light_hover");
             }
         });
@@ -373,20 +374,6 @@ public class DashboardController implements Initializable, ControlledScreen {
             }
         });
 
-        searchWrap.setOnMouseEntered(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                nav_bg2.getStyleClass().add("light_hover");
-                accent2.setStyle("visibility: visible");
-            }
-        });
-        searchWrap.setOnMouseExited(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                nav_bg2.getStyleClass().remove("light_hover");
-                accent2.setStyle("visibility: hidden");
-            }
-        });
         body.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -439,13 +426,13 @@ public class DashboardController implements Initializable, ControlledScreen {
             }
         });
 
-        btnUserSearch.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        txtUsers_Username.setOnKeyTyped(new EventHandler<javafx.scene.input.KeyEvent>() {
             @Override
-            public void handle(MouseEvent mouseEvent) {
-                btnUserSearch.getStyleClass().add("searching");
-                spinner_green.setVisible(true);
+            public void handle(javafx.scene.input.KeyEvent keyEvent) {
+                System.out.println(txtUsers_Username.getText().toString());
             }
         });
+
     }
 
     /******************************************************
@@ -469,6 +456,8 @@ public class DashboardController implements Initializable, ControlledScreen {
         slideOut.getKeyFrames().addAll(kf1, kf2, kf3);
         slideOut.play();
 
+        nav_bg2.getStyleClass().add("light_hover");
+        accent2.setStyle("visibility: visible !important");
         txtUsers_Username.requestFocus();
         usersHidden = false;
 
@@ -491,24 +480,12 @@ public class DashboardController implements Initializable, ControlledScreen {
         slideBack.getKeyFrames().addAll(kf1, kf2, kf3);
         slideBack.play();
 
+        nav_bg2.getStyleClass().remove("light_hover");
+        accent2.setStyle("visibility: hidden !important");
         txtUsers_Username.setText("");
         spinner_green.setVisible(false);
         btnUserSearch.getStyleClass().remove("searching");
         usersHidden = true;
-    }
-
-    /**
-     * Slides the title inward
-     */
-    public void slideTitleIn()
-    {
-            final Timeline slideDown = new Timeline();
-            slideDown.setCycleCount(1);
-            slideDown.setAutoReverse(false);
-            final KeyValue kv1 = new KeyValue(title.translateYProperty(), 120);
-            final KeyFrame kf1 = new KeyFrame(Duration.millis(800), kv1);
-            slideDown.getKeyFrames().add(kf1);
-            slideDown.play();
     }
 
     /******************************************************
