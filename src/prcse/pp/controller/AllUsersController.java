@@ -154,8 +154,6 @@ public class AllUsersController implements Initializable, ControlledScreen {
     ScreensController myController;
 
 
-
-
     /**
      * Initializes the controller class.
      */

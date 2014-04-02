@@ -47,10 +47,9 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import prcse.pp.db.Database;
-import prcse.pp.model.PropertyList;
-import prcse.pp.model.RoomList;
-import prcse.pp.model.Tenant;
-import prcse.pp.model.UserList;
+import prcse.pp.model.*;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -81,8 +80,9 @@ public class ScreensFramework extends Application  {
     // Global model list - reference these for persistence,
     // IN FUTURE: once loaded, filter these objects into their dependent objects, i.e.
     //            set all OCCUPIED property objects to their dependent tenant
-    public static UserList     tenants    = new UserList();
-    public static PropertyList properties = new PropertyList();
+    public static UserList         tenants    = new UserList();
+    public static PropertyList     properties = new PropertyList();
+    public static ArrayList<Admin> adminList  = new ArrayList<>();
 
 
     @Override

@@ -1,6 +1,7 @@
 package prcse.pp.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Creates a new User with Admin privileges
@@ -10,12 +11,35 @@ public class Admin extends Person implements Serializable {
     /**
      * Variables which describe an admin
      */
-     private UserPermission permission;
+    private UserPermission permission;
+    private int userId;
+
+    // Admin arrays
+    private ArrayList<Alert> alerts;
+    private ArrayList<Inbox> inbox;
 
     public Admin()
     {
         super();
         this.permission = UserPermission.ADMIN;
+
+        this.alerts     = new ArrayList<Alert>();
+        this.inbox      = new ArrayList<Inbox>();
+
+    }
+
+    /**
+     * Admin with a forename, surname, password and email
+     */
+    public Admin(int userId, String forename, String surname, String email)
+    {
+        super(forename, surname);
+        this.userId     = userId;
+        this.email      = email;
+        this.permission = UserPermission.ADMIN;
+
+        this.alerts     = new ArrayList<Alert>();
+        this.inbox      = new ArrayList<Inbox>();
     }
 
     /**

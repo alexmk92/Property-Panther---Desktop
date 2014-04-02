@@ -60,7 +60,6 @@ public class Database {
         if(objectsBuilt == false)
         {
             if(buildProperties()) { buildCount++; }
-            if(buildRequests()) {buildCount++; };
             //buildTracking();
             //buildPayments();
             //buildNotes();
@@ -154,29 +153,51 @@ public class Database {
 
         Boolean usersBuilt = false;
 
+        // Build users
         try {
             // Make a connection to the database
             Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
             Statement  st  = con.createStatement();
-            ResultSet  res = st.executeQuery("SELECT * FROM users");
+            ResultSet  res = st.executeQuery("SELECT * FROM users WHERE user_permissions = 'USER'");
 
             while(res.next()) {
                 Property p = getProperty(res.getInt("user_property"));
                 Room     r = getRoom(p, res.getInt("user_prop_room"));
 
-                Tenant   u = new Tenant(res.getInt("user_id"), res.getString("user_title"), res.getString("user_forename"), res.getString("user_surname"),
+                Tenant   t = new Tenant(res.getInt("user_id"), res.getString("user_title"), res.getString("user_forename"), res.getString("user_surname"),
                                         res.getString("user_email"), res.getString("user_phone"), res.getString("addr_line_1"), res.getString("addr_line_2"),
                                         res.getString("addr_postcode"), res.getString("city_name"), p, r);
 
-                tenantList.addUser(u);
+                buildRequests(t);
+                tenantList.addUser(t);
             }
-            System.out.println(tenantList.size());
+
             usersBuilt = true;
         } catch (SQLException e) {
             System.out.println("Error handling query: " + e.getMessage());
             usersBuilt = false;
         }
 
+        // Build admin
+        try {
+            // Make a connection to the database
+            Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
+            Statement  st  = con.createStatement();
+            ResultSet  res = st.executeQuery("SELECT user_id, user_forename, user_surname, user_email FROM users WHERE user_permissions = 'ADMIN'");
+
+            while(res.next()) {
+                Admin   a = new Admin(res.getInt("user_id"), res.getString("user_forename"), res.getString("user_surname"), res.getString("user_email"));
+
+                ScreensFramework.adminList.add(a);
+            }
+            usersBuilt = true;
+        } catch (SQLException e) {
+            System.out.println("Error handling query: " + e.getMessage());
+            usersBuilt = false;
+        }
+
+        System.out.println(tenantList.size());
+        System.out.println(ScreensFramework.adminList.size());
         return usersBuilt;
     }
 
@@ -184,18 +205,19 @@ public class Database {
      * Build all request objects for the system
      * @return true if all request objects were built, else return false
      */
-    public Boolean buildRequests(){
+    public Boolean buildRequests(Tenant t){
 
         Boolean requestsBuilt = false;
 
         try {
+            int user_id = t.getUserId();
             // Make a connection to the database
             Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
             Statement  st  = con.createStatement();
-            ResultSet  res = st.executeQuery("SELECT * FROM requests");
+            ResultSet  res = st.executeQuery("SELECT * FROM requests WHERE user_id = " + user_id);
 
             while(res.next()) {
-                //Request r = new Request();
+                Request r = new Request();
 
                 //tenantList.addUser(r);
             }

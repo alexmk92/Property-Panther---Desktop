@@ -25,8 +25,10 @@ public class Tenant extends Person implements Serializable {
      * Tenants are able to make payments and send/receive messages,
      * these ArrayLists track all their payments and messages
      */
-    private   ArrayList<Message> messages;
-    protected ArrayList<Payment> payments;
+    private   ArrayList<Requests> requests;
+    private   ArrayList<Inbox>    inbox;
+    private   ArrayList<Note>     notes;
+    protected ArrayList<Payment>  payments;
     private   ArrayList notes;
 
 
@@ -54,9 +56,10 @@ public class Tenant extends Person implements Serializable {
         this.room        = room;
 
         // creates a new message and payments array list
-        this.messages = new ArrayList<Message>();
+        this.inbox    = new ArrayList<Inbox>();
+        this.notes    = new ArrayList<Note>();
+        this.requests = new ArrayList<Request>();
         this.payments = new ArrayList<Payment>();
-        this.notes    = new ArrayList();
 
         // calculates the total payment due from the Tenant
         this.payment_due = this.room.getPrice() * this.room.getContractLength();
@@ -82,7 +85,8 @@ public class Tenant extends Person implements Serializable {
         this.payment_due = 0.00;
 
         // creates a new message and payments array list
-        this.messages = new ArrayList<Message>();
+        this.inbox    = new ArrayList<Inbox>();
+        this.requests = new ArrayList<Request>();
         this.payments = new ArrayList<Payment>();
         this.notes    = new ArrayList();
     }

@@ -6,6 +6,7 @@ package prcse.pp.model;
  */
 public enum MessageType {
 
+    NOTE,
     INBOX,
     MAINTENANCE,
     ALERT;
@@ -14,6 +15,9 @@ public enum MessageType {
     public String toString() {
         String result = "UNKNOWN";
         switch(this){
+            case NOTE:
+                result = "NOTE";
+            break;
             case INBOX:
                 result = "INBOX";
             break;
