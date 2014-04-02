@@ -1,5 +1,7 @@
 package prcse.pp.db;
 
+import javafx.stage.Screen;
+import prcse.pp.controller.ScreensFramework;
 import prcse.pp.model.*;
 
 import java.sql.Connection;
@@ -15,9 +17,14 @@ import java.util.ArrayList;
  */
 public class Database {
 
+    // Variables which describe a connection
     private String db_host;
     private String db_user;
     private String db_pass;
+
+    // Reference to global data store objects
+    UserList     tenantList   = ScreensFramework.tenants;
+    PropertyList propertyList = ScreensFramework.properties;
 
     /**
      * Create the connection
@@ -37,7 +44,6 @@ public class Database {
             this.db_user = user;
             this.db_pass = password;
         }
-
     }
 
     /**
@@ -49,18 +55,20 @@ public class Database {
         Boolean objectsBuilt = false;
         int buildCount = 0;
 
+        // Check that all of the database objects have been built by
+        // incrementing an objectCounter each time a query executes and returns true
         if(objectsBuilt == false)
         {
             if(buildProperties()) { buildCount++; }
-            if(buildRooms()) { buildCount++; }
-            //buildRequests();
+            if(buildRequests()) {buildCount++; };
             //buildTracking();
             //buildPayments();
             //buildNotes();
             //buildMessages();
-            //buildUsers();
+            if(buildUsers()) { buildCount++; }
 
-            // Have all of the objects been built?
+            // Check if all the objects have been built and return the correct
+            // value.
             if(buildCount >= 2) {
                 objectsBuilt = true;
             } else {
@@ -78,7 +86,6 @@ public class Database {
     public Boolean buildProperties(){
         Boolean propertiesBuilt = false;
         try {
-            PropertyList propertyList = new PropertyList();
             Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
             Statement  st  = con.createStatement();
             ResultSet  res = st.executeQuery("SELECT * FROM properties");
@@ -88,11 +95,15 @@ public class Database {
                         res.getString("addr_line_2"), res.getString("addr_postcode"), res.getString("addr_district"), res.getString("city_name"),
                         res.getString("prop_details"), res.getInt("prop_num_rooms"));
 
+                // Builds and adds all rooms relative to this property
+                buildRooms(p);
+
+                // Add the property to the global list of properties
                 propertyList.addProperty(p);
             }
 
             propertiesBuilt = true;
-            System.out.println(propertyList.size());
+
         } catch (SQLException e) {
             System.out.println("Error handling query: " + e.getMessage());
             propertiesBuilt = false;
@@ -102,27 +113,30 @@ public class Database {
     }
 
     /**
-     * Queries the database and builds all room objects
+     * Queries the database and builds all room objects for the property
+     * @param p The property which we are building its rooms for
      * @return true if all room objects have been made, else return false
      */
-    public Boolean buildRooms(){
+    public Boolean buildRooms(Property p){
         Boolean roomsBuilt = false;
         try {
-            RoomList roomList = new RoomList();
+            // Get the correct ID
+            int property_id = p.getPropertyId();
+
             Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
             Statement  st  = con.createStatement();
-            ResultSet  res = st.executeQuery("SELECT * FROM rooms");
+            ResultSet  res = st.executeQuery("SELECT * FROM rooms WHERE property_id = " + property_id);
 
 
             while(res.next()) {
                 Room r = new Room(res.getInt("room_id"), res.getInt("property_id"), res.getString("room_price"),
                                   res.getString("room_details"));
 
-                roomList.addRoom(r);
+                // Add the room object to this property
+                p.addRoom(r);
             }
 
             roomsBuilt = true;
-            System.out.println(roomList.size());
 
         } catch (SQLException e) {
             System.out.println("Error handling query: " + e.getMessage());
@@ -132,35 +146,120 @@ public class Database {
         return roomsBuilt;
     }
 
-
-
     /**
      * Build all user objects for the system
+     * @return true if all user objects were built, else return false
      */
-    public void buildUsers(){
+    public Boolean buildUsers(){
+
+        Boolean usersBuilt = false;
+
         try {
-            UserList tenantList = new UserList();
+            // Make a connection to the database
             Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
             Statement  st  = con.createStatement();
             ResultSet  res = st.executeQuery("SELECT * FROM users");
 
             while(res.next()) {
-                Property p = null;
-                Room     r = new Room();
-                Tenant u = new Tenant();
+                Property p = getProperty(res.getInt("user_property"));
+                Room     r = getRoom(p, res.getInt("user_prop_room"));
+
+                Tenant   u = new Tenant(res.getInt("user_id"), res.getString("user_title"), res.getString("user_forename"), res.getString("user_surname"),
+                                        res.getString("user_email"), res.getString("user_phone"), res.getString("addr_line_1"), res.getString("addr_line_2"),
+                                        res.getString("addr_postcode"), res.getString("city_name"), p, r);
 
                 tenantList.addUser(u);
             }
-
             System.out.println(tenantList.size());
-            System.out.println(tenantList.getUserAt(0).getName());
-            System.out.println(tenantList.getUserAt(1).getName());
-            System.out.println(tenantList.getUserAt(2).getName());
-            System.out.println(tenantList.getUserAt(3).getName());
-            System.out.println(tenantList.getUserAt(4).getName());
+            usersBuilt = true;
         } catch (SQLException e) {
             System.out.println("Error handling query: " + e.getMessage());
+            usersBuilt = false;
         }
+
+        return usersBuilt;
+    }
+
+    /**
+     * Build all request objects for the system
+     * @return true if all request objects were built, else return false
+     */
+    public Boolean buildRequests(){
+
+        Boolean requestsBuilt = false;
+
+        try {
+            // Make a connection to the database
+            Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
+            Statement  st  = con.createStatement();
+            ResultSet  res = st.executeQuery("SELECT * FROM requests");
+
+            while(res.next()) {
+                //Request r = new Request();
+
+                //tenantList.addUser(r);
+            }
+
+            requestsBuilt = true;
+        } catch (SQLException e) {
+            System.out.println("Error handling query: " + e.getMessage());
+            requestsBuilt = false;
+        }
+
+        return requestsBuilt;
+    }
+
+    /**
+     * Searches for a property with the given ID
+     * @return the Property object found in the Property Array, else return empty property
+     */
+    public Property getProperty(int propertyId)
+    {
+        Property result = new Property();
+
+        if(propertyId > 0)
+        {
+
+            // Loop through each property in the global list
+            for(int i = 0; i < propertyList.size(); i++)
+            {
+                Property thisProperty = propertyList.getPropertyAt(i);
+                if( thisProperty.getPropertyId() == propertyId &&
+                    thisProperty != null )
+                {
+                    result = thisProperty;
+                    break;
+                }
+            }
+        }
+
+        return result;
+    }
+
+    /**
+     * Searches for a room with the given ID
+     * @return the Room object found in the Room Array, else return empty room
+     */
+    public Room getRoom(Property p, int roomId)
+    {
+        Room result = new Room();
+
+        if(roomId > 0)
+        {
+            // Loop through each property in the global list
+            for(int i = 0; i < p.numRooms(); i++)
+            {
+                Room thisRoom = p.getRoomAt(i);
+                if( thisRoom.getRoomId() == roomId &&
+                    thisRoom != null )
+                {
+                    result = thisRoom;
+                    break;
+                }
+            }
+        }
+
+        return result;
     }
 
 

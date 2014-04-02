@@ -81,6 +81,7 @@ public class Message implements ISubject, Serializable {
         this.message = request;
     }
 
+    // Observer Stuff
     @Override
     public Boolean registerObserver(IObserver o) {
         Boolean result = false;

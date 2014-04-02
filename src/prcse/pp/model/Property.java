@@ -41,6 +41,25 @@ public class Property implements ISubject{
     private transient ArrayList<IObserver> observerList;
 
     /**
+     * Empty property object to account for null items from the database
+     */
+    public Property()
+    {
+        this.propId = 0;
+        this.trackingCode = "";
+        this.addressLine1 = "";
+        this.addressLine2 = "";
+        this.postcode     = "";
+        this.city         = "";
+        this.details      = "";
+        this.noOfRooms    = 0;
+        this.propStatus   = getStatus();
+
+        this.payments = new ArrayList<Payment>();
+        this.rooms    = new RoomList();
+    }
+
+    /**
      * Constructor to create a new Property
      * @param address1 address line 1
      * @paran address2 address line 2 (can be null)
@@ -174,8 +193,62 @@ public class Property implements ISubject{
     }
 
     /**
+     * Adds a new room to the system using the RoomList classes
+     * @param r the room we wish to add
+     * @return true if the room is added else false
+     */
+    public Boolean addRoom(Room r)
+    {
+        Boolean roomAdded = false;
+
+        if(r != null && this.rooms.addRoom(r))
+        {
+            roomAdded = true;
+        }
+
+        return roomAdded;
+    }
+
+    /**
+     * Returns a count of the number of rooms
+     * @return total rooms in the rooms array
+     */
+    public int numRooms()
+    {
+        return rooms.size();
+    }
+
+    /**
+     * Gets the room at the given index using the
+     * room list class
+     * @return r - the room object we find an empty room
+     */
+    public Room getRoomAt(int index)
+    {
+        Room r = new Room();
+
+        // Get the room using the UserList class methods
+        if(index >= 0) {
+            r = rooms.getRoomAt(index);
+        }
+
+        // the room object
+        return r;
+    }
+
+    /**
      * Getters and setters
      */
+    public int getPropertyId()
+    {
+        return propId;
+    }
+
+    public void setPropertyId(int propertyId)
+    {
+        this.propId = propertyId;
+    }
+
     public String getAddressLine1() {
         return addressLine1;
     }

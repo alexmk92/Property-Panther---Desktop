@@ -5,6 +5,7 @@ import prcse.pp.model.observer.ISubject;
 import prcse.pp.db.Database;
 import prcse.pp.controller.ScreensFramework;
 
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -32,9 +33,14 @@ public class Room implements ISubject, Serializable {
      * Empty constructor to support unset rooms
      */
     public Room(){
+        this.roomId         = 0;
+        this.propertyId     = 0;
+        this.tenant         = null;
         this.price          = "0";
         this.details        = "";
         this.contractLength = 0;
+
+        this.status         = getStatus();
     }
 
     /**
@@ -107,10 +113,21 @@ public class Room implements ISubject, Serializable {
      * returns the price of the room
      * @return int price
      */
-    public int getPrice()
+    public double getPrice()
     {
-        int thisPrice = Integer.parseInt(this.price);
+        double thisPrice;
+        thisPrice = Double.parseDouble(this.price);
+
         return thisPrice;
+    }
+
+    /**
+     * Returns the roomId of this room
+     * @return int roomId
+     */
+    public int getRoomId()
+    {
+        return roomId;
     }
 
     /**

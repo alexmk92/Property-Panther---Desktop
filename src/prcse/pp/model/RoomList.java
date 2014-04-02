@@ -27,11 +27,15 @@ public class RoomList {
     /**
      * Accessor to add the provided Room object to the list of Rooms
      * @param newRoom - The Room object to add to the list
+     * @return roomAdded - True if the room was added, else return false
      */
-    public void addRoom(Room newRoom){
+    public Boolean addRoom(Room newRoom){
+        Boolean roomAdded = false;
         if(null != newRoom){
             this.roomList.add(newRoom);
+            roomAdded = true;
         }
+        return roomAdded;
     }
 
     /**

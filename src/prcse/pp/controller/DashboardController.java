@@ -127,7 +127,7 @@ public class DashboardController implements Initializable, ControlledScreen {
     // Set variables to allow for draggable window.
     private double xOffset = 0;
     private double yOffset = 0;
-    private UserList users = ScreensFramework.users;
+    private UserList users = ScreensFramework.tenants;
     private boolean usersHidden = true;
     ScreensController myController;
 
