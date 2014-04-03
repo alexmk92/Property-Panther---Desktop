@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="body" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="756.0" styleClass="login-body" stylesheets="@MainView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prcse.pp.controller.LoginController">
+<children><BorderPane fx:id="draggable" prefHeight="30.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<right><Button fx:id="closeBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="16.0" prefWidth="23.0" styleClass="button_close" text="Button" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+</right></BorderPane><Pane layoutX="240.0" layoutY="84.0" prefHeight="112.0" prefWidth="276.0" styleClass="branding" /><TextField id="login-field" fx:id="txtUsername" layoutX="216.0" layoutY="219.0" prefHeight="37.0" prefWidth="325.0" promptText="email">
+<padding>
+<Insets left="20.0" right="5.0" />
+</padding>
+<font>
+<Font size="16.0" />
+</font></TextField><PasswordField id="login-field" fx:id="txtPassword" layoutX="216.0" layoutY="280.0" prefHeight="37.0" prefWidth="325.0" promptText="password">
+<font>
+<Font size="16.0" />
+</font>
+<padding>
+<Insets left="20.0" right="5.0" />
+</padding></PasswordField><Button fx:id="loginBtn" layoutX="504.0" layoutY="281.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" styleClass="login-btn" /><CheckBox id="login-check" layoutX="216.0" layoutY="337.0" mnemonicParsing="false" text="remember me?" textFill="WHITE">
+<font>
+<Font size="15.0" />
+</font></CheckBox><Label layoutX="402.0" layoutY="337.0" styleClass="shadow" text="forgotten password?" textFill="WHITE">
+<font>
+<Font size="15.0" />
+</font></Label>
+</children></AnchorPane>

@@ -437,7 +437,6 @@
     -fx-focus-color: #1e1e2d !important;
 }
 
-
 /* The main scrollbar **thumb** CSS class on event of "hover" and "pressed" */
 .mylistview .scroll-bar .thumb:hover,
 .mylistview .scroll-bar .thumb:pressed{
@@ -481,3 +480,41 @@
     -fx-translate-y: 7.5px !important;
 }
 
+/* login window styles */
+.login-body {
+    -fx-background-image: url("img/login-background.jpg");
+}
+
+.branding {
+    -fx-background-image: url("img/logo_large.png");
+    -fx-background-repeat: no-repeat;
+}
+
+#login-field {
+    -fx-background-radius: 0px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5, 0.0, 0, 3);
+    -fx-focus-color: transparent;
+}
+
+#login-field:focused {
+    -fx-focus-color: #fff !important;
+}
+
+#login-check {
+    -fx-background-radius: 0px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 4, 0.0, 0, 2);
+}
+
+.login-btn {
+    -fx-background-radius: 0px;
+    -fx-background-image: url("img/login_button.png");
+    -fx-focus-color: transparent !important;
+}
+
+.login-btn:hover {
+    -fx-background-image: url("img/login_dark.png");
+}
+
+.shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.7), 5, 0.0, 0, 1);
+}

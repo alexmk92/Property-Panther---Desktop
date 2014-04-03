@@ -66,5 +66,12 @@ public class Admin extends Person implements Serializable {
             System.out.println("Sorry, only admins can revoke permissions.");
     }
 
+    /**
+     * returns the permission of this admin
+     * @return
+     */
+    public UserPermission getPermission(){
+        return permission;
+    }
 
 }

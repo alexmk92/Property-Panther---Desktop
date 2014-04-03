@@ -1,5 +1,6 @@
 package prcse.pp.controller;
 
+import prcse.pp.model.Admin;
 import prcse.pp.model.Tenant;
 import prcse.pp.model.UserList;
 
@@ -20,6 +21,15 @@ public class Searcher {
      */
     Tenant   t = new Tenant();
     UserList u = new UserList();
+    Admin    a = new Admin();
+
+    /**
+     * Sets the session object (the admin running the session after a successful login)
+     * @param thisAdmin the admin object set at login
+     */
+    public void setSession(Admin thisAdmin){
+        this.a = thisAdmin;
+    }
 
     /**
      * Sets a tenant object to allow for data persistence between

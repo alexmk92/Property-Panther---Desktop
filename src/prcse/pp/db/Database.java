@@ -3,6 +3,7 @@ package prcse.pp.db;
 import javafx.stage.Screen;
 import prcse.pp.controller.ScreensFramework;
 import prcse.pp.model.*;
+import java.io.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,9 +19,9 @@ import java.util.ArrayList;
 public class Database {
 
     // Variables which describe a connection
-    private String db_host;
-    private String db_user;
-    private String db_pass;
+    private String  db_host;
+    private String  db_user;
+    private String  db_pass;
 
     // Reference to global data store objects
     UserList     tenantList   = ScreensFramework.tenants;
@@ -36,14 +37,70 @@ public class Database {
     {
         // set default connection
         if(host == null && user == null && password == null){
-            this.db_host = "jdbc:oracle:thin:@tom.uopnet.plymouth.ac.uk:1521:orcl";
-            this.db_user = "PRCSE";
-            this.db_pass = "PRCSE";
+            this.db_host     = "jdbc:oracle:thin:@tom.uopnet.plymouth.ac.uk:1521:orcl";
+            this.db_user     = "PRCSE";
+            this.db_pass     = "PRCSE";
         } else {
-            this.db_host = host;
-            this.db_user = user;
-            this.db_pass = password;
+            this.db_host     = host;
+            this.db_user     = user;
+            this.db_pass     = password;
         }
+    }
+
+    /**
+     * Connect to the database and set the global variable "connected" to false
+     * to prevent further instantiations.
+     * @return true if a connection is made, else return false
+     */
+    public static Boolean connectToDb()
+    {
+        Boolean connected = ScreensFramework.connected;
+
+        // Singleton - only open one db object
+            if(connected == false) {
+                try {
+                    ScreensFramework.db = new Database(null, null, null);
+                    System.out.println("Connected to database");
+                    connected = true;
+                } catch (Exception e) {
+                    // If there was an error set the connection to false.
+                    connected = false;
+                }
+            } else {
+                System.out.println("Connection already open.");
+                connected = true;
+            }
+
+        return connected;
+    }
+
+    /**
+     * Attempts to log an ADMIN into the system
+     * @return the admin object containing this admin, else null
+     */
+    public Admin logIn(String username, String password){
+
+        Admin thisAdmin = null;
+
+        // Trim the strings and see if they are valid
+        if(username.trim().length() > 0 && password.trim().length() > 0) {
+            try {
+                Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
+                Statement  st  = con.createStatement();
+                ResultSet  res = st.executeQuery( "SELECT * FROM users WHERE user_email = '" + username + "' AND user_pass = '" + password + "' AND user_permissions = 'ADMIN'");
+
+                // If there was a match build and return the admin object
+                while(res.next()) {
+                    Admin  a = new Admin(res.getInt("user_id"), res.getString("user_forename"), res.getString("user_surname"), res.getString("user_email"));
+                    return a;
+                }
+            } catch (SQLException e) {
+                System.out.println("Error handling query: " + e.getMessage());
+                thisAdmin = null;
+            }
+        }
+
+        return thisAdmin;
     }
 
     /**
@@ -217,7 +274,7 @@ public class Database {
             ResultSet  res = st.executeQuery("SELECT * FROM requests WHERE user_id = " + user_id);
 
             while(res.next()) {
-                Request r = new Request();
+                //Request r = new Request();
 
                 //tenantList.addUser(r);
             }

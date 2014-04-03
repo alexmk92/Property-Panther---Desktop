@@ -25,11 +25,10 @@ public class Tenant extends Person implements Serializable {
      * Tenants are able to make payments and send/receive messages,
      * these ArrayLists track all their payments and messages
      */
-    private   ArrayList<Requests> requests;
+    private   ArrayList<Request> requests;
     private   ArrayList<Inbox>    inbox;
     private   ArrayList<Note>     notes;
     protected ArrayList<Payment>  payments;
-    private   ArrayList notes;
 
 
     /**
@@ -175,6 +174,15 @@ public class Tenant extends Person implements Serializable {
         }
 
         return paymentSet;
+    }
+
+    /**
+     * Gets the id of the current user
+     * @return the id of the user
+     */
+    public int getUserId()
+    {
+        return this.user_id;
     }
 
     /**

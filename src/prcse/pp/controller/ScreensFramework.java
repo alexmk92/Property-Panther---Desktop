@@ -52,30 +52,36 @@ import prcse.pp.model.*;
 import java.util.ArrayList;
 
 /**
- *
- * @author Angie
+* Framework to encapsulate all of our screens
  */
 public class ScreensFramework extends Application  {
 
-    public static String screen1ID = "Dashboard";
+    // Variables describing views
+    public static String screen0ID   = "Login";
+    public static String screen0File = "../view/Login.fxml";
+    public static String screen1ID   = "Dashboard";
     public static String screen1File = "../view/Dashboard.fxml";
-    public static String screen2ID = "Tenants";
+    public static String screen2ID   = "Tenants";
     public static String screen2File = "../view/AllUsers.fxml";
-    public static String screen3ID = "Properties";
+    public static String screen3ID   = "Properties";
     public static String screen3File = "../view/Properties.fxml";
-    public static String screen4ID = "Payments";
+    public static String screen4ID   = "Payments";
     public static String screen4File = "../view/Payments.fxml";
-    public static String screen5ID = "Messages";
+    public static String screen5ID   = "Messages";
     public static String screen5File = "../view/Messages.fxml";
-    public static String screen6ID = "Settings";
+    public static String screen6ID   = "Settings";
     public static String screen6File = "../view/Settings.fxml";
-    public static String screen7ID = "Add Tenant";
+    public static String screen7ID   = "Add Tenant";
     public static String screen7File = "../view/AddUser.fxml";
-    public static String screen8ID = "View Tenant";
+    public static String screen8ID   = "View Tenant";
     public static String screen8File = "../view/UserDetails.fxml";
-    public static Boolean connected = false;
+    public static Boolean connected  = false;
     public static Database db;
-    public static Searcher searchObj = new Searcher();
+    public static Boolean  loggedIn  = false;
+
+    // Integers to specify the width and height of the view window
+    private static int width  = 756;
+    private static int height = 454;
 
     // Global model list - reference these for persistence,
     // IN FUTURE: once loaded, filter these objects into their dependent objects, i.e.
@@ -84,14 +90,20 @@ public class ScreensFramework extends Application  {
     public static PropertyList     properties = new PropertyList();
     public static ArrayList<Admin> adminList  = new ArrayList<>();
 
+    // Shared stage object
+    public Stage mainStage;
+
+    // Global search object to pass data between forms
+    public static Searcher searchObj = new Searcher();
 
     @Override
     public void start(Stage primaryStage) {
 
-        // Make a connection to the database (SINGLETON)
-        connectToDb();
-
+        // Set up a new control object to hold all of our screens
         ScreensController mainContainer = new ScreensController();
+
+        // Load each screen into the hash map
+        mainContainer.loadScreen(ScreensFramework.screen0ID, ScreensFramework.screen0File);
         mainContainer.loadScreen(ScreensFramework.screen1ID, ScreensFramework.screen1File);
         mainContainer.loadScreen(ScreensFramework.screen2ID, ScreensFramework.screen2File);
         mainContainer.loadScreen(ScreensFramework.screen3ID, ScreensFramework.screen3File);
@@ -101,24 +113,23 @@ public class ScreensFramework extends Application  {
         mainContainer.loadScreen(ScreensFramework.screen7ID, ScreensFramework.screen7File);
         mainContainer.loadScreen(ScreensFramework.screen8ID, ScreensFramework.screen8File);
 
-        mainContainer.setScreen(ScreensFramework.screen1ID);
+        // Sets the first screen to be shown
+        mainContainer.setScreen(ScreensFramework.screen0ID);
 
-        //remove window decoration
+        // Removes the border and any other screen decorations
         primaryStage.initStyle(StageStyle.UNDECORATED);
 
-        //instanciate window
+        // Instanciate window
         Group root = new Group();
         root.getStylesheets().add(this.getClass().getResource("../view/MainView.css").toExternalForm());
         root.getChildren().addAll(mainContainer);
-        Scene scene = new Scene(root, 1200,720);
+        Scene scene = new Scene(root, width, height);
         primaryStage.setScene(scene);
         primaryStage.show();
 
-       System.out.println("UI Loaded");
-       System.out.println(db.getDb_host());
-
        // check if we are connected to the data
-       if(connected == true) {
+       if(db.connectToDb()) {
+            connected = true;
             if(this.db.buildObjects()) {
                 System.out.println("Successfully built database objects");
             } else {
@@ -133,30 +144,29 @@ public class ScreensFramework extends Application  {
     }
 
     /**
-     * Connect to the database and set the global variable "connected" to false
-     * to prevent further instantiations.
+     * If the user was authenticated, build all the objects and load the system
+     * before redirecting them to their dashboard.
      */
-    public void connectToDb()
-    {
-        if(this.connected == false) {
-            try {
-                ScreensFramework.db = new Database(null, null, null);
-                System.out.println("Connected to database");
-                this.connected = true;
-            } catch (Exception e) {
-                // If there was an error set the connection to false.
-                this.connected = false;
-            }
-        } else {
-            System.out.println("Connection already open.");
+    public static void authenticated() {
+        // Check if an admin has logged in
+        // the action for this is trigger in LoginController.java - it will set the loggedIn var
+        // to true
+        if(loggedIn == true) {
+            width  = 1200;
+            height = 720;
+
+
+            System.out.println("Logging in");
         }
+
     }
 
+
     /**
-     * The main() method is ignored in correctly deployed JavaFX application.
+     * The main() method is ignored in a correctly deployed JavaFX application.
      * main() serves only as fallback in case the application can not be
      * launched through deployment artifacts, e.g., in IDEs with limited FX
-     * support. NetBeans ignores main().
+     * support.
      *
      * @param args the command line arguments
      */
