@@ -76,12 +76,8 @@ public class ScreensFramework extends Application  {
     public static String screen8ID   = "View Tenant";
     public static String screen8File = "../view/UserDetails.fxml";
     public static Boolean connected  = false;
+    public static Boolean resize     = false;
     public static Database db;
-    public static Boolean  loggedIn  = false;
-
-    // Integers to specify the width and height of the view window
-    private static int width  = 756;
-    private static int height = 454;
 
     // Global model list - reference these for persistence,
     // IN FUTURE: once loaded, filter these objects into their dependent objects, i.e.
@@ -89,9 +85,6 @@ public class ScreensFramework extends Application  {
     public static UserList         tenants    = new UserList();
     public static PropertyList     properties = new PropertyList();
     public static ArrayList<Admin> adminList  = new ArrayList<>();
-
-    // Shared stage object
-    public Stage mainStage;
 
     // Global search object to pass data between forms
     public static Searcher searchObj = new Searcher();
@@ -118,47 +111,41 @@ public class ScreensFramework extends Application  {
 
         // Removes the border and any other screen decorations
         primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.initStyle(StageStyle.TRANSPARENT);
 
         // Instanciate window
         Group root = new Group();
         root.getStylesheets().add(this.getClass().getResource("../view/MainView.css").toExternalForm());
         root.getChildren().addAll(mainContainer);
-        Scene scene = new Scene(root, width, height);
+        Scene scene = new Scene(root, 1200, 720);
+        scene.setFill(Color.TRANSPARENT);
         primaryStage.setScene(scene);
         primaryStage.show();
-
-       // check if we are connected to the data
-       if(db.connectToDb()) {
-            connected = true;
-            if(this.db.buildObjects()) {
-                System.out.println("Successfully built database objects");
-            } else {
-                System.out.println("Error when building objects, please restart the program.");
-                System.exit(0);
-            }
-       }
-       else {
-           System.out.println("A connection to the database was not established");
-       }
-
     }
 
     /**
      * If the user was authenticated, build all the objects and load the system
      * before redirecting them to their dashboard.
+     * @return the string of either a success message or  error
      */
-    public static void authenticated() {
+    public static Boolean buildDataModel() {
+
+        Boolean systemResponse = false;
+
         // Check if an admin has logged in
         // the action for this is trigger in LoginController.java - it will set the loggedIn var
         // to true
-        if(loggedIn == true) {
-            width  = 1200;
-            height = 720;
+        if(connected == true) {
+            // Build the objects for the datamodel on a new thread
+            if(db.buildObjects()) {
+                systemResponse = true;
+            } else {
+                systemResponse = false;
+            }
 
-
-            System.out.println("Logging in");
         }
 
+        return systemResponse;
     }
 
 

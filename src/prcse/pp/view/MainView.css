@@ -518,3 +518,24 @@
 .shadow {
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.7), 5, 0.0, 0, 1);
 }
+
+#spinnerWrap {
+    -fx-background-color: #d7d7d7;
+}
+
+#bodyOverlay {
+    -fx-background-color: rgba(0,0,0,0.6);
+}
+
+#errorWrap {
+    -fx-background-color: rgba(0,0,0,0.85);
+}
+
+#backing {
+    -fx-background-color: transparent;
+}
+
+.transparent {
+    -fx-background-image: url("img/transparent.png");
+    -fx-background-repeat: repeat;
+}

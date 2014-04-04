@@ -3,11 +3,19 @@
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="body" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="756.0" styleClass="login-body" stylesheets="@MainView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prcse.pp.controller.LoginController">
-<children><BorderPane fx:id="draggable" prefHeight="30.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="body" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1200.0" styleClass="transparent" stylesheets="@MainView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prcse.pp.controller.LoginController">
+<children><Pane id="login-body" layoutX="216.0" layoutY="133.0" prefHeight="454.0" prefWidth="756.0" styleClass="login-body">
+<children><Pane fx:id="mainWrapper" prefHeight="200.0" prefWidth="200.0">
+<children><Pane id="bodyOverlay" fx:id="overlay" prefHeight="454.0" prefWidth="756.0" /><Pane id="errorWrap" fx:id="errorWrap" layoutY="456.0" prefHeight="45.0" prefWidth="756.0">
+<children><Label fx:id="lblStatus" alignment="CENTER" layoutX="1.0" layoutY="9.0" prefHeight="25.0" prefWidth="756.0" text="Sorry, you entered the wrong username/password" textFill="WHITE">
+<font>
+<Font size="16.0" />
+</font></Label><Button fx:id="closeError" layoutX="738.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="16.0" styleClass="button_close" text="Button" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+</children></Pane><BorderPane fx:id="draggable" prefHeight="30.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <right><Button fx:id="closeBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="16.0" prefWidth="23.0" styleClass="button_close" text="Button" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
 </right></BorderPane><Pane layoutX="240.0" layoutY="84.0" prefHeight="112.0" prefWidth="276.0" styleClass="branding" /><TextField id="login-field" fx:id="txtUsername" layoutX="216.0" layoutY="219.0" prefHeight="37.0" prefWidth="325.0" promptText="email">
 <padding>
@@ -27,5 +35,15 @@
 </font></CheckBox><Label layoutX="402.0" layoutY="337.0" styleClass="shadow" text="forgotten password?" textFill="WHITE">
 <font>
 <Font size="15.0" />
-</font></Label>
+</font></Label><Pane fx:id="spinnerWrap" layoutX="503.0" layoutY="282.0" prefHeight="34.0" prefWidth="34.0">
+<children><ImageView fx:id="spinner" fitHeight="22.0" fitWidth="22.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" styleClass="searching">
+<HBox.margin>
+<Insets />
+</HBox.margin>
+<image>
+<Image url="@img/spinner-white.gif" />
+</image></ImageView>
+</children></Pane>
+</children></Pane>
+</children></Pane>
 </children></AnchorPane>

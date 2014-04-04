@@ -112,7 +112,7 @@ public class PaymentsController implements Initializable, ControlledScreen {
     private Button nav_bg6;
     @FXML // fx:id="title"
     private Label title;
-    @FXML // fx:id="spinner_green"
+    @FXML // fx:id="spinnr_green"
     private ImageView spinner_green;
     @FXML // fx:id="txtUser_Username"
     private TextField txtUsers_Username;
