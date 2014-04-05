@@ -151,7 +151,10 @@ public class AllUsersController implements Initializable, ControlledScreen {
     private Boolean objectsSet = false;
     private double xOffset = 0;
     private double yOffset = 0;
+    private int    index   = 0;
+    private AllUsersController thisController = this;
     ScreensController myController;
+
 
 
     /**
@@ -174,6 +177,7 @@ public class AllUsersController implements Initializable, ControlledScreen {
 
                 if(objectsSet == false)
                 {
+                    index = 0;
                     userResult = ScreensFramework.searchObj.getSearchedUsers();
                     displayUsers();
                 }
@@ -325,6 +329,13 @@ public class AllUsersController implements Initializable, ControlledScreen {
             }
         });
 
+        lstUsers.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                System.out.println(lstUsers.getSelectionModel().getSelectedIndex());
+            }
+        });
+
     }
 
     /******************************************************
@@ -342,7 +353,6 @@ public class AllUsersController implements Initializable, ControlledScreen {
 
         if(userResult.size() > 0)
         {
-            System.out.println("hi");
             // Loop through each user in the system and create a ListView item
             for(int i = 0; i < userResult.size(); i++)
             {
@@ -367,13 +377,15 @@ public class AllUsersController implements Initializable, ControlledScreen {
             }
         }
 
+
         // Use a Cell Factory to format the output.
         lstUsers.setFixedCellSize(80);
         lstUsers.setCellFactory(new Callback<ListView, ListCell>() {
             @Override
             public ListCell call(ListView listView) {
-                UserCell c = new UserCell();
+                UserCell c = new UserCell(userResult, index, thisController);
                 c.getStyleClass().add("border-bottom");
+                index++;
                 return c;
             }
         });
@@ -382,7 +394,16 @@ public class AllUsersController implements Initializable, ControlledScreen {
         lstUsers.setItems(users);
     }
 
-
+    /**
+     * Gets the current selected index of our list view
+     * @return the current selected index
+     */
+    public int getIndex() {
+        System.out.println(lstUsers.getSelectionModel().getSelectedIndex());
+        int i = lstUsers.getSelectionModel().getSelectedIndex();
+        System.out.println(i);
+        return 1;
+    }
 
     /******************************************************
      *                ANIMATION CONTROLS
@@ -655,7 +676,7 @@ public class AllUsersController implements Initializable, ControlledScreen {
         nextForm(ScreensFramework.screen7ID);
     }
     @FXML
-    private void goToAllUsers(ActionEvent event){
+    public void goToAllUsers(ActionEvent event){
         hideUsers();
         nextForm(ScreensFramework.screen8ID);
     }

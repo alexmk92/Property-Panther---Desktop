@@ -11,11 +11,22 @@ public class Note extends Message {
     /**
      * Constructor for a note
      * @param the tenant who the note is being made for
+     * @param the date of the message
      * @param message - content of message
      */
-    public Note(Tenant tenant, String message)
+    public Note(Tenant tenant, String message, String date)
     {
-        super(message);
+        super(message, date);
+        this.type = MessageType.NOTE;
+    }
+
+    /**
+     * Constructor for a note
+     * @param the message for the note
+     * @param the data of the message
+     */
+    public Note(String message, String date) {
+        super(message, date);
         this.type = MessageType.NOTE;
     }
 }

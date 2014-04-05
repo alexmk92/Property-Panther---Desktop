@@ -429,7 +429,7 @@ public class DashboardController implements Initializable, ControlledScreen {
         txtUsers_Username.setOnKeyTyped(new EventHandler<javafx.scene.input.KeyEvent>() {
             @Override
             public void handle(javafx.scene.input.KeyEvent keyEvent) {
-                System.out.println(txtUsers_Username.getText().toString());
+
             }
         });
 
@@ -511,15 +511,15 @@ public class DashboardController implements Initializable, ControlledScreen {
     @FXML
     private void goToUsers(ActionEvent event)
     {
+        // Local variables
+        Searcher s = ScreensFramework.searchObj;
+        String[] name = txtUsers_Username.getText().split(" ");
+        String forename = null;
+        String surname  = null;
+
         // Check that the textbox has been set
         if(txtUsers_Username.getText().length() > 0 && txtUsers_Username.getText() != null)
         {
-            // Local variables
-            Searcher s = ScreensFramework.searchObj;
-            String[] name = txtUsers_Username.getText().split(" ");
-            String forename = null;
-            String surname  = null;
-
             // Build a forename and surname string to search for the user
             try
             {
@@ -535,7 +535,7 @@ public class DashboardController implements Initializable, ControlledScreen {
             }
 
             // Populate a new UserList item collection of results
-            UserList results = users.getTenant(forename, surname);
+            UserList results = ScreensFramework.tenants.getTenant(forename, surname);
 
 
             // Is there more than one user
@@ -555,6 +555,7 @@ public class DashboardController implements Initializable, ControlledScreen {
                 myController.setScreen(ScreensFramework.screen2ID);
             }
         } else {
+            s.setSearchedUsers(ScreensFramework.tenants);
             hideUsers();
             myController.setScreen(ScreensFramework.screen2ID);
         }

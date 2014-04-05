@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
+import javafx.animation.ScaleTransition;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
@@ -16,10 +17,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
@@ -32,6 +30,8 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
+import prcse.pp.logs.Reader;
+import prcse.pp.logs.Writer;
 import prcse.pp.model.Admin;
 import prcse.pp.model.Tenant;
 import prcse.pp.model.UserList;
@@ -69,6 +69,12 @@ public class LoginController implements Initializable, ControlledScreen {
     private Label lblStatus;
     @FXML // fx:id="closeError"
     private Button closeError;
+    @FXML // fx:id="mainPanel"
+    private Pane mainPanel;
+    @FXML // fx:id="mainWrap"
+    private Pane mainWrap;
+    @FXML // fx:id="remember"
+    private CheckBox rememberMe;
 
 
     // Set variables to allow for draggable window.
@@ -76,6 +82,11 @@ public class LoginController implements Initializable, ControlledScreen {
     private double  yOffset   = 0;
     private Boolean validated = false;
     private String  error     = "";
+    private Boolean tickEnabled;
+
+    // Set up to read and write to/from the config file
+    public Writer   logConfig    = new Writer("config", false);
+    private Reader  configReader = new Reader("logs/config.txt");
 
     ScreensController myController;
 
@@ -85,9 +96,13 @@ public class LoginController implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle resources)
     {
+
+        // If config file has a value then populate it
+        populateUsername();
+
         // Hide the progress spinner
         hideSpinner();
-
+        hideErrors();
 
         // Hide the overlay
         hideOverlay();
@@ -115,6 +130,7 @@ public class LoginController implements Initializable, ControlledScreen {
         closeBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
+                updateConfig();
                 Platform.exit();
             }
         });
@@ -123,7 +139,7 @@ public class LoginController implements Initializable, ControlledScreen {
             public void handle(MouseEvent mouseEvent) {
 
                 // slide the error panel back in
-                slideBackError();
+                hideErrors();
 
                 // Get the correct focus - if both are populated, default
                 // to focusing the password field
@@ -140,6 +156,7 @@ public class LoginController implements Initializable, ControlledScreen {
         loginBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
+                hideErrors();
                 handleLogin();
             }
         });
@@ -149,7 +166,7 @@ public class LoginController implements Initializable, ControlledScreen {
             public void handle(javafx.scene.input.KeyEvent ke) {
                 if (ke.getCode().equals(KeyCode.ENTER))
                 {
-                    slideBackError();
+                    hideErrors();
                     handleLogin();
                 }
             }
@@ -159,11 +176,24 @@ public class LoginController implements Initializable, ControlledScreen {
             public void handle(javafx.scene.input.KeyEvent ke) {
                 if (ke.getCode().equals(KeyCode.ENTER))
                 {
-                    slideBackError();
+                    hideErrors();
                     handleLogin();
                 }
             }
         });
+
+        rememberMe.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                if(tickEnabled == true) {
+                    tickEnabled = false;
+                } else {
+                    tickEnabled = true;
+                }
+            }
+        });
+
+
 
     }
 
@@ -194,13 +224,20 @@ public class LoginController implements Initializable, ControlledScreen {
                     {
                         // Set the session
                         ScreensFramework.searchObj.setSession(a);
-                        System.out.println("session set");
+
+                        // Update logging window
+                        Platform.runLater(() -> showErrors());
+                        Platform.runLater(()->error = "Success: Verification successful, setting session.");
+                        Platform.runLater(()->updateLabel(error));
 
                         // The user is valid, grant them permission
                         verified = true;
                     }
                 } else {
-                    System.out.println("Invalid user, you are not an admin.");
+                    // Update logging window
+                    Platform.runLater(()->showErrors());
+                    Platform.runLater(()->error = "Invalid user, you are not an admin.");
+                    Platform.runLater(()->updateLabel(error));
                 }
             }
         }
@@ -226,9 +263,9 @@ public class LoginController implements Initializable, ControlledScreen {
                 String password = txtPassword.getText();
 
                 // friendly message
+                showErrors();
                 error = "Authenticating: Connecting to the server with your credentials...";
                 Platform.runLater(()->updateLabel(error));
-                slideUpError();
 
                 // Is this user an admin
                 if(verifyUser(username, password)){
@@ -237,26 +274,25 @@ public class LoginController implements Initializable, ControlledScreen {
                     ScreensFramework.connected = true;
 
                     // friendly message
+                    showErrors();
                     error = "Success: Preparing your dashboard!";
                     Platform.runLater(()->updateLabel(error));
-                    slideUpError();
 
                     // Check we build the system successfully (returns boolean)
                     if(ScreensFramework.buildDataModel()){
                         // friendly message
                         error = "Dashboard prepared, logging in...";
                         Platform.runLater(()->updateLabel(error));
-                        slideUpError();
+                        showErrors();
 
                         // reset the spinner and forward to dashboard
                         Platform.runLater(()->spinnerWrap.setVisible(false));
-                        hideOverlay();
                         animateToDashboard();
                     }
                 } else {
+                    showErrors();
                     error = "Incorrect username or password";
                     Platform.runLater(()->updateLabel(error));
-                    slideUpError();
                     Platform.runLater(()->spinnerWrap.setVisible(false));
                     hideOverlay();
                 }
@@ -284,6 +320,43 @@ public class LoginController implements Initializable, ControlledScreen {
      */
     private void updateLabel(String status) {
         lblStatus.setText(status);
+    }
+
+    /**
+     * Populates the username textbox if a value is set in our
+     * config file
+     */
+    private void populateUsername() {
+
+        // Remember me string initialised
+        String remember = "";
+
+        // Check that our config file has some contents
+        String checkConfig = configReader.readFile();
+
+        // Check we have a string of legnth 4+, then set
+        // the remember string
+        if(checkConfig.length() > 4){
+            rememberMe.setSelected(true);
+            tickEnabled = true;
+            remember = checkConfig;
+            txtUsername.setText(remember);
+
+        } else {
+            tickEnabled = false;
+        }
+    }
+
+    /**
+     * updates the config file if the checkbox is ticked
+     */
+    private void updateConfig() {
+        // Check that the checkbox is ticked
+        if(tickEnabled == true) {
+            logConfig.writeToFile(txtUsername.getText());
+        } else {
+            logConfig.writeToFile("");
+        }
     }
 
     /******************************************************
@@ -318,35 +391,55 @@ public class LoginController implements Initializable, ControlledScreen {
         removeOverlay.play();
     }
 
-    // Shows the error window
-    private void slideUpError() {
-
-        final Timeline showError = new Timeline();
-        showError.setCycleCount(1);
-        showError.setAutoReverse(false);
+    /**
+     * shows the error windw
+     */
+    private void showErrors()
+    {
+        final Timeline removeOverlay = new Timeline();
+        removeOverlay.setCycleCount(1);
+        removeOverlay.setAutoReverse(false);
         final KeyValue kv0 = new KeyValue(errorWrap.opacityProperty(), 1);
-        final KeyFrame kf0 = new KeyFrame(Duration.millis(0), kv0);
-        final KeyValue kv1 = new KeyValue(errorWrap.translateYProperty(), -46);
-        final KeyFrame kf1 = new KeyFrame(Duration.millis(200), kv1);
+        final KeyFrame kf0 = new KeyFrame(Duration.millis(250), kv0);
 
         // Build the animation
-        showError.getKeyFrames().addAll(kf0, kf1);
-        showError.play();
+        removeOverlay.getKeyFrames().add(kf0);
+        removeOverlay.play();
     }
 
-    // Hides the error window
-    private void slideBackError() {
-
-        final Timeline showError = new Timeline();
-        showError.setCycleCount(1);
-        showError.setAutoReverse(false);
-        final KeyValue kv0 = new KeyValue(errorWrap.translateYProperty(), 0);
-        final KeyFrame kf0 = new KeyFrame(Duration.millis(200), kv0);
+    /**
+     * hides the error windw
+     */
+    private void hideErrors()
+    {
+        final Timeline removeOverlay = new Timeline();
+        removeOverlay.setCycleCount(1);
+        removeOverlay.setAutoReverse(false);
+        final KeyValue kv0 = new KeyValue(errorWrap.opacityProperty(), 0);
+        final KeyFrame kf0 = new KeyFrame(Duration.millis(250), kv0);
 
         // Build the animation
-        showError.getKeyFrames().add(kf0);
-        showError.play();
+        removeOverlay.getKeyFrames().add(kf0);
+        removeOverlay.play();
     }
+
+    /**
+     * Hides all UI elements accept for the background
+     */
+    private void hideElements() {
+        // Hide
+        final Timeline hideScreen = new Timeline();
+        hideScreen.setCycleCount(1);
+        hideScreen.setAutoReverse(false);
+        final KeyValue kv0 = new KeyValue(mainWrap.opacityProperty(), 0);
+        final KeyFrame kf0 = new KeyFrame(Duration.millis(500), kv0);
+        final KeyValue kv1 = new KeyValue(mainPanel.opacityProperty(), 0);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(500), kv1);
+
+        hideScreen.getKeyFrames().addAll(kf0, kf1);
+        hideScreen.play();
+    }
+
 
     /**
      * Transition to the dashboard view
@@ -357,13 +450,18 @@ public class LoginController implements Initializable, ControlledScreen {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(750);
-                    slideBackError();
                     Thread.sleep(150);
+                    hideErrors();
+                    hideElements();
+                    Thread.sleep(550);
                 } catch(Exception e )
                 {
-                    System.out.println("There was an error handling the animation...");
+                    ScreensFramework.logError.writeToFile("There was an error handling the animation...");
                 }
+
+                // Refresh the config
+                updateConfig();
+
                 // Go to our view.
                 myController.setScreen(ScreensFramework.screen1ID);
             }

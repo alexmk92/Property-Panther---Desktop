@@ -16,6 +16,7 @@ import javafx.scene.control.*;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -25,8 +26,12 @@ import javafx.util.Callback;
 import javafx.util.Duration;
 import prcse.pp.model.Tenant;
 import prcse.pp.view.NoteCell;
+import prcse.pp.model.Note;
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 
 
@@ -40,16 +45,24 @@ public class UserInfoController implements Initializable, ControlledScreen {
     /******************************************************
      *     FXML VARIABLES - RELATIVE TO UserDetails.XML
      ******************************************************/
+    @FXML // fx:id="btn_create_user"
+    private Button btn_create_user;
+    @FXML // fx:id="btn_view_users"
+    private Button btn_view_user;
+    @FXML // fx:id="btnSearchUsers"
+    private Button btnSearchUsers;
+    @FXML // fx:id="btnMakeNote"
+    private Button btnMakeNote;
     @FXML // fx:id="btnUserSearch"
     private Button btnUserSearch;
     @FXML // fx:id="btn_create_user"
-    private Button btn_create_user;
+    private Button btnCreateUser;
     @FXML // fx:id="img_create_user"
     private ImageView img_create_user;
     @FXML // fx:id="img_view_users"
     private ImageView img_view_users;
     @FXML // fx:id="btn_view_user"
-    private Button btn_view_user;
+    private Button btnViewUsers;
     @FXML // fx:id="Draggable"
     private BorderPane draggable;
     @FXML // fx:id="closeBtn"
@@ -154,14 +167,35 @@ public class UserInfoController implements Initializable, ControlledScreen {
     private Label lblLocation;
     @FXML // fx:id="lblPostcode"
     private Label lblPostcode;
+    @FXML // fx:id="lblCharCount"
+    private Label lblCharCount;
+    @FXML // fx:id="lblNewNote"
+    private Label lblNewNote;
+    @FXML // fx:id="btnAdd" - adds the note
+    private Button btnAdd;
+    @FXML // fx:id="btnClearNote"
+    private Button btnClearNote;
+    @FXML // fx:id="txtNote"
+    private TextArea txtNote;
+    @FXML // fx:id="noteWrap"
+    private Pane noteWrap;
+    @FXML // fx:id="btnBack"
+    private Button btnBack;
 
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
     private double yOffset = 0;
+    private int    index   = 0;
     private Boolean objectsSet = false;   // Allows the tenant to only be set once per screen session
     protected Tenant thisTenant;
     ScreensController myController;
+
+    // Reference to controller for the Cell-Factory
+    protected UserInfoController controller = this;
+
+    // Collection of Notes to pass to Cell Factory
+    ArrayList<Note> refNotes = new ArrayList<Note>();
 
     /**
      * Initializes the controller class.
@@ -169,6 +203,8 @@ public class UserInfoController implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle resources)
     {
+        // Hide the add note wrapper - only show when clickNote is enabled
+        noteWrap.setVisible(false);
 
         // Set opacity of widgets
         widget_middle_left.setOpacity(0.3);
@@ -187,6 +223,7 @@ public class UserInfoController implements Initializable, ControlledScreen {
                     System.out.println(thisTenant.getName());
                     renderView();
                 }
+                index = 0;
                 animateIn();
                 resetStyles();
                 objectsSet = true;
@@ -307,11 +344,16 @@ public class UserInfoController implements Initializable, ControlledScreen {
         btnUserSearch.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                btnUserSearch.getStyleClass().add("searching");
-                spinner_green.setVisible(true);
+                // search code here
             }
         });
 
+        btnSearchUsers.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                // search code here
+            }
+        });
 
         // Utility controls
         closeBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -337,6 +379,82 @@ public class UserInfoController implements Initializable, ControlledScreen {
             }
         });
 
+        btnViewUsers.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                ScreensFramework.searchObj.setSearchedUsers(ScreensFramework.tenants);
+                nextForm(ScreensFramework.screen2ID);
+            }
+        });
+
+        btnCreateUser.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nextForm(ScreensFramework.screen7ID);
+            }
+        });
+
+        btn_create_user.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nextForm(ScreensFramework.screen7ID);
+            }
+        });
+
+        btn_view_user.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                nextForm(ScreensFramework.screen2ID);
+            }
+        });
+
+        // Open the add note dialog
+        btnMakeNote.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                lstNotes.setVisible(false);
+                noteWrap.setVisible(true);
+            }
+        });
+        btnBack.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                noteWrap.setVisible(false);
+                lstNotes.setVisible(true);
+                txtNote.setText("");
+                lblCharCount.setText("0/250 Characters");
+            }
+        });
+        btnClearNote.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                txtNote.setText("");
+                lblCharCount.setText("0/250 Characters");
+            }
+        });
+        btnAdd.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                // Change this to a method - ADD TO THE USER ARRAY
+            }
+        });
+        txtNote.setOnKeyTyped(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                int chars = txtNote.getText().length();
+                if(chars < 251){
+                    String amount = String.valueOf(chars);
+                    lblCharCount.setText(amount + "/250 Characters");
+                } else {
+                    lblCharCount.setText("Maximum count reached");
+                }
+            }
+        });
+
+
+       // lblNewNote.setText("New note for " + thisTenant.getName());
+
+
     }
 
     /******************************************************
@@ -353,7 +471,10 @@ public class UserInfoController implements Initializable, ControlledScreen {
      */
     public void renderView()
     {
+        // Sets the title to the tenants name
         lblUsername.setText(thisTenant.getName());
+
+        // Populate all widgets
         if(thisTenant.getAddr_line_2() == "NULL" || thisTenant.getAddr_line_2() == null) {
             lblUserAddress.setText(thisTenant.getAddr_line_1());
             lblAddr1.setText(thisTenant.getAddr_line_1() + "\n" + thisTenant.getCity() + "\n" + thisTenant.getPostcode());
@@ -364,16 +485,76 @@ public class UserInfoController implements Initializable, ControlledScreen {
         lblEmail.setText(thisTenant.getEmail());
         lblPhone.setText("+" + thisTenant.getPhone());
 
-        // Populates the note section
-        ObservableList<String> values = FXCollections.observableArrayList("This is a note", "I am another note", "Note 5", "Note 6", "Away from home");
-        lstNotes.setItems(values);
+
+        // Populates the note list
+        ArrayList noteArray = thisTenant.getNotes();
+
+        // Observable list
+        ObservableList notes = populateObservable(noteArray);
+
+        // Create the list
+        lstNotes.setItems(notes);
         lstNotes.setFixedCellSize(50);
-        lstNotes.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
+        lstNotes.setCellFactory(new Callback<ListView, ListCell>() {
             @Override
-            public ListCell<String> call(ListView<String> param) {
-                return new NoteCell("Fix", "This, use UserCell as comparison");
+            public ListCell call(ListView listView) {
+                NoteCell nCell = new NoteCell(thisTenant, index, controller);
+                nCell.getStyleClass().add("border-bottom");
+                index++;
+                return nCell;
             }
         });
+
+        refreshList(lstNotes);
+
+    }
+
+    /**
+     * refreshes the list view by settings the items to null and then to an
+     * obsevable list
+     * @param lsv the list view we wish to refresh
+     * @param <T> the list type is not specified (any object)
+     */
+    public <T> void refreshList(ListView<T> lsv) {
+        ObservableList items = populateObservable(thisTenant.getNotes());
+        lsv.<T>setItems(null);
+        lsv.<T>setItems(items);
+    }
+
+    /**
+     * Populates an observable list, this needs to be seperated into
+     * its own method to allow for the list to be refreshed from the
+     * cellfactory
+     * @return an observable array of objects to populate the list
+     */
+    public ObservableList populateObservable(ArrayList<Note> notesArray) {
+
+        ObservableList notes = FXCollections.observableArrayList();
+
+        // Loop through the users Notes array and create a listview item
+        for(int i = 0; i < notesArray.size(); i++) {
+            Note thisNote = notesArray.get(i);
+            getNotes().add(thisNote);
+            notes.add(thisNote.getMessage());
+        }
+
+        return notes;
+    }
+
+    /**
+     * Returns the note array
+     * @return the current note collection
+     */
+    public ArrayList<Note> getNotes(){
+        return this.refNotes;
+    }
+
+    /**
+     * Returns the listview
+     * @return
+     */
+    public ListView getList() {
+        return this.lstNotes;
     }
 
 
@@ -410,8 +591,6 @@ public class UserInfoController implements Initializable, ControlledScreen {
 
         slideOut.getKeyFrames().addAll(kf1, kf2, kf3, kf4, kf5, kf6, kf7, kf8, kf9);
         slideOut.play();
-
-        //txtUsers_Username.requestFocus();
     }
 
     public void hideUsers()
@@ -451,9 +630,7 @@ public class UserInfoController implements Initializable, ControlledScreen {
     public void resetText(TextField txt, Boolean newPropertyValue)
     {
         if (newPropertyValue) {
-            System.out.println("Textfield on focus");
         } else {
-            System.out.println("Textfield out focus");
             String username = txt.getText();
             if(username.trim().isEmpty())
             {
@@ -557,7 +734,7 @@ public class UserInfoController implements Initializable, ControlledScreen {
                             nav_icon1.getStyleClass().add("active");
                             accent1.getStyleClass().addAll("active", "show");
                             break;
-                        case "Tenant":
+                        case "Tenants":
                             nav_bg2.getStyleClass().addAll("active");
                             nav_icon2.getStyleClass().add("active");
                             accent2.getStyleClass().addAll("active", "show");
@@ -582,14 +759,24 @@ public class UserInfoController implements Initializable, ControlledScreen {
                             nav_icon6.getStyleClass().add("active");
                             accent6.getStyleClass().addAll("active", "show");
                             break;
+                        case "View Tenant":
+                            nav_bg2.getStyleClass().addAll("active");
+                            nav_icon2.getStyleClass().add("active");
+                            accent2.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Add Tenant":
+                            nav_bg2.getStyleClass().addAll("active");
+                            nav_icon2.getStyleClass().add("active");
+                            accent2.getStyleClass().addAll("active", "show");
+                            break;
                     }
 
                     // Animate the scene
                     animateOut();
-                    Thread.sleep(300);
+                    Thread.sleep(400);
                 } catch(Exception e )
                 {
-                    System.out.println("There was an error handling the animation...");
+                    ScreensFramework.logError.writeToFile("There was an error handling the animation...");
                 }
                 // Go to our view.
                 myController.setScreen(ID);

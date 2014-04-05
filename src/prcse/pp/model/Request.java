@@ -11,9 +11,9 @@ public class Request extends Message {
     /**
      * New request constructor with default status
      */
-    public Request(Tenant tenant, String message, Property p)
+    public Request(Tenant tenant, String message, Property p, String date)
     {
-        super(tenant, message);
+        super(tenant, message, date);
         this.status = MessageStatus.RECEIVED;
         this.viewed = false;
     }
@@ -25,8 +25,8 @@ public class Request extends Message {
      * @param message the message the tenant sends
      * @param p the property of which the request is being made against
      */
-    public Request(Tenant tenant, String message, MessageStatus s, Property p) {
-        super(tenant, message);
+    public Request(Tenant tenant, String message, MessageStatus s, Property p, String date) {
+        super(tenant, message, date);
         this.status       = s;
         this.type         = type.MAINTENANCE;
         this.property     = p;

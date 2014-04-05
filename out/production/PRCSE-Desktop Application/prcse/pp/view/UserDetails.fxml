@@ -97,8 +97,8 @@
         <Pane fx:id="searchWrap" layoutX="-87.0" layoutY="236.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
             <children><Pane id="slide_out" fx:id="searchButtons" prefHeight="35.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
                 <children>
-                    <Button id="btn_user" fx:id="btn_create_user" alignment="TOP_CENTER" layoutX="2.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToAddUser" prefHeight="25.0" prefWidth="169.0" text="Create User" />
-                    <Button id="btn_user" fx:id="btn_view_user" layoutX="170.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToAllUsers" prefHeight="25.0" text="View All Users" />
+                    <Button id="btn_user" fx:id="btn_create_user" alignment="TOP_CENTER" layoutX="2.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="169.0" text="Create User" />
+                    <Button id="btn_user" fx:id="btn_view_user" layoutX="170.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" text="View All Users" />
                     <ImageView fx:id="img_create_user" fitHeight="15.0" fitWidth="50.0" layoutX="135.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
                         <image>
                             <Image url="@img/add_user_white.png" />
@@ -117,7 +117,7 @@
                             <Font name="Open Sans Light" size="16.0" />
                         </font>
                     </TextField>
-                    <Button id="btn_search" fx:id="btnUserSearch" layoutX="285.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToAllUsers" prefHeight="44.0" prefWidth="44.0" />
+                    <Button id="btn_search" fx:id="btnUserSearch" layoutX="285.0" layoutY="10.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" />
                     <ImageView fx:id="spinner_green" fitHeight="21.0" fitWidth="21.0" layoutX="297.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" styleClass="hidden">
                         <image>
                             <Image url="@img/spinner_green.gif" />
@@ -140,7 +140,33 @@
 <styleClass>
 <String fx:value="mylistview" />
 <String fx:value="note_view" />
-</styleClass></ListView>
+</styleClass></ListView><Pane fx:id="noteWrap" layoutY="39.0" prefHeight="194.0" prefWidth="595.0" styleClass="window">
+<children><Button fx:id="btnAdd" layoutX="483.0" layoutY="150.0" mnemonicParsing="false" prefWidth="97.0" text="Add Note" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<styleClass>
+<String fx:value="button" />
+<String fx:value="btn_actions" />
+<String fx:value="blue" />
+<String fx:value="submit" />
+</styleClass>
+</Button><TextArea fx:id="txtNote" layoutX="27.0" layoutY="47.0" prefHeight="89.0" prefWidth="541.0" /><Label fx:id="lblNewNote" layoutX="33.0" layoutY="15.0" text="Adding new note for Alex Sims" textFill="WHITE">
+<font>
+<Font size="18.0" />
+</font></Label><Label fx:id="lblCharCount" layoutX="448.0" layoutY="19.0" text="0/250 Characters" textFill="WHITE">
+<font>
+<Font size="14.0" />
+</font></Label><Button fx:id="btnClearNote" layoutX="391.0" layoutY="150.0" mnemonicParsing="false" prefWidth="97.0" text="Clear" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<styleClass>
+<String fx:value="button" />
+<String fx:value="btn_actions" />
+<String fx:value="blue" />
+<String fx:value="submit" />
+</styleClass>
+</Button><Button fx:id="btnBack" layoutX="27.0" layoutY="150.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+<styleClass>
+<String fx:value="blue" />
+<String fx:value="btn-back" />
+</styleClass></Button>
+</children></Pane>
 </children>
 </Pane><AnchorPane prefHeight="720.0" prefWidth="249.0">
         <children><Label id="username_label" layoutX="27.0" layoutY="325.0" styleClass="button_text" text="Inbox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="username_label" layoutX="27.0" layoutY="255.0" styleClass="button_text" text="Dashboard" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Rectangle id="nav_active_accent" fill="DODGERBLUE" height="70.0" layoutY="235.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="username_label" layoutX="27.0" layoutY="185.0" styleClass="button_text" text="Alex Sims" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><ImageView id="nav_branding" fitHeight="85.0" fitWidth="200.0" layoutX="23.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">

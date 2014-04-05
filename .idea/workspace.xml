@@ -14,8 +14,8 @@
     <file path="/sample.fxml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1391868834365" ignored="false" />
     <file path="/a.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1391730162605" ignored="false" />
     <file path="/sample.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1391730177039" ignored="false" />
-    <file path="/MainView.css" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396637228910" ignored="false" />
-    <file path="/fragment.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396361706109" ignored="false" />
+    <file path="/MainView.css" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396741299474" ignored="false" />
+    <file path="/fragment.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396730063280" ignored="false" />
     <file path="/MainMenu.fxml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392159505650" ignored="false" />
     <file path="/MainController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392159274471" ignored="false" />
     <file path="$USER_HOME$/PRCSE-Desktop/.idea/modules.xml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1391898506126" ignored="false" />
@@ -41,9 +41,9 @@
     <file path="$PROJECT_DIR$/src/screensframework/controller/Screen2Controller.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392202858895" ignored="false" />
     <file path="$PROJECT_DIR$/src/screensframework/controller/Screen3Controller.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392202858895" ignored="false" />
     <file path="$PROJECT_DIR$/src/screensframework/controller/ScreensController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392202858895" ignored="false" />
-    <file path="/ScreensFramework.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396637475958" ignored="false" />
+    <file path="/ScreensFramework.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396712703493" ignored="false" />
     <file path="/Dashboard.fxml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1393693672066" ignored="false" />
-    <file path="/DashboardController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396636990508" ignored="false" />
+    <file path="/DashboardController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396714140997" ignored="false" />
     <file path="/Payments.fxml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392574017662" ignored="false" />
     <file path="/PaymentsController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396620245273" ignored="false" />
     <file path="/XCell.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392303734069" ignored="false" />
@@ -112,10 +112,10 @@
     <file path="/UsersController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392569947061" ignored="false" />
     <file path="/AddUser.fxml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392580256318" ignored="false" />
     <file path="/UserDetails.fxml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392570916051" ignored="false" />
-    <file path="/UserInfoController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1393361148041" ignored="false" />
-    <file path="/NoteCell.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392578457878" ignored="false" />
+    <file path="/UserInfoController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396742086609" ignored="false" />
+    <file path="/NoteCell.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396739970476" ignored="false" />
     <file path="/PropertyController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392737150257" ignored="false" />
-    <file path="/Database.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396543070345" ignored="false" />
+    <file path="/Database.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396738818678" ignored="false" />
     <file path="/UserPermission.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396440118293" ignored="false" />
     <file path="/IObserver.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392826141301" ignored="false" />
     <file path="/ISubject.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392826102352" ignored="false" />
@@ -128,33 +128,35 @@
     <file path="/PropertyStatus.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392829876154" ignored="false" />
     <file path="/MessageStatus.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392830302703" ignored="false" />
     <file path="/MessageType.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396451087393" ignored="false" />
-    <file path="/Message.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396452675685" ignored="false" />
+    <file path="/Message.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396734328890" ignored="false" />
     <file path="/UserList.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396362484579" ignored="false" />
     <file path="/AddUserController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392922392174" ignored="false" />
-    <file path="/AllUsersController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396369296673" ignored="false" />
+    <file path="/AllUsersController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396720849637" ignored="false" />
     <file path="/AllUsers.fxml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1393017824753" ignored="false" />
     <file path="$USER_HOME$/10402796 ALEXSIMS_SOFT236_PT2/ALEXSIMS_SOFT236_PT2/LeaveRecords/src/leaverecord/gui/EditStaffMember.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1393083715296" ignored="false" />
     <file path="/EditStaffMember.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1393083370241" ignored="false" />
     <file path="$USER_HOME$/10402796 ALEXSIMS_SOFT236_PT2/ALEXSIMS_SOFT236_PT2/LeaveRecords/src/leaverecord/gui/AddLeaveRequest.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1393083715296" ignored="false" />
     <file path="/Person.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1393353054022" ignored="false" />
     <file path="/Admin.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396542003769" ignored="false" />
-    <file path="/Tenant.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396534483866" ignored="false" />
+    <file path="/Tenant.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396737256643" ignored="false" />
     <file path="$USER_HOME$/10402796 ALEXSIMS_SOFT236_PT2/ALEXSIMS_SOFT236_PT2/testCalendar/src/sample/Main.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1393175836523" ignored="false" />
     <file path="$USER_HOME$/10402796 ALEXSIMS_SOFT236_PT2/ALEXSIMS_SOFT236_PT2/untitled/src/sample/Main.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1393176707782" ignored="false" />
-    <file path="/UserCell.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1393357555105" ignored="false" />
+    <file path="/UserCell.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396720691251" ignored="false" />
     <file path="/Seacher.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1393359684785" ignored="false" />
     <file path="/Searcher.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396542335247" ignored="false" />
     <file path="/PropertyList.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396362394439" ignored="false" />
     <file path="/RoomList.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396448269260" ignored="false" />
     <file path="/Build.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396364397149" ignored="false" />
-    <file path="/Inbox.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396452696597" ignored="false" />
-    <file path="/Note.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396453786134" ignored="false" />
-    <file path="/Request.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396452872817" ignored="false" />
-    <file path="/Alert.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396452514447" ignored="false" />
+    <file path="/Inbox.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396734449496" ignored="false" />
+    <file path="/Note.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396734423115" ignored="false" />
+    <file path="/Request.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396734472495" ignored="false" />
+    <file path="/Alert.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396734437609" ignored="false" />
     <file path="/Login.fxml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396537608443" ignored="false" />
-    <file path="/LoginController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396637971452" ignored="false" />
+    <file path="/LoginController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396712724462" ignored="false" />
     <file path="/Semaphore.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396621947283" ignored="false" />
     <file path="/Mutex.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396630789246" ignored="false" />
+    <file path="/Writer.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396709390589" ignored="false" />
+    <file path="/Reader.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396710287921" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +172,9 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/PRCSE-DesktopApp$Main.coverage" NAME="Main Coverage Results" MODIFIED="1391868619519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sample.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/desktop-application$ScreensFramework.coverage" NAME="ScreensFramework Coverage Results" MODIFIED="1396714264811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>prcse.pp.controller.*</FILTER>
     </SUITE>
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -229,38 +234,56 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="Property.java" pinned="false" current="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Property.java">
+            <file leaf-file-name="UserInfoController.java" pinned="false" current="true" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/UserInfoController.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state line="230" column="16" selection-start="6470" selection-end="6470" vertical-scroll-proportion="0.0">
-                    <folding />
+                  <state line="442" column="51" selection-start="15413" selection-end="15413" vertical-scroll-proportion="0.7871878">
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                      <element signature="e#6224#6230#0" expanded="true" />
+                      <element signature="e#6845#7303#0" expanded="true" />
+                      <element signature="e#7292#7293#0" expanded="true" />
+                      <element signature="e#14194#14415#0" expanded="true" />
+                      <element signature="e#14404#14405#0" expanded="true" />
+                      <element signature="e#14452#14768#0" expanded="true" />
+                      <element signature="e#14757#14758#0" expanded="true" />
+                      <element signature="e#14810#15039#0" expanded="true" />
+                      <element signature="e#15028#15029#0" expanded="true" />
+                      <element signature="e#15075#15276#0" expanded="true" />
+                      <element signature="e#15265#15266#0" expanded="true" />
+                      <element signature="e#15309#15765#0" expanded="true" />
+                      <element signature="e#15754#15755#0" expanded="true" />
+                      <element signature="e#17377#17706#0" expanded="true" />
+                      <element signature="e#17695#17696#0" expanded="true" />
+                      <marker date="1396742168732" expanded="true" signature="8233:8252" placeholder="{...}" />
+                      <marker date="1396742168732" expanded="true" signature="8457:8475" placeholder="{...}" />
+                      <marker date="1396742168732" expanded="true" signature="8681:8700" placeholder="{...}" />
+                      <marker date="1396742168732" expanded="true" signature="8905:8923" placeholder="{...}" />
+                      <marker date="1396742168732" expanded="true" signature="9129:9148" placeholder="{...}" />
+                      <marker date="1396742168732" expanded="true" signature="9353:9371" placeholder="{...}" />
+                      <marker date="1396742168732" expanded="true" signature="9577:9596" placeholder="{...}" />
+                      <marker date="1396742168732" expanded="true" signature="9801:9819" placeholder="{...}" />
+                      <marker date="1396742168732" expanded="true" signature="10025:10044" placeholder="{...}" />
+                      <marker date="1396742168732" expanded="true" signature="10249:10267" placeholder="{...}" />
+                      <marker date="1396742168732" expanded="true" signature="12733:12752" placeholder="{...}" />
+                      <marker date="1396742168732" expanded="true" signature="13026:13044" placeholder="{...}" />
+                    </folding>
                   </state>
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="Room.java" pinned="false" current="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Room.java">
+            <file leaf-file-name="NoteCell.java" pinned="false" current="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/NoteCell.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state line="117" column="25" selection-start="2987" selection-end="2987" vertical-scroll-proportion="0.0">
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="Tenant.java" pinned="false" current="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Tenant.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state line="184" column="26" selection-start="5108" selection-end="5108" vertical-scroll-proportion="0.29787233">
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="Request.java" pinned="false" current="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Request.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state line="24" column="53" selection-start="617" selection-end="617" vertical-scroll-proportion="0.0">
-                    <folding />
+                  <state line="70" column="49" selection-start="2548" selection-end="2548" vertical-scroll-proportion="0.0">
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                      <element signature="e#2380#2720#0" expanded="true" />
+                      <element signature="e#2705#2706#0" expanded="true" />
+                      <marker date="1396740037635" expanded="true" signature="1520:1750" placeholder="{...}" />
+                      <marker date="1396740037635" expanded="true" signature="1778:1808" placeholder="{...}" />
+                      <marker date="1396740037635" expanded="true" signature="1838:1942" placeholder="{...}" />
+                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -279,68 +302,72 @@
       <file leaf-file-name="ScreensFramework.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/ScreensFramework.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="39" selection-start="5780" selection-end="5780" vertical-scroll-proportion="0.0">
+            <state line="57" column="13" selection-start="2374" selection-end="2374" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Admin.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Admin.java">
+      <file leaf-file-name="Database.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prcse/pp/db/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="43" selection-start="2003" selection-end="2003" vertical-scroll-proportion="0.0">
+            <state line="233" column="29" selection-start="8543" selection-end="8543" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserInfoController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/UserInfoController.java">
+      <file leaf-file-name="Message.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Message.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="548" column="0" selection-start="22601" selection-end="24951" vertical-scroll-proportion="0.0">
+            <state line="115" column="0" selection-start="2982" selection-end="2982" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tenant.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Tenant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="167" column="0" selection-start="4758" selection-end="4758" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AllUsersController.java" pinned="false" current="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/AllUsersController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="382" column="0" selection-start="13395" selection-end="13395" vertical-scroll-proportion="1.1485149">
               <folding>
-                <element signature="e#22620#24941#0" expanded="true" />
-                <element signature="e#24930#24931#0" expanded="true" />
+                <element signature="e#13427#13748#0" expanded="true" />
+                <element signature="e#13737#13738#0" expanded="true" />
+                <marker date="1396720977203" expanded="true" signature="6653:6672" placeholder="{...}" />
+                <marker date="1396720977203" expanded="true" signature="6877:6895" placeholder="{...}" />
+                <marker date="1396720977203" expanded="true" signature="7101:7120" placeholder="{...}" />
+                <marker date="1396720977203" expanded="true" signature="7325:7343" placeholder="{...}" />
+                <marker date="1396720977203" expanded="true" signature="7549:7568" placeholder="{...}" />
+                <marker date="1396720977203" expanded="true" signature="7773:7791" placeholder="{...}" />
+                <marker date="1396720977203" expanded="true" signature="7997:8016" placeholder="{...}" />
+                <marker date="1396720977203" expanded="true" signature="8221:8239" placeholder="{...}" />
+                <marker date="1396720977203" expanded="true" signature="8445:8464" placeholder="{...}" />
+                <marker date="1396720977203" expanded="true" signature="8669:8687" placeholder="{...}" />
+                <marker date="1396720977203" expanded="true" signature="11014:11033" placeholder="{...}" />
+                <marker date="1396720977203" expanded="true" signature="11307:11325" placeholder="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DashboardController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/DashboardController.java">
+      <file leaf-file-name="UserCell.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/UserCell.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="5" selection-start="4174" selection-end="4174" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="0" selection-start="2685" selection-end="2685" vertical-scroll-proportion="0.32445922">
+            <state line="109" column="68" selection-start="3479" selection-end="3479" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3792#4443#0" expanded="true" />
-                <element signature="e#4432#4433#0" expanded="true" />
-                <element signature="e#4482#4647#0" expanded="true" />
-                <element signature="e#4636#4637#0" expanded="true" />
-                <element signature="e#4687#5012#0" expanded="true" />
-                <element signature="e#5001#5002#0" expanded="true" />
-                <element signature="e#5051#5376#0" expanded="true" />
-                <element signature="e#5365#5366#0" expanded="true" />
-                <element signature="e#7289#9108#0" expanded="true" />
-                <element signature="e#9097#9098#0" expanded="true" />
+                <marker date="1396720704711" expanded="true" signature="2506:2570" placeholder="{...}" />
+                <marker date="1396720704711" expanded="true" signature="2596:2636" placeholder="{...}" />
+                <marker date="1396720704711" expanded="true" signature="2762:2784" placeholder="{...}" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainView.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/MainView.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="526" column="147" selection-start="11006" selection-end="11006" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -355,28 +382,28 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/prcse/pp/model/messageTypes/Note.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/model/Note.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/model/Request.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/model/Tenant.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/view/Login.fxml" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/model/Person.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/model/Admin.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/controller/Searcher.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/db/Database.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/controller/PaymentsController.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/controller/Semaphore.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/controller/Mutex.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/controller/DashboardController.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/view/MainView.css" />
         <option value="$PROJECT_DIR$/src/prcse/pp/controller/ScreensFramework.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/logs/Writer.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/controller/DashboardController.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/view/Dashboard.fxml" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/view/UserCell.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/controller/AllUsersController.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/model/Note.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/model/Alert.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/model/Inbox.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/model/Request.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/model/Message.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/model/Tenant.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/db/Database.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/view/NoteCell.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/view/MainView.css" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/controller/UserInfoController.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="1912" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -394,7 +421,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="2" />
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -489,6 +516,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="logs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="desktop-application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="desktop-application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -557,6 +606,7 @@
       <recent name="prcse.pp.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\Desktop\desktop-application\src\prcse\pp\view" />
       <recent name="C:\Users\Alex\Desktop\PRCSE-DesktopApp\src\prcse\pp\view" />
       <recent name="C:\Users\Alex\Desktop\PRCSE-Desktop\src\prcse\pp\view" />
       <recent name="C:\Users\Alex\Desktop\PRCSE-DesktopApp\src\prcse\pp" />
@@ -617,12 +667,14 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="PRCSE-Desktop Application" />
       <envs />
+      <RunnerSettings RunnerId="Cover" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="" />
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Cover" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
@@ -1262,7 +1314,7 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.ScreensFramework" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ScreensFramework" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
         <item index="2" class="java.lang.String" itemvalue="Application.ScreensFramework" />
         <item index="3" class="java.lang.String" itemvalue="Application.ScreensFramework" />
         <item index="4" class="java.lang.String" itemvalue="Application.ScreensFramework" />
@@ -1304,15 +1356,16 @@
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23801787" sideWeight="0.6909091" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.67591566" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5089087" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41509435" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1325,14 +1378,13 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.16257995" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20095949" sideWeight="0.6993318" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30066815" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20095949" sideWeight="0.70255274" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2974473" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.67107946" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.6993318" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1402,125 +1454,169 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/com/sun/glass/ui/Window.class">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/scene/Node.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="302" column="16" selection-start="10485" selection-end="10485" vertical-scroll-proportion="0.33245382" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/com/sun/javafx/tk/quantum/QuantumToolkit.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/ScreensController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="37" selection-start="3574" selection-end="3574" vertical-scroll-proportion="0.275">
+        <state line="1141" column="24" selection-start="56276" selection-end="56276" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/PaymentsController.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/scene/control/Label.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="633" column="20" selection-start="25426" selection-end="25429" vertical-scroll-proportion="0.7916667">
+        <state line="12" column="11" selection-start="430" selection-end="430" vertical-scroll-proportion="0.27784157">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Property.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/scene/control/Labeled.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="230" column="16" selection-start="6470" selection-end="6470" vertical-scroll-proportion="0.0">
+        <state line="58" column="22" selection-start="3053" selection-end="3053" vertical-scroll-proportion="0.18140069">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Room.java">
+    <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="25" selection-start="2987" selection-end="2987" vertical-scroll-proportion="0.0">
+        <state line="115" column="0" selection-start="2982" selection-end="2982" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Request.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/scene/layout/Pane.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="53" selection-start="617" selection-end="617" vertical-scroll-proportion="0.0">
+        <state line="12" column="11" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/UserCell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="68" selection-start="3479" selection-end="3479" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1396720704711" expanded="true" signature="2506:2570" placeholder="{...}" />
+            <marker date="1396720704711" expanded="true" signature="2596:2636" placeholder="{...}" />
+            <marker date="1396720704711" expanded="true" signature="2762:2784" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Tenant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="184" column="26" selection-start="5108" selection-end="5108" vertical-scroll-proportion="0.29787233">
+        <state line="167" column="0" selection-start="4758" selection-end="4758" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/ControlledScreen.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/collections/ObservableListBase.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="17" selection-start="2053" selection-end="2053" vertical-scroll-proportion="0.0">
+        <state line="36" column="22" selection-start="1581" selection-end="1581" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Admin.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/beans/property/ObjectPropertyBase.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="43" selection-start="2003" selection-end="2003" vertical-scroll-proportion="0.0">
+        <state line="33" column="16" selection-start="1298" selection-end="1298" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/UserInfoController.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/scene/control/ListView.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="548" column="0" selection-start="22601" selection-end="24951" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#22620#24941#0" expanded="true" />
-            <element signature="e#24930#24931#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/stage/Window.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="22" selection-start="4729" selection-end="4729" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/DashboardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="5" selection-start="4174" selection-end="4174" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/MainView.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="526" column="147" selection-start="11006" selection-end="11006" vertical-scroll-proportion="0.0">
+        <state line="127" column="130" selection-start="7934" selection-end="7934" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/ScreensFramework.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="39" selection-start="5780" selection-end="5780" vertical-scroll-proportion="0.0">
+        <state line="57" column="13" selection-start="2374" selection-end="2374" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/src/prcse/pp/db/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="0" selection-start="2685" selection-end="2685" vertical-scroll-proportion="0.32445922">
+        <state line="233" column="29" selection-start="8543" selection-end="8543" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/NoteCell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="49" selection-start="2548" selection-end="2548" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3792#4443#0" expanded="true" />
-            <element signature="e#4432#4433#0" expanded="true" />
-            <element signature="e#4482#4647#0" expanded="true" />
-            <element signature="e#4636#4637#0" expanded="true" />
-            <element signature="e#4687#5012#0" expanded="true" />
-            <element signature="e#5001#5002#0" expanded="true" />
-            <element signature="e#5051#5376#0" expanded="true" />
-            <element signature="e#5365#5366#0" expanded="true" />
-            <element signature="e#7289#9108#0" expanded="true" />
-            <element signature="e#9097#9098#0" expanded="true" />
+            <element signature="e#2380#2720#0" expanded="true" />
+            <element signature="e#2705#2706#0" expanded="true" />
+            <marker date="1396740037635" expanded="true" signature="1520:1750" placeholder="{...}" />
+            <marker date="1396740037635" expanded="true" signature="1778:1808" placeholder="{...}" />
+            <marker date="1396740037635" expanded="true" signature="1838:1942" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/MainView.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="397" column="31" selection-start="8209" selection-end="8209" vertical-scroll-proportion="0.08650519">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/AllUsersController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="382" column="0" selection-start="13395" selection-end="13395" vertical-scroll-proportion="1.1485149">
+          <folding>
+            <element signature="e#13427#13748#0" expanded="true" />
+            <element signature="e#13737#13738#0" expanded="true" />
+            <marker date="1396720977203" expanded="true" signature="6653:6672" placeholder="{...}" />
+            <marker date="1396720977203" expanded="true" signature="6877:6895" placeholder="{...}" />
+            <marker date="1396720977203" expanded="true" signature="7101:7120" placeholder="{...}" />
+            <marker date="1396720977203" expanded="true" signature="7325:7343" placeholder="{...}" />
+            <marker date="1396720977203" expanded="true" signature="7549:7568" placeholder="{...}" />
+            <marker date="1396720977203" expanded="true" signature="7773:7791" placeholder="{...}" />
+            <marker date="1396720977203" expanded="true" signature="7997:8016" placeholder="{...}" />
+            <marker date="1396720977203" expanded="true" signature="8221:8239" placeholder="{...}" />
+            <marker date="1396720977203" expanded="true" signature="8445:8464" placeholder="{...}" />
+            <marker date="1396720977203" expanded="true" signature="8669:8687" placeholder="{...}" />
+            <marker date="1396720977203" expanded="true" signature="11014:11033" placeholder="{...}" />
+            <marker date="1396720977203" expanded="true" signature="11307:11325" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/UserInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="442" column="51" selection-start="15413" selection-end="15413" vertical-scroll-proportion="0.7871878">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6224#6230#0" expanded="true" />
+            <element signature="e#6845#7303#0" expanded="true" />
+            <element signature="e#7292#7293#0" expanded="true" />
+            <element signature="e#14194#14415#0" expanded="true" />
+            <element signature="e#14404#14405#0" expanded="true" />
+            <element signature="e#14452#14768#0" expanded="true" />
+            <element signature="e#14757#14758#0" expanded="true" />
+            <element signature="e#14810#15039#0" expanded="true" />
+            <element signature="e#15028#15029#0" expanded="true" />
+            <element signature="e#15075#15276#0" expanded="true" />
+            <element signature="e#15265#15266#0" expanded="true" />
+            <element signature="e#15309#15765#0" expanded="true" />
+            <element signature="e#15754#15755#0" expanded="true" />
+            <element signature="e#17377#17706#0" expanded="true" />
+            <element signature="e#17695#17696#0" expanded="true" />
+            <marker date="1396742168732" expanded="true" signature="8233:8252" placeholder="{...}" />
+            <marker date="1396742168732" expanded="true" signature="8457:8475" placeholder="{...}" />
+            <marker date="1396742168732" expanded="true" signature="8681:8700" placeholder="{...}" />
+            <marker date="1396742168732" expanded="true" signature="8905:8923" placeholder="{...}" />
+            <marker date="1396742168732" expanded="true" signature="9129:9148" placeholder="{...}" />
+            <marker date="1396742168732" expanded="true" signature="9353:9371" placeholder="{...}" />
+            <marker date="1396742168732" expanded="true" signature="9577:9596" placeholder="{...}" />
+            <marker date="1396742168732" expanded="true" signature="9801:9819" placeholder="{...}" />
+            <marker date="1396742168732" expanded="true" signature="10025:10044" placeholder="{...}" />
+            <marker date="1396742168732" expanded="true" signature="10249:10267" placeholder="{...}" />
+            <marker date="1396742168732" expanded="true" signature="12733:12752" placeholder="{...}" />
+            <marker date="1396742168732" expanded="true" signature="13026:13044" placeholder="{...}" />
           </folding>
         </state>
       </provider>

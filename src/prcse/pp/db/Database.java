@@ -60,14 +60,14 @@ public class Database {
             if(connected == false) {
                 try {
                     ScreensFramework.db = new Database(null, null, null);
-                    System.out.println("Connected to database");
+                    ScreensFramework.logGeneral.writeToFile("Connected to database");
                     connected = true;
                 } catch (Exception e) {
                     // If there was an error set the connection to false.
                     connected = false;
                 }
             } else {
-                System.out.println("Connection already open.");
+                ScreensFramework.logGeneral.writeToFile("Connection already open.");
                 connected = true;
             }
 
@@ -95,7 +95,7 @@ public class Database {
                     return a;
                 }
             } catch (SQLException e) {
-                System.out.println("Error handling query: " + e.getMessage());
+                ScreensFramework.logError.writeToFile("Error handling query: " + e.getMessage());
                 thisAdmin = null;
             }
         }
@@ -161,7 +161,7 @@ public class Database {
             propertiesBuilt = true;
 
         } catch (SQLException e) {
-            System.out.println("Error handling query: " + e.getMessage());
+            ScreensFramework.logError.writeToFile("Error handling query: " + e.getMessage());
             propertiesBuilt = false;
         }
 
@@ -195,7 +195,7 @@ public class Database {
             roomsBuilt = true;
 
         } catch (SQLException e) {
-            System.out.println("Error handling query: " + e.getMessage());
+            ScreensFramework.logError.writeToFile("Error handling query: " + e.getMessage());
             roomsBuilt = false;
         }
 
@@ -217,6 +217,10 @@ public class Database {
             Statement  st  = con.createStatement();
             ResultSet  res = st.executeQuery("SELECT * FROM users WHERE user_permissions = 'USER'");
 
+            Note n = new Note("Hello", "");
+            Note a = new Note("Hello number two", "");
+            Note h = new Note("Hello number three", "");
+
             while(res.next()) {
                 Property p = getProperty(res.getInt("user_property"));
                 Room     r = getRoom(p, res.getInt("user_prop_room"));
@@ -225,13 +229,16 @@ public class Database {
                                         res.getString("user_email"), res.getString("user_phone"), res.getString("addr_line_1"), res.getString("addr_line_2"),
                                         res.getString("addr_postcode"), res.getString("city_name"), p, r);
 
+                t.addNote(n);
+                t.addNote(a);
+                t.addNote(h);
                 buildRequests(t);
                 tenantList.addUser(t);
             }
 
             usersBuilt = true;
         } catch (SQLException e) {
-            System.out.println("Error handling query: " + e.getMessage());
+            ScreensFramework.logError.writeToFile("Error handling query: " + e.getMessage());
             usersBuilt = false;
         }
 
@@ -249,7 +256,7 @@ public class Database {
             }
             usersBuilt = true;
         } catch (SQLException e) {
-            System.out.println("Error handling query: " + e.getMessage());
+            ScreensFramework.logError.writeToFile("Error handling query: " + e.getMessage());
             usersBuilt = false;
         }
 
@@ -281,7 +288,7 @@ public class Database {
 
             requestsBuilt = true;
         } catch (SQLException e) {
-            System.out.println("Error handling query: " + e.getMessage());
+            ScreensFramework.logError.writeToFile("Error handling query: " + e.getMessage());
             requestsBuilt = false;
         }
 

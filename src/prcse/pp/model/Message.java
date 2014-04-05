@@ -4,7 +4,9 @@ import prcse.pp.model.observer.IObserver;
 import prcse.pp.model.observer.ISubject;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * Creates a new Message (either Maintenance Request, Inbox or Alert message)
@@ -18,6 +20,7 @@ public class Message implements ISubject, Serializable {
     private   Tenant fromTenant;
     private   String message;
     private   Boolean viewed;
+    private   String date;
 
     private transient ArrayList<IObserver> observerList = null;
 
@@ -31,14 +34,20 @@ public class Message implements ISubject, Serializable {
         this.type       = null;
         this.status     = null;
         this.message    = "";
+        this.date       = getTodaysDate();
     }
 
     /**
      * Constructor for a message which only has a message
      */
-    public Message(String message)
+    public Message(String message, String theDate)
     {
         this.message = message;
+        if(theDate.length() < 1 || theDate.equals("")){
+            this.date    = getTodaysDate();
+        } else {
+            this.date = theDate;
+        }
     }
 
     /**
@@ -46,10 +55,15 @@ public class Message implements ISubject, Serializable {
      * @param thisTenant the tenant whom the message is directed to
      * @param message the message supplied
      */
-    public Message(Tenant thisTenant, String message)
+    public Message(Tenant thisTenant, String message, String theDate)
     {
         this.toTenant = thisTenant;
         this.message  = message;
+        if(theDate.length() < 1 || theDate.equals("")){
+            this.date    = getTodaysDate();
+        } else {
+            this.date = theDate;
+        }
     }
 
     /**
@@ -58,11 +72,16 @@ public class Message implements ISubject, Serializable {
      * @param fromTenant sender
      * @param message message supplied
      */
-    public Message(Tenant toTenant, Tenant fromTenant, String message)
+    public Message(Tenant toTenant, Tenant fromTenant, String message, String theDate)
     {
         this.toTenant   = toTenant;
         this.fromTenant = fromTenant;
         this.message    = message;
+        if(theDate.length() < 1 || theDate.equals("")){
+            this.date    = getTodaysDate();
+        } else {
+            this.date = theDate;
+        }
     }
 
     // Setters and getters
@@ -80,6 +99,21 @@ public class Message implements ISubject, Serializable {
 
     public void setMessage(String msg) {
         this.message = msg;
+    }
+
+    public String getTodaysDate() {
+
+        // Set the date on the label
+        Calendar c = Calendar.getInstance();
+
+        SimpleDateFormat today = new SimpleDateFormat("dd MMM yyyy");
+        String dateOut = today.format(c.getTime());
+
+        return dateOut;
+    }
+
+    public String getDate() {
+        return this.date;
     }
 
     // Observer Stuff

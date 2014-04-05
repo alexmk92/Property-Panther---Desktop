@@ -1,0 +1,56 @@
+05-Apr-2014 15:50: this is an error
+05-Apr-2014 16:04: this is an error
+05-Apr-2014 16:05: this is an error
+05-Apr-2014 16:09: this is an error
+05-Apr-2014 16:37: this is an error
+05-Apr-2014 16:37: this is an error
+05-Apr-2014 16:38: this is an error
+05-Apr-2014 16:39: this is an error
+05-Apr-2014 16:39: this is an error
+05-Apr-2014 16:39: this is an error
+05-Apr-2014 16:39: this is an error
+05-Apr-2014 16:39: this is an error
+05-Apr-2014 16:39: this is an error
+05-Apr-2014 16:41: this is an error
+05-Apr-2014 16:41: this is an error
+05-Apr-2014 16:41: this is an error
+05-Apr-2014 16:41: this is an error
+05-Apr-2014 18:59: Error handling query: IO Error: The Network Adapter could not establish the connection
+05-Apr-2014 21:35: Error handling query: IO Error: The Network Adapter could not establish the connection
+05-Apr-2014 21:35: Error handling query: IO Error: The Network Adapter could not establish the connection
+05-Apr-2014 21:47: There was an error handling the animation...
+05-Apr-2014 22:06: There was an error handling the animation...
+05-Apr-2014 22:06: There was an error handling the animation...
+05-Apr-2014 22:06: There was an error handling the animation...
+05-Apr-2014 22:06: There was an error handling the animation...
+05-Apr-2014 23:23: Index: 1, Size: 1
+05-Apr-2014 23:23: Index: 2, Size: 1
+05-Apr-2014 23:23: Index: 3, Size: 1
+05-Apr-2014 23:23: Index: 1, Size: 1
+05-Apr-2014 23:23: Index: 2, Size: 1
+05-Apr-2014 23:23: Index: 3, Size: 1
+05-Apr-2014 23:24: Index: 3, Size: 3
+05-Apr-2014 23:35: Index: 3, Size: 3
+05-Apr-2014 23:37: Index: 3, Size: 3
+05-Apr-2014 23:43: Index: 3, Size: 3
+05-Apr-2014 23:45: Index: 3, Size: 3
+05-Apr-2014 23:50: Index: 3, Size: 3
+05-Apr-2014 23:52: Index: 3, Size: 3
+05-Apr-2014 23:53: Index: 3, Size: 3
+05-Apr-2014 23:56: Index: 3, Size: 3
+05-Apr-2014 23:57: Index: 3, Size: 3
+06-Apr-2014 00:00: Index: 3, Size: 3
+06-Apr-2014 00:02: Index: 3, Size: 3
+06-Apr-2014 00:04: Index: 3, Size: 3
+06-Apr-2014 00:17: Index: 3, Size: 3
+06-Apr-2014 00:19: Index: 3, Size: 3
+06-Apr-2014 00:20: Index: 3, Size: 3
+06-Apr-2014 00:34: Index: 3, Size: 3
+06-Apr-2014 00:36: Index: 3, Size: 3
+06-Apr-2014 00:38: Index: 3, Size: 3
+06-Apr-2014 00:40: Index: 3, Size: 3
+06-Apr-2014 00:42: Index: 3, Size: 3
+06-Apr-2014 00:44: Index: 3, Size: 3
+06-Apr-2014 00:46: Index: 3, Size: 3
+06-Apr-2014 00:52: Index: 3, Size: 3
+06-Apr-2014 00:55: Index: 3, Size: 3

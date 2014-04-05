@@ -107,6 +107,69 @@ public class Tenant extends Person implements Serializable {
     }
 
     /**
+     * Returns the size of the notes array the user has
+     */
+    public int numOfNotes() {
+        int numNotes = notes.size();
+        return numNotes;
+    }
+
+    /**
+     * Gets the note at the given index
+     * @return the note at the given index
+     */
+    public Note getNoteAt(int index) {
+
+        Note n = null;
+
+        if(notes.get(index) != null){
+            n = notes.get(index);
+        }
+        return n;
+    }
+
+    /**
+     * Adds a new note to the note array
+     * @param newNote the note object to add
+     */
+    public Boolean addNote(Note newNote) {
+        Boolean added = false;
+
+        if(newNote == null){
+            return false;
+        } else {
+            notes.add(newNote);
+            added = true;
+        }
+
+        return added;
+    }
+
+    /**
+     * Removes the note at the given index
+     * @return true if the note was removed else false
+     */
+    public Boolean removeNote(int index) {
+        Boolean removed = false;
+
+        // Check we are in the correct bounds
+        if(index >= 0 && index <= notes.size()){
+            notes.remove(index);
+            removed = true;
+        }
+
+        return removed;
+    }
+
+    /**
+     * returns the notes array
+     */
+    public ArrayList<Note> getNotes() {
+        return this.notes;
+    }
+
+
+    /**
      * Returns the room which the tenant occupies
      */
     public Room getRoom()

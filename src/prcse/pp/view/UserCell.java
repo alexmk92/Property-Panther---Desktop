@@ -2,12 +2,15 @@ package prcse.pp.view;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
@@ -15,7 +18,9 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import prcse.pp.controller.*;
 import prcse.pp.model.Tenant;
+import prcse.pp.model.UserList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,6 +30,9 @@ import prcse.pp.model.Tenant;
  * To change this template use File | Settings | File Templates.
  */
 public class UserCell extends ListCell<String> {
+
+    Searcher s = ScreensFramework.searchObj;
+    ScreensController myController;
     HBox hbox = new HBox();
     VBox desc = new VBox();
     Label label = new Label();
@@ -35,14 +43,30 @@ public class UserCell extends ListCell<String> {
     String lastItem;
     Button viewUser = new Button("View User");
     Button editUser = new Button("Edit User");
+    AllUsersController thisController;
 
 
     /**
      * Constructor providing the styles and elements which the view
      * contains
      */
-    public UserCell() {
+    public UserCell(UserList tenants, int index, AllUsersController givenController) {
         super();
+
+        thisController = givenController;
+        viewUser.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                try{
+                s.setTenant(tenants.getUserAt(index));
+                notifyController();
+                }catch(Exception e){
+                    System.out.println(e.getMessage());
+                }
+            }
+        });
+
+
 
         address.getStyleClass().add("address_text");
 
@@ -74,6 +98,7 @@ public class UserCell extends ListCell<String> {
      */
     @Override
     protected void updateItem(String item, boolean empty) {
+
         super.updateItem(item, empty);
         setText(null);  // No text in label of super class
         if (empty) {
@@ -101,4 +126,12 @@ public class UserCell extends ListCell<String> {
             setGraphic(hbox);
         }
     }
+
+    /**
+     * Notifies the controller of a change
+     */
+    public void notifyController() {
+        thisController.goToAllUsers(new ActionEvent());
+    }
+
 }

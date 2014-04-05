@@ -47,6 +47,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import prcse.pp.db.Database;
+import prcse.pp.logs.Writer;
 import prcse.pp.model.*;
 
 import java.util.ArrayList;
@@ -89,6 +90,10 @@ public class ScreensFramework extends Application  {
     // Global search object to pass data between forms
     public static Searcher searchObj = new Searcher();
 
+    // Global write objects
+    public static Writer logError   = new Writer("error", true);
+    public static Writer logGeneral = new Writer("general", true);
+
     @Override
     public void start(Stage primaryStage) {
 
@@ -121,6 +126,7 @@ public class ScreensFramework extends Application  {
         scene.setFill(Color.TRANSPARENT);
         primaryStage.setScene(scene);
         primaryStage.show();
+
     }
 
     /**

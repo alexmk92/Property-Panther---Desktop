@@ -18,8 +18,8 @@ public class Alert extends Message {
      * @param message the message body
      * @param p the property the alert is against
      */
-    public Alert(Tenant tenant, String message, Property p) {
-        super(tenant, message);
+    public Alert(Tenant tenant, String message, Property p, String date) {
+        super(tenant, message, date);
         this.type     = type.ALERT;
         this.property = p;
     }
