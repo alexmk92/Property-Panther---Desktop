@@ -1,5 +1,6 @@
 package prcse.pp.model;
 
+import prcse.pp.controller.ScreensFramework;
 import prcse.pp.model.observer.IObserver;
 import prcse.pp.model.observer.ISubject;
 
@@ -132,13 +133,31 @@ public class Tenant extends Person implements Serializable {
      * Adds a new note to the note array
      * @param newNote the note object to add
      */
-    public Boolean addNote(Note newNote) {
+    public Boolean addNote(Note newNote, Boolean insert) {
         Boolean added = false;
 
         if(newNote == null){
             return false;
         } else {
+
+            // Construct the new note and reference to this user
+            String msg  = newNote.getMessage();
+            String date = newNote.getDate();
+            int    id   = this.getUserId();
+
+            // Determines whether we want to just add to the list (on loading) or if
+            // we want to insert into the db aswell
+            if(insert == true){
+                // Construct the query parameter
+                String thisQuery = "INSERT INTO notes VALUES('', " + id + ", '" + msg + "', '" + date + "')";
+
+                // Run the query
+                ScreensFramework.db.query(thisQuery);
+            }
+
             notes.add(newNote);
+
+
             added = true;
         }
 
@@ -154,12 +173,50 @@ public class Tenant extends Person implements Serializable {
 
         // Check we are in the correct bounds
         if(index >= 0 && index <= notes.size()){
+
             notes.remove(index);
+
+            // Get the note at the index
+            Note n = getNoteAt(index);
+
+            // Construct the query parameter
+            String thisQuery = "DELETE FROM notes WHERE note_id = " + n.getId() + " AND user_id = " + this.getUserId() + ";";
+
+            // Run the query
+            ScreensFramework.db.query(thisQuery);
+
+
             removed = true;
         }
 
         return removed;
     }
+
+    /**
+     * Removes all notes in the array
+     * @return true if the notes were removed else false
+     */
+    public Boolean removeAllNotes() {
+
+        Boolean removed = false;
+
+        if(this.notes.size() > 0){
+            for(int i = 0; i < notes.size()+1; i++) {
+                this.notes.remove(i);
+            }
+
+            // Construct the query parameter
+            String thisQuery = "DELETE FROM notes WHERE user_id = " + this.getUserId() + ";";
+
+            // Run the query
+            ScreensFramework.db.query(thisQuery);
+
+            removed = true;
+        }
+
+        return removed;
+    }
+
 
     /**
      * returns the notes array

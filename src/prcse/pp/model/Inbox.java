@@ -17,8 +17,8 @@ public class Inbox extends Message {
      * @param fromTenant the user the message is from
      * @param message the body of the message
      */
-    public Inbox(Tenant toTenant, Tenant fromTenant, String message, String date) {
-        super(toTenant, fromTenant, message, date);
+    public Inbox(Tenant toTenant, Tenant fromTenant, String message, String date, int id) {
+        super(toTenant, fromTenant, message, date, id);
         this.type = type.INBOX;
         this.seen = false;
     }

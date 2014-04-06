@@ -154,7 +154,6 @@ public class ScreensFramework extends Application  {
         return systemResponse;
     }
 
-
     /**
      * The main() method is ignored in a correctly deployed JavaFX application.
      * main() serves only as fallback in case the application can not be

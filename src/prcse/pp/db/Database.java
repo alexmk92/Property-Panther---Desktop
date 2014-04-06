@@ -1,5 +1,6 @@
 package prcse.pp.db;
 
+import javafx.application.Platform;
 import javafx.stage.Screen;
 import prcse.pp.controller.ScreensFramework;
 import prcse.pp.model.*;
@@ -217,10 +218,6 @@ public class Database {
             Statement  st  = con.createStatement();
             ResultSet  res = st.executeQuery("SELECT * FROM users WHERE user_permissions = 'USER'");
 
-            Note n = new Note("Hello", "");
-            Note a = new Note("Hello number two", "");
-            Note h = new Note("Hello number three", "");
-
             while(res.next()) {
                 Property p = getProperty(res.getInt("user_property"));
                 Room     r = getRoom(p, res.getInt("user_prop_room"));
@@ -229,9 +226,7 @@ public class Database {
                                         res.getString("user_email"), res.getString("user_phone"), res.getString("addr_line_1"), res.getString("addr_line_2"),
                                         res.getString("addr_postcode"), res.getString("city_name"), p, r);
 
-                t.addNote(n);
-                t.addNote(a);
-                t.addNote(h);
+                buildNotes(t);
                 buildRequests(t);
                 tenantList.addUser(t);
             }
@@ -296,6 +291,44 @@ public class Database {
     }
 
     /**
+     * Build all note objects for the system
+     * @return true if all note objects were built, else return false
+     */
+    public Boolean buildNotes(Tenant t){
+
+        Boolean requestsBuilt = false;
+
+        try {
+            int user_id = t.getUserId();
+            // Make a connection to the database
+            Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
+            Statement  st  = con.createStatement();
+            ResultSet  res = st.executeQuery("SELECT * FROM notes WHERE user_id = " + user_id);
+
+            while(res.next()) {
+
+                Note n = new Note("", "", 0);
+                String date = n.convertDate(res.getDate("NOTE_DATE"));
+                String msg  = res.getString("NOTE_BODY");
+                int    id   = res.getInt("NOTE_ID");
+
+                n.setMessage(msg);
+                n.setDate(date);
+                n.setId(id);
+
+                t.addNote(n, false);
+            }
+
+            requestsBuilt = true;
+        } catch (SQLException e) {
+            ScreensFramework.logError.writeToFile("Error handling query: " + e.getMessage());
+            requestsBuilt = false;
+        }
+
+        return requestsBuilt;
+    }
+
+    /**
      * Searches for a property with the given ID
      * @return the Property object found in the Property Array, else return empty property
      */
@@ -346,6 +379,34 @@ public class Database {
         }
 
         return result;
+    }
+
+    /**
+     * Inserts a new row into the database dependent on the given query,
+     * run on a new thread as this sometimes takes a while to compute
+     * @param - the query we wish to execute
+     */
+    public void query(String thisQuery) {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    if(thisQuery != null) {
+                        try {
+                            // Make a connection to the database
+                            Connection con = DriverManager.getConnection(getDb_host(), getDb_user(), getDb_pass());
+                            Statement  st  = con.createStatement();
+                            ResultSet  res = st.executeQuery(thisQuery);
+                        } catch (SQLException e) {
+                            ScreensFramework.logError.writeToFile("Error handling operation: " + e.getMessage());
+                        }
+                    }
+                } catch(Exception e) {
+                    ScreensFramework.logError.writeToFile(e.getMessage());
+                }
+            }
+        }).start();
     }
 
 

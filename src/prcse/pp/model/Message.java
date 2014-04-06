@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Creates a new Message (either Maintenance Request, Inbox or Alert message)
@@ -21,6 +22,7 @@ public class Message implements ISubject, Serializable {
     private   String message;
     private   Boolean viewed;
     private   String date;
+    private   int    id;
 
     private transient ArrayList<IObserver> observerList = null;
 
@@ -35,12 +37,13 @@ public class Message implements ISubject, Serializable {
         this.status     = null;
         this.message    = "";
         this.date       = getTodaysDate();
+        this.id         = 0;
     }
 
     /**
      * Constructor for a message which only has a message
      */
-    public Message(String message, String theDate)
+    public Message(String message, String theDate, int id)
     {
         this.message = message;
         if(theDate.length() < 1 || theDate.equals("")){
@@ -48,6 +51,7 @@ public class Message implements ISubject, Serializable {
         } else {
             this.date = theDate;
         }
+        this.id         = id;
     }
 
     /**
@@ -55,7 +59,7 @@ public class Message implements ISubject, Serializable {
      * @param thisTenant the tenant whom the message is directed to
      * @param message the message supplied
      */
-    public Message(Tenant thisTenant, String message, String theDate)
+    public Message(Tenant thisTenant, String message, String theDate, int id)
     {
         this.toTenant = thisTenant;
         this.message  = message;
@@ -64,6 +68,7 @@ public class Message implements ISubject, Serializable {
         } else {
             this.date = theDate;
         }
+        this.id         = id;
     }
 
     /**
@@ -72,7 +77,7 @@ public class Message implements ISubject, Serializable {
      * @param fromTenant sender
      * @param message message supplied
      */
-    public Message(Tenant toTenant, Tenant fromTenant, String message, String theDate)
+    public Message(Tenant toTenant, Tenant fromTenant, String message, String theDate, int id)
     {
         this.toTenant   = toTenant;
         this.fromTenant = fromTenant;
@@ -82,6 +87,7 @@ public class Message implements ISubject, Serializable {
         } else {
             this.date = theDate;
         }
+        this.id         = id;
     }
 
     // Setters and getters
@@ -114,6 +120,29 @@ public class Message implements ISubject, Serializable {
 
     public String getDate() {
         return this.date;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int idIn) {
+        this.id = idIn;
+    }
+
+    public void setDate(String dateIn) {
+        this.date = dateIn;
+    }
+
+    public String convertDate(Date date) {
+
+        // Set the date on the label
+        Calendar c = Calendar.getInstance();
+
+        SimpleDateFormat today = new SimpleDateFormat("dd MMM yyyy");
+        String dateOut = today.format(date);
+
+        return dateOut;
     }
 
     // Observer Stuff

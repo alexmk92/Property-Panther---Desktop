@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -148,10 +149,16 @@
 <String fx:value="blue" />
 <String fx:value="submit" />
 </styleClass>
-</Button><TextArea fx:id="txtNote" layoutX="27.0" layoutY="47.0" prefHeight="89.0" prefWidth="541.0" /><Label fx:id="lblNewNote" layoutX="33.0" layoutY="15.0" text="Adding new note for Alex Sims" textFill="WHITE">
+</Button><TextArea fx:id="txtNote" layoutX="27.0" layoutY="47.0" prefHeight="89.0" prefWidth="541.0" promptText="Enter note..." wrapText="true">
+<font>
+<Font size="16.0" />
+</font>
+<padding>
+<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+</padding></TextArea><Label fx:id="lblNewNote" layoutX="33.0" layoutY="15.0" text="Adding new note for Alex Sims" textFill="WHITE">
 <font>
 <Font size="18.0" />
-</font></Label><Label fx:id="lblCharCount" layoutX="448.0" layoutY="19.0" text="0/250 Characters" textFill="WHITE">
+</font></Label><Label fx:id="lblCharCount" layoutX="448.0" layoutY="19.0" text="0/150 Characters" textFill="WHITE">
 <font>
 <Font size="14.0" />
 </font></Label><Button fx:id="btnClearNote" layoutX="391.0" layoutY="150.0" mnemonicParsing="false" prefWidth="97.0" text="Clear" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
@@ -288,6 +295,12 @@
 <String fx:value="btn_actions" />
 <String fx:value="blue" />
 </styleClass>
+</Button><Button fx:id="btnClearNotes" layoutX="144.0" layoutY="65.0" mnemonicParsing="false" text="Clear Notes" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<styleClass>
+<String fx:value="button" />
+<String fx:value="btn_actions" />
+<String fx:value="blue" />
+</styleClass>
 </Button>
         </children>
     </Pane>
@@ -341,6 +354,15 @@
             </Label>
         </children>
     </Pane>
+</children>
+</Pane><Pane id="errorWrap" fx:id="errorWrap" layoutX="253.0" layoutY="721.0" prefHeight="45.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children>
+<Label fx:id="lblError" alignment="CENTER" layoutX="1.0" layoutY="9.0" prefHeight="25.0" prefWidth="955.0" text="Sorry, you entered the wrong username/password" textFill="WHITE">
+<font>
+<Font size="16.0" />
+</font>
+</Label>
+<Button fx:id="btnCloseError" layoutX="930.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="16.0" styleClass="button_close" text="Button" />
 </children>
 </Pane>
     </children></AnchorPane>

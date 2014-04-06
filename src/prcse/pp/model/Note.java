@@ -14,9 +14,9 @@ public class Note extends Message {
      * @param the date of the message
      * @param message - content of message
      */
-    public Note(Tenant tenant, String message, String date)
+    public Note(Tenant tenant, String message, String date, int id)
     {
-        super(message, date);
+        super(message, date, id);
         this.type = MessageType.NOTE;
     }
 
@@ -25,8 +25,8 @@ public class Note extends Message {
      * @param the message for the note
      * @param the data of the message
      */
-    public Note(String message, String date) {
-        super(message, date);
+    public Note(String message, String date, int id) {
+        super(message, date, id);
         this.type = MessageType.NOTE;
     }
 }

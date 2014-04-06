@@ -16,6 +16,7 @@ import javafx.scene.control.*;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -181,6 +182,14 @@ public class UserInfoController implements Initializable, ControlledScreen {
     private Pane noteWrap;
     @FXML // fx:id="btnBack"
     private Button btnBack;
+    @FXML // fx:id="btnCloseError"
+    private Button btnCloseError;
+    @FXML // fx:id="errorWrap"
+    private Pane errorWrap;
+    @FXML // fx:id="lblError"
+    private Label lblError;
+    @FXML // fx:id="btnClearNotes"
+    private Button btnClearNotes;
 
 
     // Set variables to allow for draggable window.
@@ -220,13 +229,19 @@ public class UserInfoController implements Initializable, ControlledScreen {
             public void handle(MouseEvent mouseEvent) {
                 if(objectsSet == false) {
                     thisTenant = getTenant();
-                    System.out.println(thisTenant.getName());
                     renderView();
                 }
                 index = 0;
                 animateIn();
                 resetStyles();
                 objectsSet = true;
+            }
+        });
+
+        body.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                slideDownError();
             }
         });
 
@@ -414,6 +429,7 @@ public class UserInfoController implements Initializable, ControlledScreen {
             public void handle(MouseEvent mouseEvent) {
                 lstNotes.setVisible(false);
                 noteWrap.setVisible(true);
+                txtNote.requestFocus();
             }
         });
         btnBack.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -422,32 +438,83 @@ public class UserInfoController implements Initializable, ControlledScreen {
                 noteWrap.setVisible(false);
                 lstNotes.setVisible(true);
                 txtNote.setText("");
-                lblCharCount.setText("0/250 Characters");
+                lblCharCount.setText("0/150 Characters");
+                refreshList(lstNotes);
             }
         });
         btnClearNote.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 txtNote.setText("");
-                lblCharCount.setText("0/250 Characters");
+                lblCharCount.setText("0/150 Characters");
             }
         });
         btnAdd.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                // Change this to a method - ADD TO THE USER ARRAY
+                // Add the note to this tenant
+                Note n = new Note(txtNote.getText(), "", 0);
+                if(thisTenant.addNote(n, true)){
+                    noteWrap.setVisible(false);
+                    lstNotes.setVisible(true);
+                    refreshList(lstNotes);
+                } else {
+                    ScreensFramework.logGeneral.writeToFile("The note was not inserted as we failed to connect to the database");
+                    slideUpError("Error: Could not connect to the database.");
+                    refreshList(lstNotes);
+                }
+            }
+        });
+        btnClearNotes.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                thisTenant.removeAllNotes();
+                refreshList(lstNotes);
+            }
+        });
+        txtNote.setOnKeyPressed(new EventHandler<javafx.scene.input.KeyEvent>() {
+            @Override
+            public void handle(javafx.scene.input.KeyEvent ke) {
+                if (ke.getCode().equals(KeyCode.ENTER)) {
+                    // Build the note object to add
+                    Note n = new Note(txtNote.getText(), "", 0);
+                    if(thisTenant.addNote(n, true)){
+                        refreshList(lstNotes);
+                        slideUpError("Success: Your note was added.");
+                    } else {
+                        ScreensFramework.logGeneral.writeToFile("The note was not inserted as we failed to connect to the database");
+                        slideUpError("Error: Could not connect to the database.");
+                    }
+                }
             }
         });
         txtNote.setOnKeyTyped(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
-                int chars = txtNote.getText().length();
-                if(chars < 251){
+                int chars         = txtNote.getText().length();
+                String message    = txtNote.getText();
+
+                if(chars < 151){
                     String amount = String.valueOf(chars);
-                    lblCharCount.setText(amount + "/250 Characters");
+                    lblCharCount.setText(amount + "/150 Characters");
+                    lblCharCount.setStyle("-fx-text-fill: #ffffff");
                 } else {
-                    lblCharCount.setText("Maximum count reached");
+                    // Updat the message to the old state
+                    String fullMsg = message.substring(0, 150);
+                    System.out.println(fullMsg.length());
+                    txtNote.setText(fullMsg);
+
+                    // Set the position to the end of the string
+                    txtNote.positionCaret(150);
+                    lblCharCount.setText("150/150 Characters");
+                    lblCharCount.setStyle("-fx-text-fill: #f92772");
                 }
+            }
+        });
+        btnCloseError.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                slideDownError();
             }
         });
 
@@ -484,7 +551,7 @@ public class UserInfoController implements Initializable, ControlledScreen {
         }
         lblEmail.setText(thisTenant.getEmail());
         lblPhone.setText("+" + thisTenant.getPhone());
-
+        lblNewNote.setText("Adding new note for " + thisTenant.getName());
 
         // Populates the note list
         ArrayList noteArray = thisTenant.getNotes();
@@ -625,6 +692,33 @@ public class UserInfoController implements Initializable, ControlledScreen {
         txtUsers_Username.setText("");
         spinner_green.setVisible(false);
         btnUserSearch.getStyleClass().remove("searching");
+    }
+
+    public void slideUpError(String msg) {
+
+        final Timeline slideUp = new Timeline();
+        slideUp.setCycleCount(1);
+        slideUp.setAutoReverse(false);
+
+        final KeyValue kv0 = new KeyValue(errorWrap.translateYProperty(), -40);
+        final KeyFrame kf0 = new KeyFrame(Duration.millis(250), kv0);
+
+        slideUp.getKeyFrames().add(kf0);
+        slideUp.play();
+
+        lblError.setText(msg);
+    }
+
+    public void slideDownError() {
+        final Timeline slideUp = new Timeline();
+        slideUp.setCycleCount(1);
+        slideUp.setAutoReverse(false);
+
+        final KeyValue kv0 = new KeyValue(errorWrap.translateYProperty(), 0);
+        final KeyFrame kf0 = new KeyFrame(Duration.millis(250), kv0);
+
+        slideUp.getKeyFrames().add(kf0);
+        slideUp.play();
     }
 
     public void resetText(TextField txt, Boolean newPropertyValue)
@@ -779,6 +873,8 @@ public class UserInfoController implements Initializable, ControlledScreen {
                     ScreensFramework.logError.writeToFile("There was an error handling the animation...");
                 }
                 // Go to our view.
+                noteWrap.setVisible(false);
+                lstNotes.setVisible(true);
                 myController.setScreen(ID);
             }
         }).start();
