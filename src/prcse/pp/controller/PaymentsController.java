@@ -156,6 +156,9 @@ public class PaymentsController implements Initializable, ControlledScreen {
     private Tenant tenant;
     private int index = 0;
 
+    // begin by fetching 5 payments (default)
+    private int amount = 5;
+
     /**
      * Initializes the controller class.
      */
@@ -422,7 +425,26 @@ public class PaymentsController implements Initializable, ControlledScreen {
                 hideUsers();
             }
         });
-        lblOlder.
+        lblOlder.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+
+               // We only want to clear the array, so pass false
+               // check that all payments were removed - if yes then rebuild the payments list
+               // with another 5 results
+               if(tenant.removeAllPayments(false)){
+
+                    // 5 was the default amount to fetch, add 5 more
+                    amount += 5;
+
+                    // Get another 5 payments
+                    ScreensFramework.db.buildPayments(tenant, amount);
+
+                    // Repopulate the list
+                    populatePaymentList();
+                }
+            }
+        });
 
     }
 
@@ -461,9 +483,6 @@ public class PaymentsController implements Initializable, ControlledScreen {
                     // Set the global tenant object
                     setTenant(t);
 
-                    // Populate the list with the custom CellFactory
-                    populatePaymentList();
-
                 } catch(Exception e) {
                     ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
                 }
@@ -479,6 +498,9 @@ public class PaymentsController implements Initializable, ControlledScreen {
             fetch.join();
 
             paymentsRetrieved = true;
+
+            // Populate the list with the custom CellFactory
+            populatePaymentList();
         } catch (Exception e) {
             ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
         }
@@ -494,6 +516,7 @@ public class PaymentsController implements Initializable, ControlledScreen {
         // Zero the index each time the list view is repopulated to
         // bind to the correct button
         index = 0;
+        amount = 5;
 
         // Refresh the lists contents to null
         lstPayments.setItems(null);

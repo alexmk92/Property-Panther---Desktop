@@ -27,7 +27,7 @@ public class Tenant extends Person implements Serializable {
      * Tenants are able to make payments and send/receive messages,
      * these ArrayLists track all their payments and messages
      */
-    private   ArrayList<Request> requests;
+    private   ArrayList<Request>  requests;
     private   ArrayList<Inbox>    inbox;
     private   ArrayList<Note>     notes;
     protected ArrayList<Payment>  payments;
@@ -117,6 +117,32 @@ public class Tenant extends Person implements Serializable {
     }
 
     /**
+     * Removes all the payments from the payment array
+     * @param delete - True if deleting from the Database and array,
+     *                 False if just emptying list for re-populate
+     * @return True if completed else false
+     */
+    public Boolean removeAllPayments(Boolean delete) {
+
+        Boolean removed = false;
+
+        if(delete == true){
+            String thisQuery =  "DELETE FROM payments WHERE user_id = " + this.getUserId() + "";
+            ScreensFramework.db.query(thisQuery);
+        }
+
+        // reset to the empty array
+        this.payments.clear();
+
+        System.out.println(payments.size());
+
+        removed = true;
+
+        return removed;
+    }
+
+
+    /**
      * Returns the size of the notes array the user has
      */
     public int numOfNotes() {
@@ -177,7 +203,7 @@ public class Tenant extends Person implements Serializable {
         Boolean removed = false;
 
         // Check we are in the correct bounds
-        if(index >= 0 && index <= numOfNotes()){
+        if(index >= 0 && index <= notes.size()){
 
             // Get the note at the index
             Note n = getNoteAt(index);
@@ -210,11 +236,10 @@ public class Tenant extends Person implements Serializable {
         Boolean removed = false;
 
             String thisQuery =  "DELETE FROM notes WHERE user_id = " + this.getUserId() + "";
-            System.out.println(thisQuery);
             ScreensFramework.db.query(thisQuery);
 
              // We dont need to query the db as we remove all records above
-            for(int i = 0; i < numOfNotes(); i++) {
+            for(int i = 0; i < notes.size(); i++) {
                 removeNoteAt(i, false);
             }
 

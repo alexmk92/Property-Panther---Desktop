@@ -173,7 +173,7 @@ public class Database implements Callable {
 
             propertiesBuilt = true;
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             ScreensFramework.logError.writeToFile("Error handling query: " + e.getMessage());
             propertiesBuilt = false;
         }
@@ -310,7 +310,7 @@ public class Database implements Callable {
             ResultSet res = query("SELECT * FROM payments WHERE user_id = " + user_id + " ORDER BY payment_received DESC FETCH NEXT " + amount_to_fetch + " ROWS ONLY");
 
             while(res.next()) {
-                Payment p = new Payment(res.getDouble("payment_amount"), res.getDate("payment_received"));
+                Payment p = new Payment(res.getDouble("payment_amount"), res.getDate("payment_received"), res.getInt("payment_id"));
 
                 if(t.addPayment(p)){
                     paymentsBuilt = true;

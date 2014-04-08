@@ -23,6 +23,7 @@ public class Payment implements ISubject, Serializable {
     private double   amount;
     private Date     date_paid;
     private Tenant   tenant;
+    private int      id;
 
     // Arraylist of Observer
     private ArrayList<IObserver> observers = null;
@@ -32,7 +33,7 @@ public class Payment implements ISubject, Serializable {
      * Creates a new payment object
      * @param thisAmount the amount paid
      */
-    public Payment(double thisAmount, Date date)
+    public Payment(double thisAmount, Date date, int idIn)
     {
         this.amount    = formatPayment(thisAmount);
         if(date == null){
@@ -40,6 +41,7 @@ public class Payment implements ISubject, Serializable {
         } else {
             this.date_paid = date;
         }
+        this.id = idIn;
     }
 
     /**
@@ -89,6 +91,13 @@ public class Payment implements ISubject, Serializable {
             result = formatter.format(this.date_paid);
         }
         return result;
+    }
+
+    /**
+     * Gets the id of the payment
+     */
+    public int getId() {
+        return this.id;
     }
 
     /**

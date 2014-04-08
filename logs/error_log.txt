@@ -7017,3 +7017,159 @@ ORA-12519, TNS:no appropriate service handler found
 08-Apr-2014 18:24: Index: 6, Size: 5
 08-Apr-2014 18:27: Index: 5, Size: 5
 08-Apr-2014 18:27: Index: 6, Size: 5
+08-Apr-2014 18:53: Index: 5, Size: 5
+08-Apr-2014 18:53: Index: 6, Size: 5
+08-Apr-2014 18:57: Index: 5, Size: 5
+08-Apr-2014 18:57: Index: 6, Size: 5
+08-Apr-2014 18:59: Index: 5, Size: 5
+08-Apr-2014 18:59: Index: 6, Size: 5
+08-Apr-2014 19:00: Index: 9, Size: 9
+08-Apr-2014 19:04: Index: 5, Size: 5
+08-Apr-2014 19:04: Index: 6, Size: 5
+08-Apr-2014 19:05: Error: Not on FX application thread; currentThread = Thread-17
+08-Apr-2014 19:05: Index: 5, Size: 5
+08-Apr-2014 19:05: Index: 6, Size: 5
+08-Apr-2014 19:08: Index: 5, Size: 5
+08-Apr-2014 19:08: Index: 6, Size: 5
+08-Apr-2014 19:11: Index: 5, Size: 5
+08-Apr-2014 19:11: Index: 6, Size: 5
+08-Apr-2014 19:14: Index: 5, Size: 5
+08-Apr-2014 19:14: Index: 6, Size: 5
+08-Apr-2014 19:15: Error: 1
+08-Apr-2014 19:15: Index: 5, Size: 5
+08-Apr-2014 19:15: Index: 6, Size: 5
+08-Apr-2014 19:16: Index: 5, Size: 5
+08-Apr-2014 19:16: Index: 6, Size: 5
+08-Apr-2014 19:17: Index: 5, Size: 5
+08-Apr-2014 19:17: Index: 6, Size: 5
+08-Apr-2014 19:18: Index: 5, Size: 5
+08-Apr-2014 19:18: Index: 6, Size: 5
+08-Apr-2014 19:19: Index: 5, Size: 5
+08-Apr-2014 19:19: Index: 6, Size: 5
+08-Apr-2014 19:21: Index: 5, Size: 5
+08-Apr-2014 19:21: Index: 6, Size: 5
+08-Apr-2014 19:22: Index: 5, Size: 5
+08-Apr-2014 19:22: Index: 6, Size: 5
+08-Apr-2014 19:24: Index: 5, Size: 5
+08-Apr-2014 19:24: Index: 6, Size: 5
+08-Apr-2014 19:27: Index: 5, Size: 5
+08-Apr-2014 19:27: Index: 6, Size: 5
+08-Apr-2014 19:34: Index: 5, Size: 5
+08-Apr-2014 19:34: Index: 6, Size: 5
+08-Apr-2014 19:35: Index: 5, Size: 5
+08-Apr-2014 19:35: Index: 6, Size: 5
+08-Apr-2014 19:36: Index: 5, Size: 5
+08-Apr-2014 19:36: Index: 6, Size: 5
+08-Apr-2014 19:37: Index: 5, Size: 5
+08-Apr-2014 19:37: Index: 6, Size: 5
+08-Apr-2014 19:38: Index: 5, Size: 5
+08-Apr-2014 19:38: Index: 6, Size: 5
+08-Apr-2014 19:39: Index: 5, Size: 5
+08-Apr-2014 19:39: Index: 6, Size: 5
+08-Apr-2014 19:40: Index: 5, Size: 5
+08-Apr-2014 19:40: Index: 6, Size: 5
+08-Apr-2014 19:40: Index: 5, Size: 5
+08-Apr-2014 19:40: Index: 6, Size: 5
+08-Apr-2014 19:47: Index: 5, Size: 5
+08-Apr-2014 19:47: Index: 6, Size: 5
+08-Apr-2014 19:47: Index: 7, Size: 7
+08-Apr-2014 19:48: Index: 5, Size: 5
+08-Apr-2014 19:48: Index: 6, Size: 5
+08-Apr-2014 19:49: Index: 7, Size: 7
+08-Apr-2014 19:49: Index: 7, Size: 7
+08-Apr-2014 19:49: Error: Not on FX application thread; currentThread = Thread-30
+08-Apr-2014 19:49: Error: Not on FX application thread; currentThread = Thread-31
+08-Apr-2014 19:49: Error: Not on FX application thread; currentThread = Thread-32
+08-Apr-2014 19:49: Error: Not on FX application thread; currentThread = Thread-33
+08-Apr-2014 19:52: Index: 5, Size: 5
+08-Apr-2014 19:52: Index: 6, Size: 5
+08-Apr-2014 19:52: Error: Not on FX application thread; currentThread = Thread-17
+08-Apr-2014 19:52: Error: Not on FX application thread; currentThread = Thread-18
+08-Apr-2014 19:52: Error: Not on FX application thread; currentThread = Thread-19
+08-Apr-2014 19:52: Error: Not on FX application thread; currentThread = Thread-20
+08-Apr-2014 19:52: Error: Not on FX application thread; currentThread = Thread-21
+08-Apr-2014 19:52: Error: Not on FX application thread; currentThread = Thread-22
+08-Apr-2014 19:52: Error: Not on FX application thread; currentThread = Thread-23
+08-Apr-2014 19:52: Error: Not on FX application thread; currentThread = Thread-24
+08-Apr-2014 19:52: Error: Not on FX application thread; currentThread = Thread-25
+08-Apr-2014 19:52: Error: Not on FX application thread; currentThread = Thread-26
+08-Apr-2014 19:54: Index: 5, Size: 5
+08-Apr-2014 19:54: Index: 6, Size: 5
+08-Apr-2014 19:54: Error: Not on FX application thread; currentThread = Thread-17
+08-Apr-2014 19:54: Error: Not on FX application thread; currentThread = Thread-18
+08-Apr-2014 19:55: Index: 5, Size: 5
+08-Apr-2014 19:55: Index: 6, Size: 5
+08-Apr-2014 19:55: Index: 5, Size: 5
+08-Apr-2014 19:55: Index: 6, Size: 5
+08-Apr-2014 19:55: Index: 5, Size: 5
+08-Apr-2014 19:55: Index: 6, Size: 5
+08-Apr-2014 19:56: Index: 5, Size: 5
+08-Apr-2014 19:56: Index: 6, Size: 5
+08-Apr-2014 19:56: Index: 5, Size: 5
+08-Apr-2014 19:56: Index: 6, Size: 5
+08-Apr-2014 19:57: Index: 5, Size: 5
+08-Apr-2014 19:57: Index: 6, Size: 5
+08-Apr-2014 19:57: Index: 5, Size: 5
+08-Apr-2014 19:57: Index: 6, Size: 5
+08-Apr-2014 19:57: Index: 7, Size: 7
+08-Apr-2014 19:59: Index: 5, Size: 5
+08-Apr-2014 19:59: Index: 6, Size: 5
+08-Apr-2014 20:00: Index: 5, Size: 5
+08-Apr-2014 20:00: Index: 6, Size: 5
+08-Apr-2014 20:00: Index: 5, Size: 5
+08-Apr-2014 20:00: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 7, Size: 7
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
+08-Apr-2014 20:01: Index: 5, Size: 5
+08-Apr-2014 20:01: Index: 6, Size: 5
