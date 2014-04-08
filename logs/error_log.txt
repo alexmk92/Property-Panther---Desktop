@@ -6112,3 +6112,780 @@ ORA-12519, TNS:no appropriate service handler found
 06-Apr-2014 19:05: Index: 1, Size: 0
 06-Apr-2014 19:05: Index: 2, Size: 0
 06-Apr-2014 19:05: Index: 3, Size: 0
+07-Apr-2014 15:05: Index: 1, Size: 1
+07-Apr-2014 15:05: Index: 2, Size: 1
+07-Apr-2014 15:05: Index: 3, Size: 1
+07-Apr-2014 15:12: Index: 1, Size: 1
+07-Apr-2014 15:12: Index: 2, Size: 1
+07-Apr-2014 15:12: Index: 3, Size: 1
+07-Apr-2014 15:12: Index: 4, Size: 2
+07-Apr-2014 15:12: Index: 5, Size: 2
+07-Apr-2014 15:12: Index: 6, Size: 2
+07-Apr-2014 15:12: Index: 7, Size: 2
+07-Apr-2014 15:14: Index: 3, Size: 3
+07-Apr-2014 15:14: Index: 4, Size: 1
+07-Apr-2014 15:14: Index: 5, Size: 1
+07-Apr-2014 15:14: Index: 6, Size: 1
+07-Apr-2014 15:14: Index: 7, Size: 1
+07-Apr-2014 15:14: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 15:16: Index: 2, Size: 2
+07-Apr-2014 15:16: Index: 3, Size: 2
+07-Apr-2014 15:16: Index: 4, Size: 1
+07-Apr-2014 15:16: Index: 5, Size: 1
+07-Apr-2014 15:16: Index: 6, Size: 1
+07-Apr-2014 15:16: Index: 7, Size: 1
+07-Apr-2014 15:16: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 15:22: Index: 3, Size: 3
+07-Apr-2014 15:23: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 15:23: Index: 0, Size: 0
+07-Apr-2014 15:23: Index: 1, Size: 0
+07-Apr-2014 15:23: Index: 2, Size: 0
+07-Apr-2014 15:23: Index: 3, Size: 0
+07-Apr-2014 15:23: Index: 0, Size: 0
+07-Apr-2014 15:23: Index: 1, Size: 0
+07-Apr-2014 15:23: Index: 2, Size: 0
+07-Apr-2014 15:23: Index: 3, Size: 0
+07-Apr-2014 15:24: Index: 2, Size: 2
+07-Apr-2014 15:24: Index: 3, Size: 2
+07-Apr-2014 15:25: Index: 4, Size: 1
+07-Apr-2014 15:25: Index: 5, Size: 1
+07-Apr-2014 15:25: Index: 6, Size: 1
+07-Apr-2014 15:25: Index: 7, Size: 1
+07-Apr-2014 15:25: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 15:25: Index: 0, Size: 0
+07-Apr-2014 15:25: Index: 1, Size: 0
+07-Apr-2014 15:25: Index: 2, Size: 0
+07-Apr-2014 15:25: Index: 3, Size: 0
+07-Apr-2014 15:25: Index: 1, Size: 1
+07-Apr-2014 15:25: Index: 2, Size: 1
+07-Apr-2014 15:25: Index: 3, Size: 1
+07-Apr-2014 15:25: Index: 0, Size: 0
+07-Apr-2014 15:25: Index: 1, Size: 0
+07-Apr-2014 15:25: Index: 2, Size: 0
+07-Apr-2014 15:25: Index: 3, Size: 0
+07-Apr-2014 15:27: Index: 1, Size: 1
+07-Apr-2014 15:27: Index: 2, Size: 1
+07-Apr-2014 15:27: Index: 3, Size: 1
+07-Apr-2014 15:28: -1
+07-Apr-2014 15:28: Index: 1, Size: 1
+07-Apr-2014 15:28: Index: 2, Size: 1
+07-Apr-2014 15:28: null
+07-Apr-2014 15:29: Index: 3, Size: 3
+07-Apr-2014 15:29: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 15:30: Index: 3, Size: 3
+07-Apr-2014 15:30: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 15:32: Index: 1, Size: 1
+07-Apr-2014 15:32: Index: 2, Size: 1
+07-Apr-2014 15:32: Index: 3, Size: 1
+07-Apr-2014 15:46: Error handling operation: IO Error: Software caused connection abort: recv failed
+07-Apr-2014 15:48: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 15:48: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 15:48: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 15:48: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 15:48: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 15:48: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 15:48: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 15:48: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 15:48: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 15:48: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 15:48: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 15:49: Index: 1, Size: 1
+07-Apr-2014 15:49: Index: 2, Size: 1
+07-Apr-2014 15:49: Index: 3, Size: 1
+07-Apr-2014 15:49: Index: 0, Size: 0
+07-Apr-2014 15:49: Index: 1, Size: 0
+07-Apr-2014 15:49: Index: 2, Size: 0
+07-Apr-2014 15:49: Index: 3, Size: 0
+07-Apr-2014 15:49: Index: 0, Size: 0
+07-Apr-2014 15:49: Index: 1, Size: 0
+07-Apr-2014 15:49: Index: 2, Size: 0
+07-Apr-2014 15:49: Index: 3, Size: 0
+07-Apr-2014 15:50: Index: 1, Size: 1
+07-Apr-2014 15:50: Index: 2, Size: 1
+07-Apr-2014 15:50: Index: 3, Size: 1
+07-Apr-2014 15:55: -1
+07-Apr-2014 15:55: -1
+07-Apr-2014 15:55: -1
+07-Apr-2014 15:55: -1
+07-Apr-2014 15:55: null
+07-Apr-2014 15:55: null
+07-Apr-2014 15:55: null
+07-Apr-2014 15:55: null
+07-Apr-2014 15:55: null
+07-Apr-2014 15:55: null
+07-Apr-2014 15:55: null
+07-Apr-2014 15:55: null
+07-Apr-2014 16:16: Index: 2, Size: 2
+07-Apr-2014 16:16: Index: 3, Size: 2
+07-Apr-2014 16:18: Index: 2, Size: 2
+07-Apr-2014 16:18: Index: 3, Size: 2
+07-Apr-2014 16:18: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:20: Index: 2, Size: 2
+07-Apr-2014 16:20: Index: 3, Size: 2
+07-Apr-2014 16:20: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:20: Index: 2, Size: 2
+07-Apr-2014 16:20: Index: 3, Size: 2
+07-Apr-2014 16:22: Index: 2, Size: 2
+07-Apr-2014 16:22: Index: 3, Size: 2
+07-Apr-2014 16:23: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:24: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:24: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:25: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:25: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:25: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:26: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:28: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:28: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:28: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:29: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:29: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:29: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:30: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:31: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:31: Index: 6, Size: 6
+07-Apr-2014 16:31: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:35: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:35: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:35: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:35: Index: 5, Size: 4
+07-Apr-2014 16:35: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:35: Index: 1, Size: 1
+07-Apr-2014 16:35: Index: 2, Size: 1
+07-Apr-2014 16:35: Index: 3, Size: 1
+07-Apr-2014 16:35: Index: 0, Size: 0
+07-Apr-2014 16:35: Index: 1, Size: 0
+07-Apr-2014 16:35: Index: 2, Size: 0
+07-Apr-2014 16:35: Index: 3, Size: 0
+07-Apr-2014 16:36: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:36: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:36: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:36: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:37: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:37: Index: 3, Size: 3
+07-Apr-2014 16:37: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:37: Index: 2, Size: 2
+07-Apr-2014 16:37: Index: 3, Size: 2
+07-Apr-2014 16:37: Index: 0, Size: 0
+07-Apr-2014 16:37: Index: 1, Size: 0
+07-Apr-2014 16:37: Index: 2, Size: 0
+07-Apr-2014 16:37: Index: 3, Size: 0
+07-Apr-2014 16:43: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:43: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:43: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:43: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:43: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:43: Index: 2, Size: 2
+07-Apr-2014 16:43: Index: 3, Size: 2
+07-Apr-2014 16:43: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:43: Index: 1, Size: 1
+07-Apr-2014 16:43: Index: 2, Size: 1
+07-Apr-2014 16:43: Index: 3, Size: 1
+07-Apr-2014 16:43: Index: 0, Size: 0
+07-Apr-2014 16:43: Index: 1, Size: 0
+07-Apr-2014 16:43: Index: 2, Size: 0
+07-Apr-2014 16:43: Index: 3, Size: 0
+07-Apr-2014 16:47: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:48: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:48: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:48: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:48: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:48: Index: 4, Size: 4
+07-Apr-2014 16:51: Index: 8, Size: 7
+07-Apr-2014 16:52: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:53: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:54: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:54: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:54: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:54: Index: 3, Size: 3
+07-Apr-2014 16:54: Index: 0, Size: 0
+07-Apr-2014 16:54: Index: 1, Size: 0
+07-Apr-2014 16:54: Index: 2, Size: 0
+07-Apr-2014 16:54: Index: 3, Size: 0
+07-Apr-2014 16:56: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:57: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:57: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:57: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 16:57: Index: 1, Size: 1
+07-Apr-2014 16:57: Index: 2, Size: 1
+07-Apr-2014 16:57: Index: 3, Size: 1
+07-Apr-2014 16:59: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 17:02: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 17:02: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 17:02: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 17:02: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 17:02: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 17:06: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 17:06: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 17:09: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 17:10: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 17:11: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 17:11: Index: 2, Size: 2
+07-Apr-2014 17:11: Index: 3, Size: 2
+07-Apr-2014 17:11: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 17:13: Index: 2, Size: 2
+07-Apr-2014 17:13: Index: 3, Size: 2
+07-Apr-2014 17:14: Index: 2, Size: 2
+07-Apr-2014 17:14: Index: 3, Size: 2
+07-Apr-2014 17:14: Index: 3, Size: 3
+07-Apr-2014 17:14: Index: 3, Size: 3
+07-Apr-2014 17:14: Index: 2, Size: 2
+07-Apr-2014 17:14: Index: 3, Size: 2
+07-Apr-2014 17:15: Index: 1, Size: 1
+07-Apr-2014 17:15: Index: 2, Size: 1
+07-Apr-2014 17:15: Index: 3, Size: 1
+07-Apr-2014 17:15: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 17:15: Index: 0, Size: 0
+07-Apr-2014 17:15: Index: 1, Size: 0
+07-Apr-2014 17:15: Index: 2, Size: 0
+07-Apr-2014 17:15: Index: 3, Size: 0
+07-Apr-2014 17:15: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 17:51: Error handling query: IO Error: The Network Adapter could not establish the connection
+07-Apr-2014 18:01: Index: 1, Size: 1
+07-Apr-2014 18:01: Index: 2, Size: 1
+07-Apr-2014 18:01: Index: 3, Size: 1
+07-Apr-2014 18:01: Index: 2, Size: 2
+07-Apr-2014 18:01: Index: 3, Size: 2
+07-Apr-2014 18:01: Index: 1, Size: 1
+07-Apr-2014 18:01: Index: 2, Size: 1
+07-Apr-2014 18:01: Index: 3, Size: 1
+07-Apr-2014 18:01: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 18:01: Index: 0, Size: 0
+07-Apr-2014 18:01: Index: 1, Size: 0
+07-Apr-2014 18:01: Index: 2, Size: 0
+07-Apr-2014 18:01: Index: 3, Size: 0
+07-Apr-2014 18:01: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 18:01: Index: 1, Size: 1
+07-Apr-2014 18:01: Index: 2, Size: 1
+07-Apr-2014 18:01: Index: 3, Size: 1
+07-Apr-2014 18:01: Index: 0, Size: 0
+07-Apr-2014 18:01: Index: 1, Size: 0
+07-Apr-2014 18:01: Index: 2, Size: 0
+07-Apr-2014 18:01: Index: 3, Size: 0
+07-Apr-2014 18:01: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 18:01: Index: 1, Size: 1
+07-Apr-2014 18:01: Index: 2, Size: 1
+07-Apr-2014 18:01: Index: 3, Size: 1
+07-Apr-2014 18:01: Index: 2, Size: 2
+07-Apr-2014 18:01: Index: 3, Size: 2
+07-Apr-2014 18:01: Index: 3, Size: 3
+07-Apr-2014 18:01: Index: 2, Size: 2
+07-Apr-2014 18:01: Index: 3, Size: 2
+07-Apr-2014 18:01: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 18:01: Index: 1, Size: 1
+07-Apr-2014 18:01: Index: 2, Size: 1
+07-Apr-2014 18:01: Index: 3, Size: 1
+07-Apr-2014 18:01: Index: 0, Size: 0
+07-Apr-2014 18:01: Index: 1, Size: 0
+07-Apr-2014 18:01: Index: 2, Size: 0
+07-Apr-2014 18:01: Index: 3, Size: 0
+07-Apr-2014 18:01: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 18:01: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 18:03: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 18:03: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 18:03: Index: 3, Size: 3
+07-Apr-2014 18:03: Index: 2, Size: 2
+07-Apr-2014 18:03: Index: 3, Size: 2
+07-Apr-2014 18:03: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 18:03: Index: 1, Size: 1
+07-Apr-2014 18:03: Index: 2, Size: 1
+07-Apr-2014 18:03: Index: 3, Size: 1
+07-Apr-2014 18:03: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 18:03: Index: 0, Size: 0
+07-Apr-2014 18:03: Index: 1, Size: 0
+07-Apr-2014 18:03: Index: 2, Size: 0
+07-Apr-2014 18:03: Index: 3, Size: 0
+07-Apr-2014 18:03: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 18:03: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 18:04: Index: 3, Size: 3
+07-Apr-2014 18:04: Index: 2, Size: 2
+07-Apr-2014 18:04: Index: 3, Size: 2
+07-Apr-2014 18:04: Index: 1, Size: 1
+07-Apr-2014 18:04: Index: 2, Size: 1
+07-Apr-2014 18:04: Index: 3, Size: 1
+07-Apr-2014 18:04: Index: 0, Size: 0
+07-Apr-2014 18:04: Index: 1, Size: 0
+07-Apr-2014 18:04: Index: 2, Size: 0
+07-Apr-2014 18:04: Index: 3, Size: 0
+07-Apr-2014 18:04: Index: 0, Size: 0
+07-Apr-2014 18:04: Index: 1, Size: 0
+07-Apr-2014 18:04: Index: 2, Size: 0
+07-Apr-2014 18:04: Index: 3, Size: 0
+07-Apr-2014 18:04: Index: 1, Size: 1
+07-Apr-2014 18:04: Index: 2, Size: 1
+07-Apr-2014 18:04: Index: 3, Size: 1
+07-Apr-2014 18:04: Index: 2, Size: 2
+07-Apr-2014 18:04: Index: 3, Size: 2
+07-Apr-2014 18:04: Index: 3, Size: 3
+07-Apr-2014 18:04: Error handling operation: ORA-01400: cannot insert NULL into ("PRCSE"."NOTES"."NOTE_BODY")
+
+07-Apr-2014 18:04: Index: 2, Size: 2
+07-Apr-2014 18:04: Index: 3, Size: 2
+07-Apr-2014 18:04: Index: 1, Size: 1
+07-Apr-2014 18:04: Index: 2, Size: 1
+07-Apr-2014 18:04: Index: 3, Size: 1
+07-Apr-2014 18:05: Index: 0, Size: 0
+07-Apr-2014 18:05: Index: 1, Size: 0
+07-Apr-2014 18:05: Index: 2, Size: 0
+07-Apr-2014 18:05: Index: 3, Size: 0
+07-Apr-2014 18:05: Index: 0, Size: 0
+07-Apr-2014 18:05: Index: 1, Size: 0
+07-Apr-2014 18:05: Index: 2, Size: 0
+07-Apr-2014 18:05: Index: 3, Size: 0
+07-Apr-2014 18:05: Index: 2, Size: 2
+07-Apr-2014 18:05: Index: 3, Size: 2
+07-Apr-2014 18:06: Index: 1, Size: 1
+07-Apr-2014 18:06: Index: 2, Size: 1
+07-Apr-2014 18:06: Index: 3, Size: 1
+07-Apr-2014 18:06: Error handling operation: ORA-00917: missing comma
+
+07-Apr-2014 18:07: Index: 1, Size: 1
+07-Apr-2014 18:07: Index: 2, Size: 1
+07-Apr-2014 18:07: Index: 3, Size: 1
+07-Apr-2014 18:07: Index: 2, Size: 2
+07-Apr-2014 18:07: Index: 3, Size: 2
+07-Apr-2014 18:07: Error handling operation: ORA-00917: missing comma
+
+07-Apr-2014 18:07: Index: 1, Size: 1
+07-Apr-2014 18:07: Index: 2, Size: 1
+07-Apr-2014 18:07: Index: 3, Size: 1
+07-Apr-2014 18:07: Index: 0, Size: 0
+07-Apr-2014 18:07: Index: 1, Size: 0
+07-Apr-2014 18:07: Index: 2, Size: 0
+07-Apr-2014 18:07: Index: 3, Size: 0
+07-Apr-2014 18:23: Index: 1, Size: 1
+07-Apr-2014 18:23: Index: 2, Size: 1
+07-Apr-2014 18:23: Index: 3, Size: 1
+07-Apr-2014 18:23: Index: 2, Size: 2
+07-Apr-2014 18:23: Index: 3, Size: 2
+07-Apr-2014 18:23: Index: 2, Size: 2
+07-Apr-2014 18:23: Index: 3, Size: 2
+07-Apr-2014 18:24: Index: 3, Size: 3
+07-Apr-2014 18:25: Index: 3, Size: 3
+07-Apr-2014 18:25: Index: 2, Size: 2
+07-Apr-2014 18:25: Index: 3, Size: 2
+07-Apr-2014 18:25: Index: 3, Size: 3
+07-Apr-2014 18:31: Index: 3, Size: 3
+07-Apr-2014 18:36: Index: 3, Size: 3
+07-Apr-2014 18:36: Index: 2, Size: 2
+07-Apr-2014 18:36: Index: 3, Size: 2
+07-Apr-2014 18:36: Index: 1, Size: 1
+07-Apr-2014 18:36: Index: 2, Size: 1
+07-Apr-2014 18:36: Index: 3, Size: 1
+07-Apr-2014 18:36: Index: 0, Size: 0
+07-Apr-2014 18:36: Index: 1, Size: 0
+07-Apr-2014 18:36: Index: 2, Size: 0
+07-Apr-2014 18:36: Index: 3, Size: 0
+07-Apr-2014 18:36: Index: 1, Size: 1
+07-Apr-2014 18:36: Index: 2, Size: 1
+07-Apr-2014 18:36: Index: 3, Size: 1
+07-Apr-2014 18:36: Index: 0, Size: 0
+07-Apr-2014 18:36: Index: 1, Size: 0
+07-Apr-2014 18:36: Index: 2, Size: 0
+07-Apr-2014 18:36: Index: 3, Size: 0
+07-Apr-2014 18:36: Index: 0, Size: 0
+07-Apr-2014 18:36: Index: 1, Size: 0
+07-Apr-2014 18:36: Index: 2, Size: 0
+07-Apr-2014 18:36: Index: 3, Size: 0
+07-Apr-2014 18:36: Index: 1, Size: 1
+07-Apr-2014 18:36: Index: 2, Size: 1
+07-Apr-2014 18:36: Index: 3, Size: 1
+07-Apr-2014 18:36: Index: 0, Size: 0
+07-Apr-2014 18:36: Index: 1, Size: 0
+07-Apr-2014 18:36: Index: 2, Size: 0
+07-Apr-2014 18:36: Index: 3, Size: 0
+07-Apr-2014 18:36: Index: 1, Size: 1
+07-Apr-2014 18:36: Index: 2, Size: 1
+07-Apr-2014 18:36: Index: 3, Size: 1
+07-Apr-2014 18:38: Index: 3, Size: 3
+07-Apr-2014 18:38: Index: 2, Size: 2
+07-Apr-2014 18:38: Index: 3, Size: 2
+07-Apr-2014 18:38: Index: 1, Size: 1
+07-Apr-2014 18:38: Index: 2, Size: 1
+07-Apr-2014 18:38: Index: 3, Size: 1
+07-Apr-2014 18:38: Index: 0, Size: 0
+07-Apr-2014 18:38: Index: 1, Size: 0
+07-Apr-2014 18:38: Index: 2, Size: 0
+07-Apr-2014 18:38: Index: 3, Size: 0
+07-Apr-2014 18:38: Index: 1, Size: 1
+07-Apr-2014 18:38: Index: 2, Size: 1
+07-Apr-2014 18:38: Index: 3, Size: 1
+07-Apr-2014 18:39: Index: 0, Size: 0
+07-Apr-2014 18:39: Index: 1, Size: 0
+07-Apr-2014 18:39: Index: 2, Size: 0
+07-Apr-2014 18:39: Index: 3, Size: 0
+07-Apr-2014 18:39: Index: 0, Size: 0
+07-Apr-2014 18:39: Index: 1, Size: 0
+07-Apr-2014 18:39: Index: 2, Size: 0
+07-Apr-2014 18:39: Index: 3, Size: 0
+07-Apr-2014 18:40: Index: 1, Size: 1
+07-Apr-2014 18:40: Index: 2, Size: 1
+07-Apr-2014 18:40: Index: 3, Size: 1
+07-Apr-2014 18:40: Index: 0, Size: 0
+07-Apr-2014 18:40: Index: 1, Size: 0
+07-Apr-2014 18:40: Index: 2, Size: 0
+07-Apr-2014 18:40: Index: 3, Size: 0
+07-Apr-2014 18:40: Index: 1, Size: 1
+07-Apr-2014 18:40: Index: 2, Size: 1
+07-Apr-2014 18:40: Index: 3, Size: 1
+07-Apr-2014 18:40: Index: 0, Size: 0
+07-Apr-2014 18:40: Index: 1, Size: 0
+07-Apr-2014 18:40: Index: 2, Size: 0
+07-Apr-2014 18:40: Index: 3, Size: 0
+07-Apr-2014 18:41: Index: 1, Size: 1
+07-Apr-2014 18:41: Index: 2, Size: 1
+07-Apr-2014 18:41: Index: 3, Size: 1
+07-Apr-2014 18:41: Index: 0, Size: 0
+07-Apr-2014 18:41: Index: 1, Size: 0
+07-Apr-2014 18:41: Index: 2, Size: 0
+07-Apr-2014 18:41: Index: 3, Size: 0
+07-Apr-2014 18:41: Index: 1, Size: 1
+07-Apr-2014 18:41: Index: 2, Size: 1
+07-Apr-2014 18:41: Index: 3, Size: 1
+07-Apr-2014 18:41: Index: 0, Size: 0
+07-Apr-2014 18:41: Index: 1, Size: 0
+07-Apr-2014 18:41: Index: 2, Size: 0
+07-Apr-2014 18:41: Index: 3, Size: 0
+07-Apr-2014 18:44: Index: 1, Size: 1
+07-Apr-2014 18:44: Index: 2, Size: 1
+07-Apr-2014 18:44: Index: 3, Size: 1
+07-Apr-2014 18:44: Index: 0, Size: 0
+07-Apr-2014 18:44: Index: 1, Size: 0
+07-Apr-2014 18:44: Index: 2, Size: 0
+07-Apr-2014 18:44: Index: 3, Size: 0
+07-Apr-2014 18:44: Index: 1, Size: 1
+07-Apr-2014 18:44: Index: 2, Size: 1
+07-Apr-2014 18:44: Index: 3, Size: 1
+07-Apr-2014 18:44: Index: 0, Size: 0
+07-Apr-2014 18:44: Index: 1, Size: 0
+07-Apr-2014 18:44: Index: 2, Size: 0
+07-Apr-2014 18:44: Index: 3, Size: 0
+07-Apr-2014 18:45: Index: 1, Size: 1
+07-Apr-2014 18:45: Index: 2, Size: 1
+07-Apr-2014 18:45: Index: 3, Size: 1
+07-Apr-2014 18:46: Index: 0, Size: 0
+07-Apr-2014 18:46: Index: 1, Size: 0
+07-Apr-2014 18:46: Index: 2, Size: 0
+07-Apr-2014 18:46: Index: 3, Size: 0
+07-Apr-2014 18:52: Index: 1, Size: 1
+07-Apr-2014 18:52: Index: 2, Size: 1
+07-Apr-2014 18:52: Index: 3, Size: 1
+07-Apr-2014 18:52: Index: 2, Size: 2
+07-Apr-2014 18:52: Index: 3, Size: 2
+07-Apr-2014 18:52: Index: 1, Size: 1
+07-Apr-2014 18:52: Index: 2, Size: 1
+07-Apr-2014 18:52: Index: 3, Size: 1
+07-Apr-2014 18:52: Index: 0, Size: 0
+07-Apr-2014 18:52: Index: 1, Size: 0
+07-Apr-2014 18:52: Index: 2, Size: 0
+07-Apr-2014 18:52: Index: 3, Size: 0
+07-Apr-2014 19:36: Index: 2, Size: 2
+07-Apr-2014 19:36: Index: 3, Size: 2
+07-Apr-2014 19:36: Index: 1, Size: 1
+07-Apr-2014 19:36: Index: 2, Size: 1
+07-Apr-2014 19:36: Index: 3, Size: 1
+07-Apr-2014 19:36: Index: 0, Size: 0
+07-Apr-2014 19:36: Index: 1, Size: 0
+07-Apr-2014 19:36: Index: 2, Size: 0
+07-Apr-2014 19:36: Index: 3, Size: 0
+07-Apr-2014 19:36: Index: 1, Size: 1
+07-Apr-2014 19:36: Index: 2, Size: 1
+07-Apr-2014 19:36: Index: 3, Size: 1
+07-Apr-2014 19:38: Index: 0, Size: 0
+07-Apr-2014 19:38: Index: 1, Size: 0
+07-Apr-2014 19:38: Index: 2, Size: 0
+07-Apr-2014 19:38: Index: 3, Size: 0
+07-Apr-2014 19:42: Index: 1, Size: 1
+07-Apr-2014 19:42: Index: 2, Size: 1
+07-Apr-2014 19:42: Index: 3, Size: 1
+07-Apr-2014 19:42: Index: 2, Size: 2
+07-Apr-2014 19:42: Index: 3, Size: 2
+07-Apr-2014 19:42: Index: 1, Size: 1
+07-Apr-2014 19:42: Index: 2, Size: 1
+07-Apr-2014 19:42: Index: 3, Size: 1
+07-Apr-2014 19:42: Index: 0, Size: 0
+07-Apr-2014 19:42: Index: 1, Size: 0
+07-Apr-2014 19:42: Index: 2, Size: 0
+07-Apr-2014 19:42: Index: 3, Size: 0
+07-Apr-2014 19:42: Index: 1, Size: 1
+07-Apr-2014 19:42: Index: 2, Size: 1
+07-Apr-2014 19:42: Index: 3, Size: 1
+07-Apr-2014 19:42: Index: 2, Size: 2
+07-Apr-2014 19:42: Index: 3, Size: 2
+07-Apr-2014 19:43: Index: 3, Size: 3
+07-Apr-2014 19:43: Error handling operation: ORA-00917: missing comma
+
+07-Apr-2014 19:43: Index: 3, Size: 3
+07-Apr-2014 19:43: Error handling operation: ORA-00933: SQL command not properly ended
+
+07-Apr-2014 19:43: Index: 2, Size: 2
+07-Apr-2014 19:43: Index: 3, Size: 2
+07-Apr-2014 19:43: Index: 1, Size: 1
+07-Apr-2014 19:43: Index: 2, Size: 1
+07-Apr-2014 19:43: Index: 3, Size: 1
+07-Apr-2014 19:43: Index: 0, Size: 0
+07-Apr-2014 19:43: Index: 1, Size: 0
+07-Apr-2014 19:43: Index: 2, Size: 0
+07-Apr-2014 19:43: Index: 3, Size: 0
+07-Apr-2014 19:47: Index: 1, Size: 1
+07-Apr-2014 19:47: Index: 2, Size: 1
+07-Apr-2014 19:47: Index: 3, Size: 1
+07-Apr-2014 19:47: Index: 2, Size: 2
+07-Apr-2014 19:47: Index: 3, Size: 2
+07-Apr-2014 19:47: Index: 1, Size: 1
+07-Apr-2014 19:47: Index: 2, Size: 1
+07-Apr-2014 19:47: Index: 3, Size: 1
+07-Apr-2014 19:47: Index: 0, Size: 0
+07-Apr-2014 19:47: Index: 1, Size: 0
+07-Apr-2014 19:47: Index: 2, Size: 0
+07-Apr-2014 19:47: Index: 3, Size: 0
+07-Apr-2014 21:55: Index: 1, Size: 1
+07-Apr-2014 21:55: Index: 2, Size: 1
+07-Apr-2014 21:55: Index: 3, Size: 1
+07-Apr-2014 21:55: Index: 2, Size: 2
+07-Apr-2014 21:55: Index: 3, Size: 2
+07-Apr-2014 21:57: Index: 2, Size: 2
+07-Apr-2014 21:57: Index: 3, Size: 2
+07-Apr-2014 21:58: Index: 1, Size: 1
+07-Apr-2014 21:58: Index: 2, Size: 1
+07-Apr-2014 21:58: Index: 3, Size: 1
+07-Apr-2014 21:58: Index: 1, Size: 1
+07-Apr-2014 21:58: Index: 2, Size: 1
+07-Apr-2014 21:58: Index: 3, Size: 1
+07-Apr-2014 21:58: Index: 0, Size: 0
+07-Apr-2014 21:58: Index: 1, Size: 0
+07-Apr-2014 21:58: Index: 2, Size: 0
+07-Apr-2014 21:58: Index: 3, Size: 0
+07-Apr-2014 21:59: Index: 1, Size: 1
+07-Apr-2014 21:59: Index: 2, Size: 1
+07-Apr-2014 21:59: Index: 3, Size: 1
+07-Apr-2014 22:01: Index: 1, Size: 1
+07-Apr-2014 22:01: Index: 2, Size: 1
+07-Apr-2014 22:01: Index: 3, Size: 1
+07-Apr-2014 22:01: Index: 0, Size: 0
+07-Apr-2014 22:01: Index: 1, Size: 0
+07-Apr-2014 22:01: Index: 2, Size: 0
+07-Apr-2014 22:01: Index: 3, Size: 0
+07-Apr-2014 22:01: Index: 1, Size: 1
+07-Apr-2014 22:01: Index: 2, Size: 1
+07-Apr-2014 22:01: Index: 3, Size: 1
+07-Apr-2014 22:01: Index: 1, Size: 1
+07-Apr-2014 22:01: Index: 2, Size: 1
+07-Apr-2014 22:01: Index: 3, Size: 1
+07-Apr-2014 22:01: Index: 0, Size: 0
+07-Apr-2014 22:01: Index: 1, Size: 0
+07-Apr-2014 22:01: Index: 2, Size: 0
+07-Apr-2014 22:01: Index: 3, Size: 0
+07-Apr-2014 22:03: Index: 1, Size: 1
+07-Apr-2014 22:03: Index: 2, Size: 1
+07-Apr-2014 22:03: Index: 3, Size: 1
+07-Apr-2014 22:04: Index: 1, Size: 1
+07-Apr-2014 22:04: Index: 2, Size: 1
+07-Apr-2014 22:04: Index: 3, Size: 1
+07-Apr-2014 22:04: Index: 2, Size: 2
+07-Apr-2014 22:04: Index: 3, Size: 2
+07-Apr-2014 22:04: Index: 2, Size: 2
+07-Apr-2014 22:04: Index: 3, Size: 2
+07-Apr-2014 22:08: Index: 2, Size: 2
+07-Apr-2014 22:08: Index: 3, Size: 2
+07-Apr-2014 22:10: Index: 2, Size: 2
+07-Apr-2014 22:10: Index: 3, Size: 2
+07-Apr-2014 22:12: Index: 2, Size: 2
+07-Apr-2014 22:12: Index: 3, Size: 2
+07-Apr-2014 22:14: Index: 2, Size: 2
+07-Apr-2014 22:14: Index: 3, Size: 2
+07-Apr-2014 22:17: Index: 2, Size: 2
+07-Apr-2014 22:17: Index: 3, Size: 2
+07-Apr-2014 22:18: Index: 2, Size: 2
+07-Apr-2014 22:18: Index: 3, Size: 2
+07-Apr-2014 22:19: Index: 2, Size: 2
+07-Apr-2014 22:19: Index: 3, Size: 2
+07-Apr-2014 22:20: Index: 3, Size: 3
+07-Apr-2014 22:20: Error handling operation: ORA-00917: missing comma
+
+07-Apr-2014 22:26: Index: 2, Size: 2
+07-Apr-2014 22:26: Index: 3, Size: 2
+07-Apr-2014 22:26: Index: 2, Size: 2
+07-Apr-2014 22:26: Index: 3, Size: 2
+07-Apr-2014 22:26: Index: 2, Size: 2
+07-Apr-2014 22:26: Index: 3, Size: 2
+07-Apr-2014 22:27: Index: 2, Size: 2
+07-Apr-2014 22:27: Index: 3, Size: 2
+07-Apr-2014 22:27: Index: 1, Size: 1
+07-Apr-2014 22:27: Index: 2, Size: 1
+07-Apr-2014 22:27: Index: 3, Size: 1
+07-Apr-2014 22:27: Index: 0, Size: 0
+07-Apr-2014 22:27: Index: 1, Size: 0
+07-Apr-2014 22:27: Index: 2, Size: 0
+07-Apr-2014 22:27: Index: 3, Size: 0
+07-Apr-2014 22:28: Index: 2, Size: 2
+07-Apr-2014 22:28: Index: 3, Size: 2
+07-Apr-2014 22:29: Index: 1, Size: 1
+07-Apr-2014 22:29: Index: 2, Size: 1
+07-Apr-2014 22:29: Index: 3, Size: 1
+07-Apr-2014 22:29: Index: 1, Size: 1
+07-Apr-2014 22:29: Index: 2, Size: 1
+07-Apr-2014 22:29: Index: 3, Size: 1
+07-Apr-2014 22:31: Index: 1, Size: 1
+07-Apr-2014 22:31: Index: 2, Size: 1
+07-Apr-2014 22:31: Index: 3, Size: 1
+07-Apr-2014 22:31: Index: 1, Size: 1
+07-Apr-2014 22:31: Index: 2, Size: 1
+07-Apr-2014 22:31: Index: 3, Size: 1
+07-Apr-2014 22:31: Index: 2, Size: 2
+07-Apr-2014 22:31: Index: 3, Size: 2
+07-Apr-2014 22:32: Index: 2, Size: 2
+07-Apr-2014 22:32: Index: 3, Size: 2
+07-Apr-2014 22:32: Index: 3, Size: 3
+07-Apr-2014 22:34: Index: 3, Size: 3
+07-Apr-2014 22:35: Index: 5, Size: 5
+07-Apr-2014 22:35: Index: 4, Size: 4
+07-Apr-2014 22:35: Index: 3, Size: 3
+07-Apr-2014 22:35: Index: 2, Size: 2
+07-Apr-2014 22:35: Index: 3, Size: 2
+07-Apr-2014 22:35: Index: 2, Size: 2
+07-Apr-2014 22:35: Index: 3, Size: 2
+07-Apr-2014 22:36: Index: 1, Size: 1
+07-Apr-2014 22:36: Index: 2, Size: 1
+07-Apr-2014 22:36: Index: 3, Size: 1
+07-Apr-2014 22:36: Index: 2, Size: 2
+07-Apr-2014 22:36: Index: 3, Size: 2
+07-Apr-2014 22:36: Index: 2, Size: 2
+07-Apr-2014 22:36: Index: 3, Size: 2
+07-Apr-2014 22:36: Index: 3, Size: 3
+07-Apr-2014 22:36: Index: 2, Size: 2
+07-Apr-2014 22:36: Index: 3, Size: 2
+07-Apr-2014 22:36: Index: 2, Size: 2
+07-Apr-2014 22:36: Index: 3, Size: 2
+07-Apr-2014 22:36: Index: 1, Size: 1
+07-Apr-2014 22:36: Index: 2, Size: 1
+07-Apr-2014 22:36: Index: 3, Size: 1
+07-Apr-2014 22:36: Index: 0, Size: 0
+07-Apr-2014 22:36: Index: 1, Size: 0
+07-Apr-2014 22:36: Index: 2, Size: 0
+07-Apr-2014 22:36: Index: 3, Size: 0
+07-Apr-2014 22:37: Index: 1, Size: 1
+07-Apr-2014 22:37: Index: 2, Size: 1
+07-Apr-2014 22:37: Index: 3, Size: 1
+07-Apr-2014 22:38: Index: 2, Size: 2
+07-Apr-2014 22:38: Index: 3, Size: 2
+07-Apr-2014 22:38: Error handling operation: ORA-01400: cannot insert NULL into ("PRCSE"."NOTES"."NOTE_BODY")
+
+07-Apr-2014 22:38: Index: 1, Size: 1
+07-Apr-2014 22:38: Index: 2, Size: 1
+07-Apr-2014 22:38: Index: 3, Size: 1
+07-Apr-2014 22:38: Index: 2, Size: 2
+07-Apr-2014 22:38: Index: 3, Size: 2
+07-Apr-2014 22:38: Index: 1, Size: 1
+07-Apr-2014 22:38: Index: 2, Size: 1
+07-Apr-2014 22:38: Index: 3, Size: 1
+07-Apr-2014 22:38: There was an error handling the animation...
+08-Apr-2014 00:41: Error: Not on FX application thread; currentThread = Thread-7
+08-Apr-2014 00:42: Error: Not on FX application thread; currentThread = Thread-8
+08-Apr-2014 00:43: Error: Not on FX application thread; currentThread = Thread-7
+08-Apr-2014 00:46: Error: 1
+08-Apr-2014 00:46: Error: 1
+08-Apr-2014 00:46: Error: 1
+08-Apr-2014 00:46: Error: 1
+08-Apr-2014 00:46: Error: 1
+08-Apr-2014 00:47: Error: 1
+08-Apr-2014 00:47: Error: 1
+08-Apr-2014 00:48: Error: 1
+08-Apr-2014 00:48: Error: 1
+08-Apr-2014 00:50: Error: 1
+08-Apr-2014 00:51: Error: 1
+08-Apr-2014 00:52: Error: 1
+08-Apr-2014 00:52: Error: Not on FX application thread; currentThread = Thread-9
+08-Apr-2014 00:52: Error: Not on FX application thread; currentThread = Thread-10
+08-Apr-2014 00:52: Error: Not on FX application thread; currentThread = Thread-11
+08-Apr-2014 00:53: Error: Not on FX application thread; currentThread = Thread-9

@@ -1,15 +1,12 @@
-package prcse.pp.logs;
+package prcse.pp.misc;
 
 import prcse.pp.controller.ScreensFramework;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 /**
  * Creates a writer object to output to log files
@@ -67,7 +64,7 @@ public class Writer {
 
 
         } catch (IOException e) {
-            ScreensFramework.logError.writeToFile("Something went wrong: " + e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 }

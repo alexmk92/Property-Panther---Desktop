@@ -112,6 +112,46 @@ public class UserList {
     }
 
     /**
+     * Gets the tenant by name
+     * @return the found tenant else empty tenant
+     */
+    public Tenant getTenantByName(String forename, String surname){
+        Tenant t = new Tenant();
+
+        for(int i = 0; i < this.size(); i++){
+            Tenant currTenant = getUserAt(i);
+
+            // Check we have a match
+            if(currTenant.getName().equals(forename + " " + surname)){
+                t = currTenant;
+                return t;
+            }
+        }
+
+        return t;
+    }
+
+    /**
+     * Gets the tenant by email
+     * @return the found tenant else empty tenant
+     */
+    public Tenant getTenantByEmail(String email){
+        Tenant t = new Tenant();
+
+        for(int i = 0; i < this.size(); i++){
+            Tenant currTenant = getUserAt(i);
+
+            // Check we have a match
+            if(currTenant.getEmail().equals(email)){
+                t = currTenant;
+                return t;
+            }
+        }
+
+        return t;
+    }
+
+    /**
      * Accessor to retrieve the size of the Tenant list
      * @return - int being the number of Users currently on the user list
      */

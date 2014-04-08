@@ -173,7 +173,49 @@
 <String fx:value="blue" />
 <String fx:value="btn-back" />
 </styleClass></Button>
-</children></Pane>
+</children></Pane><Pane fx:id="fullNoteWrap" layoutY="39.0" prefHeight="194.0" prefWidth="595.0" styleClass="window" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children>
+<Label fx:id="lblNoteTitle" layoutX="27.0" layoutY="20.0" text="Note:" textFill="WHITE">
+<font>
+<Font size="18.0" />
+</font>
+<styleClass>
+<String fx:value="label" />
+<String fx:value="encapsulated" />
+</styleClass>
+</Label>
+<Button fx:id="btnHideFull" layoutX="27.0" layoutY="150.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+<styleClass>
+<String fx:value="blue" />
+<String fx:value="btn-back" />
+</styleClass>
+</Button><Button fx:id="btnAddAnother" layoutX="483.0" layoutY="150.0" mnemonicParsing="false" prefWidth="97.0" text="Add Note" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<styleClass>
+<String fx:value="button" />
+<String fx:value="btn_actions" />
+<String fx:value="blue" />
+<String fx:value="submit" />
+</styleClass>
+</Button><Label fx:id="lblNoteBody" alignment="TOP_LEFT" layoutX="139.0" layoutY="20.0" prefHeight="116.0" prefWidth="430.0" text="Label" textFill="WHITE" wrapText="true">
+<font>
+<Font size="16.0" />
+</font>
+<padding>
+<Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+</padding>
+<styleClass>
+<String fx:value="label" />
+<String fx:value="holo" />
+</styleClass></Label><Button fx:id="btnDeleteThis" layoutX="391.0" layoutY="150.0" mnemonicParsing="false" prefWidth="97.0" text="Delete" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<styleClass>
+<String fx:value="button" />
+<String fx:value="btn_actions" />
+<String fx:value="blue" />
+<String fx:value="submit" />
+</styleClass>
+</Button>
+</children>
+</Pane>
 </children>
 </Pane><AnchorPane prefHeight="720.0" prefWidth="249.0">
         <children><Label id="username_label" layoutX="27.0" layoutY="325.0" styleClass="button_text" text="Inbox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="username_label" layoutX="27.0" layoutY="255.0" styleClass="button_text" text="Dashboard" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Rectangle id="nav_active_accent" fill="DODGERBLUE" height="70.0" layoutY="235.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="username_label" layoutX="27.0" layoutY="185.0" styleClass="button_text" text="Alex Sims" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><ImageView id="nav_branding" fitHeight="85.0" fitWidth="200.0" layoutX="23.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
@@ -362,7 +404,6 @@
 <Font size="16.0" />
 </font>
 </Label>
-<Button fx:id="btnCloseError" layoutX="930.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="16.0" styleClass="button_close" text="Button" />
 </children>
 </Pane>
     </children></AnchorPane>

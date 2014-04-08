@@ -12,21 +12,34 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Create a new connection to the database and handle any SQL queries through
  * its methods.
  */
-public class Database {
+public class Database implements Callable {
 
     // Variables which describe a connection
     private String  db_host;
     private String  db_user;
     private String  db_pass;
 
+    private int value = 0;
+
     // Reference to global data store objects
     UserList     tenantList   = ScreensFramework.tenants;
     PropertyList propertyList = ScreensFramework.properties;
+
+    @Override
+    public String call() throws Exception {
+        Thread.sleep(1000);
+        // Return the name of the callable task
+        return Thread.currentThread().getName();
+    }
 
     /**
      * Create the connection
@@ -226,6 +239,7 @@ public class Database {
                                         res.getString("user_email"), res.getString("user_phone"), res.getString("addr_line_1"), res.getString("addr_line_2"),
                                         res.getString("addr_postcode"), res.getString("city_name"), p, r);
 
+                buildPayments(t);
                 buildNotes(t);
                 buildRequests(t);
                 tenantList.addUser(t);
@@ -288,6 +302,36 @@ public class Database {
         }
 
         return requestsBuilt;
+    }
+
+    /**
+     * Build all payments objects for the system
+     * @return true if all payments objects were built, else return false
+     */
+    public Boolean buildPayments(Tenant t){
+
+        Boolean paymentsBuilt = false;
+
+        try {
+            int user_id = t.getUserId();
+            // Make a connection to the database
+            Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
+            Statement  st  = con.createStatement();
+            ResultSet  res = st.executeQuery("SELECT * FROM payments WHERE user_id = " + user_id);
+
+            while(res.next()) {
+                Payment p = new Payment(res.getDouble("payment_amount"));
+
+                if(t.addPayment(p)){
+                    paymentsBuilt = true;
+                }
+            }
+        } catch (SQLException e) {
+            ScreensFramework.logError.writeToFile("Error handling query: " + e.getMessage());
+            paymentsBuilt = false;
+        }
+
+        return paymentsBuilt;
     }
 
     /**
@@ -397,7 +441,8 @@ public class Database {
                             // Make a connection to the database
                             Connection con = DriverManager.getConnection(getDb_host(), getDb_user(), getDb_pass());
                             Statement  st  = con.createStatement();
-                            ResultSet  res = st.executeQuery(thisQuery);
+                            st.executeQuery(thisQuery);
+
                         } catch (SQLException e) {
                             ScreensFramework.logError.writeToFile("Error handling operation: " + e.getMessage());
                         }
@@ -409,6 +454,51 @@ public class Database {
         }).start();
     }
 
+    /**
+     * Select statement to return an int
+     * @param - the query we wish to execute
+     */
+    public int selectInt(String thisQuery, MessageType type) {
+
+        Runnable query = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    String thisType = type.toString();
+
+                    if(thisQuery != null) {
+                        try {
+                            // Make a connection to the database
+                            Connection con = DriverManager.getConnection(getDb_host(), getDb_user(), getDb_pass());
+                            Statement  st  = con.createStatement();
+                            ResultSet  res = st.executeQuery(thisQuery);
+
+                            while(res.next()) {
+                                value = res.getInt(thisType + "_id");
+                            }
+
+                        } catch (SQLException e) {
+                            ScreensFramework.logError.writeToFile("Error handling operation: " + e.getMessage());
+                        }
+                    }
+                } catch(Exception e) {
+                    ScreensFramework.logError.writeToFile(e.getMessage());
+                }
+            }
+        };
+
+        Thread runQuery = new Thread(query);
+
+        // Try and run the thread and join it back
+        try {
+            runQuery.start();
+            runQuery.join();
+        } catch(Exception e) {
+            ScreensFramework.logError.writeToFile("Error: the thread couldnt run: " + e.getMessage());
+        }
+
+        return value;
+    }
 
     // Getters and setters
     public String getDb_host() {

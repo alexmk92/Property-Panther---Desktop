@@ -1,166 +1,179 @@
-05-Apr-2014 16:51: Connected to database
-05-Apr-2014 16:51: Connection already open.
-05-Apr-2014 16:51: Connection already open.
-05-Apr-2014 16:54: Connected to database
-05-Apr-2014 16:55: Connected to database
-05-Apr-2014 16:55: Connection already open.
-05-Apr-2014 17:01: Connected to database
-05-Apr-2014 17:02: Connected to database
-05-Apr-2014 17:03: Connected to database
-05-Apr-2014 17:06: Connected to database
-05-Apr-2014 17:11: Connected to database
-05-Apr-2014 17:15: Connected to database
-05-Apr-2014 17:18: Connected to database
-05-Apr-2014 17:20: Connected to database
-05-Apr-2014 17:22: Connected to database
-05-Apr-2014 17:28: Connected to database
-05-Apr-2014 17:29: Connected to database
-05-Apr-2014 17:30: Connected to database
-05-Apr-2014 17:33: Connected to database
-05-Apr-2014 17:35: Connected to database
-05-Apr-2014 17:39: Connected to database
-05-Apr-2014 17:41: Connected to database
-05-Apr-2014 17:43: Connected to database
-05-Apr-2014 17:43: Connection already open.
-05-Apr-2014 17:45: Connected to database
-05-Apr-2014 17:46: Connected to database
-05-Apr-2014 17:46: Connected to database
-05-Apr-2014 17:55: Connected to database
-05-Apr-2014 17:57: Connected to database
-05-Apr-2014 18:00: Connected to database
-05-Apr-2014 18:03: Connected to database
-05-Apr-2014 18:03: Connected to database
-05-Apr-2014 18:04: Connected to database
-05-Apr-2014 18:06: Connected to database
-05-Apr-2014 18:06: Connected to database
-05-Apr-2014 18:08: Connected to database
-05-Apr-2014 18:09: Connected to database
-05-Apr-2014 18:10: Connected to database
-05-Apr-2014 18:11: Connected to database
-05-Apr-2014 18:12: Connected to database
-05-Apr-2014 18:13: Connected to database
-05-Apr-2014 18:15: Connected to database
-05-Apr-2014 18:16: Connected to database
-05-Apr-2014 18:17: Connected to database
-05-Apr-2014 18:19: Connected to database
-05-Apr-2014 18:19: Connection already open.
-05-Apr-2014 18:19: Connection already open.
-05-Apr-2014 18:20: Connected to database
-05-Apr-2014 18:21: Connected to database
-05-Apr-2014 18:22: Connected to database
-05-Apr-2014 18:58: Connected to database
-05-Apr-2014 18:59: Connection already open.
-05-Apr-2014 19:00: Connected to database
-05-Apr-2014 19:01: Connected to database
-05-Apr-2014 19:03: Connected to database
-05-Apr-2014 19:12: Connected to database
-05-Apr-2014 19:13: Connected to database
-05-Apr-2014 19:14: Connected to database
-05-Apr-2014 21:34: Connected to database
-05-Apr-2014 21:35: Connection already open.
-05-Apr-2014 21:35: Connection already open.
-05-Apr-2014 21:38: Connected to database
-05-Apr-2014 21:40: Connected to database
-05-Apr-2014 21:41: Connected to database
-05-Apr-2014 21:45: Connected to database
-05-Apr-2014 21:46: Connected to database
-05-Apr-2014 21:47: Connected to database
-05-Apr-2014 21:50: Connected to database
-05-Apr-2014 21:53: Connected to database
-05-Apr-2014 21:56: Connected to database
-05-Apr-2014 21:57: Connected to database
-05-Apr-2014 22:00: Connected to database
-05-Apr-2014 22:01: Connected to database
-05-Apr-2014 22:03: Connected to database
-05-Apr-2014 22:05: Connected to database
-05-Apr-2014 22:05: Connected to database
-05-Apr-2014 22:21: Connected to database
-05-Apr-2014 22:36: Connected to database
-05-Apr-2014 22:38: Connected to database
-05-Apr-2014 22:48: Connected to database
-05-Apr-2014 22:49: Connected to database
-05-Apr-2014 22:53: Connected to database
-05-Apr-2014 22:56: Connected to database
-05-Apr-2014 23:04: Connected to database
-05-Apr-2014 23:05: Connected to database
-05-Apr-2014 23:06: Connected to database
-05-Apr-2014 23:20: Connected to database
-05-Apr-2014 23:22: Connected to database
-05-Apr-2014 23:24: Connected to database
-05-Apr-2014 23:34: Connected to database
-05-Apr-2014 23:37: Connected to database
-05-Apr-2014 23:41: Connected to database
-05-Apr-2014 23:42: Connected to database
-05-Apr-2014 23:42: Connected to database
-05-Apr-2014 23:44: Connected to database
-05-Apr-2014 23:44: Connected to database
-05-Apr-2014 23:50: Connected to database
-05-Apr-2014 23:52: Connected to database
-05-Apr-2014 23:53: Connected to database
-05-Apr-2014 23:56: Connected to database
-05-Apr-2014 23:56: Connected to database
-06-Apr-2014 00:00: Connected to database
-06-Apr-2014 00:02: Connected to database
-06-Apr-2014 00:03: Connected to database
-06-Apr-2014 00:16: Connected to database
-06-Apr-2014 00:19: Connected to database
-06-Apr-2014 00:20: Connected to database
-06-Apr-2014 00:34: Connected to database
-06-Apr-2014 00:36: Connected to database
-06-Apr-2014 00:38: Connected to database
-06-Apr-2014 00:40: Connected to database
-06-Apr-2014 00:42: Connected to database
-06-Apr-2014 00:44: Connected to database
-06-Apr-2014 00:46: Connected to database
-06-Apr-2014 00:51: Connected to database
-06-Apr-2014 00:52: Connected to database
-06-Apr-2014 00:54: Connected to database
-06-Apr-2014 15:51: Connected to database
-06-Apr-2014 15:52: Connection already open.
-06-Apr-2014 15:54: Connected to database
-06-Apr-2014 15:55: Connected to database
-06-Apr-2014 16:05: Connected to database
-06-Apr-2014 16:11: Connected to database
-06-Apr-2014 16:19: Connected to database
-06-Apr-2014 16:20: Connected to database
-06-Apr-2014 16:24: Connected to database
-06-Apr-2014 16:25: Connected to database
-06-Apr-2014 16:25: Connection already open.
-06-Apr-2014 16:33: Connected to database
-06-Apr-2014 16:34: Connected to database
-06-Apr-2014 16:51: Connected to database
-06-Apr-2014 17:10: Connected to database
-06-Apr-2014 17:24: Connected to database
-06-Apr-2014 17:25: Connected to database
-06-Apr-2014 17:31: Connected to database
-06-Apr-2014 17:36: Connected to database
-06-Apr-2014 17:39: Connected to database
-06-Apr-2014 17:47: Connected to database
-06-Apr-2014 17:47: Connection already open.
-06-Apr-2014 17:48: The note was not inserted as we failed to connect to the database
-06-Apr-2014 17:50: Connected to database
-06-Apr-2014 17:58: Connected to database
-06-Apr-2014 18:17: Connected to database
-06-Apr-2014 18:17: Connection already open.
-06-Apr-2014 18:20: Connected to database
-06-Apr-2014 18:24: Connected to database
-06-Apr-2014 18:26: Connected to database
-06-Apr-2014 18:28: Connected to database
-06-Apr-2014 18:29: Connected to database
-06-Apr-2014 18:31: Connected to database
-06-Apr-2014 18:33: Connected to database
-06-Apr-2014 18:34: Connected to database
-06-Apr-2014 18:35: Connected to database
-06-Apr-2014 18:40: Connected to database
-06-Apr-2014 18:43: Connected to database
-06-Apr-2014 18:44: Connected to database
-06-Apr-2014 18:45: Connected to database
-06-Apr-2014 18:51: Connected to database
-06-Apr-2014 18:55: Connected to database
-06-Apr-2014 18:56: Connected to database
-06-Apr-2014 18:58: Connected to database
-06-Apr-2014 18:59: Connected to database
-06-Apr-2014 19:01: Connected to database
-06-Apr-2014 19:03: Connected to database
-06-Apr-2014 19:04: Connected to database
-06-Apr-2014 19:05: Connected to database
+07-Apr-2014 16:45: Connected to database
+07-Apr-2014 16:47: I am removing from index 0
+07-Apr-2014 16:48: Connected to database
+07-Apr-2014 16:48: I am removing from index 2
+07-Apr-2014 16:48: I am removing from index 0
+07-Apr-2014 16:48: I am removing from index 1
+07-Apr-2014 16:48: I am removing from index 2
+07-Apr-2014 16:48: I am removing from index 3
+07-Apr-2014 16:49: Connected to database
+07-Apr-2014 16:49: I am removing from index 7
+07-Apr-2014 16:49: Connected to database
+07-Apr-2014 16:49: I am removing from index 7
+07-Apr-2014 16:51: I am removing from index 7
+07-Apr-2014 16:52: I am removing from index 7
+07-Apr-2014 16:52: I am removing from index 1
+07-Apr-2014 16:52: I am removing from index 0
+07-Apr-2014 16:53: Connected to database
+07-Apr-2014 16:53: I am removing from index 7
+07-Apr-2014 16:53: I am removing from index 2
+07-Apr-2014 16:54: I am removing from index 0
+07-Apr-2014 16:54: I am removing from index 0
+07-Apr-2014 16:54: I am removing from index 1
+07-Apr-2014 16:54: I am removing from index 2
+07-Apr-2014 16:54: I am removing from index 2
+07-Apr-2014 16:54: I am removing from index 1
+07-Apr-2014 16:54: I am removing from index 0
+07-Apr-2014 16:56: Connected to database
+07-Apr-2014 16:56: I am removing from index 0
+07-Apr-2014 16:57: I am removing from index 2
+07-Apr-2014 16:57: I am removing from index 1
+07-Apr-2014 16:57: I am removing from index 5
+07-Apr-2014 16:57: I am removing from index 4
+07-Apr-2014 16:57: I am removing from index 3
+07-Apr-2014 16:59: Connected to database
+07-Apr-2014 16:59: I am removing from index 0
+07-Apr-2014 17:01: Connected to database
+07-Apr-2014 17:05: Connected to database
+07-Apr-2014 17:09: Connected to database
+07-Apr-2014 17:09: Connected to database
+07-Apr-2014 17:10: Connected to database
+07-Apr-2014 17:11: Connected to database
+07-Apr-2014 17:12: Connected to database
+07-Apr-2014 17:13: Connected to database
+07-Apr-2014 17:14: Connected to database
+07-Apr-2014 17:15: I am removing from index 1
+07-Apr-2014 17:15: I am removing from index 0
+07-Apr-2014 17:51: Connected to database
+07-Apr-2014 17:52: Connection already open.
+07-Apr-2014 18:00: Connected to database
+07-Apr-2014 18:01: I am removing from index 1
+07-Apr-2014 18:01: I am removing from index 0
+07-Apr-2014 18:01: I am removing from index 0
+07-Apr-2014 18:01: I am removing from index 0
+07-Apr-2014 18:01: I am removing from index 0
+07-Apr-2014 18:01: I am removing from index 0
+07-Apr-2014 18:02: Connected to database
+07-Apr-2014 18:03: I am removing from index 0
+07-Apr-2014 18:03: I am removing from index 0
+07-Apr-2014 18:03: I am removing from index 0
+07-Apr-2014 18:03: I am removing from index 0
+07-Apr-2014 18:03: I am removing from index 1
+07-Apr-2014 18:03: I am removing from index 0
+07-Apr-2014 18:04: Connected to database
+07-Apr-2014 18:04: I am removing from index 0
+07-Apr-2014 18:04: I am removing from index 1
+07-Apr-2014 18:04: I am removing from index 3
+07-Apr-2014 18:04: I am removing from index 2
+07-Apr-2014 18:04: I am removing from index 0
+07-Apr-2014 18:04: I am removing from index 0
+07-Apr-2014 18:04: I am removing from index 0
+07-Apr-2014 18:04: I am removing from index 1
+07-Apr-2014 18:05: I am removing from index 0
+07-Apr-2014 18:05: Connected to database
+07-Apr-2014 18:07: Connected to database
+07-Apr-2014 18:07: I am removing from index 0
+07-Apr-2014 18:07: I am removing from index 0
+07-Apr-2014 18:22: Connected to database
+07-Apr-2014 18:23: Connected to database
+07-Apr-2014 18:25: Connected to database
+07-Apr-2014 18:25: I am removing from index 2
+07-Apr-2014 18:31: Connected to database
+07-Apr-2014 18:31: Connected to database
+07-Apr-2014 18:35: Connected to database
+07-Apr-2014 18:36: I am removing from index 0
+07-Apr-2014 18:36: I am removing from index 1
+07-Apr-2014 18:36: I am removing from index 2
+07-Apr-2014 18:36: I am removing from index 1
+07-Apr-2014 18:36: I am removing from index 0
+07-Apr-2014 18:36: I am removing from index 0
+07-Apr-2014 18:36: I am removing from index 0
+07-Apr-2014 18:38: Connected to database
+07-Apr-2014 18:38: I am removing from index 2
+07-Apr-2014 18:38: I am removing from index 0
+07-Apr-2014 18:38: I am removing from index 0
+07-Apr-2014 18:39: I am removing from index 0
+07-Apr-2014 18:39: Connected to database
+07-Apr-2014 18:40: I am removing from index 0
+07-Apr-2014 18:40: I am removing from index 0
+07-Apr-2014 18:40: Connected to database
+07-Apr-2014 18:41: I am removing from index 0
+07-Apr-2014 18:41: I am removing from index 0
+07-Apr-2014 18:43: Connected to database
+07-Apr-2014 18:44: I am removing from index 0
+07-Apr-2014 18:44: I am removing from index 0
+07-Apr-2014 18:45: I am removing from index 0
+07-Apr-2014 18:52: Connected to database
+07-Apr-2014 18:52: I am removing from index 1
+07-Apr-2014 18:52: I am removing from index 0
+07-Apr-2014 19:35: Connected to database
+07-Apr-2014 19:36: I am removing from index 1
+07-Apr-2014 19:36: I am removing from index 0
+07-Apr-2014 19:36: I am removing from index 0
+07-Apr-2014 19:42: Connected to database
+07-Apr-2014 19:42: I am removing from index 1
+07-Apr-2014 19:42: I am removing from index 0
+07-Apr-2014 19:43: I am removing from index 3
+07-Apr-2014 19:43: I am removing from index 2
+07-Apr-2014 19:43: I am removing from index 0
+07-Apr-2014 19:43: I am removing from index 0
+07-Apr-2014 19:46: Connected to database
+07-Apr-2014 19:47: I am removing from index 1
+07-Apr-2014 19:47: I am removing from index 0
+07-Apr-2014 21:48: Connected to database
+07-Apr-2014 21:50: Connected to database
+07-Apr-2014 21:50: Connected to database
+07-Apr-2014 21:51: Connected to database
+07-Apr-2014 21:51: Connected to database
+07-Apr-2014 21:55: Connected to database
+07-Apr-2014 21:57: Connected to database
+07-Apr-2014 21:58: I am removing from index 0
+07-Apr-2014 21:58: I am removing from index 0
+07-Apr-2014 21:59: Connected to database
+07-Apr-2014 22:00: Connected to database
+07-Apr-2014 22:01: I am removing from index 0
+07-Apr-2014 22:01: I am removing from index 0
+07-Apr-2014 22:03: Connected to database
+07-Apr-2014 22:03: Connected to database
+07-Apr-2014 22:04: Connected to database
+07-Apr-2014 22:08: Connected to database
+07-Apr-2014 22:10: Connected to database
+07-Apr-2014 22:12: Connected to database
+07-Apr-2014 22:14: Connected to database
+07-Apr-2014 22:16: Connected to database
+07-Apr-2014 22:18: Connected to database
+07-Apr-2014 22:19: Connected to database
+07-Apr-2014 22:26: Connected to database
+07-Apr-2014 22:27: I am removing from index 0
+07-Apr-2014 22:27: I am removing from index 0
+07-Apr-2014 22:28: Connected to database
+07-Apr-2014 22:31: Connected to database
+07-Apr-2014 22:32: Connected to database
+07-Apr-2014 22:33: Connected to database
+07-Apr-2014 22:35: Connected to database
+07-Apr-2014 22:35: I am removing from index 5
+07-Apr-2014 22:35: I am removing from index 3
+07-Apr-2014 22:35: I am removing from index 3
+07-Apr-2014 22:35: I am removing from index 2
+07-Apr-2014 22:36: I am removing from index 0
+07-Apr-2014 22:37: Connected to database
+07-Apr-2014 22:38: I am removing from index 1
+07-Apr-2014 22:38: I am removing from index 1
+07-Apr-2014 23:01: Connected to database
+07-Apr-2014 23:02: Connected to database
+08-Apr-2014 00:38: Connected to database
+08-Apr-2014 00:41: Connected to database
+08-Apr-2014 00:42: Connected to database
+08-Apr-2014 00:43: Connected to database
+08-Apr-2014 00:46: Connected to database
+08-Apr-2014 00:48: Connected to database
+08-Apr-2014 00:50: Connected to database
+08-Apr-2014 00:51: Connected to database
+08-Apr-2014 00:52: Connected to database
+08-Apr-2014 00:54: Connected to database
+08-Apr-2014 00:55: Connected to database
+08-Apr-2014 00:56: Connected to database
+08-Apr-2014 00:59: Connected to database
+08-Apr-2014 01:00: Connection already open.
+08-Apr-2014 01:01: Connected to database
+08-Apr-2014 01:02: Connected to database

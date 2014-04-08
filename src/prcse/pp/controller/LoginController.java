@@ -1,40 +1,27 @@
 package prcse.pp.controller;
 
-import java.awt.event.KeyEvent;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
-import javafx.animation.ScaleTransition;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.effect.Effect;
-import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
-import prcse.pp.logs.Reader;
-import prcse.pp.logs.Writer;
+import prcse.pp.misc.Reader;
+import prcse.pp.misc.Writer;
 import prcse.pp.model.Admin;
-import prcse.pp.model.Tenant;
-import prcse.pp.model.UserList;
 import prcse.pp.model.UserPermission;
 
 /**
@@ -86,7 +73,7 @@ public class LoginController implements Initializable, ControlledScreen {
 
     // Set up to read and write to/from the config file
     public Writer   logConfig    = new Writer("config", false);
-    private Reader  configReader = new Reader("logs/config.txt");
+    private Reader  configReader = new Reader("misc/config.txt");
 
     ScreensController myController;
 

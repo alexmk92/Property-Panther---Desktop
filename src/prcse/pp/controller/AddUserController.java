@@ -16,12 +16,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+import prcse.pp.misc.Validate;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -135,6 +137,13 @@ public class AddUserController implements Initializable, ControlledScreen {
     private double xOffset = 0;
     private double yOffset = 0;
     ScreensController myController;
+
+    // Reference our validation object
+    Validate validator = ScreensFramework.validateThis;
+
+    // Editing is initialised to false, if its enabled we hide all labels
+    // and show textboxes
+    private Boolean editing = false;
 
     /**
      * Initializes the controller class.
@@ -289,6 +298,34 @@ public class AddUserController implements Initializable, ControlledScreen {
                 hideUsers();
             }
         });
+
+        txtUsers_Username.setOnKeyTyped(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                if(!validator.validateName(txtUsers_Username.getText())){
+                    txtUsers_Username.getStyleClass().add("invalid");
+                } else {
+                    txtUsers_Username.getStyleClass().remove("invalid");
+                }
+                if(txtUsers_Username.getText().isEmpty()){
+                    txtUsers_Username.getStyleClass().remove("invalid");
+                }
+            }
+        });
+        txtEmail.setOnKeyTyped(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                if(!validator.validateName(txtEmail.getText())){
+                    txtEmail.getStyleClass().add("invalid");
+                } else {
+                    txtEmail.getStyleClass().remove("invalid");
+                }
+                if(txtEmail.getText().isEmpty()){
+                    txtEmail.getStyleClass().remove("invalid");
+                }
+            }
+        });
+
 
     }
 

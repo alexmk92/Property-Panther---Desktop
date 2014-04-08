@@ -22,10 +22,15 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Callback;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.util.Duration;
+import prcse.pp.model.Note;
+import prcse.pp.model.Tenant;
+import prcse.pp.model.UserList;
 import prcse.pp.view.PaymentCell;
+import prcse.pp.model.Payment;
 
 
 /**
@@ -134,6 +139,8 @@ public class PaymentsController implements Initializable, ControlledScreen {
     private Pane widget_bottom_left;
     @FXML // fx:id="body"
     private AnchorPane body;
+    @FXML // fx:id="lstPaymentFeed"
+    private ListView lstPaymentFeed;
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
@@ -342,12 +349,28 @@ public class PaymentsController implements Initializable, ControlledScreen {
         btnSearchPayments.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                String user_details = txtUsers_Username.getText();
 
-                if (user_details != null) {
+                String searchBy = "";
+
+                // Get values set in text boxes
+                if(txtName.getText().length() > 0){
+                    searchBy = txtName.getText();
+                } else if(txtEmail.getText().length() > 0) {
+                    searchBy = txtEmail.getText();
+                } else {
+                    // show some error
+                }
+
+                if (searchBy != null) {
                     btnSearchPayments.getStyleClass().add("searching");
                     btnSearchPayments.setText("Searching...");
                     spinner.getStyleClass().remove("hidden");
+
+                    if(fetchPayments(searchBy)){
+                        btnSearchPayments.getStyleClass().remove("searching");
+                        btnSearchPayments.setText("Search Payments");
+                        spinner.getStyleClass().add("hidden");
+                    }
                 } else {
                     btnSearchPayments.getStyleClass().remove("searching");
                     btnSearchPayments.setText("Search Payments");
@@ -359,8 +382,8 @@ public class PaymentsController implements Initializable, ControlledScreen {
 
         // Set test data, this will populate with Payee name, amount and time
         ObservableList<String> values = FXCollections.observableArrayList("Alex Sims", "Jamie Shepherd", "Adam Stevenson", "Thomas Knowles", "Jason Dee");
-        lstPayments.setItems(values);
-        lstPayments.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
+        lstPaymentFeed.setItems(values);
+        lstPaymentFeed.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
             @Override
             public ListCell<String> call(ListView<String> param) {
                 return new PaymentCell();
@@ -391,6 +414,77 @@ public class PaymentsController implements Initializable, ControlledScreen {
             }
         });
 
+    }
+
+    /******************************************************
+     *                  CONTROL METHODS
+     *****************************************************/
+    public Boolean fetchPayments(String searchBy) {
+        Boolean paymentsRetrieved = false;
+
+        Runnable getPayments = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    // Name to search by
+                    UserList u = ScreensFramework.tenants;
+                    Tenant t;
+
+                    // Check if we have searched by email or username
+                    if(searchBy.contains("@")){
+                        t = u.getTenantByEmail(searchBy);
+                    } else {
+                        String[] split = searchBy.split(" ");
+                        String forename = split[0];
+                        String surname = split[1];
+
+                        t = u.getTenantByName(forename, surname);
+                    }
+
+                    // Set the payment list
+                    ObservableList payments = populateObservable(t.getPayments());
+                    lstPayments.setItems(payments);
+
+                } catch(Exception e) {
+                    ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+                }
+            }
+        };
+
+        Thread fetch = new Thread(getPayments);
+
+        // Try to run the thread and join it back
+        try {
+            fetch.start();
+            fetch.join();
+
+            paymentsRetrieved = true;
+        } catch (Exception e) {
+            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+        }
+
+        return paymentsRetrieved;
+    }
+
+    /**
+     * Populates an observable list, this needs to be seperated into
+     * its own method to allow for the list to be refreshed from the
+     * cellfactory
+     * @return an observable array of objects to populate the list
+     */
+    public ObservableList populateObservable(ArrayList<Payment> paymentsArray) {
+
+        ObservableList payments = FXCollections.observableArrayList();
+
+        // Loop through the users Notes array and create a listview item
+        for(int i = 0; i < paymentsArray.size(); i++) {
+            Payment thisPayment = paymentsArray.get(i);
+
+            // Add to observable
+            payments.add(thisPayment.getAmount());
+        }
+
+        return payments;
     }
 
     /******************************************************

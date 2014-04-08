@@ -182,14 +182,24 @@ public class UserInfoController implements Initializable, ControlledScreen {
     private Pane noteWrap;
     @FXML // fx:id="btnBack"
     private Button btnBack;
-    @FXML // fx:id="btnCloseError"
-    private Button btnCloseError;
     @FXML // fx:id="errorWrap"
     private Pane errorWrap;
     @FXML // fx:id="lblError"
     private Label lblError;
     @FXML // fx:id="btnClearNotes"
     private Button btnClearNotes;
+    @FXML // fx:id="btnHideFull
+    private Button btnHideFull;
+    @FXML // fx:id="fullNoteWrap"
+    private Pane fullNoteWrap;
+    @FXML // fx:id="lblNoteBody"
+    private Label lblNoteBody;
+    @FXML // fx:id="lblNoteTitle"
+    private Label lblNoteTitle;
+    @FXML // fx:id="btnAddAnother"
+    private Button btnAddAnother;
+    @FXML // fx:id="btnDeleteThis"
+    private Button btnDeleteThis;
 
 
     // Set variables to allow for draggable window.
@@ -203,8 +213,6 @@ public class UserInfoController implements Initializable, ControlledScreen {
     // Reference to controller for the Cell-Factory
     protected UserInfoController controller = this;
 
-    // Collection of Notes to pass to Cell Factory
-    ArrayList<Note> refNotes = new ArrayList<Note>();
 
     /**
      * Initializes the controller class.
@@ -214,6 +222,7 @@ public class UserInfoController implements Initializable, ControlledScreen {
     {
         // Hide the add note wrapper - only show when clickNote is enabled
         noteWrap.setVisible(false);
+        fullNoteWrap.setVisible(false);
 
         // Set opacity of widgets
         widget_middle_left.setOpacity(0.3);
@@ -235,13 +244,6 @@ public class UserInfoController implements Initializable, ControlledScreen {
                 animateIn();
                 resetStyles();
                 objectsSet = true;
-            }
-        });
-
-        body.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                slideDownError();
             }
         });
 
@@ -429,6 +431,15 @@ public class UserInfoController implements Initializable, ControlledScreen {
             public void handle(MouseEvent mouseEvent) {
                 lstNotes.setVisible(false);
                 noteWrap.setVisible(true);
+                fullNoteWrap.setVisible(false);
+                txtNote.requestFocus();
+            }
+        });
+        btnAddAnother.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                fullNoteWrap.setVisible(false);
+                noteWrap.setVisible(true);
                 txtNote.requestFocus();
             }
         });
@@ -439,7 +450,7 @@ public class UserInfoController implements Initializable, ControlledScreen {
                 lstNotes.setVisible(true);
                 txtNote.setText("");
                 lblCharCount.setText("0/150 Characters");
-                refreshList(lstNotes);
+                //refreshList(lstNotes);
             }
         });
         btnClearNote.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -455,13 +466,14 @@ public class UserInfoController implements Initializable, ControlledScreen {
                 // Add the note to this tenant
                 Note n = new Note(txtNote.getText(), "", 0);
                 if(thisTenant.addNote(n, true)){
+                    txtNote.setText("");
                     noteWrap.setVisible(false);
                     lstNotes.setVisible(true);
-                    refreshList(lstNotes);
+                    populateListView();
                 } else {
                     ScreensFramework.logGeneral.writeToFile("The note was not inserted as we failed to connect to the database");
                     slideUpError("Error: Could not connect to the database.");
-                    refreshList(lstNotes);
+                    populateListView();
                 }
             }
         });
@@ -469,7 +481,7 @@ public class UserInfoController implements Initializable, ControlledScreen {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 thisTenant.removeAllNotes();
-                refreshList(lstNotes);
+                lstNotes.setItems(null);
             }
         });
         txtNote.setOnKeyPressed(new EventHandler<javafx.scene.input.KeyEvent>() {
@@ -478,9 +490,13 @@ public class UserInfoController implements Initializable, ControlledScreen {
                 if (ke.getCode().equals(KeyCode.ENTER)) {
                     // Build the note object to add
                     Note n = new Note(txtNote.getText(), "", 0);
-                    if(thisTenant.addNote(n, true)){
-                        refreshList(lstNotes);
+                    if (thisTenant.addNote(n, true)) {
+                        noteWrap.setVisible(false);
+                        lstNotes.setVisible(true);
+                        populateListView();
                         slideUpError("Success: Your note was added.");
+                        txtNote.setText("");
+                        txtNote.positionCaret(0);
                     } else {
                         ScreensFramework.logGeneral.writeToFile("The note was not inserted as we failed to connect to the database");
                         slideUpError("Error: Could not connect to the database.");
@@ -491,10 +507,10 @@ public class UserInfoController implements Initializable, ControlledScreen {
         txtNote.setOnKeyTyped(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
-                int chars         = txtNote.getText().length();
-                String message    = txtNote.getText();
+                int chars = txtNote.getText().length();
+                String message = txtNote.getText();
 
-                if(chars < 151){
+                if (chars < 151) {
                     String amount = String.valueOf(chars);
                     lblCharCount.setText(amount + "/150 Characters");
                     lblCharCount.setStyle("-fx-text-fill: #ffffff");
@@ -511,16 +527,36 @@ public class UserInfoController implements Initializable, ControlledScreen {
                 }
             }
         });
-        btnCloseError.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        btnDeleteThis.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                slideDownError();
+                thisTenant.removeNoteAt(index, true);
+                populateListView();
+                slideUpError("Success: Note was deleted.");
+                fullNoteWrap.setVisible(false);
+                lstNotes.setVisible(true);
             }
         });
-
-
-       // lblNewNote.setText("New note for " + thisTenant.getName());
-
+        lstNotes.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                Note n = thisTenant.getNoteAt(lstNotes.getSelectionModel().getSelectedIndex());
+                // Sets the index to this index
+                index = lstNotes.getSelectionModel().getSelectedIndex();
+                lblNoteBody.setText(n.getMessage());
+                lblNoteTitle.setText(n.getDate());
+                lstNotes.setVisible(false);
+                fullNoteWrap.setVisible(true);
+            }
+        });
+        btnHideFull.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                populateListView();
+                fullNoteWrap.setVisible(false);
+                lstNotes.setVisible(true);
+            }
+        });
 
     }
 
@@ -553,47 +589,47 @@ public class UserInfoController implements Initializable, ControlledScreen {
         lblPhone.setText("+" + thisTenant.getPhone());
         lblNewNote.setText("Adding new note for " + thisTenant.getName());
 
-        // Populates the note list
-        ArrayList noteArray = thisTenant.getNotes();
+        populateListView();
 
-        // Observable list
-        ObservableList notes = populateObservable(noteArray);
+    }
 
-        // Create the list
+    /**
+     * Populates the lsitview
+     */
+
+    public void populateListView() {
+
+        // Zero the index each time the list view is repopulated to
+        // bind to the correct button
+        index = 0;
+
+        // Refresh the lists contents to null
+        lstNotes.setItems(null);
+
+        // Observable list containing items to add
+        ObservableList notes = populateObservable(thisTenant.getNotes());
+
+        // Set the items returned by populateObservable(T);
         lstNotes.setItems(notes);
         lstNotes.setFixedCellSize(50);
+
+        // Use a cell factory for custom styling
         lstNotes.setCellFactory(new Callback<ListView, ListCell>() {
             @Override
             public ListCell call(ListView listView) {
-                NoteCell nCell = new NoteCell(thisTenant, index, controller);
-                nCell.getStyleClass().add("border-bottom");
+                NoteCell nCell = new NoteCell(index, controller);
                 index++;
                 return nCell;
             }
         });
-
-        refreshList(lstNotes);
-
-    }
-
-    /**
-     * refreshes the list view by settings the items to null and then to an
-     * obsevable list
-     * @param lsv the list view we wish to refresh
-     * @param <T> the list type is not specified (any object)
-     */
-    public <T> void refreshList(ListView<T> lsv) {
-        ObservableList items = populateObservable(thisTenant.getNotes());
-        lsv.<T>setItems(null);
-        lsv.<T>setItems(items);
     }
 
     /**
      * Populates an observable list, this needs to be seperated into
-     * its own method to allow for the list to be refreshed from the
-     * cellfactory
-     * @return an observable array of objects to populate the list
-     */
+    * its own method to allow for the list to be refreshed from the
+    * cellfactory
+    * @return an observable array of objects to populate the list
+    */
     public ObservableList populateObservable(ArrayList<Note> notesArray) {
 
         ObservableList notes = FXCollections.observableArrayList();
@@ -601,19 +637,21 @@ public class UserInfoController implements Initializable, ControlledScreen {
         // Loop through the users Notes array and create a listview item
         for(int i = 0; i < notesArray.size(); i++) {
             Note thisNote = notesArray.get(i);
-            getNotes().add(thisNote);
-            notes.add(thisNote.getMessage());
+
+            String thisMessage;
+
+            if(thisNote.getMessage().length() > 60) {
+                // Only get the first 70 character
+                thisMessage = thisNote.getMessage().substring(0, 60) + "...";
+            } else {
+                thisMessage = thisNote.getMessage();
+            }
+
+            // Add to observable
+            notes.add(thisMessage);
         }
 
         return notes;
-    }
-
-    /**
-     * Returns the note array
-     * @return the current note collection
-     */
-    public ArrayList<Note> getNotes(){
-        return this.refNotes;
     }
 
     /**
@@ -698,27 +736,40 @@ public class UserInfoController implements Initializable, ControlledScreen {
 
         final Timeline slideUp = new Timeline();
         slideUp.setCycleCount(1);
-        slideUp.setAutoReverse(false);
+        slideUp.setAutoReverse(true);
 
-        final KeyValue kv0 = new KeyValue(errorWrap.translateYProperty(), -40);
+        final KeyValue kv0 = new KeyValue(errorWrap.translateYProperty(), -45);
         final KeyFrame kf0 = new KeyFrame(Duration.millis(250), kv0);
 
-        slideUp.getKeyFrames().add(kf0);
+        slideUp.getKeyFrames().addAll(kf0);
         slideUp.play();
 
         lblError.setText(msg);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(1500);
+                    slideBackError();
+                } catch(Exception e) {
+                    ScreensFramework.logError.writeToFile("Error handling the slide back animation...");
+                }
+            }
+        }).start();
     }
 
-    public void slideDownError() {
-        final Timeline slideUp = new Timeline();
-        slideUp.setCycleCount(1);
-        slideUp.setAutoReverse(false);
+    public void slideBackError() {
+
+        final Timeline slideBack = new Timeline();
+        slideBack.setCycleCount(1);
+        slideBack.setAutoReverse(true);
 
         final KeyValue kv0 = new KeyValue(errorWrap.translateYProperty(), 0);
         final KeyFrame kf0 = new KeyFrame(Duration.millis(250), kv0);
 
-        slideUp.getKeyFrames().add(kf0);
-        slideUp.play();
+        slideBack.getKeyFrames().addAll(kf0);
+        slideBack.play();
     }
 
     public void resetText(TextField txt, Boolean newPropertyValue)

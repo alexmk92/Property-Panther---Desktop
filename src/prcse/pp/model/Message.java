@@ -1,5 +1,6 @@
 package prcse.pp.model;
 
+import prcse.pp.controller.ScreensFramework;
 import prcse.pp.model.observer.IObserver;
 import prcse.pp.model.observer.ISubject;
 
@@ -123,6 +124,32 @@ public class Message implements ISubject, Serializable {
     }
 
     public int getId() {
+
+        String thisQuery = "";
+
+        // Get the message from the database (assumes that there wont be duplicate messages
+        if(this.id == 0) {
+            switch(this.type) {
+                case NOTE:
+                    thisQuery = "SELECT note_id FROM notes WHERE note_body = '" + this.getMessage() + "'";
+                break;
+                case MAINTENANCE:
+                    thisQuery = "SELECT request_id FROM requests WHERE request_details = '" + this.getMessage() + "'";
+                break;
+                case ALERT:
+                    thisQuery = "SELECT message_id FROM messages WHERE message_type='ALERT' AND message_body = '" + this.getMessage() + "'";
+                break;
+                case INBOX:
+                    thisQuery = "SELECT message_id FROM messages WHERE message_type='INBOX' AND message_body = '" + this.getMessage() + "'";
+                break;
+                default:
+                    ScreensFramework.logError.writeToFile("Error: Writing to the wrong file when retrieving id.");
+                break;
+            }
+
+            this.id = ScreensFramework.db.selectInt(thisQuery, this.type);
+        }
+
         return this.id;
     }
 

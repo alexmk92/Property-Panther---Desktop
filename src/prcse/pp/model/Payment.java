@@ -31,12 +31,10 @@ public class Payment implements ISubject, Serializable {
     /**
      * Creates a new payment object
      * @param thisAmount the amount paid
-     * @param thisTenant the tenant who paid the bill
      */
-    public Payment(double thisAmount, Tenant thisTenant)
+    public Payment(double thisAmount)
     {
         this.amount    = formatPayment(thisAmount);
-        this.tenant    = thisTenant;
         this.date_paid = setToday();
     }
 
@@ -87,6 +85,13 @@ public class Payment implements ISubject, Serializable {
             result = formatter.format(this.date_paid);
         }
         return result;
+    }
+
+    /**
+     * Gets the amount paid
+     */
+    public String getAmount() {
+        return "+£" + String.valueOf(this.amount);
     }
 
     /**

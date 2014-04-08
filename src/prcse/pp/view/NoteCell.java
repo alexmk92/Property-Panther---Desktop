@@ -39,21 +39,25 @@ public class NoteCell extends ListCell<String> {
     Label msg = new Label();
     Label date = new Label();
     Button cross = new Button();
+    Tenant thisTenant;
+    int thisIndex;
 
     String lastItem;
 
 
-    public NoteCell(Tenant thisTenant, int index, UserInfoController controller) {
+    public NoteCell(int index, UserInfoController controller) {
         super();
 
         try{
+            thisTenant = controller.getTenant();
             Note currNote = thisTenant.getNoteAt(index);
             date = new Label(currNote.getDate());
             System.out.println(thisTenant.getNotes());
+            thisIndex = index;
 
             date.setStyle("-fx-text-fill: #fff !important; -fx-font-family: Helvetica; -fx-font-weight: bold; -fx-font-size: 12px; -fx-background-color: #f9246b; -fx-border-color: #FE246C; -fx-padding: 8 8 6 8; -fx-border-radius: 6; -fx-background-radius: 6");
             b.setStyle("-fx-padding: 10px 5px 10px 5px");
-            msg.setStyle("-fx-text-fill: #fafafa; -fx-font-size: 14px; -fx-font-family: 'Open Sans Light'; -fx-label-padding: 10px");
+            msg.setStyle("-fx-text-fill: #fafafa; -fx-font-size: 14px; -fx-font-family: 'Open Sans Light'; -fx-label-padding: 17px");
             cross.getStyleClass().add("button_close");
             cross.setTranslateY(20);
             msg.setAlignment(Pos.CENTER_LEFT);
@@ -64,13 +68,19 @@ public class NoteCell extends ListCell<String> {
             hbox.getChildren().addAll(b, msg, pane, cross);
             HBox.setHgrow(pane, Priority.ALWAYS);
 
+            System.out.println(thisTenant.numOfNotes());
+            Note p = thisTenant.getNoteAt(index);
+            System.out.println(p.getMessage());
             // Deletes the note
             cross.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent mouseEvent) {
-                    thisTenant.removeNote(index);
-                    controller.populateObservable(thisTenant.getNotes());
-                    controller.refreshList(controller.getList());
+                    ScreensFramework.logGeneral.writeToFile("I am removing from index " + String.valueOf(thisIndex));
+                    if(thisTenant.removeNoteAt(thisIndex, true)){
+                        controller.populateListView();
+                    } else {
+                        controller.populateListView();
+                    }
                 }
             });
 

@@ -47,7 +47,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import prcse.pp.db.Database;
-import prcse.pp.logs.Writer;
+import prcse.pp.misc.Validate;
+import prcse.pp.misc.Writer;
 import prcse.pp.model.*;
 
 import java.util.ArrayList;
@@ -93,6 +94,9 @@ public class ScreensFramework extends Application  {
     // Global write objects
     public static Writer logError   = new Writer("error", true);
     public static Writer logGeneral = new Writer("general", true);
+
+    // Global validation object
+    public static Validate validateThis = new Validate();
 
     @Override
     public void start(Stage primaryStage) {

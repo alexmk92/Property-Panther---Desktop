@@ -89,34 +89,6 @@ public class Property implements ISubject{
     }
 
     /**
-     * Make a Payment against this property.
-     * @param amount the Payment amount
-     * @param t the Tenant making the payment
-     * @return True if the payment was made, else return false.
-     */
-    public Boolean makePayment(double amount, Tenant t)
-    {
-        // Assume this method would fail
-        Boolean result = false;
-
-        // Create a new payment object
-        Payment thisPayment = new Payment(amount, t);
-
-        // Check the variables are set and perform adding the payment to the property
-        if(amount >= 0 && null != t)
-        {
-            // Add payment to property payments array list
-            this.payments.add(thisPayment);
-
-            // Add payment to the users payment array list record
-            t.payments.add(thisPayment);
-        }
-
-        // True or False
-        return result;
-    }
-
-    /**
      * Returns this Property object
      * @return this - this Property object
      */

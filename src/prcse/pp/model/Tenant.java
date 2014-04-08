@@ -1,5 +1,6 @@
 package prcse.pp.model;
 
+import javafx.application.Platform;
 import prcse.pp.controller.ScreensFramework;
 import prcse.pp.model.observer.IObserver;
 import prcse.pp.model.observer.ISubject;
@@ -91,28 +92,12 @@ public class Tenant extends Person implements Serializable {
         this.notes    = new ArrayList();
     }
 
-    /**
-     * Adds a payment against the Tenants property by calling the makePayment
-     * method in the Property class
-     * @param amount the amount being paid
-     * @return
-     */
-    public Boolean makePayment(int amount)
-    {
-        // Assume the transaction would fail
-        Boolean result = false;
-        if(property.makePayment(amount, this))
-            result = true;
-
-        return result;
-    }
 
     /**
      * Returns the size of the notes array the user has
      */
     public int numOfNotes() {
-        int numNotes = notes.size();
-        return numNotes;
+        return this.notes.size();
     }
 
     /**
@@ -123,8 +108,8 @@ public class Tenant extends Person implements Serializable {
 
         Note n = null;
 
-        if(notes.get(index) != null){
-            n = notes.get(index);
+        if(this.notes.get(index) != null){
+            n = this.notes.get(index);
         }
         return n;
     }
@@ -136,14 +121,14 @@ public class Tenant extends Person implements Serializable {
     public Boolean addNote(Note newNote, Boolean insert) {
         Boolean added = false;
 
-        if(newNote == null){
-            return false;
-        } else {
+        if(newNote != null) {
 
             // Construct the new note and reference to this user
             String msg  = newNote.getMessage();
             String date = newNote.getDate();
             int    id   = this.getUserId();
+
+            this.notes.add(newNote);
 
             // Determines whether we want to just add to the list (on loading) or if
             // we want to insert into the db aswell
@@ -155,9 +140,6 @@ public class Tenant extends Person implements Serializable {
                 ScreensFramework.db.query(thisQuery);
             }
 
-            notes.add(newNote);
-
-
             added = true;
         }
 
@@ -168,23 +150,27 @@ public class Tenant extends Person implements Serializable {
      * Removes the note at the given index
      * @return true if the note was removed else false
      */
-    public Boolean removeNote(int index) {
+    public Boolean removeNoteAt(int index, Boolean queryDb) {
         Boolean removed = false;
 
         // Check we are in the correct bounds
-        if(index >= 0 && index <= notes.size()){
-
-            notes.remove(index);
+        if(index >= 0 && index <= numOfNotes()){
 
             // Get the note at the index
             Note n = getNoteAt(index);
+            System.out.println(n.getMessage());
 
-            // Construct the query parameter
-            String thisQuery = "DELETE FROM notes WHERE note_id = " + n.getId() + " AND user_id = " + this.getUserId() + ";";
+            // Check if we need to run the query
+            if(queryDb == true) {
+                // Construct the query parameter
+                String thisQuery = "DELETE FROM notes WHERE note_id = " + n.getId() + " AND user_id = " + this.getUserId() + "";
 
-            // Run the query
-            ScreensFramework.db.query(thisQuery);
+                // Run the query
+                ScreensFramework.db.query(thisQuery);
+            }
 
+            // Remove the note from the index
+            this.notes.remove(index);
 
             removed = true;
         }
@@ -200,21 +186,40 @@ public class Tenant extends Person implements Serializable {
 
         Boolean removed = false;
 
-        if(this.notes.size() > 0){
-            for(int i = 0; i < notes.size()+1; i++) {
-                this.notes.remove(i);
-            }
-
-            // Construct the query parameter
-            String thisQuery = "DELETE FROM notes WHERE user_id = " + this.getUserId() + ";";
-
-            // Run the query
+            String thisQuery =  "DELETE FROM notes WHERE user_id = " + this.getUserId() + "";
+            System.out.println(thisQuery);
             ScreensFramework.db.query(thisQuery);
 
+             // We dont need to query the db as we remove all records above
+            for(int i = 0; i < numOfNotes(); i++) {
+                removeNoteAt(i, false);
+            }
+
             removed = true;
-        }
 
         return removed;
+    }
+
+    /**
+     * Adds a payment to this user
+     */
+    public Boolean addPayment(Payment p) {
+
+        Boolean added = false;
+
+        if(p != null){
+            this.payments.add(p);
+            added = true;
+        }
+
+        return added;
+    }
+
+    /**
+     * Returns all payments for this user
+     */
+    public ArrayList<Payment> getPayments() {
+        return this.payments;
     }
 
 
