@@ -30,6 +30,9 @@ public class Database implements Callable {
 
     private int value = 0;
 
+    // An empty arraylist to capture query results
+    private ResultSet result;
+
     // Reference to global data store objects
     UserList     tenantList   = ScreensFramework.tenants;
     PropertyList propertyList = ScreensFramework.properties;
@@ -132,8 +135,6 @@ public class Database implements Callable {
         {
             if(buildProperties()) { buildCount++; }
             //buildTracking();
-            //buildPayments();
-            //buildNotes();
             //buildMessages();
             if(buildUsers()) { buildCount++; }
 
@@ -156,9 +157,7 @@ public class Database implements Callable {
     public Boolean buildProperties(){
         Boolean propertiesBuilt = false;
         try {
-            Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
-            Statement  st  = con.createStatement();
-            ResultSet  res = st.executeQuery("SELECT * FROM properties");
+            ResultSet res = query("SELECT * FROM properties");
 
             while(res.next()) {
                 Property p = new Property(res.getInt("property_id"), res.getString("prop_track_code"), res.getString("addr_line_1"),
@@ -174,7 +173,7 @@ public class Database implements Callable {
 
             propertiesBuilt = true;
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             ScreensFramework.logError.writeToFile("Error handling query: " + e.getMessage());
             propertiesBuilt = false;
         }
@@ -226,10 +225,8 @@ public class Database implements Callable {
 
         // Build users
         try {
-            // Make a connection to the database
-            Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
-            Statement  st  = con.createStatement();
-            ResultSet  res = st.executeQuery("SELECT * FROM users WHERE user_permissions = 'USER'");
+            // Use the query method to build
+            ResultSet res = query("SELECT * FROM users WHERE user_permissions = 'USER'");
 
             while(res.next()) {
                 Property p = getProperty(res.getInt("user_property"));
@@ -239,7 +236,8 @@ public class Database implements Callable {
                                         res.getString("user_email"), res.getString("user_phone"), res.getString("addr_line_1"), res.getString("addr_line_2"),
                                         res.getString("addr_postcode"), res.getString("city_name"), p, r);
 
-                buildPayments(t);
+                // Only build the first 5 payments initially
+                buildPayments(t, 5);
                 buildNotes(t);
                 buildRequests(t);
                 tenantList.addUser(t);
@@ -253,10 +251,8 @@ public class Database implements Callable {
 
         // Build admin
         try {
-            // Make a connection to the database
-            Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
-            Statement  st  = con.createStatement();
-            ResultSet  res = st.executeQuery("SELECT user_id, user_forename, user_surname, user_email FROM users WHERE user_permissions = 'ADMIN'");
+            // Use the query method to build admin object
+            ResultSet  res = query("SELECT user_id, user_forename, user_surname, user_email FROM users WHERE user_permissions = 'ADMIN'");
 
             while(res.next()) {
                 Admin   a = new Admin(res.getInt("user_id"), res.getString("user_forename"), res.getString("user_surname"), res.getString("user_email"));
@@ -269,8 +265,6 @@ public class Database implements Callable {
             usersBuilt = false;
         }
 
-        System.out.println(tenantList.size());
-        System.out.println(ScreensFramework.adminList.size());
         return usersBuilt;
     }
 
@@ -285,9 +279,7 @@ public class Database implements Callable {
         try {
             int user_id = t.getUserId();
             // Make a connection to the database
-            Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
-            Statement  st  = con.createStatement();
-            ResultSet  res = st.executeQuery("SELECT * FROM requests WHERE user_id = " + user_id);
+            ResultSet res = query("SELECT * FROM requests WHERE user_id = " + user_id);
 
             while(res.next()) {
                 //Request r = new Request();
@@ -308,19 +300,17 @@ public class Database implements Callable {
      * Build all payments objects for the system
      * @return true if all payments objects were built, else return false
      */
-    public Boolean buildPayments(Tenant t){
+    public Boolean buildPayments(Tenant t, int amount_to_fetch){
 
         Boolean paymentsBuilt = false;
 
         try {
             int user_id = t.getUserId();
             // Make a connection to the database
-            Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
-            Statement  st  = con.createStatement();
-            ResultSet  res = st.executeQuery("SELECT * FROM payments WHERE user_id = " + user_id);
+            ResultSet res = query("SELECT * FROM payments WHERE user_id = " + user_id + " ORDER BY payment_received DESC FETCH NEXT " + amount_to_fetch + " ROWS ONLY");
 
             while(res.next()) {
-                Payment p = new Payment(res.getDouble("payment_amount"));
+                Payment p = new Payment(res.getDouble("payment_amount"), res.getDate("payment_received"));
 
                 if(t.addPayment(p)){
                     paymentsBuilt = true;
@@ -345,9 +335,7 @@ public class Database implements Callable {
         try {
             int user_id = t.getUserId();
             // Make a connection to the database
-            Connection con = DriverManager.getConnection(this.db_host, this.db_user, this.db_pass);
-            Statement  st  = con.createStatement();
-            ResultSet  res = st.executeQuery("SELECT * FROM notes WHERE user_id = " + user_id);
+            ResultSet res = query("SELECT * FROM notes WHERE user_id = " + user_id);
 
             while(res.next()) {
 
@@ -429,10 +417,11 @@ public class Database implements Callable {
      * Inserts a new row into the database dependent on the given query,
      * run on a new thread as this sometimes takes a while to compute
      * @param - the query we wish to execute
+     * @return - the result set given by the query
      */
-    public void query(String thisQuery) {
+    public ResultSet query(String thisQuery) {
 
-        new Thread(new Runnable() {
+        Runnable query = new Runnable() {
             @Override
             public void run() {
                 try {
@@ -441,8 +430,7 @@ public class Database implements Callable {
                             // Make a connection to the database
                             Connection con = DriverManager.getConnection(getDb_host(), getDb_user(), getDb_pass());
                             Statement  st  = con.createStatement();
-                            st.executeQuery(thisQuery);
-
+                            result         = st.executeQuery(thisQuery);
                         } catch (SQLException e) {
                             ScreensFramework.logError.writeToFile("Error handling operation: " + e.getMessage());
                         }
@@ -451,7 +439,19 @@ public class Database implements Callable {
                     ScreensFramework.logError.writeToFile(e.getMessage());
                 }
             }
-        }).start();
+        };
+
+        Thread runQuery = new Thread(query);
+
+        // Try and run the thread and join it back
+        try {
+            runQuery.start();
+            runQuery.join();
+        } catch(Exception e) {
+            ScreensFramework.logError.writeToFile("Error: the thread couldnt run: " + e.getMessage());
+        }
+
+        return result;
     }
 
     /**

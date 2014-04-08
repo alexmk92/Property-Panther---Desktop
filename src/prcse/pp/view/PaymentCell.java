@@ -1,19 +1,20 @@
 package prcse.pp.view;
 
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
-import javafx.scene.effect.Glow;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
-import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
+import prcse.pp.controller.PaymentsController;
+import prcse.pp.controller.ScreensFramework;
+import prcse.pp.model.Payment;
+import prcse.pp.model.Tenant;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,41 +25,65 @@ import javafx.scene.text.Text;
  */
 public class PaymentCell extends ListCell<String> {
     HBox hbox = new HBox();
-    HBox desc = new HBox();
-    Label label = new Label();
+    HBox c = new HBox();
+    Pane b = new HBox();
     Pane pane = new Pane();
-    Image profile_default = new Image(this.getClass().getResourceAsStream("../view/img/profile_default.png"));
+    Label msg = new Label();
+    Label date = new Label();
+    Label amount = new Label();
+    Image profile_default = new Image(this.getClass().getResourceAsStream("../view/img/user_default.png"));
     ImageView img = new ImageView();
+    Tenant thisTenant;
+    int thisIndex;
+
     String lastItem;
 
 
-    public PaymentCell() {
+    public PaymentCell(int index, PaymentsController controller) {
         super();
 
-        Text total = new Text("350");
-        Label paid = new Label("£" + total.getText());
-        paid.setStyle("-fx-text-fill: #a6e22e !important; -fx-font-family: 'Open Sans Light'; -fx-font-size: 15px");
-        paid.setLayoutX(-200);
-        Label datePaid = new Label(" 3 days ago");
-        datePaid.setStyle("-fx-text-fill: #fff !important; -fx-font-family: 'Open Sans Light'; -fx-font-size: 15px");
-        Label amount = new Label("paid ");
-        amount.setStyle("-fx-text-fill: #fff !important; -fx-font-family: 'Open Sans Light'; -fx-font-size: 15px");
+        try{
+            thisIndex = index;
 
-        Glow g = new Glow(0.1);
-        label.setEffect(g);
-        label.setStyle("-fx-text-fill: #71cee5; -fx-translate-x: 10; -fx-translate-y: 3");
-        img.setStyle("-fx-translate-y: 7; -fx-translate-x: -2");
-        img.setImage(profile_default);
-        desc.getChildren().addAll(amount, paid, datePaid);
-        desc.setStyle("-fx-translate-x: -110; -fx-translate-y: 25");
-        hbox.getChildren().addAll(img, label, pane, desc);
-        HBox.setHgrow(pane, Priority.ALWAYS);
+            thisTenant = controller.getTenant();
+            Payment currPayment = thisTenant.getPaymentAt(index);
+            date.setText(currPayment.getDateAsString());
+            amount.setText(currPayment.getAmount());
+
+            // Format the message style
+            msg.setStyle("-fx-text-fill: #66d9ef; -fx-font-size: 16px; -fx-font-family: 'Open Sans Light'; -fx-label-padding: 5px; -fx-translate-x: 18; -fx-translate-y: 4 !important");
+            amount.setStyle("-fx-text-fill: #96ca2e !important; -fx-font-family: Helvetica; -fx-font-size: 16px; -fx-font-weight: bold; -fx-alignment: center-right;");
+            date.setStyle("-fx-text-fill: #fff !important; -fx-font-family: Helvetica; -fx-font-size: 16px; -fx-alignment: center-right;");
+
+
+            // Set the panel alignmentss
+            b.setStyle("-fx-translate-y: 8.5; -fx-translate-x: 120");
+            c.setStyle("-fx-translate-y: 8.5;");
+
+            // Set img styles
+            img.setStyle("-fx-translate-y: 2.5; -fx-translate-x: 2.5");
+            img.setImage(profile_default);
+            img.setFitWidth(38);
+            img.setFitHeight(38);
+
+            pane.setTranslateY(20);
+            b.getChildren().add(amount);
+            c.getChildren().add(date);
+            hbox.getChildren().addAll(img, msg, b, pane, c);
+            HBox.setHgrow(pane, Priority.ALWAYS);
+
+
+
+        } catch (Exception e) {
+            ScreensFramework.logError.writeToFile(e.getMessage());
+        }
     }
 
 
 
     @Override
     protected void updateItem(String item, boolean empty) {
+
         super.updateItem(item, empty);
         setText(null);  // No text in label of super class
         if (empty) {
@@ -66,7 +91,7 @@ public class PaymentCell extends ListCell<String> {
             setGraphic(null);
         } else {
             lastItem = item;
-            label.setText(item!=null ? item : "<null>");
+            msg.setText(item!=null ? item : "<null>");
             setGraphic(hbox);
         }
     }

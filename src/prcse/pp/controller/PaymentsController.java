@@ -26,11 +26,12 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.util.Duration;
-import prcse.pp.model.Note;
 import prcse.pp.model.Tenant;
 import prcse.pp.model.UserList;
-import prcse.pp.view.PaymentCell;
+import prcse.pp.view.NoteCell;
+import prcse.pp.view.PaymentFeedCell;
 import prcse.pp.model.Payment;
+import prcse.pp.view.PaymentCell;
 
 
 /**
@@ -141,11 +142,19 @@ public class PaymentsController implements Initializable, ControlledScreen {
     private AnchorPane body;
     @FXML // fx:id="lstPaymentFeed"
     private ListView lstPaymentFeed;
+    @FXML // fx:id="lblOlder"
+    private Label lblOlder;
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
     private double yOffset = 0;
     ScreensController myController;
+
+    // Reference to this controller and a zeroed index
+    // for cell factory
+    private PaymentsController controller = this;
+    private Tenant tenant;
+    private int index = 0;
 
     /**
      * Initializes the controller class.
@@ -386,7 +395,7 @@ public class PaymentsController implements Initializable, ControlledScreen {
         lstPaymentFeed.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
             @Override
             public ListCell<String> call(ListView<String> param) {
-                return new PaymentCell();
+                return new PaymentFeedCell();
             }
         });
 
@@ -413,15 +422,23 @@ public class PaymentsController implements Initializable, ControlledScreen {
                 hideUsers();
             }
         });
+        lblOlder.
 
     }
 
     /******************************************************
      *                  CONTROL METHODS
      *****************************************************/
+
+    /**
+     * Retrieves all payment objects pertaining to a given user
+     * @param searchBy  the email or name we are searching by
+     * @return true if results were found, else false
+     */
     public Boolean fetchPayments(String searchBy) {
         Boolean paymentsRetrieved = false;
 
+        // Run the query on a new thread
         Runnable getPayments = new Runnable() {
             @Override
             public void run() {
@@ -438,12 +455,14 @@ public class PaymentsController implements Initializable, ControlledScreen {
                         String forename = split[0];
                         String surname = split[1];
 
-                        t = u.getTenantByName(forename, surname);
+                        t = u.getTenantByName(forename.toUpperCase(), surname.toUpperCase());
                     }
 
-                    // Set the payment list
-                    ObservableList payments = populateObservable(t.getPayments());
-                    lstPayments.setItems(payments);
+                    // Set the global tenant object
+                    setTenant(t);
+
+                    // Populate the list with the custom CellFactory
+                    populatePaymentList();
 
                 } catch(Exception e) {
                     ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
@@ -451,9 +470,10 @@ public class PaymentsController implements Initializable, ControlledScreen {
             }
         };
 
+        // Assign runnable to the thread
         Thread fetch = new Thread(getPayments);
 
-        // Try to run the thread and join it back
+        // Try to run the thread and join it back to the main thread
         try {
             fetch.start();
             fetch.join();
@@ -467,6 +487,42 @@ public class PaymentsController implements Initializable, ControlledScreen {
     }
 
     /**
+     * Populates the payment ListView
+     */
+    public void populatePaymentList() {
+
+        // Zero the index each time the list view is repopulated to
+        // bind to the correct button
+        index = 0;
+
+        // Refresh the lists contents to null
+        lstPayments.setItems(null);
+
+        // Observable list containing items to add
+        ObservableList payments = populateObservable(tenant.getPayments());
+
+        // Set the items returned by populateObservable(T);
+        lstPayments.setItems(payments);
+        lstPayments.setFixedCellSize(50);
+
+        // Use a cell factory for custom styling
+        lstPayments.setCellFactory(new Callback<ListView, ListCell>() {
+            @Override
+            public ListCell call(ListView listView) {
+                PaymentCell pCell = new PaymentCell(index, controller);
+
+                // set the background color of cell
+                if(index%2==0){
+                    pCell.setStyle("-fx-background-color: rgba(38,38,52,0.25)");
+                }
+
+                index++;
+                return pCell;
+            }
+        });
+    }
+
+    /**
      * Populates an observable list, this needs to be seperated into
      * its own method to allow for the list to be refreshed from the
      * cellfactory
@@ -476,15 +532,50 @@ public class PaymentsController implements Initializable, ControlledScreen {
 
         ObservableList payments = FXCollections.observableArrayList();
 
-        // Loop through the users Notes array and create a listview item
+        // Loop through the users Payments array and create a listview item
         for(int i = 0; i < paymentsArray.size(); i++) {
-            Payment thisPayment = paymentsArray.get(i);
+            String payee = tenant.getName();
 
             // Add to observable
-            payments.add(thisPayment.getAmount());
+            payments.add(payee);
         }
 
         return payments;
+    }
+
+    /**
+     * Returns the Payment List
+     */
+    public ListView<Payment> getPaymentList() {
+        return this.lstPayments;
+    }
+
+    /**
+     *  Returns the Payment Feed List
+     */
+    public ListView<Payment> getPaymentFeedList() {
+        return this.lstPaymentFeed;
+    }
+
+    /**
+     * Returns the searched Tenant object
+     */
+    public Tenant getTenant() {
+        return this.tenant;
+    }
+
+    /**
+     * Sets the searched tenant
+     * @param t - the tenant we are adding
+     * @return added - True if the tenant was added else false
+     */
+    public Boolean setTenant(Tenant t) {
+        Boolean added = false;
+        if(t != null) {
+            this.tenant = t;
+            added = true;
+        }
+        return added;
     }
 
     /******************************************************

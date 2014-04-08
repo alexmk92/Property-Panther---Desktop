@@ -78,7 +78,6 @@ public class ScreensFramework extends Application  {
     public static String screen8ID   = "View Tenant";
     public static String screen8File = "../view/UserDetails.fxml";
     public static Boolean connected  = false;
-    public static Boolean resize     = false;
     public static Database db;
 
     // Global model list - reference these for persistence,

@@ -92,6 +92,29 @@ public class Tenant extends Person implements Serializable {
         this.notes    = new ArrayList();
     }
 
+    /**
+     * Returns the size of the payments array
+     */
+    public int numOfPayments() {
+        return this.payments.size();
+    }
+
+    /**
+     * Returns the Payment at the given index
+     * @param index - the given index we want to locate the payment
+     * @return p - the Payment object found at the index, else null
+     */
+    public Payment getPaymentAt(int index) {
+
+        Payment p = null;
+
+        // Check we have found the correct payment
+        if(payments.get(index) != null) {
+            p = payments.get(index);
+        }
+
+        return p;
+    }
 
     /**
      * Returns the size of the notes array the user has

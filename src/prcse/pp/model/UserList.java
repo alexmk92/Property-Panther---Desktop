@@ -122,7 +122,7 @@ public class UserList {
             Tenant currTenant = getUserAt(i);
 
             // Check we have a match
-            if(currTenant.getName().equals(forename + " " + surname)){
+            if(currTenant.getName().toUpperCase().equals(forename + " " + surname)){
                 t = currTenant;
                 return t;
             }

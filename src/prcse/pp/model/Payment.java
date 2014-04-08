@@ -32,10 +32,14 @@ public class Payment implements ISubject, Serializable {
      * Creates a new payment object
      * @param thisAmount the amount paid
      */
-    public Payment(double thisAmount)
+    public Payment(double thisAmount, Date date)
     {
         this.amount    = formatPayment(thisAmount);
-        this.date_paid = setToday();
+        if(date == null){
+            this.date_paid = setToday();
+        } else {
+            this.date_paid = date;
+        }
     }
 
     /**
@@ -81,7 +85,7 @@ public class Payment implements ISubject, Serializable {
     public String getDateAsString() {
         String result = "";
         if (null != this.date_paid) {
-            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/2yyy");
             result = formatter.format(this.date_paid);
         }
         return result;

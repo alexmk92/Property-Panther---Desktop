@@ -52,7 +52,7 @@ public class NoteCell extends ListCell<String> {
             thisTenant = controller.getTenant();
             Note currNote = thisTenant.getNoteAt(index);
             date = new Label(currNote.getDate());
-            System.out.println(thisTenant.getNotes());
+
             thisIndex = index;
 
             date.setStyle("-fx-text-fill: #fff !important; -fx-font-family: Helvetica; -fx-font-weight: bold; -fx-font-size: 12px; -fx-background-color: #f9246b; -fx-border-color: #FE246C; -fx-padding: 8 8 6 8; -fx-border-radius: 6; -fx-background-radius: 6");
@@ -68,9 +68,6 @@ public class NoteCell extends ListCell<String> {
             hbox.getChildren().addAll(b, msg, pane, cross);
             HBox.setHgrow(pane, Priority.ALWAYS);
 
-            System.out.println(thisTenant.numOfNotes());
-            Note p = thisTenant.getNoteAt(index);
-            System.out.println(p.getMessage());
             // Deletes the note
             cross.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override

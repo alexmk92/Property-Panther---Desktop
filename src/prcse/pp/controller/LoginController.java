@@ -73,7 +73,7 @@ public class LoginController implements Initializable, ControlledScreen {
 
     // Set up to read and write to/from the config file
     public Writer   logConfig    = new Writer("config", false);
-    private Reader  configReader = new Reader("misc/config.txt");
+    private Reader  configReader = new Reader("logs/config.txt");
 
     ScreensController myController;
 
