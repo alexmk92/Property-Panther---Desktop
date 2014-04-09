@@ -82,7 +82,7 @@
 </children>
 </AnchorPane>
 <AnchorPane fx:id="nav5" layoutY="445.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-<children><Button id="nav_button" fx:id="nav_bg5" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" styleClass="dark" text="Messages" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children><Button id="nav_button" fx:id="nav_bg5" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToMessages" prefHeight="70.0" prefWidth="250.0" styleClass="dark" text="Messages" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <font>
 <Font size="20.0" />
 </font></Button><Rectangle id="nav_active_accent" fx:id="accent5" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="2.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_5" fx:id="nav_icon5" layoutX="200.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="36.0" styleClass="img" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
