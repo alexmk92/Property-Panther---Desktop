@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.text.DateFormat;
+import java.util.concurrent.TimeUnit;
+import java.sql.Timestamp;
 
 /**
  * Creates a new Payment object
@@ -20,10 +23,14 @@ public class Payment implements ISubject, Serializable {
     /**
      * Variables which describe a payment
      */
-    private double   amount;
-    private Date     date_paid;
-    private Tenant   tenant;
-    private int      id;
+    private double        amount;
+    private Date          date_paid;
+    private Date          date_due;
+    private String        reference_id;
+    private int           property_id;
+    private int           id;
+    private String        paymentStatus;
+    private Tenant        tenant;
 
     // Arraylist of Observer
     private ArrayList<IObserver> observers = null;
@@ -32,16 +39,31 @@ public class Payment implements ISubject, Serializable {
     /**
      * Creates a new payment object
      * @param thisAmount the amount paid
+     * @param t - the tenant who made the payment
      */
-    public Payment(double thisAmount, Date date, int idIn)
+    public Payment(Tenant t, double thisAmount, Date date, int idIn, String status, String ref_id, Date payment_due, int prop_id)
     {
         this.amount    = formatPayment(thisAmount);
+
+        // Check the payment date
         if(date == null){
-            this.date_paid = setToday();
+            this.date_paid = null;
         } else {
             this.date_paid = date;
         }
+
+        // Check the due date
+        if(this.date_due == null){
+            this.date_due = setToday();
+        } else {
+            this.date_due = payment_due;
+        }
+
+        this.tenant = t;
+        this.reference_id = ref_id;
+        this.property_id = prop_id;
         this.id = idIn;
+        this.paymentStatus = status;
     }
 
     /**
@@ -82,16 +104,43 @@ public class Payment implements ISubject, Serializable {
      * Accessor method that retrieves the date on which this leave request start
      * as a string suitable for display in the format dd/MM/yyyy
      *
-     * @return A String representing the date on which the leave starts.
+     * @return A String representing the date when they payment was set
      */
     public String getDateAsString() {
         String result = "";
         if (null != this.date_paid) {
-            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/2yyy");
+            SimpleDateFormat formatter = new SimpleDateFormat("dd MMM 2yyy");
             result = formatter.format(this.date_paid);
+        } else {
+            result = this.getStatus();
         }
         return result;
     }
+
+    /**
+     * Accessor method that retrieves the date on which this leave request start
+     * as a string suitable for display in the format dd/MM/yyyy
+     *
+     * @return A String representing the date on which the payment was received
+     */
+    public String getDueDateAsString() {
+        String result = "";
+        if (null != this.date_due) {
+            SimpleDateFormat formatter = new SimpleDateFormat("dd MMM 2yyy");
+            result = formatter.format(this.date_due);
+        } else {
+            result = this.getStatus();
+        }
+        return result;
+    }
+
+    /**
+     * Returns the tenant who paid
+     */
+    public String getPayee(){
+        return this.tenant.getName();
+    }
+
 
     /**
      * Gets the id of the payment
@@ -104,8 +153,23 @@ public class Payment implements ISubject, Serializable {
      * Gets the amount paid
      */
     public String getAmount() {
-        return "+£" + String.valueOf(this.amount);
+        return "£" + String.valueOf(this.amount);
     }
+
+    /**
+     * Returns the current status of this payment
+     */
+    public String getStatus() {
+        return this.paymentStatus;
+    }
+
+    /**
+     * Returns the payee object
+     */
+    public Tenant getTenant(){
+        return this.tenant;
+    }
+
 
     /**
      * Formats the payment amount to 2.d.p
@@ -113,7 +177,7 @@ public class Payment implements ISubject, Serializable {
      */
     private double formatPayment(double amount)
     {
-        return Math.round(amount * 100.0) / 100.0;
+        return Math.round(amount * 100.00) / 100.0;
     }
 
     /**

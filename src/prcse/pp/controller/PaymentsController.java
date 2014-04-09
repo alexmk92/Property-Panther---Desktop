@@ -22,6 +22,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Callback;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -32,6 +34,8 @@ import prcse.pp.view.NoteCell;
 import prcse.pp.view.PaymentFeedCell;
 import prcse.pp.model.Payment;
 import prcse.pp.view.PaymentCell;
+
+import javax.xml.transform.Result;
 
 
 /**
@@ -144,6 +148,22 @@ public class PaymentsController implements Initializable, ControlledScreen {
     private ListView lstPaymentFeed;
     @FXML // fx:id="lblOlder"
     private Label lblOlder;
+    @FXML // fx:id="lblCurrStatus"
+    private Label lblCurrStatus;
+    @FXML // fx:id="lblDue"
+    private Label lblDue;
+    @FXML // fx:id="lblPaid"
+    private Label lblPaid;
+    @FXML // fx:id="lblAmount"
+    private Label lblAmount;
+    @FXML // fx:id="lblPayee"
+    private Label lblPayee;
+    @FXML // fx:id="lblAddress"
+    private Label lblAddress;
+    @FXML // fx:id="detailsWrap"
+    private Pane detailsWrap;
+    @FXML // fx:id="btnCloseDetails"
+    private Button btnCloseDetails;
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
@@ -156,8 +176,15 @@ public class PaymentsController implements Initializable, ControlledScreen {
     private Tenant tenant;
     private int index = 0;
 
+    // Is this screen active? Toggles the refresh thread
+    private Boolean pageActive = false;
+    private Boolean completed  = false;
+
     // begin by fetching 5 payments (default)
     private int amount = 5;
+
+    // a new payment list to hold all of the payment objects (payment feed)
+    private ArrayList<Payment> paymentFeed = new ArrayList<Payment>();
 
     /**
      * Initializes the controller class.
@@ -165,15 +192,21 @@ public class PaymentsController implements Initializable, ControlledScreen {
     @Override
     public void initialize(URL url, ResourceBundle resources)
     {
+        pageActive = true;
+
         // Set opacity of widgets
         widget_right.setOpacity(0.3);
         widget_top_left.setOpacity(0.3);
         widget_bottom_left.setOpacity(0.3);
 
+        // Hide the details wrapper
+        detailsWrap.setVisible(false);
+
         // Load the scene in on mouseover
         body.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
+                populatePaymentFeed();
                 animateIn();
                 resetStyles();
             }
@@ -363,6 +396,7 @@ public class PaymentsController implements Initializable, ControlledScreen {
             public void handle(ActionEvent actionEvent) {
 
                 String searchBy = "";
+                detailsWrap.setVisible(false);
 
                 // Get values set in text boxes
                 if(txtName.getText().length() > 0){
@@ -391,17 +425,6 @@ public class PaymentsController implements Initializable, ControlledScreen {
 
             }
         });
-
-        // Set test data, this will populate with Payee name, amount and time
-        ObservableList<String> values = FXCollections.observableArrayList("Alex Sims", "Jamie Shepherd", "Adam Stevenson", "Thomas Knowles", "Jason Dee");
-        lstPaymentFeed.setItems(values);
-        lstPaymentFeed.setCellFactory(new Callback<ListView<String>, ListCell<String>>() {
-            @Override
-            public ListCell<String> call(ListView<String> param) {
-                return new PaymentFeedCell();
-            }
-        });
-
         // Utility controls
         closeBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -429,10 +452,10 @@ public class PaymentsController implements Initializable, ControlledScreen {
             @Override
             public void handle(MouseEvent mouseEvent) {
 
-               // We only want to clear the array, so pass false
-               // check that all payments were removed - if yes then rebuild the payments list
-               // with another 5 results
-               if(tenant.removeAllPayments(false)){
+                // We only want to clear the array, so pass false
+                // check that all payments were removed - if yes then rebuild the payments list
+                // with another 5 results
+                if (tenant.removeAllPayments(false)) {
 
                     // 5 was the default amount to fetch, add 5 more
                     amount += 5;
@@ -445,7 +468,53 @@ public class PaymentsController implements Initializable, ControlledScreen {
                 }
             }
         });
+        lstPayments.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                int selected = lstPayments.getSelectionModel().getSelectedIndex();
+                lstPayments.setVisible(false);
+                detailsWrap.setVisible(true);
+                lblOlder.setVisible(false);
 
+                // Get the current payment object
+                Payment p = tenant.getPaymentAt(selected);
+
+                // Set the labels
+                lblAddress.setText(tenant.getAddress());
+                lblAmount.setText(p.getAmount());
+                lblDue.setText(p.getDueDateAsString());
+                lblPaid.setText(p.getDateAsString());
+                lblCurrStatus.setText(p.getStatus());
+                lblPayee.setText(tenant.getName());
+
+                // Set the style on status dependent on result
+                if(p.getStatus().equals("PAID")){
+                    lblCurrStatus.setStyle("-fx-text-fill: #96CA2E ");
+                } else if(p.getStatus().equals("PENDING")) {
+                    lblCurrStatus.setStyle("-fx-text-fill: #fe9720");
+                } else {
+                    lblCurrStatus.setStyle("-fx-text-fill: #f92673");
+                }
+            }
+        });
+        lstPaymentFeed.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                int selected = lstPaymentFeed.getSelectionModel().getSelectedIndex();
+                Payment p = ScreensFramework.allPayments.get(selected);
+
+                setTenant(p.getTenant());
+                populatePaymentList();
+            }
+        });
+        btnCloseDetails.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                detailsWrap.setVisible(false);
+                lstPayments.setVisible(true);
+                lblOlder.setVisible(true);
+            }
+        });
     }
 
     /******************************************************
@@ -518,6 +587,7 @@ public class PaymentsController implements Initializable, ControlledScreen {
         index = 0;
         amount = 5;
 
+
         // Refresh the lists contents to null
         lstPayments.setItems(null);
 
@@ -546,6 +616,35 @@ public class PaymentsController implements Initializable, ControlledScreen {
     }
 
     /**
+     * Populates the payment feed view
+     */
+    public void populatePaymentFeed() {
+        // Zero the index each time the list view is repopulated to
+        // bind to the correct button
+        index = 0;
+        amount = 5;
+
+
+        // Observable list containing items to add
+        ObservableList payments = populateObservable(ScreensFramework.allPayments);
+
+        // Set the items returned by populateObservable(T);
+        lstPaymentFeed.setItems(payments);
+        lstPaymentFeed.setFixedCellSize(50);
+
+        // Use a cell factory for custom styling
+        lstPaymentFeed.setCellFactory(new Callback<ListView, ListCell>() {
+            @Override
+            public ListCell call(ListView listView) {
+                PaymentFeedCell pCell = new PaymentFeedCell(index, controller);
+
+                index++;
+                return pCell;
+            }
+        });
+    }
+
+    /**
      * Populates an observable list, this needs to be seperated into
      * its own method to allow for the list to be refreshed from the
      * cellfactory
@@ -557,7 +656,7 @@ public class PaymentsController implements Initializable, ControlledScreen {
 
         // Loop through the users Payments array and create a listview item
         for(int i = 0; i < paymentsArray.size(); i++) {
-            String payee = tenant.getName();
+            String payee = paymentsArray.get(i).getPayee();
 
             // Add to observable
             payments.add(payee);
@@ -728,42 +827,42 @@ public class PaymentsController implements Initializable, ControlledScreen {
                             nav_bg1.getStyleClass().addAll("active");
                             nav_icon1.getStyleClass().add("active");
                             accent1.getStyleClass().addAll("active", "show");
-                        break;
+                            break;
                         case "Tenant":
                             nav_bg2.getStyleClass().addAll("active");
                             nav_icon2.getStyleClass().add("active");
                             accent2.getStyleClass().addAll("active", "show");
-                        break;
+                            break;
                         case "Properties":
                             nav_bg3.getStyleClass().addAll("active");
                             nav_icon3.getStyleClass().add("active");
                             accent3.getStyleClass().addAll("active", "show");
-                        break;
+                            break;
                         case "Payments":
                             nav_bg4.getStyleClass().addAll("active");
                             nav_icon4.getStyleClass().add("active");
                             accent4.getStyleClass().addAll("active", "show");
-                        break;
+                            break;
                         case "Messages":
                             nav_bg5.getStyleClass().addAll("active");
                             nav_icon5.getStyleClass().add("active");
                             accent5.getStyleClass().addAll("active", "show");
-                        break;
+                            break;
                         case "Settings":
                             nav_bg6.getStyleClass().addAll("active");
                             nav_icon6.getStyleClass().add("active");
                             accent6.getStyleClass().addAll("active", "show");
-                        break;
+                            break;
                         case "Add Tenant":
                             nav_bg2.getStyleClass().addAll("active");
                             nav_icon2.getStyleClass().add("active");
                             accent2.getStyleClass().addAll("active", "show");
-                        break;
+                            break;
                         case "View Tenant":
                             nav_bg2.getStyleClass().addAll("active");
                             nav_icon2.getStyleClass().add("active");
                             accent2.getStyleClass().addAll("active", "show");
-                        break;
+                            break;
                     }
 
                     // Animate the scene
@@ -773,6 +872,9 @@ public class PaymentsController implements Initializable, ControlledScreen {
                 {
                     System.out.println("There was an error handling the animation...");
                 }
+                // Stop the refresh thread
+                pageActive = false;
+
                 // Go to our view.
                 myController.setScreen(ID);
             }

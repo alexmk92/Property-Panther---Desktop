@@ -83,9 +83,10 @@ public class ScreensFramework extends Application  {
     // Global model list - reference these for persistence,
     // IN FUTURE: once loaded, filter these objects into their dependent objects, i.e.
     //            set all OCCUPIED property objects to their dependent tenant
-    public static UserList         tenants    = new UserList();
-    public static PropertyList     properties = new PropertyList();
-    public static ArrayList<Admin> adminList  = new ArrayList<>();
+    public static UserList           tenants     = new UserList();
+    public static PropertyList       properties  = new PropertyList();
+    public static ArrayList<Admin>   adminList   = new ArrayList<>();
+    public static ArrayList<Payment> allPayments = new ArrayList<>();
 
     // Global search object to pass data between forms
     public static Searcher searchObj = new Searcher();

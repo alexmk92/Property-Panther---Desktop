@@ -42,40 +42,42 @@ public class PaymentCell extends ListCell<String> {
     public PaymentCell(int index, PaymentsController controller) {
         super();
 
-        try{
-            thisIndex = index;
+        if(index < controller.getTenant().numOfPayments()) {
+            try{
+                thisIndex = index;
 
-            thisTenant = controller.getTenant();
-            Payment currPayment = thisTenant.getPaymentAt(index);
-            date.setText(currPayment.getDateAsString());
-            amount.setText(currPayment.getAmount());
+                thisTenant = controller.getTenant();
+                Payment currPayment = thisTenant.getPaymentAt(index);
+                date.setText(currPayment.getDateAsString());
+                amount.setText(currPayment.getAmount());
 
-            // Format the message style
-            msg.setStyle("-fx-text-fill: #66d9ef; -fx-font-size: 16px; -fx-font-family: 'Open Sans Light'; -fx-label-padding: 5px; -fx-translate-x: 18; -fx-translate-y: 4 !important");
-            amount.setStyle("-fx-text-fill: #96ca2e !important; -fx-font-family: Helvetica; -fx-font-size: 16px; -fx-font-weight: bold; -fx-alignment: center-right;");
-            date.setStyle("-fx-text-fill: #fff !important; -fx-font-family: Helvetica; -fx-font-size: 16px; -fx-alignment: center-right;");
-
-
-            // Set the panel alignmentss
-            b.setStyle("-fx-translate-y: 8.5; -fx-translate-x: 120");
-            c.setStyle("-fx-translate-y: 8.5;");
-
-            // Set img styles
-            img.setStyle("-fx-translate-y: 2.5; -fx-translate-x: 2.5");
-            img.setImage(profile_default);
-            img.setFitWidth(38);
-            img.setFitHeight(38);
-
-            pane.setTranslateY(20);
-            b.getChildren().add(amount);
-            c.getChildren().add(date);
-            hbox.getChildren().addAll(img, msg, b, pane, c);
-            HBox.setHgrow(pane, Priority.ALWAYS);
+                // Format the message style
+                msg.setStyle("-fx-text-fill: #66d9ef; -fx-font-size: 16px; -fx-font-family: 'Open Sans Light'; -fx-label-padding: 5px; -fx-translate-x: 18; -fx-translate-y: 4 !important");
+                amount.setStyle("-fx-text-fill: #96ca2e !important; -fx-font-family: Helvetica; -fx-font-size: 16px; -fx-font-weight: bold; -fx-alignment: center-right;");
+                date.setStyle("-fx-text-fill: #fff !important; -fx-font-family: Helvetica; -fx-font-size: 16px; -fx-alignment: center-right;");
 
 
+                // Set the panel alignmentss
+                b.setStyle("-fx-translate-y: 8.5; -fx-translate-x: 120");
+                c.setStyle("-fx-translate-y: 8.5;");
 
-        } catch (Exception e) {
-            ScreensFramework.logError.writeToFile(e.getMessage());
+                // Set img styles
+                img.setStyle("-fx-translate-y: 2.5; -fx-translate-x: 2.5");
+                img.setImage(profile_default);
+                img.setFitWidth(38);
+                img.setFitHeight(38);
+
+                pane.setTranslateY(20);
+                b.getChildren().add(amount);
+                c.getChildren().add(date);
+                hbox.getChildren().addAll(img, msg, b, pane, c);
+                HBox.setHgrow(pane, Priority.ALWAYS);
+
+
+
+            } catch (Exception e) {
+                ScreensFramework.logError.writeToFile(e.getMessage());
+            }
         }
     }
 

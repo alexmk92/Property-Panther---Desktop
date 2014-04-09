@@ -4,6 +4,8 @@ import javafx.application.Platform;
 import javafx.stage.Screen;
 import prcse.pp.controller.ScreensFramework;
 import prcse.pp.model.*;
+import prcse.pp.model.observer.PaymentStatus;
+
 import java.io.*;
 
 import java.sql.Connection;
@@ -134,13 +136,13 @@ public class Database implements Callable {
         if(objectsBuilt == false)
         {
             if(buildProperties()) { buildCount++; }
-            //buildTracking();
             //buildMessages();
             if(buildUsers()) { buildCount++; }
+            if(buildAllPayments()){ buildCount++; }
 
             // Check if all the objects have been built and return the correct
             // value.
-            if(buildCount >= 2) {
+            if(buildCount >= 3) {
                 objectsBuilt = true;
             } else {
                 objectsBuilt = false;
@@ -310,12 +312,43 @@ public class Database implements Callable {
             ResultSet res = query("SELECT * FROM payments WHERE user_id = " + user_id + " ORDER BY payment_received DESC FETCH NEXT " + amount_to_fetch + " ROWS ONLY");
 
             while(res.next()) {
-                Payment p = new Payment(res.getDouble("payment_amount"), res.getDate("payment_received"), res.getInt("payment_id"));
+                Payment p = new Payment(t, res.getDouble("payment_amount"), res.getDate("payment_received"), res.getInt("payment_id"),
+                                        res.getString("payment_status"), res.getString("reference_id"), res.getDate("payment_due"),
+                                        res.getInt("property_id"));
 
                 if(t.addPayment(p)){
                     paymentsBuilt = true;
                 }
             }
+        } catch (SQLException e) {
+            ScreensFramework.logError.writeToFile("Error handling query: " + e.getMessage());
+            paymentsBuilt = false;
+        }
+
+        return paymentsBuilt;
+    }
+
+    /**
+     * Build all payments objects for the system
+     * @return true if all payments objects were built, else return false
+     */
+    public Boolean buildAllPayments(){
+
+        Boolean paymentsBuilt = false;
+
+        try {
+            // Make a connection to the database
+            ResultSet res = query("SELECT * FROM payments WHERE payment_status = 'PAID' ORDER BY payment_id DESC FETCH FIRST 20 ROWS ONLY");
+
+            while(res.next()) {
+                Tenant  t = ScreensFramework.tenants.getUserById(res.getInt("user_id"));
+                Payment p = new Payment(t, res.getDouble("payment_amount"), res.getDate("payment_received"), res.getInt("payment_id"),
+                        res.getString("payment_status"), res.getString("reference_id"), res.getDate("payment_due"),
+                        res.getInt("property_id"));
+
+                ScreensFramework.allPayments.add(p);
+            }
+            paymentsBuilt = true;
         } catch (SQLException e) {
             ScreensFramework.logError.writeToFile("Error handling query: " + e.getMessage());
             paymentsBuilt = false;

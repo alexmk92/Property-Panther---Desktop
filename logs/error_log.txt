@@ -7173,3 +7173,136 @@ ORA-12519, TNS:no appropriate service handler found
 08-Apr-2014 20:01: Index: 6, Size: 5
 08-Apr-2014 20:01: Index: 5, Size: 5
 08-Apr-2014 20:01: Index: 6, Size: 5
+09-Apr-2014 12:25: Error handling query: IO Error: The Network Adapter could not establish the connection
+09-Apr-2014 12:26: Index: 5, Size: 5
+09-Apr-2014 12:26: Index: 6, Size: 5
+09-Apr-2014 12:32: Index: 7, Size: 7
+09-Apr-2014 12:33: Index: 5, Size: 5
+09-Apr-2014 12:33: Index: 6, Size: 5
+09-Apr-2014 12:33: Index: 5, Size: 5
+09-Apr-2014 12:33: Index: 6, Size: 5
+09-Apr-2014 12:33: Index: 5, Size: 5
+09-Apr-2014 12:33: Index: 6, Size: 5
+09-Apr-2014 12:33: Index: 5, Size: 5
+09-Apr-2014 12:33: Index: 6, Size: 5
+09-Apr-2014 12:34: Index: 5, Size: 5
+09-Apr-2014 12:34: Index: 6, Size: 5
+09-Apr-2014 12:37: Index: 5, Size: 5
+09-Apr-2014 12:37: Index: 6, Size: 5
+09-Apr-2014 12:37: Index: 5, Size: 5
+09-Apr-2014 12:37: Index: 6, Size: 5
+09-Apr-2014 12:37: Index: 5, Size: 5
+09-Apr-2014 12:37: Index: 6, Size: 5
+09-Apr-2014 13:09: Error: ResultSet.next was not called
+09-Apr-2014 13:09: Error: ResultSet.next was not called
+09-Apr-2014 13:09: Error: ResultSet.next was not called
+09-Apr-2014 13:09: Error: ResultSet.next was not called
+09-Apr-2014 13:09: Index: 5, Size: 5
+09-Apr-2014 13:09: Index: 6, Size: 5
+09-Apr-2014 13:09: Error: ResultSet.next was not called
+09-Apr-2014 13:09: Error: ResultSet.next was not called
+09-Apr-2014 13:09: Error: ResultSet.next was not called
+09-Apr-2014 13:09: Error: ResultSet.next was not called
+09-Apr-2014 13:11: Error: ResultSet.next was not called
+09-Apr-2014 13:11: Error: ResultSet.next was not called
+09-Apr-2014 13:11: Error: ResultSet.next was not called
+09-Apr-2014 13:11: Error: ResultSet.next was not called
+09-Apr-2014 13:11: Index: 5, Size: 5
+09-Apr-2014 13:11: Index: 6, Size: 5
+09-Apr-2014 13:12: null
+09-Apr-2014 13:12: null
+09-Apr-2014 13:12: null
+09-Apr-2014 13:12: null
+09-Apr-2014 13:12: Error: ResultSet.next was not called
+09-Apr-2014 13:12: Index: 5, Size: 5
+09-Apr-2014 13:12: Index: 6, Size: 5
+09-Apr-2014 13:12: Error: ResultSet.next was not called
+09-Apr-2014 13:12: Error: ResultSet.next was not called
+09-Apr-2014 13:12: Error: ResultSet.next was not called
+09-Apr-2014 13:12: Error: ResultSet.next was not called
+09-Apr-2014 13:12: Error: ResultSet.next was not called
+09-Apr-2014 13:12: Index: 5, Size: 5
+09-Apr-2014 13:12: Index: 6, Size: 5
+09-Apr-2014 13:19: Index: 5, Size: 5
+09-Apr-2014 13:19: Index: 6, Size: 5
+09-Apr-2014 13:19: Index: 5, Size: 5
+09-Apr-2014 13:19: Index: 6, Size: 5
+09-Apr-2014 13:19: Index: 5, Size: 5
+09-Apr-2014 13:19: Index: 6, Size: 5
+09-Apr-2014 14:47: Index: 5, Size: 5
+09-Apr-2014 14:47: Index: 6, Size: 5
+09-Apr-2014 14:48: Index: 5, Size: 5
+09-Apr-2014 14:48: Index: 6, Size: 5
+09-Apr-2014 14:57: Index: 5, Size: 5
+09-Apr-2014 14:57: Index: 6, Size: 5
+09-Apr-2014 14:58: Index: 5, Size: 5
+09-Apr-2014 14:58: Index: 6, Size: 5
+09-Apr-2014 15:10: Index: 5, Size: 5
+09-Apr-2014 15:10: Index: 6, Size: 5
+09-Apr-2014 15:10: Index: 5, Size: 5
+09-Apr-2014 15:10: Index: 6, Size: 5
+09-Apr-2014 15:11: Index: 5, Size: 5
+09-Apr-2014 15:11: Index: 6, Size: 5
+09-Apr-2014 15:12: Index: 5, Size: 5
+09-Apr-2014 15:12: Index: 6, Size: 5
+09-Apr-2014 15:12: Index: 5, Size: 5
+09-Apr-2014 15:12: Index: 6, Size: 5
+09-Apr-2014 15:14: Index: 5, Size: 5
+09-Apr-2014 15:14: Index: 6, Size: 5
+09-Apr-2014 16:02: Index: 5, Size: 5
+09-Apr-2014 16:02: Index: 6, Size: 5
+09-Apr-2014 16:21: Index: 5, Size: 5
+09-Apr-2014 16:21: Index: 6, Size: 5
+09-Apr-2014 16:39: null
+09-Apr-2014 16:39: null
+09-Apr-2014 16:39: null
+09-Apr-2014 16:39: null
+09-Apr-2014 16:39: null
+09-Apr-2014 16:39: null
+09-Apr-2014 16:39: null
+09-Apr-2014 16:39: null
+09-Apr-2014 16:39: null
+09-Apr-2014 16:39: null
+09-Apr-2014 16:39: null
+09-Apr-2014 16:39: null
+09-Apr-2014 16:39: null
+09-Apr-2014 16:39: null
+09-Apr-2014 16:39: null
+09-Apr-2014 16:39: null
+09-Apr-2014 16:40: null
+09-Apr-2014 16:40: null
+09-Apr-2014 16:40: null
+09-Apr-2014 16:40: null
+09-Apr-2014 16:40: null
+09-Apr-2014 16:40: null
+09-Apr-2014 16:40: null
+09-Apr-2014 16:40: null
+09-Apr-2014 16:40: null
+09-Apr-2014 16:40: null
+09-Apr-2014 16:40: null
+09-Apr-2014 16:40: null
+09-Apr-2014 16:40: null
+09-Apr-2014 16:40: null
+09-Apr-2014 16:41: Index: 5, Size: 5
+09-Apr-2014 16:41: Index: 6, Size: 5
+09-Apr-2014 16:41: Index: 5, Size: 5
+09-Apr-2014 16:41: Index: 6, Size: 5
+09-Apr-2014 17:38: Index: 5, Size: 5
+09-Apr-2014 17:38: Index: 6, Size: 5
+09-Apr-2014 17:44: Index: 5, Size: 5
+09-Apr-2014 17:44: Index: 6, Size: 5
+09-Apr-2014 17:57: Error: null
+09-Apr-2014 17:57: Error: null
+09-Apr-2014 17:57: Error: null
+09-Apr-2014 17:57: Error: null
+09-Apr-2014 17:58: Error: null
+09-Apr-2014 17:58: Error: null
+09-Apr-2014 17:58: Error: null
+09-Apr-2014 17:58: Error: null
+09-Apr-2014 17:58: Error: null
+09-Apr-2014 17:58: Error: null
+09-Apr-2014 17:58: Error: null
+09-Apr-2014 17:58: Error: null
+09-Apr-2014 17:58: Error: null
+09-Apr-2014 17:58: Error: null
+09-Apr-2014 17:58: Error: null

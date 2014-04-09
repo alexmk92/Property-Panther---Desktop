@@ -67,7 +67,57 @@
 <font>
 <Font size="14.0" />
 </font></Label>
-                </children></Pane>
+                </children></Pane><Pane fx:id="detailsWrap" layoutX="1.0" layoutY="40.0" prefHeight="252.0" prefWidth="591.0" styleClass="dark-bg">
+<children><Label layoutX="25.0" layoutY="14.0" prefHeight="17.0" prefWidth="460.0" text="Payment Details:" textFill="WHITE">
+<font>
+<Font size="20.0" />
+</font></Label><Pane layoutX="25.0" layoutY="52.0" prefHeight="173.0" prefWidth="541.0" styleClass="holo">
+<children><Label fx:id="lblAmount" layoutX="169.0" layoutY="125.0" text="£300" textFill="#96ca2e" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font name="System Bold" size="16.0" />
+</font>
+</Label><Label layoutX="56.0" layoutY="61.0" text="Payment Due :" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+</Label><Label layoutX="22.0" layoutY="94.0" text="Payment Received :" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+</Label><Label fx:id="lblCurrStatus" alignment="CENTER" layoutY="14.0" prefHeight="30.0" prefWidth="541.0" text="PENDING" textFill="#f92673">
+<font>
+<Font name="System Bold" size="20.0" />
+</font></Label><Label layoutX="94.0" layoutY="125.0" text="Amount :" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+</Label><Label layoutX="303.0" layoutY="61.0" text="Payee :" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+</Label><Label layoutX="286.0" layoutY="94.0" prefHeight="25.0" prefWidth="76.0" text="Property :" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+</Label><Label fx:id="lblPayee" layoutX="365.0" layoutY="61.0" text="Adam Stevenson" textFill="#66d9ef" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+</Label><Label fx:id="lblAddress" layoutX="365.0" layoutY="94.0" text="PL49JS" textFill="#66d9ef" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+</Label><Label fx:id="lblDue" layoutX="169.0" layoutY="61.0" text="31/11/2014" textFill="#66d9ef" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+</Label><Label fx:id="lblPaid" layoutX="169.0" layoutY="94.0" text="31/11/2014" textFill="#66d9ef" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+</Label>
+</children></Pane><Button fx:id="btnCloseDetails" layoutX="568.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="18.0" prefWidth="18.0" styleClass="button_close" text="Button" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+</children></Pane>
             </children>
         </Pane>
         <Pane fx:id="searchWrap" layoutX="-87.0" layoutY="236.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">

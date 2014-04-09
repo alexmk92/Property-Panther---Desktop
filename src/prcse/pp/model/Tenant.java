@@ -93,6 +93,22 @@ public class Tenant extends Person implements Serializable {
     }
 
     /**
+     * Returns the full address as a string
+     */
+    public String getAddress() {
+        String address = "";
+
+        // Check the format
+        if(addr_line_2 != null){
+            address = getAddr_line_1() + ",\n" + getAddr_line_2() + ",\n" + getPostcode();
+        } else {
+            address = getAddr_line_1() + ",\n" + getPostcode();
+        }
+
+        return address;
+    }
+
+    /**
      * Returns the size of the payments array
      */
     public int numOfPayments() {

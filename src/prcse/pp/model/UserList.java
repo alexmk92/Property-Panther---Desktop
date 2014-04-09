@@ -64,6 +64,25 @@ public class UserList {
     }
 
     /**
+     * Returns the user based on their ID
+     * @return the user with the requested id
+     */
+    public Tenant getUserById(int userId){
+        Tenant result = null;
+
+        // Check to see we have the right user
+        if(userId >= 0){
+            for(int i = 0; i < tenantList.size(); i++){
+                if(this.getUserAt(i).getUserId() == userId){
+                    result = this.getUserAt(i);
+                }
+            }
+        }
+
+        return result;
+    }
+
+    /**
      * This method creates a string array containing all the names of the current
      * Tenant Objects in the format "forename surname" -- MAY CHANGE THIS LATER
      * @return A String array of Tenant names.

@@ -14,6 +14,9 @@ import javafx.scene.layout.Priority;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import prcse.pp.controller.PaymentsController;
+import prcse.pp.controller.ScreensFramework;
+import prcse.pp.model.Payment;
 
 /**
  * Created with IntelliJ IDEA.
@@ -32,27 +35,31 @@ public class PaymentFeedCell extends ListCell<String> {
     String lastItem;
 
 
-    public PaymentFeedCell() {
+    public PaymentFeedCell(int index, PaymentsController controller) {
         super();
 
-        Text total = new Text("350");
-        Label paid = new Label("£" + total.getText());
-        paid.setStyle("-fx-text-fill: #a6e22e !important; -fx-font-family: 'Open Sans Light'; -fx-font-size: 15px");
-        paid.setLayoutX(-200);
-        Label datePaid = new Label(" 3 days ago");
-        datePaid.setStyle("-fx-text-fill: #fff !important; -fx-font-family: 'Open Sans Light'; -fx-font-size: 15px");
-        Label amount = new Label("paid ");
-        amount.setStyle("-fx-text-fill: #fff !important; -fx-font-family: 'Open Sans Light'; -fx-font-size: 15px");
+        if(index < ScreensFramework.allPayments.size()) {
+            Payment thisPayment = ScreensFramework.allPayments.get(index);
 
-        Glow g = new Glow(0.1);
-        label.setEffect(g);
-        label.setStyle("-fx-text-fill: #71cee5; -fx-translate-x: 10; -fx-translate-y: 3");
-        img.setStyle("-fx-translate-y: 7; -fx-translate-x: -2");
-        img.setImage(profile_default);
-        desc.getChildren().addAll(amount, paid, datePaid);
-        desc.setStyle("-fx-translate-x: -110; -fx-translate-y: 25");
-        hbox.getChildren().addAll(img, label, pane, desc);
-        HBox.setHgrow(pane, Priority.ALWAYS);
+
+            Label paid = new Label(thisPayment.getAmount());
+            paid.setStyle("-fx-text-fill: #a6e22e !important; -fx-font-family: 'Open Sans Light'; -fx-font-size: 15px");
+            paid.setLayoutX(-200);
+            Label datePaid = new Label(" on " + thisPayment.getDateAsString());
+            datePaid.setStyle("-fx-text-fill: #fff !important; -fx-font-family: 'Open Sans Light'; -fx-font-size: 15px");
+            Label amount = new Label("paid ");
+            amount.setStyle("-fx-text-fill: #fff !important; -fx-font-family: 'Open Sans Light'; -fx-font-size: 15px");
+
+            Glow g = new Glow(0.1);
+            label.setEffect(g);
+            label.setStyle("-fx-text-fill: #71cee5; -fx-translate-x: 10; -fx-translate-y: 1");
+            img.setStyle("-fx-translate-y: 4; -fx-translate-x: -2");
+            img.setImage(profile_default);
+            desc.getChildren().addAll(amount, paid, datePaid);
+            desc.setStyle("-fx-translate-x: -60; -fx-translate-y: 22");
+            hbox.getChildren().addAll(img, label, pane, desc);
+            HBox.setHgrow(pane, Priority.ALWAYS);
+        }
     }
 
 
