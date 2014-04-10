@@ -413,3 +413,20 @@
 10-Apr-2014 20:40: Connected to database
 10-Apr-2014 20:41: I am removing from index 0
 10-Apr-2014 20:41: I am removing from index 0
+10-Apr-2014 20:47: Connected to database
+10-Apr-2014 20:49: Connected to database
+10-Apr-2014 20:51: Connected to database
+10-Apr-2014 20:54: Connected to database
+10-Apr-2014 20:59: Connected to database
+10-Apr-2014 21:01: Connected to database
+10-Apr-2014 21:02: Connected to database
+10-Apr-2014 21:05: Connected to database
+10-Apr-2014 21:07: Connected to database
+10-Apr-2014 21:08: Connected to database
+10-Apr-2014 21:09: Connected to database
+10-Apr-2014 21:10: Connected to database
+10-Apr-2014 21:10: Connected to database
+10-Apr-2014 21:12: Connected to database
+10-Apr-2014 21:28: Connected to database
+10-Apr-2014 21:28: Connection already open.
+10-Apr-2014 21:28: Connection already open.

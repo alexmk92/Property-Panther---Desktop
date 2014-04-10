@@ -7,6 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
+import javafx.scene.text.TextAlignment;
 import prcse.pp.controller.MessagesController;
 import prcse.pp.model.Message;
 import prcse.pp.controller.ScreensFramework;
@@ -48,9 +49,9 @@ public class MessageCell extends ListCell<String> {
                 thisMessage = list.get(index);
 
                 // Format the message style
-                msg.setStyle("-fx-text-fill: #ffffff; -fx-font-size: 14px; -fx-font-family: 'Open Sans Light'; -fx-label-padding: 5px; -fx-translate-x: 30; -fx-translate-y: 4 !important");
+                msg.setStyle("-fx-text-fill: #ffffff; -fx-font-size: 14px; -fx-font-family: 'Open Sans Light'; -fx-label-padding: 5px; -fx-translate-x: 30; -fx-translate-y: 7 !important");
 
-                date.setStyle("-fx-text-fill: #fff !important; -fx-font-family: Helvetica; -fx-font-size: 14px; -fx-font-weight: bold; -fx-alignment: center-right; -fx-translate-x: -40");
+                date.setStyle("-fx-text-fill: #fff !important; -fx-font-family: Helvetica; -fx-font-size: 14px; -fx-font-weight: bold; -fx-alignment: center-right; -fx-translate-x: -30");
 
 
                 // Set the type label
@@ -73,12 +74,13 @@ public class MessageCell extends ListCell<String> {
                     break;
                 }
 
+                type.setTextAlignment(TextAlignment.CENTER);
                 date.setText(thisMessage.getDateAsString(thisMessage.getDate()));
 
 
                 // Set the panel alignmentss
                 b.setStyle("-fx-translate-y: 8.5; -fx-translate-x: 20");
-                c.setStyle("-fx-translate-y: 8.5;");
+                c.setStyle("-fx-translate-y: 11;");
 
                 // Set img styles
                 img.setStyle("-fx-translate-y: 15; -fx-translate-x: 4");

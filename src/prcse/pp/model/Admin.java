@@ -143,13 +143,13 @@ public class Admin extends Person implements Serializable {
      * Gets the amount of read messages in the box
      * @return amount - the Amount of read messages
      */
-    public int totalRead(ArrayList<Message> n) {
+    public int totalRead() {
         int read = 0;
 
         // Increment read by 1 for each positive value
-        for(int i = 0; i < n.size(); i++){
-            Message m = n.get(i);
-            if(m.getRead() != 0){
+        for(int i = 0; i < this.inbox.size(); i++){
+            Message m = this.inbox.get(i);
+            if(m.getRead() == 1){
                 read++;
             }
         }

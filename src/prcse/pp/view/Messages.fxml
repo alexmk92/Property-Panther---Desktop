@@ -121,9 +121,9 @@
 </Rectangle><Rectangle fill="#4c5c70" height="1.0" layoutX="252.0" layoutY="90.0" stroke="TRANSPARENT" strokeType="INSIDE" width="949.0" /><Rectangle fill="#00000090" height="1.0" layoutX="252.0" layoutY="89.0" stroke="TRANSPARENT" strokeType="INSIDE" width="948.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label id="lbl_title" fx:id="title" layoutX="274.0" layoutY="19.0" styleClass="title" text="Messages" textFill="#72cee5">
 <font>
 <Font name="Open Sans Light" size="40.0" />
-</font></Label><Pane layoutX="1214.0" layoutY="108.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+</font></Label><Pane fx:id="widget_top_right" layoutX="1214.0" layoutY="108.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <children>
-<Pane fx:id="widget_top_right" prefHeight="40.0" prefWidth="281.0" styleClass="header">
+<Pane prefHeight="40.0" prefWidth="281.0" styleClass="header">
 <children>
 <Label layoutX="14.0" layoutY="9.0" styleClass="header_title" text="Actions" textFill="WHITE">
 <font>
@@ -150,9 +150,9 @@
 </children>
 </Pane>
 </children>
-</Pane><Pane layoutX="894.0" layoutY="736.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+</Pane><Pane fx:id="widget_bottom_right" layoutX="894.0" layoutY="736.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <children>
-<Pane fx:id="widget_bottom_right" layoutY="40.0" prefHeight="320.0" prefWidth="281.0" styleClass="window">
+<Pane layoutY="40.0" prefHeight="320.0" prefWidth="281.0" styleClass="window">
 <children>
 <Label layoutX="23.0" layoutY="20.0" styleClass="search_labels" text="Search by message type" textFill="WHITE">
 <font>

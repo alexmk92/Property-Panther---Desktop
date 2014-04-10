@@ -150,6 +150,7 @@ public class MessagesController implements Initializable, ControlledScreen {
 
     // Index to bind custom cell controls to the listview cell
     private int index = 0;
+    private int unread = 0;
 
     // Allows us to load the next 25 results on clicking "load more"
     private int amount = 20;
@@ -182,6 +183,7 @@ public class MessagesController implements Initializable, ControlledScreen {
         body.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
+                animateIn();
                 populateMessageList();
                 resetStyles();
             }
@@ -488,9 +490,13 @@ public class MessagesController implements Initializable, ControlledScreen {
         ArrayList<Message> thisBox;
         if(usingInbox == true) {
             thisBox = sessionUser.getInbox();
+            unread = sessionUser.totalRead();
         } else {
             thisBox = sessionUser.getSentBox();
         }
+
+
+        System.out.println(unread);
 
         // Refresh the lists contents to null
         lstMessages.setItems(null);
@@ -526,10 +532,18 @@ public class MessagesController implements Initializable, ControlledScreen {
 
         // Loop through the session holders Message array and create a listview item
         for(int i = 0; i < messagesArray.size(); i++) {
-            String message = messagesArray.get(i).getMessage();
+
+            String thisMessage;
+
+            if(messagesArray.get(i).getMessage().length() > 45) {
+                // Only get the first 70 character
+                thisMessage = messagesArray.get(i).getMessage().substring(0, 45) + "...";
+            } else {
+                thisMessage = messagesArray.get(i).getMessage();
+            }
 
             // Add to observable
-            messages.add(message);
+            messages.add(thisMessage);
         }
 
         return messages;
@@ -688,13 +702,12 @@ public class MessagesController implements Initializable, ControlledScreen {
                     }
 
                     // Animate the scene
-                    //animateOut();
-                    //Thread.sleep(300);
+                    animateOut();
+                    Thread.sleep(300);
                 } catch(Exception e )
                 {
                     System.out.println("There was an error handling the animation...");
                 }
-                // Stop the refresh thread
 
                 // Go to our view.
                 myController.setScreen(ID);
