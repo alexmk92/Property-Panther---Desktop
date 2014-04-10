@@ -6,13 +6,13 @@ import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
@@ -23,11 +23,14 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
+import javafx.util.Callback;
 import javafx.util.Duration;
-import prcse.pp.model.Tenant;
-import prcse.pp.model.UserList;
+import prcse.pp.model.*;
+import prcse.pp.view.MessageCell;
+import prcse.pp.view.PaymentCell;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 /**
@@ -125,6 +128,10 @@ public class MessagesController implements Initializable, ControlledScreen {
     private Pane widget_bottom_right;
     @FXML // fx:id="widget_top_right"
     private Pane widget_top_right;
+    @FXML // fx:id="lstMessages"
+    private ListView lstMessages;
+    @FXML // fx:id="lblNew"
+    private Label lblNew;
 
 
     // Set variables to allow for draggable window.
@@ -133,6 +140,19 @@ public class MessagesController implements Initializable, ControlledScreen {
 
     private boolean usersHidden = true;
     ScreensController myController;
+
+    // Reference to this controller for the cell factory
+    private MessagesController controller = this;
+    private Admin sessionUser;
+
+    // Toggles if we are currently using the Inbox or Sentbox (True = inbox, False = sentbox)
+    private Boolean usingInbox = true;
+
+    // Index to bind custom cell controls to the listview cell
+    private int index = 0;
+
+    // Allows us to load the next 25 results on clicking "load more"
+    private int amount = 20;
 
     /**
      * Initializes the controller class.
@@ -157,6 +177,13 @@ public class MessagesController implements Initializable, ControlledScreen {
             public void handle(MouseEvent event) {
                 draggable.getScene().getWindow().setX(event.getScreenX() - xOffset);
                 draggable.getScene().getWindow().setY(event.getScreenY() - yOffset);
+            }
+        });
+        body.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                populateMessageList();
+                resetStyles();
             }
         });
 
@@ -438,6 +465,76 @@ public class MessagesController implements Initializable, ControlledScreen {
 
     }
 
+
+    /******************************************************
+     *                  CONTROL METHODS
+     *****************************************************/
+    /**
+     * Populates the payment ListView
+     */
+    public void populateMessageList() {
+
+        // Get the sessionUser
+        sessionUser = ScreensFramework.loggedIn;
+
+        // Zero the index each time the list view is repopulated to
+        // bind to the correct button
+        index = 0;
+
+        // Increment the amount of messages to retrieve by 5 (if we wish to query further)
+        amount = amount + 5;
+
+        // Check which mail box view we are using
+        ArrayList<Message> thisBox;
+        if(usingInbox == true) {
+            thisBox = sessionUser.getInbox();
+        } else {
+            thisBox = sessionUser.getSentBox();
+        }
+
+        // Refresh the lists contents to null
+        lstMessages.setItems(null);
+
+        // Observable list containing items to add
+        ObservableList payments = populateObservable(thisBox);
+
+        // Set the items returned by populateObservable(T);
+        lstMessages.setItems(payments);
+        lstMessages.setFixedCellSize(50);
+
+        // Use a cell factory for custom styling
+        lstMessages.setCellFactory(new Callback<ListView, ListCell>() {
+            @Override
+            public ListCell call(ListView listView) {
+                MessageCell pCell = new MessageCell(index, controller, thisBox);
+                pCell.getStyleClass().add("lineBottom");
+                index++;
+                return pCell;
+            }
+        });
+    }
+
+    /**
+     * Populates an observable list, this needs to be seperated into
+     * its own method to allow for the list to be refreshed from the
+     * cellfactory
+     * @return an observable array of objects to populate the list
+     */
+    public ObservableList populateObservable(ArrayList<Message> messagesArray) {
+
+        ObservableList messages = FXCollections.observableArrayList();
+
+        // Loop through the session holders Message array and create a listview item
+        for(int i = 0; i < messagesArray.size(); i++) {
+            String message = messagesArray.get(i).getMessage();
+
+            // Add to observable
+            messages.add(message);
+        }
+
+        return messages;
+    }
+
     /******************************************************
      *                ANIMATION CONTROLS
      ******************************************************/
@@ -536,17 +633,121 @@ public class MessagesController implements Initializable, ControlledScreen {
         usersHidden = true;
     }
 
+    /**
+     * Animates the scene out on a new Thread to allow the animation to play through without being
+     * interrupted by the main thread, styles are applied to show the new active button
+     */
+    private void nextForm(final String ID)
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    clearStyles();
+                    switch(ID) {
+                        case "Dashboard":
+                            nav_bg1.getStyleClass().addAll("active");
+                            nav_icon1.getStyleClass().add("active");
+                            accent1.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Tenant":
+                            nav_bg2.getStyleClass().addAll("active");
+                            nav_icon2.getStyleClass().add("active");
+                            accent2.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Properties":
+                            nav_bg3.getStyleClass().addAll("active");
+                            nav_icon3.getStyleClass().add("active");
+                            accent3.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Payments":
+                            nav_bg4.getStyleClass().addAll("active");
+                            nav_icon4.getStyleClass().add("active");
+                            accent4.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Messages":
+                            nav_bg5.getStyleClass().addAll("active");
+                            nav_icon5.getStyleClass().add("active");
+                            accent5.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Settings":
+                            nav_bg6.getStyleClass().addAll("active");
+                            nav_icon6.getStyleClass().add("active");
+                            accent6.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Add Tenant":
+                            nav_bg2.getStyleClass().addAll("active");
+                            nav_icon2.getStyleClass().add("active");
+                            accent2.getStyleClass().addAll("active", "show");
+                            break;
+                        case "View Tenant":
+                            nav_bg2.getStyleClass().addAll("active");
+                            nav_icon2.getStyleClass().add("active");
+                            accent2.getStyleClass().addAll("active", "show");
+                            break;
+                    }
+
+                    // Animate the scene
+                    //animateOut();
+                    //Thread.sleep(300);
+                } catch(Exception e )
+                {
+                    System.out.println("There was an error handling the animation...");
+                }
+                // Stop the refresh thread
+
+                // Go to our view.
+                myController.setScreen(ID);
+            }
+        }).start();
+    }
+
+    /**
+     * Clears the styles on the current button
+     */
+    private void clearStyles()
+    {
+        // Active state for this window
+        nav_icon5.getStyleClass().remove("active");
+        nav_bg5.getStyleClass().remove("active");
+        accent5.getStyleClass().remove("show");
+    }
+
+    /**
+     * Reset the navigation styles to make this current window the active one, if we don't call this method
+     * then the next time we load this window form the HashMap, the wrong active state shall be applied
+     */
+    private void resetStyles()
+    {
+        // Active state for this window
+        nav_icon5.getStyleClass().add("active");
+        nav_bg5.getStyleClass().add("active");
+        accent5.getStyleClass().addAll("active", "show");
+
+        // Default styles for every other nav element
+        nav_icon4.getStyleClass().remove("active");
+        accent4.getStyleClass().removeAll("active", "show");
+        nav_bg4.getStyleClass().remove("active");
+        nav_icon2.getStyleClass().remove("active");
+        accent2.getStyleClass().removeAll("active", "show");
+        nav_bg2.getStyleClass().remove("active");
+        nav_icon3.getStyleClass().remove("active");
+        accent3.getStyleClass().removeAll("active", "show");
+        nav_bg3.getStyleClass().remove("active");
+        nav_icon5.getStyleClass().remove("active");
+        accent5.getStyleClass().removeAll("active", "show");
+        nav_bg5.getStyleClass().remove("active");
+        nav_icon6.getStyleClass().remove("active");
+        accent6.getStyleClass().removeAll("active", "show");
+        nav_bg6.getStyleClass().remove("active");
+
+    }
+
     /******************************************************
      *              LOAD NEW SCREEN METHODS
      ******************************************************/
     public void setScreenParent(ScreensController screenParent){
         myController = screenParent;
-    }
-
-    @FXML
-    private void goToDashboard(ActionEvent event){
-        hideUsers();
-        myController.setScreen(ScreensFramework.screen1ID);
     }
 
     /**
@@ -590,53 +791,53 @@ public class MessagesController implements Initializable, ControlledScreen {
             if(results.size() > 1)
             {
                 hideUsers();
-                myController.setScreen(ScreensFramework.screen2ID);
+                nextForm(ScreensFramework.screen2ID);
             }
             // Is there only one user with that name?
             else if(results.size() == 1) {
                 Tenant t = results.getUserAt(0);
                 s.setTenant(t);
                 hideUsers();
-                myController.setScreen(ScreensFramework.screen8ID);
+                nextForm(ScreensFramework.screen8ID);
             } else {
                 hideUsers();
-                myController.setScreen(ScreensFramework.screen2ID);
+                nextForm(ScreensFramework.screen2ID);
             }
         } else {
             s.setSearchedUsers(ScreensFramework.tenants);
             hideUsers();
-            myController.setScreen(ScreensFramework.screen2ID);
+            nextForm(ScreensFramework.screen2ID);
         }
     }
 
     @FXML
+    private void goToDashboard(ActionEvent event){
+        hideUsers();
+        nextForm(ScreensFramework.screen1ID);
+    }
+    @FXML
     private void goToProperties(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen3ID);
+        nextForm(ScreensFramework.screen3ID);
     }
     @FXML
     private void goToPayments(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen4ID);
-    }
-    @FXML
-    private void goToMessages(ActionEvent event){
-        hideUsers();
-        myController.setScreen(ScreensFramework.screen5ID);
+        nextForm(ScreensFramework.screen4ID);
     }
     @FXML
     private void goToSettings(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen6ID);
+        nextForm(ScreensFramework.screen6ID);
     }
     @FXML
     private void goToAddUser(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen7ID);
+        nextForm(ScreensFramework.screen7ID);
     }
     @FXML
     private void goToAllUsers(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen2ID);
+        nextForm(ScreensFramework.screen2ID);
     }
 }

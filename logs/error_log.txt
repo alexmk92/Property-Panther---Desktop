@@ -7306,3 +7306,243 @@ ORA-12519, TNS:no appropriate service handler found
 09-Apr-2014 17:58: Error: null
 09-Apr-2014 17:58: Error: null
 09-Apr-2014 17:58: Error: null
+10-Apr-2014 18:07: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:07: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:11: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:11: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:11: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:11: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:15: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:15: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:16: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:16: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:19: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:19: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:22: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:22: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:29: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:29: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:32: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:32: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:34: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:34: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:34: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:34: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:34: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:34: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:34: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:34: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:34: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:34: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:34: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:34: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:34: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:34: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:34: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:34: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:36: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:36: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:36: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:36: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:36: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:37: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:39: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:41: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:41: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:41: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:41: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:41: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:41: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:41: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:41: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:42: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:42: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:45: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:45: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:45: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:45: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:45: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 18:45: Error handling operation: ORA-00933: SQL command not properly ended
+
+10-Apr-2014 19:19: Cannot format given Object as a Date
+10-Apr-2014 19:19: Cannot format given Object as a Date
+10-Apr-2014 19:19: Cannot format given Object as a Date
+10-Apr-2014 19:19: Cannot format given Object as a Date
+10-Apr-2014 19:19: Cannot format given Object as a Date
+10-Apr-2014 19:19: Cannot format given Object as a Date
+10-Apr-2014 19:19: Cannot format given Object as a Date
+10-Apr-2014 19:19: Cannot format given Object as a Date
+10-Apr-2014 19:19: Cannot format given Object as a Date
+10-Apr-2014 19:19: Cannot format given Object as a Date
+10-Apr-2014 19:19: Cannot format given Object as a Date
+10-Apr-2014 19:19: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:20: Cannot format given Object as a Date
+10-Apr-2014 19:21: Cannot format given Object as a Date
+10-Apr-2014 19:21: Cannot format given Object as a Date
+10-Apr-2014 19:21: Cannot format given Object as a Date
+10-Apr-2014 19:21: Cannot format given Object as a Date
+10-Apr-2014 19:21: Cannot format given Object as a Date
+10-Apr-2014 19:21: Cannot format given Object as a Date
+10-Apr-2014 19:21: Cannot format given Object as a Date
+10-Apr-2014 19:21: Cannot format given Object as a Date
+10-Apr-2014 19:21: Cannot format given Object as a Date
+10-Apr-2014 19:21: Cannot format given Object as a Date
+10-Apr-2014 19:21: Cannot format given Object as a Date
+10-Apr-2014 19:21: Cannot format given Object as a Date
+10-Apr-2014 19:52: Index: 1, Size: 1
+10-Apr-2014 19:52: Index: 2, Size: 1
+10-Apr-2014 19:52: Index: 3, Size: 1
+10-Apr-2014 19:52: Index: 1, Size: 1
+10-Apr-2014 19:52: Index: 2, Size: 1
+10-Apr-2014 19:52: Index: 3, Size: 1
+10-Apr-2014 19:52: Index: 0, Size: 0
+10-Apr-2014 19:52: Index: 1, Size: 0
+10-Apr-2014 19:52: Index: 2, Size: 0
+10-Apr-2014 19:52: Index: 3, Size: 0
+10-Apr-2014 19:52: Index: 0, Size: 0
+10-Apr-2014 19:52: Index: 1, Size: 0
+10-Apr-2014 19:52: Index: 2, Size: 0
+10-Apr-2014 19:52: Index: 3, Size: 0
+10-Apr-2014 19:52: Index: 1, Size: 1
+10-Apr-2014 19:52: Index: 2, Size: 1
+10-Apr-2014 19:52: Index: 3, Size: 1
+10-Apr-2014 19:52: Index: 2, Size: 2
+10-Apr-2014 19:52: Index: 3, Size: 2
+10-Apr-2014 19:52: Index: 2, Size: 2
+10-Apr-2014 19:52: Index: 3, Size: 2
+10-Apr-2014 19:53: Index: 2, Size: 2
+10-Apr-2014 19:53: Index: 3, Size: 2
+10-Apr-2014 20:27: Error handling operation: ORA-01858: a non-numeric character was found where a numeric was expected
+
+10-Apr-2014 20:27: null
+10-Apr-2014 20:27: Index: 1, Size: 1
+10-Apr-2014 20:27: Index: 2, Size: 1
+10-Apr-2014 20:27: Index: 3, Size: 1
+10-Apr-2014 20:27: null
+10-Apr-2014 20:27: Index: 1, Size: 1
+10-Apr-2014 20:27: Index: 2, Size: 1
+10-Apr-2014 20:27: Index: 3, Size: 1
+10-Apr-2014 20:30: Error handling operation: ORA-01858: a non-numeric character was found where a numeric was expected
+
+10-Apr-2014 20:30: null
+10-Apr-2014 20:30: Index: 1, Size: 1
+10-Apr-2014 20:30: Index: 2, Size: 1
+10-Apr-2014 20:30: Index: 3, Size: 1
+10-Apr-2014 20:36: Error handling operation: ORA-01858: a non-numeric character was found where a numeric was expected
+
+10-Apr-2014 20:36: Index: 1, Size: 1
+10-Apr-2014 20:36: Index: 2, Size: 1
+10-Apr-2014 20:36: Index: 3, Size: 1
+10-Apr-2014 20:38: Error handling operation: ORA-01858: a non-numeric character was found where a numeric was expected
+
+10-Apr-2014 20:38: Index: 1, Size: 1
+10-Apr-2014 20:38: Index: 2, Size: 1
+10-Apr-2014 20:38: Index: 3, Size: 1
+10-Apr-2014 20:38: Error handling operation: ORA-01858: a non-numeric character was found where a numeric was expected
+
+10-Apr-2014 20:38: Index: 2, Size: 2
+10-Apr-2014 20:38: Index: 3, Size: 2
+10-Apr-2014 20:38: Index: 1, Size: 1
+10-Apr-2014 20:38: Index: 2, Size: 1
+10-Apr-2014 20:38: Index: 3, Size: 1
+10-Apr-2014 20:38: Index: 0, Size: 0
+10-Apr-2014 20:38: Index: 1, Size: 0
+10-Apr-2014 20:38: Index: 2, Size: 0
+10-Apr-2014 20:38: Index: 3, Size: 0
+10-Apr-2014 20:38: Error handling operation: ORA-01858: a non-numeric character was found where a numeric was expected
+
+10-Apr-2014 20:38: Index: 1, Size: 1
+10-Apr-2014 20:38: Index: 2, Size: 1
+10-Apr-2014 20:38: Index: 3, Size: 1
+10-Apr-2014 20:40: Error handling operation: ORA-01858: a non-numeric character was found where a numeric was expected
+
+10-Apr-2014 20:40: Index: 1, Size: 1
+10-Apr-2014 20:40: Index: 2, Size: 1
+10-Apr-2014 20:40: Index: 3, Size: 1
+10-Apr-2014 20:40: Index: 1, Size: 1
+10-Apr-2014 20:40: Index: 2, Size: 1
+10-Apr-2014 20:40: Index: 3, Size: 1
+10-Apr-2014 20:41: Index: 0, Size: 0
+10-Apr-2014 20:41: Index: 1, Size: 0
+10-Apr-2014 20:41: Index: 2, Size: 0
+10-Apr-2014 20:41: Index: 3, Size: 0
+10-Apr-2014 20:41: Index: 1, Size: 1
+10-Apr-2014 20:41: Index: 2, Size: 1
+10-Apr-2014 20:41: Index: 3, Size: 1
+10-Apr-2014 20:41: Index: 0, Size: 0
+10-Apr-2014 20:41: Index: 1, Size: 0
+10-Apr-2014 20:41: Index: 2, Size: 0
+10-Apr-2014 20:41: Index: 3, Size: 0

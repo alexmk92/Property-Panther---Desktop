@@ -350,3 +350,66 @@
 09-Apr-2014 18:58: Connected to database
 09-Apr-2014 19:04: Connected to database
 09-Apr-2014 19:05: Connected to database
+10-Apr-2014 13:50: Connected to database
+10-Apr-2014 13:57: Connected to database
+10-Apr-2014 13:58: Connected to database
+10-Apr-2014 14:01: Connected to database
+10-Apr-2014 14:05: Connected to database
+10-Apr-2014 14:10: Connected to database
+10-Apr-2014 14:11: Connected to database
+10-Apr-2014 14:13: Connected to database
+10-Apr-2014 15:50: Connected to database
+10-Apr-2014 18:07: Connected to database
+10-Apr-2014 18:11: Connected to database
+10-Apr-2014 18:11: Connected to database
+10-Apr-2014 18:14: Connected to database
+10-Apr-2014 18:16: Connected to database
+10-Apr-2014 18:18: Connected to database
+10-Apr-2014 18:21: Connected to database
+10-Apr-2014 18:26: Connected to database
+10-Apr-2014 18:27: Connected to database
+10-Apr-2014 18:29: Connected to database
+10-Apr-2014 18:32: Connected to database
+10-Apr-2014 18:34: Connected to database
+10-Apr-2014 18:35: Connected to database
+10-Apr-2014 18:40: Connected to database
+10-Apr-2014 18:41: Connected to database
+10-Apr-2014 18:41: Connected to database
+10-Apr-2014 18:44: Connected to database
+10-Apr-2014 18:45: Connected to database
+10-Apr-2014 18:47: Connected to database
+10-Apr-2014 18:54: Connected to database
+10-Apr-2014 18:55: Connected to database
+10-Apr-2014 18:57: Connected to database
+10-Apr-2014 19:09: Connected to database
+10-Apr-2014 19:11: Connected to database
+10-Apr-2014 19:12: Connected to database
+10-Apr-2014 19:14: Connected to database
+10-Apr-2014 19:15: Connected to database
+10-Apr-2014 19:19: Connected to database
+10-Apr-2014 19:19: Connected to database
+10-Apr-2014 19:20: Connected to database
+10-Apr-2014 19:21: Connected to database
+10-Apr-2014 19:22: Connected to database
+10-Apr-2014 19:26: Connected to database
+10-Apr-2014 19:26: Connection already open.
+10-Apr-2014 19:27: Connected to database
+10-Apr-2014 19:52: I am removing from index 0
+10-Apr-2014 20:07: Connected to database
+10-Apr-2014 20:19: Connected to database
+10-Apr-2014 20:20: Connected to database
+10-Apr-2014 20:22: Connected to database
+10-Apr-2014 20:23: Connected to database
+10-Apr-2014 20:23: Connected to database
+10-Apr-2014 20:26: Connected to database
+10-Apr-2014 20:27: Connected to database
+10-Apr-2014 20:29: Connected to database
+10-Apr-2014 20:30: Connected to database
+10-Apr-2014 20:36: Connected to database
+10-Apr-2014 20:37: Connected to database
+10-Apr-2014 20:38: I am removing from index 0
+10-Apr-2014 20:38: I am removing from index 0
+10-Apr-2014 20:38: Connected to database
+10-Apr-2014 20:40: Connected to database
+10-Apr-2014 20:41: I am removing from index 0
+10-Apr-2014 20:41: I am removing from index 0

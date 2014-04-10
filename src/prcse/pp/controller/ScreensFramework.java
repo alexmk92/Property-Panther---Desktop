@@ -87,6 +87,7 @@ public class ScreensFramework extends Application  {
     public static PropertyList       properties  = new PropertyList();
     public static ArrayList<Admin>   adminList   = new ArrayList<>();
     public static ArrayList<Payment> allPayments = new ArrayList<>();
+    public static Admin              loggedIn    = new Admin();
 
     // Global search object to pass data between forms
     public static Searcher searchObj = new Searcher();
@@ -148,6 +149,13 @@ public class ScreensFramework extends Application  {
         if(connected == true) {
             // Build the objects for the datamodel on a new thread
             if(db.buildObjects()) {
+
+                // Build session holders inbox and sent box
+                loggedIn = searchObj.getSessionUser();
+                loggedIn.buildInbox(25);
+                loggedIn.buildSent(25);
+
+                // Validate and allow the user to see the dashboard
                 systemResponse = true;
             } else {
                 systemResponse = false;

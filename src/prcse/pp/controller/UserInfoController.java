@@ -33,6 +33,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 
@@ -464,7 +465,7 @@ public class UserInfoController implements Initializable, ControlledScreen {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 // Add the note to this tenant
-                Note n = new Note(txtNote.getText(), "", 0);
+                Note n = new Note(txtNote.getText(), new Date(), 0);
                 if(thisTenant.addNote(n, true)){
                     txtNote.setText("");
                     noteWrap.setVisible(false);
@@ -489,7 +490,7 @@ public class UserInfoController implements Initializable, ControlledScreen {
             public void handle(javafx.scene.input.KeyEvent ke) {
                 if (ke.getCode().equals(KeyCode.ENTER)) {
                     // Build the note object to add
-                    Note n = new Note(txtNote.getText(), "", 0);
+                    Note n = new Note(txtNote.getText(), new Date(), 0);
                     if (thisTenant.addNote(n, true)) {
                         noteWrap.setVisible(false);
                         lstNotes.setVisible(true);
@@ -544,7 +545,7 @@ public class UserInfoController implements Initializable, ControlledScreen {
                 // Sets the index to this index
                 index = lstNotes.getSelectionModel().getSelectedIndex();
                 lblNoteBody.setText(n.getMessage());
-                lblNoteTitle.setText(n.getDate());
+                lblNoteTitle.setText(n.getDateAsString(n.getDate()));
                 lstNotes.setVisible(false);
                 fullNoteWrap.setVisible(true);
             }

@@ -109,7 +109,7 @@ public class Payment implements ISubject, Serializable {
     public String getDateAsString() {
         String result = "";
         if (null != this.date_paid) {
-            SimpleDateFormat formatter = new SimpleDateFormat("dd MMM 2yyy");
+            SimpleDateFormat formatter = new SimpleDateFormat("dd MMM yy");
             result = formatter.format(this.date_paid);
         } else {
             result = this.getStatus();
@@ -126,7 +126,7 @@ public class Payment implements ISubject, Serializable {
     public String getDueDateAsString() {
         String result = "";
         if (null != this.date_due) {
-            SimpleDateFormat formatter = new SimpleDateFormat("dd MMM 2yyy");
+            SimpleDateFormat formatter = new SimpleDateFormat("dd MMM yy");
             result = formatter.format(this.date_due);
         } else {
             result = this.getStatus();

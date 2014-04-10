@@ -49,10 +49,8 @@
 </font>
 <styleClass>
 <String fx:value="dark" />
-<String fx:value="active" />
-</styleClass></Button><Rectangle id="nav_active_accent" fx:id="accent1" fill="WHITE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="active" width="2.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_1" fx:id="nav_icon1" layoutX="200.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="36.0">
+</styleClass></Button><Rectangle id="nav_active_accent" fx:id="accent1" fill="WHITE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="2.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_1" fx:id="nav_icon1" layoutX="200.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="36.0">
 <styleClass>
-<String fx:value="active" />
 <String fx:value="img" />
 </styleClass></Pane>
 </children>

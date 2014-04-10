@@ -1,6 +1,10 @@
 package prcse.pp.model;
 
+import prcse.pp.controller.ScreensFramework;
+
 import java.io.Serializable;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -14,18 +18,18 @@ public class Admin extends Person implements Serializable {
     private UserPermission permission;
     private int userId;
 
+
     // Admin arrays
-    private ArrayList<Alert> alerts;
-    private ArrayList<Inbox> inbox;
+    private ArrayList<Message> inbox;
+    private ArrayList<Message> sentBox;
 
     public Admin()
     {
         super();
         this.permission = UserPermission.ADMIN;
 
-        this.alerts     = new ArrayList<Alert>();
-        this.inbox      = new ArrayList<Inbox>();
-
+        this.inbox      = new ArrayList<Message>();
+        this.sentBox    = new ArrayList<Message>();
     }
 
     /**
@@ -37,9 +41,120 @@ public class Admin extends Person implements Serializable {
         this.userId     = userId;
         this.email      = email;
         this.permission = UserPermission.ADMIN;
+        this.userId     = userId;
 
-        this.alerts     = new ArrayList<Alert>();
-        this.inbox      = new ArrayList<Inbox>();
+        this.inbox      = new ArrayList<Message>();
+        this.sentBox    = new ArrayList<Message>();
+    }
+
+
+    /**
+     * Returns the inbox array
+     */
+    public ArrayList<Message> getInbox() {
+        return this.inbox;
+    }
+
+    /**
+     * Returns the sent box array
+     */
+    public ArrayList<Message> getSentBox() {
+        return this.sentBox;
+    }
+
+
+    /**
+     * Gets the size of the sent array
+     * @return size - the size of the array
+     */
+    public int getSentSize() {
+        return this.inbox.size();
+    }
+
+    /**
+     * Gets the size of the inbox array
+     * @return size - the size of the array
+     */
+    public int getInboxSize() {
+        return this.inbox.size();
+    }
+
+    /**
+     * Builds the inbox for the admin user
+     * @param amount - the amount of messages we want to load by default
+     */
+    public void buildInbox(int amount) {
+
+        // Empty the current array
+        //this.inbox.clear();
+
+        try {
+            // Query the database
+            String    query = "SELECT * FROM messages WHERE message_to = " + this.getId() + " OR message_type='MAINTENANCE' ORDER BY message_sent ASC FETCH FIRST " + amount + " ROWS ONLY";
+            ResultSet   res = ScreensFramework.db.query(query);
+
+            while(res.next()){
+                // Handle the case where there was a null sender *SYSTEM MESSAGES
+                int fromTenant = 0;
+                if(fromTenant > 0)  {
+                    fromTenant = res.getInt("message_from");
+                }
+
+                // Build the message
+                Message m = new Message(res.getInt("message_id"), res.getInt("message_to"), fromTenant, res.getString("message_type"),
+                                        res.getString("message_body"), res.getDate("message_sent"), res.getInt("message_read"));
+
+                // Add the message to the inbox
+                this.inbox.add(m);
+            }
+        } catch(Exception e) {
+            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Builds the sent box for the admin user
+     * @param amount - the amount of messages we want to load by default
+     */
+    public void buildSent(int amount) {
+
+        // Empty the current sent box
+        //this.sentBox.clear();
+
+        try {
+            // Query the database
+            String    query = "SELECT * FROM messages WHERE message_from = " + this.getId() + " ORDER BY message_sent ASC FETCH FIRST " + amount + " ROWS ONLY";
+            ResultSet   res = ScreensFramework.db.query(query);
+
+            while(res.next()){
+                // Build the message
+                Message m = new Message(res.getInt("message_id"), res.getInt("message_to"), res.getInt("message_from"), res.getString("message_type"),
+                        res.getString("message_body"), res.getDate("message_sent"), res.getInt("message_read"));
+
+                // Add the message to the sent box
+                this.sentBox.add(m);
+            }
+        } catch(Exception e) {
+            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Gets the amount of read messages in the box
+     * @return amount - the Amount of read messages
+     */
+    public int totalRead(ArrayList<Message> n) {
+        int read = 0;
+
+        // Increment read by 1 for each positive value
+        for(int i = 0; i < n.size(); i++){
+            Message m = n.get(i);
+            if(m.getRead() != 0){
+                read++;
+            }
+        }
+
+        return read;
     }
 
     /**
@@ -64,6 +179,14 @@ public class Admin extends Person implements Serializable {
             thisTenant.permission = UserPermission.USER;
         else
             System.out.println("Sorry, only admins can revoke permissions.");
+    }
+
+    /**
+     * Returns the userid of the admin
+     * @return userId
+     */
+    public int getId() {
+        return this.userId;
     }
 
     /**

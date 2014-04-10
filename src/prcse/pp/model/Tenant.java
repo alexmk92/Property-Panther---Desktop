@@ -7,6 +7,7 @@ import prcse.pp.model.observer.ISubject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Create a new Tenant object and allow it to be Observed
@@ -28,7 +29,6 @@ public class Tenant extends Person implements Serializable {
      * these ArrayLists track all their payments and messages
      */
     private   ArrayList<Request>  requests;
-    private   ArrayList<Inbox>    inbox;
     private   ArrayList<Note>     notes;
     protected ArrayList<Payment>  payments;
 
@@ -57,7 +57,6 @@ public class Tenant extends Person implements Serializable {
         this.room        = room;
 
         // creates a new message and payments array list
-        this.inbox    = new ArrayList<Inbox>();
         this.notes    = new ArrayList<Note>();
         this.requests = new ArrayList<Request>();
         this.payments = new ArrayList<Payment>();
@@ -86,7 +85,6 @@ public class Tenant extends Person implements Serializable {
         this.payment_due = 0.00;
 
         // creates a new message and payments array list
-        this.inbox    = new ArrayList<Inbox>();
         this.requests = new ArrayList<Request>();
         this.payments = new ArrayList<Payment>();
         this.notes    = new ArrayList();
@@ -190,7 +188,7 @@ public class Tenant extends Person implements Serializable {
 
             // Construct the new note and reference to this user
             String msg  = newNote.getMessage();
-            String date = newNote.getDate();
+            String date = newNote.getDateAsString(newNote.getDate());
             int    id   = this.getUserId();
 
             this.notes.add(newNote);

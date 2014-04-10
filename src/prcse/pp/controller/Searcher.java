@@ -25,10 +25,19 @@ public class Searcher {
 
     /**
      * Sets the session object (the admin running the session after a successful login)
+     * and builds their inbox
      * @param thisAdmin the admin object set at login
      */
     public void setSession(Admin thisAdmin){
         this.a = thisAdmin;
+    }
+
+    /**
+     * Returns the logged in user
+     * @param thisAdmin the admin object set by the session
+     */
+    public Admin getSessionUser(){
+        return a;
     }
 
     /**

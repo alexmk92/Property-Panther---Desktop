@@ -156,6 +156,12 @@ public class DashboardController implements Initializable, ControlledScreen {
                 draggable.getScene().getWindow().setY(event.getScreenY() - yOffset);
             }
         });
+        body.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                resetStyles();
+            }
+        });
 
         /******************************************************
          *                NAVIGATION CONTROLS
@@ -488,6 +494,116 @@ public class DashboardController implements Initializable, ControlledScreen {
         usersHidden = true;
     }
 
+    /**
+     * Animates the scene out on a new Thread to allow the animation to play through without being
+     * interrupted by the main thread, styles are applied to show the new active button
+     */
+    private void nextForm(final String ID)
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    clearStyles();
+                    switch(ID) {
+                        case "Dashboard":
+                            nav_bg1.getStyleClass().addAll("active");
+                            nav_icon1.getStyleClass().add("active");
+                            accent1.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Tenant":
+                            nav_bg2.getStyleClass().addAll("active");
+                            nav_icon2.getStyleClass().add("active");
+                            accent2.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Properties":
+                            nav_bg3.getStyleClass().addAll("active");
+                            nav_icon3.getStyleClass().add("active");
+                            accent3.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Payments":
+                            nav_bg4.getStyleClass().addAll("active");
+                            nav_icon4.getStyleClass().add("active");
+                            accent4.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Messages":
+                            nav_bg5.getStyleClass().addAll("active");
+                            nav_icon5.getStyleClass().add("active");
+                            accent5.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Settings":
+                            nav_bg6.getStyleClass().addAll("active");
+                            nav_icon6.getStyleClass().add("active");
+                            accent6.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Add Tenant":
+                            nav_bg2.getStyleClass().addAll("active");
+                            nav_icon2.getStyleClass().add("active");
+                            accent2.getStyleClass().addAll("active", "show");
+                            break;
+                        case "View Tenant":
+                            nav_bg2.getStyleClass().addAll("active");
+                            nav_icon2.getStyleClass().add("active");
+                            accent2.getStyleClass().addAll("active", "show");
+                            break;
+                    }
+
+                    // Animate the scene
+                    //animateOut();
+                    //Thread.sleep(300);
+                } catch(Exception e )
+                {
+                    System.out.println("There was an error handling the animation...");
+                }
+                // Stop the refresh thread
+
+                // Go to our view.
+                myController.setScreen(ID);
+            }
+        }).start();
+    }
+
+    /**
+     * Clears the styles on the current button
+     */
+    private void clearStyles()
+    {
+        // Active state for this window
+        nav_icon1.getStyleClass().remove("active");
+        nav_bg1.getStyleClass().remove("active");
+        accent1.getStyleClass().remove("show");
+    }
+
+    /**
+     * Reset the navigation styles to make this current window the active one, if we don't call this method
+     * then the next time we load this window form the HashMap, the wrong active state shall be applied
+     */
+    private void resetStyles()
+    {
+        // Active state for this window
+        nav_icon1.getStyleClass().add("active");
+        nav_bg1.getStyleClass().add("active");
+        accent1.getStyleClass().addAll("active", "show");
+
+        // Default styles for every other nav element
+        nav_icon4.getStyleClass().remove("active");
+        accent4.getStyleClass().removeAll("active", "show");
+        nav_bg4.getStyleClass().remove("active");
+        nav_icon2.getStyleClass().remove("active");
+        accent2.getStyleClass().removeAll("active", "show");
+        nav_bg2.getStyleClass().remove("active");
+        nav_icon3.getStyleClass().remove("active");
+        accent3.getStyleClass().removeAll("active", "show");
+        nav_bg3.getStyleClass().remove("active");
+        nav_icon5.getStyleClass().remove("active");
+        accent5.getStyleClass().removeAll("active", "show");
+        nav_bg5.getStyleClass().remove("active");
+        nav_icon6.getStyleClass().remove("active");
+        accent6.getStyleClass().removeAll("active", "show");
+        nav_bg6.getStyleClass().remove("active");
+
+    }
+
     /******************************************************
      *              LOAD NEW SCREEN METHODS
      ******************************************************/
@@ -542,53 +658,53 @@ public class DashboardController implements Initializable, ControlledScreen {
             if(results.size() > 1)
             {
                 hideUsers();
-                myController.setScreen(ScreensFramework.screen2ID);
+                nextForm(ScreensFramework.screen2ID);
             }
             // Is there only one user with that name?
             else if(results.size() == 1) {
                 Tenant t = results.getUserAt(0);
                 s.setTenant(t);
                 hideUsers();
-                myController.setScreen(ScreensFramework.screen8ID);
+                nextForm(ScreensFramework.screen8ID);
             } else {
                 hideUsers();
-                myController.setScreen(ScreensFramework.screen2ID);
+                nextForm(ScreensFramework.screen2ID);
             }
         } else {
             s.setSearchedUsers(ScreensFramework.tenants);
             hideUsers();
-            myController.setScreen(ScreensFramework.screen2ID);
+            nextForm(ScreensFramework.screen2ID);
         }
     }
 
     @FXML
     private void goToProperties(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen3ID);
+        nextForm(ScreensFramework.screen3ID);
     }
     @FXML
     private void goToPayments(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen4ID);
+        nextForm(ScreensFramework.screen4ID);
     }
     @FXML
     private void goToMessages(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen5ID);
+        nextForm(ScreensFramework.screen5ID);
     }
     @FXML
     private void goToSettings(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen6ID);
+        nextForm(ScreensFramework.screen6ID);
     }
     @FXML
     private void goToAddUser(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen7ID);
+        nextForm(ScreensFramework.screen7ID);
     }
     @FXML
     private void goToAllUsers(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen2ID);
+        nextForm(ScreensFramework.screen2ID);
     }
 }

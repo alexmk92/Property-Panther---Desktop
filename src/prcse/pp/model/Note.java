@@ -1,5 +1,7 @@
 package prcse.pp.model;
 
+import java.util.Date;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Alex
@@ -14,7 +16,7 @@ public class Note extends Message {
      * @param the date of the message
      * @param message - content of message
      */
-    public Note(Tenant tenant, String message, String date, int id)
+    public Note(Tenant tenant, String message, Date date, int id)
     {
         super(message, date, id);
         this.type = MessageType.NOTE;
@@ -25,7 +27,7 @@ public class Note extends Message {
      * @param the message for the note
      * @param the data of the message
      */
-    public Note(String message, String date, int id) {
+    public Note(String message, Date date, int id) {
         super(message, date, id);
         this.type = MessageType.NOTE;
     }

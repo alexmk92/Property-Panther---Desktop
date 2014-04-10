@@ -51,7 +51,7 @@ public class NoteCell extends ListCell<String> {
         try{
             thisTenant = controller.getTenant();
             Note currNote = thisTenant.getNoteAt(index);
-            date = new Label(currNote.getDate());
+            date = new Label(currNote.getDateAsString(currNote.getDate()));
 
             thisIndex = index;
 

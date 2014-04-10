@@ -1,23 +1,15 @@
 package prcse.pp.db;
 
-import javafx.application.Platform;
-import javafx.stage.Screen;
+
 import prcse.pp.controller.ScreensFramework;
 import prcse.pp.model.*;
-import prcse.pp.model.observer.PaymentStatus;
-
-import java.io.*;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.util.Date;
 
 /**
  * Create a new connection to the database and handle any SQL queries through
@@ -372,8 +364,8 @@ public class Database implements Callable {
 
             while(res.next()) {
 
-                Note n = new Note("", "", 0);
-                String date = n.convertDate(res.getDate("NOTE_DATE"));
+                Note n = new Note("", null, 0);
+                Date date = res.getDate("NOTE_DATE");
                 String msg  = res.getString("NOTE_BODY");
                 int    id   = res.getInt("NOTE_ID");
 
