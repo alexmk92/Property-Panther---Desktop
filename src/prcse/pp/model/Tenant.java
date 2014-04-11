@@ -263,6 +263,20 @@ public class Tenant extends Person implements Serializable {
     }
 
     /**
+     * Adds a new request to the requests array
+     */
+    public Boolean addRequest(Request r) {
+        Boolean added = false;
+
+        if(r != null){
+            this.requests.add(r);
+            added = true;
+        }
+
+        return added;
+    }
+
+    /**
      * Adds a payment to this user
      */
     public Boolean addPayment(Payment p) {

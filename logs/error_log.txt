@@ -7546,3 +7546,59 @@ ORA-12519, TNS:no appropriate service handler found
 10-Apr-2014 20:41: Index: 1, Size: 0
 10-Apr-2014 20:41: Index: 2, Size: 0
 10-Apr-2014 20:41: Index: 3, Size: 0
+11-Apr-2014 13:31: Error handling query: IO Error: The Network Adapter could not establish the connection
+11-Apr-2014 13:32: Index: 1, Size: 1
+11-Apr-2014 13:32: Index: 2, Size: 1
+11-Apr-2014 13:32: Index: 3, Size: 1
+11-Apr-2014 13:32: Index: 2, Size: 2
+11-Apr-2014 13:32: Index: 3, Size: 2
+11-Apr-2014 13:32: Index: 1, Size: 1
+11-Apr-2014 13:32: Index: 2, Size: 1
+11-Apr-2014 13:32: Index: 3, Size: 1
+11-Apr-2014 13:50: Error handling operation: ORA-00904: "USER_PERISSIONS": invalid identifier
+
+11-Apr-2014 13:51: Error handling operation: ORA-00904: "USER_PERISSIONS": invalid identifier
+
+11-Apr-2014 13:51: Error handling operation: ORA-00904: "USER_PERISSIONS": invalid identifier
+
+11-Apr-2014 13:52: Error handling operation: ORA-00904: "USER_PERISSIONS": invalid identifier
+
+11-Apr-2014 13:59: Error handling operation: ORA-00933: SQL command not properly ended
+
+11-Apr-2014 13:59: Error: 1
+11-Apr-2014 13:59: Error: null
+11-Apr-2014 14:00: Error handling operation: ORA-00933: SQL command not properly ended
+
+11-Apr-2014 14:01: Error handling operation: ORA-00933: SQL command not properly ended
+
+11-Apr-2014 14:03: Error handling operation: ORA-00933: SQL command not properly ended
+
+11-Apr-2014 14:03: Error handling operation: ORA-00904: "USERS"."USER_PERMISSION": invalid identifier
+
+11-Apr-2014 14:04: Error: 1
+11-Apr-2014 14:05: Error handling operation: ORA-00933: SQL command not properly ended
+
+11-Apr-2014 14:05: Error handling operation: ORA-00904: "USERS"."USER_PERMISSION": invalid identifier
+
+11-Apr-2014 14:06: Error handling operation: ORA-00933: SQL command not properly ended
+
+11-Apr-2014 14:06: Error handling operation: ORA-00904: "USERS"."USER_PERMISSION": invalid identifier
+
+11-Apr-2014 14:08: Error handling operation: ORA-00933: SQL command not properly ended
+
+11-Apr-2014 14:09: Error handling operation: ORA-00933: SQL command not properly ended
+
+11-Apr-2014 14:09: Error handling operation: ORA-00904: "USERS"."USER_PERMISSION": invalid identifier
+
+11-Apr-2014 14:10: Error handling operation: ORA-00933: SQL command not properly ended
+
+11-Apr-2014 14:11: Error handling operation: ORA-00933: SQL command not properly ended
+
+11-Apr-2014 14:11: Error handling operation: ORA-00933: SQL command not properly ended
+
+11-Apr-2014 14:26: Error handling operation: ORA-00933: SQL command not properly ended
+
+11-Apr-2014 14:47: Error: 1
+11-Apr-2014 17:00: Index: 1, Size: 1
+11-Apr-2014 17:00: Index: 2, Size: 1
+11-Apr-2014 17:00: Index: 3, Size: 1

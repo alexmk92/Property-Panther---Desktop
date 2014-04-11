@@ -9,42 +9,62 @@ public class Request extends Message {
 
     private Property property;
     private Boolean  viewed;
+    private String   tracking_id;
+    private Date     finDate;
+
 
     /**
      * New request constructor with default status
+     * @param tenant  - the tenant who made the request
+     * @param message - the request details
+     * @param date    - the log date
+     * @param id      - the request id
+     * @param status  - the requests current status
+     * @param req_id  - the requests tracking id
      */
-    public Request(Tenant tenant, String message, Property p, Date date, int id)
+    public Request(Tenant tenant, String message, Date date, int id, String status, String req_id, Date finished)
     {
         super(tenant, message, date, id);
-        this.status = MessageStatus.RECEIVED;
-        this.viewed = false;
+        this.status      = getStatus(status);
+        this.viewed      = false;
+        this.tracking_id = req_id;
+
+        if(finished == null)
+            this.finDate = null;
+        else {
+            this.finDate = finished;
+        }
     }
 
-    /**
-     * Maintenance request constructor, allows a request to be made against a new
-     * property
-     * @param tenant the tenant making the request
-     * @param message the message the tenant sends
-     * @param p the property of which the request is being made against
-     */
-    public Request(Tenant tenant, String message, MessageStatus s, Property p, Date date, int id) {
-        super(tenant, message, date, id);
-        this.status       = s;
-        this.type         = type.MAINTENANCE;
-        this.property     = p;
-        this.viewed       = false;
-    }
 
     /**
      * Update the status of the message to seen
      */
-    public Boolean messageSeen()
+    public MessageStatus getStatus(String status)
     {
-        Boolean updated = false;
-        if(this.viewed == false) {
-            this.viewed = true;
-            updated = true;
+        MessageStatus thisStatus = MessageStatus.RECEIVED;
+
+        // Get the correct status
+        switch(status){
+            case "RECEIVED":
+                thisStatus = MessageStatus.RECEIVED;
+                break;
+            case "IN_PROGRESS":
+                thisStatus = MessageStatus.IN_PROGRESS;
+                break;
+            case "SCHEDULED":
+                thisStatus = MessageStatus.SCHEDULED;
+                break;
+            case "SEEN":
+                thisStatus = MessageStatus.SEEN;
+                break;
+            case "COMPLETED":
+                thisStatus = MessageStatus.COMPLETED;
+                break;
         }
-        return updated;
+
+        return thisStatus;
     }
+
+
 }

@@ -18,6 +18,7 @@ import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -31,6 +32,7 @@ import prcse.pp.view.PaymentCell;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 /**
@@ -132,6 +134,32 @@ public class MessagesController implements Initializable, ControlledScreen {
     private ListView lstMessages;
     @FXML // fx:id="lblNew"
     private Label lblNew;
+    @FXML // fx:id="txtMessage"
+    private TextArea txtMessage;
+    @FXML // fx:id="txtRecipient"
+    private TextField txtRecipient;
+    @FXML // fx:id="btnSend"
+    private Button btnSend;
+    @FXML // fx:id="btnCloseDialog"
+    private Button btnCloseDialog;
+    @FXML // fx:id="chatOverlay"
+    private Pane chatOverlay;
+    @FXML // fx:id="btnSearchFilter"
+    private Button btnSearchFilter;
+    @FXML // fx:id="txtSearchEmail"
+    private TextField txtSearchEmail;
+    @FXML // fx:id="txtSearchSender"
+    private TextField txtSearchSender;
+    @FXML // fx:id="selectType"
+    private ChoiceBox selectType;
+    @FXML // fx:id="btnNew"
+    private Button btnNew;
+    @FXML // fx:id="btnSent"
+    private Button btnSent;
+    @FXML // fx:id="btnViewInbox"
+    private Button btnViewInbox;
+    @FXML // fx:id="lblMessageCount"
+    private Label lblMessageCount;
 
 
     // Set variables to allow for draggable window.
@@ -147,6 +175,9 @@ public class MessagesController implements Initializable, ControlledScreen {
 
     // Toggles if we are currently using the Inbox or Sentbox (True = inbox, False = sentbox)
     private Boolean usingInbox = true;
+
+    // Checks if we have loaded the page
+    private Boolean pageLoaded = false;
 
     // Index to bind custom cell controls to the listview cell
     private int index = 0;
@@ -183,11 +214,17 @@ public class MessagesController implements Initializable, ControlledScreen {
         body.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                animateIn();
-                populateMessageList();
-                resetStyles();
+                if(pageLoaded == false){
+                    animateIn();
+                    populateMessageList();
+                    resetStyles();
+                }
+                pageLoaded = true;
             }
         });
+
+        // Hide the overlay and message window
+        chatOverlay.setVisible(false);
 
         /******************************************************
          *                NAVIGATION CONTROLS
@@ -445,6 +482,33 @@ public class MessagesController implements Initializable, ControlledScreen {
             }
         });
 
+        btnCloseDialog.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                chatOverlay.setVisible(false);
+            }
+        });
+        btnNew.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                chatOverlay.setVisible(true);
+                txtMessage.requestFocus();
+            }
+        });
+        btnSent.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                usingInbox = false;
+                populateMessageList();
+            }
+        });
+        btnViewInbox.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                usingInbox = true;
+                populateMessageList();
+            }
+        });
         /**
          * Performs a User search when the Enter key is pressed
          */
@@ -464,7 +528,29 @@ public class MessagesController implements Initializable, ControlledScreen {
 
             }
         });
+        txtMessage.setOnKeyTyped(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                int chars = txtMessage.getText().length();
+                String message = txtMessage.getText();
 
+                if (chars < 501) {
+                    String amount = String.valueOf(chars);
+                    lblMessageCount.setText(amount + "/500 Characters");
+                    lblMessageCount.setStyle("-fx-text-fill: #ffffff");
+                } else {
+                    // Updat the message to the old state
+                    String fullMsg = message.substring(0, 500);
+                    System.out.println(fullMsg.length());
+                    txtMessage.setText(fullMsg);
+
+                    // Set the position to the end of the string
+                    txtMessage.positionCaret(500);
+                    lblMessageCount.setText("500/500 Characters");
+                    lblMessageCount.setStyle("-fx-text-fill: #f92772");
+                }
+            }
+        });
     }
 
 
@@ -518,6 +604,9 @@ public class MessagesController implements Initializable, ControlledScreen {
                 return pCell;
             }
         });
+
+        // Reset the flag
+        this.usingInbox = true;
     }
 
     /**

@@ -132,19 +132,26 @@
 </Label>
 </children>
 </Pane>
-<Pane layoutY="40.0" prefHeight="68.0" prefWidth="281.0" styleClass="window">
-<children>
-<Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="New Message">
+<Pane layoutY="40.0" prefHeight="91.0" prefWidth="281.0" styleClass="window">
+<children><Button fx:id="btnSent" layoutX="142.0" layoutY="14.0" mnemonicParsing="false" text="View Sent" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <styleClass>
 <String fx:value="button" />
 <String fx:value="btn_actions" />
 <String fx:value="blue" />
 </styleClass>
-</Button><Button layoutX="142.0" layoutY="14.0" mnemonicParsing="false" text="View Sent" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+</Button><Button fx:id="btnViewInbox" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="View Inbox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <styleClass>
 <String fx:value="button" />
 <String fx:value="btn_actions" />
 <String fx:value="blue" />
+</styleClass>
+</Button>
+<Button fx:id="btnNew" layoutX="14.0" layoutY="50.0" mnemonicParsing="false" prefWidth="252.0" text="New Message">
+<styleClass>
+<String fx:value="button" />
+<String fx:value="btn_actions" />
+<String fx:value="blue" />
+<String fx:value="wider" />
 </styleClass>
 </Button>
 </children>
@@ -159,7 +166,7 @@
 <Font name="Open Sans Light" size="16.0" />
 </font>
 </Label>
-<TextField id="textbox_square" layoutX="23.0" layoutY="130.0" prefHeight="31.0" prefWidth="243.0" promptText="Enter a tenants name...">
+<TextField id="textbox_square" fx:id="txtSearchSender" layoutX="23.0" layoutY="130.0" prefHeight="31.0" prefWidth="243.0" promptText="Enter a tenants name...">
 <styleClass>
 <String fx:value="text-input" />
 <String fx:value="text-field" />
@@ -171,7 +178,7 @@
 <Font name="Open Sans Light" size="16.0" />
 </font>
 </Label>
-<TextField id="textbox_square" layoutX="23.0" layoutY="209.0" prefHeight="31.0" promptText="Enter an email address...">
+<TextField id="textbox_square" fx:id="txtSearchEmail" layoutX="23.0" layoutY="209.0" prefHeight="31.0" promptText="Enter an email address...">
 <styleClass>
 <String fx:value="text-input" />
 <String fx:value="text-field" />
@@ -183,14 +190,14 @@
 <Font name="Open Sans Light" size="16.0" />
 </font>
 </Label>
-<Button layoutX="23.0" layoutY="266.0" mnemonicParsing="false" prefWidth="88.0" text="Search">
+<Button fx:id="btnSearchFilter" layoutX="23.0" layoutY="266.0" mnemonicParsing="false" prefWidth="88.0" text="Search">
 <styleClass>
 <String fx:value="button" />
 <String fx:value="btn_actions" />
 <String fx:value="blue" />
 <String fx:value="submit" />
 </styleClass>
-</Button><ChoiceBox layoutX="23.0" layoutY="48.0" prefHeight="35.0" prefWidth="235.0" xmlns:fx="http://javafx.com/fxml" />
+</Button><ChoiceBox fx:id="selectType" layoutX="23.0" layoutY="48.0" prefHeight="35.0" prefWidth="235.0" xmlns:fx="http://javafx.com/fxml" />
 </children>
 </Pane>
 <Pane prefHeight="40.0" prefWidth="281.0" styleClass="header">
@@ -217,5 +224,30 @@
 <String fx:value="info_blue" />
 </styleClass>
 </Label>
+</children></Pane><Pane fx:id="chatOverlay" prefHeight="720.0" prefWidth="1200.0" styleClass="chatOverlay">
+<children><Pane fx:id="messageWrao" layoutX="395.0" layoutY="133.0" prefHeight="455.0" prefWidth="590.0" styleClass="messageBox">
+<children><TextField fx:id="txtRecipient" layoutX="34.0" layoutY="79.0" prefHeight="46.0" prefWidth="520.0" promptText="Enter a username...">
+<styleClass>
+<String fx:value="text-input" />
+<String fx:value="messageInput" />
+<String fx:value="text-field" />
+</styleClass>
+<font>
+<Font size="20.0" />
+</font></TextField><Button fx:id="btnSend" layoutX="441.0" layoutY="399.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="113.0" styleClass="btnWide" text="SEND" textFill="WHITE">
+<font>
+<Font name="System Bold" size="16.0" />
+</font></Button><TextArea fx:id="txtMessage" layoutX="34.0" layoutY="135.0" prefHeight="255.0" prefWidth="520.0" promptText="Add a message..." styleClass="messageInput" wrapText="true">
+<font>
+<Font size="18.0" />
+</font></TextArea><Button fx:id="btnCloseDialog" layoutX="568.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="18.0" prefWidth="18.0" styleClass="button_close" text="Button" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label fx:id="lblMessageCount" layoutX="34.0" layoutY="406.0" textFill="WHITE">
+<font>
+<Font size="16.0" />
+</font></Label><Label layoutX="34.0" layoutY="22.0" prefHeight="57.0" prefWidth="192.0" text="New Message" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font name="System Bold" size="25.0" />
+</font>
+</Label>
+</children></Pane>
 </children></Pane>
     </children></AnchorPane>

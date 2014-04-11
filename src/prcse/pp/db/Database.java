@@ -128,7 +128,6 @@ public class Database implements Callable {
         if(objectsBuilt == false)
         {
             if(buildProperties()) { buildCount++; }
-            //buildMessages();
             if(buildUsers()) { buildCount++; }
             if(buildAllPayments()){ buildCount++; }
 
@@ -276,9 +275,10 @@ public class Database implements Callable {
             ResultSet res = query("SELECT * FROM requests WHERE user_id = " + user_id);
 
             while(res.next()) {
-                //Request r = new Request();
+                Request r = new Request(t, res.getString("request_details"), res.getDate("request_log_date"), res.getInt("requests_id"),
+                                        res.getString("request_status"), res.getString("tracking_id"), res.getDate("request_fin_date"));
 
-                //tenantList.addUser(r);
+                t.addRequest(r);
             }
 
             requestsBuilt = true;
@@ -301,7 +301,8 @@ public class Database implements Callable {
         try {
             int user_id = t.getUserId();
             // Make a connection to the database
-            ResultSet res = query("SELECT * FROM payments WHERE user_id = " + user_id + " ORDER BY payment_received DESC FETCH NEXT " + amount_to_fetch + " ROWS ONLY");
+            ResultSet res = query("SELECT * FROM payments LEFT JOIN users ON payments.user_id = users.user_id WHERE payments.user_id = " + user_id +
+                                  " AND users.user_permissions = 'USER' ORDER BY payment_received DESC FETCH NEXT 5 ROWS ONLY");
 
             while(res.next()) {
                 Payment p = new Payment(t, res.getDouble("payment_amount"), res.getDate("payment_received"), res.getInt("payment_id"),
@@ -330,7 +331,9 @@ public class Database implements Callable {
 
         try {
             // Make a connection to the database
-            ResultSet res = query("SELECT * FROM payments WHERE payment_status = 'PAID' ORDER BY payment_id DESC FETCH FIRST 20 ROWS ONLY");
+            ResultSet res = query("SELECT * FROM payments LEFT JOIN users ON payments.user_id = users.user_id WHERE " +
+                                  "users.user_permissions = 'USER' AND payments.payment_status='PAID' OR " +
+                                  "payments.payment_status='PAID LATE' AND users.user_permissions='USER'");
 
             while(res.next()) {
                 Tenant  t = ScreensFramework.tenants.getUserById(res.getInt("user_id"));
