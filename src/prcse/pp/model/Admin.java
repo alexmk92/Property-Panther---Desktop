@@ -83,25 +83,42 @@ public class Admin extends Person implements Serializable {
      * Builds the inbox for the admin user
      * @param amount - the amount of messages we want to load by default
      */
-    public void buildInbox(int amount) {
+    public void buildInbox(int amount, String type) {
 
         // Empty the current array
-        //this.inbox.clear();
+        this.inbox.clear();
 
         try {
-            // Query the database
-            String    query = "SELECT * FROM messages WHERE message_to = " + this.getId() + " OR message_type='MAINTENANCE' ORDER BY message_sent ASC FETCH FIRST " + amount + " ROWS ONLY";
+            // The query to be built
+            String query = "";
+
+            // Build the query string
+            switch(type) {
+                case "ALL":
+                    query = "SELECT * FROM messages WHERE message_to = " + this.getId() + " OR message_to IS NULL ORDER BY message_sent ASC FETCH FIRST " + amount + " ROWS ONLY";
+                    break;
+                case "ALERT":
+                    query = "SELECT * FROM messages WHERE message_to IS NULL AND message_type='ALERT' ORDER BY message_sent ASC FETCH FIRST " + amount + " ROWS ONLY";
+                    break;
+                case "INBOX":
+                    query = "SELECT * FROM messages WHERE message_to = " + this.getId() + " AND message_type='INBOX' ORDER BY message_sent ASC FETCH FIRST " + amount + " ROWS ONLY";
+                    break;
+                case "MAINTENANCE":
+                    query = "SELECT * FROM messages WHERE message_to = " + this.getId() + " AND message_type='MAINTENANCE' " +
+                            "OR message_to IS NULL AND message_type='MAINTENANCE' ORDER BY message_sent ASC FETCH FIRST " + amount + " ROWS ONLY";
+                    break;
+            }
+
+            // Run the query and collect the results
             ResultSet   res = ScreensFramework.db.query(query);
 
+            // Initialise to 0
+            int fromTenant = 0;
             while(res.next()){
-                // Handle the case where there was a null sender *SYSTEM MESSAGES
-                int fromTenant = 0;
-                if(fromTenant > 0)  {
-                    fromTenant = res.getInt("message_from");
-                }
+
 
                 // Build the message
-                Message m = new Message(res.getInt("message_id"), res.getInt("message_to"), fromTenant, res.getString("message_type"),
+                Message m = new Message(res.getInt("message_id"), res.getInt("message_to"), res.getInt("message_from"), res.getString("message_type"),
                                         res.getString("message_body"), res.getDate("message_sent"), res.getInt("message_read"));
 
                 // Add the message to the inbox
@@ -119,7 +136,7 @@ public class Admin extends Person implements Serializable {
     public void buildSent(int amount) {
 
         // Empty the current sent box
-        //this.sentBox.clear();
+        this.sentBox.clear();
 
         try {
             // Query the database
@@ -166,7 +183,7 @@ public class Admin extends Person implements Serializable {
         if(this.permission == UserPermission.ADMIN)
             thisTenant.permission = newPermission;
         else
-            System.out.println("Sorry, only admins can escalate permissions.");
+            ScreensFramework.logError.writeToFile("Sorry, only admins can escalate permissions.");
     }
 
     /**
@@ -178,7 +195,7 @@ public class Admin extends Person implements Serializable {
         if(this.permission == UserPermission.ADMIN)
             thisTenant.permission = UserPermission.USER;
         else
-            System.out.println("Sorry, only admins can revoke permissions.");
+            ScreensFramework.logError.writeToFile("Sorry, only admins can revoke permissions.");
     }
 
     /**

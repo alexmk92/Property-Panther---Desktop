@@ -7602,3 +7602,337 @@ ORA-12519, TNS:no appropriate service handler found
 11-Apr-2014 17:00: Index: 1, Size: 1
 11-Apr-2014 17:00: Index: 2, Size: 1
 11-Apr-2014 17:00: Index: 3, Size: 1
+12-Apr-2014 14:47: Error: String index out of range: 14
+12-Apr-2014 14:47: Error: String index out of range: 15
+12-Apr-2014 14:47: Error: String index out of range: 16
+12-Apr-2014 14:47: Error: String index out of range: 17
+12-Apr-2014 14:47: Error: String index out of range: 18
+12-Apr-2014 14:47: Error: String index out of range: 19
+12-Apr-2014 14:47: Error: String index out of range: 19
+12-Apr-2014 14:47: Error: String index out of range: 14
+12-Apr-2014 14:47: Error: String index out of range: 15
+12-Apr-2014 14:47: Error: String index out of range: 16
+12-Apr-2014 14:47: Error: String index out of range: 17
+12-Apr-2014 14:47: Error: String index out of range: 18
+12-Apr-2014 14:48: Error: String index out of range: 15
+12-Apr-2014 14:48: Error: String index out of range: 16
+12-Apr-2014 14:48: Error: String index out of range: 17
+12-Apr-2014 14:48: Error: String index out of range: 18
+12-Apr-2014 14:48: Error: String index out of range: 19
+12-Apr-2014 14:48: Error: String index out of range: 20
+12-Apr-2014 14:48: Error: String index out of range: 21
+12-Apr-2014 14:48: Error: String index out of range: 22
+12-Apr-2014 14:48: Error: String index out of range: 23
+12-Apr-2014 14:48: Error: String index out of range: 24
+12-Apr-2014 14:48: Error: String index out of range: 25
+12-Apr-2014 14:48: Error: String index out of range: 26
+12-Apr-2014 14:48: Error: String index out of range: 27
+12-Apr-2014 14:48: Error: String index out of range: 28
+12-Apr-2014 14:48: Error: String index out of range: 29
+12-Apr-2014 14:48: Error: String index out of range: 30
+12-Apr-2014 14:48: Error: String index out of range: 31
+12-Apr-2014 14:48: Error: String index out of range: 32
+12-Apr-2014 14:58: Error: String index out of range: 15
+12-Apr-2014 14:58: Error: String index out of range: 16
+12-Apr-2014 14:59: Error: String index out of range: 15
+12-Apr-2014 14:59: Error: String index out of range: 15
+12-Apr-2014 15:00: Error: String index out of range: 15
+12-Apr-2014 15:00: Error: String index out of range: 16
+12-Apr-2014 15:01: Error: String index out of range: 15
+12-Apr-2014 15:01: Error: String index out of range: 16
+12-Apr-2014 15:02: Error: String index out of range: 15
+12-Apr-2014 15:02: Error: String index out of range: 16
+12-Apr-2014 15:03: Error: String index out of range: 15
+12-Apr-2014 15:03: Error: String index out of range: 16
+12-Apr-2014 15:04: Error: String index out of range: 14
+12-Apr-2014 15:04: Error: String index out of range: 15
+12-Apr-2014 15:04: Error: String index out of range: 16
+12-Apr-2014 15:04: Error: String index out of range: 16
+12-Apr-2014 15:04: Error: String index out of range: 15
+12-Apr-2014 15:04: Error: String index out of range: 15
+12-Apr-2014 15:04: Error: String index out of range: 15
+12-Apr-2014 15:04: Error: String index out of range: 15
+12-Apr-2014 15:04: Error: String index out of range: 16
+12-Apr-2014 15:04: Error: String index out of range: 14
+12-Apr-2014 15:04: Error: String index out of range: 15
+12-Apr-2014 15:04: Error: String index out of range: 16
+12-Apr-2014 15:04: Error: String index out of range: 17
+12-Apr-2014 15:04: Error: String index out of range: 18
+12-Apr-2014 15:04: Error: String index out of range: 19
+12-Apr-2014 15:04: Error: String index out of range: 20
+12-Apr-2014 15:04: Error: String index out of range: 20
+12-Apr-2014 15:04: Error: String index out of range: 19
+12-Apr-2014 15:04: Error: String index out of range: 18
+12-Apr-2014 15:04: Error: String index out of range: 17
+12-Apr-2014 15:04: Error: String index out of range: 16
+12-Apr-2014 15:04: Error: String index out of range: 15
+12-Apr-2014 15:04: Error: String index out of range: 14
+12-Apr-2014 15:04: Error: String index out of range: 14
+12-Apr-2014 15:04: Error: String index out of range: 15
+12-Apr-2014 15:04: Error: String index out of range: 16
+12-Apr-2014 15:04: Error: String index out of range: 17
+12-Apr-2014 15:04: Error: String index out of range: 18
+12-Apr-2014 15:04: Error: String index out of range: 19
+12-Apr-2014 15:04: Error: String index out of range: 20
+12-Apr-2014 15:04: Error: String index out of range: 21
+12-Apr-2014 15:04: Error: String index out of range: 22
+12-Apr-2014 15:04: Error: String index out of range: 23
+12-Apr-2014 15:04: Error: String index out of range: 24
+12-Apr-2014 15:04: Error: String index out of range: 25
+12-Apr-2014 15:04: Error: String index out of range: 26
+12-Apr-2014 15:04: Error: String index out of range: 27
+12-Apr-2014 15:07: Error: String index out of range: 14
+12-Apr-2014 15:07: Error: String index out of range: 14
+12-Apr-2014 15:07: Error: String index out of range: 14
+12-Apr-2014 15:07: Error: String index out of range: 15
+12-Apr-2014 15:09: Error: String index out of range: -1
+12-Apr-2014 15:09: Error: String index out of range: -1
+12-Apr-2014 15:09: Error: String index out of range: -1
+12-Apr-2014 15:10: Error: String index out of range: 14
+12-Apr-2014 15:10: Error: String index out of range: 15
+12-Apr-2014 15:18: Error: String index out of range: 13
+12-Apr-2014 15:18: Error: String index out of range: 14
+12-Apr-2014 15:18: Error: String index out of range: 14
+12-Apr-2014 15:18: Error: String index out of range: 15
+12-Apr-2014 15:18: Error: String index out of range: 15
+12-Apr-2014 15:18: Error: String index out of range: 16
+12-Apr-2014 15:18: Error: String index out of range: 16
+12-Apr-2014 15:18: Error: String index out of range: 16
+12-Apr-2014 15:18: Error: String index out of range: 16
+12-Apr-2014 15:18: Error: String index out of range: 16
+12-Apr-2014 15:18: Error: String index out of range: 16
+12-Apr-2014 15:18: Error: String index out of range: 16
+12-Apr-2014 15:18: Error: String index out of range: 16
+12-Apr-2014 15:19: Error: String index out of range: 13
+12-Apr-2014 15:19: Error: String index out of range: 14
+12-Apr-2014 15:19: Error: String index out of range: 14
+12-Apr-2014 15:19: Error: String index out of range: 15
+12-Apr-2014 15:19: Error: String index out of range: 15
+12-Apr-2014 15:19: Error: String index out of range: 15
+12-Apr-2014 15:19: Error: String index out of range: 15
+12-Apr-2014 15:19: Error: String index out of range: 11
+12-Apr-2014 15:19: Error: String index out of range: 12
+12-Apr-2014 15:19: Error: String index out of range: 13
+12-Apr-2014 15:19: Error: String index out of range: 14
+12-Apr-2014 15:19: Error: String index out of range: 14
+12-Apr-2014 15:19: Error: String index out of range: 15
+12-Apr-2014 15:19: Error: String index out of range: 15
+12-Apr-2014 15:19: Error: String index out of range: 16
+12-Apr-2014 15:19: Error: String index out of range: 16
+12-Apr-2014 15:19: Error: String index out of range: 17
+12-Apr-2014 15:19: Error: String index out of range: 17
+12-Apr-2014 15:19: Error: String index out of range: 18
+12-Apr-2014 15:19: Error: String index out of range: 18
+12-Apr-2014 15:19: Error: String index out of range: 19
+12-Apr-2014 15:19: Error: String index out of range: 19
+12-Apr-2014 15:19: Error: String index out of range: 20
+12-Apr-2014 15:19: Error: String index out of range: 20
+12-Apr-2014 15:19: Error: String index out of range: 21
+12-Apr-2014 15:19: Error: String index out of range: 21
+12-Apr-2014 15:19: Error: String index out of range: 22
+12-Apr-2014 15:19: Error: String index out of range: 22
+12-Apr-2014 15:20: Error: String index out of range: 13
+12-Apr-2014 15:20: Error: String index out of range: 14
+12-Apr-2014 15:20: Error: String index out of range: 14
+12-Apr-2014 15:25: Error: String index out of range: 13
+12-Apr-2014 15:25: Error: String index out of range: 13
+12-Apr-2014 15:25: Error: String index out of range: 14
+12-Apr-2014 15:25: Error: String index out of range: 14
+12-Apr-2014 15:25: Error: String index out of range: 15
+12-Apr-2014 15:25: Error: String index out of range: 15
+12-Apr-2014 15:25: Error: String index out of range: 16
+12-Apr-2014 15:25: Error: String index out of range: 16
+12-Apr-2014 15:25: Error: String index out of range: 17
+12-Apr-2014 15:25: Error: String index out of range: 17
+12-Apr-2014 15:25: Error: String index out of range: 18
+12-Apr-2014 15:25: Error: String index out of range: 18
+12-Apr-2014 15:25: Error: String index out of range: 19
+12-Apr-2014 15:25: Error: String index out of range: 19
+12-Apr-2014 15:25: Error: String index out of range: 20
+12-Apr-2014 15:25: Error: String index out of range: 20
+12-Apr-2014 15:27: Error: String index out of range: -1
+12-Apr-2014 15:27: Error: String index out of range: -1
+12-Apr-2014 15:27: Error: String index out of range: -1
+12-Apr-2014 15:27: Error: String index out of range: -1
+12-Apr-2014 15:27: Error: String index out of range: -1
+12-Apr-2014 15:27: Error: String index out of range: -1
+12-Apr-2014 15:28: Error: String index out of range: 14
+12-Apr-2014 15:28: Error: String index out of range: 15
+12-Apr-2014 15:28: Error: String index out of range: 16
+12-Apr-2014 15:28: Error: String index out of range: 17
+12-Apr-2014 15:28: Error: String index out of range: 18
+12-Apr-2014 15:28: Error: String index out of range: 19
+12-Apr-2014 15:28: Error: String index out of range: 20
+12-Apr-2014 15:28: Error: String index out of range: 21
+12-Apr-2014 15:28: Error: String index out of range: 22
+12-Apr-2014 15:28: Error: String index out of range: 23
+12-Apr-2014 15:28: Error: String index out of range: 24
+12-Apr-2014 15:28: Error: String index out of range: 25
+12-Apr-2014 15:28: Error: String index out of range: 26
+12-Apr-2014 15:29: Error: String index out of range: 14
+12-Apr-2014 15:29: Error: String index out of range: 15
+12-Apr-2014 15:29: Error: String index out of range: 16
+12-Apr-2014 15:29: Error: String index out of range: 17
+12-Apr-2014 15:31: Error: String index out of range: -1
+12-Apr-2014 15:34: Error: String index out of range: -1
+12-Apr-2014 15:34: Error: String index out of range: 14
+12-Apr-2014 15:38: Error: String index out of range: -1
+12-Apr-2014 15:38: Error: String index out of range: 14
+12-Apr-2014 17:50: Error handling query: IO Error: The Network Adapter could not establish the connection
+14-Apr-2014 12:31: Error handling query: IO Error: The Network Adapter could not establish the connection
+14-Apr-2014 12:57: Error handling query: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+14-Apr-2014 12:57: Error handling query: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+14-Apr-2014 12:57: Error handling query: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+14-Apr-2014 12:57: Error handling query: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+14-Apr-2014 12:57: Error handling query: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+14-Apr-2014 12:57: Error handling query: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+14-Apr-2014 12:57: Error handling query: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+14-Apr-2014 12:57: Error handling query: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+14-Apr-2014 12:57: Error handling query: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+14-Apr-2014 12:57: Error handling query: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+14-Apr-2014 12:57: Error handling query: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+14-Apr-2014 13:47: Error: String index out of range: -1
+14-Apr-2014 13:47: Error: String index out of range: -1
+14-Apr-2014 13:47: Error: String index out of range: -1
+14-Apr-2014 14:00: Error: String index out of range: -1
+14-Apr-2014 14:00: Error: String index out of range: 13
+14-Apr-2014 14:00: Error: String index out of range: -1
+14-Apr-2014 14:00: Error: String index out of range: 13
+14-Apr-2014 14:00: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:00: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:00: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:00: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:00: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:00: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:00: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:01: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:01: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:01: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:01: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:02: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:03: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:04: Error: String index out of range: -1
+14-Apr-2014 14:04: Error: String index out of range: 13
+14-Apr-2014 14:04: Error: String index out of range: -1
+14-Apr-2014 14:04: Error: String index out of range: 13
+14-Apr-2014 14:04: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:14: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:14: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:15: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:15: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:16: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:16: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:16: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:16: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 14:17: Error handling operation: ORA-00917: missing comma
+
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:09: String index out of range: -1
+14-Apr-2014 17:29: String index out of range: -1
+14-Apr-2014 17:29: String index out of range: -1
+14-Apr-2014 17:29: String index out of range: -1
+14-Apr-2014 17:29: String index out of range: -1
+14-Apr-2014 17:29: String index out of range: -1
+14-Apr-2014 17:29: String index out of range: -1
+14-Apr-2014 17:29: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:31: String index out of range: -1
+14-Apr-2014 17:32: String index out of range: -1
+14-Apr-2014 17:32: String index out of range: -1
+14-Apr-2014 17:32: String index out of range: -1
+14-Apr-2014 17:32: String index out of range: -1
+14-Apr-2014 17:32: String index out of range: -1
+14-Apr-2014 17:32: String index out of range: -1
+14-Apr-2014 17:32: String index out of range: -1
+14-Apr-2014 17:34: Error: null
+14-Apr-2014 17:35: Error: null
+14-Apr-2014 17:38: Error: null
+14-Apr-2014 17:38: Error: null
+14-Apr-2014 17:41: Error: null

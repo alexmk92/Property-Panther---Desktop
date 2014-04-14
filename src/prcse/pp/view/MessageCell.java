@@ -28,6 +28,7 @@ public class MessageCell extends ListCell<String> {
     HBox c = new HBox();
     Pane b = new HBox();
     Pane pane = new Pane();
+    Label sender = new Label();
     Label msg = new Label();
     Label date = new Label();
     Label type = new Label();
@@ -48,8 +49,8 @@ public class MessageCell extends ListCell<String> {
             try{
                 thisMessage = list.get(index);
 
-                // Format the message style
                 msg.setStyle("-fx-text-fill: #ffffff; -fx-font-size: 14px; -fx-font-family: 'Open Sans Light'; -fx-label-padding: 5px; -fx-translate-x: 30; -fx-translate-y: 7 !important");
+
 
                 date.setStyle("-fx-text-fill: #fff !important; -fx-font-family: Helvetica; -fx-font-size: 14px; -fx-font-weight: bold; -fx-alignment: center-right; -fx-translate-x: -30");
 

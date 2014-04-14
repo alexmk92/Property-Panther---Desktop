@@ -152,7 +152,7 @@ public class ScreensFramework extends Application  {
 
                 // Build session holders inbox and sent box
                 loggedIn = searchObj.getSessionUser();
-                loggedIn.buildInbox(25);
+                loggedIn.buildInbox(25, "ALL");
                 loggedIn.buildSent(25);
 
                 // Validate and allow the user to see the dashboard

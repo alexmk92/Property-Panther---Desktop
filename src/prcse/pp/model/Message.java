@@ -147,6 +147,26 @@ public class Message implements ISubject, Serializable {
         return dateOut;
     }
 
+    public String getSender() {
+        String name = "";
+        try {
+            name = fromTenant.getName();
+        } catch (Exception e) {
+            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+        }
+        return name;
+    }
+
+    public String getRecipient() {
+        String name = "";
+        try {
+            name = toTenant.getName();
+        } catch (Exception e) {
+            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+        }
+        return name;
+    }
+
     public String getDateAsString(Date thisDate) {
 
         // Set the date on the label
