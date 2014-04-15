@@ -563,9 +563,19 @@
     -fx-border-radius: 6;
     -fx-background-radius: 6
 }
+.encapsulated-large {
+    -fx-text-fill: #000 !important;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold !important;
+    -fx-padding: 5 0 5 20;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-pref-width: 85px !important;
+    -fx-text-alignment: center !important;
+}
 .encapsulated-small {
     -fx-text-fill: #000 !important;
-    -fx-font-weight: bold;
+    -fx-font-weight: bold !important;
     -fx-font-size: 12px;
     -fx-padding: 2.5 10 2.5 10;
     -fx-border-radius: 6;
@@ -625,6 +635,12 @@
     -fx-border-color: #125271;
     -fx-background-color: #0f435c;
     -fx-background-insets: 0;
+}
+.btnWide:hover {
+    -fx-cursor: hand;
+    -fx-border-color: #b1ec30 !important;
+    -fx-background-color: #9fd82e !important;
+    -fx-text-fill: #000;
 }
 
 .wider {

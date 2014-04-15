@@ -565,8 +565,9 @@
 }
 .encapsulated-large {
     -fx-text-fill: #000 !important;
-    -fx-font-size: 16px;
-    -fx-padding: 2.5 0 2.5 21;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold !important;
+    -fx-padding: 5 0 5 20;
     -fx-border-radius: 6;
     -fx-background-radius: 6;
     -fx-pref-width: 85px !important;
@@ -574,7 +575,7 @@
 }
 .encapsulated-small {
     -fx-text-fill: #000 !important;
-    -fx-font-weight: bold;
+    -fx-font-weight: bold !important;
     -fx-font-size: 12px;
     -fx-padding: 2.5 10 2.5 10;
     -fx-border-radius: 6;

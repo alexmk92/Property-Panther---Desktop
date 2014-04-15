@@ -66,5 +66,4 @@ public class Request extends Message {
         return thisStatus;
     }
 
-
 }

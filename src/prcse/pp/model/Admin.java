@@ -157,6 +157,30 @@ public class Admin extends Person implements Serializable {
     }
 
     /**
+     * Gets the message at the given index
+     * @param box   - either "INBOX" or "SENT" to search
+     * @param index - the index we wish to access
+     * @return msg  - the message found after processing, else null
+     */
+    public Message getMessageAt(String box, int index) {
+        Message msg = null;
+
+        switch(box) {
+            case "INBOX":
+                if(this.inbox.get(index) != null){
+                    msg = this.inbox.get(index);
+                }
+                break;
+            case "SENT":
+                if(this.sentBox.get(index) != null){
+                    msg = this.sentBox.get(index);
+                }
+                break;
+        }
+        return  msg;
+    }
+
+    /**
      * Gets the amount of read messages in the box
      * @return amount - the Amount of read messages
      */

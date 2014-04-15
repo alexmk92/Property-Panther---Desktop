@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -225,7 +226,7 @@
 </styleClass>
 </Label>
 </children></Pane><Pane fx:id="chatOverlay" layoutY="-4.0" prefHeight="727.0" prefWidth="1200.0" styleClass="chatOverlay">
-<children><Pane fx:id="messageWrap" layoutX="305.0" layoutY="180.0" prefHeight="360.0" prefWidth="590.0" styleClass="messageBox">
+<children><Pane layoutX="269.0" layoutY="79.0" prefHeight="200.0" prefWidth="200.0" /><Pane fx:id="messageWrap" layoutX="305.0" layoutY="783.0" prefHeight="360.0" prefWidth="590.0" styleClass="messageBox">
 <children><TextField fx:id="txtRecipient" layoutX="22.0" layoutY="74.0" prefHeight="46.0" prefWidth="549.0" promptText="Enter email address...">
 <styleClass>
 <String fx:value="text-input" />
@@ -234,20 +235,87 @@
 </styleClass>
 <font>
 <Font size="16.0" />
-</font></TextField><Button fx:id="btnSend" layoutX="458.0" layoutY="312.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="113.0" styleClass="btnWide" text="Send" textFill="WHITE">
-<font>
-<Font size="14.0" />
-</font></Button><TextArea fx:id="txtMessage" layoutX="22.0" layoutY="126.0" prefHeight="176.0" prefWidth="549.0" promptText="Add a message..." styleClass="messageInput" wrapText="true">
+</font></TextField><TextArea fx:id="txtMessage" layoutX="22.0" layoutY="126.0" prefHeight="176.0" prefWidth="549.0" promptText="Add a message..." styleClass="messageInput" wrapText="true">
 <font>
 <Font size="16.0" />
-</font></TextArea><Button fx:id="btnCloseDialog" layoutX="567.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="18.0" prefWidth="18.0" styleClass="button_close" text="Button" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label fx:id="lblMessageCount" layoutX="22.0" layoutY="312.0" prefHeight="32.0" prefWidth="173.0" text="0/250 Characters" textFill="WHITE">
+</font></TextArea><Button fx:id="btnSend" layoutX="458.0" layoutY="312.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="113.0" styleClass="btnWide" text="Send" textFill="WHITE">
+<font>
+<Font size="14.0" />
+</font></Button><Button fx:id="btnCloseDialog" layoutX="567.0" layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="18.0" prefWidth="18.0" styleClass="button_close" text="Button" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Label fx:id="lblMessageCount" layoutX="22.0" layoutY="312.0" prefHeight="32.0" prefWidth="173.0" text="0/250 Characters" textFill="WHITE">
 <font>
 <Font size="16.0" />
 </font></Label><Label layoutX="22.0" layoutY="17.0" prefHeight="57.0" prefWidth="192.0" text="New Message" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <font>
 <Font size="25.0" />
 </font>
+</Label><Label fx:id="lblToInbox" layoutX="478.0" layoutY="81.0" text="Inbox">
+<styleClass>
+<String fx:value="encapsulated-large" />
+<String fx:value="green" />
+</styleClass>
+<font>
+<Font size="18.0" />
+</font></Label>
+</children></Pane><Pane fx:id="viewMessage" layoutX="305.0" layoutY="736.0" prefHeight="462.0" prefWidth="590.0" styleClass="messageBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children>
+<Button fx:id="btnCloseMessage" layoutX="562.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="23.0" styleClass="button_close" text="Button" />
+<Label alignment="TOP_LEFT" layoutX="63.0" layoutY="44.0" prefHeight="57.0" prefWidth="503.0" styleClass="holo" textFill="WHITE" wrapText="true">
+<font>
+<Font size="18.0" />
+</font>
+<padding>
+<Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+</padding>
 </Label>
-</children></Pane>
+<ImageView fx:id="imgProfile" fitHeight="91.0" fitWidth="76.0" layoutX="27.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@img/user_default.png" />
+</image>
+</ImageView>
+<Label fx:id="lblSender" layoutX="114.0" layoutY="50.0" text="Test Man (testman@testing.com)" textFill="WHITE">
+<font>
+<Font size="18.0" />
+</font>
+</Label>
+<Label fx:id="lblRecipient" layoutX="114.0" layoutY="73.0" text="to: admin@propertypanther.com" textFill="#f92772">
+<font>
+<Font size="14.0" />
+</font>
+</Label>
+<Label layoutX="27.0" layoutY="141.0" text="Received:" textFill="WHITE">
+<font>
+<Font size="18.0" />
+</font>
+</Label>
+<Label fx:id="lblReceived" layoutX="109.0" layoutY="141.0" text="14th March 2014" textFill="#66d9ee">
+<font>
+<Font size="18.0" />
+</font>
+</Label>
+<Label fx:id="lblDisplayMessage" alignment="TOP_LEFT" layoutX="25.0" layoutY="177.0" prefHeight="232.0" prefWidth="540.0" styleClass="holo" text="Hello Jamie, this is a test message I just wnated to see whether or not the system was actually working." textFill="WHITE" wrapText="true">
+<font>
+<Font size="16.0" />
+</font>
+<padding>
+<Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+</padding>
+</Label>
+<Label fx:id="lblMsgType" layoutX="468.0" layoutY="55.0" text="Inbox">
+<font>
+<Font name="System Bold" size="18.0" />
+</font>
+<styleClass>
+<String fx:value="encapsulated-large" />
+<String fx:value="green" />
+</styleClass>
+</Label>
+<Button fx:id="btnReply" layoutX="439.0" layoutY="418.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="125.0" styleClass="btnWide" text="Reply" textFill="WHITE">
+<font>
+<Font size="14.0" />
+</font>
+</Button>
+<ChoiceBox fx:id="choiceUpdate" layoutX="329.0" layoutY="132.0" prefHeight="36.0" prefWidth="235.0" />
+</children>
+</Pane>
 </children></Pane>
     </children></AnchorPane>

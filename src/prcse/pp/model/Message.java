@@ -21,7 +21,6 @@ public class Message implements ISubject, Serializable {
     private   Tenant        toTenant;
     private   Tenant        fromTenant;
     private   String        message;
-    private   Boolean       viewed;
     private   Date          date;
     private   int           id;
     private   int           seen;
@@ -49,7 +48,7 @@ public class Message implements ISubject, Serializable {
     public Message(String message, Date theDate, int id)
     {
         this.message = message;
-        if(theDate != null){
+        if(theDate == null){
             this.date    = getTodaysDate();
         } else {
             this.date = theDate;
@@ -66,7 +65,7 @@ public class Message implements ISubject, Serializable {
     {
         this.toTenant = thisTenant;
         this.message  = message;
-        if(theDate != null || theDate.equals("")){
+        if(theDate == null || theDate.equals("")){
             this.date    = getTodaysDate();
         } else {
             this.date = theDate;
@@ -85,7 +84,7 @@ public class Message implements ISubject, Serializable {
         this.toTenant   = toTenant;
         this.fromTenant = fromTenant;
         this.message    = message;
-        if(theDate != null || theDate.equals("")){
+        if(theDate == null || theDate.equals("")){
             this.date    = getTodaysDate();
         } else {
             this.date = theDate;
@@ -113,7 +112,7 @@ public class Message implements ISubject, Serializable {
         this.seen        = read;
 
 
-        if(theDate != null || theDate.equals("")){
+        if(theDate == null || theDate.equals("")){
             this.date    = getTodaysDate();
         } else {
             this.date = theDate;
@@ -123,6 +122,36 @@ public class Message implements ISubject, Serializable {
     // Setters and getters
     public MessageStatus getStatus() {
         return status;
+    }
+
+    /**
+     * Get the status as a string
+     * @param status - the MessageStatus we set
+     */
+    public String getStatusAsString(MessageStatus status) {
+
+        String thisStatus = "RECEIVED";
+
+        // Get the correct status
+        switch(status){
+            case RECEIVED:
+                thisStatus = "RECEIVED";
+                break;
+            case IN_PROGRESS:
+                thisStatus = "IN PROGRESS";
+                break;
+            case SCHEDULED:
+                thisStatus = "SCHEDULED";
+                break;
+            case SEEN:
+                thisStatus = "SEEN";
+                break;
+            case COMPLETED:
+                thisStatus = "COMPLETED";
+                break;
+        }
+
+        return thisStatus;
     }
 
     public void setStatus(MessageStatus status) {
@@ -255,6 +284,13 @@ public class Message implements ISubject, Serializable {
      */
     public int getRead() {
         return this.seen;
+    }
+
+    /**
+     * Sets seen to 1
+     */
+    public void setSeenTrue() {
+        this.seen = 1;
     }
 
     public void setId(int idIn) {

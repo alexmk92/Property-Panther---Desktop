@@ -7936,3 +7936,528 @@ ORA-12519, TNS:no appropriate service handler found
 14-Apr-2014 17:38: Error: null
 14-Apr-2014 17:38: Error: null
 14-Apr-2014 17:41: Error: null
+15-Apr-2014 13:23: Error handling query: IO Error: The Network Adapter could not establish the connection
+15-Apr-2014 13:23: Error handling query: IO Error: The Network Adapter could not establish the connection
+15-Apr-2014 13:58: Error handling query: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+15-Apr-2014 13:58: Error handling query: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+15-Apr-2014 13:58: Error handling query: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+15-Apr-2014 13:58: Error handling query: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+15-Apr-2014 13:58: Error handling query: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+15-Apr-2014 13:58: Error handling query: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+15-Apr-2014 13:58: Error handling operation: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+15-Apr-2014 13:58: Error handling operation: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+15-Apr-2014 13:58: Error handling operation: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+15-Apr-2014 13:58: Error handling operation: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+15-Apr-2014 13:58: Error handling operation: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+15-Apr-2014 13:58: Error handling operation: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+15-Apr-2014 13:58: Error handling operation: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+15-Apr-2014 13:58: Error handling operation: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+15-Apr-2014 13:58: Error handling operation: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+15-Apr-2014 13:59: Error handling operation: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+15-Apr-2014 14:00: Error handling operation: Listener refused the connection with the following error:
+ORA-12519, TNS:no appropriate service handler found
+ 
+15-Apr-2014 14:01: Error: null
+15-Apr-2014 14:01: Error: null
+15-Apr-2014 14:01: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:13: Error: null
+15-Apr-2014 14:18: Error: null
+15-Apr-2014 14:18: Error: null
+15-Apr-2014 14:20: Error: null
+15-Apr-2014 14:20: Error: null
+15-Apr-2014 14:20: Error: null
+15-Apr-2014 14:20: Error: null
+15-Apr-2014 14:20: Error: null
+15-Apr-2014 14:20: Error: null
+15-Apr-2014 14:20: Error: null
+15-Apr-2014 14:20: Error: null
+15-Apr-2014 14:20: Error: null
+15-Apr-2014 14:20: Error: null
+15-Apr-2014 14:20: Error: null
+15-Apr-2014 14:20: Error: null
+15-Apr-2014 14:20: Error: null
+15-Apr-2014 14:21: Error: null
+15-Apr-2014 14:21: Error: null
+15-Apr-2014 14:21: Error: null
+15-Apr-2014 14:21: Error: null
+15-Apr-2014 14:21: Error: null
+15-Apr-2014 14:21: Error: null
+15-Apr-2014 14:21: Error: null
+15-Apr-2014 14:21: Error: null
+15-Apr-2014 14:21: Error: null
+15-Apr-2014 14:21: Error: null
+15-Apr-2014 14:21: Error: null
+15-Apr-2014 14:21: Error: null
+15-Apr-2014 14:21: Error: null
+15-Apr-2014 14:21: Error: null
+15-Apr-2014 14:24: Error: null
+15-Apr-2014 14:24: Error: null
+15-Apr-2014 14:24: Error: null
+15-Apr-2014 14:24: Error: null
+15-Apr-2014 14:24: Error: null
+15-Apr-2014 14:25: Error: null
+15-Apr-2014 14:25: Error: null
+15-Apr-2014 14:25: Error: null
+15-Apr-2014 14:25: Error: null
+15-Apr-2014 14:25: Error: null
+15-Apr-2014 14:25: Error: null
+15-Apr-2014 14:25: Error: null
+15-Apr-2014 14:27: Error: null
+15-Apr-2014 14:27: Error: null
+15-Apr-2014 14:28: Error: null
+15-Apr-2014 14:28: Error: null
+15-Apr-2014 14:28: Error: null
+15-Apr-2014 14:28: Error: null
+15-Apr-2014 14:28: Error: null
+15-Apr-2014 14:28: Error: null
+15-Apr-2014 14:28: Error: null
+15-Apr-2014 14:29: Error: null
+15-Apr-2014 14:29: Error: null
+15-Apr-2014 14:29: Error: null
+15-Apr-2014 14:30: Error: null
+15-Apr-2014 14:31: Error: null
+15-Apr-2014 14:31: Error: null
+15-Apr-2014 14:31: Error: null
+15-Apr-2014 14:31: Error: null
+15-Apr-2014 14:31: Error: null
+15-Apr-2014 14:31: Error: null
+15-Apr-2014 14:31: Error: null
+15-Apr-2014 14:31: Error: null
+15-Apr-2014 14:32: Error: null
+15-Apr-2014 14:32: Error: null
+15-Apr-2014 14:32: Error: null
+15-Apr-2014 14:32: Error: null
+15-Apr-2014 14:32: Error: null
+15-Apr-2014 14:32: Error: null
+15-Apr-2014 14:32: Error: null
+15-Apr-2014 14:36: Error: null
+15-Apr-2014 14:36: Error: null
+15-Apr-2014 14:36: Error: null
+15-Apr-2014 14:36: Error: null
+15-Apr-2014 14:36: Error: null
+15-Apr-2014 14:36: Error: null
+15-Apr-2014 14:36: Error: null
+15-Apr-2014 14:36: Error: null
+15-Apr-2014 14:41: Error: null
+15-Apr-2014 14:41: Error: null
+15-Apr-2014 14:41: Error: null
+15-Apr-2014 14:41: Error: null
+15-Apr-2014 14:41: Error: null
+15-Apr-2014 14:41: Error: null
+15-Apr-2014 14:41: Error: null
+15-Apr-2014 14:41: Error: null
+15-Apr-2014 14:41: Error: null
+15-Apr-2014 14:41: Error: null
+15-Apr-2014 14:41: Error: null
+15-Apr-2014 14:41: Error: null
+15-Apr-2014 14:41: Error: null
+15-Apr-2014 14:41: Error: null
+15-Apr-2014 14:41: Error: null
+15-Apr-2014 14:41: Error: null
+15-Apr-2014 14:41: Error: null
+15-Apr-2014 14:43: Error: null
+15-Apr-2014 14:43: Error: null
+15-Apr-2014 14:44: Error: null
+15-Apr-2014 14:44: Error: null
+15-Apr-2014 14:57: Error: null
+15-Apr-2014 14:57: Error: null
+15-Apr-2014 14:57: Index: 1, Size: 1
+15-Apr-2014 14:57: Index: 2, Size: 1
+15-Apr-2014 14:57: Index: 3, Size: 1
+15-Apr-2014 14:59: Error: null
+15-Apr-2014 14:59: Error: null
+15-Apr-2014 14:59: Error: null
+15-Apr-2014 14:59: Error: null
+15-Apr-2014 14:59: Error: null
+15-Apr-2014 14:59: Error: null
+15-Apr-2014 15:00: Error: null
+15-Apr-2014 15:00: Error: null
+15-Apr-2014 15:00: Error: null
+15-Apr-2014 15:00: Error: null
+15-Apr-2014 15:00: Error: null
+15-Apr-2014 15:00: Error: null
+15-Apr-2014 15:00: Error: null
+15-Apr-2014 15:00: Error: null
+15-Apr-2014 15:00: Error: null
+15-Apr-2014 15:00: Error: null
+15-Apr-2014 15:00: Error: null
+15-Apr-2014 15:00: Error: null
+15-Apr-2014 15:00: Error: null
+15-Apr-2014 15:00: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:10: Error: null
+15-Apr-2014 17:11: Error: null
+15-Apr-2014 17:11: Error: null
+15-Apr-2014 17:11: Error: null
+15-Apr-2014 17:11: Error: null
+15-Apr-2014 17:11: Error: null
+15-Apr-2014 17:11: Error: null
+15-Apr-2014 17:11: Error: null
+15-Apr-2014 17:12: Error: null
+15-Apr-2014 17:12: Error: null
+15-Apr-2014 17:12: Error: null
+15-Apr-2014 17:12: Error: null
+15-Apr-2014 17:12: Error: null
+15-Apr-2014 17:12: Error: null
+15-Apr-2014 17:12: Error: null
+15-Apr-2014 17:12: Error: null
+15-Apr-2014 17:12: Error: null
+15-Apr-2014 17:12: Error: null
+15-Apr-2014 17:12: Error: null
+15-Apr-2014 17:12: Error: null
+15-Apr-2014 17:12: Error: null
+15-Apr-2014 17:12: Error: null
+15-Apr-2014 17:12: Error: null
+15-Apr-2014 17:12: Error: null
+15-Apr-2014 17:12: Error: null
+15-Apr-2014 17:17: Error: null
+15-Apr-2014 17:17: Error: null
+15-Apr-2014 17:18: Error: null
+15-Apr-2014 17:18: Error: null
+15-Apr-2014 17:24: Error: null
+15-Apr-2014 17:24: Error: null
+15-Apr-2014 17:27: Error: null
+15-Apr-2014 17:27: Error: null
+15-Apr-2014 17:28: Error: null
+15-Apr-2014 17:28: Error: null
+15-Apr-2014 17:28: Error: null
+15-Apr-2014 17:28: Error: null
+15-Apr-2014 17:28: Error: null
+15-Apr-2014 17:29: Error: null
+15-Apr-2014 17:29: Error: null
+15-Apr-2014 17:29: Error: null
+15-Apr-2014 17:31: Error: null
+15-Apr-2014 17:31: Error: null
+15-Apr-2014 17:31: Error: null
+15-Apr-2014 17:31: Error: null
+15-Apr-2014 17:31: Error: null
+15-Apr-2014 17:31: Error: null
+15-Apr-2014 17:31: Error: null
+15-Apr-2014 17:31: Error: null
+15-Apr-2014 17:31: Error: null
+15-Apr-2014 17:31: Error: null
+15-Apr-2014 17:31: Error: null
+15-Apr-2014 17:34: Error: null
+15-Apr-2014 17:37: Error: null
+15-Apr-2014 17:37: Error: null
+15-Apr-2014 17:39: Error: null
+15-Apr-2014 17:41: Error: null
+15-Apr-2014 17:41: Error: null
+15-Apr-2014 17:42: Error: null
+15-Apr-2014 17:42: Error: null
+15-Apr-2014 17:42: Error: null
+15-Apr-2014 17:42: Error: null
+15-Apr-2014 17:42: Error: null
+15-Apr-2014 17:42: Error: null
+15-Apr-2014 17:42: Error: null
+15-Apr-2014 17:42: Error: null
+15-Apr-2014 17:42: Error: null
+15-Apr-2014 17:43: Error: null
+15-Apr-2014 17:43: Error: null
+15-Apr-2014 17:43: Error: null
+15-Apr-2014 17:43: Error: null
+15-Apr-2014 17:43: Error: null
+15-Apr-2014 17:43: Error: null
+15-Apr-2014 17:45: Error: null
+15-Apr-2014 17:45: Error: null
+15-Apr-2014 17:45: Error: null
+15-Apr-2014 17:45: Error: null
+15-Apr-2014 17:45: Error: null
+15-Apr-2014 17:45: Error: null
+15-Apr-2014 17:45: Error: null
+15-Apr-2014 17:59: Error: null
+15-Apr-2014 17:59: Error: Not on FX application thread; currentThread = Thread-18
+15-Apr-2014 17:59: Error: null
+15-Apr-2014 17:59: Error: null
+15-Apr-2014 17:59: Error: Not on FX application thread; currentThread = Thread-19
+15-Apr-2014 17:59: Error: Not on FX application thread; currentThread = Thread-20
+15-Apr-2014 17:59: Error: Not on FX application thread; currentThread = Thread-21
+15-Apr-2014 17:59: Error: null
+15-Apr-2014 17:59: Error: Not on FX application thread; currentThread = Thread-22
+15-Apr-2014 17:59: Error: null
+15-Apr-2014 17:59: Error: null
+15-Apr-2014 17:59: Error: Not on FX application thread; currentThread = Thread-23
+15-Apr-2014 17:59: Error: Not on FX application thread; currentThread = Thread-24
+15-Apr-2014 17:59: Error: null
+15-Apr-2014 17:59: Error: null
+15-Apr-2014 17:59: Error: Not on FX application thread; currentThread = Thread-25
+15-Apr-2014 17:59: Error: null
+15-Apr-2014 17:59: Error: Not on FX application thread; currentThread = Thread-26
+15-Apr-2014 17:59: Error: Not on FX application thread; currentThread = Thread-27
+15-Apr-2014 17:59: Error: null
+15-Apr-2014 17:59: Error: Not on FX application thread; currentThread = Thread-28
+15-Apr-2014 17:59: Error: null
+15-Apr-2014 17:59: Error: Not on FX application thread; currentThread = Thread-29
+15-Apr-2014 17:59: Error: null
+15-Apr-2014 17:59: Error: null
+15-Apr-2014 17:59: Error: Not on FX application thread; currentThread = Thread-30
+15-Apr-2014 17:59: Error: null
+15-Apr-2014 17:59: Error: null
+15-Apr-2014 17:59: Error: Not on FX application thread; currentThread = Thread-31
+15-Apr-2014 18:00: Error: Not on FX application thread; currentThread = Thread-32
+15-Apr-2014 18:00: Error: null
+15-Apr-2014 18:00: Error: Not on FX application thread; currentThread = Thread-33
+15-Apr-2014 18:00: Error: null
+15-Apr-2014 18:00: Error: null
+15-Apr-2014 18:00: Error: Not on FX application thread; currentThread = Thread-34
+15-Apr-2014 18:00: Error: Not on FX application thread; currentThread = Thread-35
+15-Apr-2014 18:00: Error: Not on FX application thread; currentThread = Thread-36
+15-Apr-2014 18:03: Error: null
+15-Apr-2014 18:03: Error: null
+15-Apr-2014 18:03: Error: Not on FX application thread; currentThread = Thread-18
+15-Apr-2014 18:03: Error: Not on FX application thread; currentThread = Thread-19
+15-Apr-2014 18:04: Error: null
+15-Apr-2014 18:04: Error: Not on FX application thread; currentThread = Thread-18
+15-Apr-2014 18:05: Error: null
+15-Apr-2014 18:05: Error: null
+15-Apr-2014 18:05: Error: Not on FX application thread; currentThread = Thread-19
+15-Apr-2014 18:17: Error: null
+15-Apr-2014 18:17: Error: null
+15-Apr-2014 18:17: Error: Not on FX application thread; currentThread = Thread-18
+15-Apr-2014 18:17: Error: null
+15-Apr-2014 18:17: Error: null
+15-Apr-2014 18:17: Error: Not on FX application thread; currentThread = Thread-19
+15-Apr-2014 18:17: Error: null
+15-Apr-2014 18:17: Error: null
+15-Apr-2014 18:17: Error: Not on FX application thread; currentThread = Thread-20
+15-Apr-2014 18:17: Error: null
+15-Apr-2014 18:17: Error: null
+15-Apr-2014 18:17: Error: Not on FX application thread; currentThread = Thread-21
+15-Apr-2014 18:17: Error: null
+15-Apr-2014 18:17: Error: null
+15-Apr-2014 18:17: Error: Not on FX application thread; currentThread = Thread-22
+15-Apr-2014 18:17: Error: null
+15-Apr-2014 18:17: Error: null
+15-Apr-2014 18:17: Error: Not on FX application thread; currentThread = Thread-23
+15-Apr-2014 18:27: Error: null
+15-Apr-2014 18:27: Error: null
+15-Apr-2014 18:27: Error handling operation: ORA-00904: "MESSAGE_SEEN": invalid identifier
+
+15-Apr-2014 18:27: Error: Not on FX application thread; currentThread = Thread-20
+15-Apr-2014 18:27: Error: null
+15-Apr-2014 18:27: Error handling operation: ORA-00904: "MESSAGE_SEEN": invalid identifier
+
+15-Apr-2014 18:28: Error: Not on FX application thread; currentThread = Thread-22
+15-Apr-2014 18:28: Error: null
+15-Apr-2014 18:28: Error: null
+15-Apr-2014 18:28: Error handling operation: ORA-00904: "MESSAGE_SEEN": invalid identifier
+
+15-Apr-2014 18:28: Error: Not on FX application thread; currentThread = Thread-24
+15-Apr-2014 18:28: Error: null
+15-Apr-2014 18:28: Error: null
+15-Apr-2014 18:28: Error handling operation: ORA-00904: "MESSAGE_SEEN": invalid identifier
+
+15-Apr-2014 18:28: Error: Not on FX application thread; currentThread = Thread-26
+15-Apr-2014 18:28: Error: null
+15-Apr-2014 18:28: Error: null
+15-Apr-2014 18:28: Error handling operation: ORA-00904: "MESSAGE_SEEN": invalid identifier
+
+15-Apr-2014 18:28: Error: Not on FX application thread; currentThread = Thread-28
+15-Apr-2014 18:30: Error: null
+15-Apr-2014 18:32: Error: null
+15-Apr-2014 18:32: Error: null
+15-Apr-2014 18:32: Error: Not on FX application thread; currentThread = Thread-19
+15-Apr-2014 18:32: Error: null
+15-Apr-2014 18:32: Error: Not on FX application thread; currentThread = Thread-21
+15-Apr-2014 18:33: Error: null
+15-Apr-2014 18:33: Error: null
+15-Apr-2014 18:33: Error: Not on FX application thread; currentThread = Thread-22
+15-Apr-2014 18:33: Error: null
+15-Apr-2014 18:33: Error: null
+15-Apr-2014 18:33: Error: Not on FX application thread; currentThread = Thread-24
+15-Apr-2014 18:33: Error: null
+15-Apr-2014 18:33: Error: null
+15-Apr-2014 18:33: Error: Not on FX application thread; currentThread = Thread-26
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: Not on FX application thread; currentThread = Thread-19
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: Not on FX application thread; currentThread = Thread-22
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: Not on FX application thread; currentThread = Thread-24
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: Not on FX application thread; currentThread = Thread-27
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: Not on FX application thread; currentThread = Thread-29
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: Not on FX application thread; currentThread = Thread-31
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: Not on FX application thread; currentThread = Thread-33
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: Not on FX application thread; currentThread = Thread-36
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: Not on FX application thread; currentThread = Thread-38
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: null
+15-Apr-2014 18:37: Error: Not on FX application thread; currentThread = Thread-40
+15-Apr-2014 18:39: Error: null
+15-Apr-2014 18:39: Error: null
+15-Apr-2014 18:39: Error: Not on FX application thread; currentThread = Thread-19
+15-Apr-2014 18:39: Error: null
+15-Apr-2014 18:39: Error: null
+15-Apr-2014 18:39: Error: Not on FX application thread; currentThread = Thread-21
+15-Apr-2014 18:39: Error: null
+15-Apr-2014 18:39: Error: Not on FX application thread; currentThread = Thread-23
+15-Apr-2014 18:39: Error: null
+15-Apr-2014 18:39: Error: null
+15-Apr-2014 18:39: Error: Not on FX application thread; currentThread = Thread-25
+15-Apr-2014 18:39: Error: null
+15-Apr-2014 18:39: Error: null
+15-Apr-2014 18:39: Error: Not on FX application thread; currentThread = Thread-27
+15-Apr-2014 18:39: Error: null
+15-Apr-2014 18:39: Error: null
+15-Apr-2014 18:39: Error: Not on FX application thread; currentThread = Thread-29
+15-Apr-2014 18:39: Error: null
+15-Apr-2014 18:39: Error: Not on FX application thread; currentThread = Thread-31
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:41: Error: Not on FX application thread; currentThread = Thread-19
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:41: Error: Not on FX application thread; currentThread = Thread-21
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:41: Error: Not on FX application thread; currentThread = Thread-24
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:41: Error: Not on FX application thread; currentThread = Thread-26
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:41: Error: Not on FX application thread; currentThread = Thread-28
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:41: Error: Not on FX application thread; currentThread = Thread-30
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:41: Error: Not on FX application thread; currentThread = Thread-32
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:41: Error: null
+15-Apr-2014 18:45: Error: null
+15-Apr-2014 18:45: Error: null
+15-Apr-2014 18:45: Error: Not on FX application thread; currentThread = Thread-38
+15-Apr-2014 18:45: Error: null
+15-Apr-2014 18:45: Error: null
+15-Apr-2014 18:45: Error: Not on FX application thread; currentThread = Thread-19
+15-Apr-2014 18:45: Error: null
+15-Apr-2014 18:46: Error: null
+15-Apr-2014 18:46: Error: Not on FX application thread; currentThread = Thread-22
+15-Apr-2014 18:46: Error: null
+15-Apr-2014 18:46: Error: null
+15-Apr-2014 18:46: Error: Not on FX application thread; currentThread = Thread-24
+15-Apr-2014 18:46: Error: Not on FX application thread; currentThread = Thread-26
+15-Apr-2014 18:46: Error: null
+15-Apr-2014 18:46: Error: Not on FX application thread; currentThread = Thread-28
+15-Apr-2014 18:46: Error: Not on FX application thread; currentThread = Thread-30
+15-Apr-2014 18:46: Error: null
+15-Apr-2014 18:46: Error: null
+15-Apr-2014 18:46: Error: Not on FX application thread; currentThread = Thread-32
+15-Apr-2014 18:46: Error: Not on FX application thread; currentThread = Thread-34
+15-Apr-2014 18:46: Error: null
+15-Apr-2014 18:46: Error: null
+15-Apr-2014 18:47: Error: Not on FX application thread; currentThread = Thread-36
+15-Apr-2014 18:51: Error: null
+15-Apr-2014 18:51: Error: Not on FX application thread; currentThread = Thread-19
+15-Apr-2014 18:51: Error: null
+15-Apr-2014 18:51: Error: null
+15-Apr-2014 18:51: Error: Not on FX application thread; currentThread = Thread-21
+15-Apr-2014 18:55: Error: null
+15-Apr-2014 18:57: Error: null
+15-Apr-2014 18:57: Error: null
+15-Apr-2014 18:57: Error: Not on FX application thread; currentThread = Thread-21
+15-Apr-2014 18:57: Error: null
+15-Apr-2014 18:57: Error: null
+15-Apr-2014 18:57: Error: Not on FX application thread; currentThread = Thread-23
+15-Apr-2014 18:57: Error: null
+15-Apr-2014 18:57: Error: null

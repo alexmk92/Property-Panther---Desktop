@@ -75,6 +75,10 @@ public class MessageCell extends ListCell<String> {
                     break;
                 }
 
+                if(thisMessage.getRead() == 1) {
+                    hbox.setOpacity(0.75);
+                }
+
                 type.setTextAlignment(TextAlignment.CENTER);
                 date.setText(thisMessage.getDateAsString(thisMessage.getDate()));
 

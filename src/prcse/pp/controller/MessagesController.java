@@ -34,6 +34,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Created with IntelliJ IDEA.
@@ -164,6 +167,26 @@ public class MessagesController implements Initializable, ControlledScreen {
     private Pane messageWrap;
     @FXML // fx:id="lblToInbox"
     private Label lblToInbox;
+    @FXML // fx:id="lblDisplayMessage"
+    private Label lblDisplayMessage;
+    @FXML // fx:id="lblMsgType"
+    private Label lblMsgType;
+    @FXML // fx:id="lblSender"
+    private Label lblSender;
+    @FXML // fx:id="lblRecipient"
+    private Label lblRecipient;
+    @FXML // fx:id="imgProfile"
+    private ImageView imgProfile;
+    @FXML // fx:id="btnReply"
+    private Button btnReply;
+    @FXML // fx:id="lblReceived"
+    private Label lblReceived;
+    @FXML // fx:id="btnCloseMessage"
+    private Button btnCloseMessage;
+    @FXML // fx:id="viewMessage"
+    private Pane viewMessage;
+    @FXML // fx:id="choiceUpdate"
+    private ChoiceBox choiceUpdate;
 
 
     // Set variables to allow for draggable window.
@@ -201,9 +224,17 @@ public class MessagesController implements Initializable, ControlledScreen {
     {
         // Add options to combo box
         ObservableList<String> selectItems = FXCollections.observableArrayList();
+        ObservableList<String> statusItems = FXCollections.observableArrayList();
         selectItems.addAll("All", "Alert", "Inbox", "Maintenance");
+        statusItems.addAll("RECEIVED", "SEEN", "SCHEDULED", "IN PROGRESS", "COMPLETED");
+        choiceUpdate.setItems(statusItems);
         selectType.setItems(selectItems);
+
+        // Hide any overlay elements
         lblToInbox.setVisible(false);
+        viewMessage.setVisible(false);
+        chatOverlay.setVisible(false);
+        choiceUpdate.setVisible(false);
 
         // Set the display graphic for title
         Effect glow = new Glow(0.3);
@@ -228,16 +259,17 @@ public class MessagesController implements Initializable, ControlledScreen {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 if(pageLoaded == false){
-                    animateIn();
                     populateMessageList();
                     resetStyles();
+
+                    // Select the users inbox
+                    selectType.getSelectionModel().selectFirst();
                 }
+
+                animateIn();
                 pageLoaded = true;
             }
         });
-
-        // Hide the overlay and message window
-        hideMessages();
 
         /******************************************************
          *                NAVIGATION CONTROLS
@@ -499,11 +531,14 @@ public class MessagesController implements Initializable, ControlledScreen {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 hideMessages();
+                viewMessage.setVisible(true);
             }
         });
         btnNew.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
+                messageWrap.setVisible(true);
+                viewMessage.setVisible(false);
                 showNewMessage();
                 txtRecipient.requestFocus();
             }
@@ -533,6 +568,13 @@ public class MessagesController implements Initializable, ControlledScreen {
                 {
                     goToUsers(new ActionEvent());
                 }
+            }
+        });
+        btnCloseMessage.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                hideMessages();
+                messageWrap.setVisible(true);
             }
         });
 
@@ -601,7 +643,7 @@ public class MessagesController implements Initializable, ControlledScreen {
             @Override
             public void handle(ActionEvent actionEvent) {
                 System.out.println("Attempting send...");
-                if(sendToUser(txtRecipient.getText())) {
+                if (sendToUser(txtRecipient.getText())) {
                     System.out.println("Sent");
                 }
             }
@@ -616,7 +658,7 @@ public class MessagesController implements Initializable, ControlledScreen {
                 // Get the sessionUser
                 sessionUser = ScreensFramework.loggedIn;
 
-                switch(selected) {
+                switch (selected) {
                     case 0:
                         sessionUser.buildInbox(amount, "ALL");
                         populateMessageList();
@@ -632,7 +674,51 @@ public class MessagesController implements Initializable, ControlledScreen {
                     case 3:
                         sessionUser.buildInbox(amount, "MAINTENANCE");
                         populateMessageList();
-                    break;
+                        break;
+                }
+            }
+        });
+        choiceUpdate.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observableValue, Object o, Object o2) {
+                Object thisIndex = choiceUpdate.getSelectionModel().getSelectedItem();
+
+                // Cast the val to the string
+                String value = String.class.cast(thisIndex);
+
+                System.out.println(value);
+            }
+        });
+        lstMessages.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+
+                // Variables to process the action
+                int thisMsg = lstMessages.getSelectionModel().getSelectedIndex();
+                String box  = "INBOX";
+                Message m   = null;
+
+                // Ternary operator to determine the box we are using, INBOX if true else SENT
+                box = usingInbox ? "INBOX" : "SENT";
+
+                // Set the message on the view dependent on which box we are using
+                switch(box) {
+                    case "INBOX":
+                            m = sessionUser.getMessageAt("INBOX", thisMsg);
+                            if(m != null) { renderMessage(m); }
+                            if(m.getRead() != 1) {
+                                m.setSeenTrue();
+                                String query = "UPDATE messages SET message_read = 1 WHERE message_id = " + m.getId();
+                                ScreensFramework.db.query(query);
+                                populateMessageList();
+                            }
+                        break;
+                    case "SENT":
+                        for(int i = 0; i < sessionUser.getSentSize(); i++) {
+                            m = sessionUser.getMessageAt("SENT", thisMsg);
+                            if(m != null) { renderMessage(m); }
+                        }
+                        break;
                 }
             }
         });
@@ -642,6 +728,58 @@ public class MessagesController implements Initializable, ControlledScreen {
     /******************************************************
      *                  CONTROL METHODS
      *****************************************************/
+    /**
+     * Reveals and populates the message area
+     * @param m - the message we are sending
+     */
+    private void renderMessage(Message m) {
+
+        // Show the message window
+        choiceUpdate.setVisible(false);
+        messageWrap.setVisible(false);
+        showNewMessage();
+
+
+        // Get the type of message (INBOX, MAINT, ALERT)
+        String type      = m.getType();
+        String sender    = "";
+        String recipient = "";
+
+        // Remove all the styles
+        lblMsgType.getStyleClass().removeAll("encapsulated-large", "green", "pink", "orange");
+
+        // Set any styles
+        switch(type) {
+            case "INBOX":
+                lblMsgType.getStyleClass().addAll("encapsulated-large", "green");
+                break;
+            case "ALERT":
+                lblMsgType.getStyleClass().addAll("encapsulated-large", "pink");
+                break;
+            case "MAINTENANCE":
+                type = "MAINT";
+                choiceUpdate.setVisible(true);
+
+                lblMsgType.getStyleClass().addAll("encapsulated-large", "orange");
+                break;
+        }
+
+        // Display the viewport
+        chatOverlay.setVisible(true);
+        viewMessage.setVisible(true);
+
+        // Handle the case where a recipient is unknown
+        sender    = m.getSender().equals("") || m.getSender() == null ? "From: System" : "From: " + m.getSender();
+        recipient = m.getRecipient().equals("") || m.getRecipient() == null ? "to: " + sessionUser.getEmail() : "to " + m.getRecipient();
+
+        // Populate the message
+        lblSender.setText(sender);
+        lblRecipient.setText(recipient);
+        lblMsgType.setText(type);
+        lblReceived.setText(m.getDateAsString(m.getDate()));
+        lblDisplayMessage.setText(m.getMessage());
+    }
+
     /**
      * Auto completes the text field by searching through an array of
      * available values
@@ -824,9 +962,9 @@ public class MessagesController implements Initializable, ControlledScreen {
 
         // Animate the position in
         final KeyValue kv3 = new KeyValue(widget_top_right.translateXProperty(), -316);
-        final KeyFrame kf3 = new KeyFrame(Duration.millis(400), kv3);
+        final KeyFrame kf3 = new KeyFrame(Duration.millis(200), kv3);
         final KeyValue kv4 = new KeyValue(widget_bottom_right.translateYProperty(), -480);
-        final KeyFrame kf4 = new KeyFrame(Duration.millis(500), kv4);
+        final KeyFrame kf4 = new KeyFrame(Duration.millis(250), kv4);
 
         // Build the animation
         load_scene.getKeyFrames().addAll(kf0, kf1, kf2, kf3, kf4);
@@ -847,9 +985,9 @@ public class MessagesController implements Initializable, ControlledScreen {
 
         // Animate the position in
         final KeyValue kv3 = new KeyValue(widget_top_right.translateXProperty(), 0);
-        final KeyFrame kf3 = new KeyFrame(Duration.millis(400), kv3);
+        final KeyFrame kf3 = new KeyFrame(Duration.millis(200), kv3);
         final KeyValue kv4 = new KeyValue(widget_bottom_right.translateYProperty(), 0);
-        final KeyFrame kf4 = new KeyFrame(Duration.millis(500), kv4);
+        final KeyFrame kf4 = new KeyFrame(Duration.millis(250), kv4);
 
         // Build the animation
         load_scene.getKeyFrames().addAll(kf0, kf1, kf2, kf3, kf4);
@@ -861,17 +999,34 @@ public class MessagesController implements Initializable, ControlledScreen {
      */
     public void showNewMessage() {
         chatOverlay.setVisible(true);
+
         final Timeline load_scene = new Timeline();
         load_scene.setCycleCount(1);
         load_scene.setAutoReverse(false);
         final KeyValue kv0 = new KeyValue(chatOverlay.opacityProperty(), 1);
-        final KeyFrame kf0 = new KeyFrame(Duration.millis(250), kv0);
-        final KeyValue kv1 = new KeyValue(messageWrap.opacityProperty(), 1);
-        final KeyFrame kf1 = new KeyFrame(Duration.millis(750), kv1);
+        final KeyFrame kf0 = new KeyFrame(Duration.millis(150), kv0);
+        final KeyValue kv1 = new KeyValue(messageWrap.layoutYProperty(), 184);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(200), kv1);
+        final KeyValue kv2 = new KeyValue(viewMessage.layoutYProperty(), 133);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(200), kv2);
 
         // Build the animation
-        load_scene.getKeyFrames().addAll(kf0, kf1);
-        load_scene.play();
+        load_scene.getKeyFrames().addAll(kf0, kf1, kf2);
+
+
+        // slight delay to ensure smooth animatin
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(250);
+                    load_scene.play();
+                } catch(Exception e) {
+                    ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+                }
+
+            }
+        }).start();
     }
 
     /**
@@ -882,15 +1037,28 @@ public class MessagesController implements Initializable, ControlledScreen {
         load_scene.setCycleCount(1);
         load_scene.setAutoReverse(false);
         final KeyValue kv0 = new KeyValue(chatOverlay.opacityProperty(), 0);
-        final KeyFrame kf0 = new KeyFrame(Duration.millis(750), kv0);
-        final KeyValue kv1 = new KeyValue(messageWrap.opacityProperty(), 0);
+        final KeyFrame kf0 = new KeyFrame(Duration.millis(250), kv0);
+        final KeyValue kv1 = new KeyValue(messageWrap.layoutYProperty(), 0);
         final KeyFrame kf1 = new KeyFrame(Duration.millis(250), kv1);
+        final KeyValue kv2 = new KeyValue(viewMessage.layoutYProperty(), 0);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(250), kv2);
 
         // Build the animation
-        load_scene.getKeyFrames().addAll(kf0, kf1);
+        load_scene.getKeyFrames().addAll(kf0, kf1, kf2);
         load_scene.play();
 
-        chatOverlay.setVisible(false);
+        // Sleep to allow completion
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(250);
+                    chatOverlay.setVisible(false);
+                } catch (Exception e) {
+                    ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+                }
+            }
+        }).start();
     }
 
     /**
