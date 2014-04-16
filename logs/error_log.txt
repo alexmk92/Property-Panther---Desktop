@@ -8461,3 +8461,425 @@ ORA-12519, TNS:no appropriate service handler found
 15-Apr-2014 18:57: Error: Not on FX application thread; currentThread = Thread-23
 15-Apr-2014 18:57: Error: null
 15-Apr-2014 18:57: Error: null
+15-Apr-2014 19:04: Error: Not on FX application thread; currentThread = Thread-25
+15-Apr-2014 19:04: Error: null
+15-Apr-2014 19:04: Error: null
+15-Apr-2014 19:04: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 13:13: Error: null
+16-Apr-2014 13:13: Error: null
+16-Apr-2014 13:14: Error: null
+16-Apr-2014 13:14: Error: null
+16-Apr-2014 13:15: Error: null
+16-Apr-2014 13:16: Error: null
+16-Apr-2014 13:16: Error: null
+16-Apr-2014 13:17: Error: null
+16-Apr-2014 13:17: Error: null
+16-Apr-2014 13:18: Error: Not on FX application thread; currentThread = Thread-18
+16-Apr-2014 13:19: Error: null
+16-Apr-2014 13:19: Error: null
+16-Apr-2014 13:31: Error: null
+16-Apr-2014 13:31: Error: null
+16-Apr-2014 13:33: Error: null
+16-Apr-2014 13:33: Error: null
+16-Apr-2014 13:34: Error: null
+16-Apr-2014 13:34: Error: null
+16-Apr-2014 13:39: Error: null
+16-Apr-2014 13:39: Error: null
+16-Apr-2014 13:39: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 13:39: Error: null
+16-Apr-2014 13:39: Error: null
+16-Apr-2014 13:39: Error: Not on FX application thread; currentThread = Thread-21
+16-Apr-2014 13:39: Error: null
+16-Apr-2014 13:39: Error: null
+16-Apr-2014 13:39: Error: Not on FX application thread; currentThread = Thread-24
+16-Apr-2014 13:55: Error: null
+16-Apr-2014 13:55: Error: null
+16-Apr-2014 13:55: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 14:00: Error: null
+16-Apr-2014 14:00: Error: null
+16-Apr-2014 14:01: Error: null
+16-Apr-2014 14:01: Error: null
+16-Apr-2014 14:01: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 14:01: Error: null
+16-Apr-2014 14:02: Error: null
+16-Apr-2014 14:02: Error: null
+16-Apr-2014 14:03: Error: null
+16-Apr-2014 14:03: Error: null
+16-Apr-2014 14:07: Error: null
+16-Apr-2014 14:07: Error: null
+16-Apr-2014 14:08: Error: null
+16-Apr-2014 14:08: Error: null
+16-Apr-2014 14:11: Error: null
+16-Apr-2014 14:11: Error: null
+16-Apr-2014 14:11: Error: Not on FX application thread; currentThread = Thread-20
+16-Apr-2014 14:11: Error: null
+16-Apr-2014 14:11: Error: Not on FX application thread; currentThread = Thread-23
+16-Apr-2014 14:11: Error: null
+16-Apr-2014 14:11: Error: null
+16-Apr-2014 14:11: Error: Not on FX application thread; currentThread = Thread-26
+16-Apr-2014 14:11: Error: null
+16-Apr-2014 14:11: Error: null
+16-Apr-2014 14:11: Error: Not on FX application thread; currentThread = Thread-27
+16-Apr-2014 14:11: Error: null
+16-Apr-2014 14:11: Error: null
+16-Apr-2014 14:11: Error: Not on FX application thread; currentThread = Thread-30
+16-Apr-2014 14:11: Error: null
+16-Apr-2014 14:11: Error: null
+16-Apr-2014 14:11: Error: Not on FX application thread; currentThread = Thread-31
+16-Apr-2014 14:11: Error: null
+16-Apr-2014 14:11: Error: null
+16-Apr-2014 14:11: Error: Not on FX application thread; currentThread = Thread-35
+16-Apr-2014 14:11: Error: null
+16-Apr-2014 14:11: Error: null
+16-Apr-2014 14:11: Error: Not on FX application thread; currentThread = Thread-36
+16-Apr-2014 14:11: Error: null
+16-Apr-2014 14:11: Error: null
+16-Apr-2014 14:12: Error: null
+16-Apr-2014 14:12: Error: null
+16-Apr-2014 14:12: Error: Not on FX application thread; currentThread = Thread-43
+16-Apr-2014 14:12: Error: null
+16-Apr-2014 14:12: Error: null
+16-Apr-2014 14:12: Error: Not on FX application thread; currentThread = Thread-46
+16-Apr-2014 14:12: Error: null
+16-Apr-2014 14:12: Error: null
+16-Apr-2014 14:12: Error: Not on FX application thread; currentThread = Thread-49
+16-Apr-2014 14:12: Error: null
+16-Apr-2014 14:12: Error: null
+16-Apr-2014 14:12: Error: null
+16-Apr-2014 14:12: Error: Not on FX application thread; currentThread = Thread-51
+16-Apr-2014 14:12: Error: null
+16-Apr-2014 14:12: Error: Not on FX application thread; currentThread = Thread-55
+16-Apr-2014 14:12: Error: null
+16-Apr-2014 14:12: Error: null
+16-Apr-2014 14:12: Error: Not on FX application thread; currentThread = Thread-57
+16-Apr-2014 14:12: Error: null
+16-Apr-2014 14:12: Error: null
+16-Apr-2014 14:12: Error: Not on FX application thread; currentThread = Thread-60
+16-Apr-2014 14:12: Error: null
+16-Apr-2014 14:12: Error: Not on FX application thread; currentThread = Thread-64
+16-Apr-2014 14:14: Error: null
+16-Apr-2014 14:14: Error: Not on FX application thread; currentThread = Thread-23
+16-Apr-2014 14:14: Error: null
+16-Apr-2014 14:14: Error: null
+16-Apr-2014 14:14: Error: Not on FX application thread; currentThread = Thread-28
+16-Apr-2014 14:14: Error: null
+16-Apr-2014 14:14: Error: null
+16-Apr-2014 14:14: Error: Not on FX application thread; currentThread = Thread-35
+16-Apr-2014 14:16: Error: null
+16-Apr-2014 14:16: Error: null
+16-Apr-2014 14:16: Error: Not on FX application thread; currentThread = Thread-21
+16-Apr-2014 14:16: Error: null
+16-Apr-2014 14:16: Error: null
+16-Apr-2014 14:16: Error: Not on FX application thread; currentThread = Thread-22
+16-Apr-2014 14:17: Error: null
+16-Apr-2014 14:17: Error: null
+16-Apr-2014 14:17: Error: Not on FX application thread; currentThread = Thread-25
+16-Apr-2014 14:17: Error: null
+16-Apr-2014 14:17: Error: null
+16-Apr-2014 14:17: Error: Not on FX application thread; currentThread = Thread-26
+16-Apr-2014 14:17: Error: null
+16-Apr-2014 14:17: Error: null
+16-Apr-2014 14:17: Error: null
+16-Apr-2014 14:17: Error: Not on FX application thread; currentThread = Thread-28
+16-Apr-2014 14:17: Error: null
+16-Apr-2014 14:17: Error: null
+16-Apr-2014 14:17: Error: null
+16-Apr-2014 14:17: Error: Not on FX application thread; currentThread = Thread-33
+16-Apr-2014 14:17: Error: null
+16-Apr-2014 14:17: Error: null
+16-Apr-2014 14:17: Error: Not on FX application thread; currentThread = Thread-34
+16-Apr-2014 14:17: Error: null
+16-Apr-2014 14:17: Error: null
+16-Apr-2014 14:17: Error: null
+16-Apr-2014 14:17: Error: Not on FX application thread; currentThread = Thread-36
+16-Apr-2014 14:18: Error: null
+16-Apr-2014 14:18: Error: null
+16-Apr-2014 14:18: Error: Not on FX application thread; currentThread = Thread-37
+16-Apr-2014 14:18: Error: null
+16-Apr-2014 14:18: Error: null
+16-Apr-2014 14:18: Error: Not on FX application thread; currentThread = Thread-38
+16-Apr-2014 14:18: Error: null
+16-Apr-2014 14:18: Error: null
+16-Apr-2014 14:22: Error: Not on FX application thread; currentThread = Thread-39
+16-Apr-2014 14:22: Error: null
+16-Apr-2014 14:22: Error: null
+16-Apr-2014 14:22: Error: Not on FX application thread; currentThread = Thread-42
+16-Apr-2014 14:22: Error: null
+16-Apr-2014 14:22: Error: null
+16-Apr-2014 14:22: Error: Not on FX application thread; currentThread = Thread-45
+16-Apr-2014 14:22: Error: null
+16-Apr-2014 14:22: Error: null
+16-Apr-2014 14:22: Error: Not on FX application thread; currentThread = Thread-47
+16-Apr-2014 14:22: Error: null
+16-Apr-2014 14:22: Error: null
+16-Apr-2014 14:22: Error: Not on FX application thread; currentThread = Thread-48
+16-Apr-2014 14:24: Error: null
+16-Apr-2014 14:24: Error: Not on FX application thread; currentThread = Thread-21
+16-Apr-2014 14:24: Error: null
+16-Apr-2014 14:24: Error: null
+16-Apr-2014 14:24: Error: Not on FX application thread; currentThread = Thread-24
+16-Apr-2014 14:26: Error: null
+16-Apr-2014 14:26: Error: null
+16-Apr-2014 14:26: Error: Not on FX application thread; currentThread = Thread-21
+16-Apr-2014 14:26: Error: null
+16-Apr-2014 14:26: Error: Not on FX application thread; currentThread = Thread-24
+16-Apr-2014 14:26: Error: null
+16-Apr-2014 14:26: Error: null
+16-Apr-2014 14:26: Error: Not on FX application thread; currentThread = Thread-27
+16-Apr-2014 14:26: Error: null
+16-Apr-2014 14:26: Error: null
+16-Apr-2014 14:27: Error: Not on FX application thread; currentThread = Thread-28
+16-Apr-2014 14:27: Error: null
+16-Apr-2014 14:27: Error: null
+16-Apr-2014 14:27: Error: Not on FX application thread; currentThread = Thread-31
+16-Apr-2014 14:36: Error: null
+16-Apr-2014 14:37: Error: Not on FX application thread; currentThread = Thread-21
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: Not on FX application thread; currentThread = Thread-22
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: Not on FX application thread; currentThread = Thread-25
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: Not on FX application thread; currentThread = Thread-28
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: Not on FX application thread; currentThread = Thread-29
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: Not on FX application thread; currentThread = Thread-30
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: Not on FX application thread; currentThread = Thread-33
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: Not on FX application thread; currentThread = Thread-34
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: Not on FX application thread; currentThread = Thread-35
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: Not on FX application thread; currentThread = Thread-38
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: null
+16-Apr-2014 14:37: Error: Not on FX application thread; currentThread = Thread-39
+16-Apr-2014 14:39: Error: null
+16-Apr-2014 14:39: Error: Not on FX application thread; currentThread = Thread-21
+16-Apr-2014 14:39: Error: null
+16-Apr-2014 14:39: Error: null
+16-Apr-2014 14:40: Error: null
+16-Apr-2014 14:40: Error: Not on FX application thread; currentThread = Thread-21
+16-Apr-2014 14:40: Error: null
+16-Apr-2014 14:40: Error: null
+16-Apr-2014 14:42: Error: null
+16-Apr-2014 14:42: Error: Not on FX application thread; currentThread = Thread-21
+16-Apr-2014 14:45: Error: null
+16-Apr-2014 14:46: Error: Not on FX application thread; currentThread = Thread-22
+16-Apr-2014 14:54: Error: String index out of range: -1
+16-Apr-2014 14:54: Error: String index out of range: 13
+16-Apr-2014 14:54: Error: String index out of range: -1
+16-Apr-2014 14:54: Error: String index out of range: 13
+16-Apr-2014 14:54: Error: String index out of range: -1
+16-Apr-2014 14:54: Error: String index out of range: 13
+16-Apr-2014 14:54: Error: String index out of range: -1
+16-Apr-2014 14:54: Error: String index out of range: 13
+16-Apr-2014 14:54: Error: String index out of range: 12
+16-Apr-2014 14:54: Error: String index out of range: 11
+16-Apr-2014 14:54: Error: String index out of range: 11
+16-Apr-2014 14:54: Error: String index out of range: 11
+16-Apr-2014 14:54: Error: String index out of range: -1
+16-Apr-2014 14:54: Error: String index out of range: 13
+16-Apr-2014 14:54: Error: String index out of range: -1
+16-Apr-2014 14:54: Error: String index out of range: 13
+16-Apr-2014 14:55: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 14:55: Error: null
+16-Apr-2014 14:55: Error: Not on FX application thread; currentThread = Thread-22
+16-Apr-2014 14:55: Error: null
+16-Apr-2014 14:55: Error: null
+16-Apr-2014 14:56: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 14:57: Error: null
+16-Apr-2014 14:57: Error: Not on FX application thread; currentThread = Thread-21
+16-Apr-2014 14:57: Error: null
+16-Apr-2014 14:57: Error: null
+16-Apr-2014 14:57: Error: Not on FX application thread; currentThread = Thread-22
+16-Apr-2014 14:57: Error: Not on FX application thread; currentThread = Thread-23
+16-Apr-2014 14:58: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 14:59: Error: String index out of range: 12
+16-Apr-2014 14:59: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 15:00: Error: null
+16-Apr-2014 15:00: Error: Not on FX application thread; currentThread = Thread-22
+16-Apr-2014 15:02: Error: null
+16-Apr-2014 15:02: Error: Not on FX application thread; currentThread = Thread-21
+16-Apr-2014 15:02: Error: null
+16-Apr-2014 15:02: Error: null
+16-Apr-2014 15:02: Error: Not on FX application thread; currentThread = Thread-22
+16-Apr-2014 15:03: Error: String index out of range: -1
+16-Apr-2014 15:03: Error: String index out of range: 13
+16-Apr-2014 15:03: Error: String index out of range: -1
+16-Apr-2014 15:03: Error: String index out of range: 13
+16-Apr-2014 15:03: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 15:12: Error: null
+16-Apr-2014 15:12: Error: Not on FX application thread; currentThread = Thread-21
+16-Apr-2014 15:12: Error: null
+16-Apr-2014 15:12: Error: null
+16-Apr-2014 15:12: Error: Not on FX application thread; currentThread = Thread-22
+16-Apr-2014 15:13: Error: String index out of range: -1
+16-Apr-2014 15:13: Error: String index out of range: 13
+16-Apr-2014 15:13: Error: String index out of range: -1
+16-Apr-2014 15:13: Error: String index out of range: 13
+16-Apr-2014 15:13: Error: String index out of range: -1
+16-Apr-2014 15:13: Error: String index out of range: 13
+16-Apr-2014 15:13: Error: String index out of range: -1
+16-Apr-2014 15:13: Error: String index out of range: 13
+16-Apr-2014 15:13: Error: Not on FX application thread; currentThread = Thread-23
+16-Apr-2014 15:18: Error: null
+16-Apr-2014 15:18: Error: Not on FX application thread; currentThread = Thread-21
+16-Apr-2014 15:18: Error: Not on FX application thread; currentThread = Thread-22
+16-Apr-2014 15:18: Error: null
+16-Apr-2014 15:18: Error: null
+16-Apr-2014 15:18: Error: Not on FX application thread; currentThread = Thread-25
+16-Apr-2014 15:18: Error: String index out of range: -1
+16-Apr-2014 15:18: Error: String index out of range: 13
+16-Apr-2014 15:18: Error: String index out of range: 14
+16-Apr-2014 15:18: Error: String index out of range: 14
+16-Apr-2014 15:18: Error: String index out of range: 15
+16-Apr-2014 15:18: Error: String index out of range: 15
+16-Apr-2014 15:18: Error: String index out of range: 16
+16-Apr-2014 15:18: Error: String index out of range: 16
+16-Apr-2014 15:18: Error: String index out of range: 17
+16-Apr-2014 15:18: Error: String index out of range: 17
+16-Apr-2014 15:18: Error: String index out of range: 17
+16-Apr-2014 15:18: Error: String index out of range: 17
+16-Apr-2014 15:18: Error: String index out of range: -1
+16-Apr-2014 15:18: Error: String index out of range: 13
+16-Apr-2014 15:18: Error: String index out of range: -1
+16-Apr-2014 15:18: Error: String index out of range: 13
+16-Apr-2014 15:19: Error: String index out of range: -1
+16-Apr-2014 15:19: Error: String index out of range: 13
+16-Apr-2014 15:20: Error: String index out of range: -1
+16-Apr-2014 15:20: Error: String index out of range: 13
+16-Apr-2014 15:20: Error: String index out of range: -1
+16-Apr-2014 15:20: Error: String index out of range: 13
+16-Apr-2014 15:20: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 15:22: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 15:23: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 15:25: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 15:26: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 15:26: Error: String index out of range: -1
+16-Apr-2014 15:26: Error: String index out of range: 13
+16-Apr-2014 15:26: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 15:27: Error: String index out of range: -1
+16-Apr-2014 15:27: Error: String index out of range: 13
+16-Apr-2014 15:27: Error: Not on FX application thread; currentThread = Thread-20
+16-Apr-2014 15:28: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 15:29: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 15:57: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 15:58: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 16:01: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 16:02: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 16:04: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 16:04: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 16:05: Error: null
+16-Apr-2014 16:05: Error: null
+16-Apr-2014 16:05: Error: Not on FX application thread; currentThread = Thread-21
+16-Apr-2014 16:05: Error: null
+16-Apr-2014 16:05: Error: null
+16-Apr-2014 16:05: Error: Not on FX application thread; currentThread = Thread-24
+16-Apr-2014 16:05: Error: null
+16-Apr-2014 16:05: Error: Not on FX application thread; currentThread = Thread-27
+16-Apr-2014 16:07: Error: null
+16-Apr-2014 16:07: Error: null
+16-Apr-2014 16:07: Error: Not on FX application thread; currentThread = Thread-28
+16-Apr-2014 16:21: Error: null
+16-Apr-2014 16:21: Error: null
+16-Apr-2014 16:21: Error: null
+16-Apr-2014 16:22: Error: Not on FX application thread; currentThread = Thread-21
+16-Apr-2014 16:22: Error: null
+16-Apr-2014 16:22: Error: null
+16-Apr-2014 16:22: Error: Not on FX application thread; currentThread = Thread-22
+16-Apr-2014 16:22: Error: Not on FX application thread; currentThread = Thread-23
+16-Apr-2014 16:22: Error: Not on FX application thread; currentThread = Thread-24
+16-Apr-2014 16:23: Error: null
+16-Apr-2014 16:23: Error: null
+16-Apr-2014 16:23: Error: Not on FX application thread; currentThread = Thread-21
+16-Apr-2014 16:23: Error: null
+16-Apr-2014 16:23: Error: null
+16-Apr-2014 16:23: Error: Not on FX application thread; currentThread = Thread-24
+16-Apr-2014 16:23: Error: null
+16-Apr-2014 16:23: Error: null
+16-Apr-2014 16:23: Error: Not on FX application thread; currentThread = Thread-27
+16-Apr-2014 16:23: Error: null
+16-Apr-2014 16:23: Error: null
+16-Apr-2014 16:23: Error: Not on FX application thread; currentThread = Thread-30
+16-Apr-2014 16:23: Error: null
+16-Apr-2014 16:23: Error: Not on FX application thread; currentThread = Thread-31
+16-Apr-2014 16:24: Error: null
+16-Apr-2014 16:24: Error: null
+16-Apr-2014 16:24: Error: null
+16-Apr-2014 16:24: Error: Not on FX application thread; currentThread = Thread-34
+16-Apr-2014 16:24: Error: null
+16-Apr-2014 16:24: Error: null
+16-Apr-2014 16:24: Error: Not on FX application thread; currentThread = Thread-35
+16-Apr-2014 16:24: Error: null
+16-Apr-2014 16:24: Error: Not on FX application thread; currentThread = Thread-36
+16-Apr-2014 16:25: Error: Not on FX application thread; currentThread = Thread-39
+16-Apr-2014 16:25: Error: null
+16-Apr-2014 16:25: Error: null
+16-Apr-2014 16:25: Error: Not on FX application thread; currentThread = Thread-40
+16-Apr-2014 16:33: Index: 1, Size: 1
+16-Apr-2014 16:33: Index: 2, Size: 1
+16-Apr-2014 16:33: Index: 3, Size: 1
+16-Apr-2014 16:33: Index: 1, Size: 1
+16-Apr-2014 16:33: Index: 2, Size: 1
+16-Apr-2014 16:33: Index: 3, Size: 1
+16-Apr-2014 16:43: Error: null
+16-Apr-2014 16:43: Error: null
+16-Apr-2014 16:44: Error: Not on FX application thread; currentThread = Thread-22
+16-Apr-2014 18:16: Error: null
+16-Apr-2014 18:16: Error: null
+16-Apr-2014 18:16: Error: Not on FX application thread; currentThread = Thread-19
+16-Apr-2014 18:19: Error: Not on FX application thread; currentThread = Thread-23
+16-Apr-2014 18:19: Error: Not on FX application thread; currentThread = Thread-25
+16-Apr-2014 18:19: Error: Not on FX application thread; currentThread = Thread-27
+16-Apr-2014 18:19: Error: Not on FX application thread; currentThread = Thread-29
+16-Apr-2014 18:19: Error: Not on FX application thread; currentThread = Thread-31
+16-Apr-2014 18:19: Error: Not on FX application thread; currentThread = Thread-33
+16-Apr-2014 18:19: Error: Not on FX application thread; currentThread = Thread-35
+16-Apr-2014 18:20: Error: Not on FX application thread; currentThread = Thread-37
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: Not on FX application thread; currentThread = Thread-39
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: Not on FX application thread; currentThread = Thread-40
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: Not on FX application thread; currentThread = Thread-41
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: Not on FX application thread; currentThread = Thread-43
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: Not on FX application thread; currentThread = Thread-45
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: Not on FX application thread; currentThread = Thread-47
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: null
+16-Apr-2014 18:20: Error: Not on FX application thread; currentThread = Thread-48

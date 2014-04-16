@@ -95,17 +95,20 @@ public class Admin extends Person implements Serializable {
             // Build the query string
             switch(type) {
                 case "ALL":
-                    query = "SELECT * FROM messages WHERE message_to = " + this.getId() + " OR message_to IS NULL ORDER BY message_sent ASC FETCH FIRST " + amount + " ROWS ONLY";
+                    query = "SELECT * FROM messages WHERE message_to = " + this.getId() + " OR message_to IS NULL ORDER BY message_sent DESC FETCH FIRST " + amount + " ROWS ONLY";
                     break;
                 case "ALERT":
-                    query = "SELECT * FROM messages WHERE message_to IS NULL AND message_type='ALERT' ORDER BY message_sent ASC FETCH FIRST " + amount + " ROWS ONLY";
+                    query = "SELECT * FROM messages WHERE message_to IS NULL AND message_type='ALERT' ORDER BY message_sent DESC FETCH FIRST " + amount + " ROWS ONLY";
                     break;
                 case "INBOX":
-                    query = "SELECT * FROM messages WHERE message_to = " + this.getId() + " AND message_type='INBOX' ORDER BY message_sent ASC FETCH FIRST " + amount + " ROWS ONLY";
+                    query = "SELECT * FROM messages WHERE message_to = " + this.getId() + " AND message_type='INBOX' ORDER BY message_sent DESC FETCH FIRST " + amount + " ROWS ONLY";
                     break;
                 case "MAINTENANCE":
                     query = "SELECT * FROM messages WHERE message_to = " + this.getId() + " AND message_type='MAINTENANCE' " +
-                            "OR message_to IS NULL AND message_type='MAINTENANCE' ORDER BY message_sent ASC FETCH FIRST " + amount + " ROWS ONLY";
+                            "OR message_to IS NULL AND message_type='MAINTENANCE' ORDER BY message_sent DESC FETCH FIRST " + amount + " ROWS ONLY";
+                    break;
+                case "UNREAD":
+                    query = "SELECT * FROM messages WHERE message_to = " + this.getId() + " AND message_read = 0 OR message_to IS NULL AND message_read = 0 ORDER BY message_sent DESC FETCH FIRST " + amount + " ROWS ONLY";
                     break;
             }
 
@@ -123,33 +126,6 @@ public class Admin extends Person implements Serializable {
 
                 // Add the message to the inbox
                 this.inbox.add(m);
-            }
-        } catch(Exception e) {
-            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
-        }
-    }
-
-    /**
-     * Builds the sent box for the admin user
-     * @param amount - the amount of messages we want to load by default
-     */
-    public void buildSent(int amount) {
-
-        // Empty the current sent box
-        this.sentBox.clear();
-
-        try {
-            // Query the database
-            String    query = "SELECT * FROM messages WHERE message_from = " + this.getId() + " ORDER BY message_sent ASC FETCH FIRST " + amount + " ROWS ONLY";
-            ResultSet   res = ScreensFramework.db.query(query);
-
-            while(res.next()){
-                // Build the message
-                Message m = new Message(res.getInt("message_id"), res.getInt("message_to"), res.getInt("message_from"), res.getString("message_type"),
-                        res.getString("message_body"), res.getDate("message_sent"), res.getInt("message_read"));
-
-                // Add the message to the sent box
-                this.sentBox.add(m);
             }
         } catch(Exception e) {
             ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
@@ -178,6 +154,33 @@ public class Admin extends Person implements Serializable {
                 break;
         }
         return  msg;
+    }
+
+    /**
+     * Builds the sent box for the admin user
+     * @param amount - the amount of messages we want to load by default
+     */
+    public void buildSent(int amount) {
+
+        // Empty the current sent box
+        this.sentBox.clear();
+
+        try {
+            // Query the database
+            String    query = "SELECT * FROM messages WHERE message_from = " + this.getId() + " ORDER BY message_sent DESC FETCH FIRST " + amount + " ROWS ONLY";
+            ResultSet   res = ScreensFramework.db.query(query);
+
+            while(res.next()){
+                // Build the message
+                Message m = new Message(res.getInt("message_id"), res.getInt("message_to"), res.getInt("message_from"), res.getString("message_type"),
+                        res.getString("message_body"), res.getDate("message_sent"), res.getInt("message_read"));
+
+                // Add the message to the sent box
+                this.sentBox.add(m);
+            }
+        } catch(Exception e) {
+            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+        }
     }
 
     /**

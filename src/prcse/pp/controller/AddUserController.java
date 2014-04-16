@@ -11,6 +11,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.Effect;
@@ -131,7 +132,30 @@ public class AddUserController implements Initializable, ControlledScreen {
     private AnchorPane body;
     @FXML // fx:id="txtEmail"
     private TextField txtEmail;
-
+    @FXML // fx:id="selectTitle"
+    private ChoiceBox selectTitle;
+    @FXML // fx:id="txtForename"
+    private TextField txtForename;
+    @FXML // fx:id="txtSurname"
+    private TextField txtSurname;
+    @FXML // fx:id="txtAddr1"
+    private TextField txtAddr1;
+    @FXML // fx:id="txtAddr2"
+    private TextField txtAddr2;
+    @FXML // fx:id="txtCounty"
+    private TextField txtCount;
+    @FXML // fx:id="txtPostcode"
+    private TextField txtPostcode;
+    @FXML // fx:id="txtPhone"
+    private TextField txtPhone;
+    @FXML // fx:id="txtSearchEmail"
+    private TextField txtSearchEmail;
+    @FXML // fx:id="txtSearchProp"
+    private TextField txtSearchProp;
+    @FXML // fx:id="txtSearchName"
+    private TextField txtSearchName;
+    @FXML // fx:id="btnSearch"
+    private Button btnSearch;
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
@@ -322,6 +346,39 @@ public class AddUserController implements Initializable, ControlledScreen {
                 }
                 if(txtEmail.getText().isEmpty()){
                     txtEmail.getStyleClass().remove("invalid");
+                }
+            }
+        });
+        txtForename.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean aBoolean2) {
+                txtForename.getStyleClass().remove("invalid");
+                if(validator.validateName(txtForename.getText())){
+                    txtForename.getStyleClass().remove("invalid");
+                } else {
+                    txtForename.getStyleClass().add("invalid");
+                }
+            }
+        });
+        txtSurname.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean aBoolean2) {
+                txtSurname.getStyleClass().remove("invalid");
+                if(validator.validateName(txtSurname.getText())){
+                    txtSurname.getStyleClass().remove("invalid");
+                } else {
+                    txtSurname.getStyleClass().add("invalid");
+                }
+            }
+        });
+        txtEmail.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean aBoolean2) {
+                txtEmail.getStyleClass().remove("invalid");
+                if(validator.validateEmail(txtEmail.getText())){
+                    txtEmail.getStyleClass().remove("invalid");
+                } else {
+                    txtEmail.getStyleClass().add("invalid");
                 }
             }
         });

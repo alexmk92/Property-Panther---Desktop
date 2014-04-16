@@ -21,7 +21,7 @@
 </image>
 </ImageView>
 </children></Pane><Pane id="slide_out" fx:id="searchBar" prefHeight="68.0" prefWidth="340.0">
-<children><TextField id="textbox_square" fx:id="txtUsers_Username" layoutX="14.0" layoutY="10.0" prefHeight="45.0" prefWidth="270.0" promptText="Enter a users name...">
+<children><TextField id="textbox_square" fx:id="txtUsers_Username" layoutX="14.0" layoutY="10.0" prefHeight="45.0" prefWidth="270.0" promptText="Enter name...">
 <font>
 <Font name="Open Sans Light" size="16.0" />
 </font></TextField><Button id="btn_search" fx:id="btnUserSearch" layoutX="285.0" layoutY="10.0" mnemonicParsing="false" onAction="#goToUsers" prefHeight="44.0" prefWidth="44.0" /><ImageView fx:id="spinner_green" fitHeight="21.0" fitWidth="21.0" layoutX="297.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" styleClass="hidden">
@@ -216,7 +216,7 @@
 <font>
 <Font name="Open Sans Light" size="16.0" />
 </font>
-</Label><Label fx:id="lblNew" layoutX="60.0" layoutY="11.0" text="(5 new)" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+</Label><Label fx:id="lblNew" layoutX="60.0" layoutY="11.0" text="(5 new)" textFill="#71e0ff" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <font>
 <Font name="Open Sans Light" size="16.0" />
 </font>
@@ -224,8 +224,11 @@
 <String fx:value="header_title" />
 <String fx:value="info_blue" />
 </styleClass>
-</Label>
-</children></Pane><Pane fx:id="chatOverlay" layoutY="-4.0" prefHeight="727.0" prefWidth="1200.0" styleClass="chatOverlay">
+</Label><CheckBox fx:id="chkMessages" layoutX="553.0" layoutY="11.0" mnemonicParsing="false" textFill="WHITE" /><Label layoutX="479.0" layoutY="10.0" text="Hide Read" textFill="WHITE">
+<font>
+<Font size="14.0" />
+</font></Label>
+</children></Pane><Pane fx:id="chatOverlay" prefHeight="720.0" prefWidth="1200.0" styleClass="chatOverlay">
 <children><Pane layoutX="269.0" layoutY="79.0" prefHeight="200.0" prefWidth="200.0" /><Pane fx:id="messageWrap" layoutX="305.0" layoutY="783.0" prefHeight="360.0" prefWidth="590.0" styleClass="messageBox">
 <children><TextField fx:id="txtRecipient" layoutX="22.0" layoutY="74.0" prefHeight="46.0" prefWidth="549.0" promptText="Enter email address...">
 <styleClass>
@@ -282,14 +285,14 @@
 <Font size="14.0" />
 </font>
 </Label>
-<Label layoutX="27.0" layoutY="141.0" text="Received:" textFill="WHITE">
+<Label layoutX="27.0" layoutY="145.0" text="Received:" textFill="WHITE">
 <font>
-<Font size="18.0" />
+<Font size="16.0" />
 </font>
 </Label>
-<Label fx:id="lblReceived" layoutX="109.0" layoutY="141.0" text="14th March 2014" textFill="#66d9ee">
+<Label fx:id="lblReceived" layoutX="97.0" layoutY="145.0" text="14th March 2014" textFill="#66d9ee">
 <font>
-<Font size="18.0" />
+<Font size="16.0" />
 </font>
 </Label>
 <Label fx:id="lblDisplayMessage" alignment="TOP_LEFT" layoutX="25.0" layoutY="177.0" prefHeight="232.0" prefWidth="540.0" styleClass="holo" text="Hello Jamie, this is a test message I just wnated to see whether or not the system was actually working." textFill="WHITE" wrapText="true">
@@ -314,7 +317,15 @@
 <Font size="14.0" />
 </font>
 </Button>
-<ChoiceBox fx:id="choiceUpdate" layoutX="329.0" layoutY="132.0" prefHeight="36.0" prefWidth="235.0" />
+<ChoiceBox fx:id="choiceUpdate" layoutX="362.0" layoutY="138.0" prefHeight="32.0" prefWidth="203.0">
+<styleClass>
+<String fx:value="holo" />
+<String fx:value="white" />
+</styleClass></ChoiceBox><Label fx:id="lblCurrStatus" layoutX="251.0" layoutY="145.0" prefHeight="25.0" prefWidth="107.0" text="Update Status:" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+</Label>
 </children>
 </Pane>
 </children></Pane>

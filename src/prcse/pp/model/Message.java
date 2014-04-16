@@ -186,6 +186,16 @@ public class Message implements ISubject, Serializable {
         return name;
     }
 
+    public String getSenderEmail() {
+        String email = "";
+        try {
+            email = fromTenant.getEmail();
+        } catch (Exception e) {
+            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+        }
+        return email;
+    }
+
     public String getRecipient() {
         String name = "";
         try {
@@ -194,6 +204,16 @@ public class Message implements ISubject, Serializable {
             ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
         }
         return name;
+    }
+
+    public String getRecipientEmail() {
+        String email = "";
+        try {
+            email = toTenant.getEmail();
+        } catch (Exception e) {
+            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+        }
+        return email;
     }
 
     public String getDateAsString(Date thisDate) {

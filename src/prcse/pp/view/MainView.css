@@ -573,6 +573,16 @@
     -fx-pref-width: 85px !important;
     -fx-text-alignment: center !important;
 }
+.encapsulated-large {
+    -fx-text-fill: #000 !important;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold !important;
+    -fx-padding: 5 0 5 20;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-pref-width: 85px !important;
+    -fx-text-alignment: center !important;
+}
 .encapsulated-small {
     -fx-text-fill: #000 !important;
     -fx-font-weight: bold !important;
@@ -645,4 +655,7 @@
 
 .wider {
     -fx-pref-width: 252px !important;
+}
+.white {
+    -fx-text-fill: #fff !important;
 }

@@ -10,6 +10,8 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 import java.util.concurrent.Callable;
 import java.util.Date;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Create a new connection to the database and handle any SQL queries through
@@ -476,7 +478,7 @@ public class Database implements Callable {
             runQuery.start();
             runQuery.join();
         } catch(Exception e) {
-            ScreensFramework.logError.writeToFile("Error: the thread couldnt run: " + e.getMessage());
+            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
         }
 
         return result;

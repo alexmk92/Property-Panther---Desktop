@@ -150,10 +150,15 @@ public class ScreensFramework extends Application  {
             // Build the objects for the datamodel on a new thread
             if(db.buildObjects()) {
 
-                // Build session holders inbox and sent box
-                loggedIn = searchObj.getSessionUser();
-                loggedIn.buildInbox(25, "ALL");
-                loggedIn.buildSent(25);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Build session holders inbox and sent box
+                        loggedIn = searchObj.getSessionUser();
+                        loggedIn.buildInbox(25, "ALL");
+                        loggedIn.buildSent(25);
+                    }
+                }).start();
 
                 // Validate and allow the user to see the dashboard
                 systemResponse = true;

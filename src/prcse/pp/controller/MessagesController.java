@@ -187,6 +187,10 @@ public class MessagesController implements Initializable, ControlledScreen {
     private Pane viewMessage;
     @FXML // fx:id="choiceUpdate"
     private ChoiceBox choiceUpdate;
+    @FXML // fx:id="lblCurrStatus"
+    private Label lblCurrStatus;
+    @FXML // fx:id="chkMessages"
+    private CheckBox chkMessages;
 
 
     // Set variables to allow for draggable window.
@@ -210,11 +214,24 @@ public class MessagesController implements Initializable, ControlledScreen {
     private Boolean pageLoaded = false;
 
     // Index to bind custom cell controls to the listview cell
-    private int index = 0;
+    private int index  = 0;
     private int unread = 0;
+    private int length = 0;
+
+    // Reference to a null message object that I can access for any Message manipulation methods
+    private Message m = null;
+
+    // Sender object to reference - needs to be set to the last viewed message
+    private Message sender = null;
 
     // Allows us to load the next 25 results on clicking "load more"
     private int amount = 20;
+
+    // Sets the initial position of the carat to 0
+    private int position = 0;
+
+    // Sets the initial checkbox value to false
+    private Boolean tickEnabled = false;
 
     /**
      * Initializes the controller class.
@@ -610,18 +627,35 @@ public class MessagesController implements Initializable, ControlledScreen {
         txtRecipient.setOnKeyTyped(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
-                // Global variables
-                String save = "";
 
                 // Set that we have an inbox recipient
                 if(!lblToInbox.isVisible()){
-                    lblToInbox.setVisible(true);
+                    // Get the user whos email matches his name
+                    System.out.println(getNameByEmail(txtRecipient.getText()));
+                    lblToInbox.setText(getNameByEmail(txtRecipient.getText()));
+
+                    // Check that the name length is valid (no name is < 6)
+                    // then show the badge
+                    if(lblToInbox.getText().length() > 6){
+                        lblToInbox.setVisible(true);
+                    }
+                }
+                if(lblToInbox.isVisible()){
+                    if(getNameByEmail(txtRecipient.getText()).length() == 0) {
+                        lblToInbox.setText("");
+                        lblToInbox.setVisible(false);
+                    }
                 }
 
-
-                if(!save.isEmpty()) {
-                    txtRecipient.setText(save);
+                // On a keypress reset the string on a new input
+                if(txtRecipient.getText().length() > 1) {
+                    String currText = txtRecipient.getText();
+                    currText = currText.replace(currText.substring(getPosition(), getLength()), "");
+                    txtRecipient.setText(currText);
+                    System.out.println(currText);
                 }
+
+                String save = "";
 
                 String value  = txtRecipient.getText();
                 int    length = value.length();
@@ -630,13 +664,15 @@ public class MessagesController implements Initializable, ControlledScreen {
                 // prototype the auto complete here then build method
                 result = autoComplete(value, length, "EMAIL");
 
-                if(result.isEmpty() || result.length() < 1) {
+                if(result.isEmpty() || result == null) {
                     result = autoComplete(value, length, "NAME");
                 }
 
                 save  = value.substring(0, length);
                 txtRecipient.setText(value + result);
                 txtRecipient.positionCaret(save.length());
+                setLength(txtRecipient.getText().length());
+                setPosition(save.length());
             }
         });
         btnSend.setOnAction(new EventHandler<ActionEvent>() {
@@ -696,7 +732,6 @@ public class MessagesController implements Initializable, ControlledScreen {
                 // Variables to process the action
                 int thisMsg = lstMessages.getSelectionModel().getSelectedIndex();
                 String box  = "INBOX";
-                Message m   = null;
 
                 // Ternary operator to determine the box we are using, INBOX if true else SENT
                 box = usingInbox ? "INBOX" : "SENT";
@@ -705,21 +740,69 @@ public class MessagesController implements Initializable, ControlledScreen {
                 switch(box) {
                     case "INBOX":
                             m = sessionUser.getMessageAt("INBOX", thisMsg);
+                            // Check we have a valid message
                             if(m != null) { renderMessage(m); }
+
+                            // If it has not been read, then changes its status
                             if(m.getRead() != 1) {
                                 m.setSeenTrue();
-                                String query = "UPDATE messages SET message_read = 1 WHERE message_id = " + m.getId();
-                                ScreensFramework.db.query(query);
-                                populateMessageList();
+                                // Try to update the database - run or new thread, else block until complete
+                                new Thread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        String query = "UPDATE messages SET message_read = 1 WHERE message_id = " + m.getId();
+                                        ScreensFramework.db.query(query);
+                                    }
+                                }).start();
                             }
                         break;
                     case "SENT":
-                        for(int i = 0; i < sessionUser.getSentSize(); i++) {
+                        for(int i = 0; i < sessionUser.getInboxSize(); i++) {
                             m = sessionUser.getMessageAt("SENT", thisMsg);
                             if(m != null) { renderMessage(m); }
                         }
                         break;
                 }
+
+                // Repopulate the list
+                populateMessageList();
+            }
+        });
+        btnReply.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                hideMessages();
+                messageWrap.setVisible(true);
+                viewMessage.setVisible(false);
+                txtRecipient.setText(getLastSender());
+                txtMessage.requestFocus();
+                showNewMessage();
+            }
+        });
+        chkMessages.setOnAction(new EventHandler<ActionEvent>()  {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                       try {
+                           if(tickEnabled == true) {
+                               tickEnabled = false;
+                               sessionUser.buildInbox(amount, "ALL");
+                               populateMessageList();
+                           } else {
+                               tickEnabled = true;
+                               sessionUser.buildInbox(amount, "UNREAD");
+                               populateMessageList();
+                           }
+                       } catch(IllegalStateException e){
+                           ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+                       } catch(Exception e) {
+                           ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+                       }
+                    }
+                }).start();
+
             }
         });
     }
@@ -729,6 +812,63 @@ public class MessagesController implements Initializable, ControlledScreen {
      *                  CONTROL METHODS
      *****************************************************/
     /**
+     * Sets the current position in auto complete
+     */
+    private void setPosition(int pos) {
+        this.position = pos;
+    }
+    /**
+     * Returns the current position in auto complete
+     */
+    private int getPosition() {
+        return this.position;
+    }
+    /**
+     * Sets the current length of the autocomplete string
+     */
+    private void setLength(int len) {
+        this.length = len;
+    }
+    /**
+     * Returns the current length of the set autocomplete string
+     */
+    private int getLength() {
+        return this.length;
+    }
+    /**
+     * Gets the sender of the last read message
+     */
+    private String getLastSender() {
+        return sender.getSenderEmail();
+    }
+    /**
+     * Sets the last viewed message sender object
+     * @param viewed - the message object last viewed from lstMessages
+     */
+    private void setSender(Message viewed) {
+        this.sender = viewed;
+    }
+    /**
+     * Gets a user name string dependent on their email
+     * @param email - the email address we are searching on, this is unique
+     */
+    private String getNameByEmail(String email) {
+        String thisName = "";
+
+        // Check the email address is valid
+        if(!email.isEmpty() && email.contains("@")) {
+            // Search for this user in the home array
+            for(int i = 0; i < u.size(); i++) {
+                Tenant t = u.getUserAt(i);
+                if(t.getEmail().equals(email)) {
+                    thisName = t.getName();
+                }
+            }
+        }
+        return thisName;
+    }
+
+    /**
      * Reveals and populates the message area
      * @param m - the message we are sending
      */
@@ -736,9 +876,12 @@ public class MessagesController implements Initializable, ControlledScreen {
 
         // Show the message window
         choiceUpdate.setVisible(false);
+        lblCurrStatus.setVisible(false);
         messageWrap.setVisible(false);
         showNewMessage();
 
+        // Set the sender object to this viewed message in the inbox
+        setSender(m);
 
         // Get the type of message (INBOX, MAINT, ALERT)
         String type      = m.getType();
@@ -759,6 +902,7 @@ public class MessagesController implements Initializable, ControlledScreen {
             case "MAINTENANCE":
                 type = "MAINT";
                 choiceUpdate.setVisible(true);
+                lblCurrStatus.setVisible(true);
 
                 lblMsgType.getStyleClass().addAll("encapsulated-large", "orange");
                 break;
@@ -838,19 +982,25 @@ public class MessagesController implements Initializable, ControlledScreen {
     public Boolean sendToUser(String email) {
         Boolean sent = false;
 
-        // Check we have the correct user
-        for(int i = 0; i < u.size(); i++) {
-            Tenant t = u.getUserAt(i);
-            if(t.getEmail().equals(email)){
-                // Build the query object
-                String query = "INSERT INTO messages VALUES('', " + t.getUserId() + ", " + sessionUser.getId() + ", 'INBOX', '" + txtMessage.getText() + "', '', '', '')";
+        // Run on a new thread to ensure GUI does not lock
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // Check we have the correct user
+                for(int i = 0; i < u.size(); i++) {
+                    Tenant t = u.getUserAt(i);
+                    if(t.getEmail().equals(email)){
+                        // Build the query object
+                        String query = "INSERT INTO messages VALUES('', " + t.getUserId() + ", " + sessionUser.getId() + ", 'INBOX', '" + txtMessage.getText() + "', '', '', '')";
 
-                // Send the message
-                ScreensFramework.db.query(query);
-                sent = true;
+                        // Send the message
+                        ScreensFramework.db.query(query);
+                    }
+                }
             }
-        }
+        }).start();
 
+        sent = true;
         return sent;
     }
 
@@ -1006,27 +1156,13 @@ public class MessagesController implements Initializable, ControlledScreen {
         final KeyValue kv0 = new KeyValue(chatOverlay.opacityProperty(), 1);
         final KeyFrame kf0 = new KeyFrame(Duration.millis(150), kv0);
         final KeyValue kv1 = new KeyValue(messageWrap.layoutYProperty(), 184);
-        final KeyFrame kf1 = new KeyFrame(Duration.millis(200), kv1);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(350), kv1);
         final KeyValue kv2 = new KeyValue(viewMessage.layoutYProperty(), 133);
-        final KeyFrame kf2 = new KeyFrame(Duration.millis(200), kv2);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(350), kv2);
 
         // Build the animation
         load_scene.getKeyFrames().addAll(kf0, kf1, kf2);
-
-
-        // slight delay to ensure smooth animatin
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(250);
-                    load_scene.play();
-                } catch(Exception e) {
-                    ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
-                }
-
-            }
-        }).start();
+        load_scene.play();
     }
 
     /**
@@ -1038,9 +1174,9 @@ public class MessagesController implements Initializable, ControlledScreen {
         load_scene.setAutoReverse(false);
         final KeyValue kv0 = new KeyValue(chatOverlay.opacityProperty(), 0);
         final KeyFrame kf0 = new KeyFrame(Duration.millis(250), kv0);
-        final KeyValue kv1 = new KeyValue(messageWrap.layoutYProperty(), 0);
+        final KeyValue kv1 = new KeyValue(messageWrap.layoutYProperty(), -184);
         final KeyFrame kf1 = new KeyFrame(Duration.millis(250), kv1);
-        final KeyValue kv2 = new KeyValue(viewMessage.layoutYProperty(), 0);
+        final KeyValue kv2 = new KeyValue(viewMessage.layoutYProperty(), -133);
         final KeyFrame kf2 = new KeyFrame(Duration.millis(250), kv2);
 
         // Build the animation
@@ -1052,7 +1188,7 @@ public class MessagesController implements Initializable, ControlledScreen {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(250);
+                    Thread.sleep(550);
                     chatOverlay.setVisible(false);
                 } catch (Exception e) {
                     ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
