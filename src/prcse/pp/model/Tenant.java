@@ -62,11 +62,12 @@ public class Tenant extends Person implements Serializable {
         this.payments = new ArrayList<Payment>();
 
         // calculates the total payment due from the Tenant
-        this.payment_due = this.room.getPrice() * this.room.getContractLength();
+        if(property != null && room != null) {
+            this.payment_due = this.room.getPrice() * this.room.getContractLength();
 
-        // sets status to occupied if the user has a room.
-        this.room.occupied(this);
-
+            // sets status to occupied if the user has a room.
+            this.room.occupied(this);
+        }
         // sets the permission to USER
         this.permission  = UserPermission.USER;
     }

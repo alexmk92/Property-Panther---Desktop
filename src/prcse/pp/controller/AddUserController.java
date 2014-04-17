@@ -6,6 +6,8 @@ import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -25,8 +27,10 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import prcse.pp.misc.Validate;
+import prcse.pp.model.Tenant;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 
@@ -143,7 +147,7 @@ public class AddUserController implements Initializable, ControlledScreen {
     @FXML // fx:id="txtAddr2"
     private TextField txtAddr2;
     @FXML // fx:id="txtCounty"
-    private TextField txtCount;
+    private TextField txtCounty;
     @FXML // fx:id="txtPostcode"
     private TextField txtPostcode;
     @FXML // fx:id="txtPhone"
@@ -156,6 +160,10 @@ public class AddUserController implements Initializable, ControlledScreen {
     private TextField txtSearchName;
     @FXML // fx:id="btnSearch"
     private Button btnSearch;
+    @FXML // fx:id="btnClearAll"
+    private Button btnClearAll;
+    @FXML // fx:id="btnCreate"
+    private Button btnCreate;
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
@@ -169,6 +177,9 @@ public class AddUserController implements Initializable, ControlledScreen {
     // and show textboxes
     private Boolean editing = false;
 
+    // Array to hold errors
+    private ArrayList errors = new ArrayList();
+
     /**
      * Initializes the controller class.
      */
@@ -181,6 +192,12 @@ public class AddUserController implements Initializable, ControlledScreen {
         widget_top_right.setOpacity(0.3);
         widget_bottom_left.setOpacity(0.3);
         widget_bottom_right.setOpacity(0.3);
+
+        // Set titles for the title box
+        ObservableList<String> titles = FXCollections.observableArrayList();
+        titles.addAll("Mr", "Mrs", "Miss", "Ms", "Dr", "Master", "Sir", "Prof");
+
+        selectTitle.setItems(titles);
 
         // Animate the scene in
         body.setOnMouseEntered(new EventHandler<MouseEvent>() {
@@ -326,36 +343,27 @@ public class AddUserController implements Initializable, ControlledScreen {
         txtUsers_Username.setOnKeyTyped(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
+
                 if(!validator.validateName(txtUsers_Username.getText())){
                     txtUsers_Username.getStyleClass().add("invalid");
                 } else {
                     txtUsers_Username.getStyleClass().remove("invalid");
-                }
-                if(txtUsers_Username.getText().isEmpty()){
-                    txtUsers_Username.getStyleClass().remove("invalid");
-                }
-            }
-        });
-        txtEmail.setOnKeyTyped(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent keyEvent) {
-                if(!validator.validateName(txtEmail.getText())){
-                    txtEmail.getStyleClass().add("invalid");
-                } else {
-                    txtEmail.getStyleClass().remove("invalid");
-                }
-                if(txtEmail.getText().isEmpty()){
-                    txtEmail.getStyleClass().remove("invalid");
                 }
             }
         });
         txtForename.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean aBoolean2) {
+
+                String error = "Please enter a forename: i.e. Alex";
+                errors.remove(error);
+
                 txtForename.getStyleClass().remove("invalid");
                 if(validator.validateName(txtForename.getText())){
+                    errors.remove(error);
                     txtForename.getStyleClass().remove("invalid");
                 } else {
+                    errors.add(error);
                     txtForename.getStyleClass().add("invalid");
                 }
             }
@@ -363,10 +371,16 @@ public class AddUserController implements Initializable, ControlledScreen {
         txtSurname.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean aBoolean2) {
+
+                String error = "Please enter a surname: i.e. Sims";
+                errors.remove(error);
+
                 txtSurname.getStyleClass().remove("invalid");
                 if(validator.validateName(txtSurname.getText())){
+                    errors.remove(error);
                     txtSurname.getStyleClass().remove("invalid");
                 } else {
+                    errors.add(error);
                     txtSurname.getStyleClass().add("invalid");
                 }
             }
@@ -374,15 +388,154 @@ public class AddUserController implements Initializable, ControlledScreen {
         txtEmail.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean aBoolean2) {
+
+                String error = "Please enter a email: i.e. alexmk92@live.co.uk";
+                errors.remove(error);
+
                 txtEmail.getStyleClass().remove("invalid");
-                if(validator.validateEmail(txtEmail.getText())){
-                    txtEmail.getStyleClass().remove("invalid");
+                if (validator.validateEmail(txtEmail.getText()) == true) {
+                    errors.remove(error);
+                    txtEmail.getStyleClass().removeAll("invalid");
                 } else {
+                    errors.add(error);
                     txtEmail.getStyleClass().add("invalid");
                 }
             }
         });
+        txtPhone.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean aBoolean2) {
+                txtPhone.getStyleClass().remove("invalid");
 
+                String error = "Please enter a phone number: i.e. 07969114443";
+                errors.remove(error);
+
+                if(validator.validateNumber(txtPhone.getText()) == true) {
+                    errors.remove(error);
+                    txtPhone.getStyleClass().removeAll("invalid");
+                } else {
+                    errors.add(error);
+                    txtPhone.getStyleClass().add("invalid");
+                }
+            }
+        });
+        txtAddr1.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean aBoolean2) {
+                txtAddr1.getStyleClass().remove("invalid");
+
+                String error = "Please enter an address: i.e. 1 Cedar Way";
+                errors.remove(error);
+
+                if(validator.validateAddress(txtAddr1.getText()) == true) {
+                    errors.remove(error);
+                    txtAddr1.getStyleClass().removeAll("invalid");
+                } else {
+                    errors.add(error);
+                    txtAddr1.getStyleClass().add("invalid");
+                }
+            }
+        });
+        txtCounty.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean aBoolean2) {
+                txtCounty.getStyleClass().remove("invalid");
+
+                String error = "Please enter a county: i.e. Plymouth";
+                errors.remove(error);
+
+                if(validator.validateName(txtCounty.getText()) == true) {
+                    errors.remove(error);
+                    txtCounty.getStyleClass().removeAll("invalid");
+                } else {
+                    errors.add(error);
+                    txtCounty.getStyleClass().add("invalid");
+                }
+            }
+        });
+        txtPostcode.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean aBoolean2) {
+                txtPostcode.getStyleClass().remove("invalid");
+
+                String error = "Please enter a postcode: i.e. PL49JJ";
+                errors.remove(error);
+
+                if(validator.validatePostcode(txtPostcode.getText().toUpperCase()) == true) {
+                    errors.remove(error);
+                    txtPostcode.getStyleClass().removeAll("invalid");
+                } else {
+                    errors.add(error);
+                    txtPostcode.getStyleClass().add("invalid");
+                }
+
+                // Upper the postcode
+                txtPostcode.setText(txtPostcode.getText().toUpperCase());
+            }
+        });
+        btnClearAll.setOnMouseClicked(new EventHandler<MouseEvent>(){
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                clearFields();
+            }
+        });
+        btnCreate.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                if(errors.size() == 0 || errors.isEmpty()) {
+
+                    // Can lock GUI up if query takes a while to execute, therefore run on new thread
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                String title = selectTitle.getSelectionModel().getSelectedItem().toString();
+
+                                // build the query and execute it using the db object
+                                String query = "INSERT INTO users VALUES('', '" + txtEmail.getText() + "', '', '', '" + txtAddr1.getText() + "', '" + txtAddr2.getText() +
+                                        "', '" + txtPostcode.getText() + "', '" + txtCounty.getText() + "', '" + title +
+                                        "', '" + txtForename.getText() + "', '" + txtSurname.getText() + "', '" + txtPhone.getText() + "', 'USER', '', '', '')";
+                                ScreensFramework.db.query(query);
+                            } catch (Exception e) {
+                                ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+                            }
+                        }
+                    }).start();
+
+                    // The title of the user
+                    String title = selectTitle.getSelectionModel().getSelectedItem().toString();
+
+                    // Add the tenant to the user list
+                    Tenant t = new Tenant(0, title, txtForename.getText(), txtSurname.getText(), txtEmail.getText(), txtPhone.getText(), txtAddr1.getText(),
+                            txtAddr2.getText(), txtPostcode.getText(), txtCounty.getText(), null, null);
+
+                    // Add this new tenant to the global list
+                    ScreensFramework.tenants.addUser(t);
+
+                    // Set the searched users to the updated home list
+                    ScreensFramework.searchObj.setSearchedUsers(ScreensFramework.tenants);
+                }
+                clearFields();
+                showSuccess();
+            }
+        });
+    }
+
+    // Clears all fields
+    private void clearFields() {
+        txtForename.setText("");
+        txtSurname.setText("");
+        txtEmail.setText("");
+        txtPhone.setText("");
+        txtCounty.setText("");
+        txtAddr2.setText("");
+        txtAddr1.setText("");
+        selectTitle.setValue(0);
+        txtPostcode.setText("");
+    }
+
+    // Shows the success window
+    private void showSuccess() {
 
     }
 

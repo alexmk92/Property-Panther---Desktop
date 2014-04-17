@@ -335,7 +335,7 @@ public class Database implements Callable {
             // Make a connection to the database
             ResultSet res = query("SELECT * FROM payments LEFT JOIN users ON payments.user_id = users.user_id WHERE " +
                                   "users.user_permissions = 'USER' AND payments.payment_status='PAID' OR " +
-                                  "payments.payment_status='PAID LATE' AND users.user_permissions='USER'");
+                                  "payments.payment_status='PAID LATE' AND users.user_permissions='USER' ORDER BY payment_received DESC");
 
             while(res.next()) {
                 Tenant  t = ScreensFramework.tenants.getUserById(res.getInt("user_id"));

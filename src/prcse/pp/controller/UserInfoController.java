@@ -581,10 +581,10 @@ public class UserInfoController implements Initializable, ControlledScreen {
         // Populate all widgets
         if(thisTenant.getAddr_line_2() == "NULL" || thisTenant.getAddr_line_2() == null) {
             lblUserAddress.setText(thisTenant.getAddr_line_1());
-            lblAddr1.setText(thisTenant.getAddr_line_1() + "\n" + thisTenant.getCity() + "\n" + thisTenant.getPostcode());
+            lblAddr1.setText(thisTenant.getProperty().getAddressLine1() + "\n" + thisTenant.getProperty().getCity() + "\n" + thisTenant.getProperty().getPostcode());
         } else {
             lblUserAddress.setText(thisTenant.getAddr_line_1() + " " + thisTenant.getAddr_line_2());
-            lblAddr1.setText(thisTenant.getAddr_line_1() + ", " + thisTenant.getAddr_line_2() + "\n" + thisTenant.getCity() + "\n" + thisTenant.getPostcode());
+            lblAddr1.setText(thisTenant.getProperty().getAddressLine1() + ", " + thisTenant.getProperty().getAddressLine2() + "\n" + thisTenant.getProperty().getCity() + "\n" + thisTenant.getProperty().getPostcode());
         }
         lblEmail.setText(thisTenant.getEmail());
         lblPhone.setText("+" + thisTenant.getPhone());

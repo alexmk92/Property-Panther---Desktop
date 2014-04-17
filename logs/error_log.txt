@@ -8883,3 +8883,110 @@ ORA-12519, TNS:no appropriate service handler found
 16-Apr-2014 18:20: Error: null
 16-Apr-2014 18:20: Error: null
 16-Apr-2014 18:20: Error: Not on FX application thread; currentThread = Thread-48
+17-Apr-2014 16:24: Error: null
+17-Apr-2014 16:24: Error: null
+17-Apr-2014 16:24: Error: Not on FX application thread; currentThread = Thread-19
+17-Apr-2014 18:12: Error: the user could not be added to the system as errors are present.
+17-Apr-2014 18:18: Error: the user could not be added to the system as errors are present.
+17-Apr-2014 18:18: Error: the user could not be added to the system as errors are present.
+17-Apr-2014 18:20: Error handling operation: ORA-12899: value too large for column "PRCSE"."USERS"."USER_TITLE" (actual: 127, maximum: 12)
+
+17-Apr-2014 18:21: Error handling operation: ORA-12899: value too large for column "PRCSE"."USERS"."USER_TITLE" (actual: 125, maximum: 12)
+
+17-Apr-2014 18:21: Error handling operation: ORA-12899: value too large for column "PRCSE"."USERS"."USER_TITLE" (actual: 125, maximum: 12)
+
+17-Apr-2014 18:21: Error handling operation: ORA-12899: value too large for column "PRCSE"."USERS"."USER_TITLE" (actual: 125, maximum: 12)
+
+17-Apr-2014 18:21: Error handling operation: ORA-12899: value too large for column "PRCSE"."USERS"."USER_TITLE" (actual: 125, maximum: 12)
+
+17-Apr-2014 18:21: Error handling operation: ORA-12899: value too large for column "PRCSE"."USERS"."USER_TITLE" (actual: 125, maximum: 12)
+
+17-Apr-2014 18:26: Error handling operation: ORA-02290: check constraint (PRCSE.USERS_USER_PASS_CHK) violated
+
+17-Apr-2014 18:54: Index: 1, Size: 1
+17-Apr-2014 18:54: Index: 2, Size: 1
+17-Apr-2014 18:54: Index: 3, Size: 1
+17-Apr-2014 18:54: Index: 0, Size: 0
+17-Apr-2014 18:54: Index: 1, Size: 0
+17-Apr-2014 18:54: Index: 2, Size: 0
+17-Apr-2014 18:54: Index: 3, Size: 0
+17-Apr-2014 19:01: Error handling operation: ORA-00060: deadlock detected while waiting for resource
+ORA-06512: at "PRCSE.TRG_USERS_AFTER", line 42
+ORA-04088: error during execution of trigger 'PRCSE.TRG_USERS_AFTER'
+
+17-Apr-2014 19:01: Error: null
+17-Apr-2014 19:10: Error: null
+17-Apr-2014 19:21: Error: null
+17-Apr-2014 19:25: Error: null
+17-Apr-2014 19:28: Index: 1, Size: 1
+17-Apr-2014 19:28: Index: 2, Size: 1
+17-Apr-2014 19:28: Index: 3, Size: 1
+17-Apr-2014 19:28: Index: 0, Size: 0
+17-Apr-2014 19:28: Index: 1, Size: 0
+17-Apr-2014 19:28: Index: 2, Size: 0
+17-Apr-2014 19:28: Index: 3, Size: 0
+17-Apr-2014 19:29: Index: 0, Size: 0
+17-Apr-2014 19:29: Index: 1, Size: 0
+17-Apr-2014 19:29: Index: 2, Size: 0
+17-Apr-2014 19:29: Index: 3, Size: 0
+17-Apr-2014 19:29: Index: 0, Size: 0
+17-Apr-2014 19:29: Index: 1, Size: 0
+17-Apr-2014 19:29: Index: 2, Size: 0
+17-Apr-2014 19:29: Index: 3, Size: 0
+17-Apr-2014 19:53: Error: null
+17-Apr-2014 19:53: Error: null
+17-Apr-2014 19:54: Error: Not on FX application thread; currentThread = Thread-40
+17-Apr-2014 19:54: Error: Not on FX application thread; currentThread = Thread-41
+17-Apr-2014 19:54: Error: Not on FX application thread; currentThread = Thread-43
+17-Apr-2014 19:54: Error: null
+17-Apr-2014 19:54: Error: null
+17-Apr-2014 19:54: Error: null
+17-Apr-2014 19:54: Error: null
+17-Apr-2014 19:54: Error: null
+17-Apr-2014 19:54: Error: Not on FX application thread; currentThread = Thread-46
+17-Apr-2014 19:54: Error: null
+17-Apr-2014 19:54: Error: null
+17-Apr-2014 19:54: Error: null
+17-Apr-2014 20:11: Error: Not on FX application thread; currentThread = Thread-44
+17-Apr-2014 20:11: Error: Not on FX application thread; currentThread = Thread-46
+17-Apr-2014 20:11: Error: 1
+17-Apr-2014 20:11: Error: null
+17-Apr-2014 20:14: Error: null
+17-Apr-2014 20:14: Error: Not on FX application thread; currentThread = Thread-135
+17-Apr-2014 20:14: Error: null
+17-Apr-2014 20:14: Error: null
+17-Apr-2014 20:14: Error: Not on FX application thread; currentThread = Thread-136
+17-Apr-2014 20:14: Error: null
+17-Apr-2014 20:14: Error: Not on FX application thread; currentThread = Thread-137
+17-Apr-2014 20:14: Error: null
+17-Apr-2014 20:14: Error: null
+17-Apr-2014 20:14: Error: Not on FX application thread; currentThread = Thread-138
+17-Apr-2014 20:14: Error: null
+17-Apr-2014 20:14: Error: null
+17-Apr-2014 20:14: Error: Not on FX application thread; currentThread = Thread-139
+17-Apr-2014 20:14: Error: null
+17-Apr-2014 20:14: Error: null
+17-Apr-2014 20:14: Error: null
+17-Apr-2014 20:14: Error: null
+17-Apr-2014 20:14: Error: null
+17-Apr-2014 20:14: Error: null
+17-Apr-2014 20:14: Error: Not on FX application thread; currentThread = Thread-142
+17-Apr-2014 20:15: Error: Not on FX application thread; currentThread = Thread-149
+17-Apr-2014 20:15: Error: Not on FX application thread; currentThread = Thread-152
+17-Apr-2014 20:15: Error: Not on FX application thread; currentThread = Thread-156
+17-Apr-2014 20:15: Error: Not on FX application thread; currentThread = Thread-158
+17-Apr-2014 20:15: Error: Not on FX application thread; currentThread = Thread-160
+17-Apr-2014 20:24: Error handling operation: ORA-00917: missing comma
+
+17-Apr-2014 20:25: Error handling operation: ORA-00917: missing comma
+
+17-Apr-2014 20:25: Error handling operation: ORA-00917: missing comma
+
+17-Apr-2014 20:27: Index: 1, Size: 1
+17-Apr-2014 20:27: Index: 2, Size: 1
+17-Apr-2014 20:27: Index: 3, Size: 1
+17-Apr-2014 20:27: Error handling operation: ORA-00917: missing comma
+
+17-Apr-2014 20:27: Index: 2, Size: 2
+17-Apr-2014 20:27: Index: 3, Size: 2
+17-Apr-2014 20:29: Error: Not on FX application thread; currentThread = Thread-48

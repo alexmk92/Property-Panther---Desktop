@@ -56,7 +56,7 @@ public class PaymentFeedCell extends ListCell<String> {
             img.setStyle("-fx-translate-y: 4; -fx-translate-x: -2");
             img.setImage(profile_default);
             desc.getChildren().addAll(amount, paid, datePaid);
-            desc.setStyle("-fx-translate-x: -60; -fx-translate-y: 22");
+            desc.setStyle("-fx-translate-x: -55; -fx-translate-y: 22");
             hbox.getChildren().addAll(img, label, pane, desc);
             HBox.setHgrow(pane, Priority.ALWAYS);
         }

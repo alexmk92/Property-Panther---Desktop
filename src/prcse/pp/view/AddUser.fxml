@@ -21,12 +21,7 @@
                 <font>
                     <Font name="Arial" size="16.0" />
                 </font>
-            </Label><TextField id="textbox_square" fx:id="txtEmail" layoutX="28.0" layoutY="53.0" prefHeight="35.0" prefWidth="260.0">
-<styleClass>
-<String fx:value="text-input" />
-<String fx:value="text-field" />
-<String fx:value="txt-create" />
-</styleClass>
+            </Label><TextField id="textbox_square" fx:id="txtEmail" layoutX="28.0" layoutY="53.0" prefHeight="35.0" prefWidth="260.0" styleClass="txt-create">
 <font>
 <Font name="Open Sans" size="14.0" />
 </font></TextField><TextField id="textbox_square" fx:id="txtPhone" layoutX="308.0" layoutY="53.0" prefHeight="35.0" prefWidth="260.0">
@@ -67,7 +62,7 @@
                 <font>
                     <Font name="Arial" size="16.0" />
                 </font>
-            </Label><ChoiceBox id="textbox_square" layoutX="20.0" layoutY="50.0" prefHeight="35.0" prefWidth="76.0" xmlns:fx="http://javafx.com/fxml" /><TextField id="textbox_square" fx:id="txtForename" layoutX="118.0" layoutY="50.0" prefHeight="35.0" prefWidth="213.0">
+            </Label><ChoiceBox id="textbox_square" fx:id="selectTitle" layoutX="20.0" layoutY="50.0" prefHeight="35.0" prefWidth="76.0" xmlns:fx="http://javafx.com/fxml" /><TextField id="textbox_square" fx:id="txtForename" layoutX="118.0" layoutY="50.0" prefHeight="35.0" prefWidth="213.0">
 <styleClass>
 <String fx:value="text-input" />
 <String fx:value="text-field" />

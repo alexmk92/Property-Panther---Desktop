@@ -680,7 +680,9 @@ public class MessagesController implements Initializable, ControlledScreen {
             public void handle(ActionEvent actionEvent) {
                 System.out.println("Attempting send...");
                 if (sendToUser(txtRecipient.getText())) {
-                    System.out.println("Sent");
+                    txtRecipient.setText("");
+                    txtMessage.setText("");
+                    hideMessages();
                 }
             }
         });
