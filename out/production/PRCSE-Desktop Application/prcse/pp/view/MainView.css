@@ -573,16 +573,6 @@
     -fx-pref-width: 85px !important;
     -fx-text-alignment: center !important;
 }
-.encapsulated-large {
-    -fx-text-fill: #000 !important;
-    -fx-font-size: 14px;
-    -fx-font-weight: bold !important;
-    -fx-padding: 5 0 5 20;
-    -fx-border-radius: 6;
-    -fx-background-radius: 6;
-    -fx-pref-width: 85px !important;
-    -fx-text-alignment: center !important;
-}
 .encapsulated-small {
     -fx-text-fill: #000 !important;
     -fx-font-weight: bold !important;
@@ -592,6 +582,16 @@
     -fx-background-radius: 6;
     -fx-pref-width: 60px !important;
     -fx-text-alignment: center !important;
+}
+.encapsulated-small-wide {
+    -fx-text-fill: #000 !important;
+    -fx-font-weight: bold !important;
+    -fx-font-size: 12px;
+    -fx-padding: 2.5 0 2.5 0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-pref-width: 90px !important;
+    -fx-alignment: center;
 }
 .pink {
     -fx-background-color: #f9246b;

@@ -122,7 +122,7 @@ public class Admin extends Person implements Serializable {
 
                 // Build the message
                 Message m = new Message(res.getInt("message_id"), res.getInt("message_to"), res.getInt("message_from"), res.getString("message_type"),
-                                        res.getString("message_body"), res.getDate("message_sent"), res.getInt("message_read"));
+                                        res.getString("message_body"), res.getDate("message_sent"), res.getInt("message_read"), res.getInt("request_id"));
 
                 // Add the message to the inbox
                 this.inbox.add(m);
@@ -173,7 +173,7 @@ public class Admin extends Person implements Serializable {
             while(res.next()){
                 // Build the message
                 Message m = new Message(res.getInt("message_id"), res.getInt("message_to"), res.getInt("message_from"), res.getString("message_type"),
-                        res.getString("message_body"), res.getDate("message_sent"), res.getInt("message_read"));
+                        res.getString("message_body"), res.getDate("message_sent"), res.getInt("message_read"), res.getInt("request_id"));
 
                 // Add the message to the sent box
                 this.sentBox.add(m);

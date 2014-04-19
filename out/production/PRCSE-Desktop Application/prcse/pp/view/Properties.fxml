@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="main__body" maxHeight="720" maxWidth="1200" minHeight="720" minWidth="1200" prefHeight="720.0" prefWidth="1200.0" stylesheets="@MainView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prcse.pp.controller.PropertyController">
+<AnchorPane id="main__body" fx:id="body" maxHeight="720" maxWidth="1200" minHeight="720" minWidth="1200" prefHeight="720.0" prefWidth="1200.0" stylesheets="@MainView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prcse.pp.controller.PropertyController">
     <children>
         <Pane fx:id="widget_top_left" layoutX="278.0" layoutY="108.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
             <children><Pane prefHeight="40.0" prefWidth="591.0" styleClass="header" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
@@ -115,10 +116,7 @@
                     </children>
                 </AnchorPane>
                 <AnchorPane fx:id="nav6" layoutY="515.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-                    <children><Button id="nav_button" fx:id="nav_bg6" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToSettings" prefHeight="70.0" prefWidth="250.0" styleClass="light" text="Settings" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-                        <font>
-                            <Font size="20.0" />
-                        </font></Button><Rectangle id="nav_active_accent" fx:id="accent6" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="2.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_6" fx:id="nav_icon6" layoutX="200.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="36.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+                    <children><Rectangle id="nav_active_accent" fx:id="accent6" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="2.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
                     </children>
                 </AnchorPane>
                 <AnchorPane layoutY="691.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
@@ -156,12 +154,12 @@
         <font>
             <Font name="Open Sans Light" size="40.0" />
         </font></Label><Pane layoutX="894.0" layoutY="147.0" prefHeight="75.0" prefWidth="281.0" styleClass="window" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-        <children><Button layoutX="12.0" layoutY="25.0" mnemonicParsing="false" text="Create New">
+        <children><Button fx:id="btnCreateProperty" layoutX="12.0" layoutY="25.0" mnemonicParsing="false" text="Create New">
             <styleClass>
                 <String fx:value="button" />
                 <String fx:value="btn_actions" />
                 <String fx:value="blue" />
-            </styleClass></Button><Button layoutX="144.0" layoutY="25.0" mnemonicParsing="false" text="View All" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+            </styleClass></Button><Button fx:id="btnViewAll" layoutX="144.0" layoutY="25.0" mnemonicParsing="false" text="View All" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
             <styleClass>
                 <String fx:value="button" />
                 <String fx:value="btn_actions" />
@@ -199,7 +197,7 @@
             <font>
                 <Font name="Open Sans Light" size="16.0" />
             </font>
-        </Label><Button layoutX="23.0" layoutY="266.0" mnemonicParsing="false" prefWidth="88.0" text="Search" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+        </Label><Button fx:id="btnSearchProperties" layoutX="23.0" layoutY="266.0" mnemonicParsing="false" prefWidth="88.0" text="Search" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
             <styleClass>
                 <String fx:value="button" />
                 <String fx:value="btn_actions" />
@@ -215,5 +213,41 @@
                 </font>
             </Label>
         </children>
-    </Pane>
+    </Pane><ListView fx:id="lstProperties" layoutX="278.0" layoutY="148.0" prefHeight="551.0" prefWidth="591.0" styleClass="mylistview" /><Pane fx:id="propertyDetails" layoutX="381.0" layoutY="82.0" prefHeight="558.0" prefWidth="591.0" styleClass="messageBox">
+<children><Label alignment="TOP_LEFT" layoutX="82.0" layoutY="58.0" prefHeight="62.0" prefWidth="459.0" styleClass="holo" textFill="WHITE" wrapText="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="18.0" />
+</font>
+<padding>
+<Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+</padding>
+</Label><Label fx:id="lblAddr1" layoutX="125.0" layoutY="62.0" text="10 Maple Grove, Mutley" textFill="#66d8f0">
+<font>
+<Font size="22.0" />
+</font></Label><ImageView fitHeight="86.0" fitWidth="85.0" layoutX="31.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+<image>
+<Image url="@img/property_large.png" />
+</image></ImageView><Label fx:id="lblNumRooms" layoutX="127.0" layoutY="88.0" text="6 bedroom property" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="18.0" />
+</font>
+</Label><ListView fx:id="lstRooms" layoutX="51.0" layoutY="147.0" prefHeight="364.0" prefWidth="491.0">
+<styleClass>
+<String fx:value="mylistview" />
+<String fx:value="transparent" />
+</styleClass></ListView><Button fx:id="btnHideDetails" layoutX="565.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="18.0" prefWidth="18.0" styleClass="button_close" text="Button" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane fx:id="roomDetailsWrap" layoutX="50.0" layoutY="147.0" prefHeight="364.0" prefWidth="491.0" styleClass="holo">
+<children><Label layoutX="379.0" layoutY="15.0" prefHeight="33.0" prefWidth="108.0" text="Occupied">
+<styleClass>
+<String fx:value="encapsulated-small-wide" />
+<String fx:value="green" />
+</styleClass></Label><Label layoutX="20.0" layoutY="14.0" text="Price: £544" textFill="WHITE">
+<font>
+<Font size="24.0" />
+</font></Label><Label alignment="TOP_LEFT" layoutX="20.0" layoutY="58.0" prefHeight="166.0" prefWidth="459.0" text="Large double bedded room with roof spotlights, view of sea and en-suite bathroom." textFill="WHITE" wrapText="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="18.0" />
+</font>
+</Label>
+</children></Pane>
+</children></Pane>
     </children></AnchorPane>

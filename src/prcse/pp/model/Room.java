@@ -40,7 +40,7 @@ public class Room implements ISubject, Serializable {
         this.details        = "";
         this.contractLength = 0;
 
-        this.status         = getStatus();
+        this.status         = RoomStatus.VACANT;
     }
 
     /**
@@ -49,14 +49,14 @@ public class Room implements ISubject, Serializable {
      * @param price the price per month of the room
      * @param details any details associated with the room
      */
-    public Room(int roomId, int propertyId, String price, String details){
+    public Room(int roomId, int propertyId, String price, String details, String status){
         this.roomId         = roomId;
         this.propertyId     = propertyId;
         this.tenant         = null;
         this.price          = price;
         this.details        = details;
         this.contractLength = 12;
-        this.status         = getStatus();
+        setStatus(status);
     }
 
     /**
@@ -66,6 +66,14 @@ public class Room implements ISubject, Serializable {
     public Room getRoom()
     {
         return this;
+    }
+
+    /**
+     * Returns the current status of the room
+     * @retrun roomState - the status of the room
+     */
+    public RoomStatus getStatus() {
+        return this.status;
     }
 
     /**
@@ -131,24 +139,41 @@ public class Room implements ISubject, Serializable {
     }
 
     /**
-     * Returns the formatted status of the room
-     * @return returns the room status
+     * Returns the current status as a string
+     * @param currStatus - the current Room Status value (OCCUPIED or VACANT)
+     * @return string value of the status object
      */
-    public RoomStatus getStatus()
-    {
-        Tenant thisTenant = this.tenant;
-        RoomStatus status;
+    public String getStatusAsString(RoomStatus currStatus) {
+        String status = "";
 
-        if(thisTenant != null)
-        {
-            this.occupied(thisTenant);
-            status = RoomStatus.OCCUPIED;
-        } else {
-            this.vacant();
-            status = RoomStatus.VACANT;
+        switch(currStatus){
+            case OCCUPIED:
+                status = "Occupied";
+                break;
+            case VACANT:
+                status = "Vacant";
+                break;
         }
 
         return status;
+    }
+
+    /**
+     * Sets the status with a string object
+     * @param statusIn - the status we are settings
+     */
+    public void setStatus(String statusIn) {
+        switch(statusIn){
+            case "VACANT":
+                this.status = RoomStatus.VACANT;
+                break;
+            case "OCCUPIED":
+                this.status = RoomStatus.OCCUPIED;
+                break;
+            default :
+                this.status = RoomStatus.VACANT;
+                break;
+        }
     }
 
     /**

@@ -70,8 +70,6 @@ public class DashboardController implements Initializable, ControlledScreen {
     private AnchorPane nav4;
     @FXML // fx:id="nav5"
     private AnchorPane nav5;
-    @FXML // fx:id="nav6"
-    private AnchorPane nav6;
     @FXML // fx:id="accent1"
     private Rectangle accent1;
     @FXML // fx:id="accent2"
@@ -82,8 +80,6 @@ public class DashboardController implements Initializable, ControlledScreen {
     private Rectangle accent4;
     @FXML // fx:id="accent5"
     private Rectangle accent5;
-    @FXML // fx:id="accent6"
-    private Rectangle accent6;
     @FXML //fx:id="nav_icon1"
     private Pane nav_icon1;
     @FXML //fx:id="nav_bg1"
@@ -104,10 +100,6 @@ public class DashboardController implements Initializable, ControlledScreen {
     private Pane nav_icon5;
     @FXML //fx:id="nav_bg5"
     private Button nav_bg5;
-    @FXML //fx:id="nav_icon6"
-    private Pane nav_icon6;
-    @FXML //fx:id="nav_bg6"
-    private Button nav_bg6;
     @FXML // fx:id="title"
     private Label title;
     @FXML // fx:id="spinner_green"
@@ -279,31 +271,7 @@ public class DashboardController implements Initializable, ControlledScreen {
                 nav_bg5.getStyleClass().remove("dark_hover");
             }
         });
-        nav6.setOnMouseEntered(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                accent6.setStyle("visibility: visible !important");
-            }
-        });
-        nav6.setOnMouseExited(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                accent6.setStyle("visibility: hidden");
-            }
-        });
-        nav_icon6.setOnMouseEntered(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                accent6.setStyle("visibility: visible !important");
-                nav_bg6.getStyleClass().add("light_hover");
-            }
-        });
-        nav_icon6.setOnMouseExited(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                nav_bg6.getStyleClass().remove("light_hover");
-            }
-        });
+
 
         /******************************************************
          *                 USER SLIDEOUT PANEL
@@ -531,11 +499,6 @@ public class DashboardController implements Initializable, ControlledScreen {
                             nav_icon5.getStyleClass().add("active");
                             accent5.getStyleClass().addAll("active", "show");
                             break;
-                        case "Settings":
-                            nav_bg6.getStyleClass().addAll("active");
-                            nav_icon6.getStyleClass().add("active");
-                            accent6.getStyleClass().addAll("active", "show");
-                            break;
                         case "Add Tenant":
                             nav_bg2.getStyleClass().addAll("active");
                             nav_icon2.getStyleClass().add("active");
@@ -598,10 +561,6 @@ public class DashboardController implements Initializable, ControlledScreen {
         nav_icon5.getStyleClass().remove("active");
         accent5.getStyleClass().removeAll("active", "show");
         nav_bg5.getStyleClass().remove("active");
-        nav_icon6.getStyleClass().remove("active");
-        accent6.getStyleClass().removeAll("active", "show");
-        nav_bg6.getStyleClass().remove("active");
-
     }
 
     /******************************************************

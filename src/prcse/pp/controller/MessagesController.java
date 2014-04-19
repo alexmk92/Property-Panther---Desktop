@@ -31,6 +31,8 @@ import prcse.pp.view.MessageCell;
 import prcse.pp.view.PaymentCell;
 
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -77,8 +79,6 @@ public class MessagesController implements Initializable, ControlledScreen {
     private AnchorPane nav4;
     @FXML // fx:id="nav5"
     private AnchorPane nav5;
-    @FXML // fx:id="nav6"
-    private AnchorPane nav6;
     @FXML // fx:id="accent1"
     private Rectangle accent1;
     @FXML // fx:id="accent2"
@@ -89,8 +89,6 @@ public class MessagesController implements Initializable, ControlledScreen {
     private Rectangle accent4;
     @FXML // fx:id="accent5"
     private Rectangle accent5;
-    @FXML // fx:id="accent6"
-    private Rectangle accent6;
     @FXML //fx:id="nav_icon1"
     private Pane nav_icon1;
     @FXML //fx:id="nav_bg1"
@@ -111,10 +109,6 @@ public class MessagesController implements Initializable, ControlledScreen {
     private Pane nav_icon5;
     @FXML //fx:id="nav_bg5"
     private Button nav_bg5;
-    @FXML //fx:id="nav_icon6"
-    private Pane nav_icon6;
-    @FXML //fx:id="nav_bg6"
-    private Button nav_bg6;
     @FXML // fx:id="title"
     private Label title;
     @FXML // fx:id="spinner_green"
@@ -191,6 +185,12 @@ public class MessagesController implements Initializable, ControlledScreen {
     private Label lblCurrStatus;
     @FXML // fx:id="chkMessages"
     private CheckBox chkMessages;
+    @FXML // fx:id="successPane"
+    private Pane successPane;
+    @FXML // fx:id="successLabel"
+    private Label successLabel;
+    @FXML // fx:id="btnHideSuccess"
+    private Button btnHideSuccess;
 
 
     // Set variables to allow for draggable window.
@@ -214,9 +214,10 @@ public class MessagesController implements Initializable, ControlledScreen {
     private Boolean pageLoaded = false;
 
     // Index to bind custom cell controls to the listview cell
-    private int index  = 0;
-    private int unread = 0;
-    private int length = 0;
+    private int index     = 0;
+    private int unread    = 0;
+    private int length    = 0;
+    private int currIndex = 0;
 
     // Reference to a null message object that I can access for any Message manipulation methods
     private Message m = null;
@@ -232,6 +233,7 @@ public class MessagesController implements Initializable, ControlledScreen {
 
     // Sets the initial checkbox value to false
     private Boolean tickEnabled = false;
+    private String  selected = "";
 
     /**
      * Initializes the controller class.
@@ -252,6 +254,7 @@ public class MessagesController implements Initializable, ControlledScreen {
         viewMessage.setVisible(false);
         chatOverlay.setVisible(false);
         choiceUpdate.setVisible(false);
+        successPane.setVisible(false);
 
         // Set the display graphic for title
         Effect glow = new Glow(0.3);
@@ -402,31 +405,6 @@ public class MessagesController implements Initializable, ControlledScreen {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 nav_bg5.getStyleClass().remove("dark_hover");
-            }
-        });
-        nav6.setOnMouseEntered(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                accent6.setStyle("visibility: visible !important");
-            }
-        });
-        nav6.setOnMouseExited(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                accent6.setStyle("visibility: hidden");
-            }
-        });
-        nav_icon6.setOnMouseEntered(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                accent6.setStyle("visibility: visible !important");
-                nav_bg6.getStyleClass().add("light_hover");
-            }
-        });
-        nav_icon6.setOnMouseExited(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                nav_bg6.getStyleClass().remove("light_hover");
             }
         });
 
@@ -614,7 +592,6 @@ public class MessagesController implements Initializable, ControlledScreen {
                 } else {
                     // Updat the message to the old state
                     String fullMsg = message.substring(0, 250);
-                    System.out.println(fullMsg.length());
                     txtMessage.setText(fullMsg);
 
                     // Set the position to the end of the string
@@ -627,26 +604,7 @@ public class MessagesController implements Initializable, ControlledScreen {
         txtRecipient.setOnKeyTyped(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
-
-                // Set that we have an inbox recipient
-                if(!lblToInbox.isVisible()){
-                    // Get the user whos email matches his name
-                    System.out.println(getNameByEmail(txtRecipient.getText()));
-                    lblToInbox.setText(getNameByEmail(txtRecipient.getText()));
-
-                    // Check that the name length is valid (no name is < 6)
-                    // then show the badge
-                    if(lblToInbox.getText().length() > 6){
-                        lblToInbox.setVisible(true);
-                    }
-                }
-                if(lblToInbox.isVisible()){
-                    if(getNameByEmail(txtRecipient.getText()).length() == 0) {
-                        lblToInbox.setText("");
-                        lblToInbox.setVisible(false);
-                    }
-                }
-
+                /** DOES NOT WORK NO TIME TO FIX AUTOCOMPLETE
                 // On a keypress reset the string on a new input
                 if(txtRecipient.getText().length() > 1) {
                     String currText = txtRecipient.getText();
@@ -673,16 +631,51 @@ public class MessagesController implements Initializable, ControlledScreen {
                 txtRecipient.positionCaret(save.length());
                 setLength(txtRecipient.getText().length());
                 setPosition(save.length());
+                 */
+            }
+        });
+        txtMessage.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean aBoolean2) {
+                String email = txtRecipient.getText();
+
+                // if a name has been inputted
+                if(email.contains(" ")) {
+                    // If searching by a name, get there email
+                    if(!email.contains("@")) {
+                        for(int i = 0; i < u.size(); i++) {
+                            Tenant t = u.getUserAt(i);
+                            if(t.getName().toUpperCase().equals(email.toUpperCase())) {
+                                email = t.getEmail();
+                                txtRecipient.setText(email);
+
+                                // Set that we have an inbox recipient
+                                if(!lblToInbox.isVisible()){
+                                    lblToInbox.setVisible(true);
+                                }
+                                if(lblToInbox.isVisible()){
+                                    if(getNameByEmail(txtRecipient.getText()).length() == 0) {
+                                        lblToInbox.setVisible(false);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         });
         btnSend.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                System.out.println("Attempting send...");
-                if (sendToUser(txtRecipient.getText())) {
+                String email = txtRecipient.getText();
+
+                if (sendToUser(email)) {
+                    lblMessageCount.setText("0/250 Characters");
                     txtRecipient.setText("");
                     txtMessage.setText("");
                     hideMessages();
+                    successPane.setVisible(true);
+                    successLabel.setText("Success: Message Sent");
                 }
             }
         });
@@ -716,17 +709,6 @@ public class MessagesController implements Initializable, ControlledScreen {
                 }
             }
         });
-        choiceUpdate.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
-            @Override
-            public void changed(ObservableValue observableValue, Object o, Object o2) {
-                Object thisIndex = choiceUpdate.getSelectionModel().getSelectedItem();
-
-                // Cast the val to the string
-                String value = String.class.cast(thisIndex);
-
-                System.out.println(value);
-            }
-        });
         lstMessages.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -734,6 +716,8 @@ public class MessagesController implements Initializable, ControlledScreen {
                 // Variables to process the action
                 int thisMsg = lstMessages.getSelectionModel().getSelectedIndex();
                 String box  = "INBOX";
+
+                setCurrIndex(thisMsg);
 
                 // Ternary operator to determine the box we are using, INBOX if true else SENT
                 box = usingInbox ? "INBOX" : "SENT";
@@ -756,6 +740,19 @@ public class MessagesController implements Initializable, ControlledScreen {
                                         ScreensFramework.db.query(query);
                                     }
                                 }).start();
+                                // Updates the request to SEEN
+                                // If we have a maintenance reques then update to SEEN
+                                if(m.getType().equals("MAINTENANCE")) {
+                                    // Try to update the database - run or new thread, else block until complete
+                                    new Thread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            String query = "UPDATE requests SET request_status = 'SEEN' WHERE tracking_id = " + m.getRequestId();
+                                            ScreensFramework.db.query(query);
+                                            m.setStatus("SEEN");
+                                        }
+                                    }).start();
+                                }
                             }
                         break;
                     case "SENT":
@@ -773,12 +770,22 @@ public class MessagesController implements Initializable, ControlledScreen {
         btnReply.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                hideMessages();
-                messageWrap.setVisible(true);
-                viewMessage.setVisible(false);
-                txtRecipient.setText(getLastSender());
-                txtMessage.requestFocus();
-                showNewMessage();
+                // Determine the type of mail we are dealing with
+                switch(btnReply.getText()){
+                    case "Reply":
+                            messageWrap.setVisible(true);
+                            viewMessage.setVisible(false);
+                            txtRecipient.setText(getLastSender());
+                            txtMessage.requestFocus();
+                        break;
+                    case "Update":
+                            if(updateUser(getCurrIndex())) {
+                                hideMessages();
+                                successPane.setVisible(true);
+                                successLabel.setText("Success: Request Updated");
+                            }
+                        break;
+                }
             }
         });
         chkMessages.setOnAction(new EventHandler<ActionEvent>()  {
@@ -807,6 +814,12 @@ public class MessagesController implements Initializable, ControlledScreen {
 
             }
         });
+        btnHideSuccess.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                successPane.setVisible(false);
+            }
+        });
     }
 
 
@@ -814,28 +827,17 @@ public class MessagesController implements Initializable, ControlledScreen {
      *                  CONTROL METHODS
      *****************************************************/
     /**
-     * Sets the current position in auto complete
+     * Sets the current index we are viewing
      */
-    private void setPosition(int pos) {
-        this.position = pos;
+    private void setCurrIndex(int index) {
+        this.currIndex = index;
     }
     /**
-     * Returns the current position in auto complete
+     * Returns the current index we are viewing
+     * @return int index
      */
-    private int getPosition() {
-        return this.position;
-    }
-    /**
-     * Sets the current length of the autocomplete string
-     */
-    private void setLength(int len) {
-        this.length = len;
-    }
-    /**
-     * Returns the current length of the set autocomplete string
-     */
-    private int getLength() {
-        return this.length;
+    private int getCurrIndex() {
+        return this.currIndex;
     }
     /**
      * Gets the sender of the last read message
@@ -897,16 +899,67 @@ public class MessagesController implements Initializable, ControlledScreen {
         switch(type) {
             case "INBOX":
                 lblMsgType.getStyleClass().addAll("encapsulated-large", "green");
+                btnReply.setVisible(true);
+                btnReply.setText("Reply");
                 break;
             case "ALERT":
                 lblMsgType.getStyleClass().addAll("encapsulated-large", "pink");
+                btnReply.setVisible(false);
                 break;
             case "MAINTENANCE":
-                type = "MAINT";
-                choiceUpdate.setVisible(true);
-                lblCurrStatus.setVisible(true);
+                    type = "MAINT";
+                    // Set the status of the message
+                    Runnable item = new Runnable() {
+                        @Override
+                        public void run() {
+                            Message m = sessionUser.getMessageAt("INBOX", getCurrIndex());
+                            String query = "SELECT request_status FROM requests INNER JOIN messages ON requests.requests_id = messages.request_id WHERE messages.request_id = " + m.getRequestId() + " FETCH FIRST ROW ONLY";
+                            ResultSet a = ScreensFramework.db.query(query);
 
-                lblMsgType.getStyleClass().addAll("encapsulated-large", "orange");
+                            try {
+                                while(a.next()) {
+                                    selected = a.getString("request_status");
+                                }
+                            } catch (SQLException e) {
+                                ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+                            }
+                        }
+                    };
+
+                    // Populate the status -- made a mistake with the data model, no time to fix setting the status on the constructor
+                    Thread t = new Thread(item);
+                    try {
+                        t.start();
+                        t.join();
+                    } catch(Exception e) {
+                        ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+                    }
+
+                    // Select the correct item after thread rejoins.
+                    switch(selected) {
+                        case "RECEIVED":
+                            choiceUpdate.getSelectionModel().select(0);
+                            break;
+                        case "SCHEDULED":
+                            choiceUpdate.getSelectionModel().select(1);
+                            break;
+                        case "SEEN":
+                            choiceUpdate.getSelectionModel().select(2);
+                            break;
+                        case "IN PROGRESS":
+                            choiceUpdate.getSelectionModel().select(3);
+                            break;
+                        case "COMPLETED":
+                            choiceUpdate.getSelectionModel().select(4);
+                            break;
+                    }
+
+                    choiceUpdate.setVisible(true);
+                    lblCurrStatus.setVisible(true);
+                    btnReply.setVisible(true);
+                    btnReply.setText("Update");
+
+                    lblMsgType.getStyleClass().addAll("encapsulated-large", "orange");
                 break;
         }
 
@@ -926,13 +979,29 @@ public class MessagesController implements Initializable, ControlledScreen {
         lblDisplayMessage.setText(m.getMessage());
     }
 
+    /** NO TIME TO IMPLEMENT AUTO COMPLETE LEFT CODE HERE TO SEE PROGRESS
+     * Sets the current position in auto complete
+     private void setPosition(int pos) {
+     this.position = pos;
+     }
+     * Returns the current position in auto complete
+     private int getPosition() {
+     return this.position;
+     }
+     * Sets the current length of the autocomplete string
+     private void setLength(int len) {
+     this.length = len;
+     }
+     * Returns the current length of the set autocomplete string
+     private int getLength() {
+     return this.length;
+     }
     /**
      * Auto completes the text field by searching through an array of
      * available values
      * @param value - the current text in the textbox
      * @param length- the length of the value string
      * @param type  - the type we are searching on : EMAIL, NAME
-     */
     public String autoComplete(String value, int length, String type) {
 
         // Initialise to the current value
@@ -974,14 +1043,50 @@ public class MessagesController implements Initializable, ControlledScreen {
 
         return append;
     }
+    */
 
+    /**
+     * Updates the users request, this will run a notify trigger in the database
+     * @param currentId - the current message object we are using
+     * @return updated - True if was updated else false
+     */
+    private Boolean updateUser(int currentId) {
+        Boolean updated = false;
+
+        // Build the query Runnable object
+        Runnable query = new Runnable() {
+            @Override
+            public void run() {
+                // The message we are working with
+                Message m = sessionUser.getMessageAt("INBOX", currentId);
+
+                // Get the selected status type and build the query
+                String status = choiceUpdate.getSelectionModel().getSelectedItem().toString();
+                String query  = "UPDATE requests SET request_status = '" + status.toUpperCase() + "' WHERE requests_id = " + m.getRequestId();
+
+                if(ScreensFramework.db.update(query)){
+                    // Set the new status for this message
+                    m.setStatus(status);
+                }
+            }
+        };
+
+        // Add the query to the thread
+        Thread updateRequest = new Thread(query);
+
+        // Run the thread and wait for it to join
+        updateRequest.start();
+        updated = true;
+
+        return updated;
+    }
 
     /**
      * sends the mail to the user
      * @param email - the email address we wish to send the mail to
      * @param
      */
-    public Boolean sendToUser(String email) {
+    private Boolean sendToUser(String email) {
         Boolean sent = false;
 
         // Run on a new thread to ensure GUI does not lock
@@ -1010,7 +1115,7 @@ public class MessagesController implements Initializable, ControlledScreen {
     /**
      * Populates the payment ListView
      */
-    public void populateMessageList() {
+    private void populateMessageList() {
 
         // Get the sessionUser
         sessionUser = ScreensFramework.loggedIn;
@@ -1059,7 +1164,7 @@ public class MessagesController implements Initializable, ControlledScreen {
      * cellfactory
      * @return an observable array of objects to populate the list
      */
-    public ObservableList populateObservable(ArrayList<Message> messagesArray) {
+    private ObservableList populateObservable(ArrayList<Message> messagesArray) {
 
         ObservableList messages = FXCollections.observableArrayList();
 
@@ -1100,7 +1205,7 @@ public class MessagesController implements Initializable, ControlledScreen {
     /******************************************************
      *                ANIMATION CONTROLS
      ******************************************************/
-    public void animateIn()
+    private void animateIn()
     {
         final Timeline load_scene = new Timeline();
         load_scene.setCycleCount(1);
@@ -1123,7 +1228,7 @@ public class MessagesController implements Initializable, ControlledScreen {
         load_scene.play();
     }
 
-    public void animateOut()
+    private void animateOut()
     {
         final Timeline load_scene = new Timeline();
         load_scene.setCycleCount(1);
@@ -1149,7 +1254,7 @@ public class MessagesController implements Initializable, ControlledScreen {
     /**
      * Animates the new message panel in
      */
-    public void showNewMessage() {
+    private void showNewMessage() {
         chatOverlay.setVisible(true);
 
         final Timeline load_scene = new Timeline();
@@ -1170,7 +1275,7 @@ public class MessagesController implements Initializable, ControlledScreen {
     /**
      * Animates the new message panel in
      */
-    public void hideMessages() {
+    private void hideMessages() {
         final Timeline load_scene = new Timeline();
         load_scene.setCycleCount(1);
         load_scene.setAutoReverse(false);
@@ -1285,11 +1390,6 @@ public class MessagesController implements Initializable, ControlledScreen {
                             nav_icon5.getStyleClass().add("active");
                             accent5.getStyleClass().addAll("active", "show");
                             break;
-                        case "Settings":
-                            nav_bg6.getStyleClass().addAll("active");
-                            nav_icon6.getStyleClass().add("active");
-                            accent6.getStyleClass().addAll("active", "show");
-                            break;
                         case "Add Tenant":
                             nav_bg2.getStyleClass().addAll("active");
                             nav_icon2.getStyleClass().add("active");
@@ -1351,10 +1451,6 @@ public class MessagesController implements Initializable, ControlledScreen {
         nav_icon5.getStyleClass().remove("active");
         accent5.getStyleClass().removeAll("active", "show");
         nav_bg5.getStyleClass().remove("active");
-        nav_icon6.getStyleClass().remove("active");
-        accent6.getStyleClass().removeAll("active", "show");
-        nav_bg6.getStyleClass().remove("active");
-
     }
 
     /******************************************************
@@ -1387,10 +1483,7 @@ public class MessagesController implements Initializable, ControlledScreen {
             try
             {
                 forename = name[0];
-                System.out.println(forename);
-
                 surname  = name[1];
-                System.out.println(surname);
 
             } catch (Exception e)
             {

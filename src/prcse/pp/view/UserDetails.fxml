@@ -269,10 +269,7 @@
                     </children>
                 </AnchorPane>
                 <AnchorPane fx:id="nav6" layoutY="515.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-                    <children><Button id="nav_button" fx:id="nav_bg6" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToSettings" prefHeight="70.0" prefWidth="250.0" styleClass="light" text="Settings" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-                        <font>
-                            <Font size="20.0" />
-                        </font></Button><Rectangle id="nav_active_accent" fx:id="accent6" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="2.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Pane id="nav_icon_6" fx:id="nav_icon6" layoutX="200.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="36.0" prefWidth="36.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+                    <children><Rectangle id="nav_active_accent" fx:id="accent6" fill="DODGERBLUE" height="70.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="hidden" width="2.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
                     </children>
                 </AnchorPane>
                 <AnchorPane layoutY="691.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">

@@ -8990,3 +8990,483 @@ ORA-04088: error during execution of trigger 'PRCSE.TRG_USERS_AFTER'
 17-Apr-2014 20:27: Index: 2, Size: 2
 17-Apr-2014 20:27: Index: 3, Size: 2
 17-Apr-2014 20:29: Error: Not on FX application thread; currentThread = Thread-48
+18-Apr-2014 11:04: Error: String index out of range: 11
+18-Apr-2014 11:04: Error: String index out of range: 12
+18-Apr-2014 11:04: Error: String index out of range: 13
+18-Apr-2014 11:04: Error: Not on FX application thread; currentThread = Thread-41
+18-Apr-2014 11:04: Error: Not on FX application thread; currentThread = Thread-42
+18-Apr-2014 11:11: Error: Not on FX application thread; currentThread = Thread-40
+18-Apr-2014 11:16: Error: Not on FX application thread; currentThread = Thread-40
+18-Apr-2014 11:19: Error: Not on FX application thread; currentThread = Thread-40
+18-Apr-2014 11:21: Error: Not on FX application thread; currentThread = Thread-40
+18-Apr-2014 11:25: Error: Not on FX application thread; currentThread = Thread-40
+18-Apr-2014 11:26: Error: Not on FX application thread; currentThread = Thread-40
+18-Apr-2014 11:28: Error: Not on FX application thread; currentThread = Thread-40
+18-Apr-2014 11:28: Error: Not on FX application thread; currentThread = Thread-41
+18-Apr-2014 11:28: Error: Not on FX application thread; currentThread = Thread-42
+18-Apr-2014 11:29: Error: Not on FX application thread; currentThread = Thread-40
+18-Apr-2014 11:29: Error: Not on FX application thread; currentThread = Thread-41
+18-Apr-2014 13:25: Error: null
+18-Apr-2014 13:25: Error: null
+18-Apr-2014 13:25: Error: Not on FX application thread; currentThread = Thread-40
+18-Apr-2014 13:25: Error: null
+18-Apr-2014 13:25: Error: null
+18-Apr-2014 13:25: Error: Not on FX application thread; currentThread = Thread-41
+18-Apr-2014 13:27: Error: null
+18-Apr-2014 13:27: Error: null
+18-Apr-2014 13:27: Error: Not on FX application thread; currentThread = Thread-42
+18-Apr-2014 13:28: Error: null
+18-Apr-2014 13:28: Error: null
+18-Apr-2014 13:28: Error: Not on FX application thread; currentThread = Thread-43
+18-Apr-2014 13:28: Error: null
+18-Apr-2014 13:28: Error: null
+18-Apr-2014 13:28: Error: Not on FX application thread; currentThread = Thread-45
+18-Apr-2014 13:28: Error: null
+18-Apr-2014 13:28: Error: null
+18-Apr-2014 13:28: Error: Not on FX application thread; currentThread = Thread-46
+18-Apr-2014 13:28: Error: null
+18-Apr-2014 13:28: Error: null
+18-Apr-2014 13:28: Error: Not on FX application thread; currentThread = Thread-49
+18-Apr-2014 13:33: Error: null
+18-Apr-2014 13:33: Error: null
+18-Apr-2014 13:33: Error: Not on FX application thread; currentThread = Thread-42
+18-Apr-2014 13:34: Error: null
+18-Apr-2014 13:34: Error: null
+18-Apr-2014 13:34: Error: null
+18-Apr-2014 13:34: Error: null
+18-Apr-2014 13:34: Error: null
+18-Apr-2014 13:34: Error: null
+18-Apr-2014 13:35: Error: Not on FX application thread; currentThread = Thread-43
+18-Apr-2014 13:36: Error: null
+18-Apr-2014 13:36: Error: null
+18-Apr-2014 13:37: Error: Not on FX application thread; currentThread = Thread-40
+18-Apr-2014 13:37: Error: null
+18-Apr-2014 13:37: Error: null
+18-Apr-2014 13:37: Error: null
+18-Apr-2014 13:37: Error: null
+18-Apr-2014 13:39: Error: null
+18-Apr-2014 13:39: Error: null
+18-Apr-2014 13:39: Error: null
+18-Apr-2014 13:39: Error: null
+18-Apr-2014 13:40: Error: null
+18-Apr-2014 13:40: Error: null
+18-Apr-2014 13:40: Error: null
+18-Apr-2014 13:40: Error: null
+18-Apr-2014 13:45: Error: null
+18-Apr-2014 13:45: Error: null
+18-Apr-2014 13:45: Error: Not on FX application thread; currentThread = Thread-41
+18-Apr-2014 13:45: Error: null
+18-Apr-2014 13:45: Error: null
+18-Apr-2014 13:45: Error: Not on FX application thread; currentThread = Thread-42
+18-Apr-2014 13:46: Error: null
+18-Apr-2014 13:46: Error: null
+18-Apr-2014 13:46: Error: Not on FX application thread; currentThread = Thread-42
+18-Apr-2014 13:46: Error: null
+18-Apr-2014 13:46: Error: null
+18-Apr-2014 13:46: Error: Not on FX application thread; currentThread = Thread-45
+18-Apr-2014 13:46: Error: null
+18-Apr-2014 13:46: Error: null
+18-Apr-2014 13:46: Error: Not on FX application thread; currentThread = Thread-49
+18-Apr-2014 13:47: Error: null
+18-Apr-2014 13:47: Error: null
+18-Apr-2014 13:47: Error: Not on FX application thread; currentThread = Thread-42
+18-Apr-2014 13:49: Error: null
+18-Apr-2014 13:49: Error: null
+18-Apr-2014 13:55: Error: null
+18-Apr-2014 13:55: Error: null
+18-Apr-2014 14:00: Error: null
+18-Apr-2014 14:00: Error: null
+18-Apr-2014 14:01: Error: null
+18-Apr-2014 14:05: Error: null
+18-Apr-2014 14:05: Error: null
+18-Apr-2014 14:06: Error: Not on FX application thread; currentThread = Thread-40
+18-Apr-2014 14:07: Error: null
+18-Apr-2014 14:07: Error: null
+18-Apr-2014 14:13: Error handling operation: IO Error: Got minus one from a read call
+18-Apr-2014 14:14: Error: null
+18-Apr-2014 14:14: Error: null
+18-Apr-2014 14:29: Error: null
+18-Apr-2014 14:29: Error: null
+18-Apr-2014 14:29: Error: ResultSet.next was not called
+18-Apr-2014 14:29: Error: Not on FX application thread; currentThread = Thread-44
+18-Apr-2014 14:30: Error: null
+18-Apr-2014 14:30: Error: null
+18-Apr-2014 14:30: Error: ResultSet.next was not called
+18-Apr-2014 14:31: Error: Not on FX application thread; currentThread = Thread-43
+18-Apr-2014 14:31: Error: null
+18-Apr-2014 14:31: Error: null
+18-Apr-2014 14:32: Error: ResultSet.next was not called
+18-Apr-2014 14:32: Error: Not on FX application thread; currentThread = Thread-47
+18-Apr-2014 14:32: Error: null
+18-Apr-2014 14:32: Error: null
+18-Apr-2014 14:32: Error: ResultSet.next was not called
+18-Apr-2014 14:32: Error: Not on FX application thread; currentThread = Thread-51
+18-Apr-2014 14:32: Error: null
+18-Apr-2014 14:32: Error: null
+18-Apr-2014 14:37: Error: null
+18-Apr-2014 14:37: Error: null
+18-Apr-2014 14:40: Error: null
+18-Apr-2014 14:40: Error: null
+18-Apr-2014 14:40: Error: Not on FX application thread; currentThread = Thread-44
+18-Apr-2014 14:51: Error: null
+18-Apr-2014 14:51: Error: null
+18-Apr-2014 14:51: Error handling operation: ORA-00933: SQL command not properly ended
+
+18-Apr-2014 14:51: Error: Not on FX application thread; currentThread = Thread-46
+18-Apr-2014 14:52: Error: null
+18-Apr-2014 14:52: Error: null
+18-Apr-2014 14:53: Error handling operation: ORA-00933: SQL command not properly ended
+
+18-Apr-2014 14:53: Error: Not on FX application thread; currentThread = Thread-46
+18-Apr-2014 14:54: Error: null
+18-Apr-2014 14:54: Error: null
+18-Apr-2014 14:54: Error handling operation: ORA-00933: SQL command not properly ended
+
+18-Apr-2014 14:56: Error: null
+18-Apr-2014 14:56: Error: null
+18-Apr-2014 14:56: Error handling operation: ORA-00933: SQL command not properly ended
+
+18-Apr-2014 14:56: Error: Not on FX application thread; currentThread = Thread-46
+18-Apr-2014 14:56: Error: null
+18-Apr-2014 14:56: Error: null
+18-Apr-2014 14:57: Error: Not on FX application thread; currentThread = Thread-42
+18-Apr-2014 14:57: Error handling operation: ORA-00933: SQL command not properly ended
+
+18-Apr-2014 14:57: Error: null
+18-Apr-2014 14:57: Error: null
+18-Apr-2014 14:57: Error: Not on FX application thread; currentThread = Thread-48
+18-Apr-2014 14:57: Error handling operation: ORA-00933: SQL command not properly ended
+
+18-Apr-2014 14:57: Error: null
+18-Apr-2014 14:57: Error: null
+18-Apr-2014 14:57: Error: Not on FX application thread; currentThread = Thread-45
+18-Apr-2014 15:00: Error: null
+18-Apr-2014 15:00: Error: null
+18-Apr-2014 15:04: Error: null
+18-Apr-2014 15:04: Error: null
+18-Apr-2014 15:08: Error: null
+18-Apr-2014 15:08: Error: null
+18-Apr-2014 15:08: Error: Not on FX application thread; currentThread = Thread-46
+18-Apr-2014 15:08: Error: null
+18-Apr-2014 15:08: Error: null
+18-Apr-2014 15:08: Error: Not on FX application thread; currentThread = Thread-53
+18-Apr-2014 15:08: Error: null
+18-Apr-2014 15:08: Error: null
+18-Apr-2014 15:08: Error: Not on FX application thread; currentThread = Thread-56
+18-Apr-2014 15:08: Error: null
+18-Apr-2014 15:08: Error: null
+18-Apr-2014 15:08: Error: Not on FX application thread; currentThread = Thread-63
+18-Apr-2014 15:08: Error: null
+18-Apr-2014 15:08: Error: null
+18-Apr-2014 15:09: Error: Not on FX application thread; currentThread = Thread-71
+18-Apr-2014 15:09: Error: null
+18-Apr-2014 15:09: Error: null
+18-Apr-2014 15:09: Error: Not on FX application thread; currentThread = Thread-76
+18-Apr-2014 15:09: Error: null
+18-Apr-2014 15:09: Error: null
+18-Apr-2014 15:09: Error: Not on FX application thread; currentThread = Thread-79
+18-Apr-2014 15:09: Error: null
+18-Apr-2014 15:09: Error: null
+18-Apr-2014 15:09: Error: Not on FX application thread; currentThread = Thread-82
+18-Apr-2014 15:09: Error: null
+18-Apr-2014 15:09: Error: null
+18-Apr-2014 15:09: Error: Not on FX application thread; currentThread = Thread-85
+18-Apr-2014 15:09: Error: null
+18-Apr-2014 15:09: Error: null
+18-Apr-2014 15:09: Error: Not on FX application thread; currentThread = Thread-86
+18-Apr-2014 15:09: Error: null
+18-Apr-2014 15:09: Error: null
+18-Apr-2014 15:09: Error: Not on FX application thread; currentThread = Thread-94
+18-Apr-2014 15:09: Error: null
+18-Apr-2014 15:09: Error: null
+18-Apr-2014 15:09: Error: Not on FX application thread; currentThread = Thread-101
+18-Apr-2014 15:09: Error: null
+18-Apr-2014 15:09: Error: null
+18-Apr-2014 15:09: Error: Not on FX application thread; currentThread = Thread-108
+18-Apr-2014 15:10: Error: null
+18-Apr-2014 15:10: Error: null
+18-Apr-2014 15:10: Error: Not on FX application thread; currentThread = Thread-46
+18-Apr-2014 15:26: Error: null
+18-Apr-2014 15:26: Error: null
+18-Apr-2014 15:26: Error: Not on FX application thread; currentThread = Thread-42
+18-Apr-2014 15:26: Error: null
+18-Apr-2014 15:26: Error: null
+18-Apr-2014 15:26: Error: Not on FX application thread; currentThread = Thread-49
+18-Apr-2014 15:26: Error: null
+18-Apr-2014 15:26: Error: null
+18-Apr-2014 15:26: Error: Not on FX application thread; currentThread = Thread-56
+18-Apr-2014 15:26: Error: null
+18-Apr-2014 15:26: Error: null
+18-Apr-2014 15:29: Error: null
+18-Apr-2014 15:29: Error: null
+18-Apr-2014 15:30: Error: null
+18-Apr-2014 15:30: Error: null
+18-Apr-2014 15:37: Error: null
+18-Apr-2014 15:37: Error: null
+18-Apr-2014 15:40: Error: null
+18-Apr-2014 15:40: Error: null
+18-Apr-2014 15:42: Error: null
+18-Apr-2014 15:42: Error: null
+18-Apr-2014 15:42: Error: Not on FX application thread; currentThread = Thread-45
+18-Apr-2014 15:43: Error: null
+18-Apr-2014 15:43: Error: null
+18-Apr-2014 15:48: Error: null
+18-Apr-2014 15:48: Error: null
+18-Apr-2014 15:48: Error: Not on FX application thread; currentThread = Thread-43
+18-Apr-2014 15:50: Error: Not on FX application thread; currentThread = Thread-46
+18-Apr-2014 15:50: Error: null
+18-Apr-2014 15:50: Error: null
+18-Apr-2014 15:50: Error: Not on FX application thread; currentThread = Thread-47
+18-Apr-2014 16:14: Error: null
+18-Apr-2014 16:14: Error: null
+18-Apr-2014 16:14: Error handling operation: ORA-01722: invalid number
+
+18-Apr-2014 16:14: Error: Not on FX application thread; currentThread = Thread-46
+18-Apr-2014 16:14: Error: null
+18-Apr-2014 16:14: Error: null
+18-Apr-2014 16:14: Error handling operation: ORA-01722: invalid number
+
+18-Apr-2014 16:14: Error: Not on FX application thread; currentThread = Thread-54
+18-Apr-2014 16:14: Error: null
+18-Apr-2014 16:14: Error: null
+18-Apr-2014 16:14: Error handling operation: ORA-01722: invalid number
+
+18-Apr-2014 16:15: Error: Not on FX application thread; currentThread = Thread-62
+18-Apr-2014 19:39: Error: java.lang.Double cannot be cast to java.lang.String
+19-Apr-2014 16:27: Error handling query: IO Error: The Network Adapter could not establish the connection
+19-Apr-2014 16:27: Error handling query: IO Error: The Network Adapter could not establish the connection
+19-Apr-2014 17:07: null
+19-Apr-2014 17:07: null
+19-Apr-2014 17:07: null
+19-Apr-2014 17:07: null
+19-Apr-2014 17:07: null
+19-Apr-2014 17:07: null
+19-Apr-2014 17:07: null
+19-Apr-2014 17:07: null
+19-Apr-2014 17:07: Error: java.lang.Double cannot be cast to java.lang.String
+19-Apr-2014 17:07: Error: java.lang.Double cannot be cast to java.lang.String
+19-Apr-2014 17:07: Error: java.lang.Double cannot be cast to java.lang.String
+19-Apr-2014 17:07: Error: java.lang.Double cannot be cast to java.lang.String
+19-Apr-2014 17:08: null
+19-Apr-2014 17:08: null
+19-Apr-2014 17:08: null
+19-Apr-2014 17:08: null
+19-Apr-2014 17:08: null
+19-Apr-2014 17:08: null
+19-Apr-2014 17:08: null
+19-Apr-2014 17:08: null
+19-Apr-2014 17:09: Error: java.lang.Double cannot be cast to java.lang.String
+19-Apr-2014 17:11: null
+19-Apr-2014 17:11: null
+19-Apr-2014 17:11: null
+19-Apr-2014 17:11: null
+19-Apr-2014 17:11: null
+19-Apr-2014 17:11: null
+19-Apr-2014 17:11: null
+19-Apr-2014 17:11: null
+19-Apr-2014 17:11: Error: java.lang.Double cannot be cast to java.lang.String
+19-Apr-2014 17:12: Error: java.lang.Double cannot be cast to java.lang.String
+19-Apr-2014 17:12: Error: java.lang.Double cannot be cast to java.lang.String
+19-Apr-2014 17:12: Error: java.lang.Double cannot be cast to java.lang.String
+19-Apr-2014 17:12: Error: java.lang.Double cannot be cast to java.lang.String
+19-Apr-2014 17:12: Error: java.lang.Double cannot be cast to java.lang.String
+19-Apr-2014 17:12: Error: java.lang.Double cannot be cast to java.lang.String
+19-Apr-2014 17:14: Error: java.lang.Double cannot be cast to java.lang.String
+19-Apr-2014 17:14: null
+19-Apr-2014 17:14: null
+19-Apr-2014 17:14: null
+19-Apr-2014 17:14: null
+19-Apr-2014 17:14: null
+19-Apr-2014 17:14: null
+19-Apr-2014 17:14: null
+19-Apr-2014 17:14: null
+19-Apr-2014 17:16: Error: java.lang.Double cannot be cast to java.lang.String
+19-Apr-2014 17:22: null
+19-Apr-2014 17:22: null
+19-Apr-2014 17:22: null
+19-Apr-2014 17:22: null
+19-Apr-2014 17:22: null
+19-Apr-2014 17:22: null
+19-Apr-2014 17:22: null
+19-Apr-2014 17:22: null
+19-Apr-2014 17:22: Error: java.lang.Double cannot be cast to java.lang.String.
+Dev info:[Ljava.lang.StackTraceElement;@1732c8d
+19-Apr-2014 17:34: null
+19-Apr-2014 17:34: null
+19-Apr-2014 17:34: null
+19-Apr-2014 17:34: null
+19-Apr-2014 17:34: null
+19-Apr-2014 17:34: null
+19-Apr-2014 17:34: null
+19-Apr-2014 17:34: null
+19-Apr-2014 17:34: Error: java.lang.Double cannot be cast to java.lang.String
+19-Apr-2014 17:35: null
+19-Apr-2014 17:35: null
+19-Apr-2014 17:35: null
+19-Apr-2014 17:35: null
+19-Apr-2014 17:35: null
+19-Apr-2014 17:35: null
+19-Apr-2014 17:35: null
+19-Apr-2014 17:35: null
+19-Apr-2014 17:37: null
+19-Apr-2014 17:37: null
+19-Apr-2014 17:37: null
+19-Apr-2014 17:37: null
+19-Apr-2014 17:37: null
+19-Apr-2014 17:37: null
+19-Apr-2014 17:37: null
+19-Apr-2014 17:37: null
+19-Apr-2014 17:43: null
+19-Apr-2014 17:43: null
+19-Apr-2014 17:43: null
+19-Apr-2014 17:43: null
+19-Apr-2014 17:43: null
+19-Apr-2014 17:43: null
+19-Apr-2014 17:43: null
+19-Apr-2014 17:43: null
+19-Apr-2014 17:43: Error: java.lang.Double cannot be cast to java.lang.String
+19-Apr-2014 17:44: null
+19-Apr-2014 17:44: null
+19-Apr-2014 17:44: null
+19-Apr-2014 17:44: null
+19-Apr-2014 17:44: null
+19-Apr-2014 17:44: null
+19-Apr-2014 17:44: null
+19-Apr-2014 17:44: null
+19-Apr-2014 17:44: Error: null
+19-Apr-2014 18:06: null
+19-Apr-2014 18:06: null
+19-Apr-2014 18:06: null
+19-Apr-2014 18:06: null
+19-Apr-2014 18:06: null
+19-Apr-2014 18:06: null
+19-Apr-2014 18:06: null
+19-Apr-2014 18:06: null
+19-Apr-2014 18:06: Error: null
+19-Apr-2014 18:06: Error: null
+19-Apr-2014 18:06: Error: null
+19-Apr-2014 18:06: Error: null
+19-Apr-2014 18:07: Error: null
+19-Apr-2014 18:07: Error: null
+19-Apr-2014 18:07: Error: null
+19-Apr-2014 18:07: Error: null
+19-Apr-2014 18:07: Error: null
+19-Apr-2014 18:07: Error: null
+19-Apr-2014 18:07: Error: null
+19-Apr-2014 18:07: Error: null
+19-Apr-2014 18:07: Error: null
+19-Apr-2014 18:07: Error: null
+19-Apr-2014 18:07: Error: null
+19-Apr-2014 18:07: Error: null
+19-Apr-2014 18:11: null
+19-Apr-2014 18:11: null
+19-Apr-2014 18:11: null
+19-Apr-2014 18:11: null
+19-Apr-2014 18:11: null
+19-Apr-2014 18:11: null
+19-Apr-2014 18:11: null
+19-Apr-2014 18:11: null
+19-Apr-2014 18:11: Error: null
+19-Apr-2014 18:27: null
+19-Apr-2014 18:27: null
+19-Apr-2014 18:27: null
+19-Apr-2014 18:27: null
+19-Apr-2014 18:27: null
+19-Apr-2014 18:27: null
+19-Apr-2014 18:27: null
+19-Apr-2014 18:27: null
+19-Apr-2014 22:46: Error handling query: IO Error: The Network Adapter could not establish the connection
+19-Apr-2014 22:47: null
+19-Apr-2014 22:47: null
+19-Apr-2014 22:47: null
+19-Apr-2014 22:47: null
+19-Apr-2014 22:47: null
+19-Apr-2014 22:47: null
+19-Apr-2014 22:47: null
+19-Apr-2014 22:47: null
+19-Apr-2014 22:52: null
+19-Apr-2014 22:52: null
+19-Apr-2014 22:52: null
+19-Apr-2014 22:52: null
+19-Apr-2014 22:52: null
+19-Apr-2014 22:52: null
+19-Apr-2014 22:52: null
+19-Apr-2014 22:52: null
+19-Apr-2014 22:54: null
+19-Apr-2014 22:54: null
+19-Apr-2014 22:54: null
+19-Apr-2014 22:54: null
+19-Apr-2014 22:54: null
+19-Apr-2014 22:54: null
+19-Apr-2014 23:02: null
+19-Apr-2014 23:02: null
+19-Apr-2014 23:02: null
+19-Apr-2014 23:02: null
+19-Apr-2014 23:02: null
+19-Apr-2014 23:02: null
+19-Apr-2014 23:39: null
+19-Apr-2014 23:39: null
+19-Apr-2014 23:39: null
+19-Apr-2014 23:39: null
+19-Apr-2014 23:39: null
+19-Apr-2014 23:39: null
+19-Apr-2014 23:40: null
+19-Apr-2014 23:40: null
+19-Apr-2014 23:40: null
+19-Apr-2014 23:40: null
+19-Apr-2014 23:40: null
+19-Apr-2014 23:40: null
+19-Apr-2014 23:42: null
+19-Apr-2014 23:42: null
+19-Apr-2014 23:42: null
+19-Apr-2014 23:42: null
+19-Apr-2014 23:42: null
+19-Apr-2014 23:42: null
+19-Apr-2014 23:44: null
+19-Apr-2014 23:44: null
+19-Apr-2014 23:44: null
+19-Apr-2014 23:44: null
+19-Apr-2014 23:44: null
+19-Apr-2014 23:44: null
+19-Apr-2014 23:46: null
+19-Apr-2014 23:46: null
+19-Apr-2014 23:46: null
+19-Apr-2014 23:46: null
+19-Apr-2014 23:46: null
+19-Apr-2014 23:46: null
+19-Apr-2014 23:47: null
+19-Apr-2014 23:47: null
+19-Apr-2014 23:47: null
+19-Apr-2014 23:47: null
+19-Apr-2014 23:47: null
+19-Apr-2014 23:47: null
+19-Apr-2014 23:49: null
+19-Apr-2014 23:49: null
+19-Apr-2014 23:49: null
+19-Apr-2014 23:49: null
+19-Apr-2014 23:49: null
+19-Apr-2014 23:49: null
+19-Apr-2014 23:49: null
+19-Apr-2014 23:49: null
+19-Apr-2014 23:49: null
+19-Apr-2014 23:49: null
+19-Apr-2014 23:49: null
+19-Apr-2014 23:49: null
+20-Apr-2014 00:27: null
+20-Apr-2014 00:27: null
+20-Apr-2014 00:27: null
+20-Apr-2014 00:27: null
+20-Apr-2014 00:27: null
+20-Apr-2014 00:27: null
+20-Apr-2014 00:29: null
+20-Apr-2014 00:29: null
+20-Apr-2014 00:29: null
+20-Apr-2014 00:29: null
+20-Apr-2014 00:29: null
+20-Apr-2014 00:29: null
+20-Apr-2014 00:30: null
+20-Apr-2014 00:30: null
+20-Apr-2014 00:30: null
+20-Apr-2014 00:30: null
+20-Apr-2014 00:30: null
+20-Apr-2014 00:30: null

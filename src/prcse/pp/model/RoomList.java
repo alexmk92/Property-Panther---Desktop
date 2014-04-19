@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  */
 public class RoomList {
 
-    private ArrayList<Room> roomList;
+    private ArrayList<Room> roomList = new ArrayList<>();
 
     /**
      * Default (empty) constructor, creates a new empty list of rooms
@@ -71,7 +71,7 @@ public class RoomList {
      * Accessor to retrieve the size of the Property list
      * @return - int being the number of Properties currently on the user list
      */
-    public int size(){
+    public int getNumRooms(){
         return this.roomList.size();
     }
 

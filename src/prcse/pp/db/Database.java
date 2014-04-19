@@ -194,7 +194,7 @@ public class Database implements Callable {
 
             while(res.next()) {
                 Room r = new Room(res.getInt("room_id"), res.getInt("property_id"), res.getString("room_price"),
-                                  res.getString("room_details"));
+                                  res.getString("room_details"), res.getString("room_status"));
 
                 // Add the room object to this property
                 p.addRoom(r);
@@ -482,6 +482,26 @@ public class Database implements Callable {
         }
 
         return result;
+    }
+
+    /**
+     * Updates a a row in the table and returns its result
+     * @return true if updated else false
+     */
+    public Boolean update(String query) {
+        Boolean updated = false;
+
+        try {
+            Connection con = DriverManager.getConnection(getDb_host(), getDb_user(), getDb_pass());
+            Statement  st  = con.createStatement();
+            st.execute(query);
+
+            updated = true;
+        } catch (SQLException e){
+            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+        }
+
+        return updated;
     }
 
     /**

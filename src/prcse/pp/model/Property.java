@@ -1,5 +1,6 @@
 package prcse.pp.model;
 
+import prcse.pp.controller.ScreensFramework;
 import prcse.pp.model.observer.IObserver;
 import prcse.pp.model.observer.ISubject;
 import prcse.pp.model.RoomStatus;
@@ -71,6 +72,12 @@ public class Property implements ISubject{
     public Property(int propertyId, String trackCode, String address1, String address2, String postcode,
                     String district, String city, String details, int noRooms)
     {
+        // Initialise a new array list of rooms
+        this.rooms = new RoomList();
+
+        // Initialise a new payment list
+        this.payments = new ArrayList<Payment>();
+
         this.propId       = propertyId;
         this.trackingCode = trackCode;
         this.addressLine1 = address1;
@@ -78,14 +85,8 @@ public class Property implements ISubject{
         this.postcode = postcode;
         this.city = city;
         this.details = details;
-        this.noOfRooms = noRooms;
+        this.noOfRooms = this.rooms.getNumRooms();
         this.propStatus = getStatus();
-
-        // Initialise a new payment list
-        this.payments = new ArrayList<Payment>();
-
-        // Initialise a new array list of rooms
-        this.rooms = new RoomList();
     }
 
     /**
@@ -95,14 +96,6 @@ public class Property implements ISubject{
     public Property getProperty()
     {
         return this;
-    }
-
-    /**
-     * Changes the status of the property to FULL
-     */
-    public void occupied() {
-        this.propStatus = PropertyStatus.FULL;
-        this.notifyObservers();
     }
 
     /**
@@ -116,23 +109,52 @@ public class Property implements ISubject{
         int     successFlag = 0;        // How many rooms are vacant?
 
         // Check to see whether the room at index i is VACANT
-        for(int i = 0; i < rooms.size(); i++)
+        for(int i = 0; i < rooms.getNumRooms(); i++)
         {
             Room currRoom = rooms.getRoomAt(i);
 
             // If room i is vacant, increment successFlag by 1
-            if(currRoom.getStatus() == RoomStatus.VACANT)
+            if(currRoom.getStatus() == RoomStatus.VACANT) {
                 successFlag++;
+            }
         }
 
-        // If all rooms are VACANT, update the Property Status
-        if(successFlag == rooms.size())
+        // If all rooms are VACANT, update the Property Status to VACANT, else call occupied()
+        if(successFlag == rooms.getNumRooms())
         {
             this.propStatus = PropertyStatus.VACANT;
+            updateStatus("VACANT");
             this.notifyObservers();
+        } else {
+            this.occupied();
         }
 
         return allVacant;
+    }
+
+    /**
+     * Changes the status of the property to FULL
+     */
+    public void occupied() {
+        this.propStatus = PropertyStatus.FULL;
+        updateStatus("FULL");
+        this.notifyObservers();
+    }
+
+    /**
+     * Updates the status of the property on a new thread dependent on
+     * the string variable passed - use a runnable to process in background
+     * @param status - FULL or VACANT
+     */
+    private void updateStatus(String status) {
+        String query = "UPDATE properties SET prop_status = '" + status + "' WHERE property_id = " + this.getPropertyId();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                ScreensFramework.db.update(query);
+            }
+        }).start();
     }
 
     /**
@@ -150,7 +172,7 @@ public class Property implements ISubject{
         if(null != thisRoom)
         {
             // Loop through the rooms array
-            for(int i = 0; i < rooms.size(); i++)
+            for(int i = 0; i < rooms.getNumRooms(); i++)
             {
                 // If the room objects match then set the requestedRoom to the room object
                 if(thisRoom == rooms.getRoomAt(i))
@@ -162,6 +184,22 @@ public class Property implements ISubject{
 
         // Return the requested Room object
         return requestedRoom;
+    }
+
+    /**
+     * Returns the rooms array belonging to this property
+     * converts to an arraylist to be used in an observable list
+     * @return arraylist of room objects belonging to this property
+     */
+    public ArrayList<Room> getRooms() {
+        ArrayList<Room> allRooms = new ArrayList<>();
+
+        for(int i = 0; i < rooms.getNumRooms(); i++) {
+            Room r = rooms.getRoomAt(i);
+            allRooms.add(r);
+        }
+
+        return allRooms;
     }
 
     /**
@@ -187,7 +225,7 @@ public class Property implements ISubject{
      */
     public int numRooms()
     {
-        return rooms.size();
+        return this.rooms.getNumRooms();
     }
 
     /**
@@ -261,10 +299,6 @@ public class Property implements ISubject{
         this.details = details;
     }
 
-    public Integer getNoOfRooms() {
-        return noOfRooms;
-    }
-
     public void setNoOfRooms(Integer noOfRooms) {
         this.noOfRooms = noOfRooms;
     }
@@ -275,7 +309,7 @@ public class Property implements ISubject{
 
         if(rooms != null)
         {
-            for(int i = 0; i < rooms.size(); i++)
+            for(int i = 0; i < rooms.getNumRooms(); i++)
             {
                 Room r = rooms.getRoomAt(i);
 
@@ -283,7 +317,7 @@ public class Property implements ISubject{
                     vacantRooms++;
             }
 
-            if(vacantRooms >= rooms.size())
+            if(vacantRooms >= rooms.getNumRooms())
                 propStatus = PropertyStatus.FULL;
             else
                 propStatus = PropertyStatus.VACANT;

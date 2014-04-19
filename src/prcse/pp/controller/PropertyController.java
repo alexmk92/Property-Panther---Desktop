@@ -6,15 +6,14 @@ import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TitledPane;
+import javafx.scene.control.*;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
@@ -24,10 +23,19 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
+import javafx.util.Callback;
 import javafx.util.Duration;
+import prcse.pp.model.Message;
+import prcse.pp.model.PropertyList;
+import prcse.pp.model.Room;
+import prcse.pp.view.MessageCell;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import prcse.pp.model.Property;
+import prcse.pp.view.PropertyCell;
+import prcse.pp.view.RoomCell;
 
 
 /**
@@ -68,8 +76,6 @@ public class PropertyController implements Initializable, ControlledScreen {
     private AnchorPane nav4;
     @FXML // fx:id="nav5"
     private AnchorPane nav5;
-    @FXML // fx:id="nav6"
-    private AnchorPane nav6;
     @FXML // fx:id="accent1"
     private Rectangle accent1;
     @FXML // fx:id="accent2"
@@ -80,8 +86,6 @@ public class PropertyController implements Initializable, ControlledScreen {
     private Rectangle accent4;
     @FXML // fx:id="accent5"
     private Rectangle accent5;
-    @FXML // fx:id="accent6"
-    private Rectangle accent6;
     @FXML //fx:id="nav_icon1"
     private Pane nav_icon1;
     @FXML //fx:id="nav_bg1"
@@ -102,10 +106,6 @@ public class PropertyController implements Initializable, ControlledScreen {
     private Pane nav_icon5;
     @FXML //fx:id="nav_bg5"
     private Button nav_bg5;
-    @FXML //fx:id="nav_icon6"
-    private Pane nav_icon6;
-    @FXML //fx:id="nav_bg6"
-    private Button nav_bg6;
     @FXML // fx:id="title"
     private Label title;
     @FXML // fx:id="spinner_green"
@@ -130,11 +130,38 @@ public class PropertyController implements Initializable, ControlledScreen {
     private TextField txtEmail;
     @FXML // fx:id="txtProperty"
     private TextField txtProperty;
+    @FXML // fx:id="lstProperties"
+    private ListView lstProperties;
+    @FXML // fx:id="body"
+    private AnchorPane body;
+    @FXML // fx:id="propertyDetails"
+    private Pane propertyDetails;
+    @FXML // fx:id="lblAddr1"
+    private Label lblAddr1;
+    @FXML // fx:id="lblNumRooms"
+    private Label lblNumRooms;
+    @FXML // fx:id="btnHideDetails"
+    private Button btnHideDetails;
+    @FXML // fx:id="lstRooms"
+    private ListView lstRooms;
+    @FXML // fx:id="roomDetailsWrap"
+    private Pane roomDetailsWrap;
+
+
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
     private double yOffset = 0;
     ScreensController myController;
+
+    // Allows us to bind controls to custom cell factory
+    private int index = 0;
+
+    // Reference to this contorller object
+    private PropertyController thisController = this;
+
+    // Determines if the screen has loaded or not
+    private Boolean objectsLoaded = false;
 
     /**
      * Initializes the controller class.
@@ -145,6 +172,17 @@ public class PropertyController implements Initializable, ControlledScreen {
         // Set the display graphic for title
         Effect glow = new Glow(0.3);
         title.setEffect(glow);
+        propertyDetails.setVisible(false);
+
+        body.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                if(objectsLoaded == false) {
+                    populatePropertyList();
+                    objectsLoaded = true;
+                }
+            }
+        });
 
         // Set the draggable component
         draggable.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -210,18 +248,6 @@ public class PropertyController implements Initializable, ControlledScreen {
                 accent5.setStyle("visibility: hidden");
             }
         });
-        nav6.setOnMouseEntered(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                accent6.setStyle("visibility: visible");
-            }
-        });
-        nav6.setOnMouseExited(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                accent6.setStyle("visibility: hidden");
-            }
-        });
 
         /******************************************************
          *              MODEL MANIPULATION METHODS
@@ -260,6 +286,12 @@ public class PropertyController implements Initializable, ControlledScreen {
                 spinner_green.setVisible(true);
             }
         });
+        btnHideDetails.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                propertyDetails.setVisible(false);
+            }
+        });
 
 
         // Utility controls
@@ -286,6 +318,131 @@ public class PropertyController implements Initializable, ControlledScreen {
             }
         });
 
+    }
+
+    /**
+     * Populates the payment ListView
+     */
+    private void populatePropertyList() {
+
+        // Zero the index each time the list view is repopulated to
+        // bind to the correct button
+        index = 0;
+
+        // Refresh the lists contents to null
+        lstProperties.setItems(null);
+
+        // Observable list containing items to add
+        ObservableList payments = populateObservable(ScreensFramework.properties.getAllProperties());
+
+        // Set the items returned by populateObservable(T);
+        lstProperties.setItems(payments);
+        lstProperties.setFixedCellSize(50);
+
+        // Use a cell factory for custom styling
+        lstProperties.setCellFactory(new Callback<ListView, ListCell>() {
+            @Override
+            public ListCell call(ListView listView) {
+                Property p = ScreensFramework.properties.getPropertyAt(index);
+                PropertyCell pCell = new PropertyCell(index, thisController, p);
+                pCell.getStyleClass().add("lineBottom");
+                index++;
+                return pCell;
+            }
+        });
+    }
+
+    /**
+     * Populates an observable list, this needs to be seperated into
+     * its own method to allow for the list to be refreshed from the
+     * cellfactory
+     * @return an observable array of objects to populate the list
+     */
+    private ObservableList populateObservable(ArrayList<Property> propertiesArray) {
+
+        ObservableList messages = FXCollections.observableArrayList();
+
+        // Loop through the session holders Message array and create a listview item
+        for(int i = 0; i < propertiesArray.size(); i++) {
+
+            Property p = propertiesArray.get(i);
+
+            // Add to observable
+            messages.add(p.getAddressLine1());
+        }
+        return messages;
+    }
+
+    /**
+     * Show the rooms container and populate its details
+     */
+    public void showRooms(Property p, Boolean editing) {
+        propertyDetails.setVisible(true);
+
+        // Set the properties name label
+        if(p.getAddressLine2().length() == 0) {
+            lblAddr1.setText(p.getAddressLine1() + ", " + p.getCity());
+        } else {
+            lblAddr1.setText(p.getAddressLine1() + " " + p.getAddressLine2() + ", " + p.getCity());
+        }
+
+        lblNumRooms.setText(String.valueOf(p.numRooms()) + " bedroom property");
+
+        // If we are not editing show rooms
+        if(editing == false) {
+            populateRoomList(p);
+        }
+    }
+
+    /**
+     * Populates the room ListView
+     */
+    private void populateRoomList(Property p) {
+
+        // Zero the index each time the list view is repopulated to
+        // bind to the correct button
+        index = 0;
+
+        // Refresh the lists contents to null
+        lstRooms.setItems(null);
+
+        // Observable list containing items to add
+        ObservableList rooms = populateRoomsObservable(p.getRooms());
+
+        // Set the items returned by populateObservable(T);
+        lstRooms.setItems(rooms);
+        lstRooms.setFixedCellSize(45);
+
+        // Use a cell factory for custom styling
+        lstRooms.setCellFactory(new Callback<ListView, ListCell>() {
+            @Override
+            public ListCell call(ListView listView) {
+                RoomCell pCell = new RoomCell(index, thisController, p);
+                index++;
+                return pCell;
+            }
+        });
+    }
+
+    /**
+     * Populates an observable list, this needs to be seperated into
+     * its own method to allow for the list to be refreshed from the
+     * cellfactory
+     * @return an observable array of objects to populate the list
+     */
+    private ObservableList populateRoomsObservable(ArrayList<Room> roomArray) {
+
+        ObservableList rooms = FXCollections.observableArrayList();
+
+        // Loop through the session holders Message array and create a listview item
+        for(int i = 0; i < roomArray.size(); i++) {
+
+            Room r = roomArray.get(i);
+
+            // Add to observable
+            rooms.add("£"+String.valueOf(r.getPrice()));
+        }
+        return rooms;
     }
 
     /******************************************************

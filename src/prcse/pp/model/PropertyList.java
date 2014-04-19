@@ -68,15 +68,8 @@ public class PropertyList {
      * Property Objects
      * @return A String array of Property names.
      */
-    public String[] getAllProperties(){
-        String[] result = new String[this.propertyList.size()];
-        for(int i = 0; i < this.propertyList.size(); i++){
-            Property property = this.propertyList.get(i);
-            if(null != property){
-                result[i] = property.getFullAddress();
-            }
-        }
-        return result;
+    public ArrayList<Property> getAllProperties(){
+        return this.propertyList;
     }
 
     /**

@@ -24,6 +24,7 @@ public class Message implements ISubject, Serializable {
     private   Date          date;
     private   int           id;
     private   int           seen;
+    private   int           request_id;
 
     private transient ArrayList<IObserver> observerList = null;
 
@@ -61,10 +62,11 @@ public class Message implements ISubject, Serializable {
      * @param thisTenant the tenant whom the message is directed to
      * @param message the message supplied
      */
-    public Message(Tenant thisTenant, String message, Date theDate, int id)
+    public Message(Tenant thisTenant, String message, Date theDate, int id, String req_status, String req_id)
     {
-        this.toTenant = thisTenant;
-        this.message  = message;
+        this.toTenant    = thisTenant;
+        this.message     = message;
+        this.status      = setStatus(req_status);
         if(theDate == null || theDate.equals("")){
             this.date    = getTodaysDate();
         } else {
@@ -102,7 +104,7 @@ public class Message implements ISubject, Serializable {
      * @param theDate - the datethe message was sent (for sorting)
      * @param read - Has the message been read of not
      */
-    public Message(int msgId, int toTenant, int fromTenant, String type, String msg, Date theDate, int read)
+    public Message(int msgId, int toTenant, int fromTenant, String type, String msg, Date theDate, int read, int request_id)
     {
         this.id          = msgId;
         this.toTenant    = ScreensFramework.tenants.getUserById(toTenant);
@@ -110,6 +112,7 @@ public class Message implements ISubject, Serializable {
         this.type        = typeToString(type);
         this.message     = msg;
         this.seen        = read;
+        this.request_id  = request_id;
 
 
         if(theDate == null || theDate.equals("")){
@@ -122,6 +125,35 @@ public class Message implements ISubject, Serializable {
     // Setters and getters
     public MessageStatus getStatus() {
         return status;
+    }
+
+    /**
+     * Update the status of the message to seen
+     */
+    public MessageStatus setStatus(String status)
+    {
+        MessageStatus thisStatus = MessageStatus.RECEIVED;
+
+        // Get the correct status
+        switch(status){
+            case "RECEIVED":
+                thisStatus = MessageStatus.RECEIVED;
+                break;
+            case "IN_PROGRESS":
+                thisStatus = MessageStatus.IN_PROGRESS;
+                break;
+            case "SCHEDULED":
+                thisStatus = MessageStatus.SCHEDULED;
+                break;
+            case "SEEN":
+                thisStatus = MessageStatus.SEEN;
+                break;
+            case "COMPLETED":
+                thisStatus = MessageStatus.COMPLETED;
+                break;
+        }
+
+        return thisStatus;
     }
 
     /**
@@ -154,8 +186,8 @@ public class Message implements ISubject, Serializable {
         return thisStatus;
     }
 
-    public void setStatus(MessageStatus status) {
-        this.status = status;
+    public int getRequestId() {
+        return this.request_id;
     }
 
     public String getMessage() {
