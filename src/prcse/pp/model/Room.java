@@ -6,7 +6,10 @@ import prcse.pp.db.Database;
 import prcse.pp.controller.ScreensFramework;
 
 
+import javax.xml.transform.Result;
 import java.io.Serializable;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -77,6 +80,40 @@ public class Room implements ISubject, Serializable {
     }
 
     /**
+     * Loads the tenant from the db by getting their id
+     * @throws SQLException - no result set may be found, if not throw
+     */
+    public void loadTenant() throws SQLException, NullPointerException {
+        // Get the users id
+        String query = "SELECT user_id FROM users JOIN rooms ON users.user_prop_room = rooms.room_id WHERE user_prop_room = " + this.getRoomId();
+        ResultSet a = ScreensFramework.db.query(query);
+
+        // Query returns one result,
+        while(a.next()) {
+            int this_user = a.getInt("user_id");
+            this.tenant = this_user > 0 ? ScreensFramework.tenants.getUserById(this_user) : null;
+        }
+
+    }
+
+    /**
+     * Sets the tenant using their user_id and retrives
+     * them from the global user list, users are built before
+     * rooms so value will be present
+     * @throws NullPointerException - in the DB, user_id is nullable in rooms
+     */
+    private void setTenant(Tenant thisTenant) {
+        this.tenant = thisTenant;
+    }
+
+    /**
+     * Returns the tenant object set against this room
+     */
+    public Tenant getTenant() {
+        return this.tenant != null ? this.tenant : null;
+    }
+
+    /**
      * Specifies that the room is now occupied and describes the tenant
      * who occupies that room.
      * @param tenant the tenant who is renting the room
@@ -94,18 +131,6 @@ public class Room implements ISubject, Serializable {
     {
         this.tenant = null;
         this.status = RoomStatus.VACANT;
-    }
-
-    /**
-     * Returns the tenant object, for the tenant whom occupies this room
-     * @return a tenant Object if one is found, else returns null.
-     */
-    public Tenant getTenant()
-    {
-        if(null != this.tenant)
-            return this.tenant;
-        else
-            return null;
     }
 
     /**
@@ -136,6 +161,20 @@ public class Room implements ISubject, Serializable {
     public int getRoomId()
     {
         return roomId;
+    }
+
+    /**
+     * Sets the details of the room
+     */
+    public void setDetails(String details){
+        this.details = details;
+    }
+
+    /**
+     * Sets the price of the room
+     */
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     /**

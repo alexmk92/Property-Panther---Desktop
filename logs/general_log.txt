@@ -884,3 +884,73 @@
 20-Apr-2014 00:26: Connected to database
 20-Apr-2014 00:29: Connected to database
 20-Apr-2014 00:29: Connected to database
+20-Apr-2014 22:15: Connected to database
+20-Apr-2014 22:16: Connection already open.
+20-Apr-2014 22:51: Connected to database
+20-Apr-2014 22:52: Connected to database
+20-Apr-2014 22:53: Connected to database
+20-Apr-2014 22:54: Connected to database
+20-Apr-2014 22:54: Connected to database
+20-Apr-2014 22:56: Connected to database
+21-Apr-2014 00:20: Connected to database
+21-Apr-2014 00:37: Connected to database
+21-Apr-2014 00:39: Connected to database
+21-Apr-2014 00:41: Connected to database
+21-Apr-2014 00:45: Connected to database
+21-Apr-2014 00:50: Connected to database
+21-Apr-2014 00:56: Connected to database
+21-Apr-2014 00:57: Connected to database
+21-Apr-2014 00:58: Connected to database
+21-Apr-2014 01:00: Connected to database
+21-Apr-2014 01:02: Connected to database
+21-Apr-2014 01:05: Connected to database
+21-Apr-2014 01:07: Connected to database
+21-Apr-2014 01:59: Connected to database
+21-Apr-2014 02:00: Connected to database
+21-Apr-2014 02:04: Connected to database
+21-Apr-2014 02:07: Connected to database
+21-Apr-2014 02:09: Connected to database
+21-Apr-2014 02:12: Connected to database
+21-Apr-2014 02:24: Connected to database
+21-Apr-2014 02:25: Connected to database
+21-Apr-2014 02:27: Connected to database
+21-Apr-2014 02:30: Connected to database
+21-Apr-2014 02:31: Connected to database
+21-Apr-2014 02:35: Connected to database
+21-Apr-2014 02:40: Connected to database
+21-Apr-2014 02:41: Connected to database
+21-Apr-2014 02:42: Connected to database
+21-Apr-2014 02:43: Connected to database
+21-Apr-2014 02:44: Connected to database
+21-Apr-2014 02:46: Connected to database
+21-Apr-2014 02:49: Connected to database
+21-Apr-2014 02:50: Connected to database
+21-Apr-2014 02:51: Connected to database
+21-Apr-2014 02:55: Connected to database
+21-Apr-2014 02:57: Connected to database
+21-Apr-2014 02:58: Connected to database
+21-Apr-2014 03:00: Connected to database
+21-Apr-2014 03:02: Connected to database
+21-Apr-2014 03:04: Connected to database
+21-Apr-2014 03:09: Connected to database
+21-Apr-2014 03:18: Connected to database
+21-Apr-2014 03:24: Connected to database
+21-Apr-2014 03:31: Connected to database
+21-Apr-2014 03:36: Connected to database
+21-Apr-2014 03:37: Connected to database
+21-Apr-2014 03:39: Connected to database
+21-Apr-2014 03:40: Connected to database
+21-Apr-2014 03:43: Connected to database
+21-Apr-2014 03:46: Connected to database
+21-Apr-2014 03:48: Connected to database
+21-Apr-2014 04:11: Connected to database
+21-Apr-2014 04:14: Warning: Not on FX application thread; currentThread = Thread-63
+21-Apr-2014 04:15: Connected to database
+21-Apr-2014 04:15: Warning: Not on FX application thread; currentThread = Thread-64
+21-Apr-2014 04:20: Connected to database
+21-Apr-2014 04:22: Warning: Not on FX application thread; currentThread = Thread-63
+21-Apr-2014 04:23: Connected to database
+21-Apr-2014 04:24: Warning: Not on FX application thread; currentThread = Thread-63
+21-Apr-2014 04:24: Warning: Not on FX application thread; currentThread = Thread-65
+21-Apr-2014 04:31: Connected to database
+21-Apr-2014 04:35: Warning: Not on FX application thread; currentThread = Thread-63

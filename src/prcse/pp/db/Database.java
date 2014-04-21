@@ -129,8 +129,8 @@ public class Database implements Callable {
         // incrementing an objectCounter each time a query executes and returns true
         if(objectsBuilt == false)
         {
-            if(buildProperties()) { buildCount++; }
             if(buildUsers()) { buildCount++; }
+            if(buildProperties()) { buildCount++; }
             if(buildAllPayments()){ buildCount++; }
 
             // Check if all the objects have been built and return the correct
@@ -161,6 +161,9 @@ public class Database implements Callable {
 
                 // Builds and adds all rooms relative to this property
                 buildRooms(p);
+
+                // Update the vacancy status of the property
+                p.vacant(p.getStatus());
 
                 // Add the property to the global list of properties
                 propertyList.addProperty(p);
@@ -195,6 +198,8 @@ public class Database implements Callable {
             while(res.next()) {
                 Room r = new Room(res.getInt("room_id"), res.getInt("property_id"), res.getString("room_price"),
                                   res.getString("room_details"), res.getString("room_status"));
+
+                r.loadTenant();
 
                 // Add the room object to this property
                 p.addRoom(r);

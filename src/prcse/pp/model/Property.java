@@ -101,9 +101,11 @@ public class Property implements ISubject{
     /**
      * Sets the status of the Property to VACANT if all
      * the rooms are VACANT
+     * @param currStatus - Checks if the current status matches before running an
+     *                     update query
      * @return True if all rooms are vacant, else return false.
      */
-    public Boolean vacant() {
+    public Boolean vacant(PropertyStatus currStatus) {
 
         Boolean allVacant   = false;    // Are all rooms vacant
         int     successFlag = 0;        // How many rooms are vacant?
@@ -123,10 +125,14 @@ public class Property implements ISubject{
         if(successFlag == rooms.getNumRooms())
         {
             this.propStatus = PropertyStatus.VACANT;
-            updateStatus("VACANT");
-            this.notifyObservers();
+            if(this.propStatus != currStatus)  {
+                updateStatus("VACANT");
+                this.notifyObservers();
+            }
         } else {
-            this.occupied();
+            if(this.propStatus != currStatus) {
+                this.occupied();
+            }
         }
 
         return allVacant;
@@ -318,9 +324,9 @@ public class Property implements ISubject{
             }
 
             if(vacantRooms >= rooms.getNumRooms())
-                propStatus = PropertyStatus.FULL;
-            else
                 propStatus = PropertyStatus.VACANT;
+            else
+                propStatus = PropertyStatus.FULL;
         }
         return propStatus;
     }

@@ -41,7 +41,7 @@
     <file path="$PROJECT_DIR$/src/screensframework/controller/Screen2Controller.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392202858895" ignored="false" />
     <file path="$PROJECT_DIR$/src/screensframework/controller/Screen3Controller.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392202858895" ignored="false" />
     <file path="$PROJECT_DIR$/src/screensframework/controller/ScreensController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392202858895" ignored="false" />
-    <file path="/ScreensFramework.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397654184172" ignored="false" />
+    <file path="/ScreensFramework.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1398041930787" ignored="false" />
     <file path="/Dashboard.fxml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397135383066" ignored="false" />
     <file path="/DashboardController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397134829948" ignored="false" />
     <file path="/Payments.fxml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392574017662" ignored="false" />
@@ -114,8 +114,8 @@
     <file path="/UserDetails.fxml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392570916051" ignored="false" />
     <file path="/UserInfoController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397762499534" ignored="false" />
     <file path="/NoteCell.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397156758477" ignored="false" />
-    <file path="/PropertyController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397948040199" ignored="false" />
-    <file path="/Database.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397944606741" ignored="false" />
+    <file path="/PropertyController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1398051393218" ignored="false" />
+    <file path="/Database.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1398047281726" ignored="false" />
     <file path="/UserPermission.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396440118293" ignored="false" />
     <file path="/IObserver.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392826141301" ignored="false" />
     <file path="/ISubject.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392826102352" ignored="false" />
@@ -123,8 +123,8 @@
     <file path="/Payment.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397063995597" ignored="false" />
     <file path="/PaymentStatus.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397044546616" ignored="false" />
     <file path="/RoomStatus.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392829390798" ignored="false" />
-    <file path="/Room.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397944790883" ignored="false" />
-    <file path="/Property.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397944864640" ignored="false" />
+    <file path="/Room.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1398050781358" ignored="false" />
+    <file path="/Property.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1398047744143" ignored="false" />
     <file path="/PropertyStatus.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392829876154" ignored="false" />
     <file path="/MessageStatus.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1392830302703" ignored="false" />
     <file path="/MessageType.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396451087393" ignored="false" />
@@ -159,7 +159,7 @@
     <file path="/Reader.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396907903263" ignored="false" />
     <file path="/Callable.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396894284816" ignored="false" />
     <file path="/MyCallable.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396894379820" ignored="false" />
-    <file path="/Validate.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397750794988" ignored="false" />
+    <file path="/Validate.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1398049660177" ignored="false" />
     <file path="$PROJECT_DIR$/logs/error_log.txt" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1396914115158" ignored="false" />
     <file path="/PaymentCell.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397061820308" ignored="false" />
     <file path="/PaymentFeedCell.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397061569998" ignored="false" />
@@ -167,8 +167,13 @@
     <file path="/MessagesController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397834168451" ignored="false" />
     <file path="/MessageCell.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397582598594" ignored="false" />
     <file path="/ICommand.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397578074586" ignored="false" />
-    <file path="/PropertyCell.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397925379967" ignored="false" />
+    <file path="/PropertyCell.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1398047952064" ignored="false" />
     <file path="/RoomCell.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1397947529219" ignored="false" />
+    <file path="/FTPClient.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1398025619016" ignored="false" />
+    <file path="/FTPClientConnect.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1398025642054" ignored="false" />
+    <file path="/FTPConnection.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1398026529175" ignored="false" />
+    <file path="/UploadImage.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1398041867429" ignored="false" />
+    <file path="/test.txt" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1398037035658" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,6 +273,21 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/prcse/pp/misc/UploadImage.java" line="12" class="prcse.pp.misc.UploadImage" package="prcse.pp.misc">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
@@ -279,48 +299,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PropertyController.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PropertyController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/PropertyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="139" column="85" selection-start="4325" selection-end="4325" vertical-scroll-proportion="-8.2">
+            <state line="425" column="67" selection-start="15493" selection-end="15493" vertical-scroll-proportion="0.6233108">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5353#5636#0" expanded="true" />
-                <element signature="e#5625#5626#0" expanded="true" />
-                <element signature="e#9929#10114#0" expanded="true" />
-                <element signature="e#10103#10104#0" expanded="true" />
-                <element signature="e#11668#12076#0" expanded="true" />
-                <element signature="e#12065#12066#0" expanded="true" />
-                <element signature="e#14112#14376#0" expanded="true" />
-                <element signature="e#14365#14366#0" expanded="true" />
-                <marker date="1397948042560" expanded="true" signature="6452:6471" placeholder="{...}" />
-                <marker date="1397948042560" expanded="true" signature="6676:6694" placeholder="{...}" />
-                <marker date="1397948042560" expanded="true" signature="6900:6919" placeholder="{...}" />
-                <marker date="1397948042560" expanded="true" signature="7124:7142" placeholder="{...}" />
-                <marker date="1397948042560" expanded="true" signature="7348:7367" placeholder="{...}" />
-                <marker date="1397948042560" expanded="true" signature="7572:7590" placeholder="{...}" />
-                <marker date="1397948042560" expanded="true" signature="7796:7815" placeholder="{...}" />
-                <marker date="1397948042560" expanded="true" signature="8020:8038" placeholder="{...}" />
-                <marker date="1397948042560" expanded="true" signature="10595:10614" placeholder="{...}" />
-                <marker date="1397948042560" expanded="true" signature="10888:10906" placeholder="{...}" />
+                <element signature="e#11658#11890#0" expanded="true" />
+                <element signature="e#11879#11880#0" expanded="true" />
+                <element signature="e#13917#14145#0" expanded="true" />
+                <element signature="e#14134#14135#0" expanded="true" />
+                <element signature="e#14184#14554#0" expanded="true" />
+                <element signature="e#14543#14544#0" expanded="true" />
+                <element signature="e#14595#15785#0" expanded="true" />
+                <element signature="e#15774#15775#0" expanded="true" />
+                <element signature="e#15825#16797#0" expanded="true" />
+                <element signature="e#16786#16787#0" expanded="true" />
+                <element signature="e#24389#24920#0" expanded="true" />
+                <element signature="e#24909#24910#0" expanded="true" />
+                <marker date="1398051393866" expanded="true" signature="7777:7796" placeholder="{...}" />
+                <marker date="1398051393866" expanded="true" signature="8001:8019" placeholder="{...}" />
+                <marker date="1398051393866" expanded="true" signature="8225:8244" placeholder="{...}" />
+                <marker date="1398051393866" expanded="true" signature="8449:8467" placeholder="{...}" />
+                <marker date="1398051393866" expanded="true" signature="8673:8692" placeholder="{...}" />
+                <marker date="1398051393866" expanded="true" signature="8897:8915" placeholder="{...}" />
+                <marker date="1398051393866" expanded="true" signature="9121:9140" placeholder="{...}" />
+                <marker date="1398051393866" expanded="true" signature="9345:9363" placeholder="{...}" />
+                <marker date="1398051393866" expanded="true" signature="12371:12390" placeholder="{...}" />
+                <marker date="1398051393866" expanded="true" signature="12664:12682" placeholder="{...}" />
+                <marker date="1398051393866" expanded="true" signature="16268:16290" placeholder="{...}" />
+                <marker date="1398051393866" expanded="true" signature="16730:16752" placeholder="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Properties.fxml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/Properties.fxml">
+      <file leaf-file-name="MessagesController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/MessagesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-5.2339373">
-              <folding />
+            <state line="584" column="0" selection-start="21632" selection-end="22455" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1397834224995" expanded="true" signature="10417:10447" placeholder="{...}" />
+                <marker date="1397834224995" expanded="true" signature="10696:10725" placeholder="{...}" />
+                <marker date="1397834224995" expanded="true" signature="10936:10966" placeholder="{...}" />
+                <marker date="1397834224995" expanded="true" signature="11467:11497" placeholder="{...}" />
+                <marker date="1397834224995" expanded="true" signature="11702:11731" placeholder="{...}" />
+                <marker date="1397834224995" expanded="true" signature="11942:11972" placeholder="{...}" />
+                <marker date="1397834224995" expanded="true" signature="12471:12501" placeholder="{...}" />
+                <marker date="1397834224995" expanded="true" signature="12706:12735" placeholder="{...}" />
+                <marker date="1397834224995" expanded="true" signature="12946:12976" placeholder="{...}" />
+                <marker date="1397834224995" expanded="true" signature="13477:13507" placeholder="{...}" />
+                <marker date="1397834224995" expanded="true" signature="13712:13741" placeholder="{...}" />
+                <marker date="1397834224995" expanded="true" signature="13952:13982" placeholder="{...}" />
+                <marker date="1397834224995" expanded="true" signature="21960:21982" placeholder="{...}" />
+                <marker date="1397834224995" expanded="true" signature="22412:22434" placeholder="{...}" />
+                <marker date="1397834224995" expanded="true" signature="51158:51188" placeholder="{...}" />
+                <marker date="1397834224995" expanded="true" signature="52142:52171" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoomList.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/RoomList.java">
+      <file leaf-file-name="Validate.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prcse/pp/misc/Validate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="146" selection-start="1535" selection-end="1535" vertical-scroll-proportion="0.0">
+            <state line="88" column="67" selection-start="2737" selection-end="2737" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -329,32 +372,26 @@
       <file leaf-file-name="PropertyCell.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/PropertyCell.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="76" selection-start="1436" selection-end="1436" vertical-scroll-proportion="0.0">
+            <state line="60" column="80" selection-start="2011" selection-end="2011" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2957#3390#0" expanded="true" />
-                <element signature="e#3371#3372#0" expanded="true" />
-                <marker date="1397925402684" expanded="true" signature="1894:1958" placeholder="{...}" />
-                <marker date="1397925402684" expanded="true" signature="2366:2430" placeholder="{...}" />
-                <marker date="1397925402684" expanded="true" signature="2464:2504" placeholder="{...}" />
-                <marker date="1397925402684" expanded="true" signature="2662:2684" placeholder="{...}" />
+                <marker date="1398048089420" expanded="true" signature="1918:2007" placeholder="{...}" />
+                <marker date="1398048089420" expanded="true" signature="2297:2359" placeholder="{...}" />
+                <marker date="1398048089420" expanded="true" signature="2402:2464" placeholder="{...}" />
+                <marker date="1398048089420" expanded="true" signature="2434:2451" placeholder="{...}" />
+                <marker date="1398048089420" expanded="true" signature="2434:2456" placeholder="{...}" />
+                <marker date="1398048089420" expanded="true" signature="2622:2686" placeholder="{...}" />
+                <marker date="1398048089420" expanded="true" signature="2720:2760" placeholder="{...}" />
+                <marker date="1398048089420" expanded="true" signature="2919:2959" placeholder="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoomCell.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/RoomCell.java">
+      <file leaf-file-name="Property.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Property.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="127" selection-start="2331" selection-end="2331" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1397947926151" expanded="true" signature="1735:1887" placeholder="{...}" />
-                <marker date="1397947926151" expanded="true" signature="1925:2034" placeholder="{...}" />
-                <marker date="1397947926151" expanded="true" signature="2405:2446" placeholder="{...}" />
-                <marker date="1397947926151" expanded="true" signature="2478:2519" placeholder="{...}" />
-                <marker date="1397947926151" expanded="true" signature="2588:2629" placeholder="{...}" />
-              </folding>
+            <state line="127" column="0" selection-start="3915" selection-end="3915" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -362,7 +399,7 @@
       <file leaf-file-name="Database.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/prcse/pp/db/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="192" column="87" selection-start="6765" selection-end="6765" vertical-scroll-proportion="-13.0">
+            <state line="169" column="0" selection-start="5939" selection-end="5939" vertical-scroll-proportion="-7.16">
               <folding />
             </state>
           </provider>
@@ -371,37 +408,16 @@
       <file leaf-file-name="Room.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Room.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="5" selection-start="2027" selection-end="2027" vertical-scroll-proportion="0.0">
+            <state line="176" column="32" selection-start="4631" selection-end="4631" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Writer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prcse/pp/misc/Writer.java">
+      <file leaf-file-name="PropertyList.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/PropertyList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="0" selection-start="1125" selection-end="1125" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Property.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Property.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="65" selection-start="3073" selection-end="3073" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#4532#4677#0" expanded="true" />
-                <element signature="e#4666#4667#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainView.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/MainView.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="589" column="22" selection-start="12562" selection-end="12562" vertical-scroll-proportion="0.0">
+            <state line="31" column="0" selection-start="763" selection-end="763" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -417,21 +433,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/prcse/pp/controller/PaymentsController.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/controller/AllUsersController.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/controller/AddUserController.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/controller/DashboardController.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/view/Dashboard.fxml" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/model/Message.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/controller/MessagesController.java" />
         <option value="$PROJECT_DIR$/src/prcse/pp/model/PropertyList.java" />
         <option value="$PROJECT_DIR$/src/prcse/pp/model/RoomList.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/view/PropertyCell.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/view/MainView.css" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/misc/FTPClient.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/misc/FTPClientConnect.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/misc/FTPConnection.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/view/RoomCell.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/controller/test.txt" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/misc/UploadImage.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/controller/ScreensFramework.java" />
         <option value="$PROJECT_DIR$/src/prcse/pp/db/Database.java" />
         <option value="$PROJECT_DIR$/src/prcse/pp/model/Property.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/view/PropertyCell.java" />
+        <option value="$PROJECT_DIR$/src/prcse/pp/misc/Validate.java" />
         <option value="$PROJECT_DIR$/src/prcse/pp/model/Room.java" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/view/MainView.css" />
-        <option value="$PROJECT_DIR$/src/prcse/pp/view/RoomCell.java" />
         <option value="$PROJECT_DIR$/src/prcse/pp/controller/PropertyController.java" />
       </list>
     </option>
@@ -471,7 +487,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -509,6 +524,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="desktop-application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="desktop-application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -629,19 +670,20 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="GenerateAntBuildDialog.generateSingleFile" value="true" />
-    <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="recentsLimit" value="5" />
+    <property name="GenerateAntBuildDialog.generateSingleFile" value="true" />
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea/libraries/commons-net-3.3.jar!/" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="prcse-desktop" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -657,8 +699,8 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -667,11 +709,11 @@
       <recent name="prcse.pp.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\Desktop\desktop-application\.idea\libraries" />
       <recent name="C:\Users\Alex\Desktop\desktop-application\src\prcse\pp\view" />
       <recent name="C:\Users\Alex\Desktop\PRCSE-DesktopApp\src\prcse\pp\view" />
       <recent name="C:\Users\Alex\Desktop\PRCSE-Desktop\src\prcse\pp\view" />
       <recent name="C:\Users\Alex\Desktop\PRCSE-DesktopApp\src\prcse\pp" />
-      <recent name="C:\Users\Alex\Desktop\PRCSE-DesktopApp\src\sample" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Alex\Desktop\PRCSE-DesktopApp\src\prcse\pp\view" />
@@ -745,27 +787,6 @@
       <additinalProperties startConsole="true" />
       <method />
     </configuration>
-    <configuration default="true" type="GeronimoConfiguration" factoryName="Local">
-      <deployment />
-      <server-settings>
-        <option name="USERNAME" value="system" />
-        <option name="PASSWORD" value="manager" />
-      </server-settings>
-      <predefined_log_file id="Geronimo" enabled="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JBossConfiguration" factoryName="Remote">
-      <option name="LOCAL" value="false" />
-      <deployment />
-      <server-settings>
-        <data>
-          <option name="transportHostId" />
-        </data>
-      </server-settings>
-      <predefined_log_file id="JBoss" enabled="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -788,15 +809,25 @@
       </MavenSettings>
       <method />
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.jsr45.JSR45ConfigurationFactory" factoryName="Remote">
-      <option name="PORT" value="80" />
+    <configuration default="true" type="JBossConfiguration" factoryName="Remote">
       <option name="LOCAL" value="false" />
+      <deployment />
       <server-settings>
-        <option name="JSP_PACKAGE" value="org.apache.jsp" />
-        <option name="VM_OPTS" value="" />
-        <option name="USE_WEBSPHERE51_LINEMAPPING_MODEL" value="false" />
-        <option name="LOCAL_PORT" value="80" />
+        <data>
+          <option name="transportHostId" />
+        </data>
       </server-settings>
+      <predefined_log_file id="JBoss" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GeronimoConfiguration" factoryName="Local">
+      <deployment />
+      <server-settings>
+        <option name="USERNAME" value="system" />
+        <option name="PASSWORD" value="manager" />
+      </server-settings>
+      <predefined_log_file id="Geronimo" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
     <configuration default="true" type="TomeeConfiguration" factoryName="Local">
@@ -810,13 +841,15 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
-    <configuration default="true" type="GriffonRunConfigurationType" factoryName="Griffon">
-      <module name="" />
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="depsClasspath" value="true" />
-      <setting name="passParentEnv" value="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration default="true" type="#com.intellij.j2ee.web.jsr45.JSR45ConfigurationFactory" factoryName="Remote">
+      <option name="PORT" value="80" />
+      <option name="LOCAL" value="false" />
+      <server-settings>
+        <option name="JSP_PACKAGE" value="org.apache.jsp" />
+        <option name="VM_OPTS" value="" />
+        <option name="USE_WEBSPHERE51_LINEMAPPING_MODEL" value="false" />
+        <option name="LOCAL_PORT" value="80" />
+      </server-settings>
       <method />
     </configuration>
     <configuration default="true" type="TomeeConfiguration" factoryName="Remote">
@@ -829,6 +862,15 @@
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GriffonRunConfigurationType" factoryName="Griffon">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="true" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -1062,6 +1104,24 @@
       </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="transportHostId" />
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -1078,22 +1138,19 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
-      <option name="VM_PARAMETERS" value="" />
-      <option name="USER_CFG_CLASS" />
-      <option name="CONTEXT_PROVIDER" />
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote">
-      <option name="LOCAL" value="false" />
-      <deployment />
-      <server-settings>
-        <data>
-          <option name="transportHostId" />
-        </data>
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
@@ -1104,21 +1161,6 @@
       <setting name="passParentEnv" value="true" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <setting name="launchBrowser" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
-    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="file://$PROJECT_DIR$" />
-      <setting name="debug" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="GeronimoConfiguration" factoryName="Remote">
@@ -1151,17 +1193,6 @@
       <predefined_log_file id="WEBLOGIC_SERVER_LOG_FILE" enabled="true" />
       <method />
     </configuration>
-    <configuration default="true" type="CBConfiguration" factoryName="Local">
-      <deployment />
-      <server-settings>
-        <option name="HTTP_PORT_X" value="8080" />
-        <option name="JNDI_PORT" value="1099" />
-        <option name="USERNAME" value="" />
-        <option name="PASSWORD" value="" />
-      </server-settings>
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <method />
-    </configuration>
     <configuration default="true" type="GlassfishConfiguration" factoryName="Remote">
       <option name="LOCAL" value="false" />
       <deployment />
@@ -1171,6 +1202,17 @@
         </data>
       </server-settings>
       <predefined_log_file id="GlassFish" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CBConfiguration" factoryName="Local">
+      <deployment />
+      <server-settings>
+        <option name="HTTP_PORT_X" value="8080" />
+        <option name="JNDI_PORT" value="1099" />
+        <option name="USERNAME" value="" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -1208,15 +1250,34 @@
       </JSRemoteDebuggerConfigurationSettings>
       <method />
     </configuration>
-    <configuration default="true" type="JettyConfiguration" factoryName="Remote">
+    <configuration default="true" type="WebLogic Instance" factoryName="Local">
+      <option name="PORT" value="7001" />
+      <deployment />
+      <server-settings>
+        <option name="DOMAIN_PATH" value="" />
+        <option name="SERVER_NAME" value="myserver" />
+        <option name="DOMAIN_NAME" value="mydomain" />
+        <option name="ADMIN_SERVER_HOST" value="localhost" />
+        <option name="ADMIN_SERVER_PORT" value="7001" />
+        <option name="CLUSTER_NAME" value="mycluster" />
+        <option name="CONNECT_TO_MANAGED_SERVER" value="false" />
+        <option name="USERNAME" value="weblogic" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="WEBLOGIC_DOMAIN_LOG_FILE" enabled="true" />
+      <predefined_log_file id="WEBLOGIC_SERVER_LOG_FILE" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CFConfiguration" factoryName="Remote">
+      <option name="PORT" value="80" />
       <option name="LOCAL" value="false" />
       <deployment />
       <server-settings>
-        <data>
-          <option name="transportHostId" />
-        </data>
+        <option name="USERNAME" value="" />
+        <option name="PASSWORD" value="" />
+        <data />
       </server-settings>
-      <predefined_log_file id="Jetty" enabled="true" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -1240,34 +1301,15 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="true" type="CFConfiguration" factoryName="Remote">
-      <option name="PORT" value="80" />
+    <configuration default="true" type="JettyConfiguration" factoryName="Remote">
       <option name="LOCAL" value="false" />
       <deployment />
       <server-settings>
-        <option name="USERNAME" value="" />
-        <option name="PASSWORD" value="" />
-        <data />
+        <data>
+          <option name="transportHostId" />
+        </data>
       </server-settings>
-      <method />
-    </configuration>
-    <configuration default="true" type="WebLogic Instance" factoryName="Local">
-      <option name="PORT" value="7001" />
-      <deployment />
-      <server-settings>
-        <option name="DOMAIN_PATH" value="" />
-        <option name="SERVER_NAME" value="myserver" />
-        <option name="DOMAIN_NAME" value="mydomain" />
-        <option name="ADMIN_SERVER_HOST" value="localhost" />
-        <option name="ADMIN_SERVER_PORT" value="7001" />
-        <option name="CLUSTER_NAME" value="mycluster" />
-        <option name="CONNECT_TO_MANAGED_SERVER" value="false" />
-        <option name="USERNAME" value="weblogic" />
-        <option name="PASSWORD" value="" />
-      </server-settings>
-      <predefined_log_file id="WEBLOGIC_DOMAIN_LOG_FILE" enabled="true" />
-      <predefined_log_file id="WEBLOGIC_SERVER_LOG_FILE" enabled="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <predefined_log_file id="Jetty" enabled="true" />
       <method />
     </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
@@ -1319,6 +1361,16 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
+    <configuration default="true" type="CBConfiguration" factoryName="Remote">
+      <option name="PORT" value="80" />
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <option name="USERNAME" value="" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <method />
+    </configuration>
     <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" output_log_level="null" package_name="" scope="Class">
       <option name="BCName" value="" />
       <option name="launcherParameters">
@@ -1330,16 +1382,6 @@
       </option>
       <option name="moduleName" value="" />
       <option name="trusted" value="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="CBConfiguration" factoryName="Remote">
-      <option name="PORT" value="80" />
-      <option name="LOCAL" value="false" />
-      <deployment />
-      <server-settings>
-        <option name="USERNAME" value="" />
-        <option name="PASSWORD" value="" />
-      </server-settings>
       <method />
     </configuration>
     <configuration default="true" type="RemoteFlashRunConfigurationType" factoryName="Flash Remote Debug">
@@ -1423,12 +1465,11 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32739422" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23801787" sideWeight="0.6909091" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.67591566" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32739422" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32741398" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1439,13 +1480,14 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.16257995" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20095949" sideWeight="0.72049" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27951002" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20095949" sideWeight="0.7291898" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27081022" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.6993318" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32739422" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1515,153 +1557,169 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/scene/control/Labeled.class">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/beans/WeakInvalidationListener.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="22" selection-start="3053" selection-end="3053" vertical-scroll-proportion="0.0">
+        <state line="13" column="16" selection-start="581" selection-end="581" vertical-scroll-proportion="0.45595855">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/scene/Scene.class">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/scene/image/ImageView.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="910" column="20" selection-start="52323" selection-end="52323" vertical-scroll-proportion="0.33333334">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/event/Event.class">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/stage/Window.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="23" selection-start="1650" selection-end="1650" vertical-scroll-proportion="0.72695035">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/event/EventType.class">
+    <entry file="file://$PROJECT_DIR$/src/prcse/pp/misc/UploadImage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="51" selection-start="1043" selection-end="1043" vertical-scroll-proportion="0.33275563">
-          <folding />
+        <state line="53" column="112" selection-start="1541" selection-end="1541" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/RoomList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="146" selection-start="1535" selection-end="1535" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/misc/Writer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="1125" selection-end="1125" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/scene/control/SkinBase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="19" selection-start="538" selection-end="538" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/scene/control/ListCell.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="22" selection-start="2634" selection-end="2634" vertical-scroll-proportion="0.0">
+        <state line="74" column="0" selection-start="2197" selection-end="2197" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/db/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="192" column="87" selection-start="6765" selection-end="6765" vertical-scroll-proportion="-13.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Room.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="5" selection-start="2027" selection-end="2027" vertical-scroll-proportion="0.0">
+        <state line="169" column="0" selection-start="5939" selection-end="5939" vertical-scroll-proportion="-7.16">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Property.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="65" selection-start="3073" selection-end="3073" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#4532#4677#0" expanded="true" />
-            <element signature="e#4666#4667#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/MainView.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="589" column="22" selection-start="12562" selection-end="12562" vertical-scroll-proportion="0.0">
+        <state line="127" column="0" selection-start="3915" selection-end="3915" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/RoomCell.java">
+    <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/PropertyList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="127" selection-start="2331" selection-end="2331" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1397947926151" expanded="true" signature="1735:1887" placeholder="{...}" />
-            <marker date="1397947926151" expanded="true" signature="1925:2034" placeholder="{...}" />
-            <marker date="1397947926151" expanded="true" signature="2405:2446" placeholder="{...}" />
-            <marker date="1397947926151" expanded="true" signature="2478:2519" placeholder="{...}" />
-            <marker date="1397947926151" expanded="true" signature="2588:2629" placeholder="{...}" />
-          </folding>
+        <state line="31" column="0" selection-start="763" selection-end="763" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/PropertyCell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="76" selection-start="1436" selection-end="1436" vertical-scroll-proportion="0.0">
+        <state line="60" column="80" selection-start="2011" selection-end="2011" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2957#3390#0" expanded="true" />
-            <element signature="e#3371#3372#0" expanded="true" />
-            <marker date="1397925402684" expanded="true" signature="1894:1958" placeholder="{...}" />
-            <marker date="1397925402684" expanded="true" signature="2366:2430" placeholder="{...}" />
-            <marker date="1397925402684" expanded="true" signature="2464:2504" placeholder="{...}" />
-            <marker date="1397925402684" expanded="true" signature="2662:2684" placeholder="{...}" />
+            <marker date="1398048089420" expanded="true" signature="1918:2007" placeholder="{...}" />
+            <marker date="1398048089420" expanded="true" signature="2297:2359" placeholder="{...}" />
+            <marker date="1398048089420" expanded="true" signature="2402:2464" placeholder="{...}" />
+            <marker date="1398048089420" expanded="true" signature="2434:2451" placeholder="{...}" />
+            <marker date="1398048089420" expanded="true" signature="2434:2456" placeholder="{...}" />
+            <marker date="1398048089420" expanded="true" signature="2622:2686" placeholder="{...}" />
+            <marker date="1398048089420" expanded="true" signature="2720:2760" placeholder="{...}" />
+            <marker date="1398048089420" expanded="true" signature="2919:2959" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/scene/control/TextArea.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prcse/pp/misc/Validate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="67" selection-start="2737" selection-end="2737" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/scene/control/TextField.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0/jre/lib/ext/jfxrt.jar!/javafx/scene/control/TextInputControl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="34" selection-start="2834" selection-end="2834" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prcse/pp/model/Room.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="176" column="32" selection-start="4631" selection-end="4631" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/MessagesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="584" column="0" selection-start="21632" selection-end="22455" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1397834224995" expanded="true" signature="10417:10447" placeholder="{...}" />
+            <marker date="1397834224995" expanded="true" signature="10696:10725" placeholder="{...}" />
+            <marker date="1397834224995" expanded="true" signature="10936:10966" placeholder="{...}" />
+            <marker date="1397834224995" expanded="true" signature="11467:11497" placeholder="{...}" />
+            <marker date="1397834224995" expanded="true" signature="11702:11731" placeholder="{...}" />
+            <marker date="1397834224995" expanded="true" signature="11942:11972" placeholder="{...}" />
+            <marker date="1397834224995" expanded="true" signature="12471:12501" placeholder="{...}" />
+            <marker date="1397834224995" expanded="true" signature="12706:12735" placeholder="{...}" />
+            <marker date="1397834224995" expanded="true" signature="12946:12976" placeholder="{...}" />
+            <marker date="1397834224995" expanded="true" signature="13477:13507" placeholder="{...}" />
+            <marker date="1397834224995" expanded="true" signature="13712:13741" placeholder="{...}" />
+            <marker date="1397834224995" expanded="true" signature="13952:13982" placeholder="{...}" />
+            <marker date="1397834224995" expanded="true" signature="21960:21982" placeholder="{...}" />
+            <marker date="1397834224995" expanded="true" signature="22412:22434" placeholder="{...}" />
+            <marker date="1397834224995" expanded="true" signature="51158:51188" placeholder="{...}" />
+            <marker date="1397834224995" expanded="true" signature="52142:52171" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prcse/pp/controller/PropertyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="85" selection-start="4325" selection-end="4325" vertical-scroll-proportion="-8.2">
+        <state line="425" column="67" selection-start="15493" selection-end="15493" vertical-scroll-proportion="0.6233108">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5353#5636#0" expanded="true" />
-            <element signature="e#5625#5626#0" expanded="true" />
-            <element signature="e#9929#10114#0" expanded="true" />
-            <element signature="e#10103#10104#0" expanded="true" />
-            <element signature="e#11668#12076#0" expanded="true" />
-            <element signature="e#12065#12066#0" expanded="true" />
-            <element signature="e#14112#14376#0" expanded="true" />
-            <element signature="e#14365#14366#0" expanded="true" />
-            <marker date="1397948042560" expanded="true" signature="6452:6471" placeholder="{...}" />
-            <marker date="1397948042560" expanded="true" signature="6676:6694" placeholder="{...}" />
-            <marker date="1397948042560" expanded="true" signature="6900:6919" placeholder="{...}" />
-            <marker date="1397948042560" expanded="true" signature="7124:7142" placeholder="{...}" />
-            <marker date="1397948042560" expanded="true" signature="7348:7367" placeholder="{...}" />
-            <marker date="1397948042560" expanded="true" signature="7572:7590" placeholder="{...}" />
-            <marker date="1397948042560" expanded="true" signature="7796:7815" placeholder="{...}" />
-            <marker date="1397948042560" expanded="true" signature="8020:8038" placeholder="{...}" />
-            <marker date="1397948042560" expanded="true" signature="10595:10614" placeholder="{...}" />
-            <marker date="1397948042560" expanded="true" signature="10888:10906" placeholder="{...}" />
+            <element signature="e#11658#11890#0" expanded="true" />
+            <element signature="e#11879#11880#0" expanded="true" />
+            <element signature="e#13917#14145#0" expanded="true" />
+            <element signature="e#14134#14135#0" expanded="true" />
+            <element signature="e#14184#14554#0" expanded="true" />
+            <element signature="e#14543#14544#0" expanded="true" />
+            <element signature="e#14595#15785#0" expanded="true" />
+            <element signature="e#15774#15775#0" expanded="true" />
+            <element signature="e#15825#16797#0" expanded="true" />
+            <element signature="e#16786#16787#0" expanded="true" />
+            <element signature="e#24389#24920#0" expanded="true" />
+            <element signature="e#24909#24910#0" expanded="true" />
+            <marker date="1398051393866" expanded="true" signature="7777:7796" placeholder="{...}" />
+            <marker date="1398051393866" expanded="true" signature="8001:8019" placeholder="{...}" />
+            <marker date="1398051393866" expanded="true" signature="8225:8244" placeholder="{...}" />
+            <marker date="1398051393866" expanded="true" signature="8449:8467" placeholder="{...}" />
+            <marker date="1398051393866" expanded="true" signature="8673:8692" placeholder="{...}" />
+            <marker date="1398051393866" expanded="true" signature="8897:8915" placeholder="{...}" />
+            <marker date="1398051393866" expanded="true" signature="9121:9140" placeholder="{...}" />
+            <marker date="1398051393866" expanded="true" signature="9345:9363" placeholder="{...}" />
+            <marker date="1398051393866" expanded="true" signature="12371:12390" placeholder="{...}" />
+            <marker date="1398051393866" expanded="true" signature="12664:12682" placeholder="{...}" />
+            <marker date="1398051393866" expanded="true" signature="16268:16290" placeholder="{...}" />
+            <marker date="1398051393866" expanded="true" signature="16730:16752" placeholder="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prcse/pp/view/Properties.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-5.2339373">
-          <folding />
         </state>
       </provider>
     </entry>

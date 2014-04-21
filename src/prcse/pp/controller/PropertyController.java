@@ -17,6 +17,7 @@ import javafx.scene.control.*;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -25,8 +26,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Callback;
 import javafx.util.Duration;
-import prcse.pp.model.Message;
-import prcse.pp.model.PropertyList;
+import prcse.pp.model.Tenant;
 import prcse.pp.model.Room;
 import prcse.pp.view.MessageCell;
 
@@ -146,6 +146,38 @@ public class PropertyController implements Initializable, ControlledScreen {
     private ListView lstRooms;
     @FXML // fx:id="roomDetailsWrap"
     private Pane roomDetailsWrap;
+    @FXML // fx:id="overlay"
+    private Pane overlay;
+    @FXML // fx:id="btnUpdate"
+    private Button btnUpdate;
+    @FXML // fx:id="btnAddTenant"
+    private Button btnAddTenant;
+    @FXML // fx:id="btnBack"
+    private Button btnBack;
+    @FXML // fx:id="lblCurrStatus"
+    private Label lblCurrStatus;
+    @FXML // fx:id="lblRoomPrice"
+    private Label lblRoomPrice;
+    @FXML // fx:id="occupiedWrap"
+    private Pane occupiedWrap;
+    @FXML // fx:id="imgCurrTenant"
+    private ImageView imgCurrTenant;
+    @FXML // fx:id="lblTenantName"
+    private Label lblTenantName;
+    @FXML // fx:id="lblRoomDetails"
+    private Label lblRoomDetails;
+    @FXML // fx:id="editRoomWrap2
+    private Pane editRoomWrap;
+    @FXML // fx:id="txtRoomPrice"
+    private TextField txtRoomPrice;
+    @FXML // fx:id="txtRoomDetails"
+    private TextArea txtRoomDetails;
+    @FXML // fx:id="lblRoomCharCount"
+    private Label lblRoomCharCount;
+    @FXML // fx:id="btnCloseEditRoom"
+    private Button btnCloseEditRoom;
+    @FXML // fx:id="btnRoomSave"
+    private Button btnRoomSave;
 
 
 
@@ -160,6 +192,10 @@ public class PropertyController implements Initializable, ControlledScreen {
     // Reference to this contorller object
     private PropertyController thisController = this;
 
+    // Null property object to be set by setter method
+    private Property currProperty = null;
+    private Room     currRoom = null;
+
     // Determines if the screen has loaded or not
     private Boolean objectsLoaded = false;
 
@@ -173,6 +209,10 @@ public class PropertyController implements Initializable, ControlledScreen {
         Effect glow = new Glow(0.3);
         title.setEffect(glow);
         propertyDetails.setVisible(false);
+        overlay.setVisible(false);
+        roomDetailsWrap.setVisible(false);
+        editRoomWrap.setVisible(false);
+
 
         body.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
@@ -290,6 +330,17 @@ public class PropertyController implements Initializable, ControlledScreen {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 propertyDetails.setVisible(false);
+                roomDetailsWrap.setVisible(false);
+                editRoomWrap.setVisible(false);
+                lstRooms.setVisible(true);
+                hideOverlay();
+            }
+        });
+        btnCloseEditRoom.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                editRoomWrap.setVisible(false);
+                roomDetailsWrap.setVisible(true);
             }
         });
 
@@ -317,6 +368,94 @@ public class PropertyController implements Initializable, ControlledScreen {
                 hideUsers();
             }
         });
+        lstProperties.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                try {
+                    // Show the rooms of the property at the selected index
+                    int index = lstProperties.getSelectionModel().getSelectedIndex();
+                    Property currProperty = ScreensFramework.properties.getPropertyAt(index);
+                    setCurrentProperty(currProperty);
+                    showRooms(false);
+                } catch (IndexOutOfBoundsException e) {
+                    ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+                }
+            }
+        });
+        lstRooms.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                int index = lstRooms.getSelectionModel().getSelectedIndex();
+                Property p = getCurrProperty();
+                Room thisRoom = p.getRoomAt(index);
+                setCurrentRoom(thisRoom);
+                showRoomDetails(thisRoom);
+            }
+        });
+        btnBack.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                roomDetailsWrap.setVisible(false);
+                lstRooms.setVisible(true);
+            }
+        });
+        btnUpdate.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                txtRoomPrice.setText(String.valueOf(currRoom.getPrice()));
+                txtRoomDetails.setText(currRoom.getDetails());
+                roomDetailsWrap.setVisible(false);
+                editRoomWrap.setVisible(true);
+            }
+        });
+        btnRoomSave.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                if(!txtRoomDetails.getText().isEmpty() && ScreensFramework.validateThis.validateCurrency(txtRoomPrice.getText())){
+
+                    // Update the DB
+                    String update = "UPDATE rooms SET room_price = '" + txtRoomPrice.getText() + "', room_details = '" + txtRoomDetails.getText() + "' WHERE room_id =" + getCurrRoom().getRoomId();
+                    ScreensFramework.db.update(update);
+
+                    // Set the changed states in the object
+                    currRoom.setPrice(txtRoomPrice.getText());
+                    currRoom.setDetails(txtRoomDetails.getText());
+
+                    // Reset the labels
+                    lblRoomPrice.setText(txtRoomPrice.getText());
+                    lblRoomDetails.setText(txtRoomDetails.getText());
+
+                    // Refresh the list
+                    populateRoomList(currProperty);
+
+                    // Go back to detail screen
+                    editRoomWrap.setVisible(false);
+                    roomDetailsWrap.setVisible(true);
+                }
+            }
+        });
+        txtRoomDetails.setOnKeyTyped(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                int chars = txtRoomDetails.getText().length();
+                String message = txtRoomDetails.getText();
+
+                if (chars < 151) {
+                    String amount = String.valueOf(chars);
+                    lblRoomCharCount.setText(amount + "/150 Characters");
+                    lblRoomCharCount.setStyle("-fx-text-fill: #ffffff");
+                } else {
+                    // Updat the message to the old state
+                    String fullMsg = message.substring(0, 150);
+                    txtRoomDetails.setText(fullMsg);
+
+                    // Set the position to the end of the string
+                    txtRoomDetails.positionCaret(150);
+                    lblRoomCharCount.setText("150/150 Characters");
+                    lblRoomCharCount.setStyle("-fx-text-fill: #f92772");
+                }
+            }
+        });
 
     }
 
@@ -337,7 +476,7 @@ public class PropertyController implements Initializable, ControlledScreen {
 
         // Set the items returned by populateObservable(T);
         lstProperties.setItems(payments);
-        lstProperties.setFixedCellSize(50);
+        lstProperties.setFixedCellSize(65);
 
         // Use a cell factory for custom styling
         lstProperties.setCellFactory(new Callback<ListView, ListCell>() {
@@ -368,7 +507,11 @@ public class PropertyController implements Initializable, ControlledScreen {
             Property p = propertiesArray.get(i);
 
             // Add to observable
-            messages.add(p.getAddressLine1());
+            if(p.getAddressLine2() == null) {
+                messages.add(p.getAddressLine1());
+            } else {
+                messages.add(p.getAddressLine1() + ", " + p.getCity());
+            }
         }
         return messages;
     }
@@ -376,14 +519,17 @@ public class PropertyController implements Initializable, ControlledScreen {
     /**
      * Show the rooms container and populate its details
      */
-    public void showRooms(Property p, Boolean editing) {
+    public void showRooms(Boolean editing) throws NullPointerException {
+        animateOverlay();
         propertyDetails.setVisible(true);
 
+        Property p = getCurrProperty();
+
         // Set the properties name label
-        if(p.getAddressLine2().length() == 0) {
+        if(p.getAddressLine2() == null) {
             lblAddr1.setText(p.getAddressLine1() + ", " + p.getCity());
         } else {
-            lblAddr1.setText(p.getAddressLine1() + " " + p.getAddressLine2() + ", " + p.getCity());
+            lblAddr1.setText(p.getAddressLine1() + " " + p.getAddressLine2());
         }
 
         lblNumRooms.setText(String.valueOf(p.numRooms()) + " bedroom property");
@@ -445,9 +591,114 @@ public class PropertyController implements Initializable, ControlledScreen {
         return rooms;
     }
 
+    /**
+     * Shows all details on a room
+     */
+    public void showRoomDetails(Room thisRoom) throws NullPointerException {
+        roomDetailsWrap.setVisible(true);
+        lstRooms.setVisible(false);
+
+        // Set status styles and text
+        lblCurrStatus.setText(thisRoom.getStatusAsString(thisRoom.getStatus()));
+        if(lblCurrStatus.getText().toUpperCase().equals("OCCUPIED")) {
+            lblCurrStatus.getStyleClass().remove("green");
+            lblCurrStatus.getStyleClass().addAll("encapsulated-small-wide", "orange");
+        } else {
+            lblCurrStatus.getStyleClass().remove("orange");
+            lblCurrStatus.getStyleClass().addAll("encapsulated-small-wide", "green");
+        }
+
+        // Populate the room details
+        lblRoomDetails.setText(thisRoom.getDetails());
+
+        // Determine if the room is occupied or not
+        if(lblCurrStatus.getText().equals("Occupied")) {
+            occupiedWrap.setVisible(true);
+
+            // Get the occupant tenant object
+            if(thisRoom.getTenant() != null) {
+                Tenant occupant = thisRoom.getTenant();
+                lblTenantName.setText(occupant.getName());
+                btnAddTenant.setVisible(false);
+            }
+        } else {
+            occupiedWrap.setVisible(true);
+            lblTenantName.setText("No occupant");
+            btnAddTenant.setVisible(true);
+        }
+
+        lblRoomPrice.setText(String.valueOf("£" + thisRoom.getPrice()));
+    }
+
+    /**
+     * Sets the current property object
+     * @param thisProperty - the property we are setting
+     */
+    public void setCurrentProperty(Property thisProperty) {
+        currProperty = thisProperty != null ? thisProperty : null;
+    }
+
+    /**
+     * Returns the current property object
+     */
+    public Property getCurrProperty() {
+        return this.currProperty;
+    }
+
+    /**
+     * Sets the current room object
+     * @param thisRoom - the room we are setting
+     */
+    public void setCurrentRoom(Room thisRoom) {
+        currRoom = thisRoom != null ? thisRoom : null;
+    }
+
+    /**
+     * Returns the current property object
+     */
+    public Room getCurrRoom() {
+        return this.currRoom;
+    }
+
     /******************************************************
      *                ANIMATION CONTROLS
      ******************************************************/
+    public void animateOverlay() {
+        overlay.setVisible(true);
+        final Timeline animateIn = new Timeline();
+        animateIn.setCycleCount(1);
+        animateIn.setAutoReverse(false);
+        final KeyValue kv1 = new KeyValue(overlay.opacityProperty(), 1);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(500), kv1);
+        animateIn.getKeyFrames().addAll(kf1);
+        animateIn.play();
+    }
+
+    public void hideOverlay() {
+        final Timeline animateOut = new Timeline();
+        animateOut.setCycleCount(1);
+        animateOut.setAutoReverse(false);
+        final KeyValue kv1 = new KeyValue(overlay.opacityProperty(), 0);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(500), kv1);
+        animateOut.getKeyFrames().addAll(kf1);
+        animateOut.play();
+
+        // Sleep and hide the pane afterward, otherwise unable to use GUI
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(500);
+                    overlay.setVisible(false);
+                } catch (InterruptedException e) {
+                    ScreensFramework.logError.writeToFile("Error: failed to play the animation, " + e.getMessage());
+                } catch (IllegalStateException e) {
+                    ScreensFramework.logGeneral.writeToFile("Warning: " + e.getMessage());
+                }
+            }
+        }).start();
+    }
+
     public void showUsers()
     {
         final Timeline slideOut = new Timeline();

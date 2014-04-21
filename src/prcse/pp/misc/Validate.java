@@ -72,6 +72,27 @@ public class Validate {
     }
 
     /**
+     * Validates to check if all numerics
+     * @param number - the price inserted
+     * @return True if successful, else false
+     */
+    public Boolean validateCurrency(String number) {
+        Boolean isValid = false;
+
+        // Sets the pattern
+        String  numPattern = "[0-9]+(\\.[0-9]{0,2})?";
+        Pattern p          = Pattern.compile(numPattern);
+
+        // Check the number is valid
+        if(number.trim().length() > 2) {
+            Matcher m = p.matcher(number);
+            isValid = m.matches() ? true : false;
+        }
+
+        return isValid;
+    }
+
+    /**
      * Validates an address to ensure it is in the correct format
      * @param address - the address string inserted
      * @return True if successful, else false

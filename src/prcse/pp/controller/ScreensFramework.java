@@ -47,6 +47,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import prcse.pp.db.Database;
+import prcse.pp.misc.UploadImage;
 import prcse.pp.misc.Validate;
 import prcse.pp.misc.Writer;
 import prcse.pp.model.*;
@@ -96,6 +97,9 @@ public class ScreensFramework extends Application  {
     public static Writer logError   = new Writer("error", true);
     public static Writer logGeneral = new Writer("general", true);
 
+    // Global Image Upload object
+    public static UploadImage uploader = new UploadImage();
+
     // Global validation object
     public static Validate validateThis = new Validate();
 
@@ -104,6 +108,10 @@ public class ScreensFramework extends Application  {
 
         // Set up a new control object to hold all of our screens
         ScreensController mainContainer = new ScreensController();
+
+        // TEST CASES
+        //uploader.upload("C:\\Users\\Alex\\Desktop\\desktop-application\\src\\prcse\\pp\\controller\\test.txt", ".txt", "properties/");
+        //uploader.download("test", ".txt", "properties");
 
         // Load each screen into the hash map
         mainContainer.loadScreen(ScreensFramework.screen0ID, ScreensFramework.screen0File);

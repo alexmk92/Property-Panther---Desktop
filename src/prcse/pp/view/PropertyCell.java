@@ -40,6 +40,7 @@ public class PropertyCell extends ListCell<String> {
     String lastItem;
     Button showRooms    = new Button("Show Rooms");
     Button editProperty = new Button("Edit Details");
+    Label details = new Label();
 
 
     public PropertyCell(int index, PropertyController controller, Property p) {
@@ -51,29 +52,32 @@ public class PropertyCell extends ListCell<String> {
 
                 if(thisProperty.numRooms() > 0) {
                     String propDetails = Integer.valueOf(thisProperty.numRooms()) + " bedroom property";
-                    label.setText(propDetails);
+                    details.setText(propDetails);
                 } else {
-                    label.setText("Property with no available rooms");
+                    details.setText("0 rooms available");
                 }
 
-                label.setStyle("-fx-font-size: 12px; -fx-text-fill: #ffffff; -fx-translate-y: 20");
+                details.setStyle("-fx-font-size: 16px; -fx-text-fill: #ffffff; -fx-translate-y: 27.5; -fx-translate-x: -170");
 
                 showRooms.getStyleClass().addAll("btn_actions", "blue", "center-vert", "pull_left", "btn_narrow");
                 editProperty.getStyleClass().addAll("btn_actions", "blue", "center-vert", "pull_left", "margin_right", "btn_narrow");
+                showRooms.setStyle("-fx-translate-x: -45 !important; -fx-translate-y: 14!important");
+                editProperty.setStyle("-fx-translate-x: -38!important; -fx-translate-y: 14!important;");
 
                 showRooms.setPrefWidth(50);
 
                 Glow g = new Glow(0.1);
                 label.setEffect(g);
-                label.setStyle("-fx-text-fill: #66d8f0; -fx-translate-y: 10; -fx-font-size: 20px");
-                img.setStyle("-fx-translate-y: 10; -fx-translate-x: 15");
+                label.setStyle("-fx-text-fill: #66d8f0; -fx-translate-y: 10; -fx-font-size: 18px");
+                img.setStyle("-fx-translate-y: 13; -fx-translate-x: 15");
                 img.setImage(profile_default);
-                img.setFitWidth(35);
-                img.setFitHeight(35);
+                img.setFitWidth(32);
+                img.setFitHeight(32);
 
-                desc.setStyle("-fx-translate-x: 35px;");
-                desc.getChildren().addAll(label);
-                hbox.getChildren().addAll(img, desc, pane, showRooms, editProperty);
+
+                desc.setStyle("-fx-translate-x: 35; -fx-translate-y: -5");
+                desc.getChildren().addAll(label, details);
+                hbox.getChildren().addAll(img, desc, pane, details, showRooms, editProperty);
 
                 HBox.setHgrow(pane, Priority.ALWAYS);
 
@@ -82,7 +86,8 @@ public class PropertyCell extends ListCell<String> {
                     @Override
                     public void handle(MouseEvent mouseEvent) {
                         try{
-                            controller.showRooms(thisProperty, false);
+                            controller.setCurrentProperty(thisProperty);
+                            controller.showRooms(false);
                         } catch(Exception e){
                             ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
                         }
