@@ -9840,3 +9840,82 @@ Dev info:[Ljava.lang.StackTraceElement;@1732c8d
 
 21-Apr-2014 04:34: Error: ORA-00933: SQL command not properly ended
 
+22-Apr-2014 11:19: Error handling query: IO Error: The Network Adapter could not establish the connection
+22-Apr-2014 11:21: null
+22-Apr-2014 11:21: null
+22-Apr-2014 11:21: null
+22-Apr-2014 11:21: null
+22-Apr-2014 11:26: Error: Not on FX application thread; currentThread = Thread-83
+22-Apr-2014 11:41: Index: 1, Size: 1
+22-Apr-2014 11:41: Index: 2, Size: 1
+22-Apr-2014 11:41: Index: 3, Size: 1
+22-Apr-2014 11:41: Index: 1, Size: 1
+22-Apr-2014 11:41: Index: 2, Size: 1
+22-Apr-2014 11:41: Index: 3, Size: 1
+22-Apr-2014 11:41: Index: 0, Size: 0
+22-Apr-2014 11:41: Index: 1, Size: 0
+22-Apr-2014 11:41: Index: 2, Size: 0
+22-Apr-2014 11:41: Index: 3, Size: 0
+22-Apr-2014 11:41: Index: 0, Size: 0
+22-Apr-2014 11:41: Index: 1, Size: 0
+22-Apr-2014 11:41: Index: 2, Size: 0
+22-Apr-2014 11:41: Index: 3, Size: 0
+22-Apr-2014 11:42: Index: 0, Size: 0
+22-Apr-2014 11:42: Index: 1, Size: 0
+22-Apr-2014 11:42: Index: 2, Size: 0
+22-Apr-2014 11:42: Index: 3, Size: 0
+22-Apr-2014 11:42: Index: 0, Size: 0
+22-Apr-2014 11:42: Index: 1, Size: 0
+22-Apr-2014 11:42: Index: 2, Size: 0
+22-Apr-2014 11:42: Index: 3, Size: 0
+22-Apr-2014 11:45: Index: 0, Size: 0
+22-Apr-2014 11:45: Index: 1, Size: 0
+22-Apr-2014 11:45: Index: 2, Size: 0
+22-Apr-2014 11:45: Index: 3, Size: 0
+22-Apr-2014 11:45: Index: 0, Size: 0
+22-Apr-2014 11:45: Index: 1, Size: 0
+22-Apr-2014 11:45: Index: 2, Size: 0
+22-Apr-2014 11:45: Index: 3, Size: 0
+22-Apr-2014 11:45: Error: 1
+22-Apr-2014 11:45: Error: null
+22-Apr-2014 11:45: Error: null
+22-Apr-2014 11:45: Error handling operation: ORA-01722: invalid number
+
+22-Apr-2014 11:45: Error: Not on FX application thread; currentThread = Thread-140
+22-Apr-2014 11:45: Error: null
+22-Apr-2014 11:45: Error: null
+22-Apr-2014 11:45: Error: Not on FX application thread; currentThread = Thread-143
+22-Apr-2014 11:45: Error: null
+22-Apr-2014 11:45: Error: null
+22-Apr-2014 11:45: Error handling operation: ORA-01722: invalid number
+
+22-Apr-2014 11:46: Error: Not on FX application thread; currentThread = Thread-150
+22-Apr-2014 11:50: Index: 0, Size: 0
+22-Apr-2014 11:50: Index: 1, Size: 0
+22-Apr-2014 11:50: Index: 2, Size: 0
+22-Apr-2014 11:50: Index: 3, Size: 0
+22-Apr-2014 11:50: Index: 1, Size: 1
+22-Apr-2014 11:50: Index: 2, Size: 1
+22-Apr-2014 11:50: Index: 3, Size: 1
+22-Apr-2014 11:50: Index: 1, Size: 1
+22-Apr-2014 11:50: Index: 2, Size: 1
+22-Apr-2014 11:50: Index: 3, Size: 1
+22-Apr-2014 11:51: Index: 0, Size: 0
+22-Apr-2014 11:51: Index: 1, Size: 0
+22-Apr-2014 11:51: Index: 2, Size: 0
+22-Apr-2014 11:51: Index: 3, Size: 0
+22-Apr-2014 11:51: Index: 0, Size: 0
+22-Apr-2014 11:51: Index: 1, Size: 0
+22-Apr-2014 11:51: Index: 2, Size: 0
+22-Apr-2014 11:51: Index: 3, Size: 0
+22-Apr-2014 11:51: Index: 0, Size: 0
+22-Apr-2014 11:51: Index: 1, Size: 0
+22-Apr-2014 11:51: Index: 2, Size: 0
+22-Apr-2014 11:51: Index: 3, Size: 0
+22-Apr-2014 12:18: null
+22-Apr-2014 12:18: null
+22-Apr-2014 12:18: null
+22-Apr-2014 12:18: null
+22-Apr-2014 12:25: Index: 1, Size: 1
+22-Apr-2014 12:25: Index: 2, Size: 1
+22-Apr-2014 12:25: Index: 3, Size: 1

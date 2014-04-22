@@ -24,6 +24,11 @@ public class Searcher {
     Admin    a = new Admin();
 
     /**
+     * Editing flag, default false
+     */
+    private Boolean editing = false;
+
+    /**
      * Sets the session object (the admin running the session after a successful login)
      * and builds their inbox
      * @param thisAdmin the admin object set at login
@@ -96,5 +101,17 @@ public class Searcher {
         return thisUserList;
     }
 
+    /**
+     * Sets whether or not we are editing an object
+     */
+    public void setEditing(Boolean editing) {
+        this.editing = editing;
+    }
 
+    /**
+     * Returns the editing flag
+     */
+    public Boolean getEditing() {
+        return this.editing;
+    }
 }

@@ -83,8 +83,6 @@ public class UserInfoController implements Initializable, ControlledScreen {
     private AnchorPane nav4;
     @FXML // fx:id="nav5"
     private AnchorPane nav5;
-    @FXML // fx:id="nav6"
-    private AnchorPane nav6;
     @FXML // fx:id="accent1"
     private Rectangle accent1;
     @FXML // fx:id="accent2"
@@ -95,8 +93,6 @@ public class UserInfoController implements Initializable, ControlledScreen {
     private Rectangle accent4;
     @FXML // fx:id="accent5"
     private Rectangle accent5;
-    @FXML // fx:id="accent6"
-    private Rectangle accent6;
     @FXML //fx:id="nav_icon1"
     private Pane nav_icon1;
     @FXML //fx:id="nav_bg1"
@@ -117,10 +113,6 @@ public class UserInfoController implements Initializable, ControlledScreen {
     private Pane nav_icon5;
     @FXML //fx:id="nav_bg5"
     private Button nav_bg5;
-    @FXML //fx:id="nav_icon6"
-    private Pane nav_icon6;
-    @FXML //fx:id="nav_bg6"
-    private Button nav_bg6;
     @FXML // fx:id="title"
     private Label title;
     @FXML // fx:id="spinner_green"
@@ -201,7 +193,20 @@ public class UserInfoController implements Initializable, ControlledScreen {
     private Button btnAddAnother;
     @FXML // fx:id="btnDeleteThis"
     private Button btnDeleteThis;
-
+    @FXML // fx:id="txtChangeName"
+    private TextField txtChangeName;
+    @FXML // fx:id="txtChangeAddr1"
+    private TextField txtChangeAddr1;
+    @FXML // fx:id="txtChangeAddr2"
+    private TextField txtChangeAddr2;
+    @FXML // fx:id="txtChangeEmail"
+    private TextField txtChangeEmail;
+    @FXML // fx:id="txtChangePostcode"
+    private TextField txtChangePostcode;
+    @FXML // fx:id="txtChangePhone"
+    private TextField txtChangePhone;
+    @FXML // fx:id="btnSaveChanges"
+    private Button btnSaveChanges;
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
@@ -232,6 +237,15 @@ public class UserInfoController implements Initializable, ControlledScreen {
         widget_top_right.setOpacity(0.3);
         widget_bottom_left.setOpacity(0.3);
         widget_bottom_right.setOpacity(0.3);
+
+        // Hide editing fields
+        txtChangeAddr1.setVisible(false);
+        txtChangeAddr2.setVisible(false);
+        txtChangeEmail.setVisible(false);
+        txtChangeName.setVisible(false);
+        txtChangePhone.setVisible(false);
+        txtChangePostcode.setVisible(false);
+        btnSaveChanges.setVisible(false);
 
         // Animate the scene in
         body.setOnMouseEntered(new EventHandler<MouseEvent>() {
@@ -314,18 +328,6 @@ public class UserInfoController implements Initializable, ControlledScreen {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 accent5.setStyle("visibility: hidden");
-            }
-        });
-        nav6.setOnMouseEntered(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                accent6.setStyle("visibility: visible");
-            }
-        });
-        nav6.setOnMouseExited(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                accent6.setStyle("visibility: hidden");
             }
         });
 
@@ -558,6 +560,12 @@ public class UserInfoController implements Initializable, ControlledScreen {
                 lstNotes.setVisible(true);
             }
         });
+        btnSaveChanges.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                System.out.println("Saving");
+            }
+        });
 
     }
 
@@ -575,22 +583,41 @@ public class UserInfoController implements Initializable, ControlledScreen {
      */
     public void renderView()
     {
-        // Sets the title to the tenants name
-        lblUsername.setText(thisTenant.getName());
+        if(ScreensFramework.searchObj.getEditing() == true){
+            txtChangeAddr1.setVisible(true);
+            txtChangeAddr2.setVisible(true);
+            txtChangeEmail.setVisible(true);
+            txtChangeName.setVisible(true);
+            txtChangePhone.setVisible(true);
+            txtChangePostcode.setVisible(true);
 
-        // Populate all widgets
-        if(thisTenant.getAddr_line_2() == "NULL" || thisTenant.getAddr_line_2() == null) {
-            lblUserAddress.setText(thisTenant.getAddr_line_1());
-            lblAddr1.setText(thisTenant.getProperty().getAddressLine1() + "\n" + thisTenant.getProperty().getCity() + "\n" + thisTenant.getProperty().getPostcode());
+            // Populate the fields
+            txtChangeAddr1.setText(thisTenant.getAddr_line_1());
+            txtChangeAddr2.setText(thisTenant.getAddr_line_2());
+            txtChangeEmail.setText(thisTenant.getEmail());
+            txtChangeName.setText(thisTenant.getName());
+            txtChangePhone.setText(thisTenant.getPhone());
+            txtChangePostcode.setText(thisTenant.getPostcode());
+
+            btnSaveChanges.setVisible(true);
         } else {
-            lblUserAddress.setText(thisTenant.getAddr_line_1() + " " + thisTenant.getAddr_line_2());
-            lblAddr1.setText(thisTenant.getProperty().getAddressLine1() + ", " + thisTenant.getProperty().getAddressLine2() + "\n" + thisTenant.getProperty().getCity() + "\n" + thisTenant.getProperty().getPostcode());
-        }
-        lblEmail.setText(thisTenant.getEmail());
-        lblPhone.setText("+" + thisTenant.getPhone());
-        lblNewNote.setText("Adding new note for " + thisTenant.getName());
+            // Sets the title to the tenants name
+            lblUsername.setText(thisTenant.getName());
 
-        populateListView();
+            // Populate all widgets
+            if(thisTenant.getAddr_line_2() == "NULL" || thisTenant.getAddr_line_2() == null) {
+                lblUserAddress.setText(thisTenant.getAddr_line_1());
+                lblAddr1.setText(thisTenant.getProperty().getAddressLine1() + "\n" + thisTenant.getProperty().getCity() + "\n" + thisTenant.getProperty().getPostcode());
+            } else {
+                lblUserAddress.setText(thisTenant.getAddr_line_1() + " " + thisTenant.getAddr_line_2());
+                lblAddr1.setText(thisTenant.getProperty().getAddressLine1() + ", " + thisTenant.getProperty().getAddressLine2() + "\n" + thisTenant.getProperty().getCity() + "\n" + thisTenant.getProperty().getPostcode());
+            }
+            lblEmail.setText(thisTenant.getEmail());
+            lblPhone.setText("+" + thisTenant.getPhone());
+            lblNewNote.setText("Adding new note for " + thisTenant.getName());
+
+            populateListView();
+        }
 
     }
 
@@ -900,11 +927,6 @@ public class UserInfoController implements Initializable, ControlledScreen {
                             nav_icon5.getStyleClass().add("active");
                             accent5.getStyleClass().addAll("active", "show");
                             break;
-                        case "Settings":
-                            nav_bg6.getStyleClass().addAll("active");
-                            nav_icon6.getStyleClass().add("active");
-                            accent6.getStyleClass().addAll("active", "show");
-                            break;
                         case "View Tenant":
                             nav_bg2.getStyleClass().addAll("active");
                             nav_icon2.getStyleClass().add("active");
@@ -924,12 +946,16 @@ public class UserInfoController implements Initializable, ControlledScreen {
                 {
                     ScreensFramework.logError.writeToFile("There was an error handling the animation...");
                 }
+
                 // Go to our view.
                 noteWrap.setVisible(false);
                 lstNotes.setVisible(true);
                 myController.setScreen(ID);
             }
         }).start();
+
+        // Reset the editing flag
+        ScreensFramework.searchObj.setEditing(false);
 
         // Reset the objectsSet flag, this will allow an object to be loaded when a user
         // requests this form from the HashMap again.
@@ -971,9 +997,6 @@ public class UserInfoController implements Initializable, ControlledScreen {
         nav_icon5.getStyleClass().remove("active");
         accent5.getStyleClass().removeAll("active", "show");
         nav_bg5.getStyleClass().remove("active");
-        nav_icon6.getStyleClass().remove("active");
-        accent6.getStyleClass().removeAll("active", "show");
-        nav_bg6.getStyleClass().remove("active");
 
     }
 
@@ -1008,11 +1031,6 @@ public class UserInfoController implements Initializable, ControlledScreen {
     private void goToMessages(ActionEvent event){
         hideUsers();
         nextForm(ScreensFramework.screen5ID);
-    }
-    @FXML
-    private void goToSettings(ActionEvent event){
-        hideUsers();
-        nextForm(ScreensFramework.screen6ID);
     }
     @FXML
     private void goToAddUser(ActionEvent event){

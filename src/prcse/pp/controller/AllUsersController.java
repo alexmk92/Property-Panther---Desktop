@@ -552,6 +552,7 @@ public class AllUsersController implements Initializable, ControlledScreen {
                 {
                     System.out.println("There was an error handling the animation...");
                 }
+
                 // Go to our view.
                 myController.setScreen(ID);
             }

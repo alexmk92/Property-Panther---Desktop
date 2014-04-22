@@ -27,7 +27,23 @@
 <font>
 <Font name="Arial" size="14.0" />
 </font>
-</Label>
+</Label><TextField fx:id="txtChangeEmail" layoutX="55.0" layoutY="12.0" prefHeight="39.0" prefWidth="225.0" promptText="Email..." xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+<styleClass>
+<String fx:value="text-input" />
+<String fx:value="messageInput" />
+</styleClass>
+</TextField><TextField fx:id="txtChangePhone" layoutX="55.0" layoutY="53.0" prefHeight="39.0" prefWidth="225.0" promptText="Phone number..." xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+<styleClass>
+<String fx:value="text-input" />
+<String fx:value="messageInput" />
+</styleClass>
+</TextField>
 </children></Pane><Pane prefHeight="40.0" prefWidth="292.0" styleClass="header" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <children>
 <Label layoutX="14.0" layoutY="9.0" styleClass="header_title" text="Contact Information" textFill="WHITE">
@@ -48,12 +64,42 @@
 </font>
 </Label>
 </children>
-</Pane><Pane layoutX="1.0" layoutY="40.0" prefHeight="116.0" prefWidth="290.0" styleClass="window" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+</Pane><Pane layoutX="1.0" layoutY="40.0" prefHeight="194.0" prefWidth="290.0" styleClass="window" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <children><Label fx:id="lblAddr1" layoutX="14.0" layoutY="10.0" styleClass="caption_small" text="6 Morland Drive" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <font>
 <Font name="Arial" size="14.0" />
 </font>
-</Label>
+</Label><TextField fx:id="txtChangeAddr1" layoutX="14.0" layoutY="13.0" prefHeight="39.0" prefWidth="225.0" promptText="Address line 1" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+<styleClass>
+<String fx:value="text-input" />
+<String fx:value="messageInput" />
+</styleClass>
+</TextField><TextField fx:id="txtChangeAddr2" layoutX="14.0" layoutY="58.0" prefHeight="39.0" prefWidth="225.0" promptText="Address line 2" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+<styleClass>
+<String fx:value="text-input" />
+<String fx:value="messageInput" />
+</styleClass>
+</TextField><TextField fx:id="txtChangePostcode" layoutX="14.0" layoutY="102.0" prefHeight="39.0" prefWidth="225.0" promptText="Postcode" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+<styleClass>
+<String fx:value="text-input" />
+<String fx:value="messageInput" />
+</styleClass>
+</TextField><Button fx:id="btnSaveChanges" layoutX="14.0" layoutY="150.0" mnemonicParsing="false" prefWidth="200.0" text="Save Changes" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<styleClass>
+<String fx:value="button" />
+<String fx:value="btn_actions" />
+<String fx:value="blue" />
+</styleClass>
+</Button>
 </children></Pane>
 </children>
 </Pane>
@@ -91,7 +137,14 @@
 <String fx:value="header_title" />
 <String fx:value="caption_large" />
 </styleClass>
-</Label>
+</Label><TextField fx:id="txtChangeName" layoutX="128.0" layoutY="17.0" prefHeight="39.0" prefWidth="355.0" promptText="Forename and surname...">
+<font>
+<Font size="16.0" />
+</font>
+<styleClass>
+<String fx:value="text-input" />
+<String fx:value="messageInput" />
+</styleClass></TextField>
 </children>
 </Pane>
 </children></Pane>

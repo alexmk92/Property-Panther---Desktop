@@ -53,41 +53,61 @@ public class UserCell extends ListCell<String> {
     public UserCell(UserList tenants, int index, AllUsersController givenController) {
         super();
 
-        thisController = givenController;
-        viewUser.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                try{
-                s.setTenant(tenants.getUserAt(index));
-                notifyController();
-                }catch(Exception e){
-                    System.out.println(e.getMessage());
-                }
+        if(index >= 0) {
+            try {
+                thisController = givenController;
+                viewUser.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent mouseEvent) {
+                        try{
+                            s.setTenant(tenants.getUserAt(index));
+                            notifyController();
+                        }catch(Exception e){
+                            System.out.println(e.getMessage());
+                        }
+                    }
+                });
+                editUser.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent mouseEvent) {
+                        try {
+                            s.setTenant(tenants.getUserAt(index));
+                            s.setEditing(true); // set the editing flag
+                            notifyController();
+                        } catch (Exception e) {
+                            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+                        }
+                    }
+                });
+
+                address.getStyleClass().add("address_text");
+
+                viewUser.getStyleClass().addAll("btn_actions", "blue", "center-vert", "pull_left", "btn_narrow");
+                editUser.getStyleClass().addAll("btn_actions", "blue", "center-vert", "pull_left", "margin_right", "btn_narrow");
+
+                viewUser.setPrefWidth(50);
+
+                Glow g = new Glow(0.1);
+                label.setEffect(g);
+                label.setStyle("-fx-text-fill: #66d8f0; -fx-translate-y: 10; -fx-font-size: 20px");
+                img.setStyle("-fx-translate-y: 10; -fx-translate-x: 15");
+                img.setImage(profile_default);
+                img.setFitWidth(50);
+                img.setFitHeight(50);
+
+                desc.setStyle("-fx-translate-x: 35px;");
+                desc.getChildren().addAll(label, address);
+                hbox.getChildren().addAll(img, desc, pane, editUser, viewUser);
+
+                HBox.setHgrow(pane, Priority.ALWAYS);
+            } catch (NullPointerException e) {
+                ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+            } catch (IndexOutOfBoundsException e) {
+                ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+            } catch(Exception e) {
+                ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
             }
-        });
-
-
-
-        address.getStyleClass().add("address_text");
-
-        viewUser.getStyleClass().addAll("btn_actions", "blue", "center-vert", "pull_left", "btn_narrow");
-        editUser.getStyleClass().addAll("btn_actions", "blue", "center-vert", "pull_left", "margin_right", "btn_narrow");
-
-        viewUser.setPrefWidth(50);
-
-        Glow g = new Glow(0.1);
-        label.setEffect(g);
-        label.setStyle("-fx-text-fill: #66d8f0; -fx-translate-y: 10; -fx-font-size: 20px");
-        img.setStyle("-fx-translate-y: 10; -fx-translate-x: 15");
-        img.setImage(profile_default);
-        img.setFitWidth(50);
-        img.setFitHeight(50);
-
-        desc.setStyle("-fx-translate-x: 35px;");
-        desc.getChildren().addAll(label, address);
-        hbox.getChildren().addAll(img, desc, pane, editUser, viewUser);
-
-        HBox.setHgrow(pane, Priority.ALWAYS);
+        }
     }
 
 

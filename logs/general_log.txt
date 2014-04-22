@@ -954,3 +954,18 @@
 21-Apr-2014 04:24: Warning: Not on FX application thread; currentThread = Thread-65
 21-Apr-2014 04:31: Connected to database
 21-Apr-2014 04:35: Warning: Not on FX application thread; currentThread = Thread-63
+22-Apr-2014 11:18: Connected to database
+22-Apr-2014 11:19: Connection already open.
+22-Apr-2014 11:19: Connection already open.
+22-Apr-2014 11:21: Warning: Not on FX application thread; currentThread = Thread-71
+22-Apr-2014 11:21: Warning: Not on FX application thread; currentThread = Thread-72
+22-Apr-2014 11:39: Warning: Not on FX application thread; currentThread = Thread-88
+22-Apr-2014 11:39: Warning: Not on FX application thread; currentThread = Thread-89
+22-Apr-2014 11:40: Warning: Not on FX application thread; currentThread = Thread-94
+22-Apr-2014 11:40: Warning: Not on FX application thread; currentThread = Thread-95
+22-Apr-2014 11:46: Warning: Not on FX application thread; currentThread = Thread-152
+22-Apr-2014 11:58: Connected to database
+22-Apr-2014 12:00: Connected to database
+22-Apr-2014 12:18: Connected to database
+22-Apr-2014 12:21: Connected to database
+22-Apr-2014 12:24: Connected to database
