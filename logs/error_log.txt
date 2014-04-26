@@ -9919,3 +9919,1597 @@ Dev info:[Ljava.lang.StackTraceElement;@1732c8d
 22-Apr-2014 12:25: Index: 1, Size: 1
 22-Apr-2014 12:25: Index: 2, Size: 1
 22-Apr-2014 12:25: Index: 3, Size: 1
+24-Apr-2014 00:42: null
+24-Apr-2014 00:42: null
+24-Apr-2014 00:42: null
+24-Apr-2014 00:42: null
+24-Apr-2014 00:47: null
+24-Apr-2014 00:47: null
+24-Apr-2014 00:47: null
+24-Apr-2014 00:47: null
+24-Apr-2014 00:49: Index: 1, Size: 1
+24-Apr-2014 00:49: Index: 2, Size: 1
+24-Apr-2014 00:49: Index: 3, Size: 1
+24-Apr-2014 01:02: null
+24-Apr-2014 01:02: null
+24-Apr-2014 01:02: null
+24-Apr-2014 01:02: null
+24-Apr-2014 01:04: null
+24-Apr-2014 01:04: null
+24-Apr-2014 01:04: null
+24-Apr-2014 01:04: null
+24-Apr-2014 01:06: Error: null
+24-Apr-2014 01:06: Error: null
+24-Apr-2014 01:06: Error: Not on FX application thread; currentThread = Thread-101
+24-Apr-2014 01:08: null
+24-Apr-2014 01:08: null
+24-Apr-2014 01:08: null
+24-Apr-2014 01:08: null
+24-Apr-2014 01:12: null
+24-Apr-2014 01:12: null
+24-Apr-2014 01:12: null
+24-Apr-2014 01:12: null
+24-Apr-2014 01:13: Error: Not on FX application thread; currentThread = Thread-94
+24-Apr-2014 01:13: Error: Not on FX application thread; currentThread = Thread-96
+24-Apr-2014 01:20: null
+24-Apr-2014 01:20: null
+24-Apr-2014 01:20: null
+24-Apr-2014 01:20: null
+24-Apr-2014 01:21: Error: null
+24-Apr-2014 01:21: Error: null
+24-Apr-2014 01:21: Error: Not on FX application thread; currentThread = Thread-97
+24-Apr-2014 01:21: Error: null
+24-Apr-2014 01:21: Error: null
+24-Apr-2014 01:21: Error: Not on FX application thread; currentThread = Thread-101
+24-Apr-2014 01:21: Error: null
+24-Apr-2014 01:21: Error: null
+24-Apr-2014 01:21: Error: Not on FX application thread; currentThread = Thread-104
+24-Apr-2014 01:21: Error: Not on FX application thread; currentThread = Thread-105
+24-Apr-2014 01:21: Error: null
+24-Apr-2014 01:21: Error: null
+24-Apr-2014 01:21: Error: null
+24-Apr-2014 01:21: Error: null
+24-Apr-2014 01:21: Error: null
+24-Apr-2014 01:21: Error: Not on FX application thread; currentThread = Thread-107
+24-Apr-2014 23:05: Index: 1, Size: 1
+24-Apr-2014 23:05: Index: 2, Size: 1
+24-Apr-2014 23:05: Index: 3, Size: 1
+24-Apr-2014 23:05: null
+24-Apr-2014 23:05: null
+24-Apr-2014 23:05: null
+24-Apr-2014 23:05: null
+24-Apr-2014 23:34: null
+24-Apr-2014 23:34: null
+24-Apr-2014 23:34: null
+24-Apr-2014 23:34: null
+24-Apr-2014 23:41: null
+24-Apr-2014 23:41: null
+24-Apr-2014 23:41: null
+24-Apr-2014 23:41: null
+25-Apr-2014 00:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:07: null
+25-Apr-2014 00:07: null
+25-Apr-2014 00:07: null
+25-Apr-2014 00:07: null
+25-Apr-2014 00:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:14: null
+25-Apr-2014 00:14: null
+25-Apr-2014 00:14: null
+25-Apr-2014 00:14: null
+25-Apr-2014 00:14: null
+25-Apr-2014 00:14: null
+25-Apr-2014 00:14: null
+25-Apr-2014 00:14: null
+25-Apr-2014 00:14: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:14: null
+25-Apr-2014 00:14: null
+25-Apr-2014 00:14: null
+25-Apr-2014 00:14: null
+25-Apr-2014 00:14: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:14: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:14: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:14: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:14: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:14: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:15: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:15: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:15: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:15: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:15: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:15: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:15: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:15: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:15: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:15: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:15: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:15: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:15: null
+25-Apr-2014 00:15: null
+25-Apr-2014 00:15: null
+25-Apr-2014 00:15: null
+25-Apr-2014 00:16: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:17: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:18: Error: ORA-02291: integrity constraint (PRCSE.USERS_USER_ROOM_FK) violated - parent key not found
+
+25-Apr-2014 00:19: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 00:19: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:10: Error handling query: IO Error: The Network Adapter could not establish the connection
+25-Apr-2014 15:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:10: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:11: null
+25-Apr-2014 15:11: null
+25-Apr-2014 15:11: null
+25-Apr-2014 15:11: null
+25-Apr-2014 15:11: Error: null
+25-Apr-2014 15:11: Error: null
+25-Apr-2014 15:11: Error: Not on FX application thread; currentThread = Thread-113
+25-Apr-2014 15:51: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:51: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:51: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:51: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:51: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:51: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:51: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:51: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:51: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:51: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:51: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:51: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:51: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:51: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:51: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:51: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:51: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:52: null
+25-Apr-2014 15:52: null
+25-Apr-2014 15:52: null
+25-Apr-2014 15:52: null
+25-Apr-2014 15:52: Error: null
+25-Apr-2014 15:52: Error: null
+25-Apr-2014 15:52: Error: null
+25-Apr-2014 15:52: Error: null
+25-Apr-2014 15:52: Error: null
+25-Apr-2014 15:52: Error: null
+25-Apr-2014 15:52: Error: null
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:53: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:54: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:55: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:55: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:55: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:55: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:55: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:55: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:58: null
+25-Apr-2014 15:58: null
+25-Apr-2014 15:58: null
+25-Apr-2014 15:58: null
+25-Apr-2014 15:58: Error: null
+25-Apr-2014 15:59: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:59: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:59: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:59: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:59: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:59: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:59: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:59: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:59: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:59: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:59: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:59: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:59: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:59: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:59: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:59: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 15:59: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:00: null
+25-Apr-2014 16:00: null
+25-Apr-2014 16:00: null
+25-Apr-2014 16:00: null
+25-Apr-2014 16:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:07: null
+25-Apr-2014 16:07: null
+25-Apr-2014 16:07: null
+25-Apr-2014 16:07: null
+25-Apr-2014 16:08: Error: null
+25-Apr-2014 16:08: Error: null
+25-Apr-2014 16:12: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:12: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:12: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:12: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:12: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:12: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:12: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:12: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:12: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:12: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:12: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:12: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:12: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:12: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:13: null
+25-Apr-2014 16:13: null
+25-Apr-2014 16:13: null
+25-Apr-2014 16:13: null
+25-Apr-2014 16:13: Error: null
+25-Apr-2014 16:13: Error: null
+25-Apr-2014 16:13: Error: null
+25-Apr-2014 16:13: Error: null
+25-Apr-2014 16:17: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:17: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:17: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:17: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:17: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:17: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:17: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:18: null
+25-Apr-2014 16:18: null
+25-Apr-2014 16:18: null
+25-Apr-2014 16:18: null
+25-Apr-2014 16:18: null
+25-Apr-2014 16:18: null
+25-Apr-2014 16:18: null
+25-Apr-2014 16:18: null
+25-Apr-2014 16:19: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:20: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:20: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:20: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:20: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:20: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:20: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:20: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:20: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:20: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:20: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:20: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:20: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:20: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:20: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:20: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:20: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:21: null
+25-Apr-2014 16:21: null
+25-Apr-2014 16:21: null
+25-Apr-2014 16:21: null
+25-Apr-2014 16:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+25-Apr-2014 16:23: null
+25-Apr-2014 16:23: null
+25-Apr-2014 16:23: null
+25-Apr-2014 16:23: null
+25-Apr-2014 16:23: Error: null
+25-Apr-2014 16:23: null
+25-Apr-2014 16:23: null
+25-Apr-2014 16:23: null
+25-Apr-2014 16:23: null
+25-Apr-2014 16:23: null
+25-Apr-2014 16:23: null
+25-Apr-2014 16:23: null
+25-Apr-2014 16:23: null
+25-Apr-2014 16:25: Error: null
+25-Apr-2014 16:25: null
+25-Apr-2014 16:25: null
+25-Apr-2014 16:25: null
+25-Apr-2014 16:25: null
+25-Apr-2014 16:25: null
+25-Apr-2014 16:25: null
+25-Apr-2014 16:25: null
+25-Apr-2014 16:25: null
+26-Apr-2014 16:23: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:23: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:23: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:23: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:23: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:23: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:23: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:23: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:23: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:24: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:24: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:24: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:24: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:24: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:24: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:24: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:24: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:24: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:24: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:24: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:24: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:24: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:24: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:24: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:24: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 16:26: null
+26-Apr-2014 16:26: null
+26-Apr-2014 16:26: null
+26-Apr-2014 16:26: null
+26-Apr-2014 16:26: Error: 1
+26-Apr-2014 16:26: Error: null
+26-Apr-2014 17:07: Error: null
+26-Apr-2014 17:07: Error: null
+26-Apr-2014 17:07: Error: Not on FX application thread; currentThread = Thread-43
+26-Apr-2014 17:07: Error: null
+26-Apr-2014 17:07: Error: null
+26-Apr-2014 17:07: Error: Not on FX application thread; currentThread = Thread-46
+26-Apr-2014 17:07: Error: null
+26-Apr-2014 17:07: Error: null
+26-Apr-2014 17:07: Error: Not on FX application thread; currentThread = Thread-49
+26-Apr-2014 17:07: Error: null
+26-Apr-2014 17:07: Error: null
+26-Apr-2014 17:07: Error handling operation: ORA-01722: invalid number
+
+26-Apr-2014 17:07: Error: Not on FX application thread; currentThread = Thread-56
+26-Apr-2014 17:07: Error: null
+26-Apr-2014 17:07: Error: null
+26-Apr-2014 17:07: Error: Not on FX application thread; currentThread = Thread-59
+26-Apr-2014 17:07: Error: null
+26-Apr-2014 17:07: Error: null
+26-Apr-2014 17:07: Error: Not on FX application thread; currentThread = Thread-62
+26-Apr-2014 17:07: Error: null
+26-Apr-2014 17:07: Error: null
+26-Apr-2014 17:08: Error: Not on FX application thread; currentThread = Thread-65
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: Not on FX application thread; currentThread = Thread-69
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: Not on FX application thread; currentThread = Thread-72
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: Not on FX application thread; currentThread = Thread-75
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: Not on FX application thread; currentThread = Thread-78
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: Not on FX application thread; currentThread = Thread-81
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: Not on FX application thread; currentThread = Thread-84
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: Not on FX application thread; currentThread = Thread-85
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: Not on FX application thread; currentThread = Thread-88
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: Not on FX application thread; currentThread = Thread-89
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: null
+26-Apr-2014 17:08: Error: Not on FX application thread; currentThread = Thread-92
+26-Apr-2014 17:09: Error: null
+26-Apr-2014 17:09: Error: null
+26-Apr-2014 17:09: Error: Not on FX application thread; currentThread = Thread-95
+26-Apr-2014 17:09: Error: null
+26-Apr-2014 17:09: Error: null
+26-Apr-2014 17:09: Error: Not on FX application thread; currentThread = Thread-98
+26-Apr-2014 17:09: Error: null
+26-Apr-2014 17:10: Error: null
+26-Apr-2014 17:10: Error: null
+26-Apr-2014 17:10: Error: Not on FX application thread; currentThread = Thread-100
+26-Apr-2014 17:10: null
+26-Apr-2014 17:10: null
+26-Apr-2014 17:10: null
+26-Apr-2014 17:10: null
+26-Apr-2014 17:10: Error: null
+26-Apr-2014 17:10: Error: null
+26-Apr-2014 17:10: Error: Not on FX application thread; currentThread = Thread-105
+26-Apr-2014 17:11: null
+26-Apr-2014 17:11: null
+26-Apr-2014 17:11: null
+26-Apr-2014 17:11: null
+26-Apr-2014 17:12: Error: Not on FX application thread; currentThread = Thread-45
+26-Apr-2014 17:14: Error: Not on FX application thread; currentThread = Thread-48
+26-Apr-2014 17:41: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 17:48: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 17:49: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 17:55: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 17:55: null
+26-Apr-2014 17:55: null
+26-Apr-2014 17:55: null
+26-Apr-2014 17:55: null
+26-Apr-2014 17:55: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 17:56: Error handling operation: ORA-01400: cannot insert NULL into ("PRCSE"."PAYMENTS"."PAYMENT_DUE")
+
+26-Apr-2014 17:57: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:00: Error handling query: Fail to convert to internal representation
+26-Apr-2014 18:00: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:00: Error handling query: Fail to convert to internal representation
+26-Apr-2014 18:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:07: null
+26-Apr-2014 18:07: null
+26-Apr-2014 18:07: null
+26-Apr-2014 18:07: null
+26-Apr-2014 18:07: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:09: Error handling query: Fail to convert to internal representation
+26-Apr-2014 18:09: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:10: null
+26-Apr-2014 18:10: null
+26-Apr-2014 18:10: null
+26-Apr-2014 18:10: null
+26-Apr-2014 18:11: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:13: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:13: Error handling query: Fail to convert to internal representation
+26-Apr-2014 18:14: null
+26-Apr-2014 18:14: null
+26-Apr-2014 18:14: null
+26-Apr-2014 18:14: null
+26-Apr-2014 18:14: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:16: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:16: Error handling query: Fail to convert to internal representation
+26-Apr-2014 18:16: null
+26-Apr-2014 18:16: null
+26-Apr-2014 18:16: null
+26-Apr-2014 18:16: null
+26-Apr-2014 18:16: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:17: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:17: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:19: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:19: Error handling query: Fail to convert to internal representation
+26-Apr-2014 18:19: Error: ORA-00060: deadlock detected while waiting for resource
+
+26-Apr-2014 18:19: Error: ORA-00060: deadlock detected while waiting for resource
+
+26-Apr-2014 18:20: null
+26-Apr-2014 18:20: null
+26-Apr-2014 18:20: null
+26-Apr-2014 18:20: null
+26-Apr-2014 18:20: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:21: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:22: Error handling query: Fail to convert to internal representation
+26-Apr-2014 18:22: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:23: null
+26-Apr-2014 18:23: null
+26-Apr-2014 18:23: null
+26-Apr-2014 18:23: null
+26-Apr-2014 18:23: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:24: Error: ORA-00060: deadlock detected while waiting for resource
+
+26-Apr-2014 18:28: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:28: null
+26-Apr-2014 18:28: null
+26-Apr-2014 18:28: null
+26-Apr-2014 18:28: null
+26-Apr-2014 18:29: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:29: Error handling operation: ORA-00917: missing comma
+
+26-Apr-2014 18:30: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 18:30: Error handling query: Fail to convert to internal representation
+26-Apr-2014 18:30: null
+26-Apr-2014 18:30: null
+26-Apr-2014 18:30: null
+26-Apr-2014 18:30: null
+26-Apr-2014 18:30: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 20:57: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 20:58: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 20:58: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 20:58: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 20:58: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 20:58: Error handling query: Fail to convert to internal representation
+26-Apr-2014 20:58: null
+26-Apr-2014 20:58: null
+26-Apr-2014 20:58: null
+26-Apr-2014 20:58: null
+26-Apr-2014 21:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:06: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:06: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:06: null
+26-Apr-2014 21:06: null
+26-Apr-2014 21:06: null
+26-Apr-2014 21:06: null
+26-Apr-2014 21:07: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:11: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:11: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:11: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:11: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:11: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:11: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:11: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:11: null
+26-Apr-2014 21:11: null
+26-Apr-2014 21:11: null
+26-Apr-2014 21:11: null
+26-Apr-2014 21:12: null
+26-Apr-2014 21:12: null
+26-Apr-2014 21:12: null
+26-Apr-2014 21:12: null
+26-Apr-2014 21:12: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:18: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:18: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:18: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:18: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:21: null
+26-Apr-2014 21:21: null
+26-Apr-2014 21:21: null
+26-Apr-2014 21:21: null
+26-Apr-2014 21:21: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:21: Error: null
+26-Apr-2014 21:26: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:26: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:26: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:26: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:26: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:26: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:26: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:26: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:26: null
+26-Apr-2014 21:26: null
+26-Apr-2014 21:26: null
+26-Apr-2014 21:26: null
+26-Apr-2014 21:34: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:34: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:34: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:34: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:34: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:34: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:34: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:34: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:34: null
+26-Apr-2014 21:34: null
+26-Apr-2014 21:34: null
+26-Apr-2014 21:34: null
+26-Apr-2014 21:34: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:34: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:35: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:35: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:35: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:35: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:35: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:35: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:35: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:35: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:36: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:36: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:36: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:36: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:36: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:36: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:36: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:36: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:37: null
+26-Apr-2014 21:37: null
+26-Apr-2014 21:37: null
+26-Apr-2014 21:37: null
+26-Apr-2014 21:37: Error: ORA-00904: "PROP_STATUS": invalid identifier
+
+26-Apr-2014 21:39: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:39: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:39: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:39: null
+26-Apr-2014 21:39: null
+26-Apr-2014 21:39: null
+26-Apr-2014 21:39: null
+26-Apr-2014 21:41: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:41: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:41: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:41: null
+26-Apr-2014 21:41: null
+26-Apr-2014 21:41: null
+26-Apr-2014 21:41: null
+26-Apr-2014 21:50: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:50: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:50: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:50: null
+26-Apr-2014 21:50: null
+26-Apr-2014 21:50: null
+26-Apr-2014 21:50: null
+26-Apr-2014 21:52: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:52: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:52: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:52: null
+26-Apr-2014 21:52: null
+26-Apr-2014 21:52: null
+26-Apr-2014 21:52: null
+26-Apr-2014 21:55: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:55: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:55: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:55: null
+26-Apr-2014 21:55: null
+26-Apr-2014 21:55: null
+26-Apr-2014 21:55: null
+26-Apr-2014 21:58: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:58: Error handling query: Fail to convert to internal representation
+26-Apr-2014 21:58: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:00: Error: null
+26-Apr-2014 22:00: Error: null
+26-Apr-2014 22:00: Error: Not on FX application thread; currentThread = Thread-62
+26-Apr-2014 22:00: Error: null
+26-Apr-2014 22:00: Error: null
+26-Apr-2014 22:00: Error: Not on FX application thread; currentThread = Thread-65
+26-Apr-2014 22:00: Error: null
+26-Apr-2014 22:00: Error: null
+26-Apr-2014 22:00: Error: Not on FX application thread; currentThread = Thread-68
+26-Apr-2014 22:00: Error: Not on FX application thread; currentThread = Thread-69
+26-Apr-2014 22:00: Error: Not on FX application thread; currentThread = Thread-71
+26-Apr-2014 22:00: Error: Not on FX application thread; currentThread = Thread-74
+26-Apr-2014 22:00: Error: null
+26-Apr-2014 22:00: Error: null
+26-Apr-2014 22:00: Error: Not on FX application thread; currentThread = Thread-81
+26-Apr-2014 22:00: null
+26-Apr-2014 22:00: null
+26-Apr-2014 22:00: null
+26-Apr-2014 22:00: null
+26-Apr-2014 22:04: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:04: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:04: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:04: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:05: null
+26-Apr-2014 22:05: null
+26-Apr-2014 22:05: null
+26-Apr-2014 22:05: null
+26-Apr-2014 22:07: Error: null
+26-Apr-2014 22:08: Error: null
+26-Apr-2014 22:08: Error: null
+26-Apr-2014 22:15: Error: null
+26-Apr-2014 22:26: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:26: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:26: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:26: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:26: null
+26-Apr-2014 22:26: null
+26-Apr-2014 22:26: null
+26-Apr-2014 22:26: null
+26-Apr-2014 22:28: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:28: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:28: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:28: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:28: null
+26-Apr-2014 22:28: null
+26-Apr-2014 22:28: null
+26-Apr-2014 22:28: null
+26-Apr-2014 22:29: Error: null
+26-Apr-2014 22:29: Error: null
+26-Apr-2014 22:29: Error: Not on FX application thread; currentThread = Thread-71
+26-Apr-2014 22:30: Error: -1
+26-Apr-2014 22:31: Error: null
+26-Apr-2014 22:31: Error: null
+26-Apr-2014 22:31: Error: Not on FX application thread; currentThread = Thread-78
+26-Apr-2014 22:31: Error: null
+26-Apr-2014 22:31: Error: null
+26-Apr-2014 22:31: Error: Not on FX application thread; currentThread = Thread-81
+26-Apr-2014 22:31: Error: Not on FX application thread; currentThread = Thread-84
+26-Apr-2014 22:31: Error handling operation: ORA-01400: cannot insert NULL into ("PRCSE"."MESSAGES"."MESSAGE_BODY")
+
+26-Apr-2014 22:34: Error: Not on FX application thread; currentThread = Thread-86
+26-Apr-2014 22:34: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:34: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:34: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:35: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:37: null
+26-Apr-2014 22:37: null
+26-Apr-2014 22:37: null
+26-Apr-2014 22:37: null
+26-Apr-2014 22:38: Error handling operation: ORA-01400: cannot insert NULL into ("PRCSE"."MESSAGES"."MESSAGE_BODY")
+
+26-Apr-2014 22:38: Error: Not on FX application thread; currentThread = Thread-70
+26-Apr-2014 22:41: Error handling operation: ORA-01400: cannot insert NULL into ("PRCSE"."MESSAGES"."MESSAGE_BODY")
+
+26-Apr-2014 22:42: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:42: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:42: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:42: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:43: null
+26-Apr-2014 22:43: null
+26-Apr-2014 22:43: null
+26-Apr-2014 22:43: null
+26-Apr-2014 22:43: Error: null
+26-Apr-2014 22:44: Error: Not on FX application thread; currentThread = Thread-67
+26-Apr-2014 22:45: Error: Not on FX application thread; currentThread = Thread-70
+26-Apr-2014 22:46: Error: Not on FX application thread; currentThread = Thread-73
+26-Apr-2014 22:46: Error: null
+26-Apr-2014 22:46: Error: null
+26-Apr-2014 22:46: Error: null
+26-Apr-2014 22:46: Error: null
+26-Apr-2014 22:46: Error: null
+26-Apr-2014 22:46: Error: null
+26-Apr-2014 22:46: Error: Not on FX application thread; currentThread = Thread-77
+26-Apr-2014 22:46: Error: null
+26-Apr-2014 22:46: Error: null
+26-Apr-2014 22:46: Error: null
+26-Apr-2014 22:46: Error: null
+26-Apr-2014 22:46: Error: null
+26-Apr-2014 22:46: Error: null
+26-Apr-2014 22:46: Error: null
+26-Apr-2014 22:46: Error: null
+26-Apr-2014 22:49: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:49: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:49: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:49: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:50: null
+26-Apr-2014 22:50: null
+26-Apr-2014 22:50: null
+26-Apr-2014 22:50: null
+26-Apr-2014 22:51: Error: Not on FX application thread; currentThread = Thread-65
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: Not on FX application thread; currentThread = Thread-67
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: Not on FX application thread; currentThread = Thread-72
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:51: Error: null
+26-Apr-2014 22:52: Error: null
+26-Apr-2014 22:52: Error: null
+26-Apr-2014 22:52: Error: Not on FX application thread; currentThread = Thread-74
+26-Apr-2014 22:52: Error: null
+26-Apr-2014 22:52: Error: null
+26-Apr-2014 22:52: Error: null
+26-Apr-2014 22:52: Error: null
+26-Apr-2014 22:54: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:54: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:54: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:54: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:54: null
+26-Apr-2014 22:54: null
+26-Apr-2014 22:54: null
+26-Apr-2014 22:54: null
+26-Apr-2014 22:55: Error: Not on FX application thread; currentThread = Thread-62
+26-Apr-2014 22:55: Error: null
+26-Apr-2014 22:55: Error: null
+26-Apr-2014 22:55: Error: null
+26-Apr-2014 22:55: Error: null
+26-Apr-2014 22:59: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:59: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:59: Error handling query: Fail to convert to internal representation
+26-Apr-2014 22:59: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:00: null
+26-Apr-2014 23:00: null
+26-Apr-2014 23:00: null
+26-Apr-2014 23:00: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: Not on FX application thread; currentThread = Thread-64
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: Not on FX application thread; currentThread = Thread-65
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:00: Error: null
+26-Apr-2014 23:01: Error: Not on FX application thread; currentThread = Thread-66
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: Not on FX application thread; currentThread = Thread-70
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: Not on FX application thread; currentThread = Thread-73
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: Not on FX application thread; currentThread = Thread-74
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:01: Error: null
+26-Apr-2014 23:03: Error: Not on FX application thread; currentThread = Thread-75
+26-Apr-2014 23:03: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:03: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:03: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:03: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:04: null
+26-Apr-2014 23:04: null
+26-Apr-2014 23:04: null
+26-Apr-2014 23:04: null
+26-Apr-2014 23:04: Error: Not on FX application thread; currentThread = Thread-63
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:04: Error: Not on FX application thread; currentThread = Thread-65
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:04: Error: Not on FX application thread; currentThread = Thread-66
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:04: Error: null
+26-Apr-2014 23:05: Error: Not on FX application thread; currentThread = Thread-67
+26-Apr-2014 23:05: Error: null
+26-Apr-2014 23:05: Error: null
+26-Apr-2014 23:05: Error: null
+26-Apr-2014 23:05: Error: null
+26-Apr-2014 23:05: Error: null
+26-Apr-2014 23:05: Error: Not on FX application thread; currentThread = Thread-68
+26-Apr-2014 23:05: Error: null
+26-Apr-2014 23:05: Error: null
+26-Apr-2014 23:05: Error: null
+26-Apr-2014 23:05: Error: null
+26-Apr-2014 23:05: Error: Not on FX application thread; currentThread = Thread-69
+26-Apr-2014 23:07: Error: null
+26-Apr-2014 23:07: Error: null
+26-Apr-2014 23:07: Error: Not on FX application thread; currentThread = Thread-71
+26-Apr-2014 23:07: Error: null
+26-Apr-2014 23:07: Error: null
+26-Apr-2014 23:07: Error: Not on FX application thread; currentThread = Thread-74
+26-Apr-2014 23:08: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:08: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:08: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:08: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:08: null
+26-Apr-2014 23:08: null
+26-Apr-2014 23:08: null
+26-Apr-2014 23:08: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: Not on FX application thread; currentThread = Thread-65
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: Not on FX application thread; currentThread = Thread-66
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: Not on FX application thread; currentThread = Thread-67
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: Not on FX application thread; currentThread = Thread-69
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: Not on FX application thread; currentThread = Thread-72
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: Not on FX application thread; currentThread = Thread-73
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: Not on FX application thread; currentThread = Thread-76
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:09: Error: null
+26-Apr-2014 23:10: Error: Not on FX application thread; currentThread = Thread-78
+26-Apr-2014 23:10: Error: null
+26-Apr-2014 23:10: Error: null
+26-Apr-2014 23:10: Error: null
+26-Apr-2014 23:10: Error: null
+26-Apr-2014 23:10: Error: null
+26-Apr-2014 23:10: Error: Not on FX application thread; currentThread = Thread-79
+26-Apr-2014 23:10: Error: null
+26-Apr-2014 23:10: Error: null
+26-Apr-2014 23:10: Error: null
+26-Apr-2014 23:10: Error: null
+26-Apr-2014 23:10: Error: Not on FX application thread; currentThread = Thread-80
+26-Apr-2014 23:10: Error: null
+26-Apr-2014 23:10: Error: null
+26-Apr-2014 23:10: Error: Not on FX application thread; currentThread = Thread-82
+26-Apr-2014 23:10: Error: null
+26-Apr-2014 23:10: Error: null
+26-Apr-2014 23:10: Error: Not on FX application thread; currentThread = Thread-85
+26-Apr-2014 23:10: Error: null
+26-Apr-2014 23:10: Error: null
+26-Apr-2014 23:10: Error: Not on FX application thread; currentThread = Thread-90
+26-Apr-2014 23:11: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:11: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:11: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:11: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:12: null
+26-Apr-2014 23:12: null
+26-Apr-2014 23:12: null
+26-Apr-2014 23:12: null
+26-Apr-2014 23:13: Error: null
+26-Apr-2014 23:13: Error: null
+26-Apr-2014 23:13: Error: null
+26-Apr-2014 23:13: Error: null
+26-Apr-2014 23:14: Error: null
+26-Apr-2014 23:14: Error: null
+26-Apr-2014 23:14: Error: null
+26-Apr-2014 23:14: Error: null
+26-Apr-2014 23:15: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:15: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:15: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:15: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:16: null
+26-Apr-2014 23:16: null
+26-Apr-2014 23:16: null
+26-Apr-2014 23:16: null
+26-Apr-2014 23:16: Error: null
+26-Apr-2014 23:16: Error: null
+26-Apr-2014 23:16: Error: null
+26-Apr-2014 23:16: Error: null
+26-Apr-2014 23:16: Error: null
+26-Apr-2014 23:17: Error: Not on FX application thread; currentThread = Thread-68
+26-Apr-2014 23:17: Error: null
+26-Apr-2014 23:17: Error: null
+26-Apr-2014 23:17: Error: null
+26-Apr-2014 23:17: Error: null
+26-Apr-2014 23:17: Error: Not on FX application thread; currentThread = Thread-71
+26-Apr-2014 23:17: Error: null
+26-Apr-2014 23:17: Error: null
+26-Apr-2014 23:17: Error: null
+26-Apr-2014 23:17: Error: null
+26-Apr-2014 23:17: Error: null
+26-Apr-2014 23:17: Error: null
+26-Apr-2014 23:17: Error: null
+26-Apr-2014 23:17: Error: null
+26-Apr-2014 23:17: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:17: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:17: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:17: Error handling query: Fail to convert to internal representation
+26-Apr-2014 23:18: Error: Not on FX application thread; currentThread = Thread-62
+26-Apr-2014 23:18: Error: null
+26-Apr-2014 23:18: Error: Not on FX application thread; currentThread = Thread-64
+26-Apr-2014 23:19: Error: null
+26-Apr-2014 23:19: Error: null
+26-Apr-2014 23:19: Error: null
+26-Apr-2014 23:19: Error: null
+26-Apr-2014 23:19: Error: null
+26-Apr-2014 23:19: Error: Not on FX application thread; currentThread = Thread-75
+26-Apr-2014 23:19: Error: null
+26-Apr-2014 23:19: Error: null
+26-Apr-2014 23:19: Error: null
+26-Apr-2014 23:19: Error: null
+26-Apr-2014 23:19: Error: Not on FX application thread; currentThread = Thread-78
+26-Apr-2014 23:19: Error: null
+26-Apr-2014 23:19: Error: null
+26-Apr-2014 23:19: Error: Not on FX application thread; currentThread = Thread-79
+26-Apr-2014 23:19: Error: null
+26-Apr-2014 23:19: Error: null
+26-Apr-2014 23:19: Error: null
+26-Apr-2014 23:19: Error: null
+26-Apr-2014 23:20: Error: Not on FX application thread; currentThread = Thread-82
+26-Apr-2014 23:20: Error handling operation: ORA-00917: missing comma
+
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: Not on FX application thread; currentThread = Thread-84
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: Not on FX application thread; currentThread = Thread-85
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: Not on FX application thread; currentThread = Thread-91
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: null
+26-Apr-2014 23:20: Error: Not on FX application thread; currentThread = Thread-92
+27-Apr-2014 00:03: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:03: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:03: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:03: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:03: null
+27-Apr-2014 00:03: null
+27-Apr-2014 00:03: null
+27-Apr-2014 00:03: null
+27-Apr-2014 00:05: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:05: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:05: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:05: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:05: null
+27-Apr-2014 00:05: null
+27-Apr-2014 00:05: null
+27-Apr-2014 00:05: null
+27-Apr-2014 00:07: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:07: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:07: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:07: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:07: null
+27-Apr-2014 00:07: null
+27-Apr-2014 00:07: null
+27-Apr-2014 00:07: null
+27-Apr-2014 00:08: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:08: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:08: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:08: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:08: null
+27-Apr-2014 00:08: null
+27-Apr-2014 00:08: null
+27-Apr-2014 00:08: null
+27-Apr-2014 00:10: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:10: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:10: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:10: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:11: Error: null
+27-Apr-2014 00:11: Error: null
+27-Apr-2014 00:11: Error: null
+27-Apr-2014 00:11: Error: null
+27-Apr-2014 00:11: Error: null
+27-Apr-2014 00:11: Error: null
+27-Apr-2014 00:11: Error: Not on FX application thread; currentThread = Thread-61
+27-Apr-2014 00:11: Error: null
+27-Apr-2014 00:11: Error: null
+27-Apr-2014 00:11: Error: Not on FX application thread; currentThread = Thread-64
+27-Apr-2014 00:11: Error: null
+27-Apr-2014 00:11: Error: null
+27-Apr-2014 00:11: Error: null
+27-Apr-2014 00:12: Error: null
+27-Apr-2014 00:12: Error: null
+27-Apr-2014 00:12: Error: null
+27-Apr-2014 00:12: Error: null
+27-Apr-2014 00:12: Error: null
+27-Apr-2014 00:12: Error: null
+27-Apr-2014 00:12: Error: null
+27-Apr-2014 00:12: Error: Not on FX application thread; currentThread = Thread-70
+27-Apr-2014 00:12: Error: null
+27-Apr-2014 00:12: Error: null
+27-Apr-2014 00:12: Error: null
+27-Apr-2014 00:12: Error: Not on FX application thread; currentThread = Thread-71
+27-Apr-2014 00:12: Error: null
+27-Apr-2014 00:12: null
+27-Apr-2014 00:12: null
+27-Apr-2014 00:12: null
+27-Apr-2014 00:12: null
+27-Apr-2014 00:15: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:15: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:15: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:15: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:15: null
+27-Apr-2014 00:15: null
+27-Apr-2014 00:15: null
+27-Apr-2014 00:15: null
+27-Apr-2014 00:16: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:16: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:16: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:16: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:16: null
+27-Apr-2014 00:16: null
+27-Apr-2014 00:16: null
+27-Apr-2014 00:16: null
+27-Apr-2014 00:17: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:17: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:18: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:18: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:18: null
+27-Apr-2014 00:18: null
+27-Apr-2014 00:18: null
+27-Apr-2014 00:18: null

@@ -157,7 +157,7 @@ public class Database implements Callable {
             while(res.next()) {
                 Property p = new Property(res.getInt("property_id"), res.getString("prop_track_code"), res.getString("addr_line_1"),
                         res.getString("addr_line_2"), res.getString("addr_postcode"), res.getString("addr_district"), res.getString("city_name"),
-                        res.getString("prop_details"), res.getInt("prop_num_rooms"));
+                        res.getString("prop_details"), res.getInt("prop_num_rooms"), res.getString("google_map_code"));
 
                 // Builds and adds all rooms relative to this property
                 buildRooms(p);
@@ -309,7 +309,7 @@ public class Database implements Callable {
             int user_id = t.getUserId();
             // Make a connection to the database
             ResultSet res = query("SELECT * FROM payments LEFT JOIN users ON payments.user_id = users.user_id WHERE payments.user_id = " + user_id +
-                                  " AND users.user_permissions = 'USER' ORDER BY payment_received DESC FETCH NEXT 5 ROWS ONLY");
+                                  " AND users.user_permissions = 'USER' ORDER BY payment_received DESC FETCH NEXT " + amount_to_fetch + " ROWS ONLY");
 
             while(res.next()) {
                 Payment p = new Payment(t, res.getDouble("payment_amount"), res.getDate("payment_received"), res.getInt("payment_id"),

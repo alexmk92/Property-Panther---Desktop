@@ -28,14 +28,13 @@ import javafx.util.Callback;
 import javafx.util.Duration;
 import prcse.pp.model.Tenant;
 import prcse.pp.model.Room;
-import prcse.pp.view.MessageCell;
+import prcse.pp.model.UserList;
+import prcse.pp.view.*;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import prcse.pp.model.Property;
-import prcse.pp.view.PropertyCell;
-import prcse.pp.view.RoomCell;
 
 
 /**
@@ -178,8 +177,36 @@ public class PropertyController implements Initializable, ControlledScreen {
     private Button btnCloseEditRoom;
     @FXML // fx:id="btnRoomSave"
     private Button btnRoomSave;
-
-
+    @FXML // fx:id="tenantWrap"
+    private Pane tenantWrap;
+    @FXML // fx:id="searchName"
+    private TextField searchName;
+    @FXML // fx:id="lstTenants"
+    private ListView lstTenants;
+    @FXML // fx:id="btnCancel"
+    private Button btnCancel;
+    @FXML // fx:id="btnAssignTenant"
+    private Button btnAssignTenant;
+    @FXML // fx:id="editPropertyWrap"
+    private Pane editPropertyWrap;
+    @FXML // fx:id="txtChangeAddr1"
+    private TextField txtChangeAddr1;
+    @FXML // fx:id="txtChangeAddr2"
+    private TextField txtChangeAddr2;
+    @FXML // fx:id="txtChangePostcode"
+    private TextField txtChangePostcode;
+    @FXML // fx:id="txtChangeCity"
+    private TextField txtChangeCity;
+    @FXML // fx:id="txtChangeMapCode"
+    private TextField txtChangeMapCode;
+    @FXML // fx:id="btnUpdateProperty"
+    private Button btnUpdateProperty;
+    @FXML // fx:id="lblEditingProperty"
+    private Label lblEditingProperty;
+    @FXML // fx:id="btnHideEditProperty"
+    private Button btnHideEditProperty;
+    @FXML // fx:id="btnRemoveTenant"
+    private Button btnRemoveTenant;
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
@@ -194,10 +221,13 @@ public class PropertyController implements Initializable, ControlledScreen {
 
     // Null property object to be set by setter method
     private Property currProperty = null;
-    private Room     currRoom = null;
+    private Room     currRoom     = null;
 
     // Determines if the screen has loaded or not
     private Boolean objectsLoaded = false;
+
+    // List of searched users -- default to the tenant list on the homescreen (defaults on body getting focus)
+    private UserList users;
 
     /**
      * Initializes the controller class.
@@ -212,13 +242,17 @@ public class PropertyController implements Initializable, ControlledScreen {
         overlay.setVisible(false);
         roomDetailsWrap.setVisible(false);
         editRoomWrap.setVisible(false);
+        tenantWrap.setVisible(false);
+        editPropertyWrap.setVisible(false);
 
 
         body.setOnMouseEntered(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
+                users = ScreensFramework.tenants;
                 if(objectsLoaded == false) {
                     populatePropertyList();
+                    setSearchResults(ScreensFramework.tenants);
                     objectsLoaded = true;
                 }
             }
@@ -332,8 +366,11 @@ public class PropertyController implements Initializable, ControlledScreen {
                 propertyDetails.setVisible(false);
                 roomDetailsWrap.setVisible(false);
                 editRoomWrap.setVisible(false);
+                tenantWrap.setVisible(false);
+                editPropertyWrap.setVisible(false);
                 lstRooms.setVisible(true);
                 hideOverlay();
+                hideTenants();
             }
         });
         btnCloseEditRoom.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -341,9 +378,73 @@ public class PropertyController implements Initializable, ControlledScreen {
             public void handle(MouseEvent mouseEvent) {
                 editRoomWrap.setVisible(false);
                 roomDetailsWrap.setVisible(true);
+                tenantWrap.setVisible(false);
             }
         });
+        btnCancel.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                hideTenants();
+            }
+        });
+        btnAssignTenant.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                Tenant t = users.getUserAt(lstTenants.getSelectionModel().getSelectedIndex());
+                Room   r = getCurrRoom();
 
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Occupy the room with user t  - pass true as we want to insert a new payment object here
+                        if(t != null) {
+                            if(t.getRoom() == null) {
+                                t.setRoom(r);
+                                r.occupied(t, true);
+                            } else {
+                                t.unsetRoom();
+                                t.setRoom(r);
+                                r.occupied(t, true);
+                            }
+                            showRoomDetails(getCurrRoom());
+
+                            showRooms(false);
+                            hideTenants();
+                        }
+                    }
+                }).start();
+            }
+        });
+        btnRemoveTenant.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                Room   r = getCurrRoom();
+                Tenant t = getCurrRoom().getTenant();
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Occupy the room with user t  - pass true as we want to insert a new payment object here
+                        if(t != null) {
+                            t.unsetRoom();
+                            r.vacant();
+                            showRoomDetails(getCurrRoom());
+
+                            refreshList(lstRooms);
+                            showRooms(false);
+                        }
+                    }
+                }).start();
+            }
+        });
+        btnHideEditProperty.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                editPropertyWrap.setVisible(false);
+                populateRoomList(getCurrProperty());
+                lstRooms.setVisible(true);
+            }
+        });
 
         // Utility controls
         closeBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -456,7 +557,132 @@ public class PropertyController implements Initializable, ControlledScreen {
                 }
             }
         });
+        btnAddTenant.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                populateTenantList();
+                showTenants();
+            }
+        });
+        btnUpdateProperty.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String update = "UPDATE properties SET addr_line_1 = '" + txtChangeAddr1.getText() + "', addr_line_2 = '" + txtChangeAddr2.getText()
+                                + "', addr_postcode = '" + txtChangePostcode.getText() +  "', city_name = '" + txtChangeCity.getText()
+                                + "', google_map_code= '" + txtChangeMapCode.getText() + "' WHERE property_id =" + getCurrProperty().getPropertyId();
+                        ScreensFramework.db.update(update);
+                    }
+                }).start();
+            }
+        });
+        searchName.setOnKeyTyped(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                String   name    = searchName.getText();
+                UserList results = new UserList();
 
+                // Begin searching through the userlist
+                if(name.length() > 0) {
+                    for(int i = 0; i < ScreensFramework.tenants.size(); i++) {
+                        Tenant t = ScreensFramework.tenants.getUserAt(i);
+                        if(t.getName().substring(0, name.length()).toLowerCase().equals(name.toLowerCase())) {
+                            results.addUser(t);
+                        } else {
+                            setSearchResults(ScreensFramework.tenants);
+                        }
+                        setSearchResults(results);
+                        populateTenantList();
+                    }
+                } else {
+                    setSearchResults(ScreensFramework.tenants);
+                    populateTenantList();
+                }
+            }
+        });
+    }
+
+    /**
+     * Refreshes a given listview
+     * @param list the listview we are refreshing
+     */
+    private void refreshList(ListView list) {
+        ObservableList items = list.getItems();
+        list.setItems(null);
+        list.setItems(items);
+    }
+
+    /**
+     * Populates the tenant ListView
+     */
+    private void populateTenantList() {
+
+        // Zero the index each time the list view is repopulated to
+        // bind to the correct button
+        index = 0;
+
+        // Refresh the lists contents to null
+        lstTenants.setItems(null);
+
+        // Observable list containing items to add
+        ObservableList tenants = populateTenantsObservable(getSearchResults());
+
+        // Set the items returned by populateObservable(T);
+        lstTenants.setItems(tenants);
+
+        // Use a cell factory for custom styling
+        lstTenants.setCellFactory(new Callback<ListView, ListCell>() {
+            @Override
+            public ListCell call(ListView listView) {
+                Tenant t = ScreensFramework.tenants.getUserAt(index);
+                UserCellSmall uCell = new UserCellSmall(index, thisController, t);
+                uCell.getStyleClass().add("lineBottom");
+                index++;
+                return uCell;
+            }
+        });
+    }
+
+    /**
+     * Populates an observable list, this needs to be seperated into
+     * its own method to allow for the list to be refreshed from the
+     * cellfactory
+     * @return an observable array of objects to populate the list
+     */
+    private ObservableList populateTenantsObservable(ArrayList<Tenant> tenantArray) {
+
+        ObservableList tenants = FXCollections.observableArrayList();
+
+        // Loop through the session holders Message array and create a listview item
+        for(int i = 0; i < tenantArray.size(); i++) {
+
+            Tenant t = tenantArray.get(i);
+
+            // Add to observable
+            tenants.add(t.getName());
+        }
+        return tenants;
+    }
+
+    /**
+     * Returns a UserList containing the current search results
+     */
+    private ArrayList getSearchResults() {
+        ArrayList tenants = new ArrayList();
+        for(int i = 0; i < this.users.size(); i++) {
+            tenants.add(users.getUserAt(i));
+        }
+        return tenants;
+    }
+
+    /**
+     * Sets the searchResults
+     * @param searchedTenants a UserList of tenants in the current list
+     */
+    private void setSearchResults(UserList searchedTenants) {
+        this.users = searchedTenants;
     }
 
     /**
@@ -620,14 +846,45 @@ public class PropertyController implements Initializable, ControlledScreen {
                 Tenant occupant = thisRoom.getTenant();
                 lblTenantName.setText(occupant.getName());
                 btnAddTenant.setVisible(false);
+                btnRemoveTenant.setVisible(true);
             }
         } else {
             occupiedWrap.setVisible(true);
             lblTenantName.setText("No occupant");
             btnAddTenant.setVisible(true);
+            btnRemoveTenant.setVisible(false);
         }
 
         lblRoomPrice.setText(String.valueOf("£" + thisRoom.getPrice()));
+    }
+
+    /**
+     * Shows the current details of the room
+     */
+    public void showEditDetails() throws NullPointerException {
+        animateOverlay();
+        roomDetailsWrap.setVisible(false);
+        editRoomWrap.setVisible(false);
+        propertyDetails.setVisible(true);
+        editPropertyWrap.setVisible(true);
+        lstRooms.setVisible(false);
+
+        Property p = getCurrProperty();
+
+        lblAddr1.setText(p.getAddressLine1() + ", " + p.getCity());
+        lblNumRooms.setText(String.valueOf(p.numRooms()) + " bedroom property");
+        lblEditingProperty.setText("Editing: " + p.getAddressLine1());
+
+        // Set the properties name label
+        txtChangeAddr1.setText(p.getAddressLine1());
+        if(p.getAddressLine2().length() > 0){
+            txtChangeAddr2.setText(p.getAddressLine2());
+        } else {
+            txtChangeAddr2.setText("");
+        }
+        txtChangeCity.setText(p.getCity());
+        txtChangePostcode.setText(p.getPostcode());
+        txtChangeMapCode.setText(p.getMapCode());
     }
 
     /**
@@ -735,6 +992,31 @@ public class PropertyController implements Initializable, ControlledScreen {
         btnUserSearch.getStyleClass().remove("searching");
     }
 
+    public void showTenants() {
+        tenantWrap.setVisible(true);
+        final Timeline slideOut = new Timeline();
+        slideOut.setCycleCount(1);
+        slideOut.setAutoReverse(false);
+        final KeyValue kv1 = new KeyValue(tenantWrap.translateXProperty(), 302);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(250), kv1);
+        final KeyValue kv2 = new KeyValue(propertyDetails.translateXProperty(), -120);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(250), kv2);
+        slideOut.getKeyFrames().addAll(kf1, kf2);
+        slideOut.play();
+    }
+
+    public void hideTenants() throws NullPointerException {
+        final Timeline slideOut = new Timeline();
+        slideOut.setCycleCount(1);
+        slideOut.setAutoReverse(false);
+        final KeyValue kv1 = new KeyValue(tenantWrap.translateXProperty(), 0);
+        final KeyFrame kf1 = new KeyFrame(Duration.millis(500), kv1);
+        final KeyValue kv2 = new KeyValue(propertyDetails.translateXProperty(), 0);
+        final KeyFrame kf2 = new KeyFrame(Duration.millis(250), kv2);
+        slideOut.getKeyFrames().addAll(kf1, kf2);
+        slideOut.play();
+    }
+
     public void slideTitleIn()
     {
         final Timeline slideDown = new Timeline();
@@ -760,6 +1042,98 @@ public class PropertyController implements Initializable, ControlledScreen {
         }
     }
 
+    /**
+     * Animates the scene out on a new Thread to allow the animation to play through without being
+     * interrupted by the main thread, styles are applied to show the new active button
+     */
+    private void nextForm(final String ID)
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    clearStyles();
+                    switch(ID) {
+                        case "Dashboard":
+                            nav_bg1.getStyleClass().addAll("active");
+                            nav_icon1.getStyleClass().add("active");
+                            accent1.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Tenant":
+                            nav_bg2.getStyleClass().addAll("active");
+                            nav_icon2.getStyleClass().add("active");
+                            accent2.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Properties":
+                            nav_bg3.getStyleClass().addAll("active");
+                            nav_icon3.getStyleClass().add("active");
+                            accent3.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Payments":
+                            nav_bg4.getStyleClass().addAll("active");
+                            nav_icon4.getStyleClass().add("active");
+                            accent4.getStyleClass().addAll("active", "show");
+                            break;
+                        case "Messages":
+                            nav_bg5.getStyleClass().addAll("active");
+                            nav_icon5.getStyleClass().add("active");
+                            accent5.getStyleClass().addAll("active", "show");
+                            break;
+                    }
+
+                    // Animate the scene
+                    //animateOut();
+                    Thread.sleep(300);
+                } catch(Exception e )
+                {
+                    System.out.println("There was an error handling the animation...");
+                }
+
+                // Go to our view.
+                myController.setScreen(ID);
+            }
+        }).start();
+
+        //objectsSet = false;
+    }
+
+    /**
+     * Clears the styles on the current button
+     */
+    private void clearStyles()
+    {
+        // Active state for this window
+        nav_icon2.getStyleClass().remove("active");
+        nav_bg2.getStyleClass().remove("active");
+        accent2.getStyleClass().remove("show");
+    }
+
+    /**
+     * Reset the navigation styles to make this current window the active one, if we don't call this method
+     * then the next time we load this window form the HashMap, the wrong active state shall be applied
+     */
+    private void resetStyles()
+    {
+        // Active state for this window
+        nav_icon3.getStyleClass().add("active");
+        nav_bg3.getStyleClass().add("active");
+        accent3.getStyleClass().addAll("active", "show");
+
+        // Default styles for every other nav element
+        nav_icon1.getStyleClass().remove("active");
+        accent1.getStyleClass().removeAll("active", "show");
+        nav_bg1.getStyleClass().remove("active");
+        nav_icon4.getStyleClass().remove("active");
+        accent4.getStyleClass().removeAll("active", "show");
+        nav_bg4.getStyleClass().remove("active");
+        nav_icon2.getStyleClass().remove("active");
+        accent2.getStyleClass().removeAll("active", "show");
+        nav_bg2.getStyleClass().remove("active");
+        nav_icon5.getStyleClass().remove("active");
+        accent5.getStyleClass().removeAll("active", "show");
+        nav_bg5.getStyleClass().remove("active");
+    }
+
     // Set the parent of the new screen
     public void setScreenParent(ScreensController screenParent){
         myController = screenParent;
@@ -768,42 +1142,42 @@ public class PropertyController implements Initializable, ControlledScreen {
     @FXML
     private void goToDashboard(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen1ID);
+        nextForm(ScreensFramework.screen1ID);
     }
     @FXML
     private void goToUsers(ActionEvent event){
-
-        myController.setScreen(ScreensFramework.screen2ID);
+        hideUsers();
+        nextForm(ScreensFramework.screen2ID);
     }
     @FXML
     private void goToProperties(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen3ID);
+        nextForm(ScreensFramework.screen3ID);
     }
     @FXML
     private void goToPayments(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen4ID);
+        nextForm(ScreensFramework.screen4ID);
     }
     @FXML
     private void goToMessages(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen5ID);
+        nextForm(ScreensFramework.screen5ID);
     }
     @FXML
     private void goToSettings(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen6ID);
+        nextForm(ScreensFramework.screen6ID);
     }
     @FXML
     private void goToAddUser(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen7ID);
+        nextForm(ScreensFramework.screen7ID);
     }
     @FXML
     private void goToAllUsers(ActionEvent event){
         hideUsers();
-        myController.setScreen(ScreensFramework.screen8ID);
+        nextForm(ScreensFramework.screen8ID);
     }
 }
 

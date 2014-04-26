@@ -29,6 +29,7 @@ public class Property implements ISubject{
     private String         details;
     private int            noOfRooms;
     private PropertyStatus propStatus;
+    private String         mapCode;
 
     // arraylist of payments associated with this property
     private ArrayList<Payment> payments;
@@ -70,7 +71,7 @@ public class Property implements ISubject{
      * @param noRooms the number of rooms in that property
      */
     public Property(int propertyId, String trackCode, String address1, String address2, String postcode,
-                    String district, String city, String details, int noRooms)
+                    String district, String city, String details, int noRooms, String mapCode)
     {
         // Initialise a new array list of rooms
         this.rooms = new RoomList();
@@ -87,6 +88,7 @@ public class Property implements ISubject{
         this.details = details;
         this.noOfRooms = this.rooms.getNumRooms();
         this.propStatus = getStatus();
+        this.mapCode = mapCode;
     }
 
     /**
@@ -136,6 +138,21 @@ public class Property implements ISubject{
         }
 
         return allVacant;
+    }
+
+    /**
+     * Returns the map code
+     */
+    public String getMapCode() {
+        return this.mapCode;
+    }
+
+    /**
+     * Sets the map code
+     * @param newCode - the new mapcode we are setting
+     */
+    public void setMapCode(String newCode) {
+        this.mapCode = newCode;
     }
 
     /**
@@ -334,8 +351,13 @@ public class Property implements ISubject{
     public void setPropStatus(PropertyStatus propStatus) {
         this.propStatus = propStatus;
     }
+
     public String  getFullAddress() {
-        return addressLine1 + " " + addressLine2 + " " + city + " " + details + " " + postcode + ".";
+        if(addressLine2.equals(null) || addressLine2.length() < 3){
+            return addressLine1 + "\n" + city + "\n" + postcode;
+        } else {
+            return addressLine1 + ",\n" + addressLine2 + "\n" + postcode;
+        }
     }
 
 

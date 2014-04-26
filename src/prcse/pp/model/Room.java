@@ -117,10 +117,14 @@ public class Room implements ISubject, Serializable {
      * Specifies that the room is now occupied and describes the tenant
      * who occupies that room.
      * @param tenant the tenant who is renting the room
+     * @param updating - if we arent loading from the db and we are assigning a user, then we
+     *                   want to pass True to insert a pending payment for that user.
      */
-    public void occupied(Tenant tenant){
+    public void occupied(Tenant tenant, Boolean updating){
         this.tenant = tenant;
         this.status = RoomStatus.OCCUPIED;
+
+        updateStatus("OCCUPIED", updating);
     }
 
     /**
@@ -131,6 +135,89 @@ public class Room implements ISubject, Serializable {
     {
         this.tenant = null;
         this.status = RoomStatus.VACANT;
+
+        updateStatus("VACANT", false);
+    }
+
+    /**
+     * Returns the property object that this room belongs to
+     * @return null if no result was found, else the property that room belongs to
+     */
+    public Property getRoomProperty() {
+        for(int i = 0; i < ScreensFramework.properties.size(); i++) {
+            Property p = ScreensFramework.properties.getPropertyAt(i);
+
+            for(int j = 0; j < p.numRooms(); j++) {
+                if(p.getRoomAt(j) == this) {
+                    return p;
+                }
+            }
+        };
+        return null;
+    }
+
+    /**
+     * Updates the status of the room on a new thread dependent on
+     * the string variable passed - use a runnable to process in background
+     * @param status - OCCUPIED or VACANT
+     */
+    private void updateStatus(String status, Boolean updating) throws IllegalThreadStateException, NullPointerException {
+        String query = "UPDATE rooms SET room_status = '" + status + "' WHERE room_id = " + this.getRoomId();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                ScreensFramework.db.update(query);
+                if(getStatus() == RoomStatus.OCCUPIED && updating == true) {
+                    try {
+                        Thread.sleep(500);
+                        // Insert a new payment object to the db
+                        Payment p = new Payment(getTenant(), getPrice(), "PENDING", getRoomProperty());
+                        String insert = "INSERT INTO payments VALUES('', " + getTenant().getUserId() + ", '', '" + p.getAmount() + "', 'PENDING', + '" + p.getDueDateAsString() + "', '', " + getRoomProperty().getPropertyId() + ")";
+                        ScreensFramework.db.query(insert);
+                        ScreensFramework.allPayments.add(p);
+
+                        Thread.sleep(500);
+                        // Prompt the user that they have been successful in being set to the room
+                        String alert  = "INSERT INTO messages VALUES('', " + getTenant().getUserId() + ", '', 'INBOX', 'Hello, " + getTenant().getName() + ". Just a short message to notify you that you have been successful in your application for your room, please come into the office this week to pick up your keys, we shall look forward to meeting you!\n\nRegards,\nProperty Panther team.', '', '', '')";
+                        ScreensFramework.db.query(alert);
+                    } catch (InterruptedException e) {
+                        ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+                    }
+                }
+            }
+        }).start();
+    }
+
+    /**
+     * Informs people whom are tracking the property that a change has been made
+     * sleeps for half a second between inserts to ensure that we do not lock the db
+     * @param message The message we wish to send to the user
+     */
+    public void informTrackers(String message) {
+        String query = "SELECT user_id FROM property_tracking WHERE prop_track_id=" + getRoomProperty().getPropertyId();
+        ResultSet r = ScreensFramework.db.query(query);
+        UserList recipients = new UserList();
+
+        try {
+            while(r.next()) {
+                int userId = r.getInt("user_id");
+                Tenant t = ScreensFramework.tenants.getUserById(userId);
+
+                recipients.addUser(t);
+            }
+        } catch (SQLException e) {
+            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+        }
+
+        // Build a list of trackers and send a message to each one watch this property
+        for(int i = 0; i < recipients.size(); i++) {
+            Tenant t = recipients.getUserAt(i);
+            String send = "Hello, " + t.getName() + message;
+
+            String insert = "INSERT INTO messages VALUES('', " + t.getUserId() + "'', 'ALERT', '" + send + "', '', '', '')";
+            ScreensFramework.db.query(insert);
+        }
     }
 
     /**

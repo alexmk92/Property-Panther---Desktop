@@ -65,8 +65,9 @@ public class Tenant extends Person implements Serializable {
         if(property != null && room != null) {
             this.payment_due = this.room.getPrice() * this.room.getContractLength();
 
-            // sets status to occupied if the user has a room.
-            this.room.occupied(this);
+            // sets status to occupied if the user has a room - we are creating users here so
+            // we don't need to INSERT a new payment at this stage
+            this.room.occupied(this, false);
         }
         // sets the permission to USER
         this.permission  = UserPermission.USER;
@@ -329,10 +330,25 @@ public class Tenant extends Person implements Serializable {
         if(null != newRoom)
         {
             this.room = newRoom;
+
+            // Update the database with the room and property objects
+            updateRoom(newRoom.getRoomId());
+
+            setProperty(newRoom.getRoomProperty());
             roomAdded = true;
         }
 
         return roomAdded;
+    }
+
+    /**
+     * Unsets the users room
+     */
+    public void unsetRoom() {
+        this.room = null;
+
+        String query = "UPDATE users SET user_property=NULL, user_prop_room=NULL WHERE user_id=" + getUserId();
+        ScreensFramework.db.update(query);
     }
 
     /**
@@ -348,6 +364,7 @@ public class Tenant extends Person implements Serializable {
         if(null != newProperty)
         {
             this.property = newProperty;
+            updateProperty(newProperty.getPropertyId());
             propertySet = true;
         }
 
@@ -363,19 +380,35 @@ public class Tenant extends Person implements Serializable {
     }
 
     /**
-     * Sets the payment due for a user
+     * Updates the room on a new thread dependent on
+     * the string variable passed - use a runnable to process in background
+     * @param room_id - the id of the room the user is renting
      */
-    public Boolean setPaymentDue()
-    {
-        Boolean paymentSet = false;
+    private void updateRoom(int room_id) throws IllegalThreadStateException, NullPointerException {
+        String query = "UPDATE users SET user_prop_room = " + room_id + " WHERE user_id = " + this.getUserId();
 
-        if(paymentSet == false)
-        {
-            paymentSet = true;
-            this.payment_due = this.room.getPrice() * this.room.getContractLength();
-        }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                ScreensFramework.db.update(query);
+            }
+        }).start();
+    }
 
-        return paymentSet;
+    /**
+     * Updates the room on a new thread dependent on
+     * the string variable passed - use a runnable to process in background
+     * @param prop_id - the id of the property the user is renting
+     */
+    private void updateProperty(int prop_id) throws IllegalThreadStateException, NullPointerException {
+        String query = "UPDATE users SET user_property = " + prop_id + " WHERE user_id = " + this.getUserId();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                ScreensFramework.db.update(query);
+            }
+        }).start();
     }
 
     /**

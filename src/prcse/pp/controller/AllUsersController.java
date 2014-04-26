@@ -301,11 +301,32 @@ public class AllUsersController implements Initializable, ControlledScreen {
                 hideUsers();
             }
         });
-
-        lstUsers.setOnMouseEntered(new EventHandler<MouseEvent>() {
+        lstUsers.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                System.out.println(lstUsers.getSelectionModel().getSelectedIndex());
+
+                try {
+                    int selected = getIndex();
+
+                    if(selected > 0) {
+                        UserList u = null;
+
+                        if(userResult.size() > 0) {
+                            u = userResult;
+                        } else {
+                            u = userList;
+                        }
+
+                        Tenant t = u.getUserAt(selected);
+                        ScreensFramework.searchObj.setTenant(t);
+
+                        goToAllUsers(new ActionEvent());
+                    }
+                } catch (IndexOutOfBoundsException obe) {
+                    ScreensFramework.logError.writeToFile("Error: " + obe.getMessage());
+                } catch (NullPointerException npe) {
+                    ScreensFramework.logError.writeToFile("Error: " + npe.getMessage());
+                }
             }
         });
 
@@ -314,11 +335,6 @@ public class AllUsersController implements Initializable, ControlledScreen {
     /******************************************************
      *                  UI ELEMENT LOAD
      ******************************************************/
-    public UserList getResults()
-    {
-        return ScreensFramework.searchObj.getSearchedUsers();
-    }
-
     public void displayUsers()
     {
         // Array list of users to be added to the ListView
@@ -372,10 +388,7 @@ public class AllUsersController implements Initializable, ControlledScreen {
      * @return the current selected index
      */
     public int getIndex() {
-        System.out.println(lstUsers.getSelectionModel().getSelectedIndex());
-        int i = lstUsers.getSelectionModel().getSelectedIndex();
-        System.out.println(i);
-        return 1;
+        return lstUsers.getSelectionModel().getSelectedIndex();
     }
 
     /******************************************************

@@ -407,6 +407,7 @@ public class MessagesController implements Initializable, ControlledScreen {
                 nav_bg5.getStyleClass().remove("dark_hover");
             }
         });
+        accent5.getStyleClass().remove("hidden");
 
         /******************************************************
          *                 USER SLIDEOUT PANEL
@@ -550,6 +551,7 @@ public class MessagesController implements Initializable, ControlledScreen {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 usingInbox = true;
+                sessionUser.buildInbox(amount, "ALL");
                 populateMessageList();
             }
         });
@@ -715,12 +717,11 @@ public class MessagesController implements Initializable, ControlledScreen {
 
                 // Variables to process the action
                 int thisMsg = lstMessages.getSelectionModel().getSelectedIndex();
-                String box  = "INBOX";
 
                 setCurrIndex(thisMsg);
 
                 // Ternary operator to determine the box we are using, INBOX if true else SENT
-                box = usingInbox ? "INBOX" : "SENT";
+                String box = usingInbox ? "INBOX" : "SENT";
 
                 // Set the message on the view dependent on which box we are using
                 switch(box) {
@@ -756,10 +757,8 @@ public class MessagesController implements Initializable, ControlledScreen {
                             }
                         break;
                     case "SENT":
-                        for(int i = 0; i < sessionUser.getInboxSize(); i++) {
                             m = sessionUser.getMessageAt("SENT", thisMsg);
                             if(m != null) { renderMessage(m); }
-                        }
                         break;
                 }
 
@@ -967,9 +966,15 @@ public class MessagesController implements Initializable, ControlledScreen {
         chatOverlay.setVisible(true);
         viewMessage.setVisible(true);
 
-        // Handle the case where a recipient is unknown
-        sender    = m.getSender().equals("") || m.getSender() == null ? "From: System" : "From: " + m.getSender();
-        recipient = m.getRecipient().equals("") || m.getRecipient() == null ? "to: " + sessionUser.getEmail() : "to " + m.getRecipient();
+        if(usingInbox == true) {
+            // Handle the case where a recipient is unknown
+            sender    = m.getSender().equals("") || m.getSender() == null ? "From: System" : "From: " + m.getSender();
+            recipient = m.getRecipient().equals("") || m.getRecipient() == null ? "to: " + sessionUser.getEmail() : "to " + m.getRecipient();
+        } else {
+            sender = "From: Me";
+            // not had time to support admin recipients
+            recipient = m.getRecipient().equals("") || m.getRecipient() == null ?  "to: another admin" : "to: " + m.getRecipient();
+        }
 
         // Populate the message
         lblSender.setText(sender);
@@ -1097,8 +1102,21 @@ public class MessagesController implements Initializable, ControlledScreen {
                 for(int i = 0; i < u.size(); i++) {
                     Tenant t = u.getUserAt(i);
                     if(t.getEmail().equals(email)){
+                        String message = txtMessage.getText();
                         // Build the query object
-                        String query = "INSERT INTO messages VALUES('', " + t.getUserId() + ", " + sessionUser.getId() + ", 'INBOX', '" + txtMessage.getText() + "', '', '', '')";
+                        String query = "INSERT INTO messages VALUES('', " + t.getUserId() + ", " + sessionUser.getId() + ", 'INBOX', '" + message + "', '', '', '')";
+
+                        // Send the message
+                        ScreensFramework.db.query(query);
+                    }
+                }
+                // Check we have the correct user
+                for(int i = 0; i < ScreensFramework.adminList.size(); i++) {
+                    Admin a = ScreensFramework.adminList.get(i);
+                    if(a.getEmail().equals(email)){
+                        // Build the query object
+                        String message = txtMessage.getText();
+                        String query = "INSERT INTO messages VALUES('', " + a.getId() + ", " + sessionUser.getId() + ", 'INBOX', '" + message + "', '', '', '')";
 
                         // Send the message
                         ScreensFramework.db.query(query);
@@ -1153,9 +1171,6 @@ public class MessagesController implements Initializable, ControlledScreen {
                 return pCell;
             }
         });
-
-        // Reset the flag
-        this.usingInbox = true;
     }
 
     /**
@@ -1180,7 +1195,8 @@ public class MessagesController implements Initializable, ControlledScreen {
                     appendSender = "System: ";
                     break;
                 case "INBOX":
-                    appendSender = m.getSender() + ": ";
+                    appendSender = m.getSender().length() > 0 ? m.getSender() + ": " : "Me: "
+                            ;
                     break;
                 case "MAINTENANCE":
                     appendSender = "System: ";
@@ -1363,6 +1379,7 @@ public class MessagesController implements Initializable, ControlledScreen {
             @Override
             public void run() {
                 try {
+                    resetStyles();
                     clearStyles();
                     switch(ID) {
                         case "Dashboard":
@@ -1448,9 +1465,9 @@ public class MessagesController implements Initializable, ControlledScreen {
         nav_icon3.getStyleClass().remove("active");
         accent3.getStyleClass().removeAll("active", "show");
         nav_bg3.getStyleClass().remove("active");
-        nav_icon5.getStyleClass().remove("active");
-        accent5.getStyleClass().removeAll("active", "show");
-        nav_bg5.getStyleClass().remove("active");
+        nav_icon1.getStyleClass().remove("active");
+        accent1.getStyleClass().removeAll("active", "show");
+        nav_bg1.getStyleClass().remove("active");
     }
 
     /******************************************************

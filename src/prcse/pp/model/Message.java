@@ -231,7 +231,7 @@ public class Message implements ISubject, Serializable {
     public String getRecipient() {
         String name = "";
         try {
-            name = toTenant.getName();
+            name = toTenant.getEmail();
         } catch (Exception e) {
             ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
         }

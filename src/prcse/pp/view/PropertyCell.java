@@ -93,6 +93,17 @@ public class PropertyCell extends ListCell<String> {
                         }
                     }
                 });
+                editProperty.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent mouseEvent) {
+                        try {
+                            controller.setCurrentProperty(thisProperty);
+                            controller.showEditDetails();
+                        } catch (Exception e) {
+                            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+                        }
+                    }
+                });
             } catch(NullPointerException e){
                 ScreensFramework.logError.writeToFile(e.getMessage());
             }

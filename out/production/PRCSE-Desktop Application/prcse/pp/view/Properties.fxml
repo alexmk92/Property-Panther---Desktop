@@ -213,7 +213,28 @@
                 </font>
             </Label>
         </children>
-    </Pane><ListView fx:id="lstProperties" layoutX="278.0" layoutY="148.0" prefHeight="551.0" prefWidth="591.0" styleClass="mylistview" /><Pane fx:id="overlay" layoutX="-3.0" opacity="0.0" prefHeight="720.0" prefWidth="1206.0" styleClass="chatOverlay" /><Pane fx:id="propertyDetails" layoutX="381.0" layoutY="82.0" prefHeight="558.0" prefWidth="591.0" styleClass="messageBox">
+    </Pane><ListView fx:id="lstProperties" layoutX="278.0" layoutY="148.0" prefHeight="551.0" prefWidth="591.0" styleClass="mylistview" /><Pane fx:id="overlay" layoutX="-3.0" prefHeight="720.0" prefWidth="1206.0" styleClass="chatOverlay" /><Pane fx:id="tenantWrap" layoutX="546.0" layoutY="82.0" prefHeight="558.0" prefWidth="302.0" styleClass="messageBox">
+<children><ListView fx:id="lstTenants" layoutX="5.0" layoutY="47.0" prefHeight="471.0" prefWidth="293.0" styleClass="mylistview" /><TextField fx:id="searchName" layoutX="5.0" layoutY="4.0" prefHeight="40.0" prefWidth="293.0" promptText="Search for a tenant....">
+<styleClass>
+<String fx:value="messageInput" />
+<String fx:value="text-field" />
+</styleClass>
+<font>
+<Font size="16.0" />
+</font></TextField><Button fx:id="btnAssignTenant" layoutX="172.0" layoutY="522.0" mnemonicParsing="false" prefWidth="281.0" text="Add to property" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<styleClass>
+<String fx:value="button" />
+<String fx:value="btn_actions" />
+<String fx:value="blue" />
+</styleClass>
+</Button><Button fx:id="btnCancel" layoutX="41.0" layoutY="522.0" mnemonicParsing="false" prefWidth="281.0" text="Cancel" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<styleClass>
+<String fx:value="button" />
+<String fx:value="btn_actions" />
+<String fx:value="blue" />
+</styleClass>
+</Button>
+</children></Pane><Pane fx:id="propertyDetails" layoutX="381.0" layoutY="82.0" prefHeight="558.0" prefWidth="591.0" styleClass="messageBox">
 <children><Label alignment="TOP_LEFT" layoutX="82.0" layoutY="58.0" prefHeight="62.0" prefWidth="459.0" styleClass="holo" textFill="WHITE" wrapText="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <font>
 <Font size="18.0" />
@@ -286,7 +307,13 @@
 <String fx:value="btn_actions" />
 <String fx:value="blue" />
 </styleClass>
-</Button><Button fx:id="btnBack" layoutX="469.0" layoutY="6.0" mnemonicParsing="false" prefWidth="30.0" styleClass="button_close" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+</Button><Button fx:id="btnBack" layoutX="469.0" layoutY="6.0" mnemonicParsing="false" prefWidth="30.0" styleClass="button_close" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" /><Button fx:id="btnRemoveTenant" layoutX="226.0" layoutY="323.0" mnemonicParsing="false" text="Remove Tenant" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<styleClass>
+<String fx:value="button" />
+<String fx:value="btn_actions" />
+<String fx:value="blue" />
+</styleClass>
+</Button>
 </children></Pane><Pane fx:id="editRoomWrap" layoutX="50.0" layoutY="147.0" prefHeight="364.0" prefWidth="491.0" styleClass="holo" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <children>
 <Label alignment="TOP_LEFT" prefHeight="62.0" prefWidth="491.0" styleClass="holo" textFill="WHITE" wrapText="true">
@@ -326,6 +353,70 @@
 </font></TextField><Label fx:id="lblRoomCharCount" layoutX="31.0" layoutY="273.0" prefHeight="36.0" prefWidth="168.0" text="0/250 Characters" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <font>
 <Font size="16.0" />
+</font>
+</Label>
+</children>
+</Pane><Pane fx:id="editPropertyWrap" layoutX="50.0" layoutY="147.0" prefHeight="364.0" prefWidth="491.0" styleClass="holo" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children>
+<Label alignment="TOP_LEFT" prefHeight="57.0" prefWidth="491.0" styleClass="holo" textFill="WHITE" wrapText="true">
+<font>
+<Font size="18.0" />
+</font>
+</Label>
+<Label alignment="TOP_LEFT" layoutY="313.0" prefHeight="51.0" prefWidth="491.0" styleClass="holo" textFill="WHITE" wrapText="true">
+<font>
+<Font size="18.0" />
+</font>
+</Label>
+<Button fx:id="btnUpdateProperty" layoutX="356.0" layoutY="323.0" mnemonicParsing="false" text="Update">
+<styleClass>
+<String fx:value="button" />
+<String fx:value="btn_actions" />
+<String fx:value="blue" />
+</styleClass>
+</Button>
+<Button fx:id="btnHideEditProperty" layoutX="469.0" layoutY="6.0" mnemonicParsing="false" prefWidth="30.0" styleClass="button_close" /><TextField fx:id="txtChangeAddr1" layoutX="28.0" layoutY="68.0" prefHeight="40.0" prefWidth="319.0" promptText="Address line 1...">
+<styleClass>
+<String fx:value="messageInput" />
+<String fx:value="text-field" />
+</styleClass>
+<font>
+<Font size="16.0" />
+</font></TextField><TextField fx:id="txtChangeAddr2" layoutX="28.0" layoutY="114.0" prefHeight="40.0" prefWidth="319.0" promptText="Address line 2..." xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+<styleClass>
+<String fx:value="messageInput" />
+<String fx:value="text-field" />
+</styleClass>
+</TextField><TextField fx:id="txtChangePostcode" layoutX="28.0" layoutY="160.0" prefHeight="40.0" prefWidth="161.0" promptText="Postcode..." xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+<styleClass>
+<String fx:value="messageInput" />
+<String fx:value="text-field" />
+</styleClass>
+</TextField><TextField fx:id="txtChangeCity" layoutX="28.0" layoutY="206.0" prefHeight="40.0" prefWidth="319.0" promptText="City..." xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+<styleClass>
+<String fx:value="messageInput" />
+<String fx:value="text-field" />
+</styleClass>
+</TextField><TextField fx:id="txtChangeMapCode" layoutX="28.0" layoutY="257.0" prefHeight="40.0" prefWidth="319.0" promptText="Google map code..." xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+<styleClass>
+<String fx:value="messageInput" />
+<String fx:value="text-field" />
+</styleClass>
+</TextField><Label fx:id="lblEditingProperty" layoutX="17.0" layoutY="11.0" prefHeight="36.0" prefWidth="302.0" text="Editing: 10 Maple Grove" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="24.0" />
 </font>
 </Label>
 </children>

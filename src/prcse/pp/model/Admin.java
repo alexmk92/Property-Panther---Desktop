@@ -115,8 +115,6 @@ public class Admin extends Person implements Serializable {
             // Run the query and collect the results
             ResultSet   res = ScreensFramework.db.query(query);
 
-            // Initialise to 0
-            int fromTenant = 0;
             while(res.next()){
 
 

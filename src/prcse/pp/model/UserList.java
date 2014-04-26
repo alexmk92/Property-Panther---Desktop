@@ -99,9 +99,16 @@ public class UserList {
     }
 
     /**
+     * Returns this array list object
+     */
+    public ArrayList<Tenant> getTenants() {
+        return this.tenantList;
+    }
+
+    /**
      * Returns a list of tenants who have the same name
      */
-    public UserList getTenant(String forename, String surname)
+    public UserList getTenant(String forename, String surname) throws NullPointerException
     {
         UserList tenantResults = new UserList();
         String fullname = forename + " " + surname;

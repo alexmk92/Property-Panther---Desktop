@@ -449,7 +449,7 @@ public class PaymentsController implements Initializable, ControlledScreen {
                 Payment p = tenant.getPaymentAt(selected);
 
                 // Set the labels
-                lblAddress.setText(tenant.getAddress());
+                lblAddress.setText(tenant.getProperty().getFullAddress());
                 lblAmount.setText(p.getAmount());
                 lblDue.setText(p.getDueDateAsString());
                 lblPaid.setText(p.getDateAsString());
@@ -469,11 +469,15 @@ public class PaymentsController implements Initializable, ControlledScreen {
         lstPaymentFeed.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                int selected = lstPaymentFeed.getSelectionModel().getSelectedIndex();
-                Payment p = ScreensFramework.allPayments.get(selected);
+                try {
+                    int selected = lstPaymentFeed.getSelectionModel().getSelectedIndex();
+                    Payment p = ScreensFramework.allPayments.get(selected);
 
-                setTenant(p.getTenant());
-                populatePaymentList();
+                    setTenant(p.getTenant());
+                    populatePaymentList();
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+                }
             }
         });
         btnCloseDetails.setOnMouseClicked(new EventHandler<MouseEvent>() {

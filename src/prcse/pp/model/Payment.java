@@ -1,5 +1,6 @@
 package prcse.pp.model;
 
+import prcse.pp.controller.ScreensFramework;
 import prcse.pp.model.observer.IObserver;
 import prcse.pp.model.observer.ISubject;
 
@@ -35,7 +36,6 @@ public class Payment implements ISubject, Serializable {
     // Arraylist of Observer
     private ArrayList<IObserver> observers = null;
 
-
     /**
      * Creates a new payment object
      * @param thisAmount the amount paid
@@ -67,6 +67,18 @@ public class Payment implements ISubject, Serializable {
     }
 
     /**
+     * Constructor for a new payment that is not being loaded from the db
+     */
+    public Payment(Tenant t, double amount, String status, Property p) {
+        this.tenant = t;
+        this.amount = amount;
+        this.paymentStatus = status;
+        this.property_id = p.getPropertyId();
+        this.date_paid = null;
+        this.date_due = nextMonth();
+    }
+
+    /**
      * Sets the Date object to todays date
      * @return a Date object containing todays date
      */
@@ -76,6 +88,20 @@ public class Payment implements ISubject, Serializable {
         Date todaysDate = cal.getTime();
 
         return todaysDate;
+    }
+
+    /**
+     * Sets the date to be a month in the future from today
+     */
+    public Date nextMonth() {
+        Date date = null;
+
+        GregorianCalendar a = new GregorianCalendar();
+        a.set(Calendar.MONTH, a.get(Calendar.MONTH) + 1);
+
+        date = a.getTime();
+
+        return date;
     }
 
     /**
@@ -153,7 +179,7 @@ public class Payment implements ISubject, Serializable {
      * Gets the amount paid
      */
     public String getAmount() {
-        return "£" + String.valueOf(this.amount);
+        return String.valueOf(this.amount);
     }
 
     /**

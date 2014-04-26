@@ -20,7 +20,7 @@ public class Validate {
 
         // Check the string has a length > 0
         if(name.trim().length() > 0) {
-            if(name.matches("[a-zA-Z]+")){
+            if(name.matches("[a-zA-Z ]+")){
                 isValid = true;
             }
         }

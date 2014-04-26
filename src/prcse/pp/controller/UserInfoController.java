@@ -25,6 +25,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Callback;
 import javafx.util.Duration;
+import prcse.pp.misc.Validate;
 import prcse.pp.model.Tenant;
 import prcse.pp.view.NoteCell;
 import prcse.pp.model.Note;
@@ -207,6 +208,8 @@ public class UserInfoController implements Initializable, ControlledScreen {
     private TextField txtChangePhone;
     @FXML // fx:id="btnSaveChanges"
     private Button btnSaveChanges;
+    @FXML // fx:id="addrWindow"
+    private Pane addrWindow;
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
@@ -216,8 +219,14 @@ public class UserInfoController implements Initializable, ControlledScreen {
     protected Tenant thisTenant;
     ScreensController myController;
 
+    // Reference to validator object
+    Validate validator = ScreensFramework.validateThis;
+
     // Reference to controller for the Cell-Factory
     protected UserInfoController controller = this;
+
+    // Array to hold errors
+    private ArrayList errors = new ArrayList();
 
 
     /**
@@ -563,7 +572,140 @@ public class UserInfoController implements Initializable, ControlledScreen {
         btnSaveChanges.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                System.out.println("Saving");
+                if(errors.size() == 0) {
+                    if(isValid() == true) {
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                // Get the name
+                                String[] name = txtChangeName.getText().split(" ");
+                                String forename = name[0];
+                                String surname  = name[1];
+
+                                String addr2 = txtChangeAddr2.getText();
+                                if(txtChangeAddr2.getText().isEmpty() || txtChangeAddr2.getText().length() < 3) {
+                                    addr2 = "null";
+                                }
+
+                                // Build the query
+                                String query = "UPDATE users SET user_forename='" + forename + "', user_surname='" + surname + "', addr_postcode='" + txtChangePostcode.getText() +
+                                        "', user_email='" + txtChangeEmail.getText() + "', user_phone='" + txtChangePhone.getText() + "', addr_line_1='" + txtChangeAddr1.getText() +
+                                        "', addr_line_2='" + addr2 + "' WHERE user_id=" + getTenant().getUserId();
+
+                                // Update the tenant object
+                                Tenant updatedTen = ScreensFramework.tenants.getUserById(getTenant().getUserId());
+
+                                // Update the user
+                                updatedTen.setForename(forename);
+                                updatedTen.setSurname(surname);
+                                updatedTen.setPostcode(txtChangePostcode.getText());
+                                updatedTen.setEmail(txtChangeEmail.getText());
+                                updatedTen.setPhone(txtChangePhone.getText());
+                                updatedTen.setAddr_line_1(txtChangeAddr1.getText());
+                                updatedTen.setAddr_line_2(txtChangeAddr2.getText());
+
+                                // Update the user
+                                ScreensFramework.db.update(query);
+                            }
+                        }).start();
+                    }
+                    // Show the success window
+                    slideUpError("Success: the user was updated");
+
+                    // Switch to normal view
+                    ScreensFramework.searchObj.setEditing(false);
+                    renderView();
+                } else {
+                    slideUpError("Error: please ensure all fields are popualted");
+                }
+            }
+        });
+        txtChangeName.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean aBoolean2) {
+
+                String error = "Please enter a name: i.e. Alex Sims";
+                errors.remove(error);
+
+                txtChangeName.getStyleClass().remove("invalid");
+                if(validator.validateName(txtChangeName.getText())){
+                    errors.remove(error);
+                    txtChangeName.getStyleClass().remove("invalid");
+                } else {
+                    errors.add(error);
+                    txtChangeName.getStyleClass().add("invalid");
+                }
+            }
+        });
+        txtChangeEmail.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean aBoolean2) {
+
+                String error = "Please enter a email: i.e. alexmk92@live.co.uk";
+                errors.remove(error);
+
+                txtChangeEmail.getStyleClass().remove("invalid");
+                if (validator.validateEmail(txtChangeEmail.getText()) == true) {
+                    errors.remove(error);
+                    txtChangeEmail.getStyleClass().removeAll("invalid");
+                } else {
+                    errors.add(error);
+                    txtChangeEmail.getStyleClass().add("invalid");
+                }
+            }
+        });
+        txtChangePhone.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean aBoolean2) {
+                txtChangePhone.getStyleClass().remove("invalid");
+
+                String error = "Please enter a phone number: i.e. 07969114443";
+                errors.remove(error);
+
+                if(validator.validateNumber(txtChangePhone.getText()) == true) {
+                    errors.remove(error);
+                    txtChangePhone.getStyleClass().removeAll("invalid");
+                } else {
+                    errors.add(error);
+                    txtChangePhone.getStyleClass().add("invalid");
+                }
+            }
+        });
+        txtChangeAddr2.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean aBoolean2) {
+                txtChangeAddr2.getStyleClass().remove("invalid");
+
+                String error = "Please enter an address: i.e. 1 Cedar Way";
+                errors.remove(error);
+
+                if(validator.validateAddress(txtChangeAddr2.getText()) == true) {
+                    errors.remove(error);
+                    txtChangeAddr2.getStyleClass().removeAll("invalid");
+                } else {
+                    errors.add(error);
+                    txtChangeAddr2.getStyleClass().add("invalid");
+                }
+            }
+        });
+        txtChangePostcode.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean aBoolean2) {
+                txtChangePostcode.getStyleClass().remove("invalid");
+
+                String error = "Please enter a postcode: i.e. PL49JJ";
+                errors.remove(error);
+
+                if(validator.validatePostcode(txtChangePostcode.getText().toUpperCase()) == true) {
+                    errors.remove(error);
+                    txtChangePostcode.getStyleClass().removeAll("invalid");
+                } else {
+                    errors.add(error);
+                    txtChangePostcode.getStyleClass().add("invalid");
+                }
+
+                // Upper the postcode
+                txtChangePostcode.setText(txtChangePostcode.getText().toUpperCase());
             }
         });
 
@@ -584,12 +726,7 @@ public class UserInfoController implements Initializable, ControlledScreen {
     public void renderView()
     {
         if(ScreensFramework.searchObj.getEditing() == true){
-            txtChangeAddr1.setVisible(true);
-            txtChangeAddr2.setVisible(true);
-            txtChangeEmail.setVisible(true);
-            txtChangeName.setVisible(true);
-            txtChangePhone.setVisible(true);
-            txtChangePostcode.setVisible(true);
+            isEditing(true);
 
             // Populate the fields
             txtChangeAddr1.setText(thisTenant.getAddr_line_1());
@@ -598,9 +735,10 @@ public class UserInfoController implements Initializable, ControlledScreen {
             txtChangeName.setText(thisTenant.getName());
             txtChangePhone.setText(thisTenant.getPhone());
             txtChangePostcode.setText(thisTenant.getPostcode());
-
-            btnSaveChanges.setVisible(true);
         } else {
+            // Hide the edit fields
+            isEditing(false);
+
             // Sets the title to the tenants name
             lblUsername.setText(thisTenant.getName());
 
@@ -619,6 +757,69 @@ public class UserInfoController implements Initializable, ControlledScreen {
             populateListView();
         }
 
+    }
+
+    /**
+     * Checks whether the form is valid
+     */
+    private Boolean isValid() {
+        Boolean validated = false;
+
+        Validate v = ScreensFramework.validateThis;
+
+        if(v.validateName(txtChangeName.getText()) && v.validatePostcode(txtChangePostcode.getText()) && v.validateAddress(txtChangeAddr1.getText()) &&
+           v.validateEmail(txtChangeEmail.getText()) && v.validateNumber(txtChangePhone.getText()))
+        {
+            if(txtChangeAddr2.getText().length() > 0) {
+                v.validateAddress(txtChangeAddr2.getText());
+                validated = true;
+            } else {
+                validated = true;
+            }
+
+        }
+
+        return validated;
+    }
+
+    /**
+     * Shows or hides all labels on the form and sets
+     * heights of certain widgets
+     * @param editing True if editing, else false
+     */
+    private void isEditing(Boolean editing) {
+        if(editing == true) {
+            txtChangeAddr1.setVisible(true);
+            txtChangeAddr2.setVisible(true);
+            txtChangeEmail.setVisible(true);
+            txtChangeName.setVisible(true);
+            txtChangePhone.setVisible(true);
+            txtChangePostcode.setVisible(true);
+
+            lblUsername.setVisible(false);
+            lblUserAddress.setVisible(false);
+            lblPhone.setVisible(false);
+            widget_bottom_left.setVisible(false);
+
+            addrWindow.setPrefHeight(194);
+            btnSaveChanges.setVisible(true);
+        } else {
+            txtChangeAddr1.setVisible(false);
+            txtChangeAddr2.setVisible(false);
+            txtChangeEmail.setVisible(false);
+            txtChangeName.setVisible(false);
+            txtChangePhone.setVisible(false);
+            txtChangePostcode.setVisible(false);
+
+            lblUsername.setVisible(true);
+            lblUserAddress.setVisible(true);
+            lblPhone.setVisible(true);
+            lblAddr1.setVisible(true);
+
+            widget_bottom_left.setVisible(true);
+            addrWindow.setPrefHeight(116);
+            btnSaveChanges.setVisible(false);
+        }
     }
 
     /**
