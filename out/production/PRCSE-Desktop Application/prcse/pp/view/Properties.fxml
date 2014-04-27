@@ -421,5 +421,155 @@
 </Label>
 </children>
 </Pane>
-</children></Pane>
+</children></Pane><Pane fx:id="newPropWrap" layoutX="225.0" layoutY="140.0" prefHeight="444.0" prefWidth="838.0" styleClass="messageBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children>
+<Label layoutX="127.0" layoutY="88.0" textFill="WHITE">
+<font>
+<Font size="18.0" />
+</font>
+</Label>
+<ListView layoutX="51.0" layoutY="147.0" prefHeight="364.0" prefWidth="491.0">
+<styleClass>
+<String fx:value="mylistview" />
+<String fx:value="transparent" />
+</styleClass>
+</ListView>
+<Button fx:id="btnClosePropWrap" layoutX="815.0" layoutY="7.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="21.0" styleClass="button_close" text="Button" />
+<Pane layoutX="50.0" layoutY="51.0" prefHeight="364.0" prefWidth="738.0" styleClass="holo">
+<children>
+<Label alignment="TOP_LEFT" prefHeight="57.0" prefWidth="738.0" styleClass="holo" textFill="WHITE" wrapText="true">
+<font>
+<Font size="18.0" />
+</font>
+</Label>
+<Label alignment="TOP_LEFT" layoutY="313.0" prefHeight="51.0" prefWidth="738.0" styleClass="holo" textFill="WHITE" wrapText="true">
+<font>
+<Font size="18.0" />
+</font>
+</Label>
+<Button fx:id="btnAddRooms" layoutX="599.0" layoutY="324.0" mnemonicParsing="false" text="Add Rooms">
+<styleClass>
+<String fx:value="button" />
+<String fx:value="btn_actions" />
+<String fx:value="blue" />
+</styleClass>
+</Button>
+<TextField fx:id="txtNewAddr1" layoutX="30.0" layoutY="68.0" prefHeight="40.0" prefWidth="319.0" promptText="Address line 1...">
+<font>
+<Font size="16.0" />
+</font>
+<styleClass>
+<String fx:value="messageInput" />
+<String fx:value="text-field" />
+</styleClass>
+</TextField>
+<TextField fx:id="txtNewAddr2" layoutX="30.0" layoutY="114.0" prefHeight="40.0" prefWidth="319.0" promptText="Address line 2...">
+<font>
+<Font size="16.0" />
+</font>
+<styleClass>
+<String fx:value="messageInput" />
+<String fx:value="text-field" />
+</styleClass>
+</TextField>
+<TextField fx:id="txtNewPostcode" layoutX="30.0" layoutY="160.0" prefHeight="40.0" prefWidth="161.0" promptText="Postcode...">
+<font>
+<Font size="16.0" />
+</font>
+<styleClass>
+<String fx:value="messageInput" />
+<String fx:value="text-field" />
+</styleClass>
+</TextField>
+<TextField fx:id="txtNewCity" layoutX="30.0" layoutY="206.0" prefHeight="40.0" prefWidth="319.0" promptText="City...">
+<font>
+<Font size="16.0" />
+</font>
+<styleClass>
+<String fx:value="messageInput" />
+<String fx:value="text-field" />
+</styleClass>
+</TextField><TextField fx:id="txtNewDistrict" layoutX="30.0" layoutY="257.0" prefHeight="40.0" prefWidth="319.0" promptText="District..." xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="16.0" />
+</font>
+<styleClass>
+<String fx:value="messageInput" />
+<String fx:value="text-field" />
+</styleClass>
+</TextField><TextArea fx:id="txtNewDetails" layoutX="389.0" layoutY="68.0" prefHeight="224.0" prefWidth="319.0" promptText="Property Details..." wrapText="true">
+<styleClass>
+<String fx:value="messageInput" />
+<String fx:value="text-area" />
+</styleClass>
+<font>
+<Font size="16.0" />
+</font></TextArea><Label layoutX="20.0" layoutY="11.0" text="New property..." textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<font>
+<Font size="24.0" />
+</font>
+</Label><Button fx:id="btnPropertyImage" layoutX="467.0" layoutY="324.0" mnemonicParsing="false" text="Upload Image" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<styleClass>
+<String fx:value="button" />
+<String fx:value="btn_actions" />
+<String fx:value="blue" />
+</styleClass>
+</Button>
+</children>
+</Pane>
+</children>
+</Pane><Pane fx:id="newRoomWrap" layoutX="420.0" layoutY="140.0" prefHeight="444.0" prefWidth="469.0" styleClass="messageBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children><Pane layoutX="45.0" layoutY="40.0" prefHeight="364.0" prefWidth="380.0" styleClass="holo" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<children>
+<Label alignment="TOP_LEFT" prefHeight="57.0" prefWidth="380.0" styleClass="holo" textFill="WHITE" wrapText="true">
+<font>
+<Font size="18.0" />
+</font>
+</Label>
+<Label alignment="TOP_LEFT" layoutY="313.0" prefHeight="51.0" prefWidth="380.0" styleClass="holo" textFill="WHITE" wrapText="true">
+<font>
+<Font size="18.0" />
+</font>
+</Label>
+<Button fx:id="btnAddRoom" layoutX="241.0" layoutY="324.0" mnemonicParsing="false" text="Add Room">
+<styleClass>
+<String fx:value="button" />
+<String fx:value="btn_actions" />
+<String fx:value="blue" />
+</styleClass>
+</Button>
+<TextField fx:id="txrNewPrice" layoutX="30.0" layoutY="68.0" prefHeight="40.0" prefWidth="141.0" promptText="Room price...">
+<font>
+<Font size="16.0" />
+</font>
+<styleClass>
+<String fx:value="messageInput" />
+<String fx:value="text-field" />
+</styleClass>
+</TextField>
+<TextArea fx:id="txtNewRoomDetails" layoutX="30.0" layoutY="115.0" prefHeight="178.0" prefWidth="319.0" promptText="Room details..." wrapText="true">
+<font>
+<Font size="16.0" />
+</font>
+<styleClass>
+<String fx:value="messageInput" />
+<String fx:value="text-area" />
+</styleClass>
+</TextArea>
+<Label layoutX="20.0" layoutY="11.0" text="Add a room..." textFill="WHITE">
+<font>
+<Font size="24.0" />
+</font>
+</Label>
+<Button fx:id="btnUploadRoom" layoutX="107.0" layoutY="324.0" mnemonicParsing="false" text="Upload Image">
+<styleClass>
+<String fx:value="button" />
+<String fx:value="btn_actions" />
+<String fx:value="blue" />
+</styleClass>
+</Button>
+</children>
+</Pane><Button fx:id="btnCloseRooms" layoutX="445.0" layoutY="7.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="33.0" prefWidth="21.0" styleClass="button_close" text="Button" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+</children>
+</Pane>
     </children></AnchorPane>

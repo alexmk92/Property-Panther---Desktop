@@ -34,6 +34,7 @@ import prcse.pp.view.NoteCell;
 import prcse.pp.view.PaymentFeedCell;
 import prcse.pp.model.Payment;
 import prcse.pp.view.PaymentCell;
+import prcse.pp.model.Property;
 
 import javax.xml.transform.Result;
 
@@ -446,10 +447,12 @@ public class PaymentsController implements Initializable, ControlledScreen {
                 lblOlder.setVisible(false);
 
                 // Get the current payment object
-                Payment p = tenant.getPaymentAt(selected);
+                Payment p = getTenant().getPaymentAt(selected);
+                Property prop = getTenant().getProperty();
+                String address = prop.getAddressLine2() != null ? prop.getAddressLine1() + "\n" + prop.getAddressLine2() : prop.getAddressLine1() + "\n" + prop.getCity();
 
                 // Set the labels
-                lblAddress.setText(tenant.getProperty().getFullAddress());
+                lblAddress.setText(address);
                 lblAmount.setText(p.getAmount());
                 lblDue.setText(p.getDueDateAsString());
                 lblPaid.setText(p.getDateAsString());
@@ -549,6 +552,7 @@ public class PaymentsController implements Initializable, ControlledScreen {
 
         return paymentsRetrieved;
     }
+
 
     /**
      * Populates the payment ListView

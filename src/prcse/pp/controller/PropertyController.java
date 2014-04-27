@@ -32,9 +32,13 @@ import prcse.pp.model.UserList;
 import prcse.pp.view.*;
 
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import prcse.pp.model.Property;
+
+import javax.swing.*;
 
 
 /**
@@ -207,6 +211,42 @@ public class PropertyController implements Initializable, ControlledScreen {
     private Button btnHideEditProperty;
     @FXML // fx:id="btnRemoveTenant"
     private Button btnRemoveTenant;
+    @FXML // fx:id="btnCreateProperty"
+    private Button btnCreateProperty;
+    @FXML // fx:id="btnPropertyImage"
+    private Button btnPropertyImage;
+    @FXML // fx:id="btnAddRooms"
+    private Button btnAddRooms;
+    @FXML // fx:id="txtNewAddr1"
+    private TextField txtNewAddr1;
+    @FXML // fx:id="txtNewAddr2"
+    private TextField txtNewAddr2;
+    @FXML // fx:id="txtNewPostcode"
+    private TextField txtNewPostcode;
+    @FXML // fx:id="txtNewCity"
+    private TextField txtNewCity;
+    @FXML // fx:id="txtNewDistrict"
+    private TextField txtNewDistrict;
+    @FXML // fx:id="txtNewDetails"
+    private TextArea txtNewDetails;
+    @FXML // fx:id="txtNewCode"
+    private TextArea txtNewCode;
+    @FXML // fx:id="newPropWrap"
+    private Pane newPropWrap;
+    @FXML // fx:id="btnClosePropWrap"
+    private Button btnClosePropWrap;
+    @FXML // fx:id="newRoomWrap"
+    private Pane newRoomWrap;
+    @FXML // fx:id="txtNewPrice"
+    private TextField txtNewPrice;
+    @FXML // fx:id="txtRoomDetails"
+    private TextArea txtNewRoomDetails;
+    @FXML // fx:id="btnUploadRoom"
+    private Button btnUploadRoom;
+    @FXML // fx:id="btnAddRoom"
+    private Button btnAddRoom;
+    @FXML // fx:id="btnCloseRooms"
+    private Button btnCloseRooms;
 
     // Set variables to allow for draggable window.
     private double xOffset = 0;
@@ -215,6 +255,7 @@ public class PropertyController implements Initializable, ControlledScreen {
 
     // Allows us to bind controls to custom cell factory
     private int index = 0;
+    private String imagePath = null;
 
     // Reference to this contorller object
     private PropertyController thisController = this;
@@ -225,6 +266,7 @@ public class PropertyController implements Initializable, ControlledScreen {
 
     // Determines if the screen has loaded or not
     private Boolean objectsLoaded = false;
+    private Boolean uploadingImage = false;
 
     // List of searched users -- default to the tenant list on the homescreen (defaults on body getting focus)
     private UserList users;
@@ -244,6 +286,8 @@ public class PropertyController implements Initializable, ControlledScreen {
         editRoomWrap.setVisible(false);
         tenantWrap.setVisible(false);
         editPropertyWrap.setVisible(false);
+        newPropWrap.setVisible(false);
+        newRoomWrap.setVisible(false);
 
 
         body.setOnMouseEntered(new EventHandler<MouseEvent>() {
@@ -253,6 +297,7 @@ public class PropertyController implements Initializable, ControlledScreen {
                 if(objectsLoaded == false) {
                     populatePropertyList();
                     setSearchResults(ScreensFramework.tenants);
+                    resetStyles();
                     objectsLoaded = true;
                 }
             }
@@ -393,26 +438,20 @@ public class PropertyController implements Initializable, ControlledScreen {
                 Tenant t = users.getUserAt(lstTenants.getSelectionModel().getSelectedIndex());
                 Room   r = getCurrRoom();
 
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        // Occupy the room with user t  - pass true as we want to insert a new payment object here
-                        if(t != null) {
-                            if(t.getRoom() == null) {
-                                t.setRoom(r);
-                                r.occupied(t, true);
-                            } else {
-                                t.unsetRoom();
-                                t.setRoom(r);
-                                r.occupied(t, true);
-                            }
-                            showRoomDetails(getCurrRoom());
-
-                            showRooms(false);
-                            hideTenants();
-                        }
+                if(t != null) {
+                    if(t.getRoom() == null) {
+                        t.setRoom(r, true);
+                        r.occupied(t, true);
+                    } else {
+                        t.unsetRoom();
+                        t.setRoom(r, true);
+                        r.occupied(t, true);
                     }
-                }).start();
+                    showRoomDetails(getCurrRoom());
+
+                    showRooms(false);
+                    hideTenants();
+                }
             }
         });
         btnRemoveTenant.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -421,20 +460,15 @@ public class PropertyController implements Initializable, ControlledScreen {
                 Room   r = getCurrRoom();
                 Tenant t = getCurrRoom().getTenant();
 
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        // Occupy the room with user t  - pass true as we want to insert a new payment object here
-                        if(t != null) {
-                            t.unsetRoom();
-                            r.vacant();
-                            showRoomDetails(getCurrRoom());
+                // Occupy the room with user t  - pass true as we want to insert a new payment object here
+                if(t != null) {
+                    t.unsetRoom();
+                    r.vacant();
+                    showRoomDetails(getCurrRoom());
 
-                            refreshList(lstRooms);
-                            showRooms(false);
-                        }
-                    }
-                }).start();
+                    refreshList(lstRooms);
+                    showRooms(false);
+                }
             }
         });
         btnHideEditProperty.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -567,28 +601,35 @@ public class PropertyController implements Initializable, ControlledScreen {
         btnUpdateProperty.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        String update = "UPDATE properties SET addr_line_1 = '" + txtChangeAddr1.getText() + "', addr_line_2 = '" + txtChangeAddr2.getText()
-                                + "', addr_postcode = '" + txtChangePostcode.getText() +  "', city_name = '" + txtChangeCity.getText()
-                                + "', google_map_code= '" + txtChangeMapCode.getText() + "' WHERE property_id =" + getCurrProperty().getPropertyId();
-                        ScreensFramework.db.update(update);
-                    }
-                }).start();
+
+                String update = "UPDATE properties SET addr_line_1 = '" + txtChangeAddr1.getText() + "', addr_line_2 = '" + txtChangeAddr2.getText()
+                        + "', addr_postcode = '" + txtChangePostcode.getText() + "', city_name = '" + txtChangeCity.getText()
+                        + "', google_map_code= '" + txtChangeMapCode.getText() + "' WHERE property_id =" + getCurrProperty().getPropertyId();
+                ScreensFramework.db.update(update);
+
+                getCurrProperty().setAddressLine1(txtChangeAddr1.getText());
+                getCurrProperty().setAddressLine2(txtChangeAddr2.getText());
+                getCurrProperty().setPostcode(txtChangePostcode.getText());
+                getCurrProperty().setCity(txtChangeCity.getText());
+                getCurrProperty().setMapCode(txtChangeMapCode.getText());
+
+                refreshList(lstProperties);
+                populatePropertyList();
+                propertyDetails.setVisible(false);
+                hideOverlay();
             }
         });
         searchName.setOnKeyTyped(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
-                String   name    = searchName.getText();
+                String name = searchName.getText();
                 UserList results = new UserList();
 
                 // Begin searching through the userlist
-                if(name.length() > 0) {
-                    for(int i = 0; i < ScreensFramework.tenants.size(); i++) {
+                if (name.length() > 0) {
+                    for (int i = 0; i < ScreensFramework.tenants.size(); i++) {
                         Tenant t = ScreensFramework.tenants.getUserAt(i);
-                        if(t.getName().substring(0, name.length()).toLowerCase().equals(name.toLowerCase())) {
+                        if (t.getName().substring(0, name.length()).toLowerCase().equals(name.toLowerCase())) {
                             results.addUser(t);
                         } else {
                             setSearchResults(ScreensFramework.tenants);
@@ -600,6 +641,144 @@ public class PropertyController implements Initializable, ControlledScreen {
                     setSearchResults(ScreensFramework.tenants);
                     populateTenantList();
                 }
+            }
+        });
+        btnCreateProperty.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                animateOverlay();
+                newPropWrap.setVisible(true);
+                txtNewAddr1.requestFocus();
+            }
+        });
+        btnClosePropWrap.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                hideOverlay();
+                newPropWrap.setVisible(false);
+            }
+        });
+        btnAddRooms.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+
+                // Insert the new row
+                String query = "INSERT INTO properties VALUES('', '', '" + txtNewAddr1.getText() + "', '" + txtNewAddr2.getText() + "', '" + txtNewPostcode.getText() + "', '" + txtNewDistrict.getText() + "', '" +
+                        txtNewCity.getText() + "', '" + txtNewDetails.getText() + "', 0, 'VACANT', '', '')";
+
+                // Get the new row
+                String select = "SELECT property_id, prop_track_code FROM properties WHERE addr_line_1='" + txtNewAddr1.getText().toUpperCase() + "' ORDER BY property_id DESC FETCH FIRST ROW ONLY";
+
+                        try {
+                            ScreensFramework.db.query(query);
+
+                            // Sleep to give time for insert then get the new properties ID
+                            Thread.sleep(500);
+                            ResultSet r = ScreensFramework.db.query(select);
+
+                            while(r.next()) {
+                                int propId       = r.getInt("property_id");
+                                String trackCode = r.getString("prop_track_code");
+                                Property p       = new Property(propId, trackCode, txtNewAddr1.getText(), txtNewAddr2.getText(), txtNewPostcode.getText(), txtNewDistrict.getText(), txtNewCity.getText(), txtNewDetails.getText(), 0, null);
+                                ScreensFramework.properties.addProperty(p);
+                                setCurrentProperty(p);
+
+                                if(uploadingImage == true) {
+                                    ScreensFramework.uploader.upload(getCurrentImage(), "", "properties/" + propId + ".png");
+                                }
+                            }
+                        } catch (InterruptedException e) {
+                            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+                        } catch (SQLException e) {
+                            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+                        }
+
+                        // Get the property id of the new row
+                        populatePropertyList();
+                        newPropWrap.setVisible(false);
+                        newRoomWrap.setVisible(true);
+                        uploadingImage = false;
+                    }
+        });
+        btnAddRoom.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                        try {
+                           // String price = txtNewPrice.getText();
+                           // String details = txtNewRoomDetails.getText();
+                            String query = "INSERT INTO rooms VALUES('', " + getCurrProperty().getPropertyId() + ", '500.00', 'VACANT', 'This is a placeholder until i build the script')";
+                            String select = "SELECT room_id, property_id FROM rooms ORDER BY property_id DESC FETCH FIRST ROW ONLY";
+
+                            ScreensFramework.db.query(query);
+
+                            // Sleep to give time for insert then get the new properties ID
+                            Thread.sleep(500);
+                            ResultSet r = ScreensFramework.db.query(select);
+
+                            while(r.next()) {
+                                int propId = r.getInt("property_id");
+                                int roomId = r.getInt("room_id");
+                                Room room  = new Room(roomId, propId, txtRoomPrice.getText(), "VACANT", txtNewRoomDetails.getText());
+                                Property p = getCurrProperty();
+                                p.addRoom(room);
+
+                                txtRoomDetails.setText("");
+                                txtRoomPrice.setText("");
+
+                                if(uploadingImage == true) {
+                                    ScreensFramework.uploader.upload(getCurrentImage(), "", "rooms/" + roomId + ".png");
+                                }
+                            }
+                        } catch (InterruptedException e) {
+                            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+                        } catch (SQLException e) {
+                            ScreensFramework.logError.writeToFile("Error: " + e.getMessage());
+                        }
+
+                        uploadingImage = false;
+            }
+        });
+        btnPropertyImage.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                uploadingImage = true;
+
+                JFileChooser chooser = new JFileChooser();
+                chooser.setDialogTitle("Upload an Image");
+
+                String path = "";
+                String file = "";
+                if(chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+                    path = chooser.getCurrentDirectory().toString();
+                    file = chooser.getSelectedFile().toString();
+                }
+
+                setCurrentImage(path + file);
+            }
+        });
+        btnUploadRoom.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                uploadingImage = true;
+
+                JFileChooser chooser = new JFileChooser();
+                chooser.setDialogTitle("Upload an Image");
+
+                String path = "";
+                String file = "";
+                if(chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+                    path = chooser.getCurrentDirectory().toString();
+                    file = chooser.getSelectedFile().toString();
+                }
+
+                setCurrentImage(path + file);
+            }
+        });
+        btnCloseRooms.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                newRoomWrap.setVisible(false);
+                hideOverlay();
             }
         });
     }
@@ -731,12 +910,18 @@ public class PropertyController implements Initializable, ControlledScreen {
         for(int i = 0; i < propertiesArray.size(); i++) {
 
             Property p = propertiesArray.get(i);
+            String toAdd = "";
 
-            // Add to observable
             if(p.getAddressLine2() == null) {
-                messages.add(p.getAddressLine1());
+                toAdd = p.getAddressLine1();
             } else {
-                messages.add(p.getAddressLine1() + ", " + p.getCity());
+                toAdd = p.getAddressLine1() + " " + p.getAddressLine2();
+            }
+
+            if(toAdd.length() > 18) {
+                messages.add(toAdd.substring(0, 17) + "...");
+            } else {
+                messages.add(toAdd);
             }
         }
         return messages;
@@ -815,6 +1000,20 @@ public class PropertyController implements Initializable, ControlledScreen {
             rooms.add("£"+String.valueOf(r.getPrice()));
         }
         return rooms;
+    }
+
+    /**
+     * Set current path to image
+     */
+    private void setCurrentImage(String imgPath) {
+        this.imagePath = imgPath;
+    }
+
+    /**
+     * Return current image path
+     */
+    private String getCurrentImage() {
+        return this.imagePath;
     }
 
     /**
@@ -1103,9 +1302,9 @@ public class PropertyController implements Initializable, ControlledScreen {
     private void clearStyles()
     {
         // Active state for this window
-        nav_icon2.getStyleClass().remove("active");
-        nav_bg2.getStyleClass().remove("active");
-        accent2.getStyleClass().remove("show");
+        nav_icon3.getStyleClass().remove("active");
+        nav_bg3.getStyleClass().remove("active");
+        accent3.getStyleClass().remove("show");
     }
 
     /**

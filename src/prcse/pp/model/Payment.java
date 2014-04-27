@@ -53,7 +53,7 @@ public class Payment implements ISubject, Serializable {
         }
 
         // Check the due date
-        if(this.date_due == null){
+        if(payment_due == null){
             this.date_due = setToday();
         } else {
             this.date_due = payment_due;

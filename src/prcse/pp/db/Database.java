@@ -199,10 +199,16 @@ public class Database implements Callable {
                 Room r = new Room(res.getInt("room_id"), res.getInt("property_id"), res.getString("room_price"),
                                   res.getString("room_details"), res.getString("room_status"));
 
-                r.loadTenant();
+                Tenant t = r.loadTenant();
 
                 // Add the room object to this property
                 p.addRoom(r);
+
+                // Assign the room to the tenant - we are not updating so pass false to add room
+                if(t != null) {
+                    t.setRoom(r, false);
+                    t.setProperty(p, false);
+                }
             }
 
             roomsBuilt = true;

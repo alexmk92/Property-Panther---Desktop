@@ -82,8 +82,10 @@ public class Room implements ISubject, Serializable {
     /**
      * Loads the tenant from the db by getting their id
      * @throws SQLException - no result set may be found, if not throw
+     * @return the tenant object we found
      */
-    public void loadTenant() throws SQLException, NullPointerException {
+    public Tenant loadTenant() throws SQLException, NullPointerException {
+        Tenant t = null;
         // Get the users id
         String query = "SELECT user_id FROM users JOIN rooms ON users.user_prop_room = rooms.room_id WHERE user_prop_room = " + this.getRoomId();
         ResultSet a = ScreensFramework.db.query(query);
@@ -92,8 +94,9 @@ public class Room implements ISubject, Serializable {
         while(a.next()) {
             int this_user = a.getInt("user_id");
             this.tenant = this_user > 0 ? ScreensFramework.tenants.getUserById(this_user) : null;
+            t = this.tenant;
         }
-
+        return t;
     }
 
     /**
@@ -144,16 +147,17 @@ public class Room implements ISubject, Serializable {
      * @return null if no result was found, else the property that room belongs to
      */
     public Property getRoomProperty() {
+        Property p = null;
         for(int i = 0; i < ScreensFramework.properties.size(); i++) {
-            Property p = ScreensFramework.properties.getPropertyAt(i);
+            Property prop = ScreensFramework.properties.getPropertyAt(i);
 
-            for(int j = 0; j < p.numRooms(); j++) {
-                if(p.getRoomAt(j) == this) {
-                    return p;
+            for(int j = 0; j < prop.numRooms(); j++) {
+                if(prop.getRoomAt(j) == this) {
+                    p = prop;
                 }
             }
         };
-        return null;
+        return p;
     }
 
     /**

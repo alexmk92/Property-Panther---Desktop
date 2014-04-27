@@ -42,7 +42,7 @@ public class PaymentFeedCell extends ListCell<String> {
             Payment thisPayment = ScreensFramework.allPayments.get(index);
 
 
-            Label paid = new Label(thisPayment.getAmount());
+            Label paid = new Label("£" + thisPayment.getAmount());
             paid.setStyle("-fx-text-fill: #a6e22e !important; -fx-font-family: 'Open Sans Light'; -fx-font-size: 15px");
             paid.setLayoutX(-200);
             Label datePaid = new Label(" on " + thisPayment.getDateAsString());

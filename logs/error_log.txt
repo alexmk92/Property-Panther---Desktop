@@ -11513,3 +11513,395 @@ Dev info:[Ljava.lang.StackTraceElement;@1732c8d
 27-Apr-2014 00:18: null
 27-Apr-2014 00:18: null
 27-Apr-2014 00:18: null
+27-Apr-2014 00:34: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:34: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:34: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:34: Error handling query: Fail to convert to internal representation
+27-Apr-2014 00:35: Error: null
+27-Apr-2014 00:35: Error: null
+27-Apr-2014 00:35: Error: Not on FX application thread; currentThread = Thread-62
+27-Apr-2014 00:35: Error: null
+27-Apr-2014 00:35: Error: null
+27-Apr-2014 00:35: Error: null
+27-Apr-2014 00:35: Error: null
+27-Apr-2014 00:35: Error: null
+27-Apr-2014 00:35: Error: null
+27-Apr-2014 00:35: Error: Not on FX application thread; currentThread = Thread-64
+27-Apr-2014 00:48: null
+27-Apr-2014 00:48: null
+27-Apr-2014 00:48: null
+27-Apr-2014 00:48: null
+27-Apr-2014 00:51: Error handling operation: IO Error: Software caused connection abort: recv failed
+27-Apr-2014 00:51: Error: IO Error: Software caused connection abort: recv failed
+27-Apr-2014 00:51: Error: IO Error: Software caused connection abort: recv failed
+27-Apr-2014 00:51: Error: IO Error: Software caused connection abort: recv failed
+27-Apr-2014 00:51: Error: IO Error: Software caused connection abort: recv failed
+27-Apr-2014 00:51: Error: IO Error: Software caused connection abort: recv failed
+27-Apr-2014 00:51: Error: IO Error: Software caused connection abort: recv failed
+27-Apr-2014 00:51: Error: IO Error: Unrecognized Windows Sockets error: 0: recv failed
+27-Apr-2014 00:51: Error: IO Error: Software caused connection abort: recv failed
+27-Apr-2014 00:51: Error: IO Error: Software caused connection abort: recv failed
+27-Apr-2014 00:51: Error: IO Error: Unrecognized Windows Sockets error: 0: recv failed
+27-Apr-2014 00:51: Error: IO Error: Unrecognized Windows Sockets error: 0: recv failed
+27-Apr-2014 00:51: Error: IO Error: Software caused connection abort: recv failed
+27-Apr-2014 00:51: Error: IO Error: Unrecognized Windows Sockets error: 0: recv failed
+27-Apr-2014 00:51: Error: IO Error: Unrecognized Windows Sockets error: 0: recv failed
+27-Apr-2014 00:52: Error: IO Error: The Network Adapter could not establish the connection
+27-Apr-2014 00:52: Error: IO Error: The Network Adapter could not establish the connection
+27-Apr-2014 00:52: Error: IO Error: The Network Adapter could not establish the connection
+27-Apr-2014 12:32: Error handling query: Fail to convert to internal representation
+27-Apr-2014 12:32: Error handling query: Fail to convert to internal representation
+27-Apr-2014 12:32: Error handling query: Fail to convert to internal representation
+27-Apr-2014 12:32: Error handling query: Fail to convert to internal representation
+27-Apr-2014 12:33: null
+27-Apr-2014 12:33: null
+27-Apr-2014 12:33: null
+27-Apr-2014 12:33: null
+27-Apr-2014 12:34: Error handling query: Fail to convert to internal representation
+27-Apr-2014 12:34: Error handling query: Fail to convert to internal representation
+27-Apr-2014 12:34: Error handling query: Fail to convert to internal representation
+27-Apr-2014 12:34: Error handling query: Fail to convert to internal representation
+27-Apr-2014 12:34: null
+27-Apr-2014 12:34: null
+27-Apr-2014 12:34: null
+27-Apr-2014 12:34: null
+27-Apr-2014 12:40: Error: null
+27-Apr-2014 12:40: Error: null
+27-Apr-2014 12:40: Error: null
+27-Apr-2014 12:40: Error: null
+27-Apr-2014 12:40: Error: null
+27-Apr-2014 12:40: Error: Not on FX application thread; currentThread = Thread-70
+27-Apr-2014 12:40: Error: null
+27-Apr-2014 12:40: Error: null
+27-Apr-2014 12:40: Error: null
+27-Apr-2014 12:40: Error: null
+27-Apr-2014 12:41: Error: Not on FX application thread; currentThread = Thread-75
+27-Apr-2014 14:21: null
+27-Apr-2014 14:21: null
+27-Apr-2014 14:21: null
+27-Apr-2014 14:21: null
+27-Apr-2014 14:30: null
+27-Apr-2014 14:30: null
+27-Apr-2014 14:30: null
+27-Apr-2014 14:30: null
+27-Apr-2014 14:58: null
+27-Apr-2014 14:58: null
+27-Apr-2014 14:58: null
+27-Apr-2014 14:58: null
+27-Apr-2014 14:59: Error: null
+27-Apr-2014 15:01: Error: null
+27-Apr-2014 15:01: Error: null
+27-Apr-2014 15:02: Error: null
+27-Apr-2014 15:02: Error: null
+27-Apr-2014 15:02: Error: null
+27-Apr-2014 15:02: Error: null
+27-Apr-2014 15:02: Error: null
+27-Apr-2014 15:02: Error: null
+27-Apr-2014 15:02: Error: Not on FX application thread; currentThread = Thread-65
+27-Apr-2014 15:02: Error: null
+27-Apr-2014 15:02: Error: null
+27-Apr-2014 15:02: Error: null
+27-Apr-2014 15:02: Error: null
+27-Apr-2014 15:02: Error: null
+27-Apr-2014 15:02: Error: Not on FX application thread; currentThread = Thread-68
+27-Apr-2014 15:02: Error: null
+27-Apr-2014 15:02: Error: Not on FX application thread; currentThread = Thread-70
+27-Apr-2014 15:02: Error: Not on FX application thread; currentThread = Thread-72
+27-Apr-2014 15:02: Error: null
+27-Apr-2014 15:02: Error: Not on FX application thread; currentThread = Thread-74
+27-Apr-2014 15:02: Error: null
+27-Apr-2014 15:02: null
+27-Apr-2014 15:02: null
+27-Apr-2014 15:02: null
+27-Apr-2014 15:02: null
+27-Apr-2014 15:02: null
+27-Apr-2014 15:02: null
+27-Apr-2014 15:02: null
+27-Apr-2014 15:02: null
+27-Apr-2014 15:03: null
+27-Apr-2014 15:03: null
+27-Apr-2014 15:03: null
+27-Apr-2014 15:03: null
+27-Apr-2014 15:03: null
+27-Apr-2014 15:03: null
+27-Apr-2014 15:03: null
+27-Apr-2014 15:03: null
+27-Apr-2014 15:06: null
+27-Apr-2014 15:06: null
+27-Apr-2014 15:06: null
+27-Apr-2014 15:06: null
+27-Apr-2014 15:08: null
+27-Apr-2014 15:08: null
+27-Apr-2014 15:08: null
+27-Apr-2014 15:08: null
+27-Apr-2014 15:10: null
+27-Apr-2014 15:10: null
+27-Apr-2014 15:10: null
+27-Apr-2014 15:10: null
+27-Apr-2014 15:10: null
+27-Apr-2014 15:10: null
+27-Apr-2014 15:10: null
+27-Apr-2014 15:10: null
+27-Apr-2014 15:10: null
+27-Apr-2014 15:10: null
+27-Apr-2014 15:10: null
+27-Apr-2014 15:10: null
+27-Apr-2014 15:16: null
+27-Apr-2014 15:16: null
+27-Apr-2014 15:16: null
+27-Apr-2014 15:16: null
+27-Apr-2014 15:18: null
+27-Apr-2014 15:18: null
+27-Apr-2014 15:18: null
+27-Apr-2014 15:18: null
+27-Apr-2014 15:19: null
+27-Apr-2014 15:19: null
+27-Apr-2014 15:19: null
+27-Apr-2014 15:19: null
+27-Apr-2014 15:20: Error: null
+27-Apr-2014 15:20: Error: null
+27-Apr-2014 15:21: Error: null
+27-Apr-2014 15:21: Error: null
+27-Apr-2014 15:21: null
+27-Apr-2014 15:21: null
+27-Apr-2014 15:21: null
+27-Apr-2014 15:21: null
+27-Apr-2014 15:21: null
+27-Apr-2014 15:21: null
+27-Apr-2014 15:21: null
+27-Apr-2014 15:21: null
+27-Apr-2014 16:06: null
+27-Apr-2014 16:06: null
+27-Apr-2014 16:06: null
+27-Apr-2014 16:06: null
+27-Apr-2014 16:11: null
+27-Apr-2014 16:11: null
+27-Apr-2014 16:11: null
+27-Apr-2014 16:11: null
+27-Apr-2014 16:13: null
+27-Apr-2014 16:13: null
+27-Apr-2014 16:13: null
+27-Apr-2014 16:13: null
+27-Apr-2014 16:15: null
+27-Apr-2014 16:15: null
+27-Apr-2014 16:15: null
+27-Apr-2014 16:15: null
+27-Apr-2014 16:16: Error handling operation: ORA-00947: not enough values
+
+27-Apr-2014 16:18: null
+27-Apr-2014 16:18: null
+27-Apr-2014 16:18: null
+27-Apr-2014 16:18: null
+27-Apr-2014 16:19: Error: null
+27-Apr-2014 16:19: Error: null
+27-Apr-2014 16:20: null
+27-Apr-2014 16:20: null
+27-Apr-2014 16:20: null
+27-Apr-2014 16:21: null
+27-Apr-2014 16:21: null
+27-Apr-2014 16:44: null
+27-Apr-2014 16:44: null
+27-Apr-2014 16:48: null
+27-Apr-2014 16:49: Error handling operation: ORA-01400: cannot insert NULL into ("PRCSE"."ROOMS"."ROOM_PRICE")
+
+27-Apr-2014 16:49: Error handling operation: ORA-01400: cannot insert NULL into ("PRCSE"."ROOMS"."ROOM_PRICE")
+
+27-Apr-2014 16:59: null
+27-Apr-2014 16:59: Error handling operation: ORA-01400: cannot insert NULL into ("PRCSE"."ROOMS"."ROOM_PRICE")
+
+27-Apr-2014 17:02: null
+27-Apr-2014 17:03: Error handling operation: ORA-01400: cannot insert NULL into ("PRCSE"."ROOMS"."ROOM_PRICE")
+
+27-Apr-2014 17:04: null
+27-Apr-2014 17:04: null
+27-Apr-2014 17:04: null
+27-Apr-2014 17:04: null
+27-Apr-2014 17:05: null
+27-Apr-2014 17:05: null
+27-Apr-2014 17:05: null
+27-Apr-2014 17:05: Error handling operation: ORA-01400: cannot insert NULL into ("PRCSE"."ROOMS"."ROOM_PRICE")
+
+27-Apr-2014 17:06: null
+27-Apr-2014 17:06: null
+27-Apr-2014 17:06: null
+27-Apr-2014 17:06: null
+27-Apr-2014 17:06: null
+27-Apr-2014 17:07: Error handling operation: ORA-01400: cannot insert NULL into ("PRCSE"."ROOMS"."ROOM_PRICE")
+
+27-Apr-2014 17:20: null
+27-Apr-2014 17:20: null
+27-Apr-2014 17:21: Error: null
+27-Apr-2014 17:22: Error: C:\Users\Alex\DesktopC:\Users\Alex\Desktop\bing icon.png (The filename, directory name, or volume label syntax is incorrect)
+27-Apr-2014 21:10: null
+27-Apr-2014 21:13: null
+27-Apr-2014 21:14: null
+27-Apr-2014 21:14: null
+27-Apr-2014 21:14: null
+27-Apr-2014 21:14: null
+27-Apr-2014 21:20: null
+27-Apr-2014 21:20: null
+27-Apr-2014 21:20: null
+27-Apr-2014 21:20: null
+27-Apr-2014 21:21: null
+27-Apr-2014 21:21: null
+27-Apr-2014 21:21: null
+27-Apr-2014 21:25: null
+27-Apr-2014 21:25: null
+27-Apr-2014 21:25: null
+27-Apr-2014 21:25: null
+27-Apr-2014 21:26: null
+27-Apr-2014 21:26: null
+27-Apr-2014 21:26: null
+27-Apr-2014 21:29: null
+27-Apr-2014 21:29: null
+27-Apr-2014 21:29: null
+27-Apr-2014 21:29: null
+27-Apr-2014 21:30: null
+27-Apr-2014 21:30: null
+27-Apr-2014 21:30: null
+27-Apr-2014 21:33: null
+27-Apr-2014 21:33: null
+27-Apr-2014 21:33: null
+27-Apr-2014 21:37: Error: null
+27-Apr-2014 21:37: Error: null
+27-Apr-2014 22:20: Error: null
+27-Apr-2014 22:20: Error: null
+27-Apr-2014 22:20: Error: null
+27-Apr-2014 22:20: Error: null
+27-Apr-2014 22:20: Error: null
+27-Apr-2014 22:20: Error handling operation: ORA-01722: invalid number
+
+27-Apr-2014 22:20: Error: Not on FX application thread; currentThread = Thread-73
+27-Apr-2014 22:28: null
+27-Apr-2014 22:28: null
+27-Apr-2014 22:28: null
+27-Apr-2014 22:30: null
+27-Apr-2014 22:30: null
+27-Apr-2014 22:30: null
+27-Apr-2014 22:34: Error: null
+27-Apr-2014 22:34: Error: null
+27-Apr-2014 22:36: null
+27-Apr-2014 22:36: null
+27-Apr-2014 22:36: null
+27-Apr-2014 22:37: Error: -1
+27-Apr-2014 22:44: null
+27-Apr-2014 22:44: null
+27-Apr-2014 22:44: null
+27-Apr-2014 22:44: Error: null
+27-Apr-2014 22:52: There was an error handling the animation...
+27-Apr-2014 22:52: There was an error handling the animation...
+27-Apr-2014 22:52: There was an error handling the animation...
+27-Apr-2014 22:52: There was an error handling the animation...
+27-Apr-2014 22:53: Index: 1, Size: 1
+27-Apr-2014 22:53: Index: 2, Size: 1
+27-Apr-2014 22:53: Index: 3, Size: 1
+27-Apr-2014 22:54: Index: 2, Size: 2
+27-Apr-2014 22:54: Index: 3, Size: 2
+27-Apr-2014 22:54: Index: 2, Size: 2
+27-Apr-2014 22:54: Index: 3, Size: 2
+27-Apr-2014 22:56: Index: 3, Size: 3
+27-Apr-2014 22:56: Index: 2, Size: 2
+27-Apr-2014 22:56: Index: 3, Size: 2
+27-Apr-2014 23:01: null
+27-Apr-2014 23:01: null
+27-Apr-2014 23:01: null
+27-Apr-2014 23:01: null
+27-Apr-2014 23:01: Index: 1, Size: 1
+27-Apr-2014 23:01: Index: 2, Size: 1
+27-Apr-2014 23:01: Index: 3, Size: 1
+27-Apr-2014 23:02: Index: 1, Size: 1
+27-Apr-2014 23:02: Index: 2, Size: 1
+27-Apr-2014 23:02: Index: 3, Size: 1
+27-Apr-2014 23:02: Index: 0, Size: 0
+27-Apr-2014 23:02: Index: 1, Size: 0
+27-Apr-2014 23:02: Index: 2, Size: 0
+27-Apr-2014 23:02: Index: 3, Size: 0
+27-Apr-2014 23:07: Error: null
+27-Apr-2014 23:08: Error: null
+27-Apr-2014 23:08: Error: null
+27-Apr-2014 23:08: Error: null
+27-Apr-2014 23:08: Error handling operation: ORA-01722: invalid number
+
+27-Apr-2014 23:08: Error: Not on FX application thread; currentThread = Thread-76
+27-Apr-2014 23:09: Error handling operation: ORA-00917: missing comma
+
+27-Apr-2014 23:09: Error: Not on FX application thread; currentThread = Thread-79
+27-Apr-2014 23:09: Error: null
+27-Apr-2014 23:09: Error: null
+27-Apr-2014 23:09: Error: null
+27-Apr-2014 23:09: Error: null
+27-Apr-2014 23:09: Error: null
+27-Apr-2014 23:09: Error: null
+27-Apr-2014 23:09: Error: null
+27-Apr-2014 23:09: Error: null
+27-Apr-2014 23:09: Error: null
+27-Apr-2014 23:09: Error: null
+27-Apr-2014 23:09: Error: null
+27-Apr-2014 23:09: Error: null
+27-Apr-2014 23:10: Error: Not on FX application thread; currentThread = Thread-86
+27-Apr-2014 23:10: Error handling operation: ORA-00917: missing comma
+
+27-Apr-2014 23:10: Error: null
+27-Apr-2014 23:10: Error: null
+27-Apr-2014 23:10: Error: null
+27-Apr-2014 23:10: Error: null
+27-Apr-2014 23:10: Error: null
+27-Apr-2014 23:10: Error: null
+27-Apr-2014 23:10: Error: null
+27-Apr-2014 23:10: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: Not on FX application thread; currentThread = Thread-89
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: Not on FX application thread; currentThread = Thread-90
+27-Apr-2014 23:11: Error: Not on FX application thread; currentThread = Thread-93
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: Not on FX application thread; currentThread = Thread-96
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: Not on FX application thread; currentThread = Thread-99
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: Not on FX application thread; currentThread = Thread-101
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:11: Error: null
+27-Apr-2014 23:12: Error: Not on FX application thread; currentThread = Thread-108
+27-Apr-2014 23:12: Error: null
+27-Apr-2014 23:12: Error: null
+27-Apr-2014 23:12: Error: null
+27-Apr-2014 23:12: Error: null
+27-Apr-2014 23:12: Error: null
+27-Apr-2014 23:12: Error: null
+27-Apr-2014 23:12: Error: null
+27-Apr-2014 23:12: Error: null
+27-Apr-2014 23:12: Error: null
+27-Apr-2014 23:12: Error: null
+27-Apr-2014 23:12: Error: null
+27-Apr-2014 23:12: Error: null
+27-Apr-2014 23:12: Error: Not on FX application thread; currentThread = Thread-110
+27-Apr-2014 23:19: null
+27-Apr-2014 23:19: null
+27-Apr-2014 23:19: null
+27-Apr-2014 23:19: null
+27-Apr-2014 23:19: Error: null
+27-Apr-2014 23:19: null
+27-Apr-2014 23:19: null
+27-Apr-2014 23:19: null
+27-Apr-2014 23:19: null
+27-Apr-2014 23:23: null
+27-Apr-2014 23:23: null
+27-Apr-2014 23:23: null
+27-Apr-2014 23:23: null

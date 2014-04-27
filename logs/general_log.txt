@@ -1211,3 +1211,128 @@
 27-Apr-2014 00:15: Warning: Not on FX application thread; currentThread = Thread-60
 27-Apr-2014 00:16: Connected to database
 27-Apr-2014 00:17: Connected to database
+27-Apr-2014 00:34: Connected to database
+27-Apr-2014 00:48: Warning: Not on FX application thread; currentThread = Thread-69
+27-Apr-2014 00:48: Warning: Not on FX application thread; currentThread = Thread-70
+27-Apr-2014 12:32: Connected to database
+27-Apr-2014 12:34: Connected to database
+27-Apr-2014 12:40: Warning: Not on FX application thread; currentThread = Thread-65
+27-Apr-2014 14:20: Connected to database
+27-Apr-2014 14:28: Connected to database
+27-Apr-2014 14:30: Connected to database
+27-Apr-2014 14:32: Connected to database
+27-Apr-2014 14:34: Connected to database
+27-Apr-2014 14:36: Connected to database
+27-Apr-2014 14:40: Connected to database
+27-Apr-2014 14:44: Connected to database
+27-Apr-2014 14:45: Connected to database
+27-Apr-2014 14:47: Connected to database
+27-Apr-2014 14:49: Connected to database
+27-Apr-2014 14:50: Connected to database
+27-Apr-2014 14:52: Connected to database
+27-Apr-2014 14:55: Connected to database
+27-Apr-2014 14:58: Warning: Not on FX application thread; currentThread = Thread-60
+27-Apr-2014 14:58: Warning: Not on FX application thread; currentThread = Thread-61
+27-Apr-2014 15:00: Warning: Not on FX application thread; currentThread = Thread-63
+27-Apr-2014 15:00: Warning: Not on FX application thread; currentThread = Thread-64
+27-Apr-2014 15:01: Connected to database
+27-Apr-2014 15:02: Warning: Not on FX application thread; currentThread = Thread-82
+27-Apr-2014 15:03: Warning: Not on FX application thread; currentThread = Thread-84
+27-Apr-2014 15:03: Warning: Not on FX application thread; currentThread = Thread-85
+27-Apr-2014 15:03: Warning: Not on FX application thread; currentThread = Thread-86
+27-Apr-2014 15:03: Warning: Not on FX application thread; currentThread = Thread-87
+27-Apr-2014 15:03: Warning: Not on FX application thread; currentThread = Thread-89
+27-Apr-2014 15:03: Warning: Not on FX application thread; currentThread = Thread-92
+27-Apr-2014 15:03: Warning: Not on FX application thread; currentThread = Thread-94
+27-Apr-2014 15:05: Connected to database
+27-Apr-2014 15:06: Warning: Not on FX application thread; currentThread = Thread-60
+27-Apr-2014 15:07: Connected to database
+27-Apr-2014 15:08: Warning: Not on FX application thread; currentThread = Thread-59
+27-Apr-2014 15:09: Warning: Not on FX application thread; currentThread = Thread-60
+27-Apr-2014 15:09: Connected to database
+27-Apr-2014 15:10: Warning: Not on FX application thread; currentThread = Thread-59
+27-Apr-2014 15:10: Warning: Not on FX application thread; currentThread = Thread-60
+27-Apr-2014 15:10: Warning: Not on FX application thread; currentThread = Thread-61
+27-Apr-2014 15:13: Warning: Not on FX application thread; currentThread = Thread-62
+27-Apr-2014 15:16: Connected to database
+27-Apr-2014 15:17: Warning: Not on FX application thread; currentThread = Thread-59
+27-Apr-2014 15:17: Connected to database
+27-Apr-2014 15:18: Warning: Not on FX application thread; currentThread = Thread-59
+27-Apr-2014 15:18: Warning: Not on FX application thread; currentThread = Thread-60
+27-Apr-2014 15:19: Connected to database
+27-Apr-2014 15:20: Warning: Not on FX application thread; currentThread = Thread-59
+27-Apr-2014 15:21: Warning: Not on FX application thread; currentThread = Thread-60
+27-Apr-2014 15:21: Warning: Not on FX application thread; currentThread = Thread-61
+27-Apr-2014 15:21: Warning: Not on FX application thread; currentThread = Thread-62
+27-Apr-2014 15:21: Warning: Not on FX application thread; currentThread = Thread-63
+27-Apr-2014 15:21: Warning: Not on FX application thread; currentThread = Thread-64
+27-Apr-2014 15:21: Warning: Not on FX application thread; currentThread = Thread-65
+27-Apr-2014 15:21: Warning: Not on FX application thread; currentThread = Thread-66
+27-Apr-2014 15:59: Connected to database
+27-Apr-2014 16:06: Connected to database
+27-Apr-2014 16:08: Warning: Not on FX application thread; currentThread = Thread-60
+27-Apr-2014 16:11: Connected to database
+27-Apr-2014 16:11: Warning: Not on FX application thread; currentThread = Thread-59
+27-Apr-2014 16:12: Connected to database
+27-Apr-2014 16:15: Connected to database
+27-Apr-2014 16:18: Connected to database
+27-Apr-2014 16:19: Warning: Not on FX application thread; currentThread = Thread-62
+27-Apr-2014 16:20: Connected to database
+27-Apr-2014 16:21: Warning: Not on FX application thread; currentThread = Thread-61
+27-Apr-2014 16:44: Connected to database
+27-Apr-2014 16:46: Connected to database
+27-Apr-2014 16:49: Connected to database
+27-Apr-2014 16:49: Warning: Not on FX application thread; currentThread = Thread-67
+27-Apr-2014 17:00: Warning: Not on FX application thread; currentThread = Thread-63
+27-Apr-2014 17:01: Connected to database
+27-Apr-2014 17:04: Connected to database
+27-Apr-2014 17:05: Warning: Not on FX application thread; currentThread = Thread-63
+27-Apr-2014 17:05: Connected to database
+27-Apr-2014 17:18: Connected to database
+27-Apr-2014 17:21: Warning: Not on FX application thread; currentThread = Thread-59
+27-Apr-2014 21:10: Warning: Not on FX application thread; currentThread = Thread-67
+27-Apr-2014 21:12: Connected to database
+27-Apr-2014 21:13: Connected to database
+27-Apr-2014 21:19: Connected to database
+27-Apr-2014 21:24: Connected to database
+27-Apr-2014 21:29: Connected to database
+27-Apr-2014 21:32: Connected to database
+27-Apr-2014 21:33: Warning: Not on FX application thread; currentThread = Thread-59
+27-Apr-2014 21:33: Warning: Not on FX application thread; currentThread = Thread-60
+27-Apr-2014 22:00: Connected to database
+27-Apr-2014 22:02: Connected to database
+27-Apr-2014 22:03: Connected to database
+27-Apr-2014 22:12: Connected to database
+27-Apr-2014 22:14: Connected to database
+27-Apr-2014 22:16: Connected to database
+27-Apr-2014 22:17: Connected to database
+27-Apr-2014 22:18: Connected to database
+27-Apr-2014 22:20: Connected to database
+27-Apr-2014 22:23: Connected to database
+27-Apr-2014 22:24: Connected to database
+27-Apr-2014 22:26: Connected to database
+27-Apr-2014 22:27: Connected to database
+27-Apr-2014 22:28: Warning: Not on FX application thread; currentThread = Thread-63
+27-Apr-2014 22:29: Warning: Not on FX application thread; currentThread = Thread-64
+27-Apr-2014 22:29: Connected to database
+27-Apr-2014 22:34: Warning: Not on FX application thread; currentThread = Thread-76
+27-Apr-2014 22:35: Connected to database
+27-Apr-2014 22:36: Warning: Not on FX application thread; currentThread = Thread-63
+27-Apr-2014 22:36: Warning: Not on FX application thread; currentThread = Thread-64
+27-Apr-2014 22:36: Warning: Not on FX application thread; currentThread = Thread-69
+27-Apr-2014 22:43: Connected to database
+27-Apr-2014 22:47: Connected to database
+27-Apr-2014 22:50: Connected to database
+27-Apr-2014 22:56: I am removing from index 2
+27-Apr-2014 23:02: I am removing from index 0
+27-Apr-2014 23:08: Connected to database
+27-Apr-2014 23:19: Warning: Not on FX application thread; currentThread = Thread-126
+27-Apr-2014 23:19: Warning: Not on FX application thread; currentThread = Thread-127
+27-Apr-2014 23:19: Warning: Not on FX application thread; currentThread = Thread-128
+27-Apr-2014 23:19: Warning: Not on FX application thread; currentThread = Thread-129
+27-Apr-2014 23:20: Warning: Not on FX application thread; currentThread = Thread-130
+27-Apr-2014 23:20: Warning: Not on FX application thread; currentThread = Thread-131
+27-Apr-2014 23:20: Warning: Not on FX application thread; currentThread = Thread-132
+27-Apr-2014 23:20: Warning: Not on FX application thread; currentThread = Thread-140
+27-Apr-2014 23:22: Connected to database
+27-Apr-2014 23:24: Warning: Not on FX application thread; currentThread = Thread-73

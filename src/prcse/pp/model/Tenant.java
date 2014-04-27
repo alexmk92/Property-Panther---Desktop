@@ -322,7 +322,7 @@ public class Tenant extends Person implements Serializable {
      * @param newRoom the Room which the user now occupies
      * @return True if the room was changed, else false
      */
-    public Boolean setRoom(Room newRoom)
+    public Boolean setRoom(Room newRoom, Boolean updating)
     {
         Boolean roomAdded = false;
 
@@ -331,10 +331,11 @@ public class Tenant extends Person implements Serializable {
         {
             this.room = newRoom;
 
-            // Update the database with the room and property objects
-            updateRoom(newRoom.getRoomId());
-
-            setProperty(newRoom.getRoomProperty());
+            if(updating == true) {
+                // Update the database with the room and property objects
+                updateRoom(newRoom.getRoomId());
+                setProperty(newRoom.getRoomProperty(), true);
+            }
             roomAdded = true;
         }
 
@@ -356,7 +357,7 @@ public class Tenant extends Person implements Serializable {
      * @param newProperty the property the tenant occupies
      * @return True if the room was changed else false
      */
-    public Boolean setProperty(Property newProperty)
+    public Boolean setProperty(Property newProperty, Boolean updating)
     {
         Boolean propertySet = false;
 
@@ -364,7 +365,10 @@ public class Tenant extends Person implements Serializable {
         if(null != newProperty)
         {
             this.property = newProperty;
-            updateProperty(newProperty.getPropertyId());
+            // Only update the property table if updating
+            if(updating == true) {
+                updateProperty(newProperty.getPropertyId());
+            }
             propertySet = true;
         }
 

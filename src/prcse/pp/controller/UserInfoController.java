@@ -583,7 +583,7 @@ public class UserInfoController implements Initializable, ControlledScreen {
                                 String surname  = name[1];
 
                                 String addr2 = txtChangeAddr2.getText();
-                                if(txtChangeAddr2.getText().isEmpty() || txtChangeAddr2.getText().length() < 3) {
+                                if(txtChangeAddr2.getText() == null) {
                                     addr2 = "null";
                                 }
 
@@ -770,13 +770,7 @@ public class UserInfoController implements Initializable, ControlledScreen {
         if(v.validateName(txtChangeName.getText()) && v.validatePostcode(txtChangePostcode.getText()) && v.validateAddress(txtChangeAddr1.getText()) &&
            v.validateEmail(txtChangeEmail.getText()) && v.validateNumber(txtChangePhone.getText()))
         {
-            if(txtChangeAddr2.getText().length() > 0) {
-                v.validateAddress(txtChangeAddr2.getText());
-                validated = true;
-            } else {
-                validated = true;
-            }
-
+            validated = true;
         }
 
         return validated;

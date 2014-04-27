@@ -310,11 +310,7 @@
 <Font size="14.0" />
 </font>
 </Button>
-<ChoiceBox fx:id="choiceUpdate" layoutX="362.0" layoutY="138.0" prefHeight="32.0" prefWidth="203.0">
-<styleClass>
-<String fx:value="holo" />
-<String fx:value="white" />
-</styleClass></ChoiceBox><Label fx:id="lblCurrStatus" layoutX="251.0" layoutY="145.0" prefHeight="25.0" prefWidth="107.0" text="Update Status:" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<ChoiceBox fx:id="choiceUpdate" layoutX="362.0" layoutY="138.0" prefHeight="32.0" prefWidth="203.0" /><Label fx:id="lblCurrStatus" layoutX="251.0" layoutY="145.0" prefHeight="25.0" prefWidth="107.0" text="Update Status:" textFill="WHITE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
 <font>
 <Font size="16.0" />
 </font>
